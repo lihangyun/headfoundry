@@ -1,0 +1,11 @@
+{
+  "camera": {"landmark_reprojection_p95_px": 2.2},
+  "geometry": {
+    "scan_point_to_surface_p95_mm": 99.0,
+    "profile_silhouette_iou": 0.0,
+    "frontal_landmark_nme": 1.0
+  },
+  "texture": {"heldout_lpips": 1.0, "seam_delta_e_p95": 100.0},
+  "mesh": {"non_manifold_edges": 0, "degenerate_faces": 0, "flipped_faces": 0}
+}
+

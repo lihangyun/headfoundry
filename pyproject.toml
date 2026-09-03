@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "headfoundry"
+version = "0.1.0"
+description = "Clean-room quality gates and reconstruction foundations for multi-view 3D heads"
+requires-python = ">=3.11"
+dependencies = ["numpy>=2.0,<3"]
+
+[project.scripts]
+headfoundry-camera-check = "headfoundry.camera:main"
+headfoundry-quality = "headfoundry.quality:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
