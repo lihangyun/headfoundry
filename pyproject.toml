@@ -14,6 +14,7 @@ headfoundry-camera-check = "headfoundry.camera:main"
 headfoundry-quality = "headfoundry.quality:main"
 headfoundry-validate-manifest = "headfoundry.manifest:main"
 headfoundry-vggt-check = "headfoundry.vggt:main"
+headfoundry-profile-check = "headfoundry.profile:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

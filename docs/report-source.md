@@ -84,6 +84,12 @@ The VGGT adapter accepts only an asset record naming `facebook/VGGT-1B-Commercia
 
 The deterministic fixture is `TECHNICAL_CHECK_PASSED`. Real gated checkpoint inference, real-photo camera recovery, and all visual reconstruction quality remain `UNVERIFIED`; geometry and texture implementation stay blocked.
 
+## 9. Side-profile optimization slice
+
+A deterministic contour fixture now exercises the first bounded geometry operation without introducing a head model or texture implementation. Only the labiomental groove, pogonion, menton, and front-neck points may move; the forehead, nose, lips, crown, occiput, and back neck remain exact protected anchors. A least-squares fit with second-difference regularization reduces editable-contour mean error while preventing protected-region drift.
+
+Experiment 0003 reduced normalized mean error from 0.04688 to 0.01301 (72.25%) with zero protected drift and is `TECHNICAL_CHECK_PASSED`. Because the target points are a synthetic fixture with known correspondence, real-photo profile improvement remains `UNVERIFIED`. The next gate is to derive the same semantic contour from a consented, calibrated side view after the camera gate passes.
+
 ## Sources
 
 See `claim-source-ledger.md` for the auditable mapping. Primary sources include KeenTools Cloud documentation and EULA; VGGT and its CVPR paper; VGGTFace and its AAAI paper; UVFaceFusion; Pixel3DMM; FLAME license documentation; FaceScape; Multiface; PyTorch3D; and the nvdiffrast license.

@@ -10,6 +10,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - Camera projection baseline: implemented and covered by deterministic synthetic tests.
 - Commercial VGGT adapter: local output contract and asset lock implemented; real gated checkpoint execution is `UNVERIFIED`.
 - Input rights and capture validation: implemented; missing consent, provenance, license, file hash, view coverage, resolution, or clarity evidence is `REJECT`.
+- Side-profile contour fitting: deterministic jaw/chin/neck slice is `TECHNICAL_CHECK_PASSED`; real-photo improvement is `UNVERIFIED`.
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
@@ -22,6 +23,7 @@ C:\Python313\python.exe -m pip install -e .
 C:\Python313\python.exe -m unittest discover -s tests -v
 C:\Python313\python.exe -m headfoundry.camera
 C:\Python313\python.exe -m headfoundry.vggt tests\fixtures\vggt_camera_point_fixture.json
+C:\Python313\python.exe -m headfoundry.profile examples\profile_fixture.json --svg docs\experiment-0003-profile.svg
 C:\Python313\python.exe -m headfoundry.manifest path\to\run-manifest.json
 C:\Python313\python.exe -m headfoundry.quality examples\quality_manifest.json
 ```
@@ -44,6 +46,7 @@ Only `facebook/VGGT-1B-Commercial` with license id `vggt-aup-license` is accepte
 - `docs/adr/0001-quality-first-reconstruction.md`: architecture decision.
 - `docs/experiment-0001-camera-baseline.md`: first falsifiable experiment record.
 - `docs/experiment-0002-commercial-vggt-adapter.md`: commercial checkpoint adapter and deterministic camera-gate record.
+- `docs/experiment-0003-profile-contour.md`: bounded side-profile contour experiment and next real-image gate.
 
 ## Legal boundary
 

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="700" viewBox="0 0 720 700">
+<rect width="100%" height="100%" fill="white"/>
+<text x="24" y="28" font-family="sans-serif" font-size="17">Experiment 0003 - side profile contour fit</text>
+<polyline points="325.2,69.6 263.2,144.0 244.6,206.0 232.2,243.2 176.4,292.8 226.0,323.8 207.4,354.8 213.6,385.8 235.3,413.7 219.8,444.7 250.8,481.9 343.8,553.2 461.6,565.6 517.4,404.4 511.2,218.4" fill="none" stroke="#111827" stroke-width="5"/>
+<polyline points="325.2,69.6 263.2,144.0 244.6,206.0 232.2,243.2 176.4,292.8 226.0,323.8 207.4,354.8 213.6,385.8 250.8,410.6 263.2,447.8 288.0,491.2 325.2,553.2 461.6,565.6 517.4,404.4 511.2,218.4" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="10 8"/>
+<polyline points="325.2,69.6 263.2,144.0 244.6,206.0 232.2,243.2 176.4,292.8 226.0,323.8 207.4,354.8 213.6,385.8 233.0,411.7 225.3,444.6 259.0,484.6 328.8,551.4 461.6,565.6 517.4,404.4 511.2,218.4" fill="none" stroke="#2563eb" stroke-width="3"/>
+<circle cx="233.0" cy="411.7" r="4" fill="#2563eb"><title>labiomental</title></circle>
+<circle cx="225.3" cy="444.6" r="4" fill="#2563eb"><title>pogonion</title></circle>
+<circle cx="259.0" cy="484.6" r="4" fill="#2563eb"><title>menton</title></circle>
+<circle cx="328.8" cy="551.4" r="4" fill="#2563eb"><title>neck_front</title></circle>
+<text x="24" y="662" font-family="sans-serif" font-size="15" fill="#111827">target</text>
+<line x1="82" y1="657" x2="125" y2="657" stroke="#111827" stroke-width="5"/>
+<text x="150" y="662" font-family="sans-serif" font-size="15" fill="#dc2626">baseline</text>
+<line x1="215" y1="657" x2="258" y2="657" stroke="#dc2626" stroke-width="3" stroke-dasharray="10 8"/>
+<text x="285" y="662" font-family="sans-serif" font-size="15" fill="#2563eb">candidate</text>
+<line x1="360" y1="657" x2="403" y2="657" stroke="#2563eb" stroke-width="3"/>
+</svg>
