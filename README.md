@@ -28,7 +28,7 @@ C:\Python313\python.exe -m headfoundry.manifest path\to\run-manifest.json
 C:\Python313\python.exe -m headfoundry.quality examples\quality_manifest.json
 ```
 
-The VGGT fixture check must report `TECHNICAL_CHECK_PASSED`; this proves the adapter and matrix conventions, not the real checkpoint or visual quality. `examples/run-manifest.template.json` documents the required asset fields and intentionally fails until its placeholders are replaced with actual files, hashes, rights, and consent. The example quality manifest intentionally fails later-stage gates.
+The VGGT fixture check must report `TECHNICAL_CHECK_PASSED`; this proves the adapter and matrix conventions, not the real checkpoint or visual quality. `examples/run-manifest.template.json` documents the required asset fields and intentionally fails until its placeholders are replaced with actual files, hashes, rights, and consent. Manifests may be limited to `local_head_reconstruction_validation`; every input's `allowed_uses` must match the declared purpose, so local consent cannot be expanded to commercial use. The example quality manifest intentionally fails later-stage gates.
 
 ## Commercial checkpoint installation
 

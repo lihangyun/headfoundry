@@ -14,6 +14,7 @@ from .inputs import validate_multiview
 COMMERCIAL_MODEL_ID = "VGGT-1B-Commercial"
 COMMERCIAL_REPOSITORY = "facebook/VGGT-1B-Commercial"
 COMMERCIAL_LICENSE = "vggt-aup-license"
+ALLOWED_PURPOSES = {"commercial_head_reconstruction", "local_head_reconstruction_validation"}
 
 
 def sha256_file(path: Path) -> str:
@@ -60,8 +61,9 @@ def validate_manifest(document: dict[str, Any], root: Path) -> list[str]:
     errors: list[str] = []
     if document.get("schema_version") != 1:
         errors.append("schema_version: expected 1")
-    if document.get("purpose") != "commercial_head_reconstruction":
-        errors.append("purpose: expected commercial_head_reconstruction")
+    purpose = document.get("purpose")
+    if purpose not in ALLOWED_PURPOSES:
+        errors.append("purpose: unsupported")
 
     inputs = document.get("inputs")
     if not isinstance(inputs, list) or not inputs:
@@ -74,8 +76,8 @@ def validate_manifest(document: dict[str, Any], root: Path) -> list[str]:
                 continue
             errors.extend(_present(record, ("id", "source", "license_id", "retention_until", "deletion_process"), prefix))
             allowed = record.get("allowed_uses")
-            if not isinstance(allowed, list) or "commercial_head_reconstruction" not in allowed:
-                errors.append(f"{prefix}.allowed_uses: commercial_head_reconstruction is required")
+            if not isinstance(allowed, list) or purpose not in allowed:
+                errors.append(f"{prefix}.allowed_uses: manifest purpose is required")
             consent = record.get("consent")
             if not isinstance(consent, dict):
                 errors.append(f"{prefix}.consent: missing")

@@ -51,6 +51,14 @@ class ManifestTests(unittest.TestCase):
         del self.document["inputs"][0]["consent"]
         self.assertTrue(any("consent" in error for error in validate_manifest(self.document, self.root)))
 
+    def test_local_validation_cannot_expand_input_consent(self) -> None:
+        self.document["purpose"] = "local_head_reconstruction_validation"
+        errors = validate_manifest(self.document, self.root)
+        self.assertTrue(any("allowed_uses" in error for error in errors))
+        for record in self.document["inputs"]:
+            record["allowed_uses"] = ["local_head_reconstruction_validation"]
+        self.assertEqual(validate_manifest(self.document, self.root), [])
+
     def test_noncommercial_checkpoint_is_rejected(self) -> None:
         self.model["id"] = "VGGT-1B"
         self.model["repository"] = "facebook/VGGT-1B"
