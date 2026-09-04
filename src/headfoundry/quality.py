@@ -64,10 +64,16 @@ def evaluate(document: dict[str, Any]) -> dict[str, Any]:
                 "reason": reason,
             }
         )
-    return {
-        "status": "PASS" if all(item["passed"] for item in results) else "REJECT",
-        "gates": results,
-    }
+    gates_passed = all(item["passed"] for item in results)
+    evidence = document.get("evidence", {})
+    complete_visual_evidence = (
+        isinstance(evidence, dict)
+        and evidence.get("licensed_benchmark") is True
+        and evidence.get("heldout_visual_review") is True
+        and evidence.get("complete_reconstruction") is True
+    )
+    status = "REJECT" if not gates_passed else "ACCEPT" if complete_visual_evidence else "PARTIAL_SUCCESS"
+    return {"status": status, "gates": results, "complete_visual_evidence": complete_visual_evidence}
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -76,9 +82,8 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
     report = evaluate(json.loads(args.manifest.read_text(encoding="utf-8")))
     print(json.dumps(report, indent=2))
-    return 0 if report["status"] == "PASS" else 1
+    return 0 if report["status"] == "ACCEPT" else 1
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

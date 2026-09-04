@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "purpose": "commercial_head_reconstruction",
+  "inputs": [
+    {
+      "id": "front",
+      "path": "REPLACE_WITH_INPUT_PATH",
+      "sha256": "REPLACE_WITH_64_HEX_DIGEST",
+      "width_px": 1600,
+      "height_px": 1200,
+      "clarity_score": 0.8,
+      "yaw_degrees": 0,
+      "source": "REPLACE_WITH_PROVENANCE",
+      "license_id": "REPLACE_WITH_RELEASE_OR_LICENSE_ID",
+      "allowed_uses": ["commercial_head_reconstruction"],
+      "retention_until": "REPLACE_WITH_DATE_OR_POLICY_BOUND",
+      "deletion_process": "REPLACE_WITH_WITHDRAWAL_AND_DELETION_PROCESS",
+      "consent": {
+        "subject_id": "REPLACE_WITH_PSEUDONYMOUS_SUBJECT_ID",
+        "record_id": "REPLACE_WITH_CONSENT_RECORD_ID",
+        "granted_at": "REPLACE_WITH_TIMESTAMP",
+        "biometric_processing": true
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "VGGT-1B-Commercial",
+      "repository": "facebook/VGGT-1B-Commercial",
+      "path": "../assets/private/VGGT-1B-Commercial/model.safetensors",
+      "sha256": "REPLACE_WITH_64_HEX_DIGEST",
+      "license_id": "vggt-aup-license",
+      "accepted_by": "REPLACE_WITH_AUTHORIZED_PERSON",
+      "accepted_at": "REPLACE_WITH_TIMESTAMP",
+      "acceptable_use_reviewed": true,
+      "military_use": false
+    }
+  ]
+}

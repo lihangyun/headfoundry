@@ -2,6 +2,12 @@
 
 Status: accepted for implementation; final product quality remains `UNVERIFIED`.
 
+## 2026-09-04 implementation amendment
+
+All reconstruction runs must start from a versioned manifest that binds each file to SHA-256 and records provenance, allowed purpose, retention/deletion policy, and biometric consent. Model loading is restricted to the exact `facebook/VGGT-1B-Commercial` identity and its gated `vggt-aup-license`; neither missing records nor unavailable weights may trigger a fallback.
+
+Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engineering check; `UNVERIFIED` means evidence has not been collected; `REJECT` means a required gate failed or is missing; `PARTIAL_SUCCESS` means numeric gates pass without complete licensed visual evidence; `ACCEPT` requires all protected gates plus licensed benchmark, held-out visual review, and complete reconstruction evidence.
+
 ## Decision
 
 Build an independent pipeline with four explicit stages:
@@ -32,4 +38,3 @@ Bootstrap with synthetic renders from commercially allowed parametric assets and
 ## Compute strategy
 
 Development tests run on the local RTX 3070 8 GB. Production-quality learned initialization is isolated to a GPU worker sized after profiling; the current expectation is 24 GB or more for comfortable multi-view work, but this is a planning estimate, not a confirmed requirement. Optimization and export remain reproducible jobs with immutable input manifests.
-

@@ -1,6 +1,6 @@
 # HeadFoundry technical research report
 
-Date: 2026-09-03  
+Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
@@ -76,7 +76,14 @@ No milestone is described as KeenTools-quality until clay, texture, protected vi
 
 The first committed executable is a normalized-DLT camera baseline plus a fail-closed quality manifest evaluator. It intentionally does not create a pretty demo. It proves coordinate conventions and prevents future partial metrics from being called a successful reconstruction. The next appearance-changing experiment is commercial VGGT initialization on licensed or synthetic multi-view fixtures, with camera recovery as its only primary variable.
 
+## 8. Milestone 1 camera slice status
+
+The repository now has a fail-closed run manifest for input and model assets. Every input requires a verified file digest, provenance, allowed commercial purpose, retention/deletion terms, and explicit biometric consent. Capture validation requires 5–10 unique views, at least 1024 px on the shorter side, an upstream normalized clarity measurement of at least 0.5, and frontal/intermediate/profile yaw coverage on both sides. The clarity score is evidence produced by capture preprocessing; pixel decoding and metric calibration remain a separate implementation gate.
+
+The VGGT adapter accepts only an asset record naming `facebook/VGGT-1B-Commercial` under `vggt-aup-license`, with a local digest and recorded acceptance/AUP review. It normalizes decoded outputs to NumPy arrays in the documented OpenCV camera-from-world convention. Camera gates require 3x4 extrinsics, 3x3 intrinsics, finite point maps and tracks, rigid rotations, plausible focal lengths/principal points, positive depth, stable normalized focal length across views, and cross-view track reprojection p95 no greater than 3 px.
+
+The deterministic fixture is `TECHNICAL_CHECK_PASSED`. Real gated checkpoint inference, real-photo camera recovery, and all visual reconstruction quality remain `UNVERIFIED`; geometry and texture implementation stay blocked.
+
 ## Sources
 
 See `claim-source-ledger.md` for the auditable mapping. Primary sources include KeenTools Cloud documentation and EULA; VGGT and its CVPR paper; VGGTFace and its AAAI paper; UVFaceFusion; Pixel3DMM; FLAME license documentation; FaceScape; Multiface; PyTorch3D; and the nvdiffrast license.
-

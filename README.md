@@ -2,12 +2,14 @@
 
 HeadFoundry is a clean-room, quality-first multi-view 3D head reconstruction project. It does not reuse PeekSim code, KeenTools outputs, or proprietary service behavior.
 
-The first milestone is deliberately narrow: prove that camera projection can be recovered and measured reliably before geometry or texture work is allowed to proceed. The repository already contains a runnable normalized-DLT camera estimator and a fail-closed quality-gate CLI.
+The first milestone is deliberately narrow: prove that camera projection can be recovered and measured reliably before geometry or texture work is allowed to proceed. The repository contains a normalized-DLT reference, fail-closed rights/capture manifests, a commercial-VGGT output adapter, and camera-only quality gates.
 
 ## Current status
 
 - Product/technical research: complete enough to select an architecture.
-- Camera projection baseline: implemented and covered by a deterministic synthetic test.
+- Camera projection baseline: implemented and covered by deterministic synthetic tests.
+- Commercial VGGT adapter: local output contract and asset lock implemented; real gated checkpoint execution is `UNVERIFIED`.
+- Input rights and capture validation: implemented; missing consent, provenance, license, file hash, view coverage, resolution, or clarity evidence is `REJECT`.
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
@@ -18,11 +20,22 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 cd C:\workspace\headfoundry
 C:\Python313\python.exe -m pip install -e .
 C:\Python313\python.exe -m unittest discover -s tests -v
-headfoundry-camera-check
-headfoundry-quality examples\quality_manifest.json
+C:\Python313\python.exe -m headfoundry.camera
+C:\Python313\python.exe -m headfoundry.vggt tests\fixtures\vggt_camera_point_fixture.json
+C:\Python313\python.exe -m headfoundry.manifest path\to\run-manifest.json
+C:\Python313\python.exe -m headfoundry.quality examples\quality_manifest.json
 ```
 
-The camera check must report sub-pixel reprojection error. The example quality manifest intentionally fails several later-stage gates, demonstrating that incomplete work cannot be presented as a successful reconstruction.
+The VGGT fixture check must report `TECHNICAL_CHECK_PASSED`; this proves the adapter and matrix conventions, not the real checkpoint or visual quality. `examples/run-manifest.template.json` documents the required asset fields and intentionally fails until its placeholders are replaced with actual files, hashes, rights, and consent. The example quality manifest intentionally fails later-stage gates.
+
+## Commercial checkpoint installation
+
+Only `facebook/VGGT-1B-Commercial` with license id `vggt-aup-license` is accepted. The original `facebook/VGGT-1B` is rejected even if it is locally available.
+
+1. An authorized person reviews and accepts the gated model terms at [facebook/VGGT-1B-Commercial](https://huggingface.co/facebook/VGGT-1B-Commercial). HeadFoundry does not automate acceptance.
+2. Download `model.safetensors` through the authenticated Hugging Face web UI or CLI into `assets/private/VGGT-1B-Commercial/`. This directory is git-ignored.
+3. Compute its SHA-256, copy `examples/run-manifest.template.json`, and record the exact path, digest, accepting person/date, license id, AUP review, and non-military use declaration.
+4. Run `python -m headfoundry.manifest <manifest>`. Any missing or mismatched field is `REJECT`; there is no fallback checkpoint.
 
 ## Project documents
 
@@ -30,8 +43,8 @@ The camera check must report sub-pixel reprojection error. The example quality m
 - `docs/claim-source-ledger.md`: claim-to-source audit trail.
 - `docs/adr/0001-quality-first-reconstruction.md`: architecture decision.
 - `docs/experiment-0001-camera-baseline.md`: first falsifiable experiment record.
+- `docs/experiment-0002-commercial-vggt-adapter.md`: commercial checkpoint adapter and deterministic camera-gate record.
 
 ## Legal boundary
 
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
-
