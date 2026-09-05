@@ -48,4 +48,9 @@ Bootstrap with synthetic renders from commercially allowed parametric assets and
 
 ## Compute strategy
 
+Camera investigation may optimize a temporary face patch as a nuisance variable,
+but this does not authorize acceptance of head geometry or texture. Experiment
+0009 keeps focal length and prior fixed, excludes validation from all fitting,
+and remains REJECT. Detector self-consistency is not independent shape evidence.
+
 Development tests run on the local RTX 3070 8 GB. Production-quality learned initialization is isolated to a GPU worker sized after profiling; the current expectation is 24 GB or more for comfortable multi-view work, but this is a planning estimate, not a confirmed requirement. Optimization and export remain reproducible jobs with immutable input manifests.

@@ -7,7 +7,7 @@ from scipy.sparse import coo_matrix
 from scipy.sparse.linalg import lsqr
 
 
-def fit_surface(prior, observations, projections, triangles, protected, regularization=30.):
+def fit_surface(prior, observations, projections, triangles, protected, regularization=30., observation_mask=None):
     prior = np.asarray(prior, float)
     observations = np.asarray(observations, float)
     projections = np.asarray(projections, float)
@@ -15,6 +15,9 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
     count = len(prior)
     if prior.shape != (count, 3) or observations.shape != (len(projections), count, 2):
         raise ValueError('invalid observation shapes')
+    mask = np.ones(observations.shape[:2],bool) if observation_mask is None else np.asarray(observation_mask,bool)
+    if mask.shape != observations.shape[:2]:
+        raise ValueError('invalid observation mask')
     if projections.shape[1:] != (3,4) or not all(np.isfinite(a).all() for a in (prior, observations, projections)):
         raise ValueError('invalid projections')
     if regularization <= 0 or triangles.ndim != 2 or triangles.shape[1] != 3 or np.any(triangles < 0) or np.any(triangles >= count):
@@ -36,12 +39,14 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
         rhs.append(target)
 
     # Solve displacements, retaining the supplied prior in protected regions.
-    for p, uv in zip(projections, observations):
+    for view, (p, uv) in enumerate(zip(projections, observations)):
         homogeneous = np.c_[prior, np.ones(count)]
         depth = homogeneous @ p[2]
         if np.any(depth <= 0):
             raise ValueError('prior behind supplied camera')
         for vertex in free:
+            if not mask[view,vertex]:
+                continue
             for axis in range(2):
                 a = (p[axis,:3] - uv[vertex,axis]*p[2,:3])/depth[vertex]
                 b = (uv[vertex,axis]*p[2,3]-p[axis,3])/depth[vertex] - a@prior[vertex]

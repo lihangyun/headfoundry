@@ -92,4 +92,9 @@ Experiment 0003 reduced normalized mean error from 0.04688 to 0.01301 (72.25%) w
 
 ## Sources
 
+Current local camera evidence: experiment 0009's fixed-iteration dense diagnostic
+has 10.44 px held-out p95 against the 3 px target and remains REJECT. This uses
+only consented local photos and detector predictions, not scan ground truth.
+It does not establish a quality improvement over MV-HRN or KeenTools.
+
 See `claim-source-ledger.md` for the auditable mapping. Primary sources include KeenTools Cloud documentation and EULA; VGGT and its CVPR paper; VGGTFace and its AAAI paper; UVFaceFusion; Pixel3DMM; FLAME license documentation; FaceScape; Multiface; PyTorch3D; and the nvdiffrast license.

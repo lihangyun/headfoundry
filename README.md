@@ -13,6 +13,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - Input rights and capture validation: implemented; missing consent, provenance, license, file hash, view coverage, resolution, or clarity evidence is `REJECT`.
 - Side-profile contour fitting: deterministic jaw/chin/neck slice is `TECHNICAL_CHECK_PASSED`; real-photo improvement is `UNVERIFIED`.
 - Real-photo face-patch diagnostics: OBJ export and CPU depth/texture rendering work; these are not full heads and use cameras that still fail validation. Experiments 0007–0008 document visible limitations.
+- Dense camera diagnostic: 60 held-out points yield 10.44 px p95, still `REJECT`; see experiment 0009. No full-head or side-profile quality acceptance.
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
