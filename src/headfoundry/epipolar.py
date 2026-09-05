@@ -2,6 +2,17 @@
 import numpy as np
 
 
+def _triangulate(a, b, p, q):
+    system=np.stack([a[:,0,None]*p[2]-p[0],a[:,1,None]*p[2]-p[1],
+                     b[:,0,None]*q[2]-q[0],b[:,1,None]*q[2]-q[1]],axis=1)
+    _,_,vectors=np.linalg.svd(system)
+    homogeneous=vectors[:,-1]
+    finite=np.abs(homogeneous[:,3])>1e-10
+    points=np.full((len(a),3),np.nan)
+    points[finite]=homogeneous[finite,:3]/homogeneous[finite,3:]
+    return points
+
+
 def fundamental(first, second):
     """Normalized eight-point fit. Inputs must already exclude validation points."""
     a,b=np.asarray(first,float),np.asarray(second,float)
@@ -67,15 +78,9 @@ def calibrated_pose(first, second, intrinsic_first, intrinsic_second):
     for r in [u@w@vt,u@w.T@vt]:
         for t in [u[:,2],-u[:,2]]:
             q=np.c_[r,t]
-            system=np.stack([a[:,0,None]*p[2]-p[0],a[:,1,None]*p[2]-p[1],
-                             b[:,0,None]*q[2]-q[0],b[:,1,None]*q[2]-q[1]],axis=1)
-            _,_,vectors=np.linalg.svd(system)
-            homogeneous=vectors[:,-1]
-            finite=np.abs(homogeneous[:,3])>1e-10
-            points=np.full((len(a),3),np.nan)
-            points[finite]=homogeneous[finite,:3]/homogeneous[finite,3:]
+            points=_triangulate(a,b,p,q)
             camera=points@r.T+t
-            positive=finite&(points[:,2]>1e-8)&(camera[:,2]>1e-8)
+            positive=np.isfinite(points).all(axis=1)&(points[:,2]>1e-8)&(camera[:,2]>1e-8)
             candidates.append((int(positive.sum()),r,t,points,positive))
     candidates.sort(key=lambda item:item[0],reverse=True)
     count,r,t,points,positive=candidates[0]
@@ -86,3 +91,42 @@ def calibrated_pose(first, second, intrinsic_first, intrinsic_second):
                 positive_depth_fraction=count/len(a),
                 essential_singular_ratio=float(s[1]/s[0]),
                 limitations='Assumed calibration; unit baseline; training-only pose, not camera acceptance.')
+
+
+def refine_pose(first, second, intrinsic_first, intrinsic_second):
+    """Training-only nonlinear pose refinement, retaining supplied calibration.
+
+    Requires the optional geometry dependency. Uses signed Sampson residuals,
+    not a face prior. Pairwise consistency cannot replace multiview validation.
+    """
+    from scipy.optimize import least_squares
+    from scipy.spatial.transform import Rotation
+    initial=calibrated_pose(first,second,intrinsic_first,intrinsic_second)
+    a,b=np.asarray(first,float),np.asarray(second,float)
+    ka,kb=np.asarray(intrinsic_first,float),np.asarray(intrinsic_second,float)
+    e=np.array(initial['extrinsic']);t=e[:,3]
+    start=np.r_[Rotation.from_matrix(e[:,:3]).as_rotvec(),np.arctan2(t[1],t[0]),np.arcsin(np.clip(t[2],-1,1))]
+    span=np.array([.6,.6,.6,1.,.8])
+    one=np.c_[a,np.ones(len(a))];two=np.c_[b,np.ones(len(b))]
+    ia,ib=np.linalg.inv(ka),np.linalg.inv(kb)
+    def unpack(x):
+        r=Rotation.from_rotvec(x[:3]).as_matrix()
+        az,el=x[3:];t=np.array([np.cos(el)*np.cos(az),np.cos(el)*np.sin(az),np.sin(el)])
+        skew=np.array([[0,-t[2],t[1]],[t[2],0,-t[0]],[-t[1],t[0],0]])
+        f=ib.T@skew@r@ia
+        return r,t,f/np.linalg.norm(f)
+    def residual(x):
+        f=unpack(x)[2];fx=one@f.T;fty=two@f
+        denominator=np.maximum(np.sum(fx[:,:2]**2+fty[:,:2]**2,axis=1),1e-20)
+        return np.sum(two*fx,axis=1)/np.sqrt(denominator)
+    fit=least_squares(residual,start,bounds=(start-span,start+span),loss='soft_l1',f_scale=2.,
+                      max_nfev=500,ftol=1e-10,xtol=1e-10,gtol=1e-10)
+    r,t,f=unpack(fit.x)
+    points=_triangulate(a,b,ka@np.c_[np.eye(3),np.zeros(3)],kb@np.c_[r,t])
+    positive=np.isfinite(points).all(axis=1)&(points[:,2]>1e-8)&((points@r.T+t)[:,2]>1e-8)
+    if not fit.success or positive.mean()<.95:
+        raise ValueError('refinement failed convergence or positive-depth check')
+    return dict(status='UNVERIFIED',extrinsic=np.c_[r,t].tolist(),fundamental=f.tolist(),
+                positive_depth_fraction=float(positive.mean()),nfev=int(fit.nfev),
+                train_sampson_p95_px=float(np.percentile(np.abs(residual(fit.x)),95)),
+                limitations='Fixed assumed calibration and unit baseline; no multiview or visual acceptance.')

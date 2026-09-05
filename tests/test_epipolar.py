@@ -1,6 +1,6 @@
 import unittest
 import numpy as np
-from headfoundry.epipolar import fundamental, sampson_distance, calibrated_pose
+from headfoundry.epipolar import fundamental, sampson_distance, calibrated_pose, refine_pose
 
 
 class EpipolarTests(unittest.TestCase):
@@ -32,3 +32,20 @@ class EpipolarTests(unittest.TestCase):
         np.testing.assert_allclose(e[:,3],t/np.linalg.norm(t),atol=1e-8)
         self.assertEqual(result['positive_depth_fraction'],1.)
         self.assertEqual(result['status'],'UNVERIFIED')
+        # Training observations alone determine the refinement; the rest are unseen.
+        refined=refine_pose(a[:60],b[:60],k,k)
+        refined_e=np.array(refined['extrinsic'])
+        np.testing.assert_allclose(refined_e[:,:3],r,atol=1e-8)
+        np.testing.assert_allclose(refined_e[:,3],t/np.linalg.norm(t),atol=1e-8)
+        self.assertLess(sampson_distance(refined['fundamental'],a[60:],b[60:]).max(),1e-8)
+        self.assertEqual(refined['status'],'UNVERIFIED')
+        noisy=b[:60]+rng.normal(0,.7,(60,2))
+        linear=calibrated_pose(a[:60],noisy,k,k)
+        linear_e=np.array(linear['extrinsic']);tx,ty,tz=linear_e[:,3]
+        skew=np.array([[0,-tz,ty],[tz,0,-tx],[-ty,tx,0]])
+        linear_f=np.linalg.inv(k).T@skew@linear_e[:,:3]@np.linalg.inv(k)
+        fitted=refine_pose(a[:60],noisy,k,k)
+        before=sampson_distance(linear_f,a[:60],noisy)
+        after=sampson_distance(fitted['fundamental'],a[:60],noisy)
+        self.assertLess(np.sum(np.sqrt(1+(after/2)**2)),np.sum(np.sqrt(1+(before/2)**2)))
+        self.assertGreaterEqual(fitted['positive_depth_fraction'],.95)

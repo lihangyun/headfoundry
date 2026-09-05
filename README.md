@@ -16,6 +16,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - Dense camera diagnostic: 60 held-out points yield 10.44 px p95, still `REJECT`; see experiment 0009. No full-head or side-profile quality acceptance.
 - Convergence audit: extending to 60 iterations yields 9.73 px, still `REJECT`; experiment 0010 includes a shape-independent epipolar check and inspected photo overlays.
 - Shape-independent calibrated initialization: implemented and synthetically tested; real-photo candidate rejected (experiment 0011). Positive depth does not imply correct calibration.
+- Nonlinear pair-pose refinement: implemented; fixed-focal pair errors improve, but the prior-free three-view held-out reprojection remains `REJECT` at 11.80 px (experiment 0012).
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
