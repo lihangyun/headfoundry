@@ -8,6 +8,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 - Product/technical research: complete enough to select an architecture.
 - Camera projection baseline: implemented and covered by deterministic synthetic tests.
+- Weight-independent perspective landmark solver: implemented; first real-photo held-out camera check is `REJECT` (39.35 px p95). See experiment 0005. Install `.[geometry]` for this optional solver.
 - Commercial VGGT adapter: local output contract and asset lock implemented; real gated checkpoint execution is `UNVERIFIED`.
 - Input rights and capture validation: implemented; missing consent, provenance, license, file hash, view coverage, resolution, or clarity evidence is `REJECT`.
 - Side-profile contour fitting: deterministic jaw/chin/neck slice is `TECHNICAL_CHECK_PASSED`; real-photo improvement is `UNVERIFIED`.

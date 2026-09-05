@@ -9,6 +9,9 @@ description = "Clean-room quality gates and reconstruction foundations for multi
 requires-python = ">=3.11"
 dependencies = ["numpy>=2.0,<3"]
 
+[project.optional-dependencies]
+geometry = ["scipy>=1.14,<2"]
+
 [project.scripts]
 headfoundry-camera-check = "headfoundry.camera:main"
 headfoundry-quality = "headfoundry.quality:main"
