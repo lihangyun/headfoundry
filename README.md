@@ -18,6 +18,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - Shape-independent calibrated initialization: implemented and synthetically tested; real-photo candidate rejected (experiment 0011). Positive depth does not imply correct calibration.
 - Nonlinear pair-pose refinement: implemented; fixed-focal pair errors improve, but the prior-free three-view held-out reprojection remains `REJECT` at 11.80 px (experiment 0012).
 - Correspondence audit: no independent three-view texture tracks found in the bounded masked-SIFT check; manual physical-landmark verification is next (experiment 0013). This does not establish that the photos are unusable.
+- Independent visual reading: six anatomical anchors checked against fixed cameras; p95 8.23 px with material reading uncertainty, still `UNVERIFIED` (experiment 0014).
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
