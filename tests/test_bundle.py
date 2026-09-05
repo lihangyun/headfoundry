@@ -20,6 +20,13 @@ def fixture():
 
 
 class BundleTests(unittest.TestCase):
+    def test_prior_source_cannot_leak_into_validation(self):
+        data = fixture()
+        data['view_names'] = ['front', 'left', 'right', 'profile']
+        data['prior_source_views'] = ['front']
+        with self.assertRaises(ValueError):
+            fit(data)
+
     def test_heldout_projection_recovery(self):
         result = fit(fixture())
         self.assertLess(result['validation_p95_px'], .2)

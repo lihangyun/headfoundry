@@ -36,6 +36,12 @@ def fit(document):
         raise ValueError('invalid masks')
     if np.any(train & validation) or not validation.any():
         raise ValueError('independent validation observations required')
+    view_names = document.get('view_names', [])
+    for name in document.get('prior_source_views', []):
+        if name not in view_names:
+            raise ValueError('unknown shape-prior source view')
+        if validation[view_names.index(name)].any():
+            raise ValueError('shape-prior source view cannot supply held-out observations')
     if np.any(train.sum(axis=1) < 6) or np.any(train.sum(axis=0) < 2):
         raise ValueError('need six training points per view and two per landmark')
     for values in (prior, observations, intrinsics, rotations0, translations0):
