@@ -10,6 +10,17 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-09-05 weight-independent development route
+
+Following the user's direction to self-develop unavailable components, VGGT is
+optional for future experiments rather than a prerequisite for all progress.
+Its existing adapter remains locked to its commercial checkpoint. A separate
+explicit weight-independent initializer may use our own geometric optimization
+and consented anatomical annotations. It must still prove camera conventions,
+physical validity, and held-out reprojection before advancing reconstruction.
+This decision does not authorize substitution of research-only weights or imply
+that the self-developed initializer is already implemented or validated.
+
 Build an independent pipeline with four explicit stages:
 
 1. Validate 5–10 neutral, sharp, well-covered input photographs.
