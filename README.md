@@ -12,6 +12,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - Commercial VGGT adapter: local output contract and asset lock implemented; real gated checkpoint execution is `UNVERIFIED`.
 - Input rights and capture validation: implemented; missing consent, provenance, license, file hash, view coverage, resolution, or clarity evidence is `REJECT`.
 - Side-profile contour fitting: deterministic jaw/chin/neck slice is `TECHNICAL_CHECK_PASSED`; real-photo improvement is `UNVERIFIED`.
+- Real-photo face-patch diagnostics: OBJ export and CPU depth/texture rendering work; these are not full heads and use cameras that still fail validation. Experiments 0007–0008 document visible limitations.
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
