@@ -15,3 +15,9 @@ Access dates: 2026-09-04. Only public documentation, papers, repositories, and b
 | FLAME 2023 Open is the FLAME release intended for broader use; other standard releases are non-commercial. | [FLAME model licenses](https://flame.is.tue.mpg.de/modellicense.html) | First-party license page. Texture assets must be licensed separately. |
 | FaceScape and Multiface public datasets are not suitable as commercial training data. | [FaceScape](https://nju-3dv.github.io/projects/FaceScape/), [Multiface](https://github.com/facebookresearch/multiface) | Primary project/license pages. Evaluation or research use does not imply product rights. |
 | PyTorch3D is BSD licensed; nvdiffrast has restrictive commercial terms. | [PyTorch3D](https://github.com/facebookresearch/pytorch3d), [nvdiffrast license](https://github.com/NVlabs/nvdiffrast/blob/main/LICENSE.txt) | Primary repositories/licenses. |
+# XFeat local initialization evidence (2026-09-06)
+
+- Official source and bundled checkpoint: https://github.com/verlab/accelerated_features/tree/e92685f57f8318b18725c5c8c0bd28c7fe188d9a
+- Repository license: https://github.com/verlab/accelerated_features/blob/e92685f57f8318b18725c5c8c0bd28c7fe188d9a/LICENSE (Apache-2.0; preserve attribution/license; no training-dataset grant inferred).
+- Exact source/checkpoint digests: `examples/xfeat-asset-lock.json`.
+- Local result: experiment 0015. Successful extraction does not establish valid matches, cameras, or reconstruction quality.
