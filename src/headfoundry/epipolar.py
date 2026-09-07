@@ -130,3 +130,81 @@ def refine_pose(first, second, intrinsic_first, intrinsic_second):
                 positive_depth_fraction=float(positive.mean()),nfev=int(fit.nfev),
                 train_sampson_p95_px=float(np.percentile(np.abs(residual(fit.x)),95)),
                 limitations='Fixed assumed calibration and unit baseline; no multiview or visual acceptance.')
+
+
+def robust_refine_pose(first, second, intrinsic_first, intrinsic_second, *,
+                       threshold_px=2., min_support_fraction=.6, min_parallax_deg=1.,
+                       iterations=512, seed=0):
+    """Training-only deterministic consensus followed by inlier pose refinement.
+
+    Callers must split off validation before calling. Neither the consensus
+    count nor the selected-point error is a camera acceptance measurement.
+    The fixed sampling budget is a bounded diagnostic, not guaranteed recovery.
+    """
+    a,b=np.asarray(first,float),np.asarray(second,float)
+    ka,kb=np.asarray(intrinsic_first,float),np.asarray(intrinsic_second,float)
+    if (a.ndim!=2 or a.shape[1]!=2 or b.shape!=a.shape or len(a)<12
+            or not all(np.isfinite(x).all() for x in (a,b))):
+        raise ValueError('at least twelve finite paired training points required')
+    if (not np.isfinite(threshold_px) or threshold_px<=0
+            or not np.isfinite(min_support_fraction) or not 0<min_support_fraction<=1
+            or not np.isfinite(min_parallax_deg) or not 0<min_parallax_deg<180
+            or not isinstance(iterations,int) or isinstance(iterations,bool) or iterations<1
+            or not isinstance(seed,int) or isinstance(seed,bool) or seed<0):
+        raise ValueError('invalid consensus settings')
+    for k in (ka,kb):
+        if (k.shape!=(3,3) or not np.isfinite(k).all() or not np.allclose(k[2],[0,0,1])
+                or not np.allclose(k[np.tril_indices(3,-1)],0)
+                or min(k[0,0],k[1,1])<=0 or abs(np.linalg.det(k))<1e-12):
+            raise ValueError('invalid intrinsics')
+    if any(len(np.unique(x,axis=0))!=len(x) for x in (a,b)):
+        raise ValueError('duplicate training endpoints do not provide independent support')
+    if any(np.linalg.matrix_rank(x-x.mean(axis=0))<2 for x in (a,b)):
+        raise ValueError('degenerate correspondence geometry')
+    ia,ib=np.linalg.inv(ka),np.linalg.inv(kb)
+    required=max(12,int(np.ceil(min_support_fraction*len(a))))
+    rng=np.random.default_rng(seed); best=None; best_score=(-1,-np.inf)
+    for _ in range(iterations):
+        selected=rng.choice(len(a),8,replace=False)
+        try:
+            e=np.asarray(calibrated_pose(a[selected],b[selected],ka,kb)['extrinsic'])
+            tx,ty,tz=e[:,3]
+            skew=np.array([[0,-tz,ty],[tz,0,-tx],[-ty,tx,0]])
+            f=ib.T@skew@e[:,:3]@ia
+            distance=sampson_distance(f,a,b)
+        except (ValueError,np.linalg.LinAlgError):
+            continue
+        mask=distance<=threshold_px
+        score=(int(mask.sum()),-float(np.minimum(distance,threshold_px).sum()))
+        if score>best_score:
+            best_score=score; best=mask
+    if best is None or best.sum()<required:
+        raise ValueError(f'insufficient training consensus support: {max(best_score[0],0)}/{len(a)}; require {required}')
+    result=refine_pose(a[best],b[best],ka,kb)
+    distance=sampson_distance(result['fundamental'],a,b)
+    support=int(np.count_nonzero(distance<=threshold_px))
+    if support<required:
+        raise ValueError(f'refined pose lost training consensus support: {support}/{len(a)}; require {required}')
+    e=np.asarray(result['extrinsic'])
+    points=_triangulate(a[best],b[best],ka@np.c_[np.eye(3),np.zeros(3)],kb@e)
+    positive=np.isfinite(points).all(axis=1)&(points[:,2]>1e-8)&((points@e[:,:3].T+e[:,3])[:,2]>1e-8)
+    first_rays=points[positive];second_rays=first_rays+e[:,:3].T@e[:,3]
+    first_rays=first_rays/np.linalg.norm(first_rays,axis=1,keepdims=True)
+    second_rays=second_rays/np.linalg.norm(second_rays,axis=1,keepdims=True)
+    angles=np.degrees(np.arccos(np.clip(np.sum(first_rays*second_rays,axis=1),-1,1)))
+    parallax=np.percentile(angles,[5,50,95])
+    # Depth uncertainty amplifies roughly as 1/sin(parallax); one degree already
+    # permits about 57x angular-noise amplification. This is a guard, not accuracy proof.
+    if parallax[1]<min_parallax_deg:
+        raise ValueError(f'insufficient triangulation parallax: median {parallax[1]:.6f} deg; require {min_parallax_deg}')
+    result.update(candidate_count=len(a),fit_inlier_count=int(best.sum()),
+                  fit_inlier_indices=np.flatnonzero(best).tolist(),
+                  support_count=support,support_fraction=support/len(a),
+                  candidate_sampson_p95_px=float(np.percentile(distance,95)),
+                  threshold_px=float(threshold_px),min_support_fraction=float(min_support_fraction),
+                  parallax_p05_deg=float(parallax[0]),parallax_median_deg=float(parallax[1]),
+                  parallax_p95_deg=float(parallax[2]),parallax_positive_count=int(positive.sum()),
+                  min_parallax_deg=float(min_parallax_deg),
+                  iterations=iterations,seed=seed,
+                  limitations='Training-selected consensus only; assumed calibration, unit baseline, no held-out or visual acceptance.')
+    return result

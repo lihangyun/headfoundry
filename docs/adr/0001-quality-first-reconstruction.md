@@ -4,7 +4,7 @@ Status: accepted for implementation; final product quality remains `UNVERIFIED`.
 
 ## 2026-09-04 implementation amendment
 
-All reconstruction runs must start from a versioned manifest that binds each file to SHA-256 and records provenance, allowed purpose, retention/deletion policy, and biometric consent. Model loading is restricted to the exact `facebook/VGGT-1B-Commercial` identity and its gated `vggt-aup-license`; neither missing records nor unavailable weights may trigger a fallback.
+All reconstruction runs must start from a versioned manifest that binds each file to SHA-256 and records provenance, allowed purpose, retention/deletion policy, and biometric consent. The VGGT adapter is restricted to the exact `facebook/VGGT-1B-Commercial` identity and its gated `vggt-aup-license`; neither missing records nor unavailable weights may trigger a fallback.
 
 Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engineering check; `UNVERIFIED` means evidence has not been collected; `REJECT` means a required gate failed or is missing; `PARTIAL_SUCCESS` means numeric gates pass without complete licensed visual evidence; `ACCEPT` requires all protected gates plus licensed benchmark, held-out visual review, and complete reconstruction evidence.
 
@@ -20,6 +20,26 @@ and consented anatomical annotations. It must still prove camera conventions,
 physical validity, and held-out reprojection before advancing reconstruction.
 This decision does not authorize substitution of research-only weights or imply
 that the self-developed initializer is already implemented or validated.
+
+### 2026-09-07 explicit matcher and camera alternatives
+
+Separately identified free-commercial components may be tested with their own
+source/checkpoint/runtime locks. LighterGlue uses the exact reviewed local
+matcher bundle and Kornia 0.8.1; it does not load a fallback extractor or relax
+the VGGT identity check. Consent remains limited to local validation.
+
+Camera fitting must exclude every observation of the frozen held-out tracks.
+Training consensus statistics cannot replace complete held-out reprojection.
+The optional robust initializer rejects exact duplicate endpoints, invalid
+intrinsic structure and a median triangulation angle below the default 1 degree.
+These are necessary engineering safeguards, not calibrated accuracy guarantees
+or evidence explaining this subject's failure. Experiment 0017's joint fit is
+still `REJECT` at 7.5456 px held-out p95; no geometry or texture gate is unlocked.
+
+The next candidate is specifically the officially Apache-2.0 `DA3-BASE` model,
+with a separate asset review and camera-only evaluation. Its local execution
+and result are not established by this decision; Large/Giant checkpoints are
+not interchangeable fallbacks.
 
 Build an independent pipeline with four explicit stages:
 

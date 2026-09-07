@@ -8,6 +8,37 @@ import sys
 LOCK_PATH=Path(__file__).resolve().parents[1]/'examples/xfeat-asset-lock.json'
 
 
+def load_lighterglue(upstream):
+    """Explicit optional matcher: strict local state loading, never a Hub fallback."""
+    import importlib.metadata as metadata
+    lock=json.loads((LOCK_PATH.parent/'lighterglue-asset-lock.json').read_text())
+    for package,version in lock['runtime'].items():
+        if metadata.version(package)!=version:raise ValueError('unreviewed matcher runtime: '+package)
+    checkpoint=upstream/lock['checkpoint']
+    if hashlib.sha256(checkpoint.read_bytes()).hexdigest()!=lock['sha256']:
+        raise ValueError('matcher checkpoint hash mismatch')
+    implementation=metadata.distribution('kornia').locate_file('kornia/feature/lightglue.py')
+    if hashlib.sha256(implementation.read_bytes().replace(b'\r\n',b'\n')).hexdigest()!=lock['implementation_sha256_lf']:
+        raise ValueError('matcher implementation hash mismatch')
+    import torch
+    from kornia.feature.lightglue import LightGlue
+    model=LightGlue(features=None,input_dim=64,descriptor_dim=96,n_layers=6,num_heads=1,
+                    add_scale_ori=False,add_laf=False,flash=False,mp=False,
+                    depth_confidence=-1,width_confidence=.95,filter_threshold=.1,weights=None)
+    state=torch.load(checkpoint,map_location='cpu',weights_only=True)
+    # This pinned bundle contains a second extractor, which we do not execute.
+    # Its matcher keys already use the reviewed Kornia transformer namespace.
+    if {key.split('.')[0] for key in state}!={'extractor','matcher'}:
+        raise ValueError('unexpected matcher bundle namespaces')
+    state={key.removeprefix('matcher.'):value for key,value in state.items() if key.startswith('matcher.')}
+    # Kornia 0.8.1 registers this deterministic, non-learned buffer; the older
+    # bundle predates it. All learned parameters must still load strictly.
+    if 'confidence_thresholds' in state:raise ValueError('unexpected checkpoint confidence buffer')
+    state['confidence_thresholds']=model.state_dict()['confidence_thresholds']
+    model.load_state_dict(state,strict=True)
+    return model.eval(),lock
+
+
 def verify(manifest_path, upstream):
     lock=json.loads(LOCK_PATH.read_text())
     for relative,digest in lock['sha256'].items():

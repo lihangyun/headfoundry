@@ -21,6 +21,9 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - Independent visual reading: six anatomical anchors checked against fixed cameras; p95 8.23 px with material reading uncertainty, still `UNVERIFIED` (experiment 0014).
 - Optional XFeat local extraction: pinned source/weight/consent checks implemented; sparse three-view track candidate remains `REJECT` (experiment 0015). No VGGT checkpoint substitution.
 - XFeat fine matching: one strict three-view cycle; symmetric endpoint refinement gives zero. Insufficient support for camera acceptance (experiment 0016).
+- LighterGlue local matcher: locked checkpoint and Kornia 0.8.1 loader implemented. A frozen 40-train/11-held-track joint camera fit yields 7.5456 px held-out p95, still `REJECT` (experiment 0017).
+- Robust camera initialization: explicit training-only consensus, duplicate/intrinsic/low-parallax guards and synthetic outlier tests implemented; these do not diagnose the real-photo failure. Current suite: 40 tests passed.
+- Next camera candidate: the specifically named Apache-2.0 `depth-anything/DA3-BASE`; execution and camera quality remain `UNVERIFIED`, with no Large/Giant substitution.
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
@@ -57,6 +60,7 @@ Only `facebook/VGGT-1B-Commercial` with license id `vggt-aup-license` is accepte
 - `docs/experiment-0001-camera-baseline.md`: first falsifiable experiment record.
 - `docs/experiment-0002-commercial-vggt-adapter.md`: commercial checkpoint adapter and deterministic camera-gate record.
 - `docs/experiment-0003-profile-contour.md`: bounded side-profile contour experiment and next real-image gate.
+- `docs/experiment-0017-lighterglue-camera.md`: locked local matching, whole-track validation, robust initialization guards and rejected joint camera fit.
 
 ## Legal boundary
 

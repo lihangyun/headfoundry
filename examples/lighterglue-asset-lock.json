@@ -1,0 +1,13 @@
+{
+  "asset_id": "XFeat-LighterGlue",
+  "source": "https://github.com/verlab/accelerated_features",
+  "revision": "e92685f57f8318b18725c5c8c0bd28c7fe188d9a",
+  "license_id": "Apache-2.0",
+  "license_source": "https://github.com/verlab/accelerated_features/blob/e92685f57f8318b18725c5c8c0bd28c7fe188d9a/LICENSE",
+  "checkpoint": "weights/xfeat-lighterglue.pt",
+  "sha256": "766102df37f11189efe5b0811d1f47c72b22629b79bfabfcfff9d2a2f84654b8",
+  "runtime": {"torch": "2.8.0+cpu", "kornia": "0.8.1", "kornia_rs": "0.1.14"},
+  "implementation_license": "https://github.com/kornia/kornia/blob/v0.8.1/LICENSE",
+  "implementation_sha256_lf": "bb003885e5c4918d5762c6c98f9c423d61dcefe62790b8900d4fbb9bc738a7cb",
+  "scope": "Local matcher checkpoint only; no SuperPoint or other fallback weights, no training data grant inferred"
+}

@@ -11,6 +11,18 @@ extract=importlib.util.module_from_spec(spec);spec.loader.exec_module(extract)
 
 
 class XFeatLockTests(unittest.TestCase):
+    def test_matcher_rejects_runtime_and_weight_drift_before_inference(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder)
+            (root/'lighterglue-asset-lock.json').write_text(json.dumps(dict(
+                runtime={'torch':'2.8.0+cpu'},checkpoint='weights.pt',sha256=hashlib.sha256(b'expected').hexdigest())))
+            (root/'weights.pt').write_bytes(b'different')
+            with patch.object(extract,'LOCK_PATH',root/'xfeat-asset-lock.json'):
+                with patch('importlib.metadata.version',return_value='unreviewed'):
+                    with self.assertRaisesRegex(ValueError,'runtime'):extract.load_lighterglue(root)
+                with patch('importlib.metadata.version',return_value='2.8.0+cpu'):
+                    with self.assertRaisesRegex(ValueError,'checkpoint hash'):extract.load_lighterglue(root)
+
     def test_rights_and_exact_weight_bytes_before_inference(self):
         with tempfile.TemporaryDirectory() as folder:
             root=Path(folder)

@@ -21,3 +21,11 @@ Access dates: 2026-09-04. Only public documentation, papers, repositories, and b
 - Repository license: https://github.com/verlab/accelerated_features/blob/e92685f57f8318b18725c5c8c0bd28c7fe188d9a/LICENSE (Apache-2.0; preserve attribution/license; no training-dataset grant inferred).
 - Exact source/checkpoint digests: `examples/xfeat-asset-lock.json`.
 - Local result: experiment 0015. Successful extraction does not establish valid matches, cameras, or reconstruction quality.
+
+## LighterGlue and next-camera evidence (2026-09-07)
+
+| Claim | Source | Strength / caveat |
+|---|---|---|
+| The pinned accelerated_features bundle and Kornia 0.8.1 publish Apache-2.0 licenses. | [Pinned upstream license](https://github.com/verlab/accelerated_features/blob/e92685f57f8318b18725c5c8c0bd28c7fe188d9a/LICENSE), [Kornia 0.8.1 license](https://github.com/kornia/kornia/blob/v0.8.1/LICENSE) | Preserve license/attribution; no training-dataset grant or unrelated checkpoint rights inferred. Exact local matcher/runtime/implementation digests: `examples/lighterglue-asset-lock.json`. |
+| The local LighterGlue candidate supplies 69 cycles, but the frozen 40-train/11-held-track joint fit remains rejected at 7.5456 px p95. | `experiment-0017-lighterglue-camera.md`; hashed private numerical reports | Local engineering evidence only. No photos, coordinates or identifiable meshes are published; no visual parity, performance or full-head claim. |
+| The specifically named DA3-BASE model card lists Apache-2.0 and camera pose estimation. | [Official DA3-BASE model card](https://huggingface.co/depth-anything/DA3-BASE) | Next candidate only; not a local execution result or license grant for Large/Giant variants. Asset/runtime review and camera gates still required. |

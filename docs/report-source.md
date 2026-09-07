@@ -22,7 +22,7 @@ The public KeenTools contract includes automatic intrinsics/extrinsics, multi-vi
 
 ### Camera and scene initialization
 
-VGGT is the best current starting point because it jointly predicts camera parameters, depth, point maps, and tracks from multiple images. Only the specifically designated commercial checkpoint is acceptable. We will refine its output with facial landmarks, silhouette constraints, and robust bundle adjustment because identity reconstruction is sensitive to small focal-length and pose errors.
+VGGT was the initial learned-camera candidate because it jointly predicts camera parameters, depth, point maps, and tracks from multiple images. Its adapter still accepts only the specifically designated commercial checkpoint. The amended development route also permits separately identified free-commercial components and our own geometric initialization; none bypasses the camera gate. Refinement uses facial landmarks, silhouette constraints, and robust bundle adjustment because identity reconstruction is sensitive to small focal-length and pose errors.
 
 The local RTX 3070 8 GB is suitable for unit tests and reduced experiments, not assumed sufficient for the final 5–10 view production workload. GPU worker sizing is deferred to measured profiling; 24 GB or more is a planning estimate.
 
@@ -74,7 +74,7 @@ No milestone is described as KeenTools-quality until clay, texture, protected vi
 
 ## 7. Immediate implementation decision
 
-The first committed executable is a normalized-DLT camera baseline plus a fail-closed quality manifest evaluator. It intentionally does not create a pretty demo. It proves coordinate conventions and prevents future partial metrics from being called a successful reconstruction. The next appearance-changing experiment is commercial VGGT initialization on licensed or synthetic multi-view fixtures, with camera recovery as its only primary variable.
+The first committed executable is a normalized-DLT camera baseline plus a fail-closed quality manifest evaluator. It proves coordinate conventions and prevents partial metrics from being called a successful reconstruction. Camera recovery remains the primary experimental variable; the current evidence and next candidate are recorded below.
 
 ## 8. Milestone 1 camera slice status
 
@@ -90,11 +90,30 @@ A deterministic contour fixture now exercises the first bounded geometry operati
 
 Experiment 0003 reduced normalized mean error from 0.04688 to 0.01301 (72.25%) with zero protected drift and is `TECHNICAL_CHECK_PASSED`. Because the target points are a synthetic fixture with known correspondence, real-photo profile improvement remains `UNVERIFIED`. The next gate is to derive the same semantic contour from a consented, calibrated side view after the camera gate passes.
 
-## Sources
+## 10. Local matcher and joint-camera diagnostic (2026-09-07)
 
-Current local camera evidence: experiment 0009's fixed-iteration dense diagnostic
-has 10.44 px held-out p95 against the 3 px target and remains REJECT. This uses
-only consented local photos and detector predictions, not scan ground truth.
-It does not establish a quality improvement over MV-HRN or KeenTools.
+Experiment 0017 adds a pinned local LighterGlue checkpoint and reviewed
+Kornia 0.8.1 implementation under their published Apache-2.0 licenses; the
+source, runtime and weight digests are in `examples/lighterglue-asset-lock.json`.
+69 closed cycles become 51 tracks after a fixed 8 px separation rule. The split
+is frozen before fitting: 40 training tracks and 11 tracks held out in all views.
+
+Plain pair fits have held-out Sampson p95 values of 2.4613 / 1.9886 / 1.9698 px,
+yet their composed three-view reprojection p95 is 258.2800 px. The explicit
+robust candidate finds only 12 / 14 / 16 supported training pairs out of 40,
+below the required 24. One fixed-budget, prior-free joint camera/point fit then
+gives 7.5456 px p95 over all 33 held-out third-view predictions, with 100% positive
+depths. This is still `REJECT` against the unchanged 3 px target, not visual or
+full-head acceptance. The track population differs from earlier detector tests.
+
+New synthetic tests cover outliers, low-parallax pure rotation, duplicate
+endpoints and invalid intrinsic matrices; they demonstrate bounded safeguards,
+not the cause of the photograph mismatch. The full suite passes 40 tests.
+The next proposed initializer is specifically `depth-anything/DA3-BASE`, whose
+official model card marks Apache-2.0. It has no execution or camera result in
+this experiment; Large/Giant variants are not substitutes. All identifiable
+evidence remains local, and formal geometry/texture remain behind the camera gate.
+
+## Sources
 
 See `claim-source-ledger.md` for the auditable mapping. Primary sources include KeenTools Cloud documentation and EULA; VGGT and its CVPR paper; VGGTFace and its AAAI paper; UVFaceFusion; Pixel3DMM; FLAME license documentation; FaceScape; Multiface; PyTorch3D; and the nvdiffrast license.
