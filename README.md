@@ -20,6 +20,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - Correspondence audit: no independent three-view texture tracks found in the bounded masked-SIFT check; manual physical-landmark verification is next (experiment 0013). This does not establish that the photos are unusable.
 - Independent visual reading: six anatomical anchors checked against fixed cameras; p95 8.23 px with material reading uncertainty, still `UNVERIFIED` (experiment 0014).
 - Optional XFeat local extraction: pinned source/weight/consent checks implemented; sparse three-view track candidate remains `REJECT` (experiment 0015). No VGGT checkpoint substitution.
+- XFeat fine matching: one strict three-view cycle; symmetric endpoint refinement gives zero. Insufficient support for camera acceptance (experiment 0016).
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
