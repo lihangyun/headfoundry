@@ -80,14 +80,14 @@ def main():
     sheet.save(args.output/'orbit.png')
     sequence=frames+frames[-2:0:-1]
     sequence[0].save(args.output/'orbit.gif',save_all=True,append_images=sequence[1:],duration=450,loop=0)
-    record={'status':'UNVERIFIED','operation':'unaltered common-frame surface union; NOT fusion',
+    record={'status':'UNVERIFIED','operation':'common-frame display; renderer performs no fusion or alignment',
             'largest_component_only':args.largest_component,
             'original_vertex_counts':original_counts,
             'retained_vertex_counts':[len(v) for v,f in meshes],
             'sources':[{'name':p.name,'sha256':sha256_file(p)} for p in args.meshes],
             'vertices':len(vertices),'triangles':len(faces),'angles_degrees':angles,
             'display_center':center.tolist(),'display_radius':float(radius),
-            'limitations':'Original DA3 cameras fail validation. Overlapping sheets retained. Unseen back is absent. No geometry improvement claimed.'}
+            'limitations':'Input geometry is not validated by rendering. Except optional component removal, all input surfaces are retained. No geometry improvement claimed.'}
     (args.output/'report.json').write_text(json.dumps(record,indent=2),encoding='utf-8')
     print(json.dumps(record))
 

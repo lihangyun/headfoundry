@@ -73,6 +73,10 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0023](docs/experiment-0023-projective-fusion.md) implements and tests
+shared depth fusion. The real-subject candidate is rejected for visible cracks
+and noise; it does not establish side-profile improvement.
+
 [Experiment 0022](docs/experiment-0022-common-frame-orbit.md) adds a common-frame
 orbit and OBJ union. Rotation exposes substantial overlapping-sheet errors;
 this is an inspection artifact, not a fused/accepted head.
