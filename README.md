@@ -71,3 +71,9 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 ## Legal boundary
 
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
+# Latest experimental geometry (2026-09-08)
+
+User-authorized, unaccepted depth-surface exports now exist locally. See
+[experiment 0021](docs/experiment-0021-observed-depth-surfaces.md) for the actual
+five-view clay comparison, limitations and counts. These are separate open
+surfaces, not a complete head; camera acceptance and visual quality remain unmet.

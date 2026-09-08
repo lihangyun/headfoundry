@@ -10,6 +10,16 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-09-08 user-authorized experimental geometry
+
+The user explicitly authorized an **unaccepted experimental head** before the
+camera gate passes. This supersedes the development sequencing restriction,
+not any acceptance threshold. Experimental mesh exports and original-photo
+comparisons may now proceed locally. They must state `UNVERIFIED`, preserve
+camera failures, and distinguish observed surfaces from inferred/unseen regions.
+Partial depth surfaces must not be described as a complete reconstructed head.
+No texture or generated imagery may conceal geometry failures in comparisons.
+
 ### 2026-09-05 weight-independent development route
 
 Following the user's direction to self-develop unavailable components, VGGT is
