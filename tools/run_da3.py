@@ -48,6 +48,7 @@ def verify(manifest, upstream, assets):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     for name in ('manifest','upstream','assets','output'):parser.add_argument(name,type=Path)
+    parser.add_argument('--ray-pose',action='store_true',help='explicit alternate camera decoder, same locked weights')
     args=parser.parse_args()
     if args.output.exists():raise FileExistsError('choose a new output directory')
     document,lock=verify(args.manifest,args.upstream,args.assets)
@@ -80,7 +81,7 @@ def main():
     tensor=(tensor-torch.tensor([.485,.456,.406])[None,:,None,None])/torch.tensor([.229,.224,.225])[None,:,None,None]
     print('verified local DA3-BASE; beginning CPU FP32 inference',flush=True);start=time.perf_counter()
     with torch.inference_mode():
-        result=model(tensor[None],infer_gs=False,use_ray_pose=False,ref_view_strategy='first')
+        result=model(tensor[None],infer_gs=False,use_ray_pose=args.ray_pose,ref_view_strategy='first')
     arrays={key:result[key][0].cpu().numpy() for key in ('depth','depth_conf','extrinsics','intrinsics')}
     if not all(np.isfinite(value).all() for value in arrays.values()):raise ValueError('non-finite model output')
     elapsed=time.perf_counter()-start
@@ -89,7 +90,7 @@ def main():
     report=dict(status='UNVERIFIED',asset=lock,input_ids=[r['id'] for r in document['inputs']],
                 input_sha256=[r['sha256'] for r in document['inputs']],original_sizes_hw=sizes,
                 processed_size_hw=[504,504],camera_convention='opencv_camera_from_world_x_right_y_down_z_forward',
-                runtime_seconds=elapsed,device='cpu',precision='float32',use_ray_pose=False,reference_view='first',
+                runtime_seconds=elapsed,device='cpu',precision='float32',use_ray_pose=args.ray_pose,reference_view='first',
                 extrinsics=arrays['extrinsics'].tolist(),intrinsics_processed=arrays['intrinsics'].tolist(),
                 output_sha256=sha256_file(args.output/'predictions.npz'),
                 limitations='Model prediction only; no calibrated scan, held-out camera test, head or visual acceptance.')
