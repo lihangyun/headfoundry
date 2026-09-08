@@ -24,6 +24,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - LighterGlue local matcher: locked checkpoint and Kornia 0.8.1 loader implemented. A frozen 40-train/11-held-track joint camera fit yields 7.5456 px held-out p95, still `REJECT` (experiment 0017).
 - Robust camera initialization: explicit training-only consensus, duplicate/intrinsic/low-parallax guards and synthetic outlier tests implemented; these do not diagnose the real-photo failure.
 - DA3-BASE: pinned local CPU inference and depth/camera conversion implemented; all five photos executed. Same-track joint refinement yields 7.5485 px held-out p95, still `REJECT`; no measured final-alignment improvement over the previous initializer (experiment 0018). Current full suite: 43 tests.
+- Correspondence localization: all eleven held tracks visually inspected; a bounded bidirectional translation tracker retains no held-out tracks and is not adopted (experiment 0019). No validation points were removed to obtain a pass.
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
