@@ -4,6 +4,17 @@ from headfoundry.fusion import fuse_grid,extract_surface
 
 
 class FusionTest(unittest.TestCase):
+    def test_free_space_is_known_but_hidden_space_is_not(self):
+        depth=np.ones((1,8,8)); e=np.eye(4)[None,:3]
+        k=np.array([[[10,0,4],[0,10,4],[0,0,1]]])
+        args=(depth,e,k,np.ones_like(depth,bool),[-.01,-.01,.5],[.01,.01,1.5],5,.1)
+        _,field,count=fuse_grid(*args,free_space=True)
+        self.assertTrue((field[:,:,0]==1).all())
+        self.assertTrue((count[:,:,0]==1).all())
+        self.assertTrue((count[:,:,-1]==0).all())
+        _,_,old_count=fuse_grid(*args)
+        self.assertTrue((old_count[:,:,0]==0).all())
+
     def test_closed_sphere_shared_edges(self):
         axis=np.linspace(-1,1,14)
         xyz=np.stack(np.meshgrid(axis,axis,axis,indexing='ij'),-1)

@@ -3,7 +3,7 @@ import numpy as np
 from .da3 import depth_to_world
 
 
-def fuse_grid(depth, extrinsics, intrinsics, masks, lower, upper, resolution=80, truncation=.02):
+def fuse_grid(depth, extrinsics, intrinsics, masks, lower, upper, resolution=80, truncation=.02, *, free_space=False):
     depth=np.asarray(depth,float); masks=np.asarray(masks)
     extrinsics=np.asarray(extrinsics,float); intrinsics=np.asarray(intrinsics,float)
     depth_to_world(depth,extrinsics,intrinsics)  # shared camera/depth validation
@@ -11,7 +11,8 @@ def fuse_grid(depth, extrinsics, intrinsics, masks, lower, upper, resolution=80,
     if (masks.shape!=depth.shape or masks.dtype!=bool or lower.shape!=(3,)
             or upper.shape!=(3,) or not np.isfinite([lower,upper]).all()
             or np.any(upper<=lower) or not isinstance(resolution,int)
-            or not 3<=resolution<=256 or not np.isfinite(truncation) or truncation<=0):
+            or not 3<=resolution<=256 or not np.isfinite(truncation) or truncation<=0
+            or not isinstance(free_space,bool)):
         raise ValueError('invalid grid, masks or truncation')
     axes=[np.linspace(a,b,resolution) for a,b in zip(lower,upper)]
     xyz=np.stack(np.meshgrid(*axes,indexing='ij'),-1)
@@ -24,9 +25,10 @@ def fuse_grid(depth, extrinsics, intrinsics, masks, lower, upper, resolution=80,
         indices=np.flatnonzero(valid); x,y=uv[indices].T
         indices=indices[m[y,x]]; x,y=uv[indices].T
         signed=d[y,x]-cam[indices,2]
-        # Symmetric narrow bands avoid claiming anything about unseen interiors.
-        keep=np.abs(signed)<=truncation
-        total[indices[keep]]+=signed[keep]/truncation; count[indices[keep]]+=1
+        # Neither mode observes farther than one band behind a depth hit.
+        # Optional free-space evidence extends toward the camera, not behind it.
+        keep=(signed>=-truncation) if free_space else (np.abs(signed)<=truncation)
+        total[indices[keep]]+=np.minimum(signed[keep]/truncation,1); count[indices[keep]]+=1
     values=np.divide(total,count,out=np.zeros_like(total),where=count>0)
     return xyz,values.reshape(xyz.shape[:3]),count.reshape(xyz.shape[:3])
 
