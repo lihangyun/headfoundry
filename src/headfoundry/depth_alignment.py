@@ -2,7 +2,7 @@
 import numpy as np
 
 
-def refine_depth_cameras(camera_points, extrinsics):
+def refine_depth_cameras(camera_points, extrinsics, intrinsics=None):
     """Keep first camera/depth fixed; fit other poses and one depth scale per view.
 
     Rotational increments: +/-0.1 rad per component; translations: +/-0.1 in
@@ -21,6 +21,13 @@ def refine_depth_cameras(camera_points, extrinsics):
     spread=np.linalg.svd(q-q.mean(1,keepdims=True),compute_uv=False)
     if np.any(spread[:,1]<=1e-6*np.maximum(spread[:,0],1e-12)):
         raise ValueError('noncollinear training points required')
+    k=None if intrinsics is None else np.asarray(intrinsics,float)
+    if k is not None:
+        if (k.shape!=(len(q),3,3) or not np.isfinite(k).all()
+                or not np.allclose(k[:,2],[0,0,1]) or np.any(k[:,[0,1],[0,1]]<=0)):
+            raise ValueError('finite pixel-space intrinsics required')
+        pixels=np.einsum('vij,vnj->vni',k,q)
+        pixels=pixels[:,:,:2]/pixels[:,:,2:]
 
     def unpack(parameters):
         delta=parameters.reshape(-1,7); result=e.copy()
@@ -32,7 +39,13 @@ def refine_depth_cameras(camera_points, extrinsics):
     def residual(parameters):
         cameras,scales=unpack(parameters)
         world=np.einsum('vji,vnj->vni',cameras[:,:,:3],q*scales[:,None,None]-cameras[:,None,:,3])
-        return ((world-world.mean(0))/0.01).ravel()
+        residuals=((world-world.mean(0))/0.01).ravel()
+        if k is not None:
+            cam=np.einsum('vij,nj->vni',cameras[:,:,:3],world.mean(0))+cameras[:,None,:,3]
+            h=np.einsum('vij,vnj->vni',k,cam)
+            reprojection=(h[:,:,:2]/np.maximum(h[:,:,2:],1e-6)-pixels)/3.
+            residuals=np.r_[residuals,reprojection.ravel()]
+        return residuals
 
     initial=np.zeros((len(q)-1)*7)
     fit=least_squares(residual,initial,bounds=(-.1,.1),loss='soft_l1',max_nfev=200,
@@ -40,5 +53,6 @@ def refine_depth_cameras(camera_points, extrinsics):
     cameras,scales=unpack(fit.x)
     return cameras,scales,dict(status='UNVERIFIED',converged=bool(fit.success),
                               evaluations=fit.nfev,bound_active=bool(np.any(np.abs(fit.x)>.0999)),
-                              initial_rms=float(np.sqrt(np.mean(residual(initial)**2))*.01),
-                              final_rms=float(np.sqrt(np.mean(residual(fit.x)**2))*.01))
+                              initial_rms=float(np.sqrt(np.mean(residual(initial)[:q.size]**2))*.01),
+                              final_rms=float(np.sqrt(np.mean(residual(fit.x)[:q.size]**2))*.01),
+                              pixel_term=k is not None)
