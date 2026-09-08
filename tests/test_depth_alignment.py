@@ -4,6 +4,17 @@ from headfoundry.depth_alignment import refine_depth_cameras
 
 
 class DepthAlignmentTest(unittest.TestCase):
+    def test_depth_offset_recovery(self):
+        rng=np.random.default_rng(44)
+        world=rng.uniform([-.3,-.3,.6],[.3,.3,1.4],(60,3))
+        e=np.repeat(np.eye(4)[None,:3],2,0);e[1,:,3]=[.1,0,.03]
+        camera=world+e[1,:,3]
+        observed=camera*((camera[:,2]-.02)/(1.03*camera[:,2]))[:,None]
+        result,scale,report=refine_depth_cameras(np.stack([world,observed]),e,depth_offset=True)
+        np.testing.assert_allclose(result,e,atol=1e-5)
+        np.testing.assert_allclose(scale,[1,1.03],atol=1e-5)
+        np.testing.assert_allclose(report['depth_offsets'],[0,.02],atol=1e-5)
+
     def test_known_scale_translation_and_anchor(self):
         from scipy.spatial.transform import Rotation
         rng=np.random.default_rng(22)
