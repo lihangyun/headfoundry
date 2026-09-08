@@ -116,4 +116,12 @@ evidence remains local, and formal geometry/texture remain behind the camera gat
 
 ## Sources
 
+Experiment 0018 executes a separately locked, Apache-2.0 DA3-BASE checkpoint on
+all five local images. Raw camera/depth predictions fail independent alignment;
+same-split joint refinement gives 7.5485 px held-out p95 versus the earlier 7.5456.
+This does not establish improved side-profile reconstruction. The model is now
+available as a runnable local candidate, but formal head/texture quality remains
+unverified. No Large/Giant or gated VGGT fallback is used. See experiment 0018
+for exact output conventions, implementation limits and the next evidence check.
+
 See `claim-source-ledger.md` for the auditable mapping. Primary sources include KeenTools Cloud documentation and EULA; VGGT and its CVPR paper; VGGTFace and its AAAI paper; UVFaceFusion; Pixel3DMM; FLAME license documentation; FaceScape; Multiface; PyTorch3D; and the nvdiffrast license.

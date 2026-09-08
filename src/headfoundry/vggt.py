@@ -101,7 +101,8 @@ def evaluate_camera_initialization(
     for index, ((height, width), intrinsic) in enumerate(zip(image_sizes, result.intrinsics, strict=True)):
         fx, fy, cx, cy = intrinsic[0, 0], intrinsic[1, 1], intrinsic[0, 2], intrinsic[1, 2]
         scale = max(height, width)
-        if not np.allclose(intrinsic[2], [0.0, 0.0, 1.0], atol=1e-6) or abs(intrinsic[0, 1]) > 1e-6:
+        if (not np.allclose(intrinsic[2], [0.0, 0.0, 1.0], atol=1e-6)
+                or max(abs(intrinsic[0, 1]), abs(intrinsic[1, 0])) > 1e-6):
             intrinsic_errors.append(f"view {index}: non-canonical K")
         if not (0.25 * scale <= fx <= 4.0 * scale and 0.25 * scale <= fy <= 4.0 * scale):
             intrinsic_errors.append(f"view {index}: implausible focal length")
@@ -114,6 +115,7 @@ def evaluate_camera_initialization(
 
     positive = 0
     total = 0
+    track_positive = 0
     errors: list[float] = []
     for index in range(view_count):
         points = result.world_points[index].reshape(-1, 3)
@@ -122,9 +124,14 @@ def evaluate_camera_initialization(
         total += len(depths)
         projected, track_depths = _project(result.extrinsics[index], result.intrinsics[index], result.track_points_world)
         visible = track_depths > 0
+        track_positive += int(visible.sum())
         errors.extend(np.linalg.norm(projected[visible] - result.tracks_2d[index, visible], axis=1))
     cheirality = positive / total if total else 0.0
     check("cheirality", cheirality >= 0.95, cheirality)
+    track_total = view_count * len(result.track_points_world)
+    track_cheirality = track_positive / track_total if track_total else 0.0
+    check("track_cheirality", track_cheirality >= 0.95, track_cheirality,
+          "Reported common-view tracks cannot silently disappear behind cameras.")
     p95 = float(np.percentile(errors, 95)) if errors else float("inf")
     check("cross_view_reprojection_p95_px", p95 <= max_reprojection_p95_px, p95)
     return {

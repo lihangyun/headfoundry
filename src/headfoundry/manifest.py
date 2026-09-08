@@ -57,7 +57,8 @@ def validate_commercial_model(record: dict[str, Any], root: Path, prefix: str = 
     return errors
 
 
-def validate_manifest(document: dict[str, Any], root: Path) -> list[str]:
+def validate_input_assets(document: dict[str, Any], root: Path) -> list[str]:
+    """Shared rights boundary; independent adapters must still validate their models."""
     errors: list[str] = []
     if document.get("schema_version") != 1:
         errors.append("schema_version: expected 1")
@@ -87,6 +88,11 @@ def validate_manifest(document: dict[str, Any], root: Path) -> list[str]:
                     errors.append(f"{prefix}.consent.biometric_processing: explicit true is required")
             errors.extend(_validate_file(record, root, prefix))
 
+    return errors
+
+
+def validate_manifest(document: dict[str, Any], root: Path) -> list[str]:
+    errors = validate_input_assets(document, root)
     models = document.get("models")
     if not isinstance(models, list) or not models:
         errors.append("models: at least one model asset is required")

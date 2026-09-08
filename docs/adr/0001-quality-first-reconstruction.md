@@ -41,6 +41,12 @@ with a separate asset review and camera-only evaluation. Its local execution
 and result are not established by this decision; Large/Giant checkpoints are
 not interchangeable fallbacks.
 
+Experiment 0018 subsequently completed the separately locked DA3-BASE local
+inference. It did not unlock the camera gate: after same-track joint refinement,
+7.5485 px held-out p95 is effectively unchanged from 7.5456 px. The next experiment
+must distinguish correspondence/localization limitations from camera fit, rather
+than treat another starting model as demonstrated progress in visual accuracy.
+
 Build an independent pipeline with four explicit stages:
 
 1. Validate 5–10 neutral, sharp, well-covered input photographs.

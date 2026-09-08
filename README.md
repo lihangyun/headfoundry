@@ -22,8 +22,8 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - Optional XFeat local extraction: pinned source/weight/consent checks implemented; sparse three-view track candidate remains `REJECT` (experiment 0015). No VGGT checkpoint substitution.
 - XFeat fine matching: one strict three-view cycle; symmetric endpoint refinement gives zero. Insufficient support for camera acceptance (experiment 0016).
 - LighterGlue local matcher: locked checkpoint and Kornia 0.8.1 loader implemented. A frozen 40-train/11-held-track joint camera fit yields 7.5456 px held-out p95, still `REJECT` (experiment 0017).
-- Robust camera initialization: explicit training-only consensus, duplicate/intrinsic/low-parallax guards and synthetic outlier tests implemented; these do not diagnose the real-photo failure. Current suite: 40 tests passed.
-- Next camera candidate: the specifically named Apache-2.0 `depth-anything/DA3-BASE`; execution and camera quality remain `UNVERIFIED`, with no Large/Giant substitution.
+- Robust camera initialization: explicit training-only consensus, duplicate/intrinsic/low-parallax guards and synthetic outlier tests implemented; these do not diagnose the real-photo failure.
+- DA3-BASE: pinned local CPU inference and depth/camera conversion implemented; all five photos executed. Same-track joint refinement yields 7.5485 px held-out p95, still `REJECT`; no measured final-alignment improvement over the previous initializer (experiment 0018). Current full suite: 43 tests.
 - Geometry reconstruction: architecture selected; implementation not yet started.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
@@ -52,6 +52,9 @@ Only `facebook/VGGT-1B-Commercial` with license id `vggt-aup-license` is accepte
 3. Compute its SHA-256, copy `examples/run-manifest.template.json`, and record the exact path, digest, accepting person/date, license id, AUP review, and non-military use declaration.
 4. Run `python -m headfoundry.manifest <manifest>`. Any missing or mismatched field is `REJECT`; there is no fallback checkpoint.
 
+The separate free-commercial DA3-BASE candidate has its own locked local runner,
+not a VGGT fallback. See [installation and measured limits](docs/experiment-0018-da3-base.md#reproduction).
+
 ## Project documents
 
 - `docs/report-source.md`: canonical technical research report.
@@ -61,6 +64,7 @@ Only `facebook/VGGT-1B-Commercial` with license id `vggt-aup-license` is accepte
 - `docs/experiment-0002-commercial-vggt-adapter.md`: commercial checkpoint adapter and deterministic camera-gate record.
 - `docs/experiment-0003-profile-contour.md`: bounded side-profile contour experiment and next real-image gate.
 - `docs/experiment-0017-lighterglue-camera.md`: locked local matching, whole-track validation, robust initialization guards and rejected joint camera fit.
+- `docs/experiment-0018-da3-base.md`: explicit free-commercial local camera/depth candidate, frozen observations and rejected refinement.
 
 ## Legal boundary
 

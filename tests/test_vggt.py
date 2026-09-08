@@ -43,6 +43,18 @@ class CommercialVGGTAdapterTests(unittest.TestCase):
         )
         self.assertEqual(evaluate_camera_initialization(wrong, image_sizes)["status"], "REJECT")
 
+    def test_invalid_lower_intrinsics_and_hidden_tracks_reject(self) -> None:
+        result, sizes = load_fixture(FIXTURE)
+        k = result.intrinsics.copy();k[:,1,0] = 100
+        wrong = CameraInitialization(result.extrinsics,k,result.world_points,result.track_points_world,result.tracks_2d)
+        report = evaluate_camera_initialization(wrong,sizes)
+        self.assertFalse(next(c for c in report['checks'] if c['name']=='intrinsic_and_focal_plausibility')['passed'])
+        points = result.track_points_world.copy();points[0] = [0,0,-100]
+        wrong = CameraInitialization(result.extrinsics,result.intrinsics,result.world_points,points,result.tracks_2d)
+        report = evaluate_camera_initialization(wrong,sizes)
+        self.assertEqual(report['status'],'REJECT')
+        self.assertFalse(next(c for c in report['checks'] if c['name']=='track_cheirality')['passed'])
+
     def test_implausible_focal_length_rejects(self) -> None:
         result, image_sizes = load_fixture(FIXTURE)
         intrinsics = result.intrinsics.copy()

@@ -1,0 +1,22 @@
+{
+  "asset_id": "depth-anything/DA3-BASE",
+  "license_id": "Apache-2.0",
+  "model_revision": "f4a6c9b3c95e41c82048423d3493a81ec3fa810e",
+  "model_card": "https://huggingface.co/depth-anything/DA3-BASE/blob/f4a6c9b3c95e41c82048423d3493a81ec3fa810e/README.md",
+  "source": "https://github.com/ByteDance-Seed/Depth-Anything-3",
+  "source_revision": "3d835ec1a5802d64a8b8b15f817a1ab54809bfe4",
+  "source_tree_sha256": "04ef9c7b0ca1aacab3ce29f63ba86355e6cb70be5749972d124453bb210bbcd7",
+  "source_license_sha256_lf": "78446e29c48900cda82620a8df183cca61f0a595e05a49d0401a5fd604dd1870",
+  "model_sha256": {
+    "model.safetensors": "e01067dc1659613083d9145a9a2547ccdbe6ccbbf83c4fe7b3e8a4e2bdae78b5",
+    "config.json": "5e34115ebc17bd2d8d43033c5f72e9446ac8833fd61d3fa160b7e67e0bb5b7b5",
+    "README.md": "5388563071b4361b11d6d811b354d454f26aed2adba634fcf4ee3775c8eda480"
+  },
+  "runtime": {
+    "torch": "2.8.0+cpu", "einops": "0.8.1", "omegaconf": "2.3.0",
+    "addict": "2.4.0", "safetensors": "0.6.2", "PyYAML": "6.0.3",
+    "antlr4-python3-runtime": "4.9.3", "numpy": "2.5.2", "pillow": "12.3.0",
+    "opencv-contrib-python": "5.0.0.93"
+  },
+  "scope": "Explicit local camera/depth initialization candidate. No Large, Giant, Nested or VGGT fallback. No training-data rights inferred. No visual acceptance implied."
+}
