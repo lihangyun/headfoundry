@@ -35,3 +35,11 @@ Access dates: 2026-09-04. Only public documentation, papers, repositories, and b
 - Model license/identity: [pinned official model card](https://huggingface.co/depth-anything/DA3-BASE/blob/f4a6c9b3c95e41c82048423d3493a81ec3fa810e/README.md).
 - Code/license/conventions: [pinned official source](https://github.com/ByteDance-Seed/Depth-Anything-3/tree/3d835ec1a5802d64a8b8b15f817a1ab54809bfe4); the model zoo distinguishes Apache-2.0 BASE from noncommercial Large/Giant variants.
 - Local numerical evidence: experiment 0018 and hashed private reports. Five-view inference completed, but the frozen camera checks remain REJECT. Source/weight/runtime identity is recorded in `examples/da3-base-asset-lock.json`; no training-dataset rights or visual accuracy follow from the model license.
+# 2026-09-08: MakeHuman graphical base-mesh asset
+
+The base mesh, unlike application program logic, is explicitly CC0-1.0 under
+the [pinned official license](https://github.com/makehumancommunity/makehuman/blob/a8bc2d54ff0ac92e78ff71431b1023eda42bf482/LICENSE.md).
+The OBJ header independently states its CC0 release. Reviewed exact revision
+and three file hashes are in `examples/makehuman-base-asset-lock.json`.
+Scope: graphical asset only, no AGPL source integration. This claim does not
+extend to third-party assets, unseen assets, or any reconstructed likeness.
