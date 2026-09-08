@@ -22,5 +22,7 @@ class DepthAlignmentTest(unittest.TestCase):
         np.testing.assert_allclose(joint,e,atol=1e-5)
         np.testing.assert_allclose(joint_scale,[1,1.04],atol=1e-5)
         self.assertTrue(joint_report['pixel_term'])
+        self.assertEqual(joint_report['active_parameters'],[])
+        self.assertTrue(np.isfinite(joint_report['depth_pixel_costs']).all())
         with self.assertRaises(ValueError):refine_depth_cameras(q[:,:2],start)
         with self.assertRaises(ValueError):refine_depth_cameras(np.ones((2,8,3)),start)

@@ -51,8 +51,19 @@ def refine_depth_cameras(camera_points, extrinsics, intrinsics=None):
     fit=least_squares(residual,initial,bounds=(-.1,.1),loss='soft_l1',max_nfev=200,
                       ftol=1e-9,xtol=1e-9,gtol=1e-9)
     cameras,scales=unpack(fit.x)
+    def costs(parameters):
+        values=np.sqrt(1+residual(parameters)**2)-1
+        return np.array([values[:q.size].sum(),values[q.size:].sum()])
+    active=[]
+    for index in np.flatnonzero(np.abs(fit.x)>.0999):
+        step=np.zeros_like(fit.x);step[index]=1e-6
+        gradient=(costs(fit.x+step)-costs(fit.x-step))/(2e-6)
+        active.append(dict(view=int(index//7+1),parameter=['rx','ry','rz','tx','ty','tz','log_depth_scale'][index%7],
+                           value=float(fit.x[index]),depth_cost_derivative=float(gradient[0]),
+                           pixel_cost_derivative=float(gradient[1])))
     return cameras,scales,dict(status='UNVERIFIED',converged=bool(fit.success),
                               evaluations=fit.nfev,bound_active=bool(np.any(np.abs(fit.x)>.0999)),
                               initial_rms=float(np.sqrt(np.mean(residual(initial)[:q.size]**2))*.01),
                               final_rms=float(np.sqrt(np.mean(residual(fit.x)[:q.size]**2))*.01),
-                              pixel_term=k is not None)
+                              pixel_term=k is not None,active_parameters=active,
+                              depth_pixel_costs=costs(fit.x).tolist())

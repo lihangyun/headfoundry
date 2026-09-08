@@ -73,6 +73,10 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0029](docs/experiment-0029-active-bound.md) identifies opposing depth
+and pixel gradients at the active camera bound. Parameters and held error are
+unchanged; the diagnostic does not justify widening constraints or acceptance.
+
 [Experiment 0028](docs/experiment-0028-joint-pixel-depth.md) adds joint image/depth
 constraints. Held projection reaches 8.82 px, but a bound is active and depth
 consistency slightly regresses. The candidate is not accepted.
