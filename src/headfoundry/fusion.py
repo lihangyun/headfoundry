@@ -3,7 +3,22 @@ import numpy as np
 from .da3 import depth_to_world
 
 
-def fuse_grid(depth, extrinsics, intrinsics, masks, lower, upper, resolution=80, truncation=.02, *, free_space=False):
+def _sample_depth(depth, mask, uv, bilinear):
+    """Return supported query indices and depth; bilinear needs four valid pixels."""
+    h,w=depth.shape
+    xy=np.floor(uv).astype(int) if bilinear else np.rint(uv).astype(int)
+    valid=(xy[:,0]>=0)&(xy[:,1]>=0)&(xy[:,0]<w-int(bilinear))&(xy[:,1]<h-int(bilinear))
+    indices=np.flatnonzero(valid); x,y=xy[indices].T
+    supported=mask[y,x]
+    if bilinear:supported=supported&mask[y,x+1]&mask[y+1,x]&mask[y+1,x+1]
+    indices=indices[supported]; x,y=xy[indices].T
+    if not bilinear:return indices,depth[y,x]
+    fx,fy=(uv[indices]-xy[indices]).T
+    sampled=(depth[y,x]*(1-fx)+depth[y,x+1]*fx)*(1-fy)+(depth[y+1,x]*(1-fx)+depth[y+1,x+1]*fx)*fy
+    return indices,sampled
+
+
+def fuse_grid(depth, extrinsics, intrinsics, masks, lower, upper, resolution=80, truncation=.02, *, free_space=False, bilinear=False):
     depth=np.asarray(depth,float); masks=np.asarray(masks)
     extrinsics=np.asarray(extrinsics,float); intrinsics=np.asarray(intrinsics,float)
     depth_to_world(depth,extrinsics,intrinsics)  # shared camera/depth validation
@@ -12,19 +27,18 @@ def fuse_grid(depth, extrinsics, intrinsics, masks, lower, upper, resolution=80,
             or upper.shape!=(3,) or not np.isfinite([lower,upper]).all()
             or np.any(upper<=lower) or not isinstance(resolution,int)
             or not 3<=resolution<=256 or not np.isfinite(truncation) or truncation<=0
-            or not isinstance(free_space,bool)):
+            or not isinstance(free_space,bool) or not isinstance(bilinear,bool)):
         raise ValueError('invalid grid, masks or truncation')
     axes=[np.linspace(a,b,resolution) for a,b in zip(lower,upper)]
     xyz=np.stack(np.meshgrid(*axes,indexing='ij'),-1)
     points=xyz.reshape(-1,3); total=np.zeros(len(points)); count=np.zeros(len(points),int)
-    h,w=depth.shape[1:]
     for d,e,k,m in zip(depth,extrinsics,intrinsics,masks):
         cam=points@e[:,:3].T+e[:,3]; projected=cam@k.T
-        uv=np.rint(projected[:,:2]/np.maximum(projected[:,2:],1e-12)).astype(int)
-        valid=(cam[:,2]>0)&(uv[:,0]>=0)&(uv[:,0]<w)&(uv[:,1]>=0)&(uv[:,1]<h)
-        indices=np.flatnonzero(valid); x,y=uv[indices].T
-        indices=indices[m[y,x]]; x,y=uv[indices].T
-        signed=d[y,x]-cam[indices,2]
+        forward=np.flatnonzero(cam[:,2]>0)
+        uv=projected[forward,:2]/projected[forward,2:]
+        selected,sampled=_sample_depth(d,m,uv,bilinear)
+        indices=forward[selected]
+        signed=sampled-cam[indices,2]
         # Neither mode observes farther than one band behind a depth hit.
         # Optional free-space evidence extends toward the camera, not behind it.
         keep=(signed>=-truncation) if free_space else (np.abs(signed)<=truncation)

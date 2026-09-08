@@ -1,9 +1,20 @@
 import unittest
 import numpy as np
-from headfoundry.fusion import fuse_grid,extract_surface
+from headfoundry.fusion import fuse_grid,extract_surface,_sample_depth
 
 
 class FusionTest(unittest.TestCase):
+    def test_bilinear_affine_depth_and_mask_boundary(self):
+        y,x=np.mgrid[:5,:5]; depth=1+.2*x+.3*y
+        uv=np.array([[1.2,2.7],[.5,.5],[4.,2.],[-.1,2.]])
+        mask=np.ones((5,5),bool)
+        indices,sampled=_sample_depth(depth,mask,uv,True)
+        np.testing.assert_array_equal(indices,[0,1])
+        np.testing.assert_allclose(sampled,1+.2*uv[:2,0]+.3*uv[:2,1])
+        mask[3,2]=False
+        indices,_=_sample_depth(depth,mask,uv,True)
+        np.testing.assert_array_equal(indices,[1])
+
     def test_free_space_is_known_but_hidden_space_is_not(self):
         depth=np.ones((1,8,8)); e=np.eye(4)[None,:3]
         k=np.array([[[10,0,4],[0,10,4],[0,0,1]]])

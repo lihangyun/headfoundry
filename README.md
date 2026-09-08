@@ -73,6 +73,10 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0025](docs/experiment-0025-depth-sampling.md) provides a fixed-frame
+nearest/bilinear comparison. Large seams persist; substantial cross-view depth
+conflicts remain. Sampling changes do not establish likeness improvement.
+
 [Experiment 0024](docs/experiment-0024-free-space-fusion.md) retains free-space
 evidence during fusion. Boundary count decreases, but visual seams persist;
 the result is still rejected as a usable head.
