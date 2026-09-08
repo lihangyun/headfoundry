@@ -73,6 +73,10 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0027](docs/experiment-0027-depth-camera-registration.md) adds bounded
+joint depth/camera registration. Held error drops from 25.76 to 11.66 px, still
+failing the gate; profiles and complete-head quality remain unverified.
+
 [Experiment 0026](docs/experiment-0026-ray-camera.md) tests DA3's alternate ray
 camera path with identical depth arrays. Unrefined prediction errors decrease,
 but the camera gate still fails; no accepted head or quality parity is claimed.

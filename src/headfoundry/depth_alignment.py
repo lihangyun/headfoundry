@@ -1,0 +1,44 @@
+"""Bounded depth/camera registration of supplied training correspondences only."""
+import numpy as np
+
+
+def refine_depth_cameras(camera_points, extrinsics):
+    """Keep first camera/depth fixed; fit other poses and one depth scale per view.
+
+    Rotational increments: +/-0.1 rad per component; translations: +/-0.1 in
+    input units; log depth scale: +/-0.1. No dense deformation or held-out data.
+    """
+    from scipy.optimize import least_squares
+    from scipy.spatial.transform import Rotation
+    q=np.asarray(camera_points,float); e=np.asarray(extrinsics,float)
+    if (q.ndim!=3 or q.shape[2]!=3 or q.shape[0]<2 or q.shape[1]<6
+            or e.shape!=(q.shape[0],3,4) or not np.isfinite(q).all()
+            or not np.isfinite(e).all() or np.any(q[:,:,2]<=0)):
+        raise ValueError('finite positive-depth matched camera points and extrinsics required')
+    r=e[:,:,:3]
+    if not np.allclose(r@r.transpose(0,2,1),np.eye(3),atol=1e-5) or not np.allclose(np.linalg.det(r),1,atol=1e-5):
+        raise ValueError('right-handed rigid cameras required')
+    spread=np.linalg.svd(q-q.mean(1,keepdims=True),compute_uv=False)
+    if np.any(spread[:,1]<=1e-6*np.maximum(spread[:,0],1e-12)):
+        raise ValueError('noncollinear training points required')
+
+    def unpack(parameters):
+        delta=parameters.reshape(-1,7); result=e.copy()
+        result[1:,:,:3]=Rotation.from_rotvec(delta[:,:3]).as_matrix()@r[1:]
+        result[1:,:,3]+=delta[:,3:6]
+        scales=np.r_[1.,np.exp(delta[:,6])]
+        return result,scales
+
+    def residual(parameters):
+        cameras,scales=unpack(parameters)
+        world=np.einsum('vji,vnj->vni',cameras[:,:,:3],q*scales[:,None,None]-cameras[:,None,:,3])
+        return ((world-world.mean(0))/0.01).ravel()
+
+    initial=np.zeros((len(q)-1)*7)
+    fit=least_squares(residual,initial,bounds=(-.1,.1),loss='soft_l1',max_nfev=200,
+                      ftol=1e-9,xtol=1e-9,gtol=1e-9)
+    cameras,scales=unpack(fit.x)
+    return cameras,scales,dict(status='UNVERIFIED',converged=bool(fit.success),
+                              evaluations=fit.nfev,bound_active=bool(np.any(np.abs(fit.x)>.0999)),
+                              initial_rms=float(np.sqrt(np.mean(residual(initial)**2))*.01),
+                              final_rms=float(np.sqrt(np.mean(residual(fit.x)**2))*.01))
