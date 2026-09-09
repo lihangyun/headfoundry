@@ -2,10 +2,11 @@
 
 HeadFoundry is a clean-room, quality-first multi-view 3D head reconstruction project. It does not reuse PeekSim code, KeenTools outputs, or proprietary service behavior.
 
-The first milestone is deliberately narrow: prove that camera projection can be recovered and measured reliably before geometry or texture work is allowed to proceed. The repository contains a normalized-DLT reference, fail-closed rights/capture manifests, a commercial-VGGT output adapter, and camera-only quality gates.
+The first milestone is deliberately narrow: prove that camera projection can be recovered and measured reliably. Later user authorization permits unaccepted experimental geometry while that gate remains failed; it does not waive acceptance. The repository contains a normalized-DLT reference, fail-closed rights/capture manifests, a commercial-VGGT output adapter, and camera quality gates.
 
 ## Current status
 
+- Latest experiment 0044: dense triangle-correspondence fitting runs on the actual five-photo subject; held detector-point p95 decreases from 26.56 to 23.49 px, but visual likeness remains unverified and left profile MAE slightly worsens. No baseline promotion. Full suite: 65 tests.
 - Product/technical research: complete enough to select an architecture.
 - Camera projection baseline: implemented and covered by deterministic synthetic tests.
 - Weight-independent perspective landmark solver: implemented; first real-photo held-out camera check is `REJECT` (39.35 px p95). See experiment 0005. Install `.[geometry]` for this optional solver.
@@ -26,7 +27,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 - DA3-BASE: pinned local CPU inference and depth/camera conversion implemented; all five photos executed. Same-track joint refinement yields 7.5485 px held-out p95, still `REJECT`; no measured final-alignment improvement over the previous initializer (experiment 0018). Current full suite: 43 tests.
 - Correspondence localization: all eleven held tracks visually inspected; a bounded bidirectional translation tracker retains no held-out tracks and is not adopted (experiment 0019). No validation points were removed to obtain a pass.
 - Local affine matching also supplies zero fully consistent three-view replacement tracks (experiment 0020). High patch similarity alone is not treated as physical point agreement.
-- Geometry reconstruction: architecture selected; implementation not yet started.
+- Geometry reconstruction: experimental anatomical template fitting and mesh export implemented; subject likeness and production acceptance remain incomplete.
 - Texture fusion: architecture selected; implementation not yet started.
 - KeenTools-level visual parity: **UNVERIFIED**. No claim is made until the complete acceptance suite passes.
 

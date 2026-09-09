@@ -36,12 +36,12 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
     for view, indices, weights, target in edge_observations:
         ids=np.asarray(indices);w=np.asarray(weights,float);target=np.asarray(target,float)
         if (not isinstance(view,(int,np.integer)) or not 0<=view<len(projections)
-                or ids.shape!=(2,) or not np.issubdtype(ids.dtype,np.integer)
-                or np.any(ids<0) or np.any(ids>=count) or ids[0]==ids[1]
-                or w.shape!=(2,) or not np.isfinite(w).all() or np.any(w<0)
+                or ids.shape not in ((2,),(3,)) or not np.issubdtype(ids.dtype,np.integer)
+                or np.any(ids<0) or np.any(ids>=count) or len(np.unique(ids))!=len(ids)
+                or w.shape!=ids.shape or not np.isfinite(w).all() or np.any(w<0)
                 or not np.isclose(w.sum(),1,atol=1e-10,rtol=0)
                 or target.shape!=(2,) or not np.isfinite(target).all()):
-            raise ValueError('invalid edge observation')
+            raise ValueError('invalid weighted edge/triangle observation')
         edge_constraints.append((view,ids,w,target))
     free = np.setdiff1d(np.arange(count), protected)
     if not len(free):

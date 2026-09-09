@@ -24,6 +24,15 @@ class SurfaceTests(unittest.TestCase):
         candidate=fit_surface(self.prior,self.uv(self.prior),self.p,self.triangles,[0,1,2,3])
         np.testing.assert_allclose(candidate,self.prior,atol=1e-10)
 
+    def test_triangle_barycentric_observation(self):
+        target=self.prior.copy();target[4,2]=-.4
+        ids=np.array([0,1,4]);w=np.array([.1,.2,.7]);point=w@target[ids];constraints=[]
+        for view,p in enumerate(self.p):
+            h=p@np.r_[point,1];constraints.append((view,ids,w,h[:2]/h[2]))
+        result=fit_surface(self.prior,self.uv(self.prior),self.p,self.triangles,[0,1,2,3],.1,
+                           observation_mask=np.zeros((2,5),bool),edge_observations=constraints)
+        self.assertLess(np.linalg.norm(result-target),.02)
+
     def test_weighted_edge_constraint(self):
         target=self.prior.copy();target[4,2]=-.4
         ids=np.array([0,4]);weights=np.array([.3,.7]);point=weights@target[ids]
