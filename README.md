@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0047 rejects a dense pose-only candidate: detector residuals decrease but manual-anchor alignment worsens in all three fitted views. Cameras are not promoted; central anatomical correspondence support must be resolved before stronger deformation.
 - Experiment 0046 reruns dense fitting with screened eye support. On identical corrected evaluation support, held p95 is unchanged versus 0044 (23.0857 px); no clear visual improvement or baseline promotion. The largest remaining held residuals include exactly frozen central points, requiring a correspondence/camera diagnosis before relaxing profile protection.
 - Latest audit 0045 identifies internal eye-surface hits masquerading as eyelid correspondences. A five-point, correspondence-only rim proposal reduces large oblique errors without changing the mesh. It remains `UNVERIFIED`; unrestricted anatomical use of raw clay hits is rejected. See the experiment before repeating dense deformation.
 - Latest experiment 0044: dense triangle-correspondence fitting runs on the actual five-photo subject; held detector-point p95 decreases from 26.56 to 23.49 px, but visual likeness remains unverified and left profile MAE slightly worsens. No baseline promotion. Full suite: 65 tests.
