@@ -28,3 +28,15 @@ class SurfaceTests(unittest.TestCase):
         self.p[:,2,3]=-5
         with self.assertRaises(ValueError):
             fit_surface(self.prior,np.zeros((2,5,2)),self.p,self.triangles,[0,1,2,3])
+
+    def test_ray_constrained_depth_retains_frontal_pixels(self):
+        center=np.linalg.solve(self.p[0,:,:3],-self.p[0,:,3])
+        rays=self.prior-center
+        target=self.prior.copy();target[4]+=rays[4]*-.04
+        candidate=fit_surface(self.prior,self.uv(target),self.p,self.triangles,[0,1,2,3],.1,
+                              displacement_directions=rays)
+        np.testing.assert_allclose(self.uv(candidate)[0],self.uv(self.prior)[0],atol=1e-10)
+        self.assertLess(np.linalg.norm(candidate-target),.02)
+        for bad in [rays*0,rays*np.nan,rays[:2]]:
+            with self.assertRaises(ValueError):
+                fit_surface(self.prior,self.uv(target),self.p,self.triangles,[],displacement_directions=bad)

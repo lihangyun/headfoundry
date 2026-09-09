@@ -73,6 +73,11 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0035](docs/experiment-0035-frontal-protected-profile.md) adds local
+profile depth fitting that preserves frontal vertex projections. Fixed-camera
+five-view evidence exists; profile fitting residuals decrease but likeness is
+still unverified. Current suite: 58 tests.
+
 [Experiment 0034](docs/experiment-0034-anatomical-template-pose.md) places the
 unchanged anatomical template in all five photos and provides actual clay and
 overlay comparisons. Pose is experimental, shape is still generic; no likeness

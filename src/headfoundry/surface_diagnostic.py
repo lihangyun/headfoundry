@@ -7,12 +7,19 @@ from scipy.sparse import coo_matrix
 from scipy.sparse.linalg import lsqr
 
 
-def fit_surface(prior, observations, projections, triangles, protected, regularization=30., observation_mask=None):
+def fit_surface(prior, observations, projections, triangles, protected, regularization=30., observation_mask=None,
+                displacement_directions=None):
     prior = np.asarray(prior, float)
     observations = np.asarray(observations, float)
     projections = np.asarray(projections, float)
     triangles = np.asarray(triangles, int)
     count = len(prior)
+    directions = None if displacement_directions is None else np.asarray(displacement_directions, float)
+    if directions is not None:
+        if directions.shape != (count, 3) or not np.isfinite(directions).all() or np.any(np.linalg.norm(directions,axis=1)<1e-12):
+            raise ValueError('finite nonzero displacement directions required')
+        directions = directions / np.linalg.norm(directions,axis=1)[:,None]
+    dimensions = 3 if directions is None else 1
     if prior.shape != (count, 3) or observations.shape != (len(projections), count, 2):
         raise ValueError('invalid observation shapes')
     mask = np.ones(observations.shape[:2],bool) if observation_mask is None else np.asarray(observation_mask,bool)
@@ -28,14 +35,16 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
     free = np.setdiff1d(np.arange(count), protected)
     if not len(free):
         return prior.copy()
-    columns = {int(vertex): i*3 for i,vertex in enumerate(free)}
+    columns = {int(vertex): i*dimensions for i,vertex in enumerate(free)}
     rows, cols, values, rhs = [], [], [], []
 
     def equation(terms, target):
         row = len(rhs)
         for vertex, axis, coefficient in terms:
             if vertex in columns:
-                rows.append(row); cols.append(columns[vertex]+axis); values.append(coefficient)
+                rows.append(row)
+                cols.append(columns[vertex]+axis if directions is None else columns[vertex])
+                values.append(coefficient if directions is None else coefficient*directions[vertex,axis])
         rhs.append(target)
 
     # Solve displacements, retaining the supplied prior in protected regions.
@@ -58,11 +67,13 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
     for vertex in free:
         for axis in range(3):
             equation([(int(vertex),axis,regularization*.1)],0.)
-    system = coo_matrix((values,(rows,cols)),shape=(len(rhs),len(free)*3)).tocsr()
+    system = coo_matrix((values,(rows,cols)),shape=(len(rhs),len(free)*dimensions)).tocsr()
     solved = lsqr(system,rhs,atol=1e-9,btol=1e-9,iter_lim=2000)
     if solved[1] not in (0,1,2):
         raise ValueError('surface solve failed to converge')
-    result=prior.copy(); result[free]+=solved[0].reshape(-1,3)
+    delta=solved[0].reshape(-1,dimensions)
+    if directions is not None:delta=delta*directions[free]
+    result=prior.copy(); result[free]+=delta
     for p in projections:
         if np.any(np.c_[result,np.ones(count)]@p[2] <= 0):
             raise ValueError('fitted surface behind camera')
