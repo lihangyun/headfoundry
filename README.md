@@ -73,6 +73,11 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0038](docs/experiment-0038-oblique-jaw-rejection.md) rejects a
+far-side detector-oval fit: those points are not the visible oblique silhouette.
+No new geometry baseline is adopted. Independent boundary evidence is needed
+before repeating oblique fitting; the full reconstruction remains incomplete.
+
 [Experiment 0037](docs/experiment-0037-lower-face-outline.md) fits lower cheek/jaw
 width with protected facial features. A rear-neck contour-confound trial was
 rejected; the corrected face-ROI experiment has inspected five-view evidence but
