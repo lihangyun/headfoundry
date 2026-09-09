@@ -73,6 +73,11 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0042](docs/experiment-0042-clay-normal-diagnostic.md) adds optional
+smooth-normal clay inspection alongside the unchanged flat default. Five-view
+depth/visibility buffers are exact; this changes lighting, not geometry or
+likeness. Current suite: 63 tests.
+
 [Experiment 0041](docs/experiment-0041-planar-neck-termination.md) removes the
 irregular shoulder crop with exact shared-edge plane clipping, preserving
 retained facial coordinates. The short neck remains open and generic; this is

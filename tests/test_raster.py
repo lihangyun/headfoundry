@@ -4,6 +4,21 @@ from headfoundry.raster import render
 
 
 class RasterTests(unittest.TestCase):
+    def test_smooth_clay_changes_only_shading(self):
+        v=np.array([[0.,0,2],[1,0,2],[0,1,2],[1,1,3]])
+        original=v.copy();f=np.array([[0,1,2],[1,3,2]])
+        e=np.c_[np.eye(3),np.zeros(3)];k=np.diag([30.,30.,1.])
+        flat,depth,ids=render(v,f,e,k,(20,20))
+        smooth,new_depth,new_ids=render(v,f,e,k,(20,20),smooth_shading=True)
+        np.testing.assert_array_equal(v,original)
+        np.testing.assert_array_equal(new_depth,depth)
+        np.testing.assert_array_equal(new_ids,ids)
+        self.assertGreater(np.abs(flat.astype(int)-smooth.astype(int)).max(),5)
+        one,_,_=render(v,f[:1],e,k,(20,20))
+        one_smooth,_,_=render(v,f[:1],e,k,(20,20),smooth_shading=True)
+        np.testing.assert_allclose(one,one_smooth,atol=1)
+        with self.assertRaises(ValueError):
+            render(v,f,e,k,(20,20),np.zeros((4,2)),np.zeros((2,2,3)),smooth_shading=True)
     def test_occlusion_independent_of_triangle_order(self):
         v=np.array([[0,0,2],[12,0,2],[0,12,2],[0,0,1],[6,0,1],[0,6,1]],float)
         e=np.c_[np.eye(3),np.zeros(3)]

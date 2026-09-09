@@ -6,7 +6,7 @@ All vertices must be beyond the near plane; near-plane clipping is not supported
 import numpy as np
 
 
-def render(vertices, faces, extrinsic, intrinsic, size, uv=None, texture=None):
+def render(vertices, faces, extrinsic, intrinsic, size, uv=None, texture=None, *, smooth_shading=False):
     vertices = np.asarray(vertices, float)
     faces = np.asarray(faces)
     e, k = np.asarray(extrinsic, float), np.asarray(intrinsic, float)
@@ -26,6 +26,16 @@ def render(vertices, faces, extrinsic, intrinsic, size, uv=None, texture=None):
     pixels = h[:,:2] / h[:,2:]
     if (uv is None) != (texture is None):
         raise ValueError('texture and uv must be supplied together')
+    if smooth_shading and texture is not None:
+        raise ValueError('smooth shading is a clay-only diagnostic')
+    normals=None
+    if smooth_shading:
+        # Area-weighted shared-vertex normals. No geometry smoothing, welding or
+        # crease inference: split/hard edges remain a topology responsibility.
+        face_normals=np.cross(camera[faces[:,1]]-camera[faces[:,0]],camera[faces[:,2]]-camera[faces[:,0]])
+        normals=np.zeros_like(camera)
+        for corner in range(3):np.add.at(normals,faces[:,corner],face_normals)
+        normals/=np.maximum(np.linalg.norm(normals,axis=1)[:,None],1e-12)
     if texture is not None:
         uv, texture = np.asarray(uv,float), np.asarray(texture,float)
         if uv.shape != (len(vertices),2) or texture.ndim != 3 or texture.shape[2] != 3 or min(texture.shape[:2]) < 1:
@@ -67,8 +77,12 @@ def render(vertices, faces, extrinsic, intrinsic, size, uv=None, texture=None):
         else:
             normal=np.cross(camera[face[1]]-camera[face[0]],camera[face[2]]-camera[face[0]])
             normal/=max(np.linalg.norm(normal),1e-12)
+            if normals is not None:
+                interpolated=(inverse@normals[face])*z[...,None]
+                lengths=np.linalg.norm(interpolated,axis=-1,keepdims=True)
+                normal=np.where(lengths>1e-12,interpolated/np.maximum(lengths,1e-12),normal)
             brightness=.3+.7*abs(normal@light)
-            color=np.broadcast_to(np.array([190,198,208])*brightness,(*xx.shape,3))
+            color=np.broadcast_to(np.array([190,198,208])*np.asarray(brightness)[...,None],(*xx.shape,3))
         image[yy[keep],xx[keep]]=np.clip(color[keep],0,255).astype(np.uint8)
         depth[yy[keep],xx[keep]]=z[keep]
         face_ids[yy[keep],xx[keep]]=face_id
