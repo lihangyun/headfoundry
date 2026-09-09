@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Latest audit 0045 identifies internal eye-surface hits masquerading as eyelid correspondences. A five-point, correspondence-only rim proposal reduces large oblique errors without changing the mesh. It remains `UNVERIFIED`; unrestricted anatomical use of raw clay hits is rejected. See the experiment before repeating dense deformation.
 - Latest experiment 0044: dense triangle-correspondence fitting runs on the actual five-photo subject; held detector-point p95 decreases from 26.56 to 23.49 px, but visual likeness remains unverified and left profile MAE slightly worsens. No baseline promotion. Full suite: 65 tests.
 - Product/technical research: complete enough to select an architecture.
 - Camera projection baseline: implemented and covered by deterministic synthetic tests.
