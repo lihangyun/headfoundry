@@ -33,12 +33,20 @@ def envelope_edge(vertices, edges, projection, row, direction):
 
 
 def fit_profile_step(vertices, faces, projections, contours, directions, max_move=.015, *, frontal_projection=None,
-                     continuous=False):
+                     continuous=False, protected_vertices=(), contour_face_mask=None):
     v=np.asarray(vertices,float);f=np.asarray(faces,int);p=np.asarray(projections,float)
     if not np.isfinite(max_move) or max_move<=0 or len(contours)!=len(p) or len(directions)!=len(p):
         raise ValueError('invalid profile inputs')
+    fixed=np.asarray(protected_vertices)
+    if (fixed.ndim!=1 or (fixed.size and not np.issubdtype(fixed.dtype,np.integer))
+            or np.any(fixed<0) or np.any(fixed>=len(v))):raise ValueError('invalid protected vertices')
+    fixed=fixed.astype(int)
+    eligible=np.ones(len(f),bool) if contour_face_mask is None else np.asarray(contour_face_mask)
+    if eligible.shape!=(len(f),) or eligible.dtype!=np.dtype(bool):raise ValueError('boolean contour face mask required')
     obs=np.zeros((len(p),len(v),2));mask=np.zeros((len(p),len(v)),bool)
-    edges=np.unique(np.sort(np.concatenate([f[:,[0,1]],f[:,[1,2]],f[:,[2,0]]]),axis=1),axis=0)
+    contour_faces=f[eligible]
+    edges=np.unique(np.sort(np.concatenate([contour_faces[:,[0,1]],contour_faces[:,[1,2]],contour_faces[:,[2,0]]]),axis=1),axis=0)
+    eligible_vertices=np.unique(contour_faces)
     constraints=[];counts=np.zeros(len(p),int)
     for view,(camera,curve,direction) in enumerate(zip(p,contours,directions)):
         curve=np.asarray(curve,float)
@@ -52,7 +60,7 @@ def fit_profile_step(vertices, faces, projections, contours, directions, max_mov
                 if support is not None:
                     ids,weights,_=support;constraints.append((view,ids,weights,target));counts[view]+=1
                 continue
-            nearby=np.flatnonzero(np.abs(uv[:,1]-target[1])<=5)
+            nearby=eligible_vertices[np.abs(uv[eligible_vertices,1]-target[1])<=5]
             if not len(nearby):continue
             vertex=nearby[np.argmax(direction*uv[nearby,0])]
             if mask[view,vertex]:continue
@@ -62,7 +70,7 @@ def fit_profile_step(vertices, faces, projections, contours, directions, max_mov
     # Six topology rings only: unrelated surface vertices remain exact.
     for _ in range(6):
         touch=np.isin(f,list(free)).any(1);free.update(f[touch].ravel().tolist())
-    protected=np.setdiff1d(np.arange(len(v)),list(free))
+    protected=np.union1d(np.setdiff1d(np.arange(len(v)),list(free)),fixed)
     rays=None
     if frontal_projection is not None:
         front=np.asarray(frontal_projection,float)

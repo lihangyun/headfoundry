@@ -25,6 +25,16 @@ class ProfileFitTest(unittest.TestCase):
         self.assertLessEqual(report['maximum_displacement'],.001+1e-12)
         unchanged,_=fit_profile_step(v,f,p,[np.array([[11,100]])],[1])
         np.testing.assert_array_equal(unchanged,v)
+        excluded,excluded_report=fit_profile_step(v,f,p,[np.array([[11,0],[11,10]])],[1],
+                                                  continuous=True,contour_face_mask=np.zeros(2,bool))
+        np.testing.assert_array_equal(excluded,v)
+        self.assertEqual(excluded_report['selected_per_view'],[0])
+        fixed,fixed_report=fit_profile_step(v,f,p,[np.array([[11,0],[11,10]])],[1],.001,
+                                            continuous=True,protected_vertices=[0,1])
+        np.testing.assert_array_equal(fixed[:2],v[:2])
+        self.assertGreater(fixed_report['maximum_displacement'],0)
+        with self.assertRaises(ValueError):
+            fit_profile_step(v,f,p,[np.array([[11,0]])],[1],protected_vertices=[.5])
 
     def test_frontal_ray_constraint_survives_bounded_step(self):
         v=np.array([[0,0,1],[.1,0,1],[0,.1,1],[.1,.1,1.]])

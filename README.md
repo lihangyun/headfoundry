@@ -73,6 +73,11 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0037](docs/experiment-0037-lower-face-outline.md) fits lower cheek/jaw
+width with protected facial features. A rear-neck contour-confound trial was
+rejected; the corrected face-ROI experiment has inspected five-view evidence but
+no accepted likeness. Current suite: 60 tests.
+
 [Experiment 0036](docs/experiment-0036-continuous-profile.md) fits continuous
 projected edge positions with perspective-correct weights. Both profile fitting
 residuals decrease while frontal vertex projections stay fixed; full likeness
