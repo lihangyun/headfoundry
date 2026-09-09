@@ -1,9 +1,21 @@
 import unittest
 import numpy as np
-from headfoundry.raster import render
+from headfoundry.raster import render,lift_pixels
 
 
 class RasterTests(unittest.TestCase):
+    def test_exact_lifting_weights_miss_and_occlusion(self):
+        v=np.array([[0.,0,1],[8,0,2],[0,8,2]])
+        e=np.c_[np.eye(3),np.zeros(3)]
+        ids,w=lift_pixels(v,np.array([[0,1,2]]),e,np.eye(3),[[.5,.5],[10,10]])
+        np.testing.assert_array_equal(ids,[0,-1])
+        np.testing.assert_allclose(w[0],[6/7,1/14,1/14])
+        self.assertTrue(np.isnan(w[1]).all())
+        vertices=np.r_[v*2,v];faces=np.array([[0,1,2],[3,4,5]])
+        ids,w=lift_pixels(vertices,faces,e,np.eye(3),[[.5,.5]])
+        self.assertEqual(ids[0],1)
+        point=w[0]@vertices[faces[ids[0]]]
+        np.testing.assert_allclose(point[:2]/point[2],[.5,.5])
     def test_smooth_clay_changes_only_shading(self):
         v=np.array([[0.,0,2],[1,0,2],[0,1,2],[1,1,3]])
         original=v.copy();f=np.array([[0,1,2],[1,3,2]])

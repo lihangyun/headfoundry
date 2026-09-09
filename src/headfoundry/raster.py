@@ -6,6 +6,37 @@ All vertices must be beyond the near plane; near-plane clipping is not supported
 import numpy as np
 
 
+def lift_pixels(vertices, faces, extrinsic, intrinsic, pixels):
+    """Exact visible triangle + 3D barycentric weights; misses are -1/NaN.
+
+    No snapping to nearby surfaces. This proves projection, not that a detected
+    pixel denotes the same anatomical feature in another image.
+    """
+    v=np.asarray(vertices,float);f=np.asarray(faces);e=np.asarray(extrinsic,float)
+    k=np.asarray(intrinsic,float);pixels=np.asarray(pixels,float)
+    if (v.ndim!=2 or v.shape[1:]!=(3,) or f.ndim!=2 or f.shape[1:]!=(3,)
+            or not np.issubdtype(f.dtype,np.integer) or np.any(f<0) or np.any(f>=len(v))
+            or e.shape!=(3,4) or k.shape!=(3,3) or pixels.ndim!=2 or pixels.shape[1:]!=(2,)
+            or not all(np.isfinite(a).all() for a in (v,e,k,pixels)) or not np.allclose(k[2],[0,0,1])):
+        raise ValueError('finite mesh, camera and pixels required')
+    cam=v@e[:,:3].T+e[:,3]
+    if np.any(cam[:,2]<=1e-6):raise ValueError('near-plane clipping required')
+    h=cam@k.T;uv=h[:,:2]/h[:,2:];a,b,c=np.moveaxis(uv[f],1,0)
+    den=(b[:,1]-c[:,1])*(a[:,0]-c[:,0])+(c[:,0]-b[:,0])*(a[:,1]-c[:,1])
+    valid=np.abs(den)>1e-12;den=np.where(valid,den,1)
+    hit_ids=np.full(len(pixels),-1,int);weights=np.full((len(pixels),3),np.nan)
+    for i,(x,y) in enumerate(pixels):
+        w0=((b[:,1]-c[:,1])*(x-c[:,0])+(c[:,0]-b[:,0])*(y-c[:,1]))/den
+        w1=((c[:,1]-a[:,1])*(x-c[:,0])+(a[:,0]-c[:,0])*(y-c[:,1]))/den
+        screen=np.c_[w0,w1,1-w0-w1]
+        candidates=np.flatnonzero(valid&(screen.min(1)>=-1e-10))
+        if not len(candidates):continue
+        inverse=screen[candidates]/cam[f[candidates],2]
+        index=int(np.argmax(inverse.sum(1)))
+        hit_ids[i]=candidates[index];weights[i]=inverse[index]/inverse[index].sum()
+    return hit_ids,weights
+
+
 def render(vertices, faces, extrinsic, intrinsic, size, uv=None, texture=None, *, smooth_shading=False):
     vertices = np.asarray(vertices, float)
     faces = np.asarray(faces)
