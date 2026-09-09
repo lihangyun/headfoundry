@@ -24,6 +24,18 @@ class SurfaceTests(unittest.TestCase):
         candidate=fit_surface(self.prior,self.uv(self.prior),self.p,self.triangles,[0,1,2,3])
         np.testing.assert_allclose(candidate,self.prior,atol=1e-10)
 
+    def test_weighted_edge_constraint(self):
+        target=self.prior.copy();target[4,2]=-.4
+        ids=np.array([0,4]);weights=np.array([.3,.7]);point=weights@target[ids]
+        observations=[]
+        for view,p in enumerate(self.p):
+            h=p@np.r_[point,1];observations.append((view,ids,weights,h[:2]/h[2]))
+        candidate=fit_surface(self.prior,self.uv(self.prior),self.p,self.triangles,[0,1,2,3],.1,
+                              observation_mask=np.zeros((2,5),bool),edge_observations=observations)
+        self.assertLess(np.linalg.norm(candidate-target),.02)
+        with self.assertRaises(ValueError):
+            fit_surface(self.prior,self.uv(self.prior),self.p,self.triangles,[],edge_observations=[(0,ids,[1,1],[0,0])])
+
     def test_camera_behind_surface_rejected(self):
         self.p[:,2,3]=-5
         with self.assertRaises(ValueError):

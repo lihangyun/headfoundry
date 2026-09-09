@@ -8,7 +8,7 @@ from scipy.sparse.linalg import lsqr
 
 
 def fit_surface(prior, observations, projections, triangles, protected, regularization=30., observation_mask=None,
-                displacement_directions=None):
+                displacement_directions=None, edge_observations=()):
     prior = np.asarray(prior, float)
     observations = np.asarray(observations, float)
     projections = np.asarray(projections, float)
@@ -32,6 +32,17 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
     protected = np.asarray(protected, int)
     if np.any(protected < 0) or np.any(protected >= count):
         raise ValueError('invalid protected indices')
+    edge_constraints=[]
+    for view, indices, weights, target in edge_observations:
+        ids=np.asarray(indices);w=np.asarray(weights,float);target=np.asarray(target,float)
+        if (not isinstance(view,(int,np.integer)) or not 0<=view<len(projections)
+                or ids.shape!=(2,) or not np.issubdtype(ids.dtype,np.integer)
+                or np.any(ids<0) or np.any(ids>=count) or ids[0]==ids[1]
+                or w.shape!=(2,) or not np.isfinite(w).all() or np.any(w<0)
+                or not np.isclose(w.sum(),1,atol=1e-10,rtol=0)
+                or target.shape!=(2,) or not np.isfinite(target).all()):
+            raise ValueError('invalid edge observation')
+        edge_constraints.append((view,ids,w,target))
     free = np.setdiff1d(np.arange(count), protected)
     if not len(free):
         return prior.copy()
@@ -60,6 +71,12 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
                 a = (p[axis,:3] - uv[vertex,axis]*p[2,:3])/depth[vertex]
                 b = (uv[vertex,axis]*p[2,3]-p[axis,3])/depth[vertex] - a@prior[vertex]
                 equation([(int(vertex), k, a[k]) for k in range(3)], b)
+    for view,ids,w,target in edge_constraints:
+        p=projections[view];point=w@prior[ids];depth=p[2,:3]@point+p[2,3]
+        for axis in range(2):
+            a=(p[axis,:3]-target[axis]*p[2,:3])/depth
+            b=(target[axis]*p[2,3]-p[axis,3])/depth-a@point
+            equation([(int(vertex),j,float(weight*a[j])) for vertex,weight in zip(ids,w) for j in range(3)],b)
     edges = sorted({tuple(sorted((int(a),int(b)))) for t in triangles for a,b in zip(t,np.roll(t,-1))})
     for a,b in edges:
         for axis in range(3):

@@ -73,6 +73,11 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0036](docs/experiment-0036-continuous-profile.md) fits continuous
+projected edge positions with perspective-correct weights. Both profile fitting
+residuals decrease while frontal vertex projections stay fixed; full likeness
+remains unverified. Current suite: 60 tests.
+
 [Experiment 0035](docs/experiment-0035-frontal-protected-profile.md) adds local
 profile depth fitting that preserves frontal vertex projections. Fixed-camera
 five-view evidence exists; profile fitting residuals decrease but likeness is

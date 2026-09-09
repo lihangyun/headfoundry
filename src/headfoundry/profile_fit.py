@@ -3,11 +3,43 @@ import numpy as np
 from headfoundry.surface_diagnostic import fit_surface
 
 
-def fit_profile_step(vertices, faces, projections, contours, directions, max_move=.015, *, frontal_projection=None):
+def envelope_edge(vertices, edges, projection, row, direction):
+    """Outer projected edge at a pixel row, with perspective-correct 3D weights.
+
+    All vertices must be in front. This is an outer envelope, not semantic
+    face segmentation: callers must exclude unrelated foreground geometry.
+    """
+    v=np.asarray(vertices,float);edges=np.asarray(edges);p=np.asarray(projection,float)
+    if (v.ndim!=2 or v.shape[1:]!=(3,) or not np.isfinite(v).all()
+            or edges.ndim!=2 or edges.shape[1:]!=(2,) or not np.issubdtype(edges.dtype,np.integer)
+            or np.any(edges<0) or np.any(edges>=len(v)) or p.shape!=(3,4)
+            or not np.isfinite(p).all() or not np.isfinite(row) or direction not in (-1,1)):
+        raise ValueError('invalid envelope inputs')
+    h=np.c_[v,np.ones(len(v))]@p.T
+    if np.any(h[:,2]<=0):raise ValueError('surface behind camera')
+    uv=h[:,:2]/h[:,2:];segments=uv[edges];dy=segments[:,1,1]-segments[:,0,1]
+    crossing=(segments[:,:,1].min(1)<=row)&(segments[:,:,1].max(1)>=row)
+    candidates=[]
+    for index in np.flatnonzero(crossing):
+        if abs(dy[index])<1e-12:
+            t=float(np.argmax(direction*segments[index,:,0]))
+        else:t=float((row-segments[index,0,1])/dy[index])
+        x=float((1-t)*segments[index,0,0]+t*segments[index,1,0])
+        candidates.append((direction*x,index,t,x))
+    if not candidates:return None
+    _,index,t,x=max(candidates,key=lambda a:a[0])
+    weights=np.array([1-t,t])/h[edges[index],2];weights/=weights.sum()
+    return edges[index],weights,np.array([x,row])
+
+
+def fit_profile_step(vertices, faces, projections, contours, directions, max_move=.015, *, frontal_projection=None,
+                     continuous=False):
     v=np.asarray(vertices,float);f=np.asarray(faces,int);p=np.asarray(projections,float)
     if not np.isfinite(max_move) or max_move<=0 or len(contours)!=len(p) or len(directions)!=len(p):
         raise ValueError('invalid profile inputs')
     obs=np.zeros((len(p),len(v),2));mask=np.zeros((len(p),len(v)),bool)
+    edges=np.unique(np.sort(np.concatenate([f[:,[0,1]],f[:,[1,2]],f[:,[2,0]]]),axis=1),axis=0)
+    constraints=[];counts=np.zeros(len(p),int)
     for view,(camera,curve,direction) in enumerate(zip(p,contours,directions)):
         curve=np.asarray(curve,float)
         if curve.ndim!=2 or curve.shape[1]!=2 or not np.isfinite(curve).all() or direction not in (-1,1):raise ValueError('invalid contour')
@@ -15,12 +47,18 @@ def fit_profile_step(vertices, faces, projections, contours, directions, max_mov
         if np.any(h[:,2]<=0):raise ValueError('surface behind camera')
         uv=h[:,:2]/h[:,2:]
         for target in curve:
+            if continuous:
+                support=envelope_edge(v,edges,camera,target[1],direction)
+                if support is not None:
+                    ids,weights,_=support;constraints.append((view,ids,weights,target));counts[view]+=1
+                continue
             nearby=np.flatnonzero(np.abs(uv[:,1]-target[1])<=5)
             if not len(nearby):continue
             vertex=nearby[np.argmax(direction*uv[nearby,0])]
             if mask[view,vertex]:continue
             obs[view,vertex]=target;mask[view,vertex]=True
     selected=np.flatnonzero(mask.any(0));free=set(selected.tolist())
+    for _,ids,_,_ in constraints:free.update(ids.tolist())
     # Six topology rings only: unrelated surface vertices remain exact.
     for _ in range(6):
         touch=np.isin(f,list(free)).any(1);free.update(f[touch].ravel().tolist())
@@ -34,7 +72,7 @@ def fit_profile_step(vertices, faces, projections, contours, directions, max_mov
         center=np.linalg.solve(front[:,:3],-front[:,3])
         rays=v-center
     candidate=fit_surface(v,obs,p,f,protected,regularization=100,observation_mask=mask,
-                          displacement_directions=rays)
+                          displacement_directions=rays,edge_observations=constraints)
     delta=candidate-v;largest=np.linalg.norm(delta,axis=1).max()
     step=min(1.,max_move/max(largest,1e-12))
     normal=np.cross(v[f[:,1]]-v[f[:,0]],v[f[:,2]]-v[f[:,0]])
@@ -45,7 +83,8 @@ def fit_profile_step(vertices, faces, projections, contours, directions, max_mov
         if front_positive and ((updated*normal).sum(1)>0).all() and (np.linalg.norm(updated,axis=1)>=.1*np.linalg.norm(normal,axis=1)).all():break
         step*=.5
     else:raise ValueError('no non-flipping bounded profile step')
-    return result,dict(status='UNVERIFIED',selected_per_view=mask.sum(1).tolist(),
+    return result,dict(status='UNVERIFIED',selected_per_view=(counts if continuous else mask.sum(1)).tolist(),
+                       continuous_edge_constraints=continuous,
                        frontal_projection_preserved=frontal_projection is not None,
                        maximum_displacement=float(np.linalg.norm(result-v,axis=1).max()),step=float(step),
-                       protected_vertices=protected.tolist(),limitations='Approximate vertex-envelope associations; fitting errors are not held-out evidence.')
+                       protected_vertices=protected.tolist(),limitations='Outer-envelope associations are not semantic correspondences; fitting errors are not held-out evidence.')
