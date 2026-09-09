@@ -73,6 +73,11 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 KeenTools Cloud is used only as a publicly documented product-quality reference. Its service, private sessions, generated outputs, and implementation are not used as training material, reverse-engineering inputs, or automated competitive benchmarks.
 # Latest experimental geometry (2026-09-08)
 
+[Experiment 0039](docs/experiment-0039-photo-oblique-boundaries.md) records
+original-photo oblique boundary readings independent of model projection.
+The resulting bounded geometry change is negligible and not adopted; protected
+cheek support and camera uncertainty require review before further fitting.
+
 [Experiment 0038](docs/experiment-0038-oblique-jaw-rejection.md) rejects a
 far-side detector-oval fit: those points are not the visible oblique silhouette.
 No new geometry baseline is adopted. Independent boundary evidence is needed
