@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0059 fits four whole-head controls to frontal/oblique outlines and anchors. Outline fitting errors decrease, anchors slightly regress, and bilateral profile errors stay essentially unchanged. Actual five-view comparison still lacks likeness; the candidate is unverified and not promoted.
 - Experiment 0058 adds four pinned CC0 whole-head shape assets and inspects actual fixed-camera scope previews. They affect skull/face/jaw proportions but barely change the nose/lip profile; subject fitting and visual improvement remain unverified. Preparation supports an explicit reviewed target lock.
 - Experiment 0057 rejects authored lip-height/position fitting: mouth-point error decreases but both side profiles regress. Additional CC0 target assets are separately locked; broader face-shape coverage is the next investigation, not repeated lip-only adjustments.
 - Experiment 0056 fits the authored mouth-volume assets to actual multi-view inputs. Small fitting-error decreases and valid local triangle checks do not establish visible likeness; the candidate stays unverified. Lip height/position remains a separate next question.

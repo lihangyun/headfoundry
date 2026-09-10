@@ -57,3 +57,10 @@ Experiment 0057 separately locks six official lip-height/mouth-position targets
 from the same revision in `makehuman-mouth-height-lock.json`. Every downloaded
 file's CC0 header was inspected. Their real-photo fit regresses both profiles;
 asset rights and successful parsing do not imply reconstruction acceptance.
+
+Experiments 0058–0059 separately lock and fit four graphical whole-head targets
+from the same revision (`makehuman-head-shape-lock.json`). Their explicit CC0
+headers and pinned base asset license were inspected. Better training outline
+alignment does not prove identity reconstruction; cranial shape changes are
+not measured by the lower-face observations. Actual five-view comparisons
+remain private, and no KeenTools equivalence is claimed.
