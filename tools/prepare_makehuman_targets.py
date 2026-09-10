@@ -1,4 +1,4 @@
-"""Verify pinned CC0 mouth targets and map source IDs to the head crop."""
+"""Verify pinned CC0 targets and map source IDs to the head crop."""
 import argparse,json
 from pathlib import Path
 import numpy as np
@@ -10,8 +10,9 @@ from tools.prepare_makehuman_head import extract_head
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('base_assets',type=Path);parser.add_argument('targets',type=Path);parser.add_argument('output',type=Path)
+    parser.add_argument('--lock',type=Path,help='Explicit reviewed target asset lock; defaults to mouth volume assets')
     args=parser.parse_args();repo=Path(__file__).resolve().parents[1]
-    lock=json.loads((repo/'examples/makehuman-mouth-target-lock.json').read_text())
+    lock=json.loads((args.lock or repo/'examples/makehuman-mouth-target-lock.json').read_text())
     base=json.loads((repo/'examples'/lock['base_asset_lock']).read_text())
     if lock['license_id']!='CC0-1.0' or base['license_id']!='CC0-1.0' or lock['revision']!=base['revision']:
         raise ValueError('incompatible asset license/revision')

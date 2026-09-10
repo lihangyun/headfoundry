@@ -1,0 +1,16 @@
+{
+  "asset_id": "makehuman-head-shape-targets",
+  "source": "https://github.com/makehumancommunity/makehuman",
+  "revision": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+  "source_directory": "makehuman/data/targets/head",
+  "license_id": "CC0-1.0",
+  "license_evidence": "LICENSE.md section C and explicit CC0 header in every selected target",
+  "base_asset_lock": "makehuman-base-asset-lock.json",
+  "scope": "Four graphical whole-head displacement assets only; no application code or trained identity model",
+  "sha256": {
+    "head-diamond.target": "7072c718c8476ca38d6758fb7531fd945612d51acdca6555da8a8f770284c41d",
+    "head-oval.target": "a17cd3a600588a344babe520fbd4d4edcb096db3328051fe692dfb997a1a678d",
+    "head-rectangular.target": "bbfcbd4d6334df18515e73abb707b8a948adb74e0aba88a728c8e146dd5f4e4b",
+    "head-round.target": "bd96b745b19432ac838f15438aa87e9002f597e59353861721e12e6da0f2c625"
+  }
+}

@@ -80,6 +80,11 @@ The research evidence favors explicit multi-view geometry and canonical fusion o
 
 ## Data strategy
 
+Experiment 0058 extends the same reviewed graphical-data approach to four
+whole-head shape controls. Apply deltas on original source topology before
+neck clipping; new clip vertices must not receive guessed mappings. Generic
+shape names are controls, not inferred demographic labels or identity evidence.
+
 The 2026-09-10 experiment 0055 adds a bounded alternative to ad hoc geometry:
 explicitly CC0, hash-pinned mouth/philtrum graphical displacement targets from
 the existing base asset's revision. Use independently implemented data parsing,
