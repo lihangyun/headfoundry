@@ -1,0 +1,18 @@
+{
+  "asset_id": "makehuman-mouth-volume-targets",
+  "source": "https://github.com/makehumancommunity/makehuman",
+  "revision": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+  "source_directory": "makehuman/data/targets/mouth",
+  "license_id": "CC0-1.0",
+  "license_evidence": "LICENSE.md section C and explicit CC0 header in every selected target",
+  "base_asset_lock": "makehuman-base-asset-lock.json",
+  "scope": "Six graphical displacement assets only, not application code or trained identity model",
+  "sha256": {
+    "mouth-lowerlip-volume-decr.target": "45f1fe355546cdaa86581512810ee1cd2c6971ac67ffb46d3391ac438e539d15",
+    "mouth-lowerlip-volume-incr.target": "dbdaf045b00c67bf8672d53bc8cf94eb3e3dea316de6fe18a278f7080564c65d",
+    "mouth-philtrum-volume-decr.target": "e7400e4042f6f2a7fc3ec330ebc8f7f8269173eae52e29785ff00b0f831b0a6b",
+    "mouth-philtrum-volume-incr.target": "5b3020ed98d17882e43d47c10886ccf72a0976bb772ec8599553bab5ecefcf91",
+    "mouth-upperlip-volume-decr.target": "20b285d94ecb62cf605907d65659ab11ff760dbb938ba9ae7fc13429b1e3ba16",
+    "mouth-upperlip-volume-incr.target": "b124cbd9b9be318264f61a143da603b42e0357ed92b4b6afd1b31a83daaf8568"
+  }
+}

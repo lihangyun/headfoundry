@@ -43,3 +43,12 @@ The OBJ header independently states its CC0 release. Reviewed exact revision
 and three file hashes are in `examples/makehuman-base-asset-lock.json`.
 Scope: graphical asset only, no AGPL source integration. This claim does not
 extend to third-party assets, unseen assets, or any reconstructed likeness.
+
+## 2026-09-10: selected MakeHuman mouth targets
+
+Six official bundled upper/lower-lip and philtrum volume targets are explicitly
+CC0 in their file headers and under section C of the same pinned official
+license above. Exact paths/revision/hashes are recorded in
+`examples/makehuman-mouth-target-lock.json`. Experiment 0055 verifies local
+parsing and source-ID mapping and inspects generic shape previews. This is a
+graphical-asset grant, not application-code reuse or evidence of identity fit.

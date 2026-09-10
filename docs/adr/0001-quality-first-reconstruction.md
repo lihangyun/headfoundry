@@ -80,6 +80,13 @@ The research evidence favors explicit multi-view geometry and canonical fusion o
 
 ## Data strategy
 
+The 2026-09-10 experiment 0055 adds a bounded alternative to ad hoc geometry:
+explicitly CC0, hash-pinned mouth/philtrum graphical displacement targets from
+the existing base asset's revision. Use independently implemented data parsing,
+not upstream application logic. These are generic authored shape controls,
+not trained identity reconstruction. Verify frontal and bilateral effects;
+their availability does not relax camera or visual acceptance gates.
+
 Bootstrap with synthetic renders from commercially allowed parametric assets and our own procedural lighting/camera variation. Build the real benchmark from explicitly consented captures paired with licensed high-quality scans. Store identity/biometric consent, allowed uses, retention, and deletion state with each subject. No dataset enters training until its license is recorded in the asset manifest.
 
 ## Compute strategy
