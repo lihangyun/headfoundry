@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0061 identifies concrete anchor conflicts: the right-profile detector nose target is outside the photo silhouette, and two fitted oblique mouth anchors are self-occluded on the current mesh. Non-destructive rejection guidance and numbered photo/clay crops are retained; original data and cameras stay unchanged.
 - Experiment 0060 rejects four fixed-shape focal/pose candidates: some training anchor errors decrease, but both profile checks regress versus the original cameras. Actual bilateral views were inspected; focal is still uncalibrated, and anatomical anchor correspondence is the next audit.
 - Experiment 0059 fits four whole-head controls to frontal/oblique outlines and anchors. Outline fitting errors decrease, anchors slightly regress, and bilateral profile errors stay essentially unchanged. Actual five-view comparison still lacks likeness; the candidate is unverified and not promoted.
 - Experiment 0058 adds four pinned CC0 whole-head shape assets and inspects actual fixed-camera scope previews. They affect skull/face/jaw proportions but barely change the nose/lip profile; subject fitting and visual improvement remain unverified. Preparation supports an explicit reviewed target lock.
