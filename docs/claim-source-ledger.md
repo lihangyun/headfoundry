@@ -64,3 +64,9 @@ headers and pinned base asset license were inspected. Better training outline
 alignment does not prove identity reconstruction; cranial shape changes are
 not measured by the lower-face observations. Actual five-view comparisons
 remain private, and no KeenTools equivalence is claimed.
+
+Experiment 0066 adds six nasal graphical targets from the same official
+revision, with explicit CC0 headers and exact hashes in
+`makehuman-nose-target-lock.json`. The real-photo fit is rejected for shape
+promotion; asset usability must not be conflated with visual reconstruction
+quality. No upstream application code or additional trained model is used.

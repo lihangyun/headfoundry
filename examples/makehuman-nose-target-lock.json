@@ -1,0 +1,18 @@
+{
+  "asset_id": "makehuman-nose-shape-targets",
+  "source": "https://github.com/makehumancommunity/makehuman",
+  "revision": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+  "source_directory": "makehuman/data/targets/nose",
+  "license_id": "CC0-1.0",
+  "license_evidence": "LICENSE.md section C and explicit CC0 header in each selected target",
+  "base_asset_lock": "makehuman-base-asset-lock.json",
+  "scope": "Six graphical displacement data assets only, not application code or trained identity model",
+  "sha256": {
+    "nose-point-down.target": "decda7e7827d53f0906663d10ff6ee0173d501b8f3bf30dda3540e4465fa6021",
+    "nose-point-up.target": "c8d556af4cc6fe5fbf340b1950156fffad3835524a191b47074466f244a92047",
+    "nose-scale-depth-decr.target": "b46c35046c9c451b7ffe77acc0573bd945d7c6acaefe43d8c21912d4ce1a6e4c",
+    "nose-scale-depth-incr.target": "6bb03c3065e048d6e9abbcfa58961bfbe1753a307be0d3de477cac6aeaf5f750",
+    "nose-scale-horiz-decr.target": "1227e6f513d202585e40045fe4234778597bb591ac492e7f9313347cd9a9f2ec",
+    "nose-scale-horiz-incr.target": "cc319e3ddb0523fa2b563dcfc840cf2f915a890abe5612009a0becebecd3c5ae"
+  }
+}

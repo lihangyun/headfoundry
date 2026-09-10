@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0066 prepares six pinned CC0 nasal controls and fits a three-parameter bilateral nose trial. Changes are tiny and left nasal error increases; actual five-view inspection does not support promotion. Frontal/oblique nasal anatomy remains insufficiently constrained.
 - Experiment 0065 verifies candidate canthi before/after contour-supported pose fitting, including profile visibility. Same-support camera gains are negligible and actual profiles remain visually unchanged; no promotion. Nose/lip anatomy remains unresolved.
 - Experiment 0064 finds four nearby canthus correspondence candidates visible in all three fitting views, with lower projection error and inspected photo/clay crops. Geometry and cameras are unchanged; profile support, pose impact and anatomical accuracy remain unverified.
 - Experiment 0063 adds profile arcs to screened pose fitting, restraining the right pose drift and lowering fitted profile errors. Retained anchor errors increase, and actual views remain generic. Both contour and anchors are now training inputs; no camera or likeness acceptance.
