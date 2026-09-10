@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0054 tests six smooth lip modes: right fitting error improves only with left regression; per-point left protection yields an effectively unchanged mesh. Neither candidate is promoted. An anatomically structured shape basis is the next avenue, not larger ad hoc lip updates.
 - Experiment 0053 lowers bilateral local lip fitting error while preserving protected projections, but actual clay views show unacceptable lip protrusions. Candidate rejected for visual promotion; further identical vertexwise iterations are not the next step.
 - Experiment 0052 identifies scanline correspondence switching from chin to neck and adds a tested ordered-curve distance diagnostic. Translation-only candidates still regress chin/anchor alignment and are rejected; no camera promotion. Full suite: 69 tests.
 - Experiment 0051 reduces the right-profile fitting MAE from 8.03 to 7.12 px while preserving frontal vertex projections and all 426 sampled left-profile rows. Actual photo overlays still show nose/lip defects; the candidate remains unverified and is not promoted.
