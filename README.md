@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0072 adds explicit curve support to the tested target fitter and runs real mixed point/curve fitting. Fitted source-arc scores decrease while actual nasal envelopes regress; candidate rejected. Curve distance is not apparent-silhouette accuracy. Full suite: 77 tests.
 - Experiment 0071 integrates the public point fitter on real nasal observations and fixes unsupported controls returning arbitrary tiny values. Tip control is now explicitly zero without eligible support. The point-only candidate regresses side evidence and is rejected; 76 tests pass.
 - Experiment 0070 adds a tested fixed-camera graphical-target point fitter with explicit eligibility masks and per-point pixel scales. It does not estimate uncertainty or claim visual improvement; real-photo integration and contour checks remain required. Full suite: 75 tests.
 - Experiment 0069 triangulates the visible alar pairs without a mesh prior: several-pixel disagreement remains, and recovered offsets are sensitive to assumed 3px input perturbations. Do not convert these detector pairs directly into exact geometry targets; no model/camera promotion.

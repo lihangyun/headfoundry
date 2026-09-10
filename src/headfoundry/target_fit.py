@@ -1,16 +1,19 @@
 """Bounded graphical-target point fitting; callers verify rights and visibility."""
 import numpy as np
 from scipy.optimize import least_squares
+from .profile_fit import curve_residuals
 
 
 def fit_target_points(prior, deltas, projections, observations, mask, sigma_px,
-                      *, maximum_weight=0.5, regularization=1.0):
+                      *, maximum_weight=0.5, regularization=1.0, curve_observations=()):
     """Fit nonnegative target weights to fixed-camera point observations.
 
     Points may be verified barycentric surface samples. Deltas must use the
     same sample identities. A mask is explicit observation eligibility, not
     inferred from detector availability. Sigmas are supplied pixel scales,
     not estimated confidence. No silhouette, collision or acceptance claim.
+    Optional curves are (view_index, sample_indices, pixel_polyline, sigma).
+    These constrain supplied samples, not automatically detected silhouettes.
     """
     x,b,p,y=[np.asarray(a,float) for a in (prior,deltas,projections,observations)]
     m=np.asarray(mask);sigma=np.asarray(sigma_px,float)
@@ -27,7 +30,19 @@ def fit_target_points(prior, deltas, projections, observations, mask, sigma_px,
         raise ValueError('finite geometry and eligible observations with positive uncertainty required')
     if any(np.linalg.matrix_rank(camera[:,:3])<3 for camera in p):
         raise ValueError('nondegenerate perspective cameras required')
-    supported=np.any(np.any(b!=0,axis=2)&m.any(axis=0)[None,:],axis=1)
+    eligible=m.any(axis=0).copy();curves=[]
+    for view,indices,polyline,scale in curve_observations:
+        indices=np.asarray(indices);polyline=np.asarray(polyline,float)
+        if (not isinstance(view,(int,np.integer)) or isinstance(view,(bool,np.bool_))
+                or not 0<=view<len(p) or indices.ndim!=1 or len(indices)<2
+                or not np.issubdtype(indices.dtype,np.integer)
+                or np.any(indices<0) or np.any(indices>=len(x))
+                or len(np.unique(indices))!=len(indices)
+                or not np.isscalar(scale) or not np.isfinite(scale) or scale<=0):
+            raise ValueError('valid curve view, unique sample indices and positive scale required')
+        curve_residuals(np.empty((0,2)),polyline)
+        eligible[indices]=True;curves.append((view,indices,polyline,float(scale)))
+    supported=np.any(np.any(b!=0,axis=2)&eligible[None,:],axis=1)
     if not supported.any():raise ValueError('no target displacement on eligible observations')
     active_basis=b[supported]
     def homogeneous(weights):
@@ -38,6 +53,7 @@ def fit_target_points(prior, deltas, projections, observations, mask, sigma_px,
     def residual(weights):
         h=homogeneous(weights);uv=h[:,:,:2]/np.maximum(h[:,:,2:],1e-8)
         return np.r_[((uv[m]-y[m])/sigma[m,None]).ravel(),
+                     np.concatenate([curve_residuals(uv[view,ids],line).ravel()/scale for view,ids,line,scale in curves]) if curves else [],
                      np.sqrt(regularization)*weights,
                      100*np.minimum(h[:,:,2]-1e-6,0).ravel()]
     # Start inside bounds: the solver can otherwise stop at its nudged zero bound.
@@ -46,6 +62,7 @@ def fit_target_points(prior, deltas, projections, observations, mask, sigma_px,
     h=homogeneous(solved.x)
     if not solved.success or np.any(h[:,:,2]<=0):raise ValueError('target solve failed or points behind camera')
     report={'status':'UNVERIFIED','eligible_observations':int(m.sum()),
+            'curve_sample_counts':[len(ids) for _,ids,_,_ in curves],
             'active_bounds':solved.active_mask.tolist(),
             'fitted_control_indices':np.flatnonzero(supported).tolist(),
             'unsupported_control_indices':np.flatnonzero(~supported).tolist(),
@@ -54,5 +71,7 @@ def fit_target_points(prior, deltas, projections, observations, mask, sigma_px,
     for label,values in [('before',h0),('after',h)]:
         errors=np.linalg.norm(values[:,:,:2]/values[:,:,2:]-y,axis=2)[m]
         report[label]={'mean_error_px':float(errors.mean()),'errors_px':errors.tolist()}
+        uv=values[:,:,:2]/values[:,:,2:]
+        report[label]['curve_mean_error_px']=[float(np.linalg.norm(curve_residuals(uv[view,ids],line),axis=1).mean()) for view,ids,line,_ in curves]
     weights=np.zeros(len(b));weights[supported]=solved.x
     return weights,report

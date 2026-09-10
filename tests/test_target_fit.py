@@ -52,3 +52,18 @@ class TargetFitTests(unittest.TestCase):
         self.assertEqual(report['fitted_control_indices'],[0])
         args[1][:]=0
         with self.assertRaisesRegex(ValueError,'no target displacement'):fit_target_points(*args)
+
+    def test_curve_support_and_invalid_curve(self):
+        x,b,p,y,m,sigma=self.fixture()
+        x=np.r_[x,[[0,-.2,3],[0,.2,3]]]
+        expanded=np.zeros((2,5,3));expanded[0,:3]=b[0];expanded[1,3:,0]=.2
+        obs=np.full((2,5,2),np.nan);obs[:,:3]=y
+        mask=np.zeros((2,5),bool);mask[:,:3]=m
+        scales=np.full((2,5),3.)
+        curve=(0,np.array([3,4]),np.array([[10.,-100.],[10.,100.]]),3.)
+        weights,report=fit_target_points(x,expanded,p,obs,mask,scales,regularization=0,curve_observations=[curve])
+        np.testing.assert_allclose(weights,[.3,.3],atol=1e-6)
+        self.assertEqual(report['unsupported_control_indices'],[])
+        self.assertLess(report['after']['curve_mean_error_px'][0],1e-5)
+        for bad in [(3,[3,4],curve[2],3),(0,[3,3],curve[2],3),(0,[3,4],[[1,2]],3),(0,[3,4],curve[2],0)]:
+            with self.assertRaises(ValueError):fit_target_points(x,expanded,p,obs,mask,scales,curve_observations=[bad])
