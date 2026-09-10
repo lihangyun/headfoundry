@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0063 adds profile arcs to screened pose fitting, restraining the right pose drift and lowering fitted profile errors. Retained anchor errors increase, and actual views remain generic. Both contour and anchors are now training inputs; no camera or likeness acceptance.
 - Experiment 0062 applies the three anchor exclusions and reruns fixed-focal pose fitting. The right pose visibly drifts away from the photo and profile MAE worsens to 17.34px despite smaller retained-point error. Candidate rejected; reliable side-view support is still required.
 - Experiment 0061 identifies concrete anchor conflicts: the right-profile detector nose target is outside the photo silhouette, and two fitted oblique mouth anchors are self-occluded on the current mesh. Non-destructive rejection guidance and numbered photo/clay crops are retained; original data and cameras stay unchanged.
 - Experiment 0060 rejects four fixed-shape focal/pose candidates: some training anchor errors decrease, but both profile checks regress versus the original cameras. Actual bilateral views were inspected; focal is still uncalibrated, and anatomical anchor correspondence is the next audit.
