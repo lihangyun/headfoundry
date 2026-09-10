@@ -3,6 +3,25 @@ import numpy as np
 from headfoundry.surface_diagnostic import fit_surface
 
 
+def curve_residuals(points, polyline):
+    """Closest-point residuals to an ordered open 2D curve, including endpoints.
+
+    The caller supplies a semantic curve: this does not segment a silhouette
+    or connect disconnected components. Repeated vertices are safe.
+    """
+    points=np.asarray(points,float);line=np.asarray(polyline,float)
+    if (points.ndim!=2 or points.shape[1:]!=(2,) or line.ndim!=2
+            or line.shape[1:]!=(2,) or len(line)<2
+            or not np.isfinite(points).all() or not np.isfinite(line).all()):
+        raise ValueError('finite 2D points and at least two curve vertices required')
+    start=line[:-1];delta=np.diff(line,axis=0);length2=(delta*delta).sum(1)
+    offsets=points[:,None,:]-start
+    t=np.divide((offsets*delta).sum(2),length2,out=np.zeros(offsets.shape[:2]),where=length2>0)
+    residual=start+np.clip(t,0,1)[...,None]*delta-points[:,None,:]
+    nearest=np.argmin((residual*residual).sum(2),axis=1)
+    return residual[np.arange(len(points)),nearest]
+
+
 def envelope_edge(vertices, edges, projection, row, direction):
     """Outer projected edge at a pixel row, with perspective-correct 3D weights.
 
