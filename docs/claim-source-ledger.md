@@ -70,3 +70,8 @@ revision, with explicit CC0 headers and exact hashes in
 `makehuman-nose-target-lock.json`. The real-photo fit is rejected for shape
 promotion; asset usability must not be conflated with visual reconstruction
 quality. No upstream application code or additional trained model is used.
+
+Experiment 0068 separately locks the two nasal-base vertical graphical
+targets at the same official revision. Both file headers explicitly declare
+CC0. Their fitting result regresses bilateral nasal profiles, so the license
+and successful loading confer no reconstruction-quality claim.

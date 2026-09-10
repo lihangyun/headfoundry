@@ -1,0 +1,14 @@
+{
+  "asset_id": "makehuman-nasal-base-vertical-targets",
+  "source": "https://github.com/makehumancommunity/makehuman",
+  "revision": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+  "source_directory": "makehuman/data/targets/nose",
+  "license_id": "CC0-1.0",
+  "license_evidence": "Explicit CC0 header in both files and LICENSE.md section C",
+  "base_asset_lock": "makehuman-base-asset-lock.json",
+  "scope": "Two graphical displacement data assets; not application code or trained identity model",
+  "sha256": {
+    "nose-base-down.target": "f0c22a439540d31e389857a42a415be3bb2262bedb1821b9ce66578068bfebb1",
+    "nose-base-up.target": "b3f8625bfbbbe455fba4dadcd668a49e48dd8a746597b4c34f4ac46d1ac4ea1d"
+  }
+}
