@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0070 adds a tested fixed-camera graphical-target point fitter with explicit eligibility masks and per-point pixel scales. It does not estimate uncertainty or claim visual improvement; real-photo integration and contour checks remain required. Full suite: 75 tests.
 - Experiment 0069 triangulates the visible alar pairs without a mesh prior: several-pixel disagreement remains, and recovered offsets are sensitive to assumed 3px input perturbations. Do not convert these detector pairs directly into exact geometry targets; no model/camera promotion.
 - Experiment 0068 adds nasal-base vertical control. Frontal alar error decreases, but left-oblique and both nasal profile errors increase; actual five-view comparison does not justify promotion. Original model/cameras stay unchanged.
 - Experiment 0067 verifies visible alar support and adds twelve frontal/near-oblique nasal observations. Far-side occluded points are excluded. The fitted candidate still regresses frontal alar and left profile evidence; no promotion. Alar-base vertical support is the next specific question.
