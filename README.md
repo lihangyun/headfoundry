@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0050 adds occlusion-preserving component filtering to surface lifting. On the actual combined head it explicitly rejects 18 eye-helper hits as body observations, including all five previously audited eye mismatches. Anatomical correctness remains unverified; 67 tests pass.
 - Experiment 0049 adds an explicit, non-default CC0 eye-helper preparation option, verified on the pinned asset and rendered in all five views. Generic eye surfaces now have a local experimental output; subject-specific eyes and likeness remain unverified. Full suite: 66 tests.
 - Experiment 0048 confirms substantial cross-view drift in clay-derived bridge/nose correspondences on the exact same unchanged head. These mappings remain unverified and must not be treated as anatomical truth for stronger deformation.
 - Experiment 0047 rejects a dense pose-only candidate: detector residuals decrease but manual-anchor alignment worsens in all three fitted views. Cameras are not promoted; central anatomical correspondence support must be resolved before stronger deformation.

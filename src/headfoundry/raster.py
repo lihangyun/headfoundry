@@ -6,11 +6,13 @@ All vertices must be beyond the near plane; near-plane clipping is not supported
 import numpy as np
 
 
-def lift_pixels(vertices, faces, extrinsic, intrinsic, pixels):
+def lift_pixels(vertices, faces, extrinsic, intrinsic, pixels, *, allowed_faces=None):
     """Exact visible triangle + 3D barycentric weights; misses are -1/NaN.
 
     No snapping to nearby surfaces. This proves projection, not that a detected
     pixel denotes the same anatomical feature in another image.
+    Optional boolean allowed_faces rejects disallowed nearest hits, without
+    seeing through them to an allowed but occluded surface.
     """
     v=np.asarray(vertices,float);f=np.asarray(faces);e=np.asarray(extrinsic,float)
     k=np.asarray(intrinsic,float);pixels=np.asarray(pixels,float)
@@ -19,6 +21,9 @@ def lift_pixels(vertices, faces, extrinsic, intrinsic, pixels):
             or e.shape!=(3,4) or k.shape!=(3,3) or pixels.ndim!=2 or pixels.shape[1:]!=(2,)
             or not all(np.isfinite(a).all() for a in (v,e,k,pixels)) or not np.allclose(k[2],[0,0,1])):
         raise ValueError('finite mesh, camera and pixels required')
+    allowed=None if allowed_faces is None else np.asarray(allowed_faces)
+    if allowed is not None and (allowed.shape!=(len(f),) or allowed.dtype!=np.bool_):
+        raise ValueError('allowed_faces must be a boolean mask over all triangles')
     cam=v@e[:,:3].T+e[:,3]
     if np.any(cam[:,2]<=1e-6):raise ValueError('near-plane clipping required')
     h=cam@k.T;uv=h[:,:2]/h[:,2:];a,b,c=np.moveaxis(uv[f],1,0)
@@ -33,6 +38,7 @@ def lift_pixels(vertices, faces, extrinsic, intrinsic, pixels):
         if not len(candidates):continue
         inverse=screen[candidates]/cam[f[candidates],2]
         index=int(np.argmax(inverse.sum(1)))
+        if allowed is not None and not allowed[candidates[index]]:continue
         hit_ids[i]=candidates[index];weights[i]=inverse[index]/inverse[index].sum()
     return hit_ids,weights
 

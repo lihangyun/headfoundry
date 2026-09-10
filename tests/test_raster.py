@@ -4,6 +4,18 @@ from headfoundry.raster import render,lift_pixels
 
 
 class RasterTests(unittest.TestCase):
+    def test_component_filter_does_not_see_through_occluders(self):
+        v=np.array([[0.,0,1],[8,0,2],[0,8,2]])
+        vertices=np.r_[v*2,v];faces=np.array([[0,1,2],[3,4,5]])
+        e=np.c_[np.eye(3),np.zeros(3)]
+        for allowed,expected in [([True,False],-1),([False,True],1),([False,False],-1)]:
+            ids,w=lift_pixels(vertices,faces,e,np.eye(3),[[.5,.5]],allowed_faces=allowed)
+            self.assertEqual(ids[0],expected)
+            self.assertEqual(bool(np.isnan(w).all()),expected==-1)
+        for bad in [[1,0],[True],[[True,False]]]:
+            with self.assertRaises(ValueError):
+                lift_pixels(vertices,faces,e,np.eye(3),[[.5,.5]],allowed_faces=bad)
+
     def test_exact_lifting_weights_miss_and_occlusion(self):
         v=np.array([[0.,0,1],[8,0,2],[0,8,2]])
         e=np.c_[np.eye(3),np.zeros(3)]
