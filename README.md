@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0067 verifies visible alar support and adds twelve frontal/near-oblique nasal observations. Far-side occluded points are excluded. The fitted candidate still regresses frontal alar and left profile evidence; no promotion. Alar-base vertical support is the next specific question.
 - Experiment 0066 prepares six pinned CC0 nasal controls and fits a three-parameter bilateral nose trial. Changes are tiny and left nasal error increases; actual five-view inspection does not support promotion. Frontal/oblique nasal anatomy remains insufficiently constrained.
 - Experiment 0065 verifies candidate canthi before/after contour-supported pose fitting, including profile visibility. Same-support camera gains are negligible and actual profiles remain visually unchanged; no promotion. Nose/lip anatomy remains unresolved.
 - Experiment 0064 finds four nearby canthus correspondence candidates visible in all three fitting views, with lower projection error and inspected photo/clay crops. Geometry and cameras are unchanged; profile support, pose impact and anatomical accuracy remain unverified.
