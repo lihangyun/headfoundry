@@ -27,10 +27,13 @@ def fit_target_points(prior, deltas, projections, observations, mask, sigma_px,
         raise ValueError('finite geometry and eligible observations with positive uncertainty required')
     if any(np.linalg.matrix_rank(camera[:,:3])<3 for camera in p):
         raise ValueError('nondegenerate perspective cameras required')
+    supported=np.any(np.any(b!=0,axis=2)&m.any(axis=0)[None,:],axis=1)
+    if not supported.any():raise ValueError('no target displacement on eligible observations')
+    active_basis=b[supported]
     def homogeneous(weights):
-        points=x+np.einsum('k,knj->nj',weights,b)
+        points=x+np.einsum('k,knj->nj',weights,active_basis)
         return np.einsum('vij,nj->vni',p,np.c_[points,np.ones(len(x))])
-    initial=np.zeros(len(b));h0=homogeneous(initial)
+    initial=np.zeros(len(active_basis));h0=homogeneous(initial)
     if np.any(h0[:,:,2]<=0):raise ValueError('initial points behind camera')
     def residual(weights):
         h=homogeneous(weights);uv=h[:,:,:2]/np.maximum(h[:,:,2:],1e-8)
@@ -38,15 +41,18 @@ def fit_target_points(prior, deltas, projections, observations, mask, sigma_px,
                      np.sqrt(regularization)*weights,
                      100*np.minimum(h[:,:,2]-1e-6,0).ravel()]
     # Start inside bounds: the solver can otherwise stop at its nudged zero bound.
-    solved=least_squares(residual,np.full(len(b),maximum_weight*.1),
+    solved=least_squares(residual,np.full(len(active_basis),maximum_weight*.1),
                          bounds=(0,maximum_weight),loss='soft_l1',max_nfev=300)
     h=homogeneous(solved.x)
     if not solved.success or np.any(h[:,:,2]<=0):raise ValueError('target solve failed or points behind camera')
     report={'status':'UNVERIFIED','eligible_observations':int(m.sum()),
             'active_bounds':solved.active_mask.tolist(),
+            'fitted_control_indices':np.flatnonzero(supported).tolist(),
+            'unsupported_control_indices':np.flatnonzero(~supported).tolist(),
             'cost':float(solved.cost),
             'limitation':'Training fit only. Explicit supplied visibility and uncertainty; no camera, mesh or identity acceptance.'}
     for label,values in [('before',h0),('after',h)]:
         errors=np.linalg.norm(values[:,:,:2]/values[:,:,2:]-y,axis=2)[m]
         report[label]={'mean_error_px':float(errors.mean()),'errors_px':errors.tolist()}
-    return solved.x,report
+    weights=np.zeros(len(b));weights[supported]=solved.x
+    return weights,report

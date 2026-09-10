@@ -44,3 +44,11 @@ class TargetFitTests(unittest.TestCase):
         args[5][0]=10;args[5][1]=1
         second,_=fit_target_points(*args,regularization=0)
         self.assertLess(first[0],.15);self.assertGreater(second[0],.35)
+
+    def test_unsupported_control_stays_exactly_zero(self):
+        args=list(self.fixture());args[1]=np.concatenate([args[1],np.zeros_like(args[1])])
+        weights,report=fit_target_points(*args,regularization=0)
+        self.assertEqual(weights[1],0);self.assertEqual(report['unsupported_control_indices'],[1])
+        self.assertEqual(report['fitted_control_indices'],[0])
+        args[1][:]=0
+        with self.assertRaisesRegex(ValueError,'no target displacement'):fit_target_points(*args)
