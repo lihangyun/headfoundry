@@ -52,3 +52,8 @@ license above. Exact paths/revision/hashes are recorded in
 `examples/makehuman-mouth-target-lock.json`. Experiment 0055 verifies local
 parsing and source-ID mapping and inspects generic shape previews. This is a
 graphical-asset grant, not application-code reuse or evidence of identity fit.
+
+Experiment 0057 separately locks six official lip-height/mouth-position targets
+from the same revision in `makehuman-mouth-height-lock.json`. Every downloaded
+file's CC0 header was inspected. Their real-photo fit regresses both profiles;
+asset rights and successful parsing do not imply reconstruction acceptance.
