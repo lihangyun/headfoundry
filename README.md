@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0077 finds nasal midline inconsistency even with free 3D points and no mesh. Alar-only shared vertical biases improve excluded midline prediction, but tip disagreement remains. Diagnose shared view alignment separately from tip correspondence; no camera/shape promotion.
 - Experiment 0076 tests total-displacement regularization, then adds an optional graph-Laplacian bending penalty. Source-prior alone retains the crease; bending reduces the visible pinch but retains generic/angular anatomy and view tradeoffs. No promotion. Default behavior unchanged; 78 tests pass.
 - Experiment 0075 tests local nasal vertex fitting: bilateral contour and all three alar-view means decrease, but enlarged actual renders show a new nasal-tip crease. Candidate rejected despite valid triangle/visibility checks. Next require smoother shape-preserving deformation; 77 tests pass.
 - Experiment 0074 finds that at least 89.4% of the current nasal residual norm lies outside the four-control local linear span, stable across three numerical steps. Stop repeated narrow coefficient sweeps; investigate missing shape support and correspondence/camera errors. This is a local diagnostic, not a proof of global impossibility or visual acceptance.
