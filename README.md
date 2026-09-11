@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0080 compares face-restricted existing head controls with fixed versus joint cameras. Outline/anchor tradeoffs remain, profiles barely change, and both candidates fall below the recent 0.5 area-ratio guard. Real five-view results remain generic; no promotion. Stop repeating this four-preset sweep. 78 tests pass.
 - Experiment 0079 couples actual-head oblique pose with bounded smooth nasal deformation. It avoids the disconnected free-point camera shift and lowers source-relative facial/nasal fitting errors, but the rendered face remains generic and bounds are active. Candidate unverified; broader identity remains the next focus. 78 tests pass.
 - Experiment 0078 rejects global transfer of the nasal y bias to eyes/mouth. Small relative rotations improve free-point consistency but misalign the unchanged head by about 30px in obliques; no standalone camera promotion. Any further use requires joint shape/camera constraints and real all-view checks.
 - Experiment 0077 finds nasal midline inconsistency even with free 3D points and no mesh. Alar-only shared vertical biases improve excluded midline prediction, but tip disagreement remains. Diagnose shared view alignment separately from tip correspondence; no camera/shape promotion.
