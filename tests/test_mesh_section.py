@@ -1,9 +1,23 @@
 import unittest
 import numpy as np
-from headfoundry.mesh_section import section_segments
+from headfoundry.mesh_section import section_segments,section_paths
 
 
 class SectionTests(unittest.TestCase):
+    def test_paths_disconnected_closed_duplicate_and_branch(self):
+        p=np.array([[[1,0,0],[2,0,0]],[[0,0,0],[1,0,0]],[[2,0,0],[1,0,0]],[[9,0,0],[10,0,0]]],float)
+        paths=section_paths(p)
+        self.assertEqual(sorted(map(len,paths)),[2,3])
+        for path in paths:
+            coords=p[path[:,0],path[:,1]]
+            np.testing.assert_allclose(np.linalg.norm(np.diff(coords,axis=0),axis=1),1)
+        loop=np.array([[[0,0,0],[1,0,0]],[[1,0,0],[0,1,0]],[[0,1,0],[0,0,0]]],float)
+        result=section_paths(loop)[0]
+        np.testing.assert_array_equal(result[0],result[-1])
+        with self.assertRaises(ValueError):section_paths(np.concatenate([p,[[[1,0,0],[1,1,0]]]]))
+        with self.assertRaises(ValueError):section_paths(np.zeros((1,2,3)))
+        self.assertEqual(section_paths(np.empty((0,2,3))),[])
+
     def test_plane_and_support_survive_mesh_displacement(self):
         v=np.array([[-1,0,0],[1,0,0],[1,2,0],[-1,2,0]],float)
         f=np.array([[0,1,2],[0,2,3]])
