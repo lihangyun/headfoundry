@@ -8,8 +8,10 @@ from scipy.sparse.linalg import lsqr
 
 
 def fit_surface(prior, observations, projections, triangles, protected, regularization=30., observation_mask=None,
-                displacement_directions=None, edge_observations=()):
+                displacement_directions=None, edge_observations=(), *, bending_regularization=0.):
     prior = np.asarray(prior, float)
+    if not np.isfinite(bending_regularization) or bending_regularization < 0:
+        raise ValueError('finite nonnegative bending regularization required')
     observations = np.asarray(observations, float)
     projections = np.asarray(projections, float)
     triangles = np.asarray(triangles, int)
@@ -81,6 +83,18 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
     for a,b in edges:
         for axis in range(3):
             equation([(a,axis,regularization),(b,axis,-regularization)],0.)
+    if bending_regularization:
+        # Uniform graph Laplacian of displacement; preserves prior curvature
+        # approximately, not a collision or geometric curvature guarantee.
+        neighbors=[set() for _ in range(count)]
+        for a,b in edges:
+            neighbors[a].add(b);neighbors[b].add(a)
+        for vertex,adjacent in enumerate(neighbors):
+            if not adjacent or (vertex not in columns and not any(j in columns for j in adjacent)):
+                continue
+            for axis in range(3):
+                equation([(vertex,axis,bending_regularization)]+
+                         [(j,axis,-bending_regularization/len(adjacent)) for j in sorted(adjacent)],0.)
     for vertex in free:
         for axis in range(3):
             equation([(int(vertex),axis,regularization*.1)],0.)

@@ -24,6 +24,18 @@ class SurfaceTests(unittest.TestCase):
         candidate=fit_surface(self.prior,self.uv(self.prior),self.p,self.triangles,[0,1,2,3])
         np.testing.assert_allclose(candidate,self.prior,atol=1e-10)
 
+    def test_bending_restrains_local_spike_and_preserves_prior(self):
+        target=self.prior.copy();target[4,2]=-.4
+        plain=fit_surface(self.prior,self.uv(target),self.p,self.triangles,[0,1,2,3],.1)
+        smooth=fit_surface(self.prior,self.uv(target),self.p,self.triangles,[0,1,2,3],.1,bending_regularization=100.)
+        self.assertLess(np.linalg.norm(smooth-self.prior),np.linalg.norm(plain-self.prior))
+        np.testing.assert_array_equal(smooth[:4],self.prior[:4])
+        fixed=fit_surface(self.prior,self.uv(self.prior),self.p,self.triangles,[],bending_regularization=100.)
+        np.testing.assert_allclose(fixed,self.prior,atol=1e-10)
+        for value in [-1.,np.nan,np.inf]:
+            with self.assertRaises(ValueError):
+                fit_surface(self.prior,self.uv(target),self.p,self.triangles,[],bending_regularization=value)
+
     def test_triangle_barycentric_observation(self):
         target=self.prior.copy();target[4,2]=-.4
         ids=np.array([0,1,4]);w=np.array([.1,.2,.7]);point=w@target[ids];constraints=[]
