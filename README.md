@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0086 finds that seam-sample separation is mostly depth, with no nearby open mesh boundary. A two-ring visible-support search trades frontal accuracy for oblique accuracy at the upper seam and cannot improve the lower sample. No support remapping or mouth closure is promoted.
 - Experiment 0085 inspects enlarged mouth photo/clay supports: the photos have a closed seam while the source has an opening, and projected upper/lower seam samples separate by 2.65–5.83px versus detector separation 0.22–0.72px. Resolve opening/configuration and seam support before further lip-volume fitting; anatomy remains unverified.
 - Experiment 0084 adds per-row bilateral profile protection to the joint nasal/lip fit. Every tested nonzero step violates a protected row; the retained mesh is unchanged and rejected as an improvement. Two starts did not converge. Repeating this penalty is not the next step; mouth correspondence semantics remain unresolved.
 - Experiment 0083 jointly fits ten nasal/lip controls. Frontal/oblique point errors decrease but both actual profile errors increase; the candidate is rejected for promotion after five-view inspection despite valid triangle/visibility checks. Mouth correspondence semantics and explicit profile protection remain unresolved.
