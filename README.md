@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0092 adds tested mesh sections retaining triangle/barycentric endpoint support. The real 61-segment lip section is reproduced exactly within tolerance; 80 tests pass. Anatomical rim tracing and contact remain unfinished, with no geometry promotion.
 - Experiment 0091 inspects the actual lip cross-section and tests vertical-only closure. It still hides the old lower sample and regresses the right profile; both candidates are rejected. Stop two-point attraction trials and establish a surface-curve/contact model for the lip rim.
 - Experiment 0090 tests compact local seam closure. Quarter closure does not resolve the visible mouth shape; half closure hides the lower sample in all three frontal/oblique views despite valid triangles. Both candidates are rejected; closure needs explicit lip-rim geometry rather than attraction between existing detector-derived hits.
 - Experiment 0089 fits nasal/lip controls on the existing coupled head/cameras. Right profile and point errors decrease, left profile slightly regresses, and actual five-view likeness remains generic. Both immediate and original-source mesh checks are retained; no promotion or repeated identical sweep.
