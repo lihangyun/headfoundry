@@ -4,8 +4,9 @@ Status: `UNVERIFIED`. No mesh, camera or product default changed.
 
 Fit five paired symmetric controls prepared in experiment 0081: eye spacing,
 cheek volume, chin height, chin prognathism and chin width. The source is the
-unchanged experiment-0079 head, and all five cameras remain the unaccepted
-registration from experiment 0041. Shape is the only optimized variable.
+unchanged experiment-0040 `oblique-jaw-v3` head, and all five cameras remain
+the unaccepted `template-registration-v3` registration. The experiment-0079
+joint nasal candidate is not used. Shape is the only optimized variable.
 
 The fit uses the same four frontal/oblique outlines, both complete profile
 curves and reviewed non-nasal anchors used by experiment 0080. Far-side mouth
@@ -51,3 +52,23 @@ shape, followed by an actual enlarged five-view comparison with independent
 held evidence. Camera acceptance and full visual acceptance remain unmet.
 
 Full existing public suite: 78 tests pass.
+
+## Follow-up: exported surface and support verification
+
+Reconstructing the full mesh from the saved coefficients and pinned basis,
+then applying the same neck cut, reproduces the exported candidate within
+1e-12 template units with exactly matching faces. This confirms that the
+measured coefficients and the displayed/exported geometry agree.
+
+Exact ray lifting on the actual exported candidate confirms all sixteen
+eligible canthus/mouth supports remain visible across the front and two
+oblique cameras; the largest surface gap is below 9e-14 template units.
+The two excluded far-mouth observations remain occluded (gaps 0.06645 and
+0.05673). Their exclusions are still necessary after deformation.
+
+Enlarged photo/source/candidate crops were rendered and inspected. Eye spacing
+does not resolve the eyelid shape, nasal angularity or cheek anatomy. Visible
+support is not evidence of correct anatomical correspondence, and these
+training observations do not constitute held-out validation. The candidate
+remains `UNVERIFIED`. Private `central-face-visibility-v1` retains the actual
+comparison and per-support ray gaps without publishing personal data.
