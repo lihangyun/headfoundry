@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0078 rejects global transfer of the nasal y bias to eyes/mouth. Small relative rotations improve free-point consistency but misalign the unchanged head by about 30px in obliques; no standalone camera promotion. Any further use requires joint shape/camera constraints and real all-view checks.
 - Experiment 0077 finds nasal midline inconsistency even with free 3D points and no mesh. Alar-only shared vertical biases improve excluded midline prediction, but tip disagreement remains. Diagnose shared view alignment separately from tip correspondence; no camera/shape promotion.
 - Experiment 0076 tests total-displacement regularization, then adds an optional graph-Laplacian bending penalty. Source-prior alone retains the crease; bending reduces the visible pinch but retains generic/angular anatomy and view tradeoffs. No promotion. Default behavior unchanged; 78 tests pass.
 - Experiment 0075 tests local nasal vertex fitting: bilateral contour and all three alar-view means decrease, but enlarged actual renders show a new nasal-tip crease. Candidate rejected despite valid triangle/visibility checks. Next require smoother shape-preserving deformation; 77 tests pass.
