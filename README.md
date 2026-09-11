@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0089 fits nasal/lip controls on the existing coupled head/cameras. Right profile and point errors decrease, left profile slightly regresses, and actual five-view likeness remains generic. Both immediate and original-source mesh checks are retained; no promotion or repeated identical sweep.
 - Experiment 0088 verifies positive transfer of the existing joint camera/head to seam samples excluded from its fit: both oblique fixed-support errors decrease while front stays unchanged. Errors remain material; use this unaccepted coupled configuration as a comparison, without camera or likeness promotion.
 - Experiment 0087 removes mesh constraints and fits free seam points: front/left errors remain about 5–6px, and a shared closed-seam point has similar disagreement. Lip closure alone cannot reconcile these fixed-camera observations; shared cross-view alignment needs attention before stronger shape fitting.
 - Experiment 0086 finds that seam-sample separation is mostly depth, with no nearby open mesh boundary. A two-ring visible-support search trades frontal accuracy for oblique accuracy at the upper seam and cannot improve the lower sample. No support remapping or mouth closure is promoted.
