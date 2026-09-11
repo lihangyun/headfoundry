@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0075 tests local nasal vertex fitting: bilateral contour and all three alar-view means decrease, but enlarged actual renders show a new nasal-tip crease. Candidate rejected despite valid triangle/visibility checks. Next require smoother shape-preserving deformation; 77 tests pass.
 - Experiment 0074 finds that at least 89.4% of the current nasal residual norm lies outside the four-control local linear span, stable across three numerical steps. Stop repeated narrow coefficient sweeps; investigate missing shape support and correspondence/camera errors. This is a local diagnostic, not a proof of global impossibility or visual acceptance.
 - Experiment 0073 recomputes the candidate contour during nasal fitting. Side regressions remain; dense versus original annotation-row sampling can disagree even on the same actual silhouette. Real photo/source/candidate comparison is retained privately; no promotion. 77 tests pass.
 - Experiment 0072 adds explicit curve support to the tested target fitter and runs real mixed point/curve fitting. Fitted source-arc scores decrease while actual nasal envelopes regress; candidate rejected. Curve distance is not apparent-silhouette accuracy. Full suite: 77 tests.
