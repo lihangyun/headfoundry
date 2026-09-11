@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0095 finds corner-region section changes and distinguishes closest surface pairs from the visible seam. Most nearest pairs are hidden in obliques; they cannot substitute for photo landmarks. Contact and visible-seam constraints remain separate unfinished work.
 - Experiment 0094 traces 26 central lip-turn candidates across thirteen actual sections and inspects three-view overlays. Corners remain uncovered and some turns are hidden; contact geometry and visible photo constraints must be distinguished before fitting. No mesh change.
 - Experiment 0093 orders supported sections into unbranched paths with explicit ambiguity rejection. The real lip section forms paths of 30 and 33 points; 81 tests pass. These are cross-section paths, not yet transverse anatomical lip rims.
 - Experiment 0092 adds tested mesh sections retaining triangle/barycentric endpoint support. The real 61-segment lip section is reproduced exactly within tolerance; 80 tests pass. Anatomical rim tracing and contact remain unfinished, with no geometry promotion.
