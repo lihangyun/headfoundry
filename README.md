@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0084 adds per-row bilateral profile protection to the joint nasal/lip fit. Every tested nonzero step violates a protected row; the retained mesh is unchanged and rejected as an improvement. Two starts did not converge. Repeating this penalty is not the next step; mouth correspondence semantics remain unresolved.
 - Experiment 0083 jointly fits ten nasal/lip controls. Frontal/oblique point errors decrease but both actual profile errors increase; the candidate is rejected for promotion after five-view inspection despite valid triangle/visibility checks. Mouth correspondence semantics and explicit profile protection remain unresolved.
 - Experiment 0082 fits five symmetric, hash-pinned CC0 central-face controls with the existing unaccepted cameras. Every fitted outline/profile/anchor aggregate decreases and the mesh keeps a 0.925 minimum area ratio, but actual five-view inspection shows only small cheek/chin changes and retains generic eyes, nose, lips and head shape. Candidate remains `UNVERIFIED`; no promotion. 78 tests pass.
 - Experiment 0081 prepares fourteen hash-pinned CC0 central-face controls for eye spacing, cheek volume and chin proportions. This is asset-only technical progress, not a fitted likeness; private previews and real fitting remain next.
