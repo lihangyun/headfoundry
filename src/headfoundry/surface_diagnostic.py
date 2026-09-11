@@ -8,7 +8,13 @@ from scipy.sparse.linalg import lsqr
 
 
 def fit_surface(prior, observations, projections, triangles, protected, regularization=30., observation_mask=None,
-                displacement_directions=None, edge_observations=(), *, bending_regularization=0.):
+                displacement_directions=None, edge_observations=(), *, bending_regularization=0., surface_pairs=()):
+    """Fit image observations and optional soft relative surface offsets.
+
+    surface_pairs entries are (ids_a, weights_a, ids_b, weights_b, offset, scale).
+    They constrain point_b-point_a in mesh units, independently of visibility.
+    These soft equalities do not enforce nonpenetration or detect collisions.
+    """
     prior = np.asarray(prior, float)
     if not np.isfinite(bending_regularization) or bending_regularization < 0:
         raise ValueError('finite nonnegative bending regularization required')
@@ -45,6 +51,22 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
                 or target.shape!=(2,) or not np.isfinite(target).all()):
             raise ValueError('invalid weighted edge/triangle observation')
         edge_constraints.append((view,ids,w,target))
+    pair_constraints=[]
+    for ids_a,weights_a,ids_b,weights_b,offset,scale in surface_pairs:
+        samples=[]
+        for indices,weights in [(ids_a,weights_a),(ids_b,weights_b)]:
+            ids=np.asarray(indices);w=np.asarray(weights,float)
+            if (ids.shape!=(3,) or not np.issubdtype(ids.dtype,np.integer)
+                    or np.any(ids<0) or np.any(ids>=count) or len(np.unique(ids))!=3
+                    or w.shape!=(3,) or not np.isfinite(w).all() or np.any(w<0)
+                    or not np.isclose(w.sum(),1,atol=1e-10,rtol=0)):
+                raise ValueError('invalid paired surface sample')
+            samples.append((ids,w))
+        offset=np.asarray(offset,float)
+        if (offset.shape!=(3,) or not np.isfinite(offset).all()
+                or not np.isscalar(scale) or not np.isfinite(scale) or scale<=0):
+            raise ValueError('finite pair offset and positive scale required')
+        pair_constraints.append((*samples,offset,float(scale)))
     free = np.setdiff1d(np.arange(count), protected)
     if not len(free):
         return prior.copy()
@@ -79,6 +101,11 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
             a=(p[axis,:3]-target[axis]*p[2,:3])/depth
             b=(target[axis]*p[2,3]-p[axis,3])/depth-a@point
             equation([(int(vertex),j,float(weight*a[j])) for vertex,weight in zip(ids,w) for j in range(3)],b)
+    for (ia,wa),(ib,wb),offset,scale in pair_constraints:
+        residual=offset-(wb@prior[ib]-wa@prior[ia])
+        for axis in range(3):
+            equation([(int(i),axis,-scale*float(w)) for i,w in zip(ia,wa)]+
+                     [(int(i),axis,scale*float(w)) for i,w in zip(ib,wb)],scale*residual[axis])
     edges = sorted({tuple(sorted((int(a),int(b)))) for t in triangles for a,b in zip(t,np.roll(t,-1))})
     for a,b in edges:
         for axis in range(3):
