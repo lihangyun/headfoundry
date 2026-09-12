@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-12 at commit `826c5770fc1a2b42b035d2dc01d3780c6ceae774`.
+Last updated: 2026-09-12 after experiment 0102.
 
 ## What exists
 
@@ -12,7 +12,7 @@ Last updated: 2026-09-12 at commit `826c5770fc1a2b42b035d2dc01d3780c6ceae774`.
 
 ## Current result
 
-The camera and full visual acceptance gates have not passed. Experiment 0101 fits 51 source-visible lip-seam constraints, but six become occluded and the area guard stops further fitting. Profile metrics can improve while the rendered identity remains generic, so this candidate is `REJECT` for promotion. KeenTools-level parity remains `UNVERIFIED`.
+The camera and full visual acceptance gates have not passed. Experiment 0102 dynamically rematches visible lip-seam constraints and lowers fixed-support error, but loses three originally visible oblique supports and fails enlarged visual inspection: the mouth remains angular and the identity generic. The candidate is `REJECT` for promotion. KeenTools-level parity remains `UNVERIFIED`.
 
 ## How to verify the public code
 
@@ -29,7 +29,7 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-Update lip visibility and nearest photo-curve targets during each bounded fitting step. Report errors on the original fixed supports as well as the active visible set so occlusion or dropped observations cannot manufacture improvement. Then inspect the actual five-view renders, especially both profiles, before considering any geometry promotion.
+Stop fitting the provisional central lip-rim samples to nearest photo-curve points. The next geometry experiment must use a more expressive anatomical boundary/surface representation or target broader high-impact identity shape. Preserve fixed-support reporting and inspect actual five-view renders, especially both profiles, before any promotion.
 
 ## Known pitfalls
 
@@ -37,4 +37,3 @@ Update lip visibility and nearest photo-curve targets during each bounded fittin
 - Positive depth, valid matrices and lower reprojection error do not prove correct camera calibration or identity reconstruction.
 - Shrinking internal lip gaps, valid triangle orientation and sampled no-crossing sections do not prove natural closure or full collision freedom.
 - Actual photos and derived biometric/identity artifacts are local-only under the current consent and must not enter Git, PCR or public reports.
-
