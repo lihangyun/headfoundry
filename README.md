@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0101 fits 51 source-visible photo seam constraints, but six become occluded and the area floor stops further steps. Actual five-view identity remains unresolved; candidate rejected for promotion. Visibility/curve targets must update during fitting with fixed-support reporting.
 - Experiment 0100 extracts and visually inspects three 41-point photo lip-seam curves using bounded dark-line tracing. They broadly follow the visible closed seam without search-boundary hits; localization and cross-view correspondence remain unverified. No mesh change.
 - Experiment 0099 audits the bounded candidate: mouth-profile means improve and sampled sections have no proper crossings, but enlarged views retain an open/angular mouth and hide the old lower seam sample. Internal gap reduction has not achieved natural closure; visible lip-line fitting is next.
 - Experiment 0098 bounds pair/profile iterations and updates silhouette support. Both final profile means decrease (3.54/6.52px), total movement stays below 0.03 and area ratio is 0.598; actual five-view identity remains unverified. No promotion or collision-free claim.
