@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-12 after experiment 0107.
+Last updated: 2026-09-13 after experiment 0108.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-12 after experiment 0107.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0108 isolates ray representation without another model run: exact pinhole unprojection of unchanged depth makes own-view alignment exact, but dense transfer p95 remains 91.93 px and actual cross-view sheets persist. Candidate `REJECT`; native-ray approximation is not the sole cause. No camera, template or texture promotion.
 
 Experiment 0107 tests one explicit uncalibrated 1800 px focal condition. The model does not enforce supplied intrinsics; camera p95 worsens to 51.48 px and visual promotion is `REJECT`. A new diagnostic finds 18–26 px own-view errors between native dense rays and their fitted pinhole cameras, despite correct rigid pose conversion. The optional conditioning path is tested; 88 tests pass, with no accepted visual improvement.
 
@@ -35,7 +37,7 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-Isolate native-ray versus fitted-pinhole representation using the existing outputs, fixed poses/depth and complete held observations before spending on another model run. Any pinhole-unprojection candidate changes geometry and cannot establish calibration just by exact own-view projection. Inspect real cross-view surfaces before fusion or promotion. These failures do not establish that the photographs lack recoverable information.
+Inspect whether remaining predicted-depth discontinuities lie within the face or only at mask boundaries, separately from the failed camera alignment. The ray-representation experiment is complete and rejected as a sufficient remedy. Do not fuse unaccepted patches or infer calibration from exact own-view projection. These failures do not establish that the photographs lack recoverable information.
 
 ## Known pitfalls
 
