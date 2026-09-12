@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0097 integrates sixteen bilateral photo contour observations with central surface pairs. Right profile improves but left slightly regresses and displacement reaches 0.0395 template units; no promotion. The pair-only planar audit found no sampled proper crossings, not complete collision freedom.
 - Experiment 0096 adds tested relative surface-pair constraints and runs thirteen real central lip pairs. Gaps shrink with protected surroundings and valid triangles; 82 tests pass. Actual five-view likeness remains unverified; soft pair offsets do not provide collision-safe contact or complete closure.
 - Experiment 0095 finds corner-region section changes and distinguishes closest surface pairs from the visible seam. Most nearest pairs are hidden in obliques; they cannot substitute for photo landmarks. Contact and visible-seam constraints remain separate unfinished work.
 - Experiment 0094 traces 26 central lip-turn candidates across thirteen actual sections and inspects three-view overlays. Corners remain uncovered and some turns are hidden; contact geometry and visible photo constraints must be distinguished before fitting. No mesh change.
