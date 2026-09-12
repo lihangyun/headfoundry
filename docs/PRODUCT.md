@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-12 after experiment 0102.
+Last updated: 2026-09-12 after experiment 0103.
 
 ## What exists
 
@@ -12,7 +12,7 @@ Last updated: 2026-09-12 after experiment 0102.
 
 ## Current result
 
-The camera and full visual acceptance gates have not passed. Experiment 0102 dynamically rematches visible lip-seam constraints and lowers fixed-support error, but loses three originally visible oblique supports and fails enlarged visual inspection: the mouth remains angular and the identity generic. The candidate is `REJECT` for promotion. KeenTools-level parity remains `UNVERIFIED`.
+The camera and full visual acceptance gates have not passed. Experiment 0103 verifies a broader CC0 macro asset basis but finds no useful identity improvement: nonnegative fitting slightly improves profiles while regressing frontal/anchor evidence, and centered differences retain only a zero step under bilateral protection. The geometry candidates are `REJECT`; KeenTools-level parity remains `UNVERIFIED`.
 
 ## How to verify the public code
 
@@ -29,7 +29,7 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-Stop fitting the provisional central lip-rim samples to nearest photo-curve points. The next geometry experiment must use a more expressive anatomical boundary/surface representation or target broader high-impact identity shape. Preserve fixed-support reporting and inspect actual five-view renders, especially both profiles, before any promotion.
+Use a richer local anatomical shape basis with image-region-specific evidence; broad macro shape and provisional nearest-seam fitting are now rejected explanations. Preserve fixed-support reporting and inspect actual five-view renders, especially both profiles, before any promotion.
 
 ## Known pitfalls
 

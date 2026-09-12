@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0103 locks six additional CC0 macro shape assets and tests both nonnegative and centered-difference bases. Profile metrics move slightly, but protected frontal/anchor evidence regresses or forces a zero step, and five-view identity is unchanged. Broad macro shape is rejected as the missing identity representation.
 - Experiment 0102 dynamically updates visible lip-seam targets and lowers the fixed 51-target mean from 5.50 to 1.97 px, but loses three originally visible oblique supports and fails the enlarged visual check: the mouth remains an angular open shelf and identity stays generic. Candidate rejected; stop this provisional seam representation.
 - Experiment 0101 fits 51 source-visible photo seam constraints, but six become occluded and the area floor stops further steps. Actual five-view identity remains unresolved; candidate rejected for promotion. Visibility/curve targets must update during fitting with fixed-support reporting.
 - Experiment 0100 extracts and visually inspects three 41-point photo lip-seam curves using bounded dark-line tracing. They broadly follow the visible closed seam without search-boundary hits; localization and cross-view correspondence remain unverified. No mesh change.

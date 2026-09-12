@@ -1,0 +1,18 @@
+{
+  "asset_id": "makehuman-adult-macro-targets",
+  "source": "https://github.com/makehumancommunity/makehuman",
+  "revision": "a8bc2d54ff0ac92e78ff71431b1023eda42bf482",
+  "source_directory": "makehuman/data/targets/macrodetails",
+  "license_id": "CC0-1.0",
+  "license_evidence": "LICENSE.md section C and explicit CC0 header in every selected target",
+  "base_asset_lock": "makehuman-base-asset-lock.json",
+  "scope": "Six adult macro graphical displacement assets used only as an anonymous geometry basis; target names are not demographic inference or identity labels",
+  "sha256": {
+    "african-female-young.target": "7ef412cdbb161c5d5b21bb751d773b094c63fc5689befa948301530923e2ce6c",
+    "african-male-young.target": "8a48f5233dcc550a31f4ef2bf4ea2a7b089e9f9f0e6b555b34984d867f1cfc1a",
+    "asian-female-young.target": "60f2128a9b0e2e74b2bc513f014f2662be960b6cfa6fd11516632be7e0b241ac",
+    "asian-male-young.target": "04a159f731c6c7e68aa91d1b12ae15a90c510da6b1536dfb818d98415b4eb6ec",
+    "caucasian-female-young.target": "6352040adcd91d48bc2266a65246ff0be39afb1f3d309311426204a95c1cbd77",
+    "caucasian-male-young.target": "d08abdacbe89c3c74a2782b29386ca6ab24ab72467dd01642ea356702a27aff0"
+  }
+}
