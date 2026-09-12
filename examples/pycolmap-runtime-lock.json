@@ -1,0 +1,11 @@
+{
+  "distribution": "pycolmap",
+  "version": "4.2.0",
+  "source": "https://github.com/colmap/colmap/tree/4.2.0",
+  "license_id": "BSD-3-Clause",
+  "license_scope": "COLMAP itself; bundled dependency redistribution remains separately unverified. Local CPU experiment only, no trained checkpoint.",
+  "files": {
+    "pycolmap/_core.cp312-win_amd64.pyd": "abbfa792dbcca4a02f46bae33515cef5381173294650194c689c80424a8289e1",
+    "pycolmap-4.2.0.dist-info/licenses/COPYING.txt": "beda69d6c1e7544a470002af34c5d754497f0ad7da168556a9b20852993404c3"
+  }
+}

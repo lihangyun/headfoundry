@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-12 after experiment 0103.
+Last updated: 2026-09-12 after experiment 0105.
 
 ## What exists
 
@@ -12,7 +12,9 @@ Last updated: 2026-09-12 after experiment 0103.
 
 ## Current result
 
-The camera and full visual acceptance gates have not passed. Experiment 0103 verifies a broader CC0 macro asset basis but finds no useful identity improvement: nonnegative fitting slightly improves profiles while regressing frontal/anchor evidence, and centered differences retain only a zero step under bilateral protection. The geometry candidates are `REJECT`; KeenTools-level parity remains `UNVERIFIED`.
+Experiment 0105 executes standard and affine/domain-size-pooled SIFT with the same five photos and masks. Standard matching has no verified pair; the affine candidate has only one 26-inlier frontal/oblique pair, no profile connections and no recovered sparse model. Both reconstruction attempts are `REJECT`. The new runner preserves input rights and checks actual mask use; it does not establish accepted cameras.
+
+The camera and full visual acceptance gates have not passed. Experiment 0104 verifies 44 additional CC0 nose/lip assets and tests a 32-control basis reduced to eight local directions. Aggregate profile and point fitting errors decrease under bounded step selection, with valid triangle and visibility checks, but actual five-view and enlarged mouth renders retain generic identity and an open/angular mouth. The numerical report remains `UNVERIFIED`; the candidate is `REJECT` for visual promotion. These fitting/selection metrics are not held-out validation. KeenTools-level parity remains `UNVERIFIED`.
 
 ## How to verify the public code
 
@@ -29,7 +31,7 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-Use a richer local anatomical shape basis with image-region-specific evidence; broad macro shape and provisional nearest-seam fitting are now rejected explanations. Preserve fixed-support reporting and inspect actual five-view renders, especially both profiles, before any promotion.
+Evaluate the specifically Apache-2.0 `facebook/map-anything-apache` as an independent dense-geometry candidate after source/checkpoint verification and offline local loading. Inspect cross-view nose/lip/chin surface agreement and frozen held-out camera evidence. Its availability is not a quality result. The failed authored-basis and sparse-SIFT experiments do not establish that these photographs lack recoverable information.
 
 ## Known pitfalls
 
