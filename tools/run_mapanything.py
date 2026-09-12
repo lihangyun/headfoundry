@@ -1,8 +1,9 @@
-"""Local image-only inference for the exact Apache MapAnything checkpoint."""
+"""Local inference for the exact Apache MapAnything checkpoint."""
 import argparse
 import hashlib
 import importlib.metadata as metadata
 import json
+import math
 import os
 from pathlib import Path
 import sys
@@ -67,11 +68,29 @@ def local_dino_loader(original, directory):
     return load
 
 
+def assumed_intrinsics(focal_px, sizes_hw):
+    """Uncalibrated centered pinhole hypothesis, resized to the fixed 518 grid."""
+    import numpy as np
+    if not math.isfinite(focal_px) or focal_px <= 0:
+        raise ValueError("Assumed focal length must be finite and positive")
+    sizes = np.asarray(sizes_hw, dtype=float)
+    if sizes.ndim != 2 or sizes.shape[1] != 2 or len(sizes) == 0 or not np.isfinite(sizes).all() or np.any(sizes <= 0):
+        raise ValueError("Positive finite image sizes required")
+    result = np.repeat(np.eye(3, dtype=np.float32)[None], len(sizes), axis=0)
+    result[:, 0, 0] = focal_px * 518 / sizes[:, 1]
+    result[:, 1, 1] = focal_px * 518 / sizes[:, 0]
+    result[:, :2, 2] = 259
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     for name in ("manifest", "source", "dino", "assets", "output"):
         parser.add_argument(name, type=Path)
+    parser.add_argument("--focal-px", type=float, help="Uncalibrated original-pixel focal hypothesis; centered principal point, no pose conditioning")
     args = parser.parse_args()
+    if args.focal_px is not None and (not math.isfinite(args.focal_px) or args.focal_px <= 0):
+        parser.error("--focal-px must be finite and positive")
     args.manifest, args.source, args.dino, args.assets, args.output = [p.resolve() for p in (args.manifest, args.source, args.dino, args.assets, args.output)]
     if args.output.exists():
         raise ValueError("Output exists; choose a new experiment directory")
@@ -108,6 +127,11 @@ def main():
     views = load_images(paths, resolution_set=518)
     if len(views) != len(paths) or any(tuple(v["img"].shape) != (1, 3, 518, 518) for v in views):
         raise ValueError("Input decoding/resize mismatch")
+    conditioning = None
+    if args.focal_px is not None:
+        conditioning = assumed_intrinsics(args.focal_px, sizes)
+        for view, intrinsic in zip(views, conditioning):
+            view["intrinsics"] = torch.from_numpy(intrinsic[None])
     print(f"Loaded in {time.perf_counter()-start:.1f}s; beginning five-view inference", flush=True)
     started = time.perf_counter()
     predictions = model.infer(views, memory_efficient_inference=True, minibatch_size=1,
@@ -122,6 +146,8 @@ def main():
     transformed = np.einsum("vij,vhwj->vhwi", arrays["extrinsics"][:, :, :3], arrays["pts3d"]) + arrays["extrinsics"][:, None, None, :, 3]
     if not np.allclose(transformed, arrays["pts3d_cam"], rtol=1e-4, atol=1e-5):
         raise ValueError("Native camera/world point maps disagree after pose inversion")
+    if conditioning is not None:
+        arrays["conditioning_intrinsics"] = conditioning
     args.output.mkdir(parents=True, exist_ok=False)
     np.savez_compressed(args.output / "predictions.npz", **arrays)
     report = {"status": "UNVERIFIED", "asset": lock, "input_ids": [a["id"] for a in document["inputs"]],
@@ -129,9 +155,13 @@ def main():
               "processed_size_hw": [518, 518], "preprocess": "upstream square pure resize; no crop or EXIF rotation",
               "camera_convention": "OpenCV camera-to-world 4x4; intrinsics at processed resolution",
               "runtime_seconds": elapsed, "device": "cpu", "precision": "float32", "network": "disabled",
+              "runner_sha256": sha256_file(Path(__file__)),
+              "conditioning": {"focal_original_px": args.focal_px, "status": "UNVERIFIED",
+                               "kind": "image_only" if conditioning is None else "assumed_centered_pinhole_intrinsics",
+                               "poses_supplied": False},
               "output_sha256": sha256_file(args.output / "predictions.npz"),
               "shapes": {key: list(value.shape) for key, value in arrays.items()},
-              "limitations": "Raw image-only prediction; validity mask is not head segmentation. No camera or visual acceptance."}
+              "limitations": "Model prediction; supplied intrinsics, if any, are an uncalibrated hypothesis. Validity mask is not head segmentation. No camera or visual acceptance."}
     (args.output / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps({"status": "UNVERIFIED", "runtime_seconds": elapsed, "shapes": report["shapes"]}), flush=True)
 

@@ -5,12 +5,28 @@ import tempfile
 import unittest
 from unittest.mock import Mock, patch
 
+import numpy as np
+
 spec = importlib.util.spec_from_file_location("mapanything_runner", Path(__file__).resolve().parents[1] / "tools/run_mapanything.py")
 runner = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(runner)
 
 
 class MapAnythingRunnerTests(unittest.TestCase):
+    def test_assumed_focal_resize_preserves_pixel_projection(self):
+        matrices = runner.assumed_intrinsics(1800, [[1254, 1254], [1024, 1024]])
+        self.assertEqual(matrices.shape, (2, 3, 3))
+        ray = np.array([.1, -.2, 1.])
+        for matrix, size in zip(matrices, [1254, 1024]):
+            expected = np.array([180 + size / 2, -360 + size / 2]) * 518 / size
+            np.testing.assert_allclose((matrix @ ray)[:2], expected, atol=1e-5)
+        for value in (0, -1, float("inf"), float("nan")):
+            with self.assertRaises(ValueError):
+                runner.assumed_intrinsics(value, [[1254, 1254]])
+        for sizes in ([], [[0, 1254]], [[1254]], [[float("nan"), 1254]]):
+            with self.assertRaises(ValueError):
+                runner.assumed_intrinsics(1800, sizes)
+
     def test_only_local_dino_architecture_request_is_allowed(self):
         original = Mock(return_value="local architecture")
         directory = Path("reviewed-dino")

@@ -127,6 +127,13 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiment 0107 rejects one focal-conditioning run and identifies a separate
+projection-contract issue: native camera/world points agree under pose
+conversion but do not exactly follow the fitted pinhole K. Input intrinsics
+are soft model features, not enforced calibration. Own-view consistency and
+direct dense-point transfer must be measured separately from triangulated
+camera checks; see the experiment's complete retained evidence.
+
 Experiment 0018 executes a separately locked, Apache-2.0 DA3-BASE checkpoint on
 all five local images. Raw camera/depth predictions fail independent alignment;
 same-split joint refinement gives 7.5485 px held-out p95 versus the earlier 7.5456.

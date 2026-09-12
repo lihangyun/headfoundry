@@ -7,6 +7,13 @@
 
 Access dates: 2026-09-04. Only public documentation, papers, repositories, and built-in public examples were used.
 
+Experiment 0107's local conditioning run remains rejected. The pinned
+`mapanything/models/mapanything/model.py` encodes supplied intrinsics as ray
+features; `mapanything/utils/inference.py` recovers output K from predicted
+rays rather than enforcing the input K. Actual returned-versus-supplied
+intrinsics and own-view reprojection were measured separately. These local
+findings concern this run, not every input or model configuration.
+
 | Claim | Source | Strength / caveat |
 |---|---|---|
 | KeenTools accepts multi-view photos, estimates per-view camera parameters, builds a textured full head, and exposes ARKit blendshapes. | [KeenTools Cloud](https://cloud.keentools.io/), [API reference](https://cloud.keentools.io/docs/reference) | First-party product documentation. |
