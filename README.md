@@ -117,6 +117,8 @@ not a VGGT fallback. See [installation and measured limits](docs/experiment-0018
 
 ## Project documents
 
+- `docs/PRD.md`: authoritative product requirements and acceptance contract.
+- `docs/PRODUCT.md`: authoritative current product status, verification and next gate.
 - `docs/report-source.md`: canonical technical research report.
 - `docs/claim-source-ledger.md`: claim-to-source audit trail.
 - `docs/adr/0001-quality-first-reconstruction.md`: architecture decision.
