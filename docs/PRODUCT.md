@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-12 after experiment 0105.
+Last updated: 2026-09-12 after experiment 0106.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-12 after experiment 0105.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0106 completes actual offline Apache MapAnything inference on all five photographs in about 79 seconds on CPU. Its raw camera check is `REJECT` at 48.58 px held-out p95, focal plausibility fails, and observed-surface renders are not coherent across views. The asset-locked adapter and pose conversion run successfully; this is not an accepted head or visual improvement. The full public suite passes 87 tests.
 
 Experiment 0105 executes standard and affine/domain-size-pooled SIFT with the same five photos and masks. Standard matching has no verified pair; the affine candidate has only one 26-inlier frontal/oblique pair, no profile connections and no recovered sparse model. Both reconstruction attempts are `REJECT`. The new runner preserves input rights and checks actual mask use; it does not establish accepted cameras.
 
@@ -31,7 +33,7 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-Evaluate the specifically Apache-2.0 `facebook/map-anything-apache` as an independent dense-geometry candidate after source/checkpoint verification and offline local loading. Inspect cross-view nose/lip/chin surface agreement and frozen held-out camera evidence. Its availability is not a quality result. The failed authored-basis and sparse-SIFT experiments do not establish that these photographs lack recoverable information.
+Diagnose the executed Apache MapAnything result by separating focal/camera uncertainty from dense depth and surface-boundary errors. A conditioning experiment may reuse existing unaccepted cameras, but those inputs cannot establish independent accuracy. Keep weights/photos fixed, preserve frozen validation and inspect real cross-view surfaces before any fusion or promotion. These failures do not establish that the photographs lack recoverable information.
 
 ## Known pitfalls
 

@@ -21,6 +21,24 @@ class CameraCheck:
     passed: bool
 
 
+def invert_camera_poses(camera_to_world: np.ndarray) -> np.ndarray:
+    """Invert a batch of rigid 4x4 poses into camera-from-world 3x4 matrices.
+
+    Axis conventions stay unchanged. This does not calibrate the input cameras.
+    """
+    poses = np.asarray(camera_to_world, dtype=float)
+    if poses.ndim != 3 or poses.shape[1:] != (4, 4) or len(poses) == 0 or not np.isfinite(poses).all():
+        raise ValueError("finite nonempty Nx4x4 camera poses required")
+    rotations = poses[:, :3, :3]
+    if (not np.allclose(poses[:, 3], [0, 0, 0, 1], atol=1e-6, rtol=0)
+            or not np.allclose(rotations @ rotations.transpose(0, 2, 1), np.eye(3), atol=1e-4, rtol=0)
+            or not np.allclose(np.linalg.det(rotations), 1, atol=1e-4, rtol=0)):
+        raise ValueError("right-handed rigid camera poses required")
+    inverse_rotation = rotations.transpose(0, 2, 1)
+    translation = -np.einsum("vij,vj->vi", inverse_rotation, poses[:, :3, 3])
+    return np.concatenate([inverse_rotation, translation[..., None]], axis=2)
+
+
 def _normalize_points(points: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     dimension = points.shape[1]
     centroid = points.mean(axis=0)
@@ -108,4 +126,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

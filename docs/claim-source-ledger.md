@@ -1,9 +1,9 @@
 # Claim-to-source ledger
 
-## 2026-09-12: sparse geometry and next dense candidate
+## 2026-09-12: sparse geometry and executed dense candidate
 
 - PyCOLMAP 4.2.0 local CPU sparse reconstruction is recorded in experiment 0105. Its [COLMAP license](https://github.com/colmap/colmap/blob/4.2.0/COPYING.txt) is BSD-3-Clause, with separate dependency obligations; the local extension lock does not certify binary redistribution. Two actual runs failed to reconstruct the five photos.
-- The [official MapAnything model card](https://huggingface.co/facebook/map-anything-apache/blob/00f9c245bbcb60522d1ed7f9e9d88462c6e3f38a/README.md) explicitly labels the `facebook/map-anything-apache` variant Apache-2.0. The [pinned source](https://github.com/facebookresearch/map-anything/tree/3d10cf7a3016fc0f9bb13a071ee66c47b10be0d9) describes dense camera/world point maps and OpenCV camera-to-world poses. Default `facebook/map-anything` is noncommercial and excluded. At this entry, weights are being acquired and real-photo inference/quality remain `UNVERIFIED`.
+- The [official MapAnything model card](https://huggingface.co/facebook/map-anything-apache/blob/00f9c245bbcb60522d1ed7f9e9d88462c6e3f38a/README.md) explicitly labels the `facebook/map-anything-apache` variant Apache-2.0. The [pinned source](https://github.com/facebookresearch/map-anything/tree/3d10cf7a3016fc0f9bb13a071ee66c47b10be0d9) describes dense camera/world point maps and OpenCV camera-to-world poses. Default `facebook/map-anything` is noncommercial and excluded. Experiment 0106 verifies the local checkpoint and executes all five photos offline; raw camera p95 is 48.58 px and actual cross-view surfaces fail. Loading is verified, camera/visual promotion is `REJECT`. Exact source, model and critical runtime identities are in `examples/mapanything-apache-lock.json`; no dataset-rights or complete binary-redistribution claim follows.
 
 Access dates: 2026-09-04. Only public documentation, papers, repositories, and built-in public examples were used.
 

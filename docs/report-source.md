@@ -114,6 +114,17 @@ official model card marks Apache-2.0. It has no execution or camera result in
 this experiment; Large/Giant variants are not substitutes. All identifiable
 evidence remains local, and formal geometry/texture remain behind the camera gate.
 
+## 11. Independent dense initialization (2026-09-12)
+
+Experiment 0106 executes the separately identified and hash-verified Apache
+MapAnything variant on all five local photographs. CPU inference succeeds and
+rigid pose conversion agrees with native camera/world points, but the frozen
+33 third-view predictions give 48.58 px p95, focal plausibility fails and actual
+cross-view open surfaces are incoherent. Neither camera nor head is promoted.
+This replaces the pending-download status, not the existing quality gates.
+Calibration/conditioning and depth consistency must be distinguished before
+surface fusion; repeated authored-shape tuning has not delivered likeness.
+
 ## Sources
 
 Experiment 0018 executes a separately locked, Apache-2.0 DA3-BASE checkpoint on

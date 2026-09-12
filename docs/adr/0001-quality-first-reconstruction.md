@@ -10,6 +10,17 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-09-12 independent Apache dense geometry
+
+The exact `facebook/map-anything-apache` checkpoint may be loaded with its own
+source/runtime/weight lock and offline, architecture-only DINO initialization.
+It is a distinct experiment, never a fallback through the commercial VGGT
+adapter. Actual experiment 0106 inference succeeds but camera and visual
+promotion fail. No raw dense-surface fusion or texture is justified by model
+availability. Any camera-conditioned follow-up must label its supplied cameras
+as unaccepted, preserve independent held evidence and distinguish conditional
+depth results from independently recovered calibration.
+
 ### 2026-09-08 user-authorized experimental geometry
 
 The user explicitly authorized an **unaccepted experimental head** before the
