@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-13 after experiment 0108.
+Last updated: 2026-09-13 after experiment 0110.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-13 after experiment 0108.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiments 0109–0110 locate the long exterior sheets in coarse-mask support and test an actual image-depth-driven head candidate. An inset skin patch excludes the sheets but is not a full head; camera metrics remain failed. The bounded candidate slightly improves the right profile while worsening the left and retains generic/open-mouth appearance. It is `REJECT`, not a visual improvement. All 88 public tests pass.
 
 Experiment 0108 isolates ray representation without another model run: exact pinhole unprojection of unchanged depth makes own-view alignment exact, but dense transfer p95 remains 91.93 px and actual cross-view sheets persist. Candidate `REJECT`; native-ray approximation is not the sole cause. No camera, template or texture promotion.
 
@@ -37,7 +39,7 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-Inspect whether remaining predicted-depth discontinuities lie within the face or only at mask boundaries, separately from the failed camera alignment. The ray-representation experiment is complete and rejected as a sufficient remedy. Do not fuse unaccepted patches or infer calibration from exact own-view projection. These failures do not establish that the photographs lack recoverable information.
+Resolve the neutral mouth's surface/closure configuration with complete rim support and actual frontal/oblique/profile evidence before further identity fitting. Do not repeat two-point attraction or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
 ## Known pitfalls
 
