@@ -87,3 +87,15 @@ Experiment 0068 separately locks the two nasal-base vertical graphical
 targets at the same official revision. Both file headers explicitly declare
 CC0. Their fitting result regresses bilateral nasal profiles, so the license
 and successful loading confer no reconstruction-quality claim.
+
+## 2026-09-13: community Faceunits 01 mouth-close target
+
+The [official Faceunits 01 listing](https://static.makehumancommunity.org/assets/assetpacks/faceunits01.html)
+links the graphical asset archive. Its embedded `packs/faceunits01.json`
+explicitly attributes the selected `mouthClose` target to Mika Suominen and
+declares CC0. The target itself has no license header; do not claim otherwise.
+`examples/makehuman-mouth-close-lock.json` pins the archive, metadata and target
+separately from the base mesh. Only this target is in scope, with no upstream
+application code integration or fabricated common source revision. Experiment
+0111 rejects every tested nonzero application to the current head for profile
+regression and sampled intersections. Asset provenance is not visual acceptance.

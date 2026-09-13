@@ -1,0 +1,17 @@
+{
+  "asset_id": "makehuman-community-faceunits01-mouthClose",
+  "source": "https://static.makehumancommunity.org/assets/assetpacks/faceunits01.html",
+  "download_url": "https://files2.makehumancommunity.org/functional/faceunits01.zip",
+  "retrieved_at": "2026-09-13",
+  "archive_sha256": "d113107bd7eb59f3af4df6fc0ec29bfcc593f496d0b336aec14f086a80ce7146",
+  "archive_size_bytes": 257821,
+  "license_id": "CC0-1.0",
+  "author": "Mika Suominen",
+  "license_evidence": "packs/faceunits01.json: mouthClose.license = CC0; mouthClose.author = Mika Suominen",
+  "metadata_path": "packs/faceunits01.json",
+  "metadata_sha256": "fd647a088691ddd9193ce9600df3377bb9ccf69c2904f0a7773a3c246d234c18",
+  "target_path": "targets/faceunits/mouthClose.target",
+  "target_sha256": "965135637c90019c9f91ddd7540405124da7274b3a5b6b6a2201fa97956773f5",
+  "base_asset_lock": "makehuman-base-asset-lock.json",
+  "scope": "Explicit graphical-data asset only, independently parsed. No MakeHuman or MPFB application implementation imported. Pack metadata provides the license; the target has no license header. Vertex range/mapping and actual pose effect must be checked; the name is not proof of neutral closure, topology safety, identity fit or ARKit conformance. Other archive entries are not enabled by this lock."
+}
