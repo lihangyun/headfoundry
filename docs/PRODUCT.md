@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-13 after experiment 0112.
+Last updated: 2026-09-13 after experiment 0113.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-13 after experiment 0112.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0113 tests a monotone vertical gap map directly on the smooth surface with fresh sampled contact heights. Actual frontal gaps narrow, but the side shape remains wrong and both profile means worsen. Half strength violates the triangle-area guard; stronger closure introduces corner-region intersections. Both candidates are `REJECT`. All 94 tests pass, but natural closure and recognizable identity remain unmet. Do not amplify this field or treat its continuous monotonicity as a collision certificate for the output mesh.
 
 Experiments 0111–0112 reject a separately locked mouthClose target: sampled lip intersections occur even on the untouched base. A new independent Catmull-Clark helper produces actual smooth-surface meshes and five-view comparisons. Faceting decreases, but the mouth remains open/generic and the left profile worsens, so no refined mesh is promoted. The next shape fit must evaluate the smooth surface and re-establish its visible/contact support; post-fit smoothing alone is insufficient.
 
