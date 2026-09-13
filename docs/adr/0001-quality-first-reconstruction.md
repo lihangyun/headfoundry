@@ -107,6 +107,15 @@ Bootstrap with synthetic renders from commercially allowed parametric assets and
 
 ## Compute strategy
 
+Experiment 0112 adds independently implemented Catmull-Clark finite refinement
+as an explicit experimental geometry operation. A control cage, smooth shading
+normals and an evaluated smooth surface are different representations. Fit
+and validate the representation actually exported; old triangle attachments
+must be re-established after subdivision. No automatic post-fit smoothing or
+default promotion: the first real refined candidates regress a profile and
+remain visually rejected. This requires no new trained asset or application
+code reuse and does not change the camera/visual acceptance contract.
+
 Camera investigation may optimize a temporary face patch as a nuisance variable,
 but this does not authorize acceptance of head geometry or texture. Experiment
 0009 keeps focal length and prior fixed, excludes validation from all fitting,

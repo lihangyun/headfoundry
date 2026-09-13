@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-13 after experiment 0110.
+Last updated: 2026-09-13 after experiment 0112.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-13 after experiment 0110.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiments 0111–0112 reject a separately locked mouthClose target: sampled lip intersections occur even on the untouched base. A new independent Catmull-Clark helper produces actual smooth-surface meshes and five-view comparisons. Faceting decreases, but the mouth remains open/generic and the left profile worsens, so no refined mesh is promoted. The next shape fit must evaluate the smooth surface and re-establish its visible/contact support; post-fit smoothing alone is insufficient.
 
 Experiments 0109–0110 locate the long exterior sheets in coarse-mask support and test an actual image-depth-driven head candidate. An inset skin patch excludes the sheets but is not a full head; camera metrics remain failed. The bounded candidate slightly improves the right profile while worsening the left and retains generic/open-mouth appearance. It is `REJECT`, not a visual improvement. All 88 public tests pass.
 
@@ -39,7 +41,7 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-Resolve the neutral mouth's surface/closure configuration with complete rim support and actual frontal/oblique/profile evidence before further identity fitting. Do not repeat two-point attraction or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
+Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
 ## Known pitfalls
 
