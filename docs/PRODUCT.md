@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0116.
+Last updated: 2026-09-14 after experiment 0117.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0116.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0117 identifies and corrects misplaced profile observations but the controlled re-fit still flattens the lower lip and produces no meaningful visual improvement. Candidate promotion is `REJECT`. A lower-lip perturbation increases the photo-only objective even without the prior, indicating a constraint/shape-support issue rather than solely excessive regularization. Original sparse profile metrics are not independent or accurate photo-boundary ground truth. Shared camera/correspondence support and broader shape constraints take priority over another local three-control sweep.
 
 Experiment 0116 confirms a geometric boundary discontinuity and tests a local tangent collar. Maximum seam angle falls from 102.78 to 19.03 degrees, but actual all-view identity is unchanged, the lower lip remains flat, relative triangle changes are large and the right profile slightly regresses. Candidate `REJECT`; no baseline promotion. Boundary-angle optimization alone cannot solve the missing lip relief or broader likeness.
 

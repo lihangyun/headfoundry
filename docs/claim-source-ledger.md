@@ -1,5 +1,13 @@
 # Claim-to-source ledger
 
+## 2026-09-14: profile measurement limitation
+
+Experiment 0117's local photo audit finds misplaced original mouth-profile
+samples. Thirteen corrected x readings do not restore lower-lip relief under
+the unchanged fit. Original scores remain historical diagnostics, not accurate
+ground truth; corrected traces are provisional fitting observations, not an
+independent validation set. No quality claim may rely on changing labels alone.
+
 ## 2026-09-12: sparse geometry and executed dense candidate
 
 - PyCOLMAP 4.2.0 local CPU sparse reconstruction is recorded in experiment 0105. Its [COLMAP license](https://github.com/colmap/colmap/blob/4.2.0/COPYING.txt) is BSD-3-Clause, with separate dependency obligations; the local extension lock does not certify binary redistribution. Two actual runs failed to reconstruct the five photos.
