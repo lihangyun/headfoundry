@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0122 applies the 0121 camera hypothesis to the unchanged actual head. Eye support errors jump from 5.47/4.85 to 25.24/23.47 px despite continued visibility. Reject standalone camera transfer; future coupled fits must constrain actual shared mesh supports, not freely relocated points.
 - Experiment 0121 fits physical oblique rotations using eyes/nose only. Excluded mouth errors fall from 7.82/4.78 to 1.92/1.09 px, but eyes and chin worsen, so the camera candidate is rejected. Free-point depth changes are not an actual-head improvement; review contour-versus-material correspondence before coupled fitting.
 - Experiment 0120 checks eleven eye/nose/mouth/chin correspondences under the current cameras. Free-ray vertical residuals are near zero at eyes, positive at nose/mouth, and negative at chin. Do not transfer a mouth-derived uniform image shift to the whole face; no camera/shape candidate or quality promotion follows from this diagnosis.
 - Experiment 0119 adds provisional interior-lip cross-view support with cameras and topology fixed. Both profiles regress and lower relief remains flat. Even free frontal-ray depth fitting retains 4–8 px mostly vertical oblique errors, so these correspondences cannot be treated as exact geometry targets. No candidate promotion.

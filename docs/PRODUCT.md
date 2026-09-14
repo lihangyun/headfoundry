@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0121.
+Last updated: 2026-09-14 after experiment 0122.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0121.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0122 confirms that the free-point camera candidate misaligns the actual unchanged head: eye errors rise to 25.24/23.47 px with supports still visible. No standalone camera transfer is permitted. Different view-specific chin hits do not by themselves prove contour semantics; retain that uncertainty and require actual shared-surface constraints in subsequent coupled fitting.
 
 Experiment 0121's eye/nose-trained physical rotation correction transfers to excluded mouth observations (1.92/1.09 px), but eye and chin regressions prevent promotion. The free-point depths shift materially, so no improvement of the unchanged head is implied. Review actual eye support and chin contour semantics before coupled shape/camera fitting; no camera default changes.
 
