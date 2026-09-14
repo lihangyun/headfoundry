@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0122.
+Last updated: 2026-09-14 after experiment 0123.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0122.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0123 executes a coupled actual-surface/pose candidate. It avoids the previous large eye shift but still regresses left eye and right profile evidence and fails the area-ratio guard (0.215 minimum). No promotion. Compact depth fields are not yet a shape-safe identity solution; keep surface and view protection rather than expanding bounds.
 
 Experiment 0122 confirms that the free-point camera candidate misaligns the actual unchanged head: eye errors rise to 25.24/23.47 px with supports still visible. No standalone camera transfer is permitted. Different view-specific chin hits do not by themselves prove contour semantics; retain that uncertainty and require actual shared-surface constraints in subsequent coupled fitting.
 
