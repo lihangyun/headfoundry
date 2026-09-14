@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0123.
+Last updated: 2026-09-14 after experiment 0124.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0123.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0124 identifies very thin source patch triangles behind the worst recent area-ratio failures. An internal-diagonal reconnection trial preserves UV vertices/boundary and substantially improves planar triangle quality. A recomputed depth surface is `UNVERIFIED`, pending actual rendering and repeated deformation safety checks. This is numerical preparation, not likeness improvement.
 
 Experiment 0123 executes a coupled actual-surface/pose candidate. It avoids the previous large eye shift but still regresses left eye and right profile evidence and fails the area-ratio guard (0.215 minimum). No promotion. Compact depth fields are not yet a shape-safe identity solution; keep surface and view protection rather than expanding bounds.
 

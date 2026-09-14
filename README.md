@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0124 traces the worst deformation-area failures to nearly collinear patch triangles and improves internal planar connectivity with vertices/boundary fixed. Minimum triangle quality rises from 0.000074 to 0.002979. A recomputed 3D candidate is unverified pending rendering and deformation checks; no likeness or default promotion.
 - Experiment 0123 couples three compact actual-surface depth fields with oblique pose. The large free-point eye shift is avoided, but left eye/right profile regress and minimum triangle area ratio falls to 0.215. Candidate rejected; smaller aggregate errors do not waive protected-view or geometry checks.
 - Experiment 0122 applies the 0121 camera hypothesis to the unchanged actual head. Eye support errors jump from 5.47/4.85 to 25.24/23.47 px despite continued visibility. Reject standalone camera transfer; future coupled fits must constrain actual shared mesh supports, not freely relocated points.
 - Experiment 0121 fits physical oblique rotations using eyes/nose only. Excluded mouth errors fall from 7.82/4.78 to 1.92/1.09 px, but eyes and chin worsen, so the camera candidate is rejected. Free-point depth changes are not an actual-head improvement; review contour-versus-material correspondence before coupled fitting.
