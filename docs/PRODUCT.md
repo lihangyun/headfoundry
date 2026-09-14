@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0117.
+Last updated: 2026-09-14 after experiment 0118.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0117.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0118 tests a pose-only explanation with the actual fixed mesh: fit profile rotations on non-mouth rows and evaluate excluded mouth rows. Both excluded regions regress, so the cameras are rejected for promotion despite smaller training errors. This does not certify the existing cameras or isolate shape as the sole cause; anatomical cross-view support remains necessary.
 
 Experiment 0117 identifies and corrects misplaced profile observations but the controlled re-fit still flattens the lower lip and produces no meaningful visual improvement. Candidate promotion is `REJECT`. A lower-lip perturbation increases the photo-only objective even without the prior, indicating a constraint/shape-support issue rather than solely excessive regularization. Original sparse profile metrics are not independent or accurate photo-boundary ground truth. Shared camera/correspondence support and broader shape constraints take priority over another local three-control sweep.
 
