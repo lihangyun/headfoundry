@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0119.
+Last updated: 2026-09-14 after experiment 0120.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0119.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0120 extends the current-camera free-ray diagnosis to eyes, nose, mouth and chin. Their signed vertical residuals differ materially, including opposite signs at chin versus nose/mouth. A uniform mouth-derived image shift is not an appropriate whole-face correction. No reconstruction candidate is promoted; physical relative pose and landmark-specific biases still need separation.
 
 Experiment 0119 adds two interior-lip cross-view supports. The fit retains a flat lower lip and worsens both profiles. Removing the mesh restriction still leaves mostly vertical oblique residuals of 4–8 px along fixed frontal rays. This rejects forcing these provisional correspondences into depth-only geometry; wider shape freedom alone is not supported by the evidence. Candidate promotion is `REJECT`.
 
