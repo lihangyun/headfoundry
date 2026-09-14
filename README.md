@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0119 adds provisional interior-lip cross-view support with cameras and topology fixed. Both profiles regress and lower relief remains flat. Even free frontal-ray depth fitting retains 4–8 px mostly vertical oblique errors, so these correspondences cannot be treated as exact geometry targets. No candidate promotion.
 - Experiment 0118 fits only profile camera rotations outside the mouth on the unchanged mesh. Training errors decrease but excluded mouth errors increase on both sides (6.03 to 6.23 px and 4.38 to 5.58 px). Pose-only promotion is rejected; no camera or shape default changes.
 - Experiment 0117 corrects 13 misplaced mouth-profile observations without changing the model or fit settings. Actual likeness remains generic and lower-lip relief remains flat; no promotion. A photo-only perturbation check also penalizes restored relief, so removing the prior alone is not a supported fix. Historical sparse profile scores are not accurate boundary ground truth; preserve original and corrected evidence separately.
 - Experiment 0116 reduces the experimental patch's worst seam angle from 102.78 to 19.03 degrees with the lip core fixed. Actual renders retain flat/generic lip shape; relative triangle changes and slight right-profile regression prevent promotion. Stop collar-only tuning as an identity route; photo-consistent relief remains unresolved. No baseline or camera gate changed.

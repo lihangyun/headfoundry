@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0118.
+Last updated: 2026-09-14 after experiment 0119.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0118.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0119 adds two interior-lip cross-view supports. The fit retains a flat lower lip and worsens both profiles. Removing the mesh restriction still leaves mostly vertical oblique residuals of 4–8 px along fixed frontal rays. This rejects forcing these provisional correspondences into depth-only geometry; wider shape freedom alone is not supported by the evidence. Candidate promotion is `REJECT`.
 
 Experiment 0118 tests a pose-only explanation with the actual fixed mesh: fit profile rotations on non-mouth rows and evaluate excluded mouth rows. Both excluded regions regress, so the cameras are rejected for promotion despite smaller training errors. This does not certify the existing cameras or isolate shape as the sole cause; anatomical cross-view support remains necessary.
 
