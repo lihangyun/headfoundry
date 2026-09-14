@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0120.
+Last updated: 2026-09-14 after experiment 0121.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0120.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0121's eye/nose-trained physical rotation correction transfers to excluded mouth observations (1.92/1.09 px), but eye and chin regressions prevent promotion. The free-point depths shift materially, so no improvement of the unchanged head is implied. Review actual eye support and chin contour semantics before coupled shape/camera fitting; no camera default changes.
 
 Experiment 0120 extends the current-camera free-ray diagnosis to eyes, nose, mouth and chin. Their signed vertical residuals differ materially, including opposite signs at chin versus nose/mouth. A uniform mouth-derived image shift is not an appropriate whole-face correction. No reconstruction candidate is promoted; physical relative pose and landmark-specific biases still need separation.
 
