@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0115.
+Last updated: 2026-09-14 after experiment 0116.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0115.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0116 confirms a geometric boundary discontinuity and tests a local tangent collar. Maximum seam angle falls from 102.78 to 19.03 degrees, but actual all-view identity is unchanged, the lower lip remains flat, relative triangle changes are large and the right profile slightly regresses. Candidate `REJECT`; no baseline promotion. Boundary-angle optimization alone cannot solve the missing lip relief or broader likeness.
 
 Experiments 0114–0115 produce a local closed-mouth replacement with an exactly shared boundary and unchanged retained head geometry. Geometry-aware interpolation substantially reduces artificial striping seen in the first patch. The actual mouth is closed, but the profile-only fit flattens the lower lip and worsens the left profile; full identity is still generic. Both candidates remain `REJECT` for promotion. This neutral patch removes the old cavity and does not support expressions or teeth.
 
