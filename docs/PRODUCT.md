@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-13 after experiment 0113.
+Last updated: 2026-09-14 after experiment 0115.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-13 after experiment 0113.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiments 0114–0115 produce a local closed-mouth replacement with an exactly shared boundary and unchanged retained head geometry. Geometry-aware interpolation substantially reduces artificial striping seen in the first patch. The actual mouth is closed, but the profile-only fit flattens the lower lip and worsens the left profile; full identity is still generic. Both candidates remain `REJECT` for promotion. This neutral patch removes the old cavity and does not support expressions or teeth.
 
 Experiment 0113 tests a monotone vertical gap map directly on the smooth surface with fresh sampled contact heights. Actual frontal gaps narrow, but the side shape remains wrong and both profile means worsen. Half strength violates the triangle-area guard; stronger closure introduces corner-region intersections. Both candidates are `REJECT`. All 94 tests pass, but natural closure and recognizable identity remain unmet. Do not amplify this field or treat its continuous monotonicity as a collision certificate for the output mesh.
 
@@ -42,6 +44,8 @@ C:\Python313\python.exe -m headfoundry.vggt tests\fixtures\vggt_camera_point_fix
 The repository is a library and experiment workspace, not a long-running service, so there is no start/stop procedure or deployment target. Publishing currently means committing reviewed public changes and pushing `main`; it does not publish private assets or constitute model-quality acceptance.
 
 ## Next gate
+
+For the experimental closed-mouth patch, establish boundary tangent continuity and photo-consistent lip relief. Boundary positions alone do not prevent a visible transition, and profile-only fitting can erase a lip. Do not repeat the unconstrained three-depth-coefficient fit or accept on fitting cost alone.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 

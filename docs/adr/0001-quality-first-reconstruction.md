@@ -91,6 +91,14 @@ The research evidence favors explicit multi-view geometry and canonical fusion o
 
 ## Data strategy
 
+Experiments 0114–0115 permit a separate local neutral-mouth topology proposal
+after repeated fixed-topology closure failures. Exact boundary stitching and
+unchanged retained exterior are required, but do not constitute anatomical
+acceptance. Removing the old oral cavity sacrifices its representation; this
+must not silently become an expression-capable product mesh. Metric-aware
+surface interpolation is tested independently of visual quality. No camera,
+texture or full-head gate is waived by these experiments.
+
 Experiment 0058 extends the same reviewed graphical-data approach to four
 whole-head shape controls. Apply deltas on original source topology before
 neck clipping; new clip vertices must not receive guessed mappings. Generic
