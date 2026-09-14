@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0125 confirms that the same deformation on reconnected triangles improves minimum area ratio from 0.233 to 0.884 and removes the tested area/normal failures. The optional tested NumPy diagonal helper is available; defaults remain unchanged. Actual five-view identity remains generic, so this is technical stability progress, not likeness acceptance. 99 tests pass.
 - Experiment 0124 traces the worst deformation-area failures to nearly collinear patch triangles and improves internal planar connectivity with vertices/boundary fixed. Minimum triangle quality rises from 0.000074 to 0.002979. A recomputed 3D candidate is unverified pending rendering and deformation checks; no likeness or default promotion.
 - Experiment 0123 couples three compact actual-surface depth fields with oblique pose. The large free-point eye shift is avoided, but left eye/right profile regress and minimum triangle area ratio falls to 0.215. Candidate rejected; smaller aggregate errors do not waive protected-view or geometry checks.
 - Experiment 0122 applies the 0121 camera hypothesis to the unchanged actual head. Eye support errors jump from 5.47/4.85 to 25.24/23.47 px despite continued visibility. Reject standalone camera transfer; future coupled fits must constrain actual shared mesh supports, not freely relocated points.

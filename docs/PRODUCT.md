@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0124.
+Last updated: 2026-09-14 after experiment 0125.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0124.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0125 verifies a concrete numerical gain: identical deformation on the reconnected patch yields minimum area ratio 0.884 rather than 0.233, with zero tested sub-half-area triangles or relative normal reversals. The optional diagonal helper is tested, while defaults stay unchanged. Actual five-view identity remains generic and one profile slightly regresses; no likeness promotion. 99 tests pass.
 
 Experiment 0124 identifies very thin source patch triangles behind the worst recent area-ratio failures. An internal-diagonal reconnection trial preserves UV vertices/boundary and substantially improves planar triangle quality. A recomputed depth surface is `UNVERIFIED`, pending actual rendering and repeated deformation safety checks. This is numerical preparation, not likeness improvement.
 

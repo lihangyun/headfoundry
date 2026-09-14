@@ -1,10 +1,30 @@
 from collections import Counter
 import unittest
 import numpy as np
-from headfoundry.patch import triangulate_disk,harmonic_depth
+from headfoundry.patch import triangulate_disk,harmonic_depth,improve_diagonals
 
 
 class PatchTests(unittest.TestCase):
+    def test_diagonal_improvement_preserves_boundary_area_and_inputs(self):
+        p=np.array([[0,0],[2,0],[2,1],[0,.1]],float)
+        f=np.array([[0,1,2],[0,2,3]])
+        for faces in [f,f[:,::-1]]:
+            source=faces.copy();candidate=improve_diagonals(p,faces)
+            np.testing.assert_array_equal(faces,source)
+            def boundary(q):
+                counts=Counter(tuple(sorted(edge)) for t in q for edge in zip(t,np.roll(t,-1)))
+                return {edge for edge,n in counts.items() if n==1}
+            self.assertEqual(boundary(candidate),boundary(source))
+            self.assertNotEqual({tuple(sorted(x)) for x in candidate},{tuple(sorted(x)) for x in source})
+            def areas(q):
+                a=p[q[:,1]]-p[q[:,0]];b=p[q[:,2]]-p[q[:,0]]
+                return a[:,0]*b[:,1]-a[:,1]*b[:,0]
+            self.assertAlmostEqual(areas(candidate).sum(),areas(source).sum())
+            self.assertTrue(np.all(areas(candidate)*areas(source)[0]>0))
+            np.testing.assert_array_equal(improve_diagonals(p,candidate),candidate)
+        for invalid in [np.array([[0,0,1]]),np.array([[0,1,2],[0,1,2]]),np.array([[0,1,9]])]:
+            with self.assertRaises(ValueError):improve_diagonals(p,invalid)
+
     def test_metric_harmonic_extension_reproduces_affine_depth(self):
         p=np.array([[0,0],[1,0],[1,1],[0,1],[.1,.2]],float)
         f=np.array([[0,1,4],[1,2,4],[2,3,4],[3,0,4]])

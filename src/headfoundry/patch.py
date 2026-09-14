@@ -2,6 +2,48 @@
 import numpy as np
 
 
+def improve_diagonals(points, triangles, max_passes=40):
+    """Improve worst planar pair quality, preserving vertices/boundary edges.
+
+    Input must be an embedded conforming triangulation with consistent winding.
+    Connectivity checks here do not certify absence of geometric overlaps.
+    Returns a new face array; no globally optimal quality is guaranteed.
+    """
+    p=np.asarray(points,float);f=np.asarray(triangles)
+    if (p.ndim!=2 or p.shape[1:]!=(2,) or not np.isfinite(p).all()
+            or f.ndim!=2 or f.shape[1:]!=(3,) or not len(f)
+            or not np.issubdtype(f.dtype,np.integer) or np.any(f<0) or np.any(f>=len(p))
+            or not isinstance(max_passes,int) or isinstance(max_passes,bool) or max_passes<1):
+        raise ValueError('finite planar triangles and positive integer pass limit required')
+    f=f.copy()
+    cross=lambda a,b:a[...,0]*b[...,1]-a[...,1]*b[...,0]
+    signed=cross(p[f[:,1]]-p[f[:,0]],p[f[:,2]]-p[f[:,0]])
+    sign=np.sign(signed[0])
+    if np.any(sign*signed<=0):raise ValueError('nondegenerate consistently wound triangles required')
+    def quality(faces):
+        q=p[faces];area=sign*cross(q[:,1]-q[:,0],q[:,2]-q[:,0])
+        return 2*np.sqrt(3)*area/((q-np.roll(q,1,axis=1))**2).sum(axis=(1,2))
+    for _ in range(max_passes):
+        adjacent={}
+        for i,face in enumerate(f):
+            for a,b,c in zip(face,np.roll(face,-1),np.roll(face,-2)):
+                adjacent.setdefault(tuple(sorted((int(a),int(b)))),[]).append((i,int(a),int(b),int(c)))
+        for rows in adjacent.values():
+            if len(rows)>2 or (len(rows)==2 and rows[0][1:3]!=rows[1][2:0:-1]):
+                raise ValueError('nonmanifold or inconsistently paired edge')
+        touched=set();count=0
+        for rows in adjacent.values():
+            if len(rows)!=2:continue
+            (i,a,b,c),(j,_,_,d)=rows
+            if i in touched or j in touched or tuple(sorted((c,d))) in adjacent:continue
+            candidate=np.array([[c,d,b],[d,c,a]])
+            new=quality(candidate)
+            if new.min()<=0 or new.min()<=quality(f[[i,j]]).min()+1e-10:continue
+            f[[i,j]]=candidate;touched.update([i,j]);count+=1
+        if not count:break
+    return f
+
+
 def harmonic_depth(points, triangles, boundary_values):
     """Piecewise-linear FEM Laplace extension of leading-vertex scalar values.
 
