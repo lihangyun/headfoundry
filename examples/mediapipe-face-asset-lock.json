@@ -1,0 +1,19 @@
+{
+  "asset_id": "google-mediapipe-face-landmarker-canonical-model",
+  "source": "https://github.com/google-ai-edge/mediapipe",
+  "revision": "20e8f2ae3365d46fa02037b54911b72e13494809",
+  "license_id": "Apache-2.0",
+  "license_sha256": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8",
+  "canonical_face_model": {
+    "path": "mediapipe/modules/face_geometry/data/canonical_face_model.obj",
+    "sha256": "8bac80443397e113f41a8b565ea72c59390bc031d9defab289dba7bc0c54e618",
+    "vertices": 468,
+    "triangles": 898
+  },
+  "face_landmarker": {
+    "source": "https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/1/face_landmarker.task",
+    "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
+    "license_evidence": "Official MediaPipe Face Mesh V2 model card states Apache License 2.0"
+  },
+  "scope": "Canonical topology plus the already-reviewed local Face Landmarker output. No photos are uploaded. Relative depth is a learned prediction, not scan truth, camera calibration, identity acceptance or a full-head asset."
+}

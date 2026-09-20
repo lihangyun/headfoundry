@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-20 after experiment 0132.
+Last updated: 2026-09-20 after experiment 0136.
 
 ## What exists
 
@@ -11,6 +11,24 @@ Last updated: 2026-09-20 after experiment 0132.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiments 0133–0136 resolve four competing explanations for the remaining
+central-face error. Simple mouth-depth smoothing makes both dense profile splits
+worse and is rejected. Three in-domain MediaPipe views provide a stable relative
+depth consensus, but every guarded application to the current head selects zero
+because left/right profiles disagree. A separate dense-row camera refinement
+retains a nonzero 0.76 scale and improves legacy sparse means plus withheld-row
+dense means/p95; matrix, focal, center and cheirality checks pass. Actual visual
+change is small and the evidence is same-photo, so the camera remains
+`PARTIAL_SUCCESS` diagnostically and `REJECT` for promotion.
+
+An independent Apache-2.0 MediaPipe canonical face patch removes the old
+surface-attachment assumption. It produces a coherent coarse facial patch, but
+right-profile dense error is 10.58 px versus 4.65 px on the left, and oblique
+all-point p95 remains 19–22 px. The patch is not a full head and is rejected for
+integration. These results point to unresolved right-profile camera/
+correspondence semantics, not permission to add stronger deformations. Camera,
+identity, texture and KeenTools-level parity remain `UNVERIFIED`.
 
 Experiment 0132 fits six compact subject-derived nose/lip depth fields with the
 experiment-0131 cameras and outer shape frozen. Corrected left/right profile
@@ -98,12 +116,13 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next shape gate is an anatomical neutral-lip surface with bounded smoothness
-and contact freedom, evaluated with an explicit evidence split. It must preserve
-experiment 0132's bilateral contour gain while removing the sharp generic lip
-form, and it must retain per-anchor eye evidence, outer outlines, bilateral
-profiles and mesh safety. Do not increase the saturated local coefficient,
-repeat generic macro-target expansion, or accept on fitting cost alone.
+The next gate is independent right-profile camera/correspondence evidence. The
+source PNGs contain no EXIF focal or device metadata, the existing dense split
+reuses one trace, and both current-head and independent-canonical geometry fail
+to reconcile the right profile with the otherwise stable three-view depth prior.
+Review material anchors and contour semantics on that view before another
+geometry fit. Do not increase the saturated local coefficient, smooth the 0132
+field, force the MediaPipe prior, or accept a same-photo camera fit as calibration.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 

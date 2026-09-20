@@ -1,5 +1,15 @@
 # Claim-to-source ledger
 
+## 2026-09-20: MediaPipe canonical face topology
+
+The [official MediaPipe repository](https://github.com/google-ai-edge/mediapipe/tree/20e8f2ae3365d46fa02037b54911b72e13494809)
+is Apache-2.0 and publishes the 468-vertex canonical face OBJ used only as
+diagnostic topology in experiment 0136. Exact repository revision, OBJ hash,
+license hash and the previously reviewed Face Landmarker bundle hash are in
+`examples/mediapipe-face-asset-lock.json`. The official Face Mesh V2 model card
+states Apache License 2.0. Commercially usable licensing does not make relative
+depth scan truth or establish camera, anatomy, identity or full-head quality.
+
 ## 2026-09-14: profile measurement limitation
 
 Experiment 0117's local photo audit finds misplaced original mouth-profile
