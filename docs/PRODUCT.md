@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-20 after experiment 0128.
+Last updated: 2026-09-20 after experiment 0129.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-20 after experiment 0128.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0129 tests one localized lower-lip relief scalar with the 0128 mesh and cameras fixed. Only zero preserves every 0128 diagnostic. A visually clear -0.008 trial keeps all eye errors unchanged and remains better than the pre-0128 source on both profiles, but slightly regresses the 0128 right profile and still looks like a generic bump. `TECHNICAL_CHECK_PASSED` as a bounded sensitivity test, `REJECT` for geometry promotion. Do not spend more iterations tuning this scalar; the next shape direction must represent actual lip anatomy and bilateral evidence.
 
 Experiment 0128 scales the failed per-anchor direction to a strictly feasible nonzero candidate. All eight protected eye errors and both bilateral profile means improve, while minimum area ratio remains 0.957 with no relative normal reversals. Actual five-view appearance changes only slightly and retains generic identity/flat lower lip. `PARTIAL_SUCCESS` for constrained numerical evidence, `REJECT` for baseline promotion. Further progress requires a more expressive identity shape direction, not weaker protection.
 
@@ -69,7 +71,7 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-For the experimental closed-mouth patch, establish boundary tangent continuity and photo-consistent lip relief. Boundary positions alone do not prevent a visible transition, and profile-only fitting can erase a lip. Do not repeat the unconstrained three-depth-coefficient fit or accept on fitting cost alone.
+For the experimental closed-mouth patch, add anatomically structured lip degrees of freedom that can represent upper/lower vermilion and mouth-corner shape while preserving per-anchor eye evidence, bilateral profiles and mesh safety. Experiment 0129 has rejected finer tuning of one symmetric frontal-ray relief scalar: it produces a generic bump and opposing left/right evidence. Do not repeat that scalar sweep, the unconstrained three-depth-coefficient fit, or accept on fitting cost alone.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
