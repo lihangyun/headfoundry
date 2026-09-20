@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-20 after experiment 0131.
+Last updated: 2026-09-20 after experiment 0132.
 
 ## What exists
 
@@ -11,6 +11,18 @@ Last updated: 2026-09-20 after experiment 0131.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0132 fits six compact subject-derived nose/lip depth fields with the
+experiment-0131 cameras and outer shape frozen. Corrected left/right profile
+means improve from 4.342488/5.776622 px to 3.623644/4.923311 px; oblique
+central-point means also improve, while all eye and outer-outline diagnostics
+are numerically preserved. Maximum movement is 0.029824, minimum relative
+triangle area is 0.796018 and there are no normal reversals. Enlarged bilateral
+renders show a meaningful contour movement, but the lips remain angular and
+generic and one coefficient reaches its bound. The route is
+`TECHNICAL_CHECK_PASSED`, the candidate is `PARTIAL_SUCCESS`, and default
+promotion is `REJECT`. All measurements and visual comparisons use fitting
+evidence; full identity and KeenTools-level parity remain `UNVERIFIED`.
 
 Experiment 0131 fits a broader nine-direction CC0 identity basis while strictly
 protecting every oblique eye anchor, both corrected profile groups and mesh
@@ -86,13 +98,12 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next shape route must carry subject-specific central facial structure—most
-urgently nose profile, eyelid form and closed-lip relief—and be evaluated across
-all five views while preserving per-anchor eye evidence, bilateral profiles and
-mesh safety. Experiment 0131 establishes that generic macro directions can move
-the protected outer silhouette but do not supply recognizable central identity.
-Do not repeat generic macro-target expansion, the 0129 scalar relief sweep or
-the 0130 isolated lower-lip transfer, and do not accept on fitting cost alone.
+The next shape gate is an anatomical neutral-lip surface with bounded smoothness
+and contact freedom, evaluated with an explicit evidence split. It must preserve
+experiment 0132's bilateral contour gain while removing the sharp generic lip
+form, and it must retain per-anchor eye evidence, outer outlines, bilateral
+profiles and mesh safety. Do not increase the saturated local coefficient,
+repeat generic macro-target expansion, or accept on fitting cost alone.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
