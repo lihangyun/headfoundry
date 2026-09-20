@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-20 after experiment 0130.
+Last updated: 2026-09-20 after experiment 0131.
 
 ## What exists
 
@@ -11,6 +11,19 @@ Last updated: 2026-09-20 after experiment 0130.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0131 fits a broader nine-direction CC0 identity basis while strictly
+protecting every oblique eye anchor, both corrected profile groups and mesh
+safety. All four fitted outline means and both profile means improve; the eight
+eye errors remain unchanged to numerical precision, maximum displacement is
+0.021726, minimum relative triangle area is 0.727712 and there are no relative
+normal reversals. Actual five-view inspection confirms a modest change in
+forehead, cheek and jaw proportions, but the nose, eyelids and lips remain
+generic and the provisional non-eye point means regress slightly. Technical
+execution is `TECHNICAL_CHECK_PASSED`, the candidate is `PARTIAL_SUCCESS` as
+protected outer-shape evidence, and default promotion is `REJECT`. The fitting
+views are not held-out validation and KeenTools-level parity remains
+`UNVERIFIED`.
 
 Experiment 0130 exactly transfers one locked CC0 lower-lip target through the current subdivision and closed patch. The boundary-only candidate preserves every eye/profile/mesh safeguard and improves both profile means at full authored strength, but actual five-view change is too small to recover identity. Direct interior transfer produces more amplitude only by reversing triangles and worsening the right profile; simple graph smoothing fails too. Transfer verification `TECHNICAL_CHECK_PASSED`, safe numerical result `PARTIAL_SUCCESS`, all visual promotion `REJECT`. Stop isolated generic lip-target tuning.
 
@@ -73,7 +86,13 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next shape route must carry broader subject-specific identity structure and be evaluated jointly against all five views while preserving per-anchor eye evidence, bilateral profiles and mesh safety. Experiments 0129–0130 reject both an ad-hoc relief scalar and an isolated generic CC0 lower-lip target as the route to visible likeness. Do not repeat those sweeps, add more generic lip-only targets, or accept on fitting cost alone.
+The next shape route must carry subject-specific central facial structure—most
+urgently nose profile, eyelid form and closed-lip relief—and be evaluated across
+all five views while preserving per-anchor eye evidence, bilateral profiles and
+mesh safety. Experiment 0131 establishes that generic macro directions can move
+the protected outer silhouette but do not supply recognizable central identity.
+Do not repeat generic macro-target expansion, the 0129 scalar relief sweep or
+the 0130 isolated lower-lip transfer, and do not accept on fitting cost alone.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
