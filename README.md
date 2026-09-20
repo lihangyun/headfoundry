@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiments 0126–0127 fit the stable reconnected patch jointly with pose, then test explicit view-mean constraints. Geometry remains stable, but the constrained solve reports failure and one eye worsens despite near-preservation of its view mean. Both candidates are rejected; per-anchor protection cannot be replaced by aggregate error checks.
 - Experiment 0125 confirms that the same deformation on reconnected triangles improves minimum area ratio from 0.233 to 0.884 and removes the tested area/normal failures. The optional tested NumPy diagonal helper is available; defaults remain unchanged. Actual five-view identity remains generic, so this is technical stability progress, not likeness acceptance. 99 tests pass.
 - Experiment 0124 traces the worst deformation-area failures to nearly collinear patch triangles and improves internal planar connectivity with vertices/boundary fixed. Minimum triangle quality rises from 0.000074 to 0.002979. A recomputed 3D candidate is unverified pending rendering and deformation checks; no likeness or default promotion.
 - Experiment 0123 couples three compact actual-surface depth fields with oblique pose. The large free-point eye shift is avoided, but left eye/right profile regress and minimum triangle area ratio falls to 0.215. Candidate rejected; smaller aggregate errors do not waive protected-view or geometry checks.

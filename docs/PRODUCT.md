@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-14 after experiment 0125.
+Last updated: 2026-09-20 after recovery of experiments 0126–0127.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-14 after experiment 0125.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiments 0126–0127 retain the reconnected patch's geometry stability during joint fitting. The unconstrained candidate regresses left-eye alignment; the mean-protected solve reports failure and has negative left-eye slack. A single eye also worsens from 5.42 to 10.30 px while its view mean nearly stays fixed. Neither candidate is promoted. Per-anchor evidence and solver termination must remain explicit; aggregate protection is insufficient.
 
 Experiment 0125 verifies a concrete numerical gain: identical deformation on the reconnected patch yields minimum area ratio 0.884 rather than 0.233, with zero tested sub-half-area triangles or relative normal reversals. The optional diagonal helper is tested, while defaults stay unchanged. Actual five-view identity remains generic and one profile slightly regresses; no likeness promotion. 99 tests pass.
 
