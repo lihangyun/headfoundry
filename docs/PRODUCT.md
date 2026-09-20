@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-20 after recovery of experiments 0126–0127.
+Last updated: 2026-09-20 after experiment 0128.
 
 ## What exists
 
@@ -11,6 +11,8 @@ Last updated: 2026-09-20 after recovery of experiments 0126–0127.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0128 scales the failed per-anchor direction to a strictly feasible nonzero candidate. All eight protected eye errors and both bilateral profile means improve, while minimum area ratio remains 0.957 with no relative normal reversals. Actual five-view appearance changes only slightly and retains generic identity/flat lower lip. `PARTIAL_SUCCESS` for constrained numerical evidence, `REJECT` for baseline promotion. Further progress requires a more expressive identity shape direction, not weaker protection.
 
 Experiments 0126–0127 retain the reconnected patch's geometry stability during joint fitting. The unconstrained candidate regresses left-eye alignment; the mean-protected solve reports failure and has negative left-eye slack. A single eye also worsens from 5.42 to 10.30 px while its view mean nearly stays fixed. Neither candidate is promoted. Per-anchor evidence and solver termination must remain explicit; aggregate protection is insufficient.
 
