@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-20 after experiment 0136.
+Last updated: 2026-09-20 after experiment 0137.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-20 after experiment 0136.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0137 tests the 0135 profile-camera movement on a separately defined
+set of front-lifted, visually reviewed near-eye and lip/subnasale material
+points. The 0.76 silhouette-selected scale worsens left/right material means
+from 9.0087/10.2408 px to 9.1528/10.8358 px, and zero is the best of the full
+101-step direction scan. The fixed-point replay is `TECHNICAL_CHECK_PASSED`;
+the profile detections and current shape remain provisional, so the result is
+not camera truth. It rejects promotion of 0135 as a generally better camera and
+keeps its `PARTIAL_SUCCESS` limited to the same-photo contour diagnostic.
 
 Experiments 0133–0136 resolve four competing explanations for the remaining
 central-face error. Simple mouth-depth smoothing makes both dense profile splits
@@ -116,13 +125,13 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate is independent right-profile camera/correspondence evidence. The
-source PNGs contain no EXIF focal or device metadata, the existing dense split
-reuses one trace, and both current-head and independent-canonical geometry fail
-to reconcile the right profile with the otherwise stable three-view depth prior.
-Review material anchors and contour semantics on that view before another
-geometry fit. Do not increase the saturated local coefficient, smooth the 0132
-field, force the MediaPipe prior, or accept a same-photo camera fit as calibration.
+The next gate is subject-specific central-face geometry under the unchanged
+experiment-0132 reference cameras, scored against both profile contours and the
+reviewed material-support split from 0137. The source PNGs contain no EXIF focal
+or device metadata; neither the existing dense trace nor provisional profile
+landmarks can establish calibration. Do not increase the saturated local
+coefficient, tune pose farther on the same silhouette, smooth the 0132 field,
+force the MediaPipe prior, or treat the current reference cameras as accepted.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
