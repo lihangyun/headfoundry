@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-21 after experiment 0139.
+Last updated: 2026-09-21 after experiment 0141.
 
 ## What exists
 
@@ -11,6 +11,17 @@ Last updated: 2026-09-21 after experiment 0139.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiments 0140–0141 exhaust the tested front-camera-ray central-depth family
+under the experiment-0132 cameras. A direct 20,362-vertex surface direction can
+retain all guards only at 0.000300 maximum movement and is visually
+imperceptible; a 30-center smoothed approximation selects zero. A separately
+optimized 30-field RBF basis also selects zero after its constrained solver
+reaches the iteration limit. Its first nonzero replay step improves both profile
+means slightly but worsens one oblique outline and the right reviewed-material
+mean. The deterministic paths are `TECHNICAL_CHECK_PASSED`; all geometry,
+identity and default promotion is `REJECT`. More local ray fields or weaker
+guards are not a supported next step.
 
 Experiment 0139 transfers the two closed CC0 MakeHuman eye components into the
 current experimental head while preserving every head vertex and camera exactly.
@@ -141,14 +152,17 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate is a more expressive subject-specific central-face geometry basis
-under the unchanged experiment-0132 reference cameras, scored against both
-profile contours and the reviewed material-support split from 0137. The six
-compact ray fields are exhausted, while the generic eyes are only a completeness
-aid. The source PNGs contain no EXIF focal/device metadata; neither the dense
-trace nor provisional profile landmarks can establish calibration. Do not tune
-pose farther on the same silhouette, increase the saturated local coefficient,
-repeat the six-field fit, force the MediaPipe prior, or treat the current
+The next gate is a commercially usable learned or parametric identity-shape
+prior that can represent coherent nose, lip, eyelid, cheek and jaw variation,
+evaluated under the unchanged experiment-0132 reference cameras first. The
+six-field, direct per-vertex and 30-field smooth front-ray families are all
+exhausted under the current protections; adding controls or weakening those
+protections is not evidence. Use only free commercially permitted assets or an
+independently developed model, lock every source/checkpoint, and keep a fitting
+versus evaluation split. The generic eye helpers remain a completeness aid.
+The source PNGs contain no EXIF focal/device metadata; neither the dense trace
+nor provisional profile landmarks can establish calibration. Do not tune pose
+farther on the same silhouette, force the MediaPipe prior, or treat the current
 reference cameras as accepted.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
