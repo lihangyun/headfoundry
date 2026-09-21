@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-20 after experiment 0137.
+Last updated: 2026-09-21 after experiment 0139.
 
 ## What exists
 
@@ -11,6 +11,22 @@ Last updated: 2026-09-20 after experiment 0137.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0139 transfers the two closed CC0 MakeHuman eye components into the
+current experimental head while preserving every head vertex and camera exactly.
+They are visible in all five views and remove the conspicuous empty eye sockets.
+The asset/topology path is `TECHNICAL_CHECK_PASSED` and the actual visual result
+is `PARTIAL_SUCCESS` for completeness, but `REJECT` for identity/default
+promotion: the eyes are generic, disconnected and have no subject iris, gaze,
+cornea, eyelid-contact fit or texture.
+
+Experiment 0138 adds the reviewed profile material points to the six-field
+central-depth objective. A guarded line scan finds a safe 0.003659-unit step,
+improving the left material mean from 9.0087 to 8.6399px while the right is
+effectively unchanged. The optimizer reports failure and native profile crops
+are visually indistinguishable, so numerical replay is
+`TECHNICAL_CHECK_PASSED` but candidate promotion is `REJECT`. The compact
+six-field basis is exhausted as a visible identity route.
 
 Experiment 0137 tests the 0135 profile-camera movement on a separately defined
 set of front-lifted, visually reviewed near-eye and lip/subnasale material
@@ -125,13 +141,15 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate is subject-specific central-face geometry under the unchanged
-experiment-0132 reference cameras, scored against both profile contours and the
-reviewed material-support split from 0137. The source PNGs contain no EXIF focal
-or device metadata; neither the existing dense trace nor provisional profile
-landmarks can establish calibration. Do not increase the saturated local
-coefficient, tune pose farther on the same silhouette, smooth the 0132 field,
-force the MediaPipe prior, or treat the current reference cameras as accepted.
+The next gate is a more expressive subject-specific central-face geometry basis
+under the unchanged experiment-0132 reference cameras, scored against both
+profile contours and the reviewed material-support split from 0137. The six
+compact ray fields are exhausted, while the generic eyes are only a completeness
+aid. The source PNGs contain no EXIF focal/device metadata; neither the dense
+trace nor provisional profile landmarks can establish calibration. Do not tune
+pose farther on the same silhouette, increase the saturated local coefficient,
+repeat the six-field fit, force the MediaPipe prior, or treat the current
+reference cameras as accepted.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
