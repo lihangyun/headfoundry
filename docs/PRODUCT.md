@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-21 after experiment 0141.
+Last updated: 2026-09-21 after experiment 0142.
 
 ## What exists
 
@@ -11,6 +11,16 @@ Last updated: 2026-09-21 after experiment 0141.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0142 establishes the fail-closed local contract for the official
+CC-BY-4.0 `FLAME 2023 Open` identity model. A pure-NumPy adapter validates the
+exact model identity, source, license, attribution/review records, upstream and
+converted hashes, 300-dimensional shape basis and triangle topology. A
+deterministic fixture and negative cases pass, so the adapter is
+`TECHNICAL_CHECK_PASSED`. The official archive is account-gated and not present
+locally; real model decoding, subject fitting and visual quality remain
+`UNVERIFIED`. Old FLAME releases and the separate non-commercial texture model
+remain prohibited.
 
 Experiments 0140–0141 exhaust the tested front-camera-ray central-depth family
 under the experiment-0132 cameras. A direct 20,362-vertex surface direction can
@@ -152,9 +162,12 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate is a commercially usable learned or parametric identity-shape
-prior that can represent coherent nose, lip, eyelid, cheek and jaw variation,
-evaluated under the unchanged experiment-0132 reference cameras first. The
+The next gate is installation and hash verification of the exact official
+`FLAME 2023 Open` archive, safe conversion of its neutral 300-dimensional
+identity basis, and one bounded fit under the unchanged experiment-0132
+reference cameras. The fitting objective must reserve independent evaluation
+evidence and protect bilateral profiles, individual eyes, outer shape and mesh
+safety. The
 six-field, direct per-vertex and 30-field smooth front-ray families are all
 exhausted under the current protections; adding controls or weakening those
 protections is not evidence. Use only free commercially permitted assets or an

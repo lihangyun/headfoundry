@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0142 adds a fail-closed, pure-NumPy neutral identity adapter for the separately released `FLAME 2023 Open` model. Only the official CC-BY-4.0 Open identity, a locked upstream digest and a separately hashed safe conversion are accepted; old FLAME, research-only licensing, malformed topology and coefficient overflow are rejected. The deterministic 300-dimensional fixture is `TECHNICAL_CHECK_PASSED`, but the official account-gated archive is not installed and all subject/visual results remain `UNVERIFIED`.
 - Experiments 0140–0141 test the remaining front-camera-ray central-depth family without changing the experiment-0132 cameras, topology or safeguards. A direct 20,362-vertex surface direction is forced down to 0.000300 maximum movement and is visually imperceptible; smoothing that direction selects zero. Direct optimization of 30 smooth RBF fields also selects zero: its first nonzero step slightly improves both profiles but worsens one oblique outline and the right reviewed-material mean, while the solver hits its iteration limit. Replays are `TECHNICAL_CHECK_PASSED`; every candidate/default promotion is `REJECT`. Stop adding local ray fields—the next route requires a real identity prior and independent validation.
 - Experiment 0139 adds the two locked CC0 MakeHuman eye components to the current head with every head vertex and camera unchanged. Both helpers are closed manifold components and render in all five views, replacing the conspicuous empty sockets. This is `TECHNICAL_CHECK_PASSED` and `PARTIAL_SUCCESS` for visible completeness, but `REJECT` for identity/default promotion: the eyes remain generic, disconnected and untextured, with no subject gaze or iris.
 - Experiment 0138 adds the reviewed profile material points to the six-field central-depth fit. A safe nonzero step improves the left material mean by 0.37px while the right is unchanged, but the optimizer does not terminate successfully and native nose/lip crops are visually indistinguishable. Numerical replay `TECHNICAL_CHECK_PASSED`, visual promotion `REJECT`; stop retuning this limited six-field basis.
@@ -147,6 +148,19 @@ Only `facebook/VGGT-1B-Commercial` with license id `vggt-aup-license` is accepte
 
 The separate free-commercial DA3-BASE candidate has its own locked local runner,
 not a VGGT fallback. See [installation and measured limits](docs/experiment-0018-da3-base.md#reproduction).
+
+## FLAME 2023 Open installation
+
+Only the official `FLAME 2023 Open` archive is eligible. Its shape model is
+CC-BY-4.0 and permits commercial use with attribution and the published use
+restrictions; older FLAME releases and the separate texture model are not
+eligible. Sign in at the [official FLAME download page](https://download.is.tue.mpg.de/download.php?domain=flame&sfile=FLAME2023Open.zip)
+and place `FLAME2023Open.zip` under
+`assets/private/FLAME-2023-Open/`. Do not substitute or rename an older model.
+The private archive must be inspected and hashed before conversion; fill
+`examples/flame-2023-open-lock.template.json` only with the actual source and
+converted digests. Until that exact file exists, the real adapter and all
+identity fitting remain `UNVERIFIED`.
 
 ## Project documents
 

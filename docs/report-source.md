@@ -30,7 +30,13 @@ The local RTX 3070 8 GB is suitable for unit tests and reduced experiments, not 
 
 VGGTFace and UVFaceFusion demonstrate the central idea: convert per-view geometric observations and dense correspondence evidence into a canonical domain, then fuse them under topology-aware constraints. Their released dependency chain is not production-ready for our commercial purpose, especially where Pixel3DMM weights are non-commercial. We will independently implement the method family and train any dense correspondence/detail model only on cleared data.
 
-FLAME 2023 Open is the leading coarse head prior candidate. Its asset and attribution obligations must be pinned in the asset manifest, and its texture space is not assumed licensed. A proprietary shoulder/neck extension and our own eye/teeth assets avoid ambiguous downstream rights.
+FLAME 2023 Open is the selected coarse identity-prior candidate. The official
+license identifies that exact release as CC-BY-4.0 and permits commercial use
+with attribution and published use restrictions; standard/older releases
+remain non-commercial. Its official and converted bytes must both be hash
+locked. Registered scan data, landmark files and the separate texture model are
+not assumed covered. A proprietary shoulder/neck extension and our own eye/teeth
+assets avoid ambiguous downstream rights.
 
 The first production-quality version should use per-subject optimization. A 1–3 minute budget buys explicit failure visibility and reduces dependence on a huge training corpus. A feed-forward fusion model is justified only after the benchmark, data rights, and optimizer establish trustworthy targets.
 

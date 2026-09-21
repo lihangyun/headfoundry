@@ -10,6 +10,16 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-09-21 FLAME 2023 Open identity prior
+
+The exact official `FLAME 2023 Open` model may be used as a neutral identity
+prior under its published CC-BY-4.0 terms, including attribution, change
+disclosure and prohibited-use review. This permission does not extend to
+standard/older FLAME releases, registered scan data, landmark assets or the
+separately licensed FLAME texture model. The official download and a safe local
+conversion must each be hash locked. Adapter tests do not establish model-file
+availability, subject fit, camera accuracy or visual acceptance.
+
 ### 2026-09-12 independent Apache dense geometry
 
 The exact `facebook/map-anything-apache` checkpoint may be loaded with its own
@@ -84,7 +94,7 @@ The research evidence favors explicit multi-view geometry and canonical fusion o
 ## Rejected routes
 
 - KeenTools service outputs or automated black-box measurements: incompatible with the service's competitive-use restrictions without written permission.
-- Pixel3DMM weights, FaceScape, Multiface, VHAP, standard FLAME releases: non-commercial restrictions.
+- Pixel3DMM weights, FaceScape, Multiface, VHAP and standard/older FLAME releases: non-commercial restrictions. The separately named FLAME 2023 Open model is governed by the decision above.
 - nvdiffrast: its published license is not suitable for this product. PyTorch3D is the selected differentiable renderer.
 - Pure NeRF/Gaussian avatar output: does not provide the required stable fixed topology and editable mesh contract.
 - Training a large end-to-end model first: delays falsification and hides camera, geometry, and texture failure modes.
