@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 2026-09-22: full MakeHuman face/head target basis
+
+The independently developed synthetic-identity route expands the already
+pinned official MakeHuman revision to 348 graphical targets in the reviewed
+face/head folders. Every locked file contains MakeHuman's explicit CC0 header;
+the deterministic names and SHA-256 digests are in
+`examples/makehuman-full-face-target-lock.json`. The lock and conversion do not
+import MakeHuman application code or any trained model, and do not establish
+subject likeness. Experiment 0155 records the fail-closed rights and topology
+conversion result.
+
 ## 2026-09-20: MediaPipe canonical face topology
 
 The [official MediaPipe repository](https://github.com/google-ai-edge/mediapipe/tree/20e8f2ae3365d46fa02037b54911b72e13494809)
