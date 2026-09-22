@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0150.
+Last updated: 2026-09-22 after experiment 0151.
 
 ## What exists
 
@@ -11,6 +11,14 @@ Last updated: 2026-09-22 after experiment 0150.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0151 confirms that experiment 0150's tiny gain is not caused by an
+apparent-contour support jump. All sampled right-profile nose, mouth and chin
+rows retain a shared baseline-edge vertex, with no more than 0.000130
+model-unit support motion. This read-only check is `TECHNICAL_CHECK_PASSED`,
+but it establishes numerical continuity rather than anatomical identity. The
+next shape test separates the two visible hemispheres and requires same-side
+oblique transfer under the existing protections.
 
 Experiment 0150 fits and line-scans a tiny physical right-profile camera
 perturbation under independent near-eye, subnasale, nose, chin, cheirality,
@@ -222,16 +230,15 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate keeps all cameras fixed and asks whether the right-profile
-lower-face observations identify stable anatomical correspondence on the
-current surface. Any new shape basis must reserve independent rows, transfer
-bilaterally, preserve individual eye/nose/chin evidence and mesh safety, and
-produce a visible improvement in the exact Blender overlays. Do not expand the
-rejected camera direction: its protected gain explains only about 1.1% of the
-held-mouth error. Do not use free 2D offsets or treat same-photo silhouette
-agreement as independent calibration. Use only free commercially permitted
-assets or independently developed methods, and keep fitting evidence separate
-from evaluation.
+The next gate keeps all cameras fixed and tests a softly side-separated
+lower-face shape family. Each pure profile may influence only its visible
+hemisphere, but promotion requires improvement on untouched rows and the
+corresponding oblique outline while preserving the opposite side, individual
+eyes, nose/chin evidence and mesh safety. A candidate must also produce a
+visible improvement in the exact Blender overlays. Do not expand the rejected
+camera direction, use free 2D offsets or treat same-photo silhouette agreement
+as independent validation. Use only free commercially permitted assets or
+independently developed methods.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
