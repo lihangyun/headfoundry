@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0156.
+Last updated: 2026-09-22 after experiment 0157.
 
 ## What exists
 
@@ -11,6 +11,14 @@ Last updated: 2026-09-22 after experiment 0156.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0157 maps all 82 paired controls onto the current closed mesh. A
+profile-weighted fit safely improves every aggregate outline/profile metric,
+but untouched profile rows reject it: left held error worsens from 4.247 to
+4.643 px and right from 4.387 to 4.526 px. Exact Blender overlays show no
+confident identity gain. Mapping and solver execution are
+`TECHNICAL_CHECK_PASSED`; subject, visual and default promotion are `REJECT`.
+Training a decoder on this same rejected source manifold is not justified.
 
 Experiment 0156 converts the locked target basis into 82 paired neutral
 controls and generates 256 deterministic synthetic identities. Maximum
@@ -269,12 +277,12 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate fits the 82-control piecewise nonlinear manifold directly to the
-five local subject views under the existing camera, bilateral held-profile,
-oblique, eye and mesh protections. Prove source-manifold capacity before
-training a neural decoder. Any candidate must beat experiment 0132 on held
-profiles and oblique outlines and show a visible gain in exact five-view
-Blender overlays; fitting loss alone is not acceptance.
+The next gate requires identity capacity outside the rejected 82-control
+manifold: either richer commercially usable three-dimensional identity data or
+image-derived subject geometry with genuinely independent multiview
+validation. Do not train a decoder on the same source samples or retune their
+weights. Any new representation must beat experiment 0132 on bilateral held
+profiles and show a visible exact-Blender-overlay gain.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
