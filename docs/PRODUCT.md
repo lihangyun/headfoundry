@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0153.
+Last updated: 2026-09-22 after experiment 0154.
 
 ## What exists
 
@@ -11,6 +11,13 @@ Last updated: 2026-09-22 after experiment 0153.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0154 tests eight coherent macro identity modes, first shared and
+then independently on the two visible hemispheres. Both optimizers converge,
+but every nonzero step trades right-side improvement for left train/held
+regression; removing symmetry coupling does not resolve the conflict. The path
+is `TECHNICAL_CHECK_PASSED`, while both representations and all visual/default
+promotion are `REJECT`. Hand-authored scalar identity modes are exhausted.
 
 Experiment 0153 replaces the broad mouth field with six anatomical layers. A
 0.20-scale experimental candidate improves both fitted profiles, the combined
@@ -248,13 +255,13 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate changes the identity representation rather than tuning another
-local depth field on the current generic mesh. It must provide coherent
-forehead, midface, jaw and cranium capacity, retain the fixed-camera and
-individual eye/nose/profile protections, and show a visible five-view gain in
-exact Blender overlays. Numerical fitting improvement without visible identity
-improvement is insufficient. Do not expand the rejected camera direction or
-add arbitrary unconstrained per-vertex freedom.
+The next gate uses a coherent nonlinear three-dimensional identity prior with
+known commercial rights, or an independently trained prior from controlled
+synthetic 3D heads. It must beat experiment 0132 on bilateral held profiles,
+both oblique outlines and exact five-view Blender overlays while retaining
+individual eye, camera and mesh safeguards. Training or fitting loss alone is
+not acceptance. Do not add more hand-authored scalar modes, expand the rejected
+camera direction or introduce unconstrained per-vertex freedom.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
