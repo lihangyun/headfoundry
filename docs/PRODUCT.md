@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0149.
+Last updated: 2026-09-22 after experiment 0150.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-22 after experiment 0149.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0150 fits and line-scans a tiny physical right-profile camera
+perturbation under independent near-eye, subnasale, nose, chin, cheirality,
+focal and rigid-matrix protection. A feasible scale exists, but held-mouth
+error falls only 0.071 px (6.504 to 6.433, about 1.1%) with rotations below
+0.012 degrees. The diagnostic is `TECHNICAL_CHECK_PASSED`, the protected
+nonzero direction is `PARTIAL_SUCCESS`, and camera promotion is `REJECT`.
+Camera error cannot explain the visible lower-face deficit; retain the 0132
+cameras and move to correspondence/anatomical shape capacity.
 
 Experiment 0149 separates one shared neutral lower-face step from three bounded
 per-profile expression nuisance modes while freezing every camera. The solver
@@ -213,17 +222,16 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate is one bounded right-profile camera diagnostic on the unchanged
-experiment-0132 mesh. Fit only a tiny physical rotation/translation/focal
-perturbation to the coherent subnasal/lip residual and evaluate independent
-eye, nose, ear and chin evidence. It must improve the reserved mouth samples
-without regressing those regions, violating cheirality or focal plausibility,
-or changing any other camera. Failure retains the current reference camera and
-moves the investigation to correspondence or a better-supported anatomical
-shape basis; it is not permission to expand pose bounds. The source PNGs have
-no EXIF focal/device metadata, so silhouette agreement alone cannot certify
-calibration. Use only free commercially permitted assets or independently
-developed methods, and keep fitting evidence separate from evaluation.
+The next gate keeps all cameras fixed and asks whether the right-profile
+lower-face observations identify stable anatomical correspondence on the
+current surface. Any new shape basis must reserve independent rows, transfer
+bilaterally, preserve individual eye/nose/chin evidence and mesh safety, and
+produce a visible improvement in the exact Blender overlays. Do not expand the
+rejected camera direction: its protected gain explains only about 1.1% of the
+held-mouth error. Do not use free 2D offsets or treat same-photo silhouette
+agreement as independent calibration. Use only free commercially permitted
+assets or independently developed methods, and keep fitting evidence separate
+from evaluation.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
