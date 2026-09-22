@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0147.
+Last updated: 2026-09-22 after experiment 0148.
 
 ## What exists
 
@@ -11,6 +11,14 @@ Last updated: 2026-09-22 after experiment 0147.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0148 shows that the rejected right-side transfer conflict spans
+three consecutive subnasal/lip samples rather than one obvious bad point; two
+lower-chin samples improve, and four of five left transfer samples improve.
+Read-only replay is `TECHNICAL_CHECK_PASSED`, geometry remains `REJECT`, and the
+cause remains `UNVERIFIED`. The next architecture must treat small per-view
+mouth expression/pose as a nuisance variable separate from neutral identity,
+not encode one photograph's mouth state as asymmetric neutral geometry.
 
 Experiment 0147 tests a structured bilateral lower-face spline. At the first
 nonzero scale, both fitted profile subsets improve and left transfer improves,
