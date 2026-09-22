@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0145.
+Last updated: 2026-09-22 after experiment 0146.
 
 ## What exists
 
@@ -11,6 +11,14 @@ Last updated: 2026-09-22 after experiment 0145.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0146 replays the fixed 0132 mesh/cameras on manually partitioned
+existing profile observations. Nose error is already lowest at 0.84/3.10 px;
+mouth remains 3.44/5.76 px and chin/jaw 5.12/4.22 px, while the right upper
+bridge is a separate 8.46 px discrepancy. Hair, cranium and cut-neck boundaries
+are excluded. The audit is `TECHNICAL_CHECK_PASSED`, not independent evidence or
+a promoted result. The next shape family must couple mouth with chin/jaw while
+protecting nose, eyes, frontal/oblique evidence and topology.
 
 Experiment 0145 reproduces all five fixed project cameras in Blender with less
 than 0.00013 px maximum independent vertex-projection disagreement. This path is
