@@ -24,7 +24,8 @@ IDENTITY_DIMENSIONS = 300
 def validate_flame_open_asset(record: dict[str, Any], root: Path) -> list[str]:
     """Validate the exact open model and a hash-locked safe NumPy conversion."""
     required = (
-        "id", "source_url", "license_id", "path", "sha256", "source_sha256",
+        "id", "source_url", "license_id", "path", "sha256", "source_path", "source_sha256",
+        "model_path", "model_sha256", "readme_path", "readme_sha256",
         "reviewed_by", "reviewed_at", "attribution",
     )
     errors = [f"model.{field}: missing" for field in required if not record.get(field)]
@@ -42,14 +43,21 @@ def validate_flame_open_asset(record: dict[str, Any], root: Path) -> list[str]:
         errors.append("model.changes_disclosed: explicit true is required")
     if record.get("prohibited_uses_reviewed") is not True:
         errors.append("model.prohibited_uses_reviewed: explicit true is required")
-    source_digest = str(record.get("source_sha256", "")).lower()
-    if len(source_digest) != 64 or any(character not in string.hexdigits for character in source_digest):
-        errors.append("model.source_sha256: expected 64 hexadecimal characters")
-    path = root / str(record.get("path", ""))
-    if not record.get("path") or not path.is_file():
-        errors.append(f"model.path: file not found: {path}")
-    elif record.get("sha256") and sha256_file(path) != str(record["sha256"]).lower():
-        errors.append("model.sha256: converted asset digest mismatch")
+    for name in ("source_sha256", "model_sha256", "readme_sha256", "sha256"):
+        digest = str(record.get(name, "")).lower()
+        if len(digest) != 64 or any(character not in string.hexdigits for character in digest):
+            errors.append(f"model.{name}: expected 64 hexadecimal characters")
+    for path_name, digest_name, label in (
+        ("source_path", "source_sha256", "official archive"),
+        ("model_path", "model_sha256", "official model"),
+        ("readme_path", "readme_sha256", "official readme"),
+        ("path", "sha256", "converted asset"),
+    ):
+        path = root / str(record.get(path_name, ""))
+        if not record.get(path_name) or not path.is_file():
+            errors.append(f"model.{path_name}: file not found: {path}")
+        elif record.get(digest_name) and sha256_file(path) != str(record[digest_name]).lower():
+            errors.append(f"model.{digest_name}: {label} digest mismatch")
     return errors
 
 

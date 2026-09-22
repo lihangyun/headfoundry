@@ -3,9 +3,14 @@
   "source_url": "https://flame.is.tue.mpg.de/",
   "download_url": "https://download.is.tue.mpg.de/download.php?domain=flame&sfile=FLAME2023Open.zip",
   "license_id": "CC-BY-4.0",
+  "source_path": "../assets/private/FLAME-2023-Open/FLAME2023Open.zip",
+  "source_sha256": "REPLACE_WITH_OFFICIAL_ZIP_SHA256",
+  "model_path": "../assets/private/FLAME-2023-Open/flame2023_Open.pkl",
+  "model_sha256": "REPLACE_WITH_OFFICIAL_PKL_SHA256",
+  "readme_path": "../assets/private/FLAME-2023-Open/FLAME2023_Open Readme.pdf",
+  "readme_sha256": "REPLACE_WITH_OFFICIAL_README_SHA256",
   "path": "../assets/private/FLAME-2023-Open/flame2023_Open.safe.npz",
   "sha256": "REPLACE_WITH_CONVERTED_NPZ_SHA256",
-  "source_sha256": "REPLACE_WITH_OFFICIAL_ZIP_SHA256",
   "conversion_id": "numpy-safe-neutral-identity-v1",
   "reviewed_by": "REPLACE_WITH_REVIEWER",
   "reviewed_at": "REPLACE_WITH_ISO_DATE",
@@ -15,4 +20,3 @@
   "prohibited_uses_reviewed": true,
   "scope": "Only flame2023_Open.pkl from the official FLAME2023Open.zip may be converted. Standard FLAME releases and the non-commercial FLAME texture model are rejected. This record does not establish subject fit or visual acceptance."
 }
-

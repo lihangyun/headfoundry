@@ -1,7 +1,7 @@
 # Experiment 0142: FLAME 2023 Open identity adapter
 
-Status: deterministic local adapter `TECHNICAL_CHECK_PASSED`; official asset,
-subject fitting and visual result `UNVERIFIED`.
+Status: official asset and deterministic local adapter `TECHNICAL_CHECK_PASSED`;
+subject identity and visual promotion `REJECT` in experiment 0143.
 
 The target is a coherent 300-dimensional identity-shape prior that can replace
 the exhausted local depth fields. The hypothesis is that the separately named
@@ -23,12 +23,13 @@ neutral linear decoding and unchanged topology. Negative tests reject an old
 model identity, research-only license, false commercial-use record, unknown
 conversion, malformed source digest, converted-file tampering, a 299-direction
 archive, floating-point face indices and invalid/out-of-bound coefficients.
-These tests establish the contract only; they do not establish compatibility
-with bytes that have not been downloaded or subject likeness.
+These tests establish the contract only; they do not establish subject likeness.
 
-The official download currently requires account sign-in. No official archive
-is present locally, so no source digest, real topology count or real identity
-fit is claimed. After the exact `FLAME2023Open.zip` is downloaded locally,
-inspect its contents, record the hashes, convert only `flame2023_Open.pkl` to
-the safe neutral archive, and rerun the adapter before any subject experiment.
-
+The account-gated official archive was reviewed and converted locally on
+2026-09-22. The source ZIP, `flame2023_Open.pkl` and generated safe NPZ are
+independently SHA-256 locked. Static pickle inspection permits only the exact
+NumPy/SciPy reconstruction globals needed by the file; a restricted unpickler
+then extracts 5,023 template vertices, 9,976 triangles and the first 300 shape
+directions. The real adapter reports `TECHNICAL_CHECK_PASSED`. No licensed bytes
+are committed. Experiment 0143 separately evaluates identity transfer and
+rejects visual promotion.

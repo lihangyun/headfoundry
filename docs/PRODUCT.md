@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-21 after experiment 0142.
+Last updated: 2026-09-22 after experiment 0143.
 
 ## What exists
 
@@ -12,15 +12,17 @@ Last updated: 2026-09-21 after experiment 0142.
 
 ## Current result
 
-Experiment 0142 establishes the fail-closed local contract for the official
+Experiments 0142–0143 establish the fail-closed local contract for the official
 CC-BY-4.0 `FLAME 2023 Open` identity model. A pure-NumPy adapter validates the
 exact model identity, source, license, attribution/review records, upstream and
 converted hashes, 300-dimensional shape basis and triangle topology. A
-deterministic fixture and negative cases pass, so the adapter is
-`TECHNICAL_CHECK_PASSED`. The official archive is account-gated and not present
-locally; real model decoding, subject fitting and visual quality remain
-`UNVERIFIED`. Old FLAME releases and the separate non-commercial texture model
-remain prohibited.
+deterministic fixture, negative cases and the real 5,023-vertex model pass, so
+the asset/conversion adapter is `TECHNICAL_CHECK_PASSED`. Identity fitting and
+topology transfer remain visibly generic: the best transfer reports bilateral
+profile means of 32.22/30.42 px, far worse than the current 0132 result at about
+3.62/4.92 px. All FLAME identity/default promotion is `REJECT`; KeenTools-level
+quality remains `UNVERIFIED`. Old FLAME releases and the separate non-commercial
+texture model remain prohibited.
 
 Experiments 0140–0141 exhaust the tested front-camera-ray central-depth family
 under the experiment-0132 cameras. A direct 20,362-vertex surface direction can

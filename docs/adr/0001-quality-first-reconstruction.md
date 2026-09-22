@@ -20,6 +20,12 @@ separately licensed FLAME texture model. The official download and a safe local
 conversion must each be hash locked. Adapter tests do not establish model-file
 availability, subject fit, camera accuracy or visual acceptance.
 
+The official asset was safely converted and hash locked on 2026-09-22. This
+changes model availability to `TECHNICAL_CHECK_PASSED`, not identity quality:
+experiment 0143 rejects the tested linear identity and topology-transfer
+candidates. FLAME remains an optional standard topology/rig prior, never a
+likeness or camera acceptance shortcut.
+
 ### 2026-09-12 independent Apache dense geometry
 
 The exact `facebook/map-anything-apache` checkpoint may be loaded with its own
