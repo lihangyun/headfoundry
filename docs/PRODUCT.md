@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0148.
+Last updated: 2026-09-22 after experiment 0149.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-22 after experiment 0148.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0149 separates one shared neutral lower-face step from three bounded
+per-profile expression nuisance modes while freezing every camera. The solver
+converges, but the right transfer mean still worsens from 4.594 to 5.320 px and
+the right adjusted mesh reverses 536 triangle normals. Execution is
+`TECHNICAL_CHECK_PASSED`; neutral and adjusted candidates are `REJECT`, and the
+expression explanation remains `UNVERIFIED`. The next discriminating test is a
+small physical right-profile camera perturbation, accepted only if independent
+eye, nose, ear and chin evidence on the unchanged mesh is preserved.
 
 Experiment 0148 shows that the rejected right-side transfer conflict spans
 three consecutive subnasal/lip samples rather than one obvious bad point; two
@@ -204,21 +213,17 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate is installation and hash verification of the exact official
-`FLAME 2023 Open` archive, safe conversion of its neutral 300-dimensional
-identity basis, and one bounded fit under the unchanged experiment-0132
-reference cameras. The fitting objective must reserve independent evaluation
-evidence and protect bilateral profiles, individual eyes, outer shape and mesh
-safety. The
-six-field, direct per-vertex and 30-field smooth front-ray families are all
-exhausted under the current protections; adding controls or weakening those
-protections is not evidence. Use only free commercially permitted assets or an
-independently developed model, lock every source/checkpoint, and keep a fitting
-versus evaluation split. The generic eye helpers remain a completeness aid.
-The source PNGs contain no EXIF focal/device metadata; neither the dense trace
-nor provisional profile landmarks can establish calibration. Do not tune pose
-farther on the same silhouette, force the MediaPipe prior, or treat the current
-reference cameras as accepted.
+The next gate is one bounded right-profile camera diagnostic on the unchanged
+experiment-0132 mesh. Fit only a tiny physical rotation/translation/focal
+perturbation to the coherent subnasal/lip residual and evaluate independent
+eye, nose, ear and chin evidence. It must improve the reserved mouth samples
+without regressing those regions, violating cheirality or focal plausibility,
+or changing any other camera. Failure retains the current reference camera and
+moves the investigation to correspondence or a better-supported anatomical
+shape basis; it is not permission to expand pose bounds. The source PNGs have
+no EXIF focal/device metadata, so silhouette agreement alone cannot certify
+calibration. Use only free commercially permitted assets or independently
+developed methods, and keep fitting evidence separate from evaluation.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
