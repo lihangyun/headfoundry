@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0152.
+Last updated: 2026-09-22 after experiment 0153.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-22 after experiment 0152.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0153 replaces the broad mouth field with six anatomical layers. A
+0.20-scale experimental candidate improves both fitted profiles, the combined
+held score and both oblique outlines; maximum movement is 0.00371, minimum area
+ratio is 0.953 and no triangles reverse. The path is
+`TECHNICAL_CHECK_PASSED` and the balanced numerical result is
+`PARTIAL_SUCCESS`. Exact Blender overlays show no confidently visible identity
+gain, so visual/default promotion is `REJECT`. Small local depth fields on the
+current generic mesh have reached diminishing returns.
 
 Experiment 0152 gives the two visible facial hemispheres separate smooth
 lower-face capacity with fixed cameras and same-side oblique transfer. The
@@ -239,14 +248,13 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate keeps all cameras fixed and tests an anatomically layered
-lower-face basis: upper-lip projection, lip seam, lower lip, labiomental groove
-and chin must be independently but smoothly controllable. Promotion requires
-improvement on untouched bilateral profile rows and corresponding oblique
-outlines while preserving individual eyes, nose, frontal outline and mesh
-safety, followed by a visible Blender-overlay improvement. Do not add arbitrary
-per-vertex freedom, expand the rejected camera direction or repeat the side
-split without new anatomical capacity.
+The next gate changes the identity representation rather than tuning another
+local depth field on the current generic mesh. It must provide coherent
+forehead, midface, jaw and cranium capacity, retain the fixed-camera and
+individual eye/nose/profile protections, and show a visible five-view gain in
+exact Blender overlays. Numerical fitting improvement without visible identity
+improvement is insufficient. Do not expand the rejected camera direction or
+add arbitrary unconstrained per-vertex freedom.
 
 Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
 
