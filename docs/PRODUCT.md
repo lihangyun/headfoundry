@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0146.
+Last updated: 2026-09-22 after experiment 0147.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-22 after experiment 0146.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0147 tests a structured bilateral lower-face spline. At the first
+nonzero scale, both fitted profile subsets improve and left transfer improves,
+but right transfer worsens from 4.594 to 4.607 px and degrades monotonically as
+the step grows. Nose, eyes, frontal/oblique outlines and topology remain safe.
+The path is `TECHNICAL_CHECK_PASSED`, every nonzero geometry is `REJECT`, and
+zero is retained. This is a bilateral evidence conflict, not permission to
+weaken the transfer guard; right-profile correspondence/camera uncertainty is
+the next diagnostic.
 
 Experiment 0146 replays the fixed 0132 mesh/cameras on manually partitioned
 existing profile observations. Nose error is already lowest at 0.84/3.10 px;
