@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-23 after experiment 0159.
+Last updated: 2026-09-23 after experiment 0160.
 
 ## What exists
 
@@ -12,14 +12,22 @@ Last updated: 2026-09-23 after experiment 0159.
 
 ## Current result
 
+Experiment 0160 audits the actual z-buffer visible facial boundary rather than
+only selected mesh edge supports. All 17 left and 16 right frozen profile rows
+render; mean absolute outer-edge errors are 4.24/4.94 px. This rejects the
+suspected hidden-edge score failure, but measures only the brow-to-chin exterior
+on development photos. Interior identity, posterior head, neck and full visual
+quality remain `UNVERIFIED` or visibly poor. Next seek subject-specific
+interior anatomy and independent complete-head evidence rather than repeating
+the same sparse face-outline fit.
+
 Experiment 0159 tests the classical-stereo depth hypothesis. The two
 triangulated front/30-degree clouds contain 2,908/3,368 samples but only 443
 cross-pair points agree within 0.03 model units. Their fusion covers only 7/17
 and 7/16 reviewed pure-profile rows; covered-row errors are 34.21/21.41 px.
 Local overlays show missing mouth/chin support. Execution is
-`TECHNICAL_CHECK_PASSED`; this subject geometry is `REJECT`. The next gate uses
-pure-profile contours directly as fixed-camera shape evidence and requires
-visible five-view improvement before promotion.
+`TECHNICAL_CHECK_PASSED`; this subject geometry is `REJECT`. Experiment 0160
+then checks what the existing pure-profile contours already constrain.
 
 Experiment 0158 establishes a model-free dense-photo route. Fixed front/left-30
 and front/right-30 cameras rectify successfully; 11-pixel semi-global matching

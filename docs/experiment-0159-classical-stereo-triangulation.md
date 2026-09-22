@@ -39,3 +39,8 @@ with fixed cameras and explicit held rows, and seek a surface representation
 that can improve both sides visibly. Any candidate still requires five-view
 Blender overlays, protected eye/nose evidence and mesh-safety checks before
 promotion.
+
+Follow-up: [experiment 0160](experiment-0160-visible-profile-boundary.md)
+measures the actual rendered boundary and finds that the existing brow-to-chin
+profile samples already track the photo within about 4--5 px mean. The remaining
+visible deficit is not resolved by refitting those same sparse outer rows.
