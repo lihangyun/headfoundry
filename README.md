@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0144 installs Blender 5.2.1 LTS and adds a non-overwriting, hash-reported five-view clay diagnostic. The real experiment-0132 OBJ produces a reopenable `.blend` plus fixed front/35°/90° renders; the first wrong-axis run is preserved and excluded. The rendering path is `TECHNICAL_CHECK_PASSED`, while the visibly generic identity, open lips and incomplete eyes remain `UNVERIFIED`; Blender does not promote geometry or unlock texture work.
 - Experiments 0142–0143 install and safely convert the official CC-BY-4.0 `FLAME 2023 Open` identity model: the source ZIP, pickle and safe NumPy conversion are independently locked, and the real 5,023-vertex/9,976-triangle/300-direction adapter is `TECHNICAL_CHECK_PASSED`. Fixed-camera identity, similarity and topology-transfer trials remain visibly generic; the best transfer leaves bilateral profile errors at 32.22/30.42 px versus about 3.62/4.92 px for the current 0132 result. Every FLAME identity/default promotion is `REJECT`; retain it only as a legal standard topology/rig prior.
 - Experiments 0140–0141 test the remaining front-camera-ray central-depth family without changing the experiment-0132 cameras, topology or safeguards. A direct 20,362-vertex surface direction is forced down to 0.000300 maximum movement and is visually imperceptible; smoothing that direction selects zero. Direct optimization of 30 smooth RBF fields also selects zero: its first nonzero step slightly improves both profiles but worsens one oblique outline and the right reviewed-material mean, while the solver hits its iteration limit. Replays are `TECHNICAL_CHECK_PASSED`; every candidate/default promotion is `REJECT`. Stop adding local ray fields—the next route requires a real identity prior and independent validation.
 - Experiment 0139 adds the two locked CC0 MakeHuman eye components to the current head with every head vertex and camera unchanged. Both helpers are closed manifold components and render in all five views, replacing the conspicuous empty sockets. This is `TECHNICAL_CHECK_PASSED` and `PARTIAL_SUCCESS` for visible completeness, but `REJECT` for identity/default promotion: the eyes remain generic, disconnected and untextured, with no subject gaze or iris.
@@ -170,6 +171,22 @@ C:\Python313\python.exe tools\prepare_flame_open.py `
 The generated lock binds the source ZIP, official pickle and safe NPZ. Complete
 its reviewer fields before loading it. Asset installation is not evidence of
 subject likeness; experiment 0143 rejects the tested identity candidates.
+
+## Blender clay diagnostic
+
+Blender 5.2 LTS can turn an existing OBJ into a reproducible five-view neutral
+clay review without changing its geometry:
+
+```powershell
+& 'C:\Program Files\Blender Foundation\Blender 5.2\blender.exe' `
+  --background --python tools\blender_clay.py -- `
+  path\to\head.obj path\to\new-output-directory
+```
+
+The importer applies the current HeadFoundry OBJ y-down/z-back convention. The
+non-overwriting output contains `diagnostic.blend`, five PNG views and a
+hash-bound `report.json`. Its status is always `UNVERIFIED`: a Blender render is
+diagnostic evidence, not camera, identity or likeness acceptance.
 
 ## Project documents
 

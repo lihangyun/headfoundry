@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0143.
+Last updated: 2026-09-22 after experiment 0144.
 
 ## What exists
 
@@ -11,6 +11,13 @@ Last updated: 2026-09-22 after experiment 0143.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0144 adds a reproducible Blender 5.2.1 LTS clay-review path. It
+imports the current OBJ convention, generates five fixed orthographic views,
+saves a reopenable scene and records the source hash without changing geometry.
+The path is `TECHNICAL_CHECK_PASSED`. Actual experiment-0132 renders remain
+visibly generic with unresolved lips and incomplete eyes, so identity stays
+`UNVERIFIED` and no camera, geometry, texture or parity gate is promoted.
 
 Experiments 0142–0143 establish the fail-closed local contract for the official
 CC-BY-4.0 `FLAME 2023 Open` identity model. A pure-NumPy adapter validates the
