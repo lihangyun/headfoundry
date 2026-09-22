@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0145 converts the unchanged 0132 matrices into exact Blender cameras and produces private semi-transparent photo/clay overlays. Independent Blender projection replay is below 0.00013 px maximum in all five views, so the conversion is `TECHNICAL_CHECK_PASSED`. The overlays reject any whole-head success claim: frontal envelope is broadly coincident, while pure profiles expose major cranial-depth, posterior-skull/neck and cut-boundary disagreement. Selected 3–5 px facial rows never certified the complete head; the next gate is region-semantic profile evidence, not more nose/lip-only tuning.
 - Experiment 0144 installs Blender 5.2.1 LTS and adds a non-overwriting, hash-reported five-view clay diagnostic. The real experiment-0132 OBJ produces a reopenable `.blend` plus fixed front/35°/90° renders; the first wrong-axis run is preserved and excluded. The rendering path is `TECHNICAL_CHECK_PASSED`, while the visibly generic identity, open lips and incomplete eyes remain `UNVERIFIED`; Blender does not promote geometry or unlock texture work.
 - Experiments 0142–0143 install and safely convert the official CC-BY-4.0 `FLAME 2023 Open` identity model: the source ZIP, pickle and safe NumPy conversion are independently locked, and the real 5,023-vertex/9,976-triangle/300-direction adapter is `TECHNICAL_CHECK_PASSED`. Fixed-camera identity, similarity and topology-transfer trials remain visibly generic; the best transfer leaves bilateral profile errors at 32.22/30.42 px versus about 3.62/4.92 px for the current 0132 result. Every FLAME identity/default promotion is `REJECT`; retain it only as a legal standard topology/rig prior.
 - Experiments 0140–0141 test the remaining front-camera-ray central-depth family without changing the experiment-0132 cameras, topology or safeguards. A direct 20,362-vertex surface direction is forced down to 0.000300 maximum movement and is visually imperceptible; smoothing that direction selects zero. Direct optimization of 30 smooth RBF fields also selects zero: its first nonzero step slightly improves both profiles but worsens one oblique outline and the right reviewed-material mean, while the solver hits its iteration limit. Replays are `TECHNICAL_CHECK_PASSED`; every candidate/default promotion is `REJECT`. Stop adding local ray fields—the next route requires a real identity prior and independent validation.
@@ -187,6 +188,19 @@ The importer applies the current HeadFoundry OBJ y-down/z-back convention. The
 non-overwriting output contains `diagnostic.blend`, five PNG views and a
 hash-bound `report.json`. Its status is always `UNVERIFIED`: a Blender render is
 diagnostic evidence, not camera, identity or likeness acceptance.
+
+For exact fixed-camera photo overlays, supply the five-view camera NPZ and a
+directory containing `front`, `left30`, `left90`, `right30`, and `right90` PNGs:
+
+```powershell
+& 'C:\Program Files\Blender Foundation\Blender 5.2\blender.exe' `
+  --background --python tools\blender_camera_diagnostic.py -- `
+  path\to\head.obj path\to\cameras.npz path\to\photos path\to\new-output
+```
+
+The command fails before rendering unless Blender's independent projection
+replay agrees within 0.05 px. Photographs and generated scenes must remain in
+ignored private storage.
 
 ## Project documents
 

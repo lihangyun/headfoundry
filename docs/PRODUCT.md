@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0144.
+Last updated: 2026-09-22 after experiment 0145.
 
 ## What exists
 
@@ -11,6 +11,14 @@ Last updated: 2026-09-22 after experiment 0144.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0145 reproduces all five fixed project cameras in Blender with less
+than 0.00013 px maximum independent vertex-projection disagreement. This path is
+`TECHNICAL_CHECK_PASSED`. Actual semi-transparent overlays reject a whole-head
+alignment claim: the frontal envelope is broadly coincident, but the two pure
+profiles expose major disagreement in cranial depth, posterior skull/neck and
+the artificial cut region. Previous 3–5 px selected facial-row scores are local,
+not full-head acceptance. No camera or geometry is promoted.
 
 Experiment 0144 adds a reproducible Blender 5.2.1 LTS clay-review path. It
 imports the current OBJ convention, generates five fixed orthographic views,
