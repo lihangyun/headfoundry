@@ -29,3 +29,8 @@ pair, fuse them in the fixed world frame, and evaluate the resulting front-face
 surface in the unused pure-profile views. Reject depth where the two pair
 estimates disagree or where profile/cheirality/mesh gates fail. A successful
 technical surface still requires exact Blender visual comparison.
+
+Follow-up: [experiment 0159](experiment-0159-classical-stereo-triangulation.md)
+rejects the triangulated geometry on cross-pair agreement and unused-profile
+coverage. The correspondence diagnostic above remains valid only for its
+limited central-photo question.

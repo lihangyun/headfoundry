@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-22 after experiment 0158.
+Last updated: 2026-09-23 after experiment 0159.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-22 after experiment 0158.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0159 tests the classical-stereo depth hypothesis. The two
+triangulated front/30-degree clouds contain 2,908/3,368 samples but only 443
+cross-pair points agree within 0.03 model units. Their fusion covers only 7/17
+and 7/16 reviewed pure-profile rows; covered-row errors are 34.21/21.41 px.
+Local overlays show missing mouth/chin support. Execution is
+`TECHNICAL_CHECK_PASSED`; this subject geometry is `REJECT`. The next gate uses
+pure-profile contours directly as fixed-camera shape evidence and requires
+visible five-view improvement before promotion.
 
 Experiment 0158 establishes a model-free dense-photo route. Fixed front/left-30
 and front/right-30 cameras rectify successfully; 11-pixel semi-global matching
