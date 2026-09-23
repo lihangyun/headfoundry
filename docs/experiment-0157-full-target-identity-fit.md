@@ -31,3 +31,8 @@ capacity outside this rejected source manifold, so neural training is also
 rejected at this gate. The next route needs either richer commercially usable
 3D identity data or image-derived subject geometry with genuinely independent
 multiview validation; more optimization of the same controls is not evidence.
+
+Correction (experiment 0161): the original Blender overlays had an OBJ-axis
+import error. The candidate was re-rendered with source-coordinate verification
+and remains visually generic. The independent held-row regression above was
+computed outside Blender and remains sufficient to reject promotion.

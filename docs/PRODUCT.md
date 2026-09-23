@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-23 after experiment 0160.
+Last updated: 2026-09-23 after experiment 0161.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-23 after experiment 0160.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0161 fixes an OBJ-axis error in exact-camera Blender overlays. Old
+Blender renders and their visual whole-head interpretations are invalid; the
+corrected tool verifies imported source vertices (maximum error 5.96e-8) and
+subpixel camera projection before showing raw clay and photo overlays. The
+current facial foreground aligns materially better than old overlays implied,
+while eyes, lips, ears, hair and neck still lack a recognizable complete-head
+result. Corrected replays leave 0153 visually rejected and 0157 rejected on
+independent held profile rows. Camera and likeness acceptance remain unmet.
 
 Experiment 0160 audits the actual z-buffer visible facial boundary rather than
 only selected mesh edge supports. All 17 left and 16 right frozen profile rows

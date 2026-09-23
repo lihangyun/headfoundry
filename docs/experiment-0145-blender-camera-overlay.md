@@ -34,3 +34,10 @@ ear/mandible, hair-occluded cranium and artificial neck-cut regions. Only the
 first two may drive image-based fitting. Report complete-head diagnostics
 separately, and reserve some visible rows for transfer checks before changing
 geometry or camera.
+
+Correction (experiment 0161): the OBJ import retained Blender's default object
+axis rotation while this diagnostic used original-OBJ camera coordinates. The
+subpixel replay above compared against rotated vertices, so these overlays and
+the visual cranial-mismatch interpretation are invalid. Corrected source-frame
+overlays in experiment 0161 supersede this visual evidence; do not cite the
+original renderer check as proof of source-camera alignment.

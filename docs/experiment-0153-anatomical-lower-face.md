@@ -28,6 +28,12 @@ overlays and five-view clay comparison show no confidently visible identity
 improvement at this amplitude. Therefore visual and default promotion remain
 `REJECT`; experiment-0132 stays the reference geometry.
 
+Correction (experiment 0161): the original exact-camera Blender overlays had
+an OBJ-axis import error and were invalid visual evidence. The same unchanged
+0.20-scale candidate was rendered again after source-coordinate verification;
+corrected photo/baseline/candidate mouth crops still show no confident visible
+identity improvement. The numerical and promotion statuses above remain.
+
 Next gate: stop tuning small local depth fields on the current generic mesh.
 The next representation must provide broader, coherent subject-identity
 capacity across forehead, midface, jaw and cranium while preserving the fixed

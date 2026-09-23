@@ -88,6 +88,11 @@ def main() -> None:
     meshes = [item for item in bpy.context.scene.objects if item.type == "MESH"]
     if not meshes:
         raise ValueError("OBJ contains no mesh objects")
+    # Blender's OBJ importer rotates its objects into Blender axes by default.
+    # The locked cameras instead use the OBJ's original x-right/y-down/z-back
+    # coordinates, so restore those coordinates before projection or rendering.
+    for item in meshes:
+        item.matrix_world = Matrix.Identity(4)
     head = meshes[0]
     if len(meshes) > 1:
         bpy.ops.object.select_all(action="DESELECT")
@@ -97,6 +102,16 @@ def main() -> None:
         bpy.ops.object.join()
     head.name = "HeadFoundry_Clay"
     vertices = np.array([head.matrix_world @ vertex.co for vertex in head.data.vertices], dtype=float)
+    source_vertices = np.array([
+        [float(value) for value in line.split()[1:4]]
+        for line in source.read_text(encoding="utf-8").splitlines()
+        if line.startswith("v ")
+    ])
+    if source_vertices.shape != vertices.shape:
+        raise ValueError("OBJ vertex count changed during import")
+    import_error = float(np.max(np.abs(source_vertices - vertices)))
+    if import_error > 5e-5:
+        raise ValueError(f"OBJ importer changed source coordinates: {import_error}")
 
     material = bpy.data.materials.new("Camera_diagnostic_clay")
     material.use_nodes = True
@@ -134,6 +149,7 @@ def main() -> None:
         "camera_sha256": digest(camera_path),
         "photo_sha256": {path.stem: digest(path) for path in photos},
         "blender_version": bpy.app.version_string,
+        "obj_import_max_coordinate_error": import_error,
         "views": {},
         "limitations": "Locked-camera photo overlays are diagnostic evidence, not camera or likeness acceptance.",
     }
@@ -163,6 +179,12 @@ def main() -> None:
         )
         if diagnostic["p95_px"] > 0.05:
             raise ValueError(f"{name} Blender camera projection mismatch: {diagnostic}")
+        links.remove(next(link for link in links if link.to_node == composite))
+        clay_link = links.new(layers.outputs[0], composite.inputs["Image"])
+        scene.render.filepath = str(output / f"{name}-clay.png")
+        bpy.ops.render.render(write_still=True)
+        links.remove(clay_link)
+        links.new(over.outputs[0], composite.inputs["Image"])
         scene.render.filepath = str(output / f"{name}-overlay.png")
         bpy.ops.render.render(write_still=True)
         report["views"][name] = {"size": [width, height], "projection_replay": diagnostic}
