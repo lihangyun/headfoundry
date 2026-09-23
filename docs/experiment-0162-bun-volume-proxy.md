@@ -30,3 +30,8 @@ texture or material was added, and no candidate was promoted to the default.
 The next hair experiment needs a continuous scalp-to-bun volume with a
 five-view silhouette and appearance check. Facial identity and accepted
 camera/quality gates remain separate unresolved requirements.
+
+Follow-up: [experiment 0163](experiment-0163-bun-bridge-rejection.md) tests a
+convex bridge. Its bounded-region IoU improves, but corrected views show an
+unrealistic tube; visual/default promotion is `REJECT`. Region overlap alone
+is not an adequate hairstyle gate.

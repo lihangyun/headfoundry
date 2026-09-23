@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-23 after experiment 0162.
+Last updated: 2026-09-23 after experiment 0163.
 
 ## What exists
 
@@ -11,6 +11,12 @@ Last updated: 2026-09-23 after experiment 0162.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0163 tests a convex scalp-to-bun bridge. Its regional dark-hair IoU
+rises to 0.709/0.788, but exact five-view inspection shows an anatomically
+wrong horizontal tube. The geometry is `REJECT`: higher area overlap is not
+visual hair quality. Future hair work requires a nonconvex scalp/hairline and
+gathered connection with held-view shape checks.
 
 Experiment 0162 adds only an experimental ellipsoidal bun behind the unchanged
 head. It supplies missing side hair volume and yields 0.610/0.552 IoU within
