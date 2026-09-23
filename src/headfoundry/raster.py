@@ -1,6 +1,7 @@
-"""NumPy CPU rasterizer: z-buffer and perspective-correct texture coordinates.
+"""NumPy CPU rasterizer: z-buffer and perspective-correct texture/vertex color.
 
-UV coordinates are texture pixels, origin top left. Cameras use OpenCV axes.
+UV coordinates are texture pixels, origin top left. Vertex RGB is 0-255.
+Cameras use OpenCV axes.
 All vertices must be beyond the near plane; near-plane clipping is not supported.
 """
 import numpy as np
@@ -43,7 +44,7 @@ def lift_pixels(vertices, faces, extrinsic, intrinsic, pixels, *, allowed_faces=
     return hit_ids,weights
 
 
-def render(vertices, faces, extrinsic, intrinsic, size, uv=None, texture=None, *, smooth_shading=False):
+def render(vertices, faces, extrinsic, intrinsic, size, uv=None, texture=None, *, smooth_shading=False, vertex_colors=None):
     vertices = np.asarray(vertices, float)
     faces = np.asarray(faces)
     e, k = np.asarray(extrinsic, float), np.asarray(intrinsic, float)
@@ -63,6 +64,11 @@ def render(vertices, faces, extrinsic, intrinsic, size, uv=None, texture=None, *
     pixels = h[:,:2] / h[:,2:]
     if (uv is None) != (texture is None):
         raise ValueError('texture and uv must be supplied together')
+    if vertex_colors is not None:
+        vertex_colors=np.asarray(vertex_colors,float)
+        if (vertex_colors.shape!=(len(vertices),3) or not np.isfinite(vertex_colors).all()
+                or texture is not None or smooth_shading):
+            raise ValueError('vertex colors require finite RGB per vertex and no other shading mode')
     if smooth_shading and texture is not None:
         raise ValueError('smooth shading is a clay-only diagnostic')
     normals=None
@@ -103,7 +109,9 @@ def render(vertices, faces, extrinsic, intrinsic, size, uv=None, texture=None, *
         keep=(w.min(axis=-1)>=-1e-9)&(z<depth[yy,xx])
         if not keep.any():
             continue
-        if texture is not None:
+        if vertex_colors is not None:
+            color=(inverse@vertex_colors[face])*z[...,None]
+        elif texture is not None:
             coords=(inverse@uv[face])*z[...,None]
             tx=np.clip(coords[...,0],0,texture.shape[1]-1)
             ty=np.clip(coords[...,1],0,texture.shape[0]-1)

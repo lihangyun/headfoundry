@@ -58,6 +58,14 @@ class RasterTests(unittest.TestCase):
         # At (.5,.5), screen weights .75,.125,.125; reciprocal-depth sum .875.
         self.assertAlmostEqual(float(image[0,0,0]),20*.5/.875,delta=1)
 
+    def test_perspective_correct_vertex_color(self):
+        v=np.array([[0,0,1],[8,0,2],[0,8,2]],float)
+        rgb=np.array([[0,0,0],[200,0,0],[0,0,0]],float)
+        image,_,_=render(v,[[0,1,2]],np.c_[np.eye(3),np.zeros(3)],np.eye(3),(5,5),vertex_colors=rgb)
+        self.assertAlmostEqual(float(image[0,0,0]),200*(.125/2)/.875,delta=1)
+        with self.assertRaises(ValueError):
+            render(v,[[0,1,2]],np.c_[np.eye(3),np.zeros(3)],np.eye(3),(5,5),vertex_colors=rgb[:2])
+
     def test_near_plane_rejected(self):
         with self.assertRaises(ValueError):
             render([[0,0,-1],[1,0,1],[0,1,1]],[[0,1,2]],np.c_[np.eye(3),np.zeros(3)],np.eye(3),(8,8))
