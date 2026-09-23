@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-23 after experiment 0161.
+Last updated: 2026-09-23 after experiment 0162.
 
 ## What exists
 
@@ -11,6 +11,14 @@ Last updated: 2026-09-23 after experiment 0161.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0162 adds only an experimental ellipsoidal bun behind the unchanged
+head. It supplies missing side hair volume and yields 0.610/0.552 IoU within
+bounded dark-hair bun regions where the bald baseline has no geometry. Corrected
+five-view inspection shows an obviously disconnected round component, so this
+is `PARTIAL_SUCCESS` for side volume and `REJECT` for full-head/default quality.
+The next version needs a continuous scalp-to-bun geometry before a visual
+promotion can be considered; no texture or camera acceptance follows.
 
 Experiment 0161 fixes an OBJ-axis error in exact-camera Blender overlays. Old
 Blender renders and their visual whole-head interpretations are invalid; the
