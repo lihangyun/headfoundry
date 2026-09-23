@@ -1,5 +1,14 @@
 # Claim-to-source ledger
 
+## 2026-09-23: local Gaussian appearance diagnostic
+
+The [gsplat 1.5.3 source license](https://github.com/nerfstudio-project/gsplat/blob/v1.5.3/LICENSE)
+is Apache-2.0. Only its local renderer/runtime was used in experiment 0174;
+no pretrained model, dataset or third-party portrait was adopted. This code
+license does not grant rights to input photos or establish head reconstruction
+quality. The rights-validated five-photo experiment stays on the user's local
+machine, and its image-derived outputs are excluded from Git.
+
 ## 2026-09-22: full MakeHuman face/head target basis
 
 The independently developed synthetic-identity route expands the already
