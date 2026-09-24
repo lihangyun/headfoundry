@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-24 after experiment 0182.
+Last updated: 2026-09-24 after experiment 0184.
 
 ## What exists
 
@@ -11,6 +11,16 @@ Last updated: 2026-09-24 after experiment 0182.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiments 0183–0184 test distinct representations without changing the
+current default. A closed posterior hair volume improves both pure-profile
+masks but looks like a hard black wedge; curved bun locks create regular
+stripes over the old ball/stalk; two ear-color fills erase folds or overfit
+one source view. A licensed GNM neck-section graft extends the short neck
+but makes a shoulder wedge, flat cut and collar overlap. Each is `REJECT`
+for real visual/default quality. Technical execution and local numerical
+gains do not establish likeness. The five cameras and complete head remain
+unaccepted, with no independent reconstruction holdout.
 
 Experiment 0182 splits the side-hair error into visible-head and absent-
 surface regions. Both pure profiles still lack the photographed sheet of
