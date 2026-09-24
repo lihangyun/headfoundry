@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-24 after experiment 0180.
+Last updated: 2026-09-24 after experiment 0181.
 
 ## What exists
 
@@ -11,6 +11,13 @@ Last updated: 2026-09-24 after experiment 0180.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0181 achieves the first smooth-field hair-silhouette improvement
+across all five fixed-camera mesh renders, including a right-profile view
+excluded from this optimizer. The mesh is safe but the private real-image
+comparison still reads as helmet-and-ball hair with incorrect ear/nape
+transitions. This is `PARTIAL_SUCCESS` for silhouette, `REJECT` for visible
+likeness or default use. Camera and full-head acceptance remain open.
 
 Experiment 0180 gives the licensed GNM Head candidate a bounded 30-PC
 identity fit, including alternating side-profile rows. Exact same-camera

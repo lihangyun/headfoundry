@@ -63,6 +63,17 @@ permission is not proof of subject identity fit, training-dataset rights,
 camera accuracy or visual product quality. Keep attribution and license
 notices if this asset is later integrated or redistributed.
 
+## 2026-09-24: hair reconstruction source screen
+
+The [official multiview_hair_capture repository](https://github.com/facebookresearch/multiview_hair_capture)
+releases its code under MIT, but its documented runnable example uses
+Multiface capture from up to 150 cameras (146 in the supplied subject).
+Its code license does not grant rights to the Multiface dataset or make its
+capture assumptions valid for this project's five images. It was not
+downloaded or integrated. The [official GaussianHaircut repository](https://github.com/eth-ait/GaussianHaircut)
+states that its remaining code is CC BY-NC-SA 4.0 and refers to separate
+3D Gaussian Splatting terms; it is excluded from the commercial path.
+
 | Claim | Source | Strength / caveat |
 |---|---|---|
 | KeenTools accepts multi-view photos, estimates per-view camera parameters, builds a textured full head, and exposes ARKit blendshapes. | [KeenTools Cloud](https://cloud.keentools.io/), [API reference](https://cloud.keentools.io/docs/reference) | First-party product documentation. |
