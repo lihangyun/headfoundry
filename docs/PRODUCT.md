@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-24 after experiment 0179.
+Last updated: 2026-09-24 after experiment 0180.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-24 after experiment 0179.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0180 gives the licensed GNM Head candidate a bounded 30-PC
+identity fit, including alternating side-profile rows. Exact same-camera
+rendering still loses to the current head on both complete and withheld
+pure-profile contour rows, and the three-view clay comparison remains
+visibly generic. This candidate is `REJECT`; richer generic anatomy is not
+yet a subject-specific head improvement. The next meaningful gate is new
+camera/shape evidence or a different subject-informed representation, not
+automatic promotion of this prior.
 
 Experiment 0178 tests a bounded six-parameter deformation of the existing
 connected hair. Exact five-view masks improve at left90 and right90 but
