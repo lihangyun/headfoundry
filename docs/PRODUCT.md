@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-23 after experiment 0163.
+Last updated: 2026-09-24 after experiment 0179.
 
 ## What exists
 
@@ -11,6 +11,17 @@ Last updated: 2026-09-23 after experiment 0163.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0178 tests a bounded six-parameter deformation of the existing
+connected hair. Exact five-view masks improve at left90 and right90 but
+regress slightly in front; a private photo/old/new contact sheet shows no
+convincing visual likeness gain. This family is `REJECT` for promotion.
+Experiment 0179 pins and locally loads the official Apache-2.0 GNM Head
+model as a possible richer identity basis. Its neutral geometry improves
+generic ear/neck completeness, but even after limited nose/chin alignment
+it is not the subject. Identity fitting remains `UNVERIFIED` and direct
+template replacement is `REJECT`. No subject photo or derived biometric
+asset was uploaded or committed.
 
 Experiment 0163 tests a convex scalp-to-bun bridge. Its regional dark-hair IoU
 rises to 0.709/0.788, but exact five-view inspection shows an anatomically

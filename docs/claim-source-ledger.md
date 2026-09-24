@@ -52,6 +52,17 @@ rays rather than enforcing the input K. Actual returned-versus-supplied
 intrinsics and own-view reprojection were measured separately. These local
 findings concern this run, not every input or model configuration.
 
+## 2026-09-24: GNM Head model-rights screen
+
+The [official pinned GNM repository](https://github.com/google/GNM/tree/5482149067eda4bf9d423398fe29c4436f936f10)
+and its [Apache-2.0 LICENSE](https://github.com/google/GNM/blob/5482149067eda4bf9d423398fe29c4436f936f10/LICENSE)
+cover the released source/model ecosystem; the [official shape README](https://github.com/google/GNM/blob/5482149067eda4bf9d423398fe29c4436f936f10/gnm/shape/README.md)
+identifies the bundled `gnm_head.npz` model data. Experiment 0179 records
+the exact local model digest and a neutral geometry screen. Apache release
+permission is not proof of subject identity fit, training-dataset rights,
+camera accuracy or visual product quality. Keep attribution and license
+notices if this asset is later integrated or redistributed.
+
 | Claim | Source | Strength / caveat |
 |---|---|---|
 | KeenTools accepts multi-view photos, estimates per-view camera parameters, builds a textured full head, and exposes ARKit blendshapes. | [KeenTools Cloud](https://cloud.keentools.io/), [API reference](https://cloud.keentools.io/docs/reference) | First-party product documentation. |
