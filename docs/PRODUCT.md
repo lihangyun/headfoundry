@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-24 after experiment 0181.
+Last updated: 2026-09-24 after experiment 0182.
 
 ## What exists
 
@@ -11,6 +11,17 @@ Last updated: 2026-09-24 after experiment 0181.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0182 splits the side-hair error into visible-head and absent-
+surface regions. Both pure profiles still lack the photographed sheet of
+hair behind the ear and down to the nape; color-only repair cannot create
+its missing outer contour. A thin posterior-layer candidate reduces
+missing-hair counts but makes a dark vertical neck patch and overcovers
+ear boundaries. Two local bun deformations remain visually a ball on a
+thin connector despite minor mask gains. All are `REJECT`. The next hair
+candidate needs naturally swept posterior volume and gathered structure,
+then real five-view photo comparison with ear visibility protected. No
+visual/default quality is accepted.
 
 Experiment 0181 achieves the first smooth-field hair-silhouette improvement
 across all five fixed-camera mesh renders, including a right-profile view
