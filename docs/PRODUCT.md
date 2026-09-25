@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-25 after experiment 0191.
+Last updated: 2026-09-25 after experiment 0193.
 
 ## What exists
 
@@ -11,6 +11,21 @@ Last updated: 2026-09-25 after experiment 0191.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0193 changes only the oracle estimator's regularization using
+the known synthetic control/noise variances, then checks new predeclared
+identities. Average held side and true 3D errors improve substantially,
+but only 3/12 pass the bilateral/3D/front/mesh joint rule, and some
+cases regress. This is useful conditioning evidence but `REJECT` for a
+dependable head model or user-head promotion. No subject geometry changed.
+
+Experiment 0192 asks whether exact interior face correspondences would
+help the same CC0 head controls. On fixed 3D synthetic heads, the ideal
+39-point oracle lowers average held side and true 3D errors, but seeded
+1 px 2D error makes both means worse than the unchanged template. This
+is limited control **capacity** evidence, not a usable photo method;
+the noisy estimator is `REJECT`, real-photo head quality `UNVERIFIED`.
+No subject mesh or camera changed.
 
 Experiment 0191 recomputes training silhouette supports twice after the
 coherent fit. Average synthetic side and 3D errors improve modestly, but
