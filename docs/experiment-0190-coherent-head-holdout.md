@@ -42,6 +42,14 @@ Both generation and fitting use the same MakeHuman control family, and
 oracle cameras remove a difficult real-world uncertainty. At 220 px many
 silhouette differences are subpixel/quantized; the largely symmetric heads
 make the two side scores correlated rather than two independent tests.
+The strict all-case gate itself has a floor problem: three new cases start
+at **zero** template error on the sampled side rows, so no candidate can
+strictly improve their side score. We retain the predeclared `REJECT` and
+do not retroactively loosen its threshold. Separate from that floor,
+cases 126 and 150 have material side and 3D regressions; they are actual
+reliability failures, not merely un-improvable ties. A future benchmark
+must predeclare a non-regression rule for zero-error cases and report
+material-error cases separately.
 Whole-crop vertex RMSE includes neck/shoulder fragments, and current mesh
 safety does not test every self-intersection. This run cannot verify a
 physical head, camera or likeness for the user's five independently
@@ -53,5 +61,8 @@ constraint and be retested on fresh identities before any five-view local
 subject trial. If a later candidate reaches that stage, its actual enlarged
 photo/old-white-mesh/candidate-white-mesh comparison—especially both
 profiles and mouth-to-chin relief—will determine visual acceptance, not
-these synthetic means. Full private per-case metrics and clay panels are
-under ignored `assets/private/synthetic-head-benchmark-v1/coherent-holdout/`.
+these synthetic means. Experiment 0157 already rejected a photo fit of the
+same 82 controls transferred to the current subject mesh; the in-family
+synthetic mean improvement does not overturn that real-image result. Full
+private per-case metrics and clay panels are under ignored
+`assets/private/synthetic-head-benchmark-v1/coherent-holdout/`.
