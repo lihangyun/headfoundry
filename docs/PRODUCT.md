@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-24 after experiment 0184.
+Last updated: 2026-09-25 after experiment 0186.
 
 ## What exists
 
@@ -11,6 +11,25 @@ Last updated: 2026-09-24 after experiment 0184.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0186 replays the existing head plus licensed generic eye surfaces
+as five hair-free clay renders and exact photo overlays. Rights and renderer
+coordinates pass technical checks (worst projection replay maximum 0.000116
+px), but this is only a render alignment result. Eye-hole completeness is
+`PARTIAL_SUCCESS`; the bare head remains generic with stiff lip/chin relief
+and a short cut neck, so recognizable complete-head/default acceptance is
+`REJECT`. No new subject-geometry improvement is claimed.
+
+The current priority is **head-mesh geometry only**; hair work is paused.
+The user confirmed that the five local references were independently
+generated or composited, not one fixed 3D scene or real same-session capture.
+They can guide visual fitting, especially front and bilateral side-profile
+shape, but cannot establish a unique physical head, true camera calibration
+or subject-identity accuracy. Experiment 0185 finds no new defensible
+three-view material points at the precision required by the 3 px gate.
+The prior 7.374 px p95 remains a failed image-group reprojection diagnostic,
+not a measured physical-camera error; no camera was changed. All mesh and
+camera results remain experimental and unaccepted.
 
 Experiments 0183–0184 test distinct representations without changing the
 current default. A closed posterior hair volume improves both pure-profile
@@ -372,14 +391,13 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The next gate triangulates only left/right-consistent masked disparities from
-the two classical stereo pairs, fuses them in the fixed world frame and tests
-the resulting front-face surface in the unused pure-profile views. Reject
-disagreement, negative depth or failed mesh safety. Even a technically valid
-surface must beat experiment 0132 on bilateral held profiles and show a visible
-exact-Blender-overlay gain before promotion.
-
-Resolve the neutral mouth's surface/closure configuration with complete rim support on the evaluated surface and actual frontal/oblique/profile evidence before further identity fitting. Re-lift attachments after topology changes; never reuse old triangle IDs silently. Do not repeat two-point attraction, amplify mouthClose, or amplify the rejected depth-ray direction. Inset observed patches are not full heads and cannot establish camera accuracy. All camera, anatomy and visual acceptance gates remain unchanged.
+Audit the current hair-free head against front and both side images, then
+change one anatomical head-mesh factor at a time. A candidate must improve
+both side profiles visibly without sacrificing the front face, with fixed
+experimental cameras, exact-render overlays and mesh-safety checks. Since
+the references are independently generated/composited, this is reference
+matching, not independent reconstruction or physical-camera validation.
+Do not promote a default or claim KeenTools-level quality from these images.
 
 ## Known pitfalls
 

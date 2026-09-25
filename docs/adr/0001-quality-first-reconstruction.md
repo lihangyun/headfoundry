@@ -10,6 +10,26 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-09-25 independent-reference and head-only scope
+
+The user confirmed that the five locally authorized reference views were
+generated or composited independently rather than captured from one rigid
+subject or rendered from one fixed 3D scene. Rights/consent still permit
+local validation, but image clarity and angle coverage do not imply shared
+physical geometry. Prior cross-view camera residuals remain reproducible
+image-group diagnostics, not measurements against a real camera truth or
+proof that every discrepancy is pose error. A controlled same-subject capture
+or known-camera, fixed-geometry synthetic set is required for physical
+camera acceptance. Until then, use these views only for experimental visual
+reference matching and label subject identity and full reconstruction
+`UNVERIFIED`.
+
+The user's current priority is the head mesh. Pause hair candidate work.
+Compare front and both pure profiles under fixed experimental cameras and
+change one head-anatomy factor per trial; require exact visual comparisons
+and protected-face/mesh-safety checks before considering any promotion.
+This prioritization does not waive the existing camera or visual gates.
+
 ### 2026-09-21 FLAME 2023 Open identity prior
 
 The exact official `FLAME 2023 Open` model may be used as a neutral identity
