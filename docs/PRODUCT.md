@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-25 after experiment 0190.
+Last updated: 2026-09-25 after experiment 0191.
 
 ## What exists
 
@@ -11,6 +11,13 @@ Last updated: 2026-09-25 after experiment 0190.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0191 recomputes training silhouette supports twice after the
+coherent fit. Average synthetic side and 3D errors improve modestly, but
+the joint pass count on the already-known development cases remains 4/12;
+one held side worsens materially from 0.632 to 1.526 px. It is `REJECT`
+for subject-head use. Silhouette-only evidence cannot establish internal
+mouth/cheek/eye anatomy. No user geometry was changed.
 
 Experiments 0189–0190 test a coherent licensed CC0 head-shape prior after
 the local contour fitter failed. The first twelve cases were a method-
