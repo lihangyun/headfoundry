@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-25 after experiment 0186.
+Last updated: 2026-09-25 after experiment 0188.
 
 ## What exists
 
@@ -11,6 +11,21 @@ Last updated: 2026-09-25 after experiment 0186.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0188 rejects the current contour-only head-shape initializer in
+an easier, fixed-3D synthetic test. Across 12 preselected CC0 heads, only
+one has both held side edges and true 3D error decline, by a negligible
+amount; average 3D error and front training-mask IoU worsen, and one mesh
+fails safety. This result does not certify or reject the user's independent
+reference images, but it rules out promoting this fitter as reliable head
+reconstruction. No head mesh or product default changes.
+
+Experiment 0187 rejects the one-factor chin-width ablation. Removing the
+previous licensed chin-width-decrease target is safe but worsens both
+frontal jaw diagnostics slightly, trades the two side-profile diagnostics
+in opposite directions and makes no confident visual improvement. The
+current head remains unchanged. A lower skin-color boundary that includes
+the neck must not be scored as the facial jaw contour.
 
 Experiment 0186 replays the existing head plus licensed generic eye surfaces
 as five hair-free clay renders and exact photo overlays. Rights and renderer
@@ -391,13 +406,14 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-Audit the current hair-free head against front and both side images, then
-change one anatomical head-mesh factor at a time. A candidate must improve
-both side profiles visibly without sacrificing the front face, with fixed
-experimental cameras, exact-render overlays and mesh-safety checks. Since
-the references are independently generated/composited, this is reference
-matching, not independent reconstruction or physical-camera validation.
-Do not promote a default or claim KeenTools-level quality from these images.
+The next head-only method must use coherent 3D shape constraints rather than
+another unconstrained local contour step. Prove a bilateral held-profile,
+3D-truth and mesh-safety gain on the fixed-geometry synthetic benchmark
+first. Then compare front and both sides of the user's references using
+unchanged experimental cameras and exact white-mesh renders, with front as
+the main anchor and independently generated sides as soft visual checks.
+Do not promote a default or claim physical-camera or KeenTools-level quality
+from these five references.
 
 ## Known pitfalls
 

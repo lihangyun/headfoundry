@@ -25,9 +25,13 @@ overlays remain under the ignored local subject directory.
 
 Directly inspecting the front and both pure-profile clay/overlays shows a
 coherent but visibly generic bare head. The eye holes are covered, but eye
-contact and gaze are generic. The lip-to-chin relief is stiff, the frontal
-lower face is narrow/tapered relative to the front reference, and the lower
+contact and gaze are generic. The lip-to-chin relief is stiff, and the lower
 neck ends at an obvious cut. The side nasal outline is comparatively close.
+The *direction* of frontal jaw-width error is not established by this visual
+sheet: the outer skin-color boundary at lower rows includes visible neck and
+is not interchangeable with the facial jaw contour. Existing MediaPipe jaw
+points are fitting evidence with different semantics from a rendered outer
+envelope. A width change needs a targeted comparison before selection.
 Hair silhouette, hairline and garment are excluded from this head-only
 comparison. Previous experiments 0146–0154 document conflicting bilateral
 mouth/chin responses and rejected low-amplitude local fields; 0157 and 0180
