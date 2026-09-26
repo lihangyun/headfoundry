@@ -63,6 +63,13 @@ permission is not proof of subject identity fit, training-dataset rights,
 camera accuracy or visual product quality. Keep attribution and license
 notices if this asset is later integrated or redistributed.
 
+Experiment 0196 rechecks that same revision, bundled model and license locally,
+using only neutral graphical data as two exterior lip-section donors. Explicit
+anterior contact closure and oral-region exclusion are independently checked;
+the complete GNM head is not closed or integrated. Both transferred candidates
+are visually rejected. This extends local diagnostic use, not the license
+scope, training-data grant or subject-reconstruction quality claim.
+
 ## 2026-09-24: hair reconstruction source screen
 
 The [official multiview_hair_capture repository](https://github.com/facebookresearch/multiview_hair_capture)

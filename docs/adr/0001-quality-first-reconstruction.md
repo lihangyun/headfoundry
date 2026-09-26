@@ -127,6 +127,16 @@ The research evidence favors explicit multi-view geometry and canonical fusion o
 
 ## Data strategy
 
+Experiment 0196 permits only the already pinned Apache GNM neutral data as a
+local anatomical donor hypothesis. Exact lip groups, exterior membership,
+anterior contact closure and source hashes must be checked explicitly; neither
+neutral pose nor broader region names prove closed anatomy. Discarding oral
+rows is not an expression-capable full-head closure. Exact donor transfer and
+rim continuity checks do not waive visual acceptance: both local candidates
+are rejected. Stop fixed-rim section transfer; subsequent head-only work must
+screen coherent lip-to-philtrum/chin support while protecting the rest of the
+head, rather than tuning another additive amplitude.
+
 Experiment 0194 adds a photometric boundary: fitting unknown per-view
 illumination and shared albedo does not establish convex/concave anatomy.
 Native image-space regions must be audited against the declared OBJ axes;

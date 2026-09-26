@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-26 after experiment 0195.
+Last updated: 2026-09-26 after experiment 0196.
 
 ## What exists
 
@@ -11,6 +11,16 @@ Last updated: 2026-09-26 after experiment 0195.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0196 screens the pinned Apache GNM neutral lip topology, explicitly
+closes its anterior contact sections and transfers only exterior lip depth.
+One exact-rim correction fixes a concrete interpolation/collar mismatch without
+tuning the donor relief. Both actual five-view heads pass mesh/render guards,
+but their lips flatten and both profile diagnostics regress. Reduced seam
+scalloping is only `PARTIAL_SUCCESS`; visual/default promotion is `REJECT`.
+Current head/cameras remain unchanged. Stop fixed-rim section transfer and
+screen coherent lip-to-philtrum/chin anatomy rather than another amplitude
+sweep. This remains head-only, with no hair or texture work.
 
 Experiment 0195 builds actual dense- and sparse-seam Hermite lip-ribbon heads
 using native re-read pigment-border guides, fixed authored depth tables and
@@ -457,6 +467,12 @@ C:\Python313\python.exe -m headfoundry.vggt tests\fixtures\vggt_camera_point_fix
 The repository is a library and experiment workspace, not a long-running service, so there is no start/stop procedure or deployment target. Publishing currently means committing reviewed public changes and pushing `main`; it does not publish private assets or constitute model-quality acceptance.
 
 ## Next gate
+
+The immediate anatomy gate is a coherent lip-to-philtrum/chin surface screen,
+with exterior/turning support reviewed before fitting. Closed-contact data
+alone does not certify a natural mouth, and current pigment-rim depth must not
+silently be treated as correct anatomical anchoring. Reject unnatural
+transitions in actual five-view clay renders before any default promotion.
 
 The next head-only method must use coherent 3D shape constraints rather than
 another unconstrained local contour step. Prove a bilateral held-profile,

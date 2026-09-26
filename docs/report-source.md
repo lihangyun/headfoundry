@@ -133,6 +133,15 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiment 0196 verifies that GNM's anterior lip contact/roll/border strips
+can be explicitly closed and selected without oral geometry. Local transfer
+and an exact-rim mapping correction execute safely, but real five-view white
+meshes remain visually rejected and both profile diagnostics worsen. A clean
+seam is not subject likeness; retaining current pigment-rim depth is itself an
+unverified anatomical assumption. Next screen coherent lip-to-philtrum/chin
+support, not another scalar relief sweep. Head-only scope and local privacy
+remain unchanged.
+
 Experiment 0195 distinguishes an actual structured-lip surface proposal from
 depth recovery. Native pigment borders guide two authored Hermite candidates;
 both are geometrically safe but visibly rejected after all five white-mesh
