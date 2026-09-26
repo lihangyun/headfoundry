@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-25 after experiment 0193.
+Last updated: 2026-09-26 after experiment 0194.
 
 ## What exists
 
@@ -11,6 +11,16 @@ Last updated: 2026-09-25 after experiment 0193.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0194 tests lower-face luminance after independently fitting and
+freezing illumination. The corrected native lower-face SH predictor does not
+beat an equally flexible spatial null; a convex/concave normal sign change
+has exactly identical predictions under unknown lighting. One predeclared
+lower-lip coefficient improves only its selecting oblique while worsening
+the other oblique and both profiles, so it is `REJECT`. The head and cameras
+remain unchanged. New actual five-view neutral-clay/oblique-light renders
+make the stiff lip/chin and central-face transitions clearer without hair;
+they are inspection evidence, not a geometry improvement or acceptance.
 
 Experiment 0193 changes only the oracle estimator's regularization using
 the known synthetic control/noise variances, then checks new predeclared

@@ -6,6 +6,7 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- Experiment 0194 rejects a frozen-light lower-lip candidate: the selecting oblique improves, but the other oblique and both facial profiles worsen. Unknown-light SH also has an exact convex/concave ambiguity and does not beat the corrected lower-face spatial null. The head stays unchanged. A new opt-in neutral/oblique-light five-view review exposes actual head relief without hair; this is clearer inspection, not shape or likeness acceptance.
 - Experiment 0193 fixes the oracle estimator's ridge strength from the known synthetic control variance and 1 px noise, then tests a new predeclared 12-head split. Mean side/3D errors improve substantially, but only 3/12 pass the joint bilateral/3D/front/mesh check and some worsen. This is synthetic `PARTIAL_SUCCESS` for mean stability, `REJECT` for reliable subject use; no head mesh changed.
 - Experiment 0192 tests a synthetic upper bound with 39 exact interior-face correspondences: mean held side error falls to 0.154 px and true 3D RMSE to 0.00438, but adding seeded 1 px observation noise makes both worse than leaving the template unchanged. This is `PARTIAL_SUCCESS` for idealized control capacity, `REJECT` for the current noisy estimator, and `UNVERIFIED` on the user's photos; it is not a new head result.
 - Experiment 0191 re-estimates coherent silhouette supports twice on the development heads; mean synthetic side/3D errors fall slightly, but the strict pass count remains 4/12 and one side error rises 0.632→1.526 px. This silhouette-only revision is `REJECT`; it did not alter the user head. The next evidence must constrain interior mouth-to-chin anatomy as well as exterior outline.
@@ -248,6 +249,11 @@ directory containing `front`, `left30`, `left90`, `right30`, and `right90` PNGs:
 The command fails before rendering unless Blender's independent projection
 replay agrees within 0.05 px. Photographs and generated scenes must remain in
 ignored private storage.
+
+Append `--relief-review` for neutral clay with oblique key/fill light, useful
+for inspecting lip/chin relief. The default blue render is unchanged. Use the
+same preset and compare recorded light poses before judging two meshes;
+lighting changes are not geometry improvements.
 
 ## Project documents
 

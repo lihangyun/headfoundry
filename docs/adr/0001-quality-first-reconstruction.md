@@ -127,6 +127,14 @@ The research evidence favors explicit multi-view geometry and canonical fusion o
 
 ## Data strategy
 
+Experiment 0194 adds a photometric boundary: fitting unknown per-view
+illumination and shared albedo does not establish convex/concave anatomy.
+Native image-space regions must be audited against the declared OBJ axes;
+appearance-null controls and spatial holdouts precede shape fitting. Diagnostic
+lighting must be reported and kept equal across candidate comparisons, never
+counted as geometry improvement. The head-only scope excludes hair and does
+not waive visual or camera acceptance.
+
 Experiments 0114–0115 permit a separate local neutral-mouth topology proposal
 after repeated fixed-topology closure failures. Exact boundary stitching and
 unchanged retained exterior are required, but do not constitute anatomical

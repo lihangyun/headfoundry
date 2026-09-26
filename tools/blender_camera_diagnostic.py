@@ -24,6 +24,8 @@ def arguments() -> argparse.Namespace:
     parser.add_argument("cameras", type=Path)
     parser.add_argument("photos", type=Path)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--relief-review", action="store_true",
+                        help="neutral clay with camera-relative oblique key/fill lighting")
     return parser.parse_args(sys.argv[sys.argv.index("--") + 1 :])
 
 
@@ -116,7 +118,9 @@ def main() -> None:
     material = bpy.data.materials.new("Camera_diagnostic_clay")
     material.use_nodes = True
     shader = material.node_tree.nodes.get("Principled BSDF")
-    shader.inputs["Base Color"].default_value = (0.02, 0.42, 0.8, 1.0)
+    shader.inputs["Base Color"].default_value = (
+        (0.35, 0.35, 0.35, 1.0) if args.relief_review else (0.02, 0.42, 0.8, 1.0)
+    )
     shader.inputs["Roughness"].default_value = 0.78
     head.data.materials.clear()
     head.data.materials.append(material)
@@ -139,9 +143,19 @@ def main() -> None:
     bpy.ops.object.light_add(type="AREA")
     light = bpy.context.object
     light.name = "Camera_Fill"
-    light.data.energy = 1200
+    light.data.energy = 220 if args.relief_review else 1200
     light.data.shape = "DISK"
     light.data.size = 4.0
+    key = None
+    center = Vector(((vertices.max(0) + vertices.min(0)) * 0.5).tolist())
+    radius = float(np.linalg.norm(vertices - np.asarray(center), axis=1).max())
+    if args.relief_review:
+        bpy.ops.object.light_add(type="AREA")
+        key = bpy.context.object
+        key.name = "Relief_Key"
+        key.data.energy = 1100
+        key.data.shape = "DISK"
+        key.data.size = 1.5
 
     report = {
         "status": "UNVERIFIED",
@@ -149,7 +163,9 @@ def main() -> None:
         "camera_sha256": digest(camera_path),
         "photo_sha256": {path.stem: digest(path) for path in photos},
         "blender_version": bpy.app.version_string,
+        "renderer_sha256": digest(Path(__file__)),
         "obj_import_max_coordinate_error": import_error,
+        "display_preset": "neutral-oblique-key-fill" if args.relief_review else "blue-camera-fill",
         "views": {},
         "limitations": "Locked-camera photo overlays are diagnostic evidence, not camera or likeness acceptance.",
     }
@@ -161,6 +177,11 @@ def main() -> None:
         set_camera(camera, intrinsics[index], extrinsics[index], width, height)
         light.location = camera.location
         light.rotation_euler = camera.rotation_euler
+        if key is not None:
+            key.location = camera.location + camera.matrix_world.to_3x3() @ Vector(
+                (-2 * radius, 1.5 * radius, -radius)
+            )
+            key.rotation_euler = (center - key.location).to_track_quat("-Z", "Y").to_euler()
 
         nodes, links = compositor.nodes, compositor.links
         nodes.clear()
@@ -187,7 +208,13 @@ def main() -> None:
         links.new(over.outputs[0], composite.inputs["Image"])
         scene.render.filepath = str(output / f"{name}-overlay.png")
         bpy.ops.render.render(write_still=True)
-        report["views"][name] = {"size": [width, height], "projection_replay": diagnostic}
+        report["views"][name] = {
+            "size": [width, height], "projection_replay": diagnostic,
+            "fill_position": list(light.location),
+            "fill_rotation_xyz": list(light.rotation_euler),
+            "key_position": list(key.location) if key is not None else None,
+            "key_rotation_xyz": list(key.rotation_euler) if key is not None else None,
+        }
         bpy.data.images.remove(image)
 
     bpy.ops.wm.save_as_mainfile(filepath=str(output / "camera-diagnostic.blend"))

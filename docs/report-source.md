@@ -133,6 +133,13 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiment 0194 tests the proposed photometric refinement on local independent
+references with frozen lights and a spatial appearance null. Its corrected
+lower-face evidence and one bounded lower-lip candidate are rejected; an exact
+SH convex/concave ambiguity prevents reading anatomy from low light-fit error.
+Neutral fixed-camera head-only relief renders now expose current shape defects
+more clearly, without changing the head or claiming improved reconstruction.
+
 Experiment 0107 rejects one focal-conditioning run and identifies a separate
 projection-contract issue: native camera/world points agree under pose
 conversion but do not exactly follow the fitted pinhole K. Input intrinsics
