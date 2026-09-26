@@ -133,6 +133,14 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiment 0195 distinguishes an actual structured-lip surface proposal from
+depth recovery. Native pigment borders guide two authored Hermite candidates;
+both are geometrically safe but visibly rejected after all five white-mesh
+comparisons. Sparse seam regularization alone cannot repair inherited base
+anatomy. Anatomical prior transfer is a separate hypothesis and needs explicit
+donor closure/exterior selection; a model's neutral pose is not proof of a
+closed mouth or subject likeness.
+
 Experiment 0194 tests the proposed photometric refinement on local independent
 references with frozen lights and a spatial appearance null. Its corrected
 lower-face evidence and one bounded lower-lip candidate are rejected; an exact

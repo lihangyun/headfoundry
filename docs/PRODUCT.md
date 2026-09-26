@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-26 after experiment 0194.
+Last updated: 2026-09-26 after experiment 0195.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-26 after experiment 0194.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0195 builds actual dense- and sparse-seam Hermite lip-ribbon heads
+using native re-read pigment-border guides, fixed authored depth tables and
+unchanged cameras/eyes/topology. Both pass mesh guards and real five-view
+neutral rendering, but neither improves overall likeness: dark incision,
+left-oblique puckering and shelf-like profiles persist. Local relief capacity
+is `PARTIAL_SUCCESS`; both visual/default promotions are `REJECT`. Stop this
+additive branch. A licensed anatomical donor must first be closed and screened
+for exterior support, not substituted from the rejected whole-face prior.
 
 Experiment 0194 tests lower-face luminance after independently fitting and
 freezing illumination. The corrected native lower-face SH predictor does not
