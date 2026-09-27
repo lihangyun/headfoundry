@@ -133,6 +133,14 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiment 0197 closes the connected GNM skin exterior and evaluates two finite
+subdivision steps with valid contact attachments. Actual broad donor-depth
+transfers remain visually rejected despite mesh checks and correction of an
+excluded lower-chin support. Better local outline scores do not establish
+natural lip anatomy. Stop the tested image-space transfer family and test
+continuous 3D deformation/contact/skin transitions; retain independent-reference
+and camera uncertainty. No head, texture or hair is promoted.
+
 Experiment 0196 verifies that GNM's anterior lip contact/roll/border strips
 can be explicitly closed and selected without oral geometry. Local transfer
 and an exact-rim mapping correction execute safely, but real five-view white

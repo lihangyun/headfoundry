@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-26 after experiment 0196.
+Last updated: 2026-09-27 after experiment 0197.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-26 after experiment 0196.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0197 builds and checks a coherent closed-mouth GNM exterior and
+finite refined geometry, then runs two broader head transfers. The second
+corrects a real support exclusion at the lip-to-chin turn and reduces coarse
+facets, but both five-view results flatten/fold the mouth and worsen contact
+notches. Source/mesh/render checks pass; both visual/default candidates are
+`REJECT`. No head/camera change is promoted. Stop the tested image-space depth
+transfer family and screen continuous 3D deformation with contact and skin
+transition checks. Hair stays excluded.
 
 Experiment 0196 screens the pinned Apache GNM neutral lip topology, explicitly
 closes its anterior contact sections and transfers only exterior lip depth.
@@ -468,10 +477,11 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The immediate anatomy gate is a coherent lip-to-philtrum/chin surface screen,
-with exterior/turning support reviewed before fitting. Closed-contact data
-alone does not certify a natural mouth, and current pigment-rim depth must not
-silently be treated as correct anatomical anchoring. Reject unnatural
+The immediate anatomy gate is a continuous 3D lip-to-philtrum/chin surface
+deformation screen with explicit contact and skin-transition checks. Experiment
+0197 now supplies a checked connected donor, but its tested image-space depth
+transfer is rejected; do not sweep that family's smoothness/warp/amplitude.
+Closed contact alone does not certify a natural mouth. Reject unnatural
 transitions in actual five-view clay renders before any default promotion.
 
 The next head-only method must use coherent 3D shape constraints rather than

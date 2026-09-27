@@ -70,6 +70,13 @@ the complete GNM head is not closed or integrated. Both transferred candidates
 are visually rejected. This extends local diagnostic use, not the license
 scope, training-data grant or subject-reconstruction quality claim.
 
+Experiment 0197 additionally constructs a connected closed-mouth exterior and
+two finite subdivision steps from the same verified neutral graphical data.
+Local topology/closure checks pass, but both transferred subject heads are
+visually rejected. No additional model rights, physical-anatomy, expression
+capability or training-data grant is inferred. The generic donor is a tested
+construction, not a successful subject reconstruction.
+
 ## 2026-09-24: hair reconstruction source screen
 
 The [official multiview_hair_capture repository](https://github.com/facebookresearch/multiview_hair_capture)

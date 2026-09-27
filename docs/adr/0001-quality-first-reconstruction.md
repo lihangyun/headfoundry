@@ -10,6 +10,17 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-09-27 coherent source versus coherent deformation
+
+Experiment 0197 supplies a checked connected GNM closed-mouth exterior and
+finite geometric refinement. A coherent source transferred as per-pixel depth
+does not imply coherent destination anatomy: both actual candidates remain
+visually rejected. Stop the tested transfer family's warp/depth/smoothing
+sweeps. Next screen continuous 3D deformation with contact and skin-transition
+checks before subject fitting/promotion. Existing pigment-rim depths and old
+patch ownership are not anatomical truth; an expanded support must explicitly
+declare and test its new protected exterior. No acceptance gate is relaxed.
+
 ### 2026-09-25 independent-reference and head-only scope
 
 The user confirmed that the five locally authorized reference views were
