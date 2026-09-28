@@ -10,6 +10,16 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-09-28 material curves are not automatically visible observations
+
+Experiment 0198 rejects the tested free-XYZ native donor fit and its bilateral
+follow-up. A welded zero gap is a topology check, not independent contact or
+collision evidence. After subdivision, track inserted curve-edge vertices as
+well as original attachments; verify nearest-surface visibility before treating
+a projected material curve as a photo silhouette feature. Reduced binding
+residuals and zero flipped faces do not override failed area/visual gates.
+Do not graft or tune the rejected point-pulling branch into the subject head.
+
 ### 2026-09-27 coherent source versus coherent deformation
 
 Experiment 0197 supplies a checked connected GNM closed-mouth exterior and

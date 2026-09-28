@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-27 after experiment 0197.
+Last updated: 2026-09-28 after experiment 0198.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-27 after experiment 0197.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0198 replaces depth transfer with direct XYZ deformation of the
+connected donor. The first solve passes mesh checks and improves front lip
+attachments but still creates a lip ledge/groove in five-view clay; it is
+visually rejected. One bilateral follow-up fails displacement/area guards
+before rendering. A refined-chain visibility audit distinguishes actual
+contact samples from the apparent silhouette. Neither donor is grafted or
+promoted. Stop free point-pulling; validate visible support and a coherent
+lip-volume prior or stronger legal geometry initializer. Head only.
 
 Experiment 0197 builds and checks a coherent closed-mouth GNM exterior and
 finite refined geometry, then runs two broader head transfers. The second
@@ -477,12 +486,14 @@ The repository is a library and experiment workspace, not a long-running service
 
 ## Next gate
 
-The immediate anatomy gate is a continuous 3D lip-to-philtrum/chin surface
-deformation screen with explicit contact and skin-transition checks. Experiment
-0197 now supplies a checked connected donor, but its tested image-space depth
-transfer is rejected; do not sweep that family's smoothness/warp/amplitude.
-Closed contact alone does not certify a natural mouth. Reject unnatural
-transitions in actual five-view clay renders before any default promotion.
+The immediate anatomy gate is visible seam/roll/skin support plus a bounded
+coherent lip-volume representation. Experiment 0198's unrestricted native XYZ
+point fit is rejected; 0197's image-space depth transfers remain rejected too.
+Do not sweep either family's weights/warp/amplitude. A leading material-curve
+sample may be occluded, and a fixed photo row does not define corresponding
+anatomy. Any stronger free-commercial local geometry initializer needs exact
+rights/runtime checks and real head-only renders before integration. Reject
+unnatural transitions before any default promotion.
 
 The next head-only method must use coherent 3D shape constraints rather than
 another unconstrained local contour step. Prove a bilateral held-profile,

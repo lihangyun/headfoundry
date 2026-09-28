@@ -133,6 +133,15 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiment 0198 executes native XYZ donor deformation rather than depth
+transfer. Reduced front attachment residuals coexist with a visibly poor lip
+ledge; adding bilateral observations violates mesh guards. A complete finite
+subdivision-chain audit corrects an incomplete original-vertex visibility
+inference and confirms that projected contact samples are not automatically
+visible photo notches. Stop unconstrained point-pulling, retain the head
+default, and require verified visible support plus coherent volume before
+integration. The 105 passing tests do not establish reconstruction quality.
+
 Experiment 0197 closes the connected GNM skin exterior and evaluates two finite
 subdivision steps with valid contact attachments. Actual broad donor-depth
 transfers remain visually rejected despite mesh checks and correction of an
