@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-29 after experiment 0199.
+Last updated: 2026-09-29 after experiment 0200.
 
 ## What exists
 
@@ -11,6 +11,16 @@ Last updated: 2026-09-29 after experiment 0199.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0200 tests a bounded identity prior on the connected closed donor.
+One unconstrained solve fails mesh guards; the pointwise-constrained and
+closure-corrected versions pass mesh checks but both fail actual five-view
+white-mesh review. A concrete basis/mean closure inconsistency is repaired and
+verified, without resolving lower-lip bulging or shallow profile contact.
+Post-fit side visibility also invalidates hidden material bindings. No donor
+is grafted and no head/camera is changed. The next gate is plausible closed-lip
+section anatomy with visible support, not more fit-weight or coefficient sweeps.
+Hair and texture remain paused; recognizable full-head quality is not achieved.
 
 Experiment 0199 completes a locally pinned TripoSR inference and one cached-field
 extraction-resolution control. Both actual geometry-only faces are `REJECT`:

@@ -133,6 +133,16 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiment 0200 tests a bounded identity prior on the existing connected GNM
+closed donor. A source-closure/basis-closure inconsistency is corrected using
+the same original graph and verified derivatives; unchanged pointwise guards
+are enforced inside the solve. Both actual five-view donor candidates remain
+visually rejected despite lower front residuals. Fixed side bindings can become
+occluded, so post-fit visible-support checks remain essential. Current head and
+cameras are unchanged, hair/texture stay paused, and source-neutral closed-lip
+section anatomy must be screened before further subject fitting. This rejects
+the tested adaptation, not the entire upstream model.
+
 Experiment 0199 tests a separately pinned MIT TripoSR single-image initializer
 locally, not through a hosted demo. Actual untextured faces remain visibly
 rejected at both 256 and 512 extraction grids. A cached-code control distinguishes

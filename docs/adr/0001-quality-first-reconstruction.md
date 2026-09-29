@@ -10,6 +10,22 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-09-29 closure consistency precedes identity fitting
+
+Experiment 0200 finds that closing a mean mesh while only averaging welded
+basis entries leaves surrounding shape directions in the open-template space.
+Apply the same frozen closure operator to both mean and variation; verify
+neutral replay, finite-difference derivatives and retained section relations.
+Reconstruct the original pre-weld graph, not a graph that omits intentionally
+collapsed faces. RMS preservation is not a pointwise displacement guard;
+enforce declared hard bounds without post-fit rescaling or relaxed thresholds.
+Both actual constrained donor renders remain visually rejected after correction.
+Recheck complete refined-curve visibility after shape changes: a once-visible
+fixed material binding can become hidden. Correct implementation and a legal
+shape prior do not establish natural closed-lip anatomy or subject likeness.
+Stop tuning this rejected fit until the underlying contact-section and visible
+support representation is justified. No head, camera, hair or texture promotion.
+
 ### 2026-09-29 a generic generated object is not an anatomical head prior
 
 Experiment 0199 executes an explicitly MIT-released local initializer, but both
