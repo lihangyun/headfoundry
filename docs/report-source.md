@@ -133,6 +133,15 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiment 0199 tests a separately pinned MIT TripoSR single-image initializer
+locally, not through a hosted demo. Actual untextured faces remain visibly
+rejected at both 256 and 512 extraction grids. A cached-code control distinguishes
+inferred-field corrugation from extraction-only artifacts; extra triangles do not
+repair facial anatomy. Local execution is verified, not subject reconstruction.
+The current head/cameras remain unchanged. Exact asset/runtime identities and
+the private-runner enforcement limits are recorded in the experiment and lock;
+do not confuse provenance with a production fail-closed entry point.
+
 Experiment 0198 executes native XYZ donor deformation rather than depth
 transfer. Reduced front attachment residuals coexist with a visibly poor lip
 ledge; adding bilateral observations violates mesh guards. A complete finite

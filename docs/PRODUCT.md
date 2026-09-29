@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-28 after experiment 0198.
+Last updated: 2026-09-29 after experiment 0199.
 
 ## What exists
 
@@ -11,6 +11,13 @@ Last updated: 2026-09-28 after experiment 0198.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment 0199 completes a locally pinned TripoSR inference and one cached-field
+extraction-resolution control. Both actual geometry-only faces are `REJECT`:
+eye/nose/lip anatomy and cheek corrugation remain wrong. The 512 mesh has more
+detail and degenerate incidences, not a demonstrated reconstruction improvement.
+No current head/camera changes; no hair or texture optimization. Legal availability,
+successful inference and closed components do not make a suitable head prior.
 
 Experiment 0198 replaces depth transfer with direct XYZ deformation of the
 connected donor. The first solve passes mesh checks and improves front lip
@@ -491,8 +498,10 @@ coherent lip-volume representation. Experiment 0198's unrestricted native XYZ
 point fit is rejected; 0197's image-space depth transfers remain rejected too.
 Do not sweep either family's weights/warp/amplitude. A leading material-curve
 sample may be occluded, and a fixed photo row does not define corresponding
-anatomy. Any stronger free-commercial local geometry initializer needs exact
-rights/runtime checks and real head-only renders before integration. Reject
+anatomy. Experiment 0199 rejects the tested TripoSR field as a head or anatomical
+donor; stop resolution/threshold polishing of that field. Any other stronger
+free-commercial local initializer needs exact rights/runtime checks and real
+head-only renders before integration. Reject
 unnatural transitions before any default promotion.
 
 The next head-only method must use coherent 3D shape constraints rather than

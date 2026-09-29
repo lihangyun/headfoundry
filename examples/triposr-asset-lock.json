@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "asset_id": "triposr-single-image-geometry-diagnostic",
+  "scope": "Optional local diagnostic only; not default head reconstruction or multiview fusion",
+  "source": {
+    "repository": "https://github.com/VAST-AI-Research/TripoSR",
+    "revision": "107cefdc244c39106fa830359024f6a2f1c78871",
+    "license": "MIT",
+    "license_sha256": "13aff551d7009dea9d44cc5e200f8493e0e9d5171be0ab19940e6f20f54c7e17",
+    "attribution": "Copyright (c) 2024 Tripo AI & Stability AI"
+  },
+  "model": {
+    "repository": "stabilityai/TripoSR",
+    "revision": "5b521936b01fbe1890f6f9baed0254ab6351c04a",
+    "license": "MIT",
+    "license_evidence": "Official pinned model card explicitly lists MIT; source README explicitly includes pretrained models in its MIT release.",
+    "files": {
+      "model.ckpt": "429e2c6b22a0923967459de24d67f05962b235f79cde6b032aa7ed2ffcd970ee",
+      "config.yaml": "74ca708ce086bf68e97709ea6b3d91f14717921c04691e84043f0eb8fcc68e62",
+      "README.md": "5c12ef5b850c6ee2aa7454b1a264f6f8dfa95164384dbb1ab374acd917aa558b"
+    },
+    "checkpoint_bytes": 1677246742,
+    "load_policy": "Local path, exact hashes, torch.load(weights_only=True); no fallback checkpoint"
+  },
+  "architecture_config": {
+    "repository": "facebook/dino-vitb16",
+    "revision": "f205d5d8e640a89a2b8ef0369670dfc37cc07fc2",
+    "file": "config.json",
+    "sha256": "b87c0270b97db085fd82cf114a761fd0f62ae7914fbd407c752a2260646b689c",
+    "purpose": "Local ViT architecture JSON only; no separate DINO pretrained weights downloaded"
+  },
+  "local_adaptation": {
+    "background_model": "Disabled; no rembg/BRIA weights loaded",
+    "mesh_extraction": "CPU scikit-image marching cubes replaces torchmcubes; asymmetric sphere axis/winding check required",
+    "network": "Offline model flags plus process-local socket connection denial before model import and photo reading; not a machine-wide network sandbox",
+    "source_sha256": {
+      "tsr/utils.py": "743c0f84ea9674c98f26c191b8378ffd89a8589ac9324bd0bd7d71fa69db3a7c",
+      "tsr/system.py": "03c9931e9866a48b55b39bb23245ff153542e7bf8ecf761a4ec0c0c6aa95dbf2",
+      "tsr/models/tokenizers/image.py": "6946842030bfea27b9b15c1988d20ca1d5ad8f78098d9ee37354fe6dc29fb92e",
+      "tsr/models/isosurface.py": "afcef17344327d567c5570e902c3fb9fc06c9165100c04d396bd49fa2b159ba5"
+    }
+  },
+  "runtime_versions": {
+    "python": "3.11.15",
+    "torch": "2.14.0",
+    "transformers": "4.35.0",
+    "omegaconf": "2.3.0",
+    "einops": "0.7.0",
+    "trimesh": "4.0.5",
+    "scikit-image": "0.25.2",
+    "huggingface-hub": "0.17.3"
+  },
+  "torch_build": "2.14.0+cpu",
+  "runtime_version_policy": "Package metadata versions above are recorded separately from torch.__version__. This JSON is an experiment record, not an automatically enforced production asset manifest.",
+  "privacy": "Rights-validated input and every image/identity-derived artifact stay under ignored local assets/private; never upload to demos or include in Git",
+  "limitations": "Generic single-image object generation, not a head-specific anatomy model or five-view reconstruction. Model/code grant does not certify all training data, output accuracy or complete binary redistribution. Dependency licenses and attribution remain separate. Source foreground hair is not bare-skull evidence; no hair-specific modeling is included. Successful loading or watertight output is not visual acceptance."
+}

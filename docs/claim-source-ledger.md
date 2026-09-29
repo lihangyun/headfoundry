@@ -1,5 +1,24 @@
 # Claim-to-source ledger
 
+## 2026-09-29: TripoSR local head initializer screen
+
+The [pinned official source README](https://github.com/VAST-AI-Research/TripoSR/blob/107cefdc244c39106fa830359024f6a2f1c78871/README.md)
+explicitly releases source and pretrained models under MIT; the
+[source license](https://github.com/VAST-AI-Research/TripoSR/blob/107cefdc244c39106fa830359024f6a2f1c78871/LICENSE)
+preserves Tripo AI and Stability AI attribution. The separately pinned
+[official model card](https://huggingface.co/stabilityai/TripoSR/blob/5b521936b01fbe1890f6f9baed0254ab6351c04a/README.md)
+also declares MIT and identifies a single-image model, not multiview head
+reconstruction. Exact reviewed assets and local adaptations are recorded in
+`examples/triposr-asset-lock.json`; no other Stability/Tripo model inherits this
+grant. Dependency licenses, training-data provenance and output rights remain
+separate checks. No commercial background-removal model or hosted demo is used.
+
+Experiment 0199 provides actual local inference, extraction and white-mesh
+evidence. Both tested grids are visually rejected; increasing mesh density
+does not establish head likeness. Input images, scene code, meshes and renders
+remain private. No source-page marketing quality claim is adopted as local
+acceptance evidence, and the asset record is not a production loader contract.
+
 ## 2026-09-23: local Gaussian appearance diagnostic
 
 The [gsplat 1.5.3 source license](https://github.com/nerfstudio-project/gsplat/blob/v1.5.3/LICENSE)

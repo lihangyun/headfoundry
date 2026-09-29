@@ -10,6 +10,19 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-09-29 a generic generated object is not an anatomical head prior
+
+Experiment 0199 executes an explicitly MIT-released local initializer, but both
+tested extraction precisions are visually rejected. Model availability, many
+triangles and a watertight flag cannot override eyelid/nose/lip anatomy and
+front/profile appearance checks. Report connected components and degenerate
+incidences separately from the watertight boolean. Stop resolution/threshold
+polishing of the rejected field; do not graft it into the current head.
+An experimental asset lock records provenance; it is not itself enforced
+production validation. Python assertions are unsuitable for mandatory rights
+checks because optimized execution disables them. Local diagnostic success
+does not change camera, consent, head-only or quality acceptance requirements.
+
 ### 2026-09-28 material curves are not automatically visible observations
 
 Experiment 0198 rejects the tested free-XYZ native donor fit and its bilateral
