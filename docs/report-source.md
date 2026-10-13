@@ -133,6 +133,14 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiments0203–0204 correct whole-head similarity and finite surface bindings.
+Source eyes improve inspection completeness, and valid-view alignment improves,
+but the stock head remains visually rejected. A coherent30-direction setup
+reproduces actual exported geometry while its static jaw/upper-lid support
+fails visibility before optimization. Source-visible contour selection is a
+necessary next step; numeric point fit and geometric replay are insufficient
+evidence of recognizable complete-head reconstruction.
+
 Experiments 0201–0202 identify an anterior-row closure truncation and a lateral
 corner-order failure. Posterior support with body-X preservation improves
 actual bilateral source contact, but the corresponding identity fit and a

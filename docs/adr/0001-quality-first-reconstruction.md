@@ -10,6 +10,18 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-10-13 full-head registration and contour support
+
+Use a proper positive similarity to align a source head without independently
+stretching its anatomical axes. Normalize rounded source attachment weights
+explicitly for affine replay, and re-embed them on the finite exported surface
+after geometric subdivision. A fixed semantic point can remain hidden even
+when its2D projection resembles an observed contour. Experiment0204 rejects
+static jaw/upper-lid support before fitting; do not relax visibility to make
+that route run. Derive actual visible supports and recheck after deformation.
+Pose convergence, added generic eyes and passing107 tests do not promote a
+stock source head or establish physical camera/identity quality.
+
 ### 2026-10-13 inner-lip attachments do not define physical closure
 
 Experiment0201 retains posterior source lip support and fixes a diagnosed corner

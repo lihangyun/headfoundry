@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-10-13 after experiment 0202.
+Last updated: 2026-10-13 after experiment 0204.
 
 ## What exists
 
@@ -11,6 +11,16 @@ Last updated: 2026-10-13 after experiment 0202.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiments0203–0204 establish a corrected whole-head initialization with proper
+uniform scale/rotation/translation, source eyes and actual refined-surface
+attachments. Valid-view alignment improves, but the stock face is visually
+rejected. A30-direction shape preparation passes exact export controls; the
+proposed static frontal jaw/eye supports fail visibility before optimization.
+No new fitted head or default promotion follows. The next implementation needs
+actual visible contour supports rather than hidden fixed material points.
+The reusable attachment helper and its tests are public; private image-derived
+assets remain local. Complete-head likeness remains unfinished.
 
 Experiments 0201–0202 correct an anterior contact truncation assumption and a
 concrete lateral corner-order failure in the source donor. Retaining posterior

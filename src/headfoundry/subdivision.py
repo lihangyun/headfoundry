@@ -61,3 +61,45 @@ def catmull_clark(vertices, polygons):
             quads.append([int(a),edge_ids[tuple(sorted((int(a),int(b))))],offset+index,
                           edge_ids[tuple(sorted((int(previous),int(a))))]])
     return np.concatenate([updated,np.asarray(edge_points),face_points]),np.asarray(quads,int)
+
+
+def refine_triangle_attachments(vertices, faces, attachment_faces, barycentric):
+    """Refine twice and re-embed triangle-chart points on exported triangles.
+
+    Original chart corners stay at their parameter locations; edge/face points
+    divide that chart. These are finite surface attachments, not limit-surface
+    evaluation or evidence of anatomical correspondence.
+    """
+    f=np.asarray(faces); ids=np.asarray(attachment_faces); weights=np.asarray(barycentric,float)
+    if (f.ndim!=2 or f.shape[1:]!=(3,) or not len(f)
+            or not np.issubdtype(f.dtype,np.integer)
+            or ids.ndim!=1 or not len(ids) or not np.issubdtype(ids.dtype,np.integer)
+            or np.any(ids<0) or np.any(ids>=len(f))
+            or weights.shape!=(len(ids),3) or not np.isfinite(weights).all()
+            or np.any(weights<0) or np.any(np.abs(weights.sum(1)-1)>1e-9)):
+        raise ValueError('triangles, valid attachment face ids and normalized barycentrics required')
+    first,quads=catmull_clark(vertices,f)
+    refined,quads=catmull_clark(first,quads)
+    triangles=np.stack([quads[:,[0,1,2]],quads[:,[0,2,3]]],axis=1).reshape(-1,3)
+    # All parent triangles use the same parameter chart and child ordering.
+    chart=np.eye(3); children=[]
+    for corner in range(3):
+        quad=np.array([chart[corner],(chart[corner]+chart[(corner+1)%3])/2,
+                       chart.mean(0),(chart[(corner-1)%3]+chart[corner])/2])
+        for j in range(4):
+            sub=np.array([quad[j],(quad[j]+quad[(j+1)%4])/2,quad.mean(0),
+                          (quad[(j-1)%4]+quad[j])/2])
+            children.extend([sub[[0,1,2]],sub[[0,2,3]]])
+    attached=[]; local_weights=[]
+    for face,query in zip(ids,weights):
+        for child,parameter_triangle in enumerate(children):
+            local=np.linalg.solve(parameter_triangle.T,query)
+            if local.min()>=-1e-10:
+                local=np.maximum(local,0);local/=local.sum()
+                if np.max(np.abs(local @ parameter_triangle-query))>1e-9:
+                    raise ValueError('refined parameter attachment replay failed')
+                attached.append(triangles[int(face)*24+child]);local_weights.append(local)
+                break
+        else:
+            raise ValueError('attachment outside refined triangle chart')
+    return refined,triangles,np.asarray(attached,int),np.asarray(local_weights,float)
