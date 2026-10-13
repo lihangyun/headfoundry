@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-10-13 after experiment 0204.
+Last updated: 2026-10-14, documentation handoff after experiment 0207 runs.
 
 ## What exists
 
@@ -11,6 +11,21 @@ Last updated: 2026-10-13 after experiment 0204.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiment0207 adds three-view outer-lip curves and protected frontal-jaw and
+bilateral-profile conditions to the same frozen-camera identity fit. Two solves
+fail; a feasibility-first third candidate passes an independent actual-OBJ mesh
+audit but fails the original jaw/profile quality conditions and worsens lower-lip
+fit. Its status is `REJECT`, not a new accepted head. Five fixed-scene white renders
+and comparisons exist locally; visual review is still incomplete. No default,
+camera, hair or texture change is promoted. The public suite was rerun during
+this documentation task:113 tests pass. Experiment0206's profile gains and
+experiment0205's visible-support implementation are bounded partial progress,
+not recognizable full-head or physical-camera acceptance.
+
+The consolidated requirements, original-material inventory, architecture,
+rejected route families and evidence handoff are in
+[the 2026-10-14 project handoff](2026-10-14-project-handoff.md).
 
 Experiments0203–0204 establish a corrected whole-head initialization with proper
 uniform scale/rotation/translation, source eyes and actual refined-surface
