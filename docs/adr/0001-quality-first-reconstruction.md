@@ -10,6 +10,20 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-10-13 inner-lip attachments do not define physical closure
+
+Experiment0201 retains posterior source lip support and fixes a diagnosed corner
+side-order reversal by welding contact laterally while preserving body X.
+Official 68-point contour attachments and self-derived row numbering do not
+establish a physical contact surface. Report changed lateral section relations;
+do not claim complete section preservation when only Y/Z relations are retained.
+This representation improvement does not promote the fitted donor, whose lower
+roll samples become hidden and whose actual lip-to-skin form still fails review.
+Experiment0202 rejects one depth-only rollback despite valid mesh checks.
+Keep the source repair but inspect coupled lip and surrounding-skin anatomy
+before more subject fitting. A pigment border is not proven to bound the whole
+geometric lip volume. No camera, complete-head, hair or texture gate is waived.
+
 ### 2026-09-29 closure consistency precedes identity fitting
 
 Experiment 0200 finds that closing a mean mesh while only averaging welded

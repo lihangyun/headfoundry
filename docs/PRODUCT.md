@@ -1,6 +1,6 @@
 # HeadFoundry product status
 
-Last updated: 2026-09-29 after experiment 0200.
+Last updated: 2026-10-13 after experiment 0202.
 
 ## What exists
 
@@ -11,6 +11,15 @@ Last updated: 2026-09-29 after experiment 0200.
 - GitHub repository: `https://github.com/lihangyun/headfoundry.git`, branch `main`.
 
 ## Current result
+
+Experiments 0201–0202 correct an anterior contact truncation assumption and a
+concrete lateral corner-order failure in the source donor. Retaining posterior
+support gives clearer actual bilateral contact; source representation is
+`PARTIAL_SUCCESS`. The new constrained identity fit and one fixed source-depth
+ablation remain visually rejected due to lower-lip bulging and the lip-to-skin
+transition. No donor is integrated and no head/camera default changes. The next
+evidence must justify the coupled section and visible supports. Full head
+likeness is not achieved; hair and texture remain paused.
 
 Experiment 0200 tests a bounded identity prior on the connected closed donor.
 One unconstrained solve fails mesh guards; the pointwise-constrained and

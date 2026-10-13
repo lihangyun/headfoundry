@@ -1,5 +1,21 @@
 # Claim-to-source ledger
 
+## 2026-10-13: GNM lip-row interpretation and closure control
+
+The pinned official GNM model supplies upper/lower lip region masks and the
+[sparse 68-point attachment data](https://github.com/google/gnm/blob/5482149067eda4bf9d423398fe29c4436f936f10/gnm/shape/data/landmarks/head_sparse_68.txt).
+Local topology analysis places standard inner-lip attachment slots mainly on
+the self-derived row2 and outer-lip slots mainly on row4. These row numbers are
+our BFS ordering, not upstream anatomical contact labels. Do not reinterpret
+a 2D contour attachment as a physical closed-mouth contact surface.
+
+Experiments0201–0202 provide local evidence for posterior support and a corrected
+corner-side order, then reject the fitted donor and a depth-only ablation after
+actual five-view review. The same previously reviewed Apache-2.0 model/source
+identities are used; no new asset license is inferred. Generic source geometry,
+source-section diagnostics and local visual comparisons do not prove subject
+likeness, global collision freedom, camera accuracy or KeenTools parity.
+
 ## 2026-09-29: TripoSR local head initializer screen
 
 The [pinned official source README](https://github.com/VAST-AI-Research/TripoSR/blob/107cefdc244c39106fa830359024f6a2f1c78871/README.md)

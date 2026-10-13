@@ -133,6 +133,15 @@ surface fusion; repeated authored-shape tuning has not delivered likeness.
 
 ## Sources
 
+Experiments 0201–0202 identify an anterior-row closure truncation and a lateral
+corner-order failure. Posterior support with body-X preservation improves
+actual bilateral source contact, but the corresponding identity fit and a
+source-depth rollback remain visually rejected. Treat inner-lip landmark slots
+as contour attachments, not physical contact truth. Keep the source correction
+and test coupled lip-to-skin section anatomy/visibility before another subject
+fit. The current head remains unchanged; no complete-head or camera acceptance
+follows from these local controls.
+
 Experiment 0200 tests a bounded identity prior on the existing connected GNM
 closed donor. A source-closure/basis-closure inconsistency is corrected using
 the same original graph and verified derivatives; unchanged pointwise guards
