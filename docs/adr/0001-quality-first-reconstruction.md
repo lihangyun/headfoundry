@@ -218,6 +218,16 @@ The research evidence favors explicit multi-view geometry and canonical fusion o
 
 ## Data strategy
 
+Experiment 0206 records a bounded exception for fitting local bilateral profile
+envelopes against the five authorized AI-generated/composited references. Keep
+camera and pose frozen, preserve the exact mesh guards, and audit support
+visibility against the full exported head. Interleaved rows are diagnostics,
+not a holdout: earlier candidates and cameras have already used these images.
+Even a passing contour or ray check cannot promote the head. The first full
+white-mesh comparison shows profile change but not recognizable likeness, so
+the candidate is rejected and production defaults remain untouched. Continue
+with coupled front/profile anatomy only; hair and texture stay outside scope.
+
 Experiment 0196 permits only the already pinned Apache GNM neutral data as a
 local anatomical donor hypothesis. Exact lip groups, exterior membership,
 anterior contact closure and source hashes must be checked explicitly; neither

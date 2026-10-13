@@ -1,9 +1,37 @@
 import unittest
+from unittest.mock import patch
 import numpy as np
-from headfoundry.profile_fit import fit_profile_step,envelope_edge
+from headfoundry.profile_fit import fit_profile_step,envelope_edge,envelope_edges
 
 
 class ProfileFitTest(unittest.TestCase):
+    def test_batch_envelope_matches_independent_projected_segments(self):
+        v=np.array([[1.,0,1],[4,4,2],[0,0,1],[0,4,2]])
+        edges=np.array([[0,1],[2,3]])
+        p=np.array([[100,0,0,0],[0,100,0,0],[0,0,1,0.]])
+        for direction in (-1,1):
+            batch=envelope_edges(v,edges,p,[0,50,100,200,250],direction)
+            for row,item in zip([0,50,100,200,250],batch):
+                if row==250:self.assertIsNone(item);continue
+                ids,w,pixel=item
+                h=p @ np.r_[w @ v[ids],1]
+                np.testing.assert_allclose(h[:2]/h[2],pixel)
+                expected=0. if direction==-1 else 100.+row/2
+                np.testing.assert_allclose(pixel,[expected,row])
+            self.assertEqual(envelope_edges(v,edges,p,[],direction),[])
+        for bad in ([[1]], [np.nan]):
+            with self.assertRaises(ValueError):envelope_edges(v,edges,p,bad,1)
+
+    def test_continuous_fit_projects_once_for_many_rows(self):
+        v=np.array([[0,0,1],[.1,0,1],[0,.1,1],[.1,.1,1.]])
+        f=np.array([[0,2,1],[1,2,3]])
+        p=np.array([[[100,0,0,0],[0,100,0,0],[0,0,1,0]]])
+        rows=np.array([[11,0],[11,5],[11,10]])
+        with patch('headfoundry.profile_fit.envelope_edges', wraps=envelope_edges) as batch:
+            fit_profile_step(v,f,p,[rows],[1],.001,continuous=True)
+        self.assertEqual(batch.call_count,1)
+        np.testing.assert_array_equal(batch.call_args.args[3],rows[:,1])
+
     def test_perspective_correct_continuous_edge_and_horizontal(self):
         v=np.array([[1.,0,1],[4,4,2]])
         p=np.array([[100,0,0,0],[0,100,0,0],[0,0,1,0.]])

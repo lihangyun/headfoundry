@@ -28,27 +28,34 @@ def envelope_edge(vertices, edges, projection, row, direction):
     All vertices must be in front. This is an outer envelope, not semantic
     face segmentation: callers must exclude unrelated foreground geometry.
     """
+    return envelope_edges(vertices,edges,projection,[row],direction)[0]
+
+
+def envelope_edges(vertices, edges, projection, rows, direction):
+    """Batch the same row envelopes with one projection; no visibility claim."""
     v=np.asarray(vertices,float);edges=np.asarray(edges);p=np.asarray(projection,float)
+    rows=np.asarray(rows,float)
     if (v.ndim!=2 or v.shape[1:]!=(3,) or not np.isfinite(v).all()
             or edges.ndim!=2 or edges.shape[1:]!=(2,) or not np.issubdtype(edges.dtype,np.integer)
             or np.any(edges<0) or np.any(edges>=len(v)) or p.shape!=(3,4)
-            or not np.isfinite(p).all() or not np.isfinite(row) or direction not in (-1,1)):
+            or not np.isfinite(p).all() or rows.ndim!=1 or not np.isfinite(rows).all() or direction not in (-1,1)):
         raise ValueError('invalid envelope inputs')
     h=np.c_[v,np.ones(len(v))]@p.T
     if np.any(h[:,2]<=0):raise ValueError('surface behind camera')
     uv=h[:,:2]/h[:,2:];segments=uv[edges];dy=segments[:,1,1]-segments[:,0,1]
-    crossing=(segments[:,:,1].min(1)<=row)&(segments[:,:,1].max(1)>=row)
-    candidates=[]
-    for index in np.flatnonzero(crossing):
-        if abs(dy[index])<1e-12:
-            t=float(np.argmax(direction*segments[index,:,0]))
-        else:t=float((row-segments[index,0,1])/dy[index])
-        x=float((1-t)*segments[index,0,0]+t*segments[index,1,0])
-        candidates.append((direction*x,index,t,x))
-    if not candidates:return None
-    _,index,t,x=max(candidates,key=lambda a:a[0])
-    weights=np.array([1-t,t])/h[edges[index],2];weights/=weights.sum()
-    return edges[index],weights,np.array([x,row])
+    low,high=segments[:,:,1].min(1),segments[:,:,1].max(1)
+    result=[]
+    for row in rows:
+        ids=np.flatnonzero((low<=row)&(high>=row))
+        if not len(ids):result.append(None);continue
+        t=np.divide(row-segments[ids,0,1],dy[ids],out=np.zeros(len(ids)),where=np.abs(dy[ids])>=1e-12)
+        horizontal=np.abs(dy[ids])<1e-12
+        t[horizontal]=np.argmax(direction*segments[ids[horizontal],:,0],axis=1)
+        x=(1-t)*segments[ids,0,0]+t*segments[ids,1,0]
+        selected=int(np.argmax(direction*x));index=ids[selected];parameter=t[selected]
+        weights=np.array([1-parameter,parameter])/h[edges[index],2];weights/=weights.sum()
+        result.append((edges[index],weights,np.array([x[selected],row])))
+    return result
 
 
 def fit_profile_step(vertices, faces, projections, contours, directions, max_move=.015, *, frontal_projection=None,
@@ -70,12 +77,15 @@ def fit_profile_step(vertices, faces, projections, contours, directions, max_mov
     for view,(camera,curve,direction) in enumerate(zip(p,contours,directions)):
         curve=np.asarray(curve,float)
         if curve.ndim!=2 or curve.shape[1]!=2 or not np.isfinite(curve).all() or direction not in (-1,1):raise ValueError('invalid contour')
-        h=np.c_[v,np.ones(len(v))]@camera.T
-        if np.any(h[:,2]<=0):raise ValueError('surface behind camera')
-        uv=h[:,:2]/h[:,2:]
-        for target in curve:
+        if continuous:
+            supports=envelope_edges(v,edges,camera,curve[:,1],direction)
+        else:
+            h=np.c_[v,np.ones(len(v))]@camera.T
+            if np.any(h[:,2]<=0):raise ValueError('surface behind camera')
+            uv=h[:,:2]/h[:,2:]
+        for index,target in enumerate(curve):
             if continuous:
-                support=envelope_edge(v,edges,camera,target[1],direction)
+                support=supports[index]
                 if support is not None:
                     ids,weights,_=support;constraints.append((view,ids,weights,target));counts[view]+=1
                 continue

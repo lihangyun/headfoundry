@@ -1,5 +1,20 @@
 # Claim-to-source ledger
 
+## 2026-10-14: bilateral profile fit is not subject acceptance
+
+Experiment 0206 uses the already pinned GNM identity basis and locally reviewed
+appearance-edge rows from the user's five authorized AI-generated/composited
+references. It adds no model, training data, asset grant, or camera claim. The
+camera and pose are frozen; the alternating row split is not independent
+validation because earlier heads/cameras and visual review already used these
+images. An independent full-head ray/envelope audit and exported-mesh checks
+pass, and exact-camera Blender projection replay is below 0.00015 px. Local
+profile-envelope errors improve (`PARTIAL_SUCCESS`), but the fixed-crop white
+renders still show generic mouth/chin and whole-face proportions. Subject
+likeness and default promotion are `REJECT`; the current defaults are unchanged.
+These results do not establish a common physical subject/camera, scan truth,
+commercial training rights, complete visual acceptance, or KeenTools parity.
+
 ## 2026-10-13 visible head supports and truthful acceptance
 
 Experiment0205's new contour logic is independently implemented geometry, using
