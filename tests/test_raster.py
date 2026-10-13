@@ -1,9 +1,44 @@
 import unittest
 import numpy as np
-from headfoundry.raster import render,lift_pixels
+from headfoundry.raster import render,lift_pixels,occluding_edges
 
 
 class RasterTests(unittest.TestCase):
+    def test_occluding_edges_require_separate_visibility_check(self):
+        v=np.array([[-1,-1,2],[1,-1,2],[1,1,2],[-1,1,2],
+                    [-1,-1,4],[1,-1,4],[1,1,4],[-1,1,4]],float)
+        f=np.array([[0,3,2],[0,2,1],[4,5,6],[4,6,7],[0,1,5],[0,5,4],
+                    [1,2,6],[1,6,5],[2,3,7],[2,7,6],[3,0,4],[3,4,7]])
+        e=np.c_[np.eye(3),np.zeros(3)]
+        expected=np.array([[0,1],[0,3],[1,2],[2,3]])
+        np.testing.assert_array_equal(occluding_edges(v,f,e),expected)
+        # Reordering triangles does not change contour topology.
+        np.testing.assert_array_equal(occluding_edges(v,f[::-1],e),expected)
+        angle=.4
+        rotation=np.array([[np.cos(angle),-np.sin(angle),0],
+                           [np.sin(angle),np.cos(angle),0],[0,0,1]])
+        offset=np.array([.2,-.3,.1])
+        transformed=v @ rotation.T+offset
+        moved_camera=np.c_[rotation.T,-rotation.T @ offset]
+        np.testing.assert_array_equal(occluding_edges(transformed,f,moved_camera),expected)
+        # A second shell behind the first has the same projection, but is not
+        # visible. Normal-facing transitions alone cannot certify support.
+        mesh=np.r_[v,v*2];faces=np.r_[f,f+len(v)]
+        edges=occluding_edges(mesh,faces,e)
+        points=mesh[edges].mean(1);pixels=points[:,:2]/points[:,2:]
+        ids,w=lift_pixels(mesh,faces,e,np.eye(3),pixels)
+        hits=np.einsum('ni,nij->nj',w,mesh[faces[ids]])
+        visible=np.linalg.norm(points-hits,axis=1)<1e-9
+        np.testing.assert_array_equal(visible,edges[:,0]<len(v))
+        np.testing.assert_array_equal(occluding_edges(v,f[:1],e),np.empty((0,2),int))
+        for bad_vertices,bad_faces,bad_camera in [
+                (v,f,np.eye(3)),(v,f.astype(float),e),(v,np.r_[f,f[:1]],e),
+                (v,np.r_[f[:1],f[1:2,::-1],f[2:]],e),
+                (v,np.array([[0,0,1]]),e),(v*[-1,1,-1],f,e),
+                (v,np.array([[0,1,len(v)]]),e)]:
+            with self.assertRaises(ValueError):
+                occluding_edges(bad_vertices,bad_faces,bad_camera)
+
     def test_component_filter_does_not_see_through_occluders(self):
         v=np.array([[0.,0,1],[8,0,2],[0,8,2]])
         vertices=np.r_[v*2,v];faces=np.array([[0,1,2],[3,4,5]])

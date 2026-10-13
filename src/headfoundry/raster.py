@@ -7,6 +7,35 @@ All vertices must be beyond the near plane; near-plane clipping is not supported
 import numpy as np
 
 
+def occluding_edges(vertices, faces, extrinsic):
+    """Two-sided front/back contour edges, not guaranteed first-hit visible.
+
+    Open boundary edges are excluded. Call lift_pixels on projected supports
+    to reject contours hidden by other surfaces before fitting observations.
+    """
+    v=np.asarray(vertices,float);f=np.asarray(faces);e=np.asarray(extrinsic,float)
+    if (v.ndim!=2 or v.shape[1:]!=(3,) or not len(v)
+            or f.ndim!=2 or f.shape[1:]!=(3,) or not len(f)
+            or not np.issubdtype(f.dtype,np.integer) or np.any(f<0) or np.any(f>=len(v))
+            or e.shape!=(3,4) or not np.isfinite(v).all() or not np.isfinite(e).all()):
+        raise ValueError('finite mesh and OpenCV extrinsic required')
+    cam=v @ e[:,:3].T+e[:,3]
+    if np.any(cam[:,2]<=1e-6):raise ValueError('near-plane clipping required')
+    tri=cam[f];normal=np.cross(tri[:,1]-tri[:,0],tri[:,2]-tri[:,0])
+    if np.any(np.linalg.norm(normal,axis=1)<=1e-14):
+        raise ValueError('degenerate contour triangle')
+    front=np.einsum('ni,ni->n',normal,-tri.mean(1))>0
+    directed=np.concatenate([f[:,[0,1]],f[:,[1,2]],f[:,[2,0]]])
+    edges,inverse,counts=np.unique(np.sort(directed,axis=1),axis=0,return_inverse=True,return_counts=True)
+    if np.any(counts>2):raise ValueError('nonmanifold contour edge')
+    order=np.argsort(inverse,kind='stable');starts=np.r_[0,np.cumsum(counts)[:-1]]
+    ids=np.flatnonzero(counts==2);first,second=order[starts[ids]],order[starts[ids]+1]
+    if np.any(np.all(directed[first]==directed[second],axis=1)):
+        raise ValueError('inconsistent contour winding')
+    owners=np.tile(np.arange(len(f)),3)
+    return edges[ids[front[owners[first]]!=front[owners[second]]]]
+
+
 def lift_pixels(vertices, faces, extrinsic, intrinsic, pixels, *, allowed_faces=None):
     """Exact visible triangle + 3D barycentric weights; misses are -1/NaN.
 

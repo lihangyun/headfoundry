@@ -10,6 +10,21 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-10-13 actual visible aperture and exported-mesh safety
+
+Normal-facing transition edges are contour candidates, not visibility evidence;
+first-hit rays must exclude hidden surfaces. Use actual skin/eyeball ownership
+transitions for view-dependent eyelids rather than forcing fixed oblique sparse
+eye corners to remain visible. Declare correspondence changes, preserve failed
+bindings and keep exact final visibility checks. Their image residuals are not
+common material tracks or physical camera acceptance. Enforce safety on the
+finite exported mesh, not only its cage; never substitute convergence for guards.
+Independent serialization/replay checks must preserve original faulty archives
+and hash any corrected metadata without silently changing geometry.
+Experiment0205's technically valid whole-head fit still fails nasal/lip profile
+likeness. Keep its local evidence, leave defaults unchanged and inspect coherent
+profile anatomy next. No hair/texture or visual/KeenTools gate is waived.
+
 ### 2026-10-13 full-head registration and contour support
 
 Use a proper positive similarity to align a source head without independently

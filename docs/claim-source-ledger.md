@@ -1,5 +1,18 @@
 # Claim-to-source ledger
 
+## 2026-10-13 visible head supports and truthful acceptance
+
+Experiment0205's new contour logic is independently implemented geometry, using
+the same already pinned Apache GNM neutral/identity data and MediaPipe local
+observations. No new model, source license or dataset grant is inferred.
+Camera-space front/back edge transitions require a separate first-hit check;
+view-dependent aperture curves are not cross-view material tracks. Local export,
+ray replay and actual fixed-scene renders establish bounded engineering evidence
+only. Coherent surface/fitting is `PARTIAL_SUCCESS`; subject likeness and head
+promotion are `REJECT`. Metadata repair is explicitly recorded separately from
+unchanged mesh output. None of this establishes physical camera accuracy,
+training-data rights, complete visual acceptance or KeenTools parity.
+
 ## 2026-10-13: GNM lip-row interpretation and closure control
 
 The pinned official GNM model supplies upper/lower lip region masks and the

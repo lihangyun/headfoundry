@@ -4,6 +4,18 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-13 head-only visible-support result
+
+Experiment0205 replaces hidden static contours with actual visible jaw edges and
+three-view skin/eyeball aperture transitions. A bounded coherent whole-head fit
+passes exported-surface safety and independent first-hit replay;108 public tests
+pass. Fixed-light five-view white meshes are more coherent than the current
+cheek/jaw/neck surface, but nasal/lip profile anatomy still fails visual review.
+Representation/fitting is `PARTIAL_SUCCESS`; likeness/default promotion is
+`REJECT`. Current head/cameras remain unchanged. No hair, texture, paid model,
+new learned asset or uploaded reference data is introduced. Next protect front
+and bilateral profile identity while fitting coherent nose/lip-to-chin anatomy.
+
 ## Executive conclusion
 
 Reaching KeenTools Cloud-class output is technically plausible, but not by assembling one public model. The credible path is a controlled system: learned multi-view camera and point-map initialization, a commercially usable full-head prior, canonical UV/vertex fusion, topology-aware per-subject optimization, and deterministic view-aware texture compositing. The strongest recent papers validate the components; the remaining moat is licensed data, engineering integration, and rigorous visual acceptance.
