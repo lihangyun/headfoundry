@@ -3,7 +3,7 @@ import numpy as np
 from headfoundry.surface_diagnostic import fit_surface
 
 
-def curve_residuals(points, polyline):
+def _curve_terms(points, polyline):
     """Closest-point residuals to an ordered open 2D curve, including endpoints.
 
     The caller supplies a semantic curve: this does not segment a silhouette
@@ -19,7 +19,39 @@ def curve_residuals(points, polyline):
     t=np.divide((offsets*delta).sum(2),length2,out=np.zeros(offsets.shape[:2]),where=length2>0)
     residual=start+np.clip(t,0,1)[...,None]*delta-points[:,None,:]
     nearest=np.argmin((residual*residual).sum(2),axis=1)
-    return residual[np.arange(len(points)),nearest]
+    selected=np.arange(len(points))
+    return residual[selected,nearest],delta[nearest],(t[selected,nearest]>0)&(t[selected,nearest]<1)
+
+
+def curve_residuals(points, polyline):
+    """Closest-point residuals to an ordered open 2D curve, including endpoints.
+
+    The caller supplies a semantic curve: this does not segment a silhouette
+    or connect disconnected components. Repeated vertices are safe.
+    """
+    return _curve_terms(points,polyline)[0]
+
+
+def curve_residual_jacobian(points, polyline):
+    """Residual and its piecewise 2x2 point derivative; ties need not be smooth."""
+    residual,delta,interior=_curve_terms(points,polyline)
+    jacobian=np.broadcast_to(-np.eye(2),(len(residual),2,2)).copy()
+    d=delta[interior]
+    jacobian[interior]+=d[:,:,None]*d[:,None,:]/(d*d).sum(1)[:,None,None]
+    return residual,jacobian
+
+
+def project_with_basis_jacobian(vertices, basis, projection):
+    """Project current 3D points and differentiate their supplied affine basis."""
+    v,b,p=(np.asarray(a,float) for a in (vertices,basis,projection))
+    if (v.ndim!=2 or v.shape[1:]!=(3,) or b.ndim!=3 or b.shape[:2]!=v.shape
+            or b.shape[2]==0 or p.shape!=(3,4) or not all(np.isfinite(a).all() for a in (v,b,p))):
+        raise ValueError('finite matching points, affine basis and camera required')
+    h=np.c_[v,np.ones(len(v))] @ p.T
+    if np.any(h[:,2]<=0):raise ValueError('points behind camera')
+    uv=h[:,:2]/h[:,2:]
+    bh=np.einsum('ij,njk->nik',p[:,:3],b)
+    return uv,(bh[:,:2]-uv[:,:,None]*bh[:,2:3])/h[:,2,None,None]
 
 
 def envelope_edge(vertices, edges, projection, row, direction):
@@ -56,6 +88,34 @@ def envelope_edges(vertices, edges, projection, rows, direction):
         weights=np.array([1-parameter,parameter])/h[edges[index],2];weights/=weights.sum()
         result.append((edges[index],weights,np.array([x[selected],row])))
     return result
+
+
+def envelope_edges_with_jacobian(vertices, edges, projection, rows, direction, basis):
+    """Covered row envelopes plus affine-coordinate x derivatives on their edges.
+
+    Edge changes are piecewise smooth. A moving horizontal support has no unique
+    derivative at the supplied row and is rejected rather than called smooth.
+    """
+    v,b=np.asarray(vertices,float),np.asarray(basis,float)
+    if b.ndim!=3 or b.shape[:2]!=v.shape or b.shape[2]==0 or not np.isfinite(b).all():
+        raise ValueError('matching finite affine vertex basis required')
+    supports=envelope_edges(v,edges,projection,rows,direction)
+    if any(s is None for s in supports):raise ValueError('Jacobian requires covered rows')
+    if not supports:return supports,np.empty((0,b.shape[2]))
+    ids=np.array([s[0] for s in supports])
+    uv,jac=project_with_basis_jacobian(v[ids.ravel()],b[ids.ravel()],projection)
+    uv=uv.reshape(-1,2,2);jac=jac.reshape(-1,2,2,b.shape[2])
+    delta=uv[:,1]-uv[:,0];dy=delta[:,1];horizontal=np.abs(dy)<1e-12
+    if np.any(np.abs(jac[horizontal,:,1])>1e-12):
+        raise ValueError('moving horizontal row support has no unique derivative')
+    t=np.divide(np.asarray(rows,float)-uv[:,0,1],dy,out=np.zeros(len(ids)),where=~horizontal)
+    jt=np.divide(-(jac[:,0,1]+t[:,None]*(jac[:,1,1]-jac[:,0,1])),dy[:,None],
+                 out=np.zeros((len(ids),b.shape[2])),where=~horizontal[:,None])
+    result=jac[:,0,0]+t[:,None]*(jac[:,1,0]-jac[:,0,0])+delta[:,0,None]*jt
+    if horizontal.any():
+        selected=np.argmax(direction*uv[horizontal,:,0],axis=1)
+        result[horizontal]=jac[horizontal][np.arange(horizontal.sum()),selected,0]
+    return supports,result
 
 
 def fit_profile_step(vertices, faces, projections, contours, directions, max_move=.015, *, frontal_projection=None,

@@ -1,10 +1,49 @@
 import unittest
 from unittest.mock import patch
 import numpy as np
-from headfoundry.profile_fit import fit_profile_step,envelope_edge,envelope_edges
+from headfoundry.profile_fit import (fit_profile_step,envelope_edge,envelope_edges,
+                                    envelope_edges_with_jacobian,project_with_basis_jacobian)
 
 
 class ProfileFitTest(unittest.TestCase):
+    def test_projection_basis_jacobian_and_invalid_geometry(self):
+        v=np.array([[1.,.5,2],[-.5,1,3]])
+        b=np.arange(18,dtype=float).reshape(2,3,3)/100
+        p=np.array([[120.,3,20,.1],[0,110,30,-.1],[0,0,1,0]])
+        uv,jac=project_with_basis_jacobian(v,b,p)
+        for dimension in range(3):
+            plus=np.c_[v+1e-5*b[:,:,dimension],np.ones(2)] @ p.T
+            minus=np.c_[v-1e-5*b[:,:,dimension],np.ones(2)] @ p.T
+            numeric=(plus[:,:2]/plus[:,2:]-minus[:,:2]/minus[:,2:])/2e-5
+            np.testing.assert_allclose(jac[:,:,dimension],numeric,atol=1e-8)
+        self.assertEqual(uv.shape,(2,2))
+        for bad in (b[:1],np.full_like(b,np.nan)):
+            with self.assertRaises(ValueError):project_with_basis_jacobian(v,bad,p)
+        with self.assertRaises(ValueError):project_with_basis_jacobian(-v,b,p)
+
+    def test_envelope_jacobian_matches_full_row_reprojection(self):
+        v=np.array([[1.,0,2],[4,4,3],[-1,0,2],[-2,4,3]])
+        b=np.arange(36,dtype=float).reshape(4,3,3)/100
+        p=np.array([[100.,0,0,0],[0,100,0,0],[0,0,1,0]])
+        edges=np.array([[0,1],[2,3]]);rows=[25.,65,90]
+        for direction in (-1,1):
+            support,jac=envelope_edges_with_jacobian(v,edges,p,rows,direction,b)
+            for dimension in range(3):
+                plus=envelope_edges(v+1e-5*b[:,:,dimension],edges,p,rows,direction)
+                minus=envelope_edges(v-1e-5*b[:,:,dimension],edges,p,rows,direction)
+                numeric=np.array([(a[2][0]-c[2][0])/2e-5 for a,c in zip(plus,minus)])
+                np.testing.assert_allclose(jac[:,dimension],numeric,atol=1e-8)
+            self.assertEqual(len(support),len(rows))
+        _,jac=envelope_edges_with_jacobian(v,edges,p,[],1,b)
+        self.assertEqual(jac.shape,(0,3))
+        with self.assertRaises(ValueError):envelope_edges_with_jacobian(v,edges,p,[300],1,b)
+        horizontal=v[:2].copy();horizontal[:,1]=0
+        xbasis=np.zeros((2,3,1));xbasis[:,0,0]=1
+        _,jac=envelope_edges_with_jacobian(horizontal,np.array([[0,1]]),p,[0],1,xbasis)
+        np.testing.assert_allclose(jac,[[100/3]])
+        xbasis[:,1,0]=1
+        with self.assertRaises(ValueError):envelope_edges_with_jacobian(horizontal,np.array([[0,1]]),p,[0],1,xbasis)
+
     def test_batch_envelope_matches_independent_projected_segments(self):
         v=np.array([[1.,0,1],[4,4,2],[0,0,1],[0,4,2]])
         edges=np.array([[0,1],[2,3]])
