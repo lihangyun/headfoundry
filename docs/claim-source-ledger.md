@@ -236,3 +236,17 @@ separately from the base mesh. Only this target is in scope, with no upstream
 application code integration or fabricated common source revision. Experiment
 0111 rejects every tested nonzero application to the current head for profile
 regression and sampled intersections. Asset provenance is not visual acceptance.
+## 2026-10-14: exact MoGe-2 normal observation screen
+
+The [official model card](https://huggingface.co/Ruicheng/moge-2-vitb-normal/blob/ca5f0e07ff01d3e5a364c1d954ed12ee1814b368/README.md)
+declares MIT for the exact `Ruicheng/moge-2-vitb-normal` weights, separately from
+[Microsoft's MIT/Apache source notice](https://github.com/microsoft/MoGe/blob/74fbce054ebed49800de42d0ad0e83495065719a/LICENSE).
+The pinned source uses the vendored DINOv2 constructor with `pretrained=False`;
+the complete exact local model supplies its weights. The model, source trees and
+runtime are locked in `examples/moge-2-normal-screen-lock.json`. This is not a
+blanket dataset grant, binary redistribution clearance or approval of MoGe-3's
+GPU dependencies. [Official normal documentation](https://github.com/microsoft/MoGe/blob/74fbce054ebed49800de42d0ad0e83495065719a/docs/normal.md)
+states its normal labels derive from depth; no face-specific subdegree accuracy
+is established. Executed0209 rejects all9 synthetic regional-quality cases and
+does not run on the user's photos. Model availability/licensing is separate from
+observation quality and head likeness.

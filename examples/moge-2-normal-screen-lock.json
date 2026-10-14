@@ -1,0 +1,32 @@
+{
+  "asset_id": "Ruicheng/moge-2-vitb-normal",
+  "revision": "ca5f0e07ff01d3e5a364c1d954ed12ee1814b368",
+  "license_id": "MIT",
+  "license_evidence": "https://huggingface.co/Ruicheng/moge-2-vitb-normal/blob/ca5f0e07ff01d3e5a364c1d954ed12ee1814b368/README.md",
+  "model_sha256": "16b8110e86d5dc5a849db120ca96ef3a223fd30b0c9146d1d81db504073da5f6",
+  "model_size_bytes": 419110160,
+  "sources": {
+    "moge-source": {
+      "url": "https://github.com/microsoft/MoGe",
+      "revision": "74fbce054ebed49800de42d0ad0e83495065719a",
+      "license_id": "MIT AND Apache-2.0",
+      "python_license_tree_sha256_lf": "7c2ef736e824bd56f7640bf095b6469e5907e9bb44756926b2cb80369c98c551"
+    },
+    "utils3d-moge-source": {
+      "url": "https://github.com/EasternJournalist/utils3d-moge",
+      "revision": "62f09d58509485564e24d5d9f6aac9ee9ebc0c37",
+      "license_id": "MIT",
+      "python_license_tree_sha256_lf": "bc2874b5f9d046f8e8fb86f2e2af516e9dde8e69ea675af80a34a38a5c3ea94e"
+    }
+  },
+  "runtime": {
+    "torch": "2.14.0",
+    "torchvision": "0.29.0",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "Pillow": "12.3.0",
+    "opencv-python-headless": "4.10.0.84",
+    "huggingface_hub": "0.17.3"
+  },
+  "scope": "Offline synthetic normal-observation screen only; no photo-input API, extra backbone download, training data grant, full binary redistribution approval or production promotion."
+}
