@@ -138,10 +138,12 @@ def fit_surface(prior, observations, projections, triangles, protected, regulari
     return result
 
 
-def write_obj(path, vertices, triangles):
+def write_obj(path, vertices, triangles, *, precision=8):
+    if not isinstance(precision, int) or not 8 <= precision <= 17:
+        raise ValueError('OBJ decimal precision must be between 8 and 17')
     with path.open('x',encoding='utf-8') as stream:
         stream.write('# UNVERIFIED diagnostic face patch; not a full head\n')
         for x,y,z in vertices:
-            stream.write(f'v {x:.8f} {y:.8f} {z:.8f}\n')
+            stream.write(f'v {x:.{precision}f} {y:.{precision}f} {z:.{precision}f}\n')
         for a,b,c in triangles:
             stream.write(f'f {a+1} {b+1} {c+1}\n')

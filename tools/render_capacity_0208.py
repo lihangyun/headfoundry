@@ -1,4 +1,4 @@
-"""Blender-only fixed-camera white meshes for the frozen0208 oracle output.
+"""Blender-only fixed-camera white meshes for frozen capacity experiment outputs.
 
 Reuses the existing camera/replay helpers; no input images or shape fitting.
 """
@@ -17,7 +17,12 @@ from blender_camera_diagnostic import set_camera, projection_error, digest
 
 def main():
     root = Path(__file__).resolve().parents[1]
-    output = root / "artifacts/experiment-0208"
+    args = sys.argv[sys.argv.index("--")+1:] if "--" in sys.argv else []
+    if len(args) > 1:
+        raise ValueError("at most one experiment output directory")
+    output = (root / (args[0] if args else "artifacts/experiment-0208")).resolve()
+    if not output.is_relative_to(root / "artifacts"):
+        raise ValueError("experiment must be inside this repository's artifacts")
     report = json.loads((output / "report.json").read_text(encoding="utf-8"))
     if not all(r["mesh_safe"] for r in report["results"]):
         raise ValueError("unsafe candidate; stop before white-mesh review")
@@ -95,7 +100,7 @@ def main():
               "blender_version": bpy.app.version_string, "renderer_sha256": digest(Path(__file__)),
               "elapsed_seconds": time.perf_counter()-started, "renders": records,
               "lighting": "same camera-relative neutral oblique key/fill; no mesh-dependent normalization",
-              "limits": "Same-source synthetic oracle surfaces only. Skin exterior has no eyeballs; "
+              "limits": "Known3D diagnostic surfaces; see the run's source/target provenance. Skin-only heads; "
               "white meshes neither establish photo likeness nor certify anatomical/self-intersection safety."}
     (output / "render-report.json").write_text(json.dumps(result, indent=2), encoding="utf-8")
 
