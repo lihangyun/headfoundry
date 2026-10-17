@@ -27,3 +27,26 @@ Consequence: avoid expanding a proven-to-compute but not proven-to-help shape
 system. No camera gate waiver, predictor approval, training, paid asset adoption,
 private reverse engineering, texture/hair work or default change is introduced.
 See [the complete experiment](../experiment-0208-dense-3d-local-capacity.md).
+
+## 2026-10-17: distinguish missing observation from representation capacity
+
+0210's free patch registration and0213's new local-rigidity screen both miss the
+30% cross-source gain gate; the latter stops after one case without rendering or
+strength/iteration sweeps. A read-only0213 audit finds16.17% of scoped source area
+distance-trimmed but bearing93.66% of remaining forward vertex-quadrature squared
+error. Those points are held toward the frozen prior rather than the target.
+This is not the sampled symmetric acceptance score or proof of anatomical
+correspondence. Do not attribute the whole failed gate to insufficient shape
+capacity, and do not simply remove trimming or reduce the evaluation scope.
+
+Before another subject fit or deformation-field variant, localize and verify
+whether ignored geometry is comparable head anatomy or source/target neck,
+aperture or domain mismatch. Keep the four original development targets, full
+evaluation scope and prior defaults unchanged. New observation evidence must be
+separate from repeating the frozen field's weights/masks under another name.
+
+0211's native-mean hidden-contact audit also invalidates calling that selected
+row an observed lip seam. 0212's failed refined-surface transfer demonstrates
+that edited-source coefficients cannot be assumed safe on native construction;
+it does not prove all native identity fitting impossible. Neither finding
+authorizes another closure sweep, gate relaxation or head-quality acceptance.

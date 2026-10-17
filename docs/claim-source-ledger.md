@@ -250,3 +250,14 @@ states its normal labels derive from depth; no face-specific subdegree accuracy
 is established. Executed0209 rejects all9 synthetic regional-quality cases and
 does not run on the user's photos. Model availability/licensing is separate from
 observation quality and head likeness.
+
+## 2026-10-17: independently implemented local-rigidity screen
+
+[Sorkine and Alexa's primary publication/project](https://igl.ethz.ch/projects/ARAP/)
+supports alternating proper local rotations and a positional solve as a surface
+deformation principle. HeadFoundry independently implements a positive-clipped
+cotangent variant using existing NumPy/SciPy; no CGAL package or upstream
+implementation is adopted. This is not an anatomical, collision, patent/FTO or
+reconstruction-quality guarantee. Local experiment0213 passes implemented mesh
+guards but misses its gain gate and stops after one case; appearance and
+reference-photo likeness remain `UNVERIFIED`, promotion `REJECT`.
