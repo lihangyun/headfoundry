@@ -24,7 +24,11 @@ def main():
     if not output.is_relative_to(root / "artifacts"):
         raise ValueError("experiment must be inside this repository's artifacts")
     report = json.loads((output / "report.json").read_text(encoding="utf-8"))
-    if not all(r["mesh_safe"] for r in report["results"]):
+    variants = tuple(report.get("variants", ("truth", "prior", "candidate")))
+    if not variants or len(set(variants)) != len(variants) or not set(variants) <= {"truth", "prior", "candidate"}:
+        raise ValueError("explicit known diagnostic variants required")
+    references_only = report.get("unaltered_source_references_only") is True and "candidate" not in variants
+    if not references_only and not all(r["mesh_safe"] for r in report["results"]):
         raise ValueError("unsafe candidate; stop before white-mesh review")
     if (output / "render-report.json").exists():
         raise FileExistsError("preserve the first rendering run")
@@ -61,8 +65,10 @@ def main():
         if target.exists():
             raise FileExistsError(target)
         target.mkdir()
-        for version in ("truth", "prior", "candidate"):
+        for version in variants:
             source = folder / f"{version}.obj"
+            if references_only and digest(source) != report.get("source_hashes", {}).get(version):
+                raise ValueError("unaltered reference digest mismatch")
             bpy.ops.wm.obj_import(filepath=str(source))
             head = bpy.context.selected_objects[0]
             head.matrix_world = Matrix.Identity(4)
@@ -90,7 +96,7 @@ def main():
                 records.append({"case": case["case"], "version": version, "view": name,
                                 "source_sha256": digest(source), "image_sha256": digest(path),
                                 "projection_replay": replay})
-            if case["case"] == 0 and version == "candidate":
+            if case["case"] == 0 and version == variants[-1]:
                 bpy.ops.wm.save_as_mainfile(filepath=str(output / "diagnostic.blend"))
             mesh = head.data
             bpy.data.objects.remove(head, do_unlink=True)
@@ -99,6 +105,7 @@ def main():
     result = {"technical_status": "TECHNICAL_CHECK_PASSED", "visual_status": "UNVERIFIED",
               "blender_version": bpy.app.version_string, "renderer_sha256": digest(Path(__file__)),
               "elapsed_seconds": time.perf_counter()-started, "renders": records,
+              "variants": list(variants), "unaltered_source_references_only": references_only,
               "lighting": "same camera-relative neutral oblique key/fill; no mesh-dependent normalization",
               "limits": "Known3D diagnostic surfaces; see the run's source/target provenance. Skin-only heads; "
               "white meshes neither establish photo likeness nor certify anatomical/self-intersection safety."}
