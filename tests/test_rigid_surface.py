@@ -37,6 +37,19 @@ class RigidSurfaceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             fit_locally_rigid(self.rest, self.faces, np.full((4, 3), np.nan), np.ones(4))
 
+    def test_missing_data_propagates_rigid_motion_without_fake_positions(self):
+        target = np.full_like(self.rest, 999.)
+        target[0] = self.rest[0]+[.2, -.1, .3]
+        actual, _ = fit_locally_rigid(self.rest, self.faces, target, [1., 0., 0., 0.],
+                                     weight_normalizer=3.25)
+        np.testing.assert_allclose(actual, self.rest+[.2, -.1, .3], atol=2e-12)
+
+    def test_disconnected_unobserved_component_fails_closed(self):
+        rest = np.vstack([self.rest, self.rest+[3., 0., 0.]])
+        faces = np.vstack([self.faces, self.faces+4])
+        with self.assertRaises(ValueError):
+            fit_locally_rigid(rest, faces, rest, np.r_[np.ones(4), np.zeros(4)])
+
 
 if __name__ == "__main__":
     unittest.main()

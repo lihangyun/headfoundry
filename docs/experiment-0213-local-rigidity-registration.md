@@ -135,3 +135,32 @@ with the locked0210 capsule available. Local meshes, fixed cameras, saved arrays
 per-update energies/guards and exact provenance are in
 `artifacts/experiment-0213/`. `residual-audit.json` additionally records exact audit
 inputs and code hashes; no mesh/photo derivative is uploaded to Git or PCR.
+
+### 2026-10-18 coverage localization
+
+`tools/review_registration_coverage.py` completes an input-only20.874s audit,
+reusing verified target/prior Blender images and original cameras. It colors
+the unchanged prior's visible faces by the original matching categories. No
+0213 candidate rendering or fit is performed. The side sheets visibly locate
+the main discarded component on the posterior cranium, with separate patches
+near the lower-neck boundary. Face colors use the most frequent vertex label;
+ties choose the lowest label code. This visualization is a coverage diagnostic.
+
+The final largest connected trimmed component contains769 vertices,11.606% of
+scoped source area and65.386% of forward vertex-quadrature squared error. Its
+matched target locations are far from both the original target open boundary
+and the artificial neck cutoff: error-weighted distance p10/p50/p90 is
+0.5916/0.9277/1.1756 target-radius units. This supports treating it as genuine
+posterior-surface coverage loss, though nearest proximity is not anatomical
+correspondence. Two lower-neck components contribute18.152% and10.050% of error,
+with median target-boundary distances0.00215 and0.00123; those require different
+boundary caution. Combining all omitted regions into one "bad outlier" or
+"valid correspondence" category would be wrong.
+
+Initial/final trimmed area is15.948%/16.174%, with15.843% common to both. The
+posterior omission largely predates the local-rigidity solve. The next bounded
+test may therefore change how target surfaces provide observations, while
+retaining the deformation solver, full evaluation and safety guards. It must
+not simply relax a percentile or drop neck errors from the denominator.
+Evidence: local `artifacts/experiment-0213/coverage-review/`, including
+`profiles-coverage.png`, `five-view-coverage.png` and hashed `report.json`.

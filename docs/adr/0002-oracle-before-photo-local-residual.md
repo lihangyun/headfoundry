@@ -50,3 +50,20 @@ row an observed lip seam. 0212's failed refined-surface transfer demonstrates
 that edited-source coefficients cannot be assumed safe on native construction;
 it does not prove all native identity fitting impossible. Neither finding
 authorizes another closure sweep, gate relaxation or head-quality acceptance.
+
+## 2026-10-18: preserve useful coverage evidence without promoting boundary failure
+
+Input-only coverage images localize a real posterior cranial omission separately
+from neck-cut mismatch. Exact normal-line observations recover posterior extent;
+removing unsupported-position pseudo-data further lowers proximity errors.
+0214/0215 achieve58.92%/72.46% on the original mean target, but actual full-head
+views reveal neck ridge/curling. Both are visually rejected and frozen after one
+case. The four-case cross-source gate remains unpassed; no defaults may change.
+
+Do not sweep rest weights or add successive terms to this same boundary setup.
+The next useful research target is reliable person-specific facial observation,
+with a clearly bounded local-domain hypothesis if justified by evidence. Existing
+AI-image limitations, semantic visibility checks and whole-head visual review
+remain. A localized trial must preserve surrounding geometry and disclose its
+experimental scope; it cannot relabel these failed full-head registrations as
+accepted or stand in for final recognizable-head delivery.

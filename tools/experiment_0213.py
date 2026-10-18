@@ -30,9 +30,16 @@ def read_export(path, expected_faces):
     return vertices
 
 
-def main():
+def main(output=OUT, *, case_index=0, observation_factory=None,
+         observation_label="trimmed nearest-compatible samples", extra_code_paths=(),
+         unsupported_policy="rest"):
     started = time.perf_counter()
-    if OUT.exists():
+    output = Path(output).resolve()
+    if case_index not in range(4) or not output.is_relative_to(ROOT / "artifacts"):
+        raise ValueError("original case0..3 and repository artifacts output required")
+    if unsupported_policy not in ("rest", "missing"):
+        raise ValueError("explicit rest or missing-observation policy required")
+    if output.exists():
         raise FileExistsError("preserve the single first-case screen; no overwrite/sweep")
     for path, digest in LOCKS.items():
         if sha256_file(path) != digest:
@@ -44,7 +51,8 @@ def main():
         raise ValueError("frozen benchmark/target provenance changed")
     asset = json.loads(FLAME_LOCK.read_text(encoding="utf-8"))
     flame = FlameIdentityModel.from_asset_record(asset, FLAME_LOCK.parent)
-    data = np.load(SOURCE / "case-00/replay.npz", allow_pickle=False)
+    source_case = SOURCE / f"case-{case_index:02d}"
+    data = np.load(source_case / "replay.npz", allow_pickle=False)
     base, faces, prior, truth, target_faces = (data[n] for n in ("base", "faces", "prior", "truth", "target_faces"))
     recovered = base+np.einsum("vck,k->vc", data["basis"], data["beta"])
     center = (flame.template.max(0)+flame.template.min(0))/2
@@ -54,7 +62,7 @@ def main():
             or not safety(prior, base, faces)["passed"]):
         raise ValueError("exact prior/target replay or starting safety failed")
     for name, vertices, triangles in (("truth", truth, target_faces), ("prior", prior, faces)):
-        if np.max(np.abs(read_export(SOURCE / f"case-00/{name}.obj", triangles)-vertices)) > 1e-15:
+        if np.max(np.abs(read_export(source_case / f"{name}.obj", triangles)-vertices)) > 1e-15:
             raise ValueError("baseline actual export does not replay")
     cameras = np.load(SOURCE / "cameras.npz", allow_pickle=False)
     if not np.array_equal(cameras["intrinsics"], np.array([K]*5)):
@@ -69,20 +77,28 @@ def main():
     regions = {n: groups[n][donor["original_vertex_ids"]] > .25 for n in
                ("nose_region", "upper_lip_region", "lower_lip_region", "chin_region")}
     regions["combined_lips"] = regions["upper_lip_region"] | regions["lower_lip_region"]
-    # Exact same source-area weights and sampled clouds as0210; no new observations.
+    # Frozen benchmark, solver and evaluation; explicit observation substitution only.
     mass, scope = area_mass(base, faces), base[:, 1] < cutoff
-    cloud, normals = surface_samples(truth, target_faces, 200000, 21000)
+    cloud, normals = surface_samples(truth, target_faces, 200000, 21000+case_index)
     keep = cloud[:, 1] < cutoff
     cloud, normals = cloud[keep], normals[keep]
     tree, current, history = cKDTree(cloud), prior.copy(), []
-    folder = OUT / "case-00"
+    observe = matching if observation_factory is None else observation_factory(truth, target_faces, cutoff)
+    folder = output / f"case-{case_index:02d}"
     folder.mkdir(parents=True)
     for outer in range(10):
         if time.perf_counter()-started > 900:
             raise TimeoutError("one-case fitting/evaluation budget exhausted")
-        target, weight, count = matching(current, prior, faces, cloud, normals, tree, scope, mass)
+        target, weight, count = observe(current, prior, faces, cloud, normals, tree, scope, mass)
+        normalizer = None
+        if unsupported_policy == "missing":
+            ratio = weight/mass
+            if not np.all(np.isclose(ratio, 1.) | np.isclose(ratio, 4.)):
+                raise ValueError("observation weights no longer use frozen one/four convention")
+            normalizer = float(weight.mean())
+            weight = np.where(ratio < 2, weight, 0.)
         desired, diagnostics = fit_locally_rigid(prior, faces, target, weight, initial=current,
-                                                 strength=.05, iterations=20)
+                                                 strength=.05, iterations=20, weight_normalizer=normalizer)
         current, halvings = safe_update(current, desired, base, faces)
         step = {"iteration": outer, "supports": count, "halvings": halvings, **diagnostics}
         history.append(step)
@@ -92,11 +108,11 @@ def main():
     write_obj(folder / "candidate.obj", current, faces, precision=17)
     current = read_export(folder / "candidate.obj", faces)
     for name in ("truth", "prior"):
-        shutil.copy2(SOURCE / f"case-00/{name}.obj", folder / f"{name}.obj")
-    shutil.copy2(SOURCE / "cameras.npz", OUT / "cameras.npz")
-    target_eval, _ = surface_samples(truth, target_faces, 500000, 31000)
+        shutil.copy2(source_case / f"{name}.obj", folder / f"{name}.obj")
+    shutil.copy2(SOURCE / "cameras.npz", output / "cameras.npz")
+    target_eval, _ = surface_samples(truth, target_faces, 500000, 31000+case_index)
     target_eval = target_eval[target_eval[:, 1] < cutoff]
-    metrics = {n: evaluate(v, faces, target_eval, regions, scope, cutoff, 41000)
+    metrics = {n: evaluate(v, faces, target_eval, regions, scope, cutoff, 41000+case_index)
                for n, v in (("prior", prior), ("candidate", current))}
     depth = {n: {} for n in ("prior", "candidate")}
     for view, e in zip(VIEWS, cameras["extrinsics"]):
@@ -107,7 +123,7 @@ def main():
                    and all(depth["candidate"][n]["rms_radius"] <= depth["prior"][n]["rms_radius"]*1.05+1e-8 for n in VIEWS))
     mesh = safety(current, base, faces)
     gain = bool(metrics["candidate"]["symmetric_rms_radius"] <= metrics["prior"]["symmetric_rms_radius"]*.7)
-    result = {"case": 0, "metrics": metrics, "depth": depth, "guarded": guarded, "gain": gain,
+    result = {"case": case_index, "metrics": metrics, "depth": depth, "guarded": guarded, "gain": gain,
               "mesh_safe": mesh["passed"], "safety": mesh, "history": history}
     np.savez_compressed(folder / "replay.npz", base=base, truth=truth, prior=prior, candidate=current,
                         faces=faces, target_faces=target_faces)
@@ -118,20 +134,24 @@ def main():
               "version_labels": {"truth": "FLAME Open target", "prior": "frozen GNM30", "candidate": "local rigidity"},
               "source_locks": {str(p.relative_to(ROOT)): h for p, h in LOCKS.items()},
               "baseline_input_locks": {str(p.relative_to(ROOT)): sha256_file(p) for p in
-                  (SOURCE / "report.json", SOURCE / "case-00/replay.npz", SOURCE / "cameras.npz",
-                   SOURCE / "case-00/truth.obj", SOURCE / "case-00/prior.obj", FLAME_LOCK)},
+                  (SOURCE / "report.json", source_case / "replay.npz", SOURCE / "cameras.npz",
+                   source_case / "truth.obj", source_case / "prior.obj", FLAME_LOCK)},
               "target_attribution": asset["attribution"], "results": [result],
               "algorithm": {"outer_iterations": 10, "inner_iterations": 20, "strength": .05,
                             "edges": "positive-clipped cotangents normalized by median", "prior": "frozen0210 GNM30"},
               "code_sha256": sha256_file(Path(__file__)),
               "helper_sha256": sha256_file(ROOT / "src/headfoundry/rigid_surface.py"),
+              "observation": observation_label,
+              "unsupported_policy": unsupported_policy,
+              "observation_code_sha256": {str(p.relative_to(ROOT)): sha256_file(p) for p in extra_code_paths},
               "elapsed_seconds": time.perf_counter()-started,
-              "limits": "One cross-model synthetic3D screen, estimated nearest-compatible correspondences; "
+              "limits": "One cross-model synthetic3D screen, estimated geometric correspondences; "
                         "not anatomical/collision certification, native-source closure, photo fitting or ACCEPT. "
                         "Remaining cases forbidden until numeric and actual five-view visual screen pass."}
-    (OUT / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    (output / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps({"numeric_gate": report["numeric_gate"], "elapsed_seconds": report["elapsed_seconds"],
                       "result": {k: v for k, v in result.items() if k != "history"}}), flush=True)
+    return report
 
 
 if __name__ == "__main__":

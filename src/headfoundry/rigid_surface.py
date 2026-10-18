@@ -5,13 +5,17 @@ No external implementation is used. Positions and proper rotations alternate.
 """
 import numpy as np
 from scipy import sparse
+from scipy.sparse.csgraph import connected_components
 from scipy.sparse.linalg import splu
 
 
-def fit_locally_rigid(rest, faces, target, weights, *, initial=None, strength=.05, iterations=20):
+def fit_locally_rigid(rest, faces, target, weights, *, initial=None, strength=.05, iterations=20,
+                     weight_normalizer=None):
     """Fit soft3D controls while preserving rest one-ring edge geometry.
 
-    All vertices need positive finite data weights, anchoring every component.
+    Nonnegative finite data weights must anchor every mesh-connected component.
+    An explicit normalizer preserves observed data strength when removing false
+    observations; the default retains the original all-positive behavior.
     Callers must separately guard each accepted geometry update and actual export.
     """
     rest, target, weights = np.asarray(rest, float), np.asarray(target, float), np.asarray(weights, float)
@@ -20,7 +24,7 @@ def fit_locally_rigid(rest, faces, target, weights, *, initial=None, strength=.0
     if (rest.ndim != 2 or rest.shape[1:] != (3,) or not len(rest) or target.shape != rest.shape
             or current.shape != rest.shape or weights.shape != (len(rest),)
             or not all(np.isfinite(x).all() for x in (rest, target, current, weights))
-            or np.any(weights <= 0) or not np.isfinite(strength) or strength <= 0
+            or np.any(weights < 0) or not np.any(weights > 0) or not np.isfinite(strength) or strength <= 0
             or not isinstance(iterations, int) or iterations < 1
             or faces.ndim != 2 or faces.shape[1:] != (3,) or not len(faces)
             or not np.issubdtype(faces.dtype, np.integer) or np.any(faces < 0) or np.any(faces >= len(rest))):
@@ -44,7 +48,14 @@ def fit_locally_rigid(rest, faces, target, weights, *, initial=None, strength=.0
     rest_edge = rest[i]-rest[j]
     laplacian = sparse.coo_matrix((np.r_[edge_weight, edge_weight, -edge_weight, -edge_weight],
                                   (np.r_[i, j, i, j], np.r_[i, j, j, i])), shape=(len(rest), len(rest))).tocsc()
-    data_weight = weights/weights.mean()*strength
+    if np.any(weights == 0):
+        component_count, component = connected_components(laplacian, directed=False)
+        if np.any(np.bincount(component, weights=weights, minlength=component_count) <= 0):
+            raise ValueError("each mesh-connected component requires an observed positional anchor")
+    denominator = weights.mean() if weight_normalizer is None else float(weight_normalizer)
+    if not np.isfinite(denominator) or denominator <= 0:
+        raise ValueError("positive finite weight normalizer required")
+    data_weight = weights/denominator*strength
     solve = splu(laplacian+sparse.diags(data_weight, format="csc"))
 
     def rotations(points):
