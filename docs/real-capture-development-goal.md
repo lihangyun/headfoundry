@@ -104,3 +104,10 @@ The next evidence target is reliable temporal tracks spanning bilateral motion,
 with fixed observations and explicit tracking-error checks before another
 camera/geometry candidate. No source-scanned output is substituted for video
 reconstruction; case002 remains reserved.
+
+0220's temporal observations connect all52 keyframes after exact source-frame
+identity resolution; images/masks remain unchanged. The3-frame model still
+fails focal/coverage checks. Its registered-pair homography support is99.45-100%,
+so the next hypothesis concerns rejecting degenerate camera initialization,
+with a deterministic predeclared selection rule and a single attempt. This is
+not permission to manually sweep initial pairs or relax physical/visual gates.

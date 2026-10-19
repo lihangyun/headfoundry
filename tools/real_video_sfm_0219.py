@@ -119,10 +119,11 @@ def main():
     finish_report(models, frames, time.perf_counter() - started, token.is_cancelled)
 
 
-def finish_report(models, frames, elapsed_seconds, cancelled, recovery=False):
-    if (OUT / "report.json").exists():
+def finish_report(models, frames, elapsed_seconds, cancelled, recovery=False, output=None):
+    target = OUT if output is None else Path(output)
+    if (target / "report.json").exists():
         raise FileExistsError("Preserve original summary")
-    with sqlite3.connect((OUT / "database.db").resolve().as_uri() + "?mode=ro", uri=True) as db:
+    with sqlite3.connect((target / "database.db").resolve().as_uri() + "?mode=ro", uri=True) as db:
         feature_rows = list(db.execute("SELECT image_id,rows FROM keypoints"))
         verified = list(db.execute("SELECT rows FROM two_view_geometries"))
     summaries = []
@@ -147,7 +148,7 @@ def finish_report(models, frames, elapsed_seconds, cancelled, recovery=False):
                 depths.append(float(p[2]))
                 h = intrinsic @ p
                 errors.append(float(np.linalg.norm(h[:2] / h[2] - point.xy)))
-        path = OUT / f"model-{model_id}-cameras-points.npz"
+        path = target / f"model-{model_id}-cameras-points.npz"
         payload = dict(frame_indices=np.array(registered), intrinsics=np.array(intrinsics),
                        extrinsics=np.array(cameras), vertices=points,
                        rgb=np.array([model.points3D[i].color for i in point_ids]))
@@ -172,29 +173,32 @@ def finish_report(models, frames, elapsed_seconds, cancelled, recovery=False):
     report = {"execution_status": "TECHNICAL_CHECK_PASSED", "screen_status": "UNVERIFIED" if any(
         all(m["gates"].values()) for m in summaries) else "REJECT", "models": summaries,
         "feature_counts": feature_rows, "verified_pair_inlier_counts": [r[0] for r in verified],
-        "controls_sha256": sha256_file(OUT / "controls.json"), "elapsed_seconds": elapsed_seconds,
+        "controls_sha256": sha256_file(target / "controls.json"), "elapsed_seconds": elapsed_seconds,
         "cancelled": cancelled, "heldout_frames": [624, 1040],
         "report_recovered_without_rerun": recovery, "report_writer_sha256": sha256_file(Path(__file__)),
         "limits": "Video-only sparse initialization. Training residuals are not held-out camera accuracy. No source-scan alignment, head mesh, scale truth or visual acceptance."}
-    (OUT / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    (target / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps(report), flush=True)
 
 
-def review_features():
+def review_features(output=None, image_root=None, mask_root=None):
     from PIL import ImageDraw
     manifest = json.loads((PILOT / "manifest.json").read_text(encoding="utf-8"))
     if validate_input_assets(manifest, PILOT):
         raise ValueError("Source rights/hash validation failed")
-    controls = json.loads((OUT / "controls.json").read_text(encoding="utf-8"))
-    destination = OUT / "feature-review.json"
+    target = OUT if output is None else Path(output)
+    image_root = target / "images" if image_root is None else Path(image_root)
+    mask_root = target / "masks" if mask_root is None else Path(mask_root)
+    controls = json.loads((target / "controls.json").read_text(encoding="utf-8"))
+    destination = target / "feature-review.json"
     if destination.exists():
         raise FileExistsError("Preserve first feature review")
     sheet = Image.new("RGB", (900, 660), (28, 28, 28))
     rows = []
-    with sqlite3.connect((OUT / "database.db").resolve().as_uri() + "?mode=ro", uri=True) as db:
+    with sqlite3.connect((target / "database.db").resolve().as_uri() + "?mode=ro", uri=True) as db:
         for slot, frame in enumerate((0, 144, 408, 552)):
             record = next(r for r in controls["frames"] if r["frame"] == frame)
-            image_path, mask_path = OUT / "images" / record["name"], OUT / "masks" / (record["name"] + ".png")
+            image_path, mask_path = image_root / record["name"], mask_root / (record["name"] + ".png")
             if sha256_file(image_path) != record["image_sha256"] or sha256_file(mask_path) != record["mask_sha256"]:
                 raise ValueError("Review source changed")
             count, columns, data = db.execute("SELECT k.rows,k.cols,k.data FROM keypoints k JOIN images i ON i.image_id=k.image_id WHERE i.name=?", (record["name"],)).fetchone()
@@ -210,7 +214,7 @@ def review_features():
             sheet.paste(image.crop((80, 470, 650, 860)).resize((440, 300)), (x, y + 25))
             ImageDraw.Draw(sheet).text((x + 5, y + 5), f"frame {frame}: {count} features, green=selected interior", fill="white")
             rows.append({"frame": frame, "features": count, "mask_pixels": int(mask.sum())})
-    sheet.save(OUT / "feature-mask-review.png")
+    sheet.save(target / "feature-mask-review.png")
     destination.write_text(json.dumps({"status": "UNVERIFIED", "frames": rows,
         "tool_sha256": sha256_file(Path(__file__)), "limits": "Read-only extraction coverage diagnostic; no rematching or reconstruction."}, indent=2), encoding="utf-8")
 

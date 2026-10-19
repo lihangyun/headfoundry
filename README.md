@@ -6,6 +6,8 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- [0220](docs/experiment-0220-temporal-feature-tracks.md) repairs an exact seek-vs-sequential frame-identity mismatch while preserving every frozen image, then connects all52 keyframes with temporal tracks. The resulting3-frame reconstruction has implausible focal69701.81px and is `REJECT`. A read-only audit finds near-homography motion in the registered pairs, motivating a separate degeneracy-aware initializer rather than another flow/focal sweep. All140 tests pass; no new head fit follows.
+
 - [0218](docs/experiment-0218-real-profile-observations.md) rejects absolute-color profile edges because small color perturbations move dark-lip/chin readings by4.0-9.6px p95. [0219](docs/experiment-0219-real-video-sfm.md) independently tests masked real-video SIFT/COLMAP:10/52 frames and92 points reconstruct locally, but only one side connects, so `REJECT`. No head fitting follows. A summary API bug is repaired by replaying saved matrices/model without rerunning reconstruction; original sources/logs are preserved. Inspect explicit temporal tracking as a distinct observation mechanism next.
 
 - **Active user goal (2026-10-19):** [real-capture development and acceptance](docs/real-capture-development-goal.md). Continue from the two authorized real video/scan cases through reliable observations/cameras, video-derived editable heads, fixed scan evaluation and actual bilateral-profile/whole-head review. Each hypothesis has a bounded exit; complete the reserved-case and visual gates before claiming success.
