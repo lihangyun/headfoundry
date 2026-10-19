@@ -311,3 +311,20 @@ open auditing,not a security sandbox or proof against hostile native code.
 Numerical safety/replay and improved bounded face distances do not establish
 physical camera correctness,medical accuracy,full-head likeness or KeenTools
 parity. Actual source/neutral/video comparisons remain private,unaccepted.
+
+## 2026-10-19: semantic counterexample and model-free visible profiles
+
+0242 uses the same cleared generic prior/local landmark task only for a
+known-camera semantic-to-material counterexample,not training. The predeclared
+changed generic identity fails a mesh guard before rendering;5/15 cases run,
+with no safe-shape substitution or new model. Actual neutral rotations already
+reject fixed semantic attachments. This does not invalidate the detector's
+intended semantic use or establish a physical real-photo accuracy benchmark.
+
+0243 independently implements all-row gradient-ridge dynamic programming using
+installed SciPy/NumPy/Pillow/OpenCV and procedural mirrored boundary fixtures.
+No extra segmentation model,external app/source logic,training data or service
+is adopted. Original case001 video consent covers local observation validation;
+derived exact frames retain source restrictions. The skin scans/bone/case002
+are not used. Stable visually plausible contours are readiness evidence only,
+not biometric/medical accuracy or full-head quality acceptance.

@@ -1,5 +1,12 @@
 # HeadFoundry
 
+[0243](docs/experiment-0243-gradient-profile-observations.md) supplies directly
+observed bilateral video profile traces,not fixed material points: all426 rows
+retained,scale-uncertainty p95.11/.30px,known-boundary fixtures and actual image
+review pass.191 unit tests pass. No new camera/head acceptance follows. Next
+constrain one shared safe head with these visible contours and remeasure3D error;
+sampled video still supplies no posterior/skull evidence.
+
 [0242](docs/experiment-0242-semantic-material-stability.md) finds a decisive
 known-geometry failure in0241's fixed semantic attachments: an unchanged generic
 head rotated45deg has held p95 10.87/12.86px despite exact cameras. Same-image

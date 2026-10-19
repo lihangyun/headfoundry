@@ -302,3 +302,12 @@ so only5/15 planned cases complete; no claim of a full identity benchmark.
 Freeze that material-correspondence premise. Test directly observed visible
 contours as view-dependent geometry,not recycledR-B threshold crossings or
 semantic coordinates. No new real head/camera acceptance follows.
+
+0243's distinct RGB-gradient ridge passes fixed known pixel-boundary fixtures
+and real bilateral profile review,with all426 source rows retained and.11/.30px
+p95 scale uncertainty. Exact sequential frames retain original local-validation
+rights;no scan,training,new learned model or case002 is used. This is ready
+view-dependent observation,not a calibrated camera or improved head. Known
+systematic optical bias and sparse posterior coverage remain unverified.
+Proceed to a bounded shared-head visible-envelope fit with independent frozen
+scan measurement;never promote lower fitting residuals by themselves.
