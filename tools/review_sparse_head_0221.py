@@ -14,16 +14,17 @@ SOURCE = PILOT / "initialization-sfm-0221"
 IMAGES = PILOT / "video-sfm-0219/images"
 
 
-def main():
+def main(source=None):
+    source = SOURCE if source is None else Path(source)
     manifest = json.loads((PILOT / "manifest.json").read_text(encoding="utf-8"))
     if validate_input_assets(manifest, PILOT):
         raise ValueError("Input rights/hash validation failed")
-    controls = json.loads((SOURCE / "controls.json").read_text(encoding="utf-8"))
+    controls = json.loads((source / "controls.json").read_text(encoding="utf-8"))
     if controls["manifest_sha256"] != sha256_file(PILOT / "manifest.json"):
         raise ValueError("Parent inputs changed")
-    output = SOURCE / "sparse-review"
+    output = source / "sparse-review"
     output.mkdir()
-    model = pycolmap.Reconstruction(SOURCE / "sparse/0")
+    model = pycolmap.Reconstruction(source / "sparse/0")
     points = np.array([model.points3D[i].xyz for i in sorted(model.points3D)])
     center = (points.min(0) + points.max(0)) / 2
     radius = float(np.linalg.norm(points - center, axis=1).max())
@@ -75,7 +76,7 @@ def main():
             stream.write(" ".join(format(float(value), ".17g") for value in point) + "\n")
     (output / "report.json").write_text(json.dumps({"technical_status": "TECHNICAL_CHECK_PASSED",
         "visual_head_acceptance": "UNVERIFIED", "points": len(points), "surface_faces": 0,
-        "source_archive_sha256": sha256_file(SOURCE / "model-0-cameras-points.npz"),
+        "source_archive_sha256": sha256_file(source / "model-0-cameras-points.npz"),
         "tool_sha256": sha256_file(Path(__file__)), "views": rows,
         "limits": "Actual video-only sparse geometry in arbitrary scale. Every point shown without trimming; same display scale across views. Reprojection uses training observations. No complete head, anatomical/scan accuracy or held-out acceptance."}, indent=2), encoding="utf-8")
 

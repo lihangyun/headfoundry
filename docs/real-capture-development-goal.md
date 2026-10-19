@@ -132,3 +132,12 @@ real video, followed by a frozen observation coverage/loop check before mapping.
 These inspected sentinels are now development evidence, not fresh held-out data;
 case002 remains excluded from fitting/tuning. No final camera/head acceptance,
 scan error or recognizable identity improvement has yet been established.
+
+0224's already locked direct learned matcher also connects52 frames and yields
+1639 points, but0225 rejects its frozen-model sentinel localization and exact-
+index two-view pixel rigidity. No scan/head fitting follows. Duplicate matched
+3D identities are excluded before scoring rather than counted as independent
+points. Next isolate **pixel localization accuracy** with known image transforms
+before proposing a subpixel correspondence method or another camera/shape solve.
+No matcher confidence, reference-frame, focal or mask rescue sweep is authorized
+by these negative results. The goal remains active and unmet.
