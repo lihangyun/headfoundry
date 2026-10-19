@@ -1,5 +1,9 @@
 # HeadFoundry
 
+Direct geometry [0236](docs/experiment-0236-direct-geometry-capacity.md) also fails
+the known coherent3D screen despite structurally valid cameras. No real transfer
+or head fusion follows; fixed scan-region/global-alignment evaluation is next.
+
 Latest bounded observation screen: [0235](docs/experiment-0235-context-local-jacobian.md)
 passes only1/5 known nonplanar precision cases. Context-assisted patch refinement
 is frozen; no real head/camera acceptance or production-default change follows.

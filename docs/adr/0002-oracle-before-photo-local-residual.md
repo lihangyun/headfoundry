@@ -90,3 +90,15 @@ source overlays show broad alignment, so these residuals cannot all be declared
 camera or identity error. Freeze the failed association set; independently
 review material-point/contour definitions before a new calibration hypothesis.
 Do not deform a head to fit this source of unverified landmark discrepancies.
+
+0230-0236 separate global-plane capacity, nonplanar pixel precision and raw
+direct depth/pose initialization on exact known3D evidence.0235 freezes the
+context-patch family after4/5 precision failures.0236's locked Apache DA3-BASE
+camera-only independent p95=15.50-93.71px rejects the single clay configuration,
+although source-pair p95 is1.22-1.30px. Stop unregistered model/decoder/conditioning
+rescues; these are diagnostic rejections, not reconstructed-head progress or
+blanket impossibility proofs. Before scoring another candidate against the real
+skin source, freeze valid triangle regions and one whole-output similarity,
+report exact point-to-triangle distance/coverage in both directions, and retain
+source/annotation uncertainty. Nearest-vertex scores and regional re-alignment
+must not masquerade as the2mm surface acceptance metric.

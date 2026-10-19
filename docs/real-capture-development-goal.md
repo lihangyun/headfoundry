@@ -192,3 +192,11 @@ transfer. Preserve this exit as a method decision, not another parameter search.
 Next select a genuinely different full-head/observation mechanism, alongside
 the still-required fixed scan regions and global evaluation alignment. No new
 video-only complete head or user visual acceptance has been produced.
+
+0236 tests the separately locked Apache DA3-BASE on the already frozen coherent
+six-view source-scan clay sequence. The exact evaluator passes, but raw independent
+camera p95=15.50-93.71px and joint depth/pose p95=7.10-77.87px reject it. No model,
+decoder, focal or confidence rescue, real transfer or head fusion follows.
+Next close the outstanding fixed scan-region/global-alignment evaluation gap,
+using triangle-surface rather than nearest-vertex proximity and explicit evidence
+status. All full-head, actual-video, regional and user visual gates remain unmet.

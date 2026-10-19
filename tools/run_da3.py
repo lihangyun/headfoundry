@@ -32,6 +32,11 @@ def verify(manifest, upstream, assets):
     capture=validate_multiview(document.get('inputs',[]))
     if errors or capture['status']!='TECHNICAL_CHECK_PASSED':
         raise ValueError('input rights/capture rejected: '+str(errors or capture['errors']))
+    return document,verify_assets(upstream,assets)
+
+
+def verify_assets(upstream,assets):
+    """Shared offline asset/runtime checks; callers separately validate input rights."""
     lock=json.loads(LOCK_PATH.read_text())
     if lock.get('asset_id')!='depth-anything/DA3-BASE' or lock.get('license_id')!='Apache-2.0':
         raise ValueError('only the reviewed Apache-2.0 DA3-BASE asset is allowed')
@@ -42,7 +47,7 @@ def verify(manifest, upstream, assets):
         raise ValueError('DA3 source/license hash mismatch')
     for package,version in lock['runtime'].items():
         if metadata.version(package)!=version:raise ValueError('unreviewed DA3 runtime: '+package)
-    return document,lock
+    return lock
 
 
 def main():
