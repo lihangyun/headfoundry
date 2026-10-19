@@ -92,3 +92,15 @@ validate cameras, fit one bounded video-derived head candidate, and compare the
 actual output with the supplied skin scan and withheld images. Complete the
 reserved-case evaluation and visual review before declaring the head-stage goal
 achieved. The goal remains active until that evidence exists.
+
+### 2026-10-19 observation screens after0217
+
+0218 rejects exact color-crossing profile measurements at the predeclared
+uncertainty gate; no camera is fit from them.0219 uses only real video texture
+and the already pinned local COLMAP runtime. Its10/52 registered frames and92
+points cover one side only, so the single configuration is rejected before
+head fitting. A report-only API repair reuses existing saved geometry/matrices.
+The next evidence target is reliable temporal tracks spanning bilateral motion,
+with fixed observations and explicit tracking-error checks before another
+camera/geometry candidate. No source-scanned output is substituted for video
+reconstruction; case002 remains reserved.
