@@ -184,3 +184,11 @@ real localization. Next examine local geometric patch deformation from independe
 contexts, not more seed/search/threshold rescues or scan-derived final geometry.
 The actual complete editable video-only head, regional scan accuracy, case002
 and visual acceptance requirements remain outstanding.
+
+0235's last context-local-Jacobian screen improves median/paired error but passes
+only1/5 fixed precision cases. The four yaw failures stop this patch-refinement
+family: no more neighborhood/window/scale/seed/confidence variants and no real
+transfer. Preserve this exit as a method decision, not another parameter search.
+Next select a genuinely different full-head/observation mechanism, alongside
+the still-required fixed scan regions and global evaluation alignment. No new
+video-only complete head or user visual acceptance has been produced.

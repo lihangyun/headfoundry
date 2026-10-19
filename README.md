@@ -1,5 +1,9 @@
 # HeadFoundry
 
+Latest bounded observation screen: [0235](docs/experiment-0235-context-local-jacobian.md)
+passes only1/5 known nonplanar precision cases. Context-assisted patch refinement
+is frozen; no real head/camera acceptance or production-default change follows.
+
 HeadFoundry is a clean-room, quality-first multi-view 3D head reconstruction project. It does not reuse PeekSim code, KeenTools outputs, or proprietary service behavior.
 
 The first milestone is deliberately narrow: prove that camera projection can be recovered and measured reliably. Later user authorization permits unaccepted experimental geometry while that gate remains failed; it does not waive acceptance. The repository contains a normalized-DLT reference, fail-closed rights/image-input manifests, a commercial-VGGT output adapter, and camera quality gates. The current five references were independently generated or composited, so their historical camera scores are image-group diagnostics, not physical capture validation.
