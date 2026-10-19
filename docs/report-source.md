@@ -332,3 +332,29 @@ measure a small internal global-similarity component,without changing any
 candidate/metric. Next discriminate native identity gauge versus camera-distance
 ambiguity before more contour fitting. No scan realignment,loss-weight rescue,
 case002 tuning or production replacement follows. Full objective remains open.
+
+## 2026-10-20: stop gauge refits;separately clear an Apache geometry initializer
+
+0247's scan-free audit proves global similarity/camera compensation and analytic
+canonicalization replay,but hard latent gauge locking loses11.41% local shape
+and creates4 reversals. Reject it;do not export another head or reinterpret
+coordinate normalization as new identity information.
+
+0248 obtains the separate public MapAnything-Apache checkpoint,not the default
+noncommercial variant. Its original UniCeption dependency path contains an NC
+DPT source despite a permissive top-level package label. A narrow runtime uses
+original MIT DPT blocks,local pinned Apache DINO architecture and BSD wrappers,
+with imported-source auditing and no actual restricted module execution.
+Strict load matches736 stored tensors plus76 verified shared aliases to812 model
+keys;all1.22849B parameters areCPU float32. Runtime/asset checks pass;face accuracy
+is not established.0249 pre-registers an independent known3D image-only screen
+with unchanged0236 populations and3px projection limits before real transfer.
+
+0249 completes one82.63s CPU forward and exact evaluator replay. Proper matrices,
+focal range and cheirality pass,but independent camera projection p95s
+10.61/20.80/36.46/13.02px and point-map cross-view15.19-57.44px reject the
+configuration. Recovered pinhole ray consistency also fails. Four camera-only
+numbers are lower than0236,while4/5 joint targets worsen:no overall improvement
+or new head acceptance is supported. All populations remain unfiltered;actual
+source-clay overlay review confirms systematic errors.207 tests pass;freeze
+this exact image-only MIT-runtime variant,no real video transfer/case002 tuning.

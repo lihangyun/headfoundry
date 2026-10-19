@@ -305,4 +305,23 @@ but this does not authorize acceptance of head geometry or texture. Experiment
 0009 keeps focal length and prior fixed, excludes validation from all fitting,
 and remains REJECT. Detector self-consistency is not independent shape evidence.
 
-Development tests run on the local RTX 3070 8 GB. Production-quality learned initialization is isolated to a GPU worker sized after profiling; the current expectation is 24 GB or more for comfortable multi-view work, but this is a planning estimate, not a confirmed requirement. Optimization and export remain reproducible jobs with immutable input manifests.
+The historical RTX3070 description is not current availability evidence:
+2026-10-20 both local Python environments reportCPU-only and NVML fails.
+0248/0249 must use explicitly timedCPU float32 execution;do not silently change
+drivers,precision or resolution to rescue a benchmark. Future GPU sizing is a
+profiling question,not a verified production requirement.
+
+0248 separates checkpoint licensing from executed transitive code. An Apache
+weight label cannot clear a nested NC module. Use only pinned reviewed
+permissive code paths,retain upstream notices,block unsupported imports and
+fail closed on missing/changed asset/source/runtime evidence. Strict full
+parameter loading is necessary but not sufficient for accuracy.0249 uses the
+unchanged known3D image-only camera/point screen before any real-video geometry
+transfer;no confidence pruning,per-view realignment or production promotion.
+
+0249 fails even with finite proper cameras and positive points. Internal point
+composition consistency does not prove a pinhole camera explains the predicted
+ray field,or that cameras agree with independent physical correspondences.
+Require both checks;reject the current configuration without real-head fitting.
+Some lower camera residuals do not establish a net benefit when joint geometry
+regresses. Keep this bounded failure rather than relaxing the original gates.

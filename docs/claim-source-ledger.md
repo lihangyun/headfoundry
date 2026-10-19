@@ -348,3 +348,32 @@ and is not applied to the export/evaluation. No improved likeness,physical
 camera accuracy,full-head performance or new redistribution/training rights are
 claimed. Private images,medical files,meshes and absolute source paths remain
 outside Git;case002 and production defaults stay protected.
+
+## 2026-10-20: permissive MapAnything runtime,not default NC inference
+
+0248 pins [publisher Apache model](https://huggingface.co/facebook/map-anything-apache)
+revision00f9c245bbcb60522d1ed7f9e9d88462c6e3f38a and exact4.914GB LFS hash.
+[Publisher code](https://github.com/facebookresearch/map-anything),local DINOv2
+architecture code and model parameters are the separate permissive variant.
+No token,private agreement,external inference or extra encoder checkpoint is used.
+
+Top-level dependency labels do not override nested restrictions:the original
+[UniCeption CroCo DPT file](https://github.com/castacks/UniCeption/blob/main/uniception/models/libs/croco/dpt_block.py)
+has an NC header and is not executed. Three original
+[MIT DPT](https://github.com/isl-org/DPT/blob/main/LICENSE) definitions are loaded
+from pinned MIT source;our narrow compatibility facade retains notices and
+rejects unsupported encoder/RoPE variants. Exact full state-key compatibility
+and imported provenance are checked separately from geometric accuracy. This
+is technical path/source review,not a general legal freedom-to-operate opinion.
+Pi3/Pi3X NC weights are not used. Private case001 validation remains local and
+nontraining;case002 and bone data remain outside this experiment.
+
+0249 passes full local execution but rejects its geometric screen. Its input
+PNGs are explicitly authorized case001 **source-scan renders**,not video-derived
+reconstructed geometry. The model receives image tensors only;known source
+points/cameras are read by the evaluator,never passed as model conditioning.
+Fixed support populations and exact0px evaluator replay are recorded. The actual
+overlay uses supplied clay with projection residuals and must never be presented
+as an improved head result. Some lower camera errors versus0236 are insufficient
+to claim net improvement or PARTIAL_SUCCESS;4/5 joint targets regress. No extra
+training,upload,case002 access or accepted production asset follows.

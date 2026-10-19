@@ -1,5 +1,20 @@
 # HeadFoundry
 
+[0248](docs/experiment-0248-mapanything-apache-entry.md) installs the exact
+public **MapAnything-Apache** checkpoint and verifies all812 model keys through
+strict offline float32 loading. A narrow MIT DPT runtime avoids a discovered
+noncommercial transitive code path;all source/weight identities are pinned.
+This is asset/runtime readiness,**not improved reconstruction**. The separately
+bounded [0249](docs/experiment-0249-mapanything-known-geometry.md) **rejects** the
+known3D image-only configuration:camera p95 10.61-36.46px and point-map cross-view
+p95 15.19-57.44px exceed3px. Exact replay and207 unit tests pass,but no real-video
+head transfer or quality acceptance follows. This configuration is frozen.
+
+[0247](docs/experiment-0247-identity-camera-gauge.md) rejects hard latent
+similarity locking:it removes11.41% of the tested local shape displacement and
+creates4 reversals. Coordinate-only normalization supplies no new observation;
+do not rescue0246 with another gauge/contour fit.
+
 [0246](docs/experiment-0246-bounded-profile-geometry.md) generates an actual
 safe profile-corrected experimental head,but **rejects** it:training-view
 contours improve while fixed-transform scan nose/mouth p95 worsen
