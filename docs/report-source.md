@@ -274,3 +274,22 @@ is rejected. Stop source-oracle tuning and start a separately bounded scan-free
 global model-based image branch from native neutral identity. No source-derived
 coefficients,similarity,quadratic,geometry or correspondences may seed inference;
 the scan remains a separate evaluator,not an unseen input to a claimed result.
+
+## 2026-10-19 actual scan-free video candidate,not accepted reconstruction
+
+0241 isolates authorized case001 video observations and native licensed prior
+bindings from all patient geometry/oracles. It finishes a300-D shared anatomical
+fit in24.63s and exports a safe experimental OBJ with exact numerical replay.
+This is a real video-derived output,unlike0239/0240's scan-fit capacity oracle.
+Nevertheless all5 detector-validation p95s exceed3px,3-11 used bindings per view
+lose visibility,and held facial scan errors remain2.39-4.59mm. Complete-head
+errors/open boundaries also fail.18 actual fixed-camera source/neutral/candidate
+renders and original-photo overlays were inspected; no visual acceptance or
+production promotion follows. Technical execution is passed,head result REJECT.
+
+The scanner only evaluates the terminated frozen output through one global
+similarity,never its coefficients/cameras/observations. Case002 stays reserved.
+Freeze this fixed semantic-attachment detector-only configuration; independently
+test whether its supposed material correspondences survive known view/shape
+changes before another fit. Do not rescue by deleting hidden points,loosening
+thresholds or using a scan-fitted initialization. The overall goal remains open.

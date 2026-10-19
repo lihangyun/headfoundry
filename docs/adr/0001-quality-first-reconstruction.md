@@ -270,6 +270,17 @@ Bootstrap with synthetic renders from commercially allowed parametric assets and
 
 ## Compute strategy
 
+0241's isolated video-only model branch may export an explicitly unaccepted
+safe OBJ under the existing experimental lane. Its generic learned semantic
+observations,even with exact ray attachments and held detector residuals,are
+not independent physical material correspondences. Recheck final visibility
+without deleting failed supports. Keep scan registration/measurement in a
+separate post-inference process with one recorded whole-output similarity and
+no geometry/camera feedback. Numerical safety/replay must not promote a failed
+video camera,regional error or complete-head visual result. Failed fixed
+attachment assumptions require a bounded known-geometry test before refitting,
+not another coefficient,focal,regularizer or point-subset sweep.
+
 Experiment 0112 adds independently implemented Catmull-Clark finite refinement
 as an explicit experimental geometry operation. A control cage, smooth shading
 normals and an evaluated smooth surface are different representations. Fit

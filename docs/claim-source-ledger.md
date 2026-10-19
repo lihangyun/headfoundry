@@ -290,3 +290,24 @@ The safe face-region fit is scan-derived diagnostic geometry,not proof of
 photo inference,physical scan accuracy,whole-head likeness or KeenTools parity.
 Original model/data and production defaults remain unchanged; no additional
 training,publishing or redistribution rights are inferred.
+
+## 2026-10-19: video-only experimental geometry and isolated scan validation
+
+0241 reuses the exact already reviewed FLAME2023 Open CC-BY-4.0 identity asset
+and locked Apache MediaPipe Face Landmarker task. Official runtime oval IDs
+only exclude sliding boundary observations; no separately licensed FLAME
+landmark/texture asset or canonical-face mesh is imported. Native +Y-up,+Z-front
+geometry,proper OpenCV poses and our analytic projection derivatives are checked
+against independent finite differences and OpenCV projection. No new learned
+model,training,upload or private-service output is used.
+
+Case001 video inference is guarded against every STL and the patient oracle
+directory,except original consent-manifest metadata. Only the video-authorized
+subset is validated there; no source scan/camera/coefficients enter the fit.
+After termination a separate evaluator opens only the authorized case001 skin
+and fixed reference masks,registers one whole-output similarity and measures all
+preserved samples. Case002 and bone bytes are not opened. The guard is Python
+open auditing,not a security sandbox or proof against hostile native code.
+Numerical safety/replay and improved bounded face distances do not establish
+physical camera correctness,medical accuracy,full-head likeness or KeenTools
+parity. Actual source/neutral/video comparisons remain private,unaccepted.

@@ -1,5 +1,14 @@
 # HeadFoundry
 
+[0241](docs/experiment-0241-video-only-model-fit.md) now produces an actual
+**video-only experimental OBJ**,without patient-scan input to inference. Mesh
+guards and independent projection/OBJ replay pass,but camera validation p95
+4.75-6.08px and held scan-face p95(nose/mouth/chin)4.59/2.39/3.49mm fail.
+Actual source/neutral/candidate bilateral white comparisons exist locally;
+full-head/open-boundary/visual acceptance remains `REJECT`. Freeze this fixed
+detector-attachment configuration; test its material-stability premise next.
+All188 unit tests pass; no production-default or case002 change.
+
 [0240](docs/experiment-0240-hard-mesh-feasibility.md) supplies a mesh-feasible
 **scan-fit oracle**,not video reconstruction:0 normal reversals and all seven
 face-region p95s<2mm,with actual bilateral/common-camera white comparisons.
