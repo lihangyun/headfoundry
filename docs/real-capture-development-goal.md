@@ -79,18 +79,20 @@ or irrecoverable blocker; do not repeatedly ask about ordinary engineering.
 
 ## Current checkpoint and next action
 
-At0237,177 tests pass and a reviewed **coarse face-only diagnostic scope** plus
+At0238,179 tests pass and a reviewed **coarse face-only diagnostic scope** plus
 exact triangle-distance evaluator is frozen on case001. Its20.3053% source-area
 scope is not full-head acceptance; full-source samples and all omitted/unverified
 anatomy remain explicit. No video-only complete head, accepted real camera set,
 2mm physical-accuracy claim, reserved-case or visual acceptance exists.
 
-Next investigate the already locked XFeat bundle's unused **learned fine-match
-head**, first checking native dense-grid/scale and point-identity semantics.
-This is a distinct learned localization mechanism, not another photometric
-LK/ECC/context/window/threshold rescue. Pre-register one known-transform
-precision/coverage probe before execution; no inference or success is established
-by this read-only source finding. Keep0235/36 frozen and all original gates.
+0238 has now tested the locked XFeat **native learned fine head**, preserving
+its dense scales/IDs, fixed reference anchors and native defaults. All16 known
+warp precision cases reject it; even identity pairs move from zero raw error to
+2.60-2.93px retained p95. No more local feature/window/threshold/offset rescue.
+Keep0235/36/38 frozen and all original gates. Next pre-register one anatomical
+whole-head-prior capacity diagnostic against the independent real scan before
+attempting a distinct global model-based image fit. Such a scan-fit oracle cannot
+be promoted as video reconstruction or used to waive camera/physical/visual gates.
 
 ### Historical initial checkpoint
 
@@ -224,3 +226,11 @@ infrastructure only: no real candidate, full-head/source accuracy, or likeness i
 promoted. The20.3053% face scope and unknown acquisition/annotation uncertainty
 cannot be used to silently narrow the complete-head goal. A different learned
 fine-localization probe from existing locked assets is the next bounded decision.
+
+0238 executes that native fine-localization probe and rejects all16 cases at
+1px p95, including same-image regressions with exact raw MNN anchors. Native
+ordering, confidence semantics, immutable feature inputs and179 tests pass;
+the negative result is measurement evidence, not failed software or a completed
+head. Stop this recipe without post-hoc native-default or identity-bias changes.
+The next decision moves to prior capacity on independent scan evidence, explicitly
+oracle-only, before any global model-based video candidate or further shape fit.

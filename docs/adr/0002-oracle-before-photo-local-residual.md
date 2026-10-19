@@ -112,3 +112,13 @@ area and full-source/unscoped evidence. The reviewed20.3053% scope,177 tests and
 submicron numeric source-self replay do not quantify scanner/annotation accuracy
 or satisfy complete-head/likeness acceptance. Require declared scan-free inference
 provenance; supplied source or metric fixtures cannot become reconstructed heads.
+
+0238 additionally rejects the existing native learned XFeat fine recipe on all16
+known2D cases. Same-image raw matches are exact, but native refined p95 becomes
+2.60-2.93px at high retention; field order/scale-aware identity and immutable
+inputs are verified. Stop post-hoc confidence/scale/offset or identity-bias rescue.
+Local model confidence and legal weights do not establish subpixel evidence.
+A different global anatomical-model observation route first needs bounded prior
+capacity on the newly available independent scan, with fixed source regions,
+one declared similarity and actual white-head review. A scan-fit oracle is not
+video-only inference, medical accuracy or permission to alter defaults/gates.

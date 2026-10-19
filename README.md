@@ -1,5 +1,9 @@
 # HeadFoundry
 
+[0238](docs/experiment-0238-native-learned-fine-localization.md) rejects all16
+native learned fine-localization cases, including identity-image regressions;
+no real camera/head solve follows.179 tests pass; full-head acceptance is unmet.
+
 [0237](docs/experiment-0237-fixed-scan-surface-protocol.md) freezes a reviewed
 coarse source-face scope and exact bidirectional triangle-distance evaluator,
 with one global similarity and177 passing tests. The20.3% face scope and numeric
