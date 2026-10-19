@@ -173,3 +173,14 @@ rescue attempts and require known **nonplanar3D image-observation** precision
 before another real3D solve. No complete video-only head, scan error, independent
 case002 or actual likeness acceptance has been established; the full goal remains
 active and unmet.
+
+0232 freezes an image-based nonplanar observation reference on the same supplied
+case001 geometry/cameras/visible points with a procedural emission pattern, for
+local validation only.0233 identifies coarse search support contamination;0234
+adds mandatory-seed native refinement while keeping default tracking unchanged.
+Coverage and median errors improve on identical inputs, but all five1px p95
+gates still fail, including true-seed diagnostics. No recipe is selected for
+real localization. Next examine local geometric patch deformation from independent
+contexts, not more seed/search/threshold rescues or scan-derived final geometry.
+The actual complete editable video-only head, regional scan accuracy, case002
+and visual acceptance requirements remain outstanding.

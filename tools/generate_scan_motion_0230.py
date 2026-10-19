@@ -21,6 +21,9 @@ from scan_motion_truth_0230 import look_at_origin,sample_surface
 PILOT=ROOT/'assets/private/real-capture-pilot-v1'
 FIRST=PILOT/'scan-motion-truth-0230'
 OUT=PILOT/'scan-motion-truth-0230-upright'
+PATTERNED='--patterned' in sys.argv
+if PATTERNED:
+    OUT=PILOT/'scan-pattern-observations-0232'
 
 
 def main():
@@ -68,6 +71,7 @@ def main():
         'first_wrong_axis_controls_sha256':sha256_file(FIRST/'controls.json'),
         'first_wrong_axis_archive_sha256':sha256_file(FIRST/'known-motion.npz'),
         'units':'original STL mm; normalized display similarity only','role':'SOURCE_DIAGNOSTIC_NOT_RECONSTRUCTION'}
+    controls['appearance']='object-coordinate noise48/detail2/roughness0.5,ramp0.15-0.75,emission1,Standard,RGBA' if PATTERNED else 'neutral source clay'
     (OUT/'controls.json').write_text(json.dumps(controls,indent=2),encoding='utf-8')
     # Two sheets on one ray: the back material point must not inherit front visibility.
     check_vertices=[(-2,-2,0),(2,-2,0),(0,2,0),(-2,-2,-1),(2,-2,-1),(0,2,-1)]
@@ -87,6 +91,25 @@ def main():
     shader=material.node_tree.nodes.get('Principled BSDF')
     shader.inputs['Base Color'].default_value=(.4,.4,.4,1)
     shader.inputs['Roughness'].default_value=.8
+    if PATTERNED:
+        nodes,links=material.node_tree.nodes,material.node_tree.links
+        nodes.clear()
+        coordinates=nodes.new('ShaderNodeTexCoord')
+        noise=nodes.new('ShaderNodeTexNoise')
+        noise.noise_dimensions='3D'
+        noise.inputs['Scale'].default_value=48
+        noise.inputs['Detail'].default_value=2
+        noise.inputs['Roughness'].default_value=.5
+        ramp=nodes.new('ShaderNodeValToRGB')
+        ramp.color_ramp.elements[0].color=(.15,.15,.15,1)
+        ramp.color_ramp.elements[1].color=(.75,.75,.75,1)
+        emission=nodes.new('ShaderNodeEmission')
+        emission.inputs['Strength'].default_value=1
+        output=nodes.new('ShaderNodeOutputMaterial')
+        links.new(coordinates.outputs['Object'],noise.inputs['Vector'])
+        links.new(noise.outputs['Fac'],ramp.inputs['Fac'])
+        links.new(ramp.outputs['Color'],emission.inputs['Color'])
+        links.new(emission.outputs['Emission'],output.inputs['Surface'])
     mesh.materials.append(material)
     for polygon in mesh.polygons:
         polygon.use_smooth=True
@@ -95,6 +118,10 @@ def main():
     scene.render.resolution_x,scene.render.resolution_y=720,1280
     scene.render.resolution_percentage=100
     scene.render.image_settings.file_format='PNG'
+    if PATTERNED:
+        scene.render.image_settings.color_mode='RGBA'
+        scene.render.film_transparent=True
+        scene.view_settings.view_transform='Standard'
     scene.world=bpy.data.worlds.new('Diagnostic_World')
     scene.world.color=(.04,.04,.04)
     bpy.ops.object.camera_add()
@@ -152,6 +179,13 @@ def main():
         'occlusion_self_check':'TECHNICAL_CHECK_PASSED','renders':rows,'archive_sha256':sha256_file(archive),
         'source_unchanged':True,'elapsed_seconds':time.perf_counter()-started,'blender_version':bpy.app.version_string,
         'limits':'Declared cameras on an unchanged supplied scan; not video-recovered cameras or subject reconstruction.'}
+    if PATTERNED:
+        reference=OUT.parent/'scan-motion-truth-0230-upright/known-motion.npz'
+        previous,current=np.load(reference,allow_pickle=False),np.load(archive,allow_pickle=False)
+        if set(previous.files)!=set(current.files) or any(not np.array_equal(previous[key],current[key]) for key in previous.files):
+            raise ValueError('Diagnostic appearance mode changed geometry/camera/visibility arrays')
+        report.update(geometry_reference_sha256=sha256_file(reference),all_geometry_fields_exactly_equal=True,
+            limits='Synthetic patterned supplied scan for local observation validation only; no training, recovered subject texture, real cameras or reconstructed head.')
     (OUT/'generation-report.json').write_text(json.dumps(report,indent=2),encoding='utf-8')
 
 

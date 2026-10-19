@@ -61,6 +61,17 @@ def resolve_frames(video, records):
 
 
 def track_step(previous, current, points, initial=None):
+    return _flow_step(previous,current,points,initial,3)
+
+
+def refine_step(previous,current,points,initial):
+    """Local observation precision after a supplied coarse seed, no motion search."""
+    if initial is None:
+        raise ValueError("Local refinement requires explicit coarse destinations")
+    return _flow_step(previous,current,points,initial,0)
+
+
+def _flow_step(previous,current,points,initial,max_level):
     points = np.asarray(points, np.float32)
     if (previous.ndim != 2 or previous.dtype != np.uint8 or current.shape != previous.shape
             or current.dtype != np.uint8 or points.ndim != 2 or points.shape[1:] != (2,)
@@ -72,7 +83,7 @@ def track_step(previous, current, points, initial=None):
             raise ValueError("Finite initial destinations must match source points")
     if not len(points):
         return points.copy(), np.zeros(0, bool), np.empty(0), np.empty(0)
-    options = dict(winSize=(21, 21), maxLevel=3,
+    options = dict(winSize=(21, 21), maxLevel=max_level,
                    criteria=(cv2.TERM_CRITERIA_COUNT | cv2.TERM_CRITERIA_EPS, 30, .01),
                    minEigThreshold=1e-4)
     seeded = initial is not None
