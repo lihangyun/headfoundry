@@ -311,3 +311,24 @@ view-dependent observation,not a calibrated camera or improved head. Known
 systematic optical bias and sparse posterior coverage remain unverified.
 Proceed to a bounded shared-head visible-envelope fit with independent frozen
 scan measurement;never promote lower fitting residuals by themselves.
+
+0244 cannot initialize two real profile faces with the locked detector and
+stops.0245's detector-free contour pose registration handles that dependency,
+including one independently tested finite-domain solver repair,but its required
+347 trace fails source precision and the full configuration stops before shape
+fitting. No detector/ROI/confidence/nearby-frame substitution occurs.
+
+0246 explicitly tests unaccepted shared-head correction on valid139/416 and
+keeps347's failed required validation. The51.15s fit passes original local
+mesh guards and2px frontal self-protection,not actual frontal likeness. Fitting
+held rows improve,but conditional held69 and one final first-hit support fail.
+Independent frozen-transform scan evidence rejects the candidate:nose p95
+4.59→5.10mm,mouth2.39→3.07mm,with no2mm region passing. Actual18 canonical
+white images and6 same-camera overlays do not justify likeness promotion.
+195 tests pass;technical replay does not override this failure.
+
+Read-only fixed-output audits rule out a missing facing-edge candidate set and
+measure a small internal global-similarity component,without changing any
+candidate/metric. Next discriminate native identity gauge versus camera-distance
+ambiguity before more contour fitting. No scan realignment,loss-weight rescue,
+case002 tuning or production replacement follows. Full objective remains open.

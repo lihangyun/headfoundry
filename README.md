@@ -1,5 +1,12 @@
 # HeadFoundry
 
+[0246](docs/experiment-0246-bounded-profile-geometry.md) generates an actual
+safe profile-corrected experimental head,but **rejects** it:training-view
+contours improve while fixed-transform scan nose/mouth p95 worsen
+4.59→5.10/2.39→3.07mm,and held-view/visibility gates fail.195 tests and actual
+source/baseline/candidate white comparisons exist;no head/default promotion.
+0244/0245 initialization failures and failed required347 remain preserved.
+
 [0243](docs/experiment-0243-gradient-profile-observations.md) supplies directly
 observed bilateral video profile traces,not fixed material points: all426 rows
 retained,scale-uncertainty p95.11/.30px,known-boundary fixtures and actual image

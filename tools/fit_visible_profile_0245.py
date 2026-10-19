@@ -197,25 +197,30 @@ def fit():
 
     for round_index in range(5):
         cache = {'x': None}
+        invalid_trials = []
 
         def evaluate(x):
             check_time()
             if cache['x'] is None or not np.array_equal(cache['x'], x):
-                residuals, jacobians = [], []
-                for view, direction in enumerate((1, -1)):
-                    predicted, j, _, _ = envelope(x, model.template, model.shape_directions, model.faces,
-                        skin, initial[view], intrinsic, curves[view, train, 1], direction, view)
-                    residuals.append((predicted-curves[view, train, 0])/2)
-                    jacobians.append(j/2)
-                residual, jac = np.concatenate(residuals), np.concatenate(jacobians)
                 change = x-start
                 c, cj = frontal_constraints(x[:300], packet['frontal_point_base'], packet['frontal_point_field'],
                     packet['frontal_projection'], packet['frontal_target'])
                 m, mj = constraints(x[:300], model.template[model.faces[active]], model.shape_directions[model.faces[active]])
                 full = np.zeros((len(c)+len(m), len(x)))
                 full[:, :300] = np.vstack([cj, mj])
-                cache.update(x=x.copy(), objective=float(.5*(residual@residual+change@change)),
-                    gradient=jac.T@residual+change, constraint=np.r_[c, m], constraint_jacobian=full)
+                cache.update(x=x.copy(), constraint=np.r_[c, m], constraint_jacobian=full)
+                try:
+                    residuals, jacobians = [], []
+                    for view, direction in enumerate((1, -1)):
+                        predicted, j, _, _ = envelope(x, model.template, model.shape_directions, model.faces,
+                            skin, initial[view], intrinsic, curves[view, train, 1], direction, view)
+                        residuals.append((predicted-curves[view, train, 0])/2)
+                        jacobians.append(j/2)
+                    residual, jac = np.concatenate(residuals), np.concatenate(jacobians)
+                    cache.update(objective=float(.5*(residual@residual+change@change)), gradient=jac.T@residual+change)
+                except ProfileDomainError:
+                    invalid_trials.append(x.copy())
+                    cache.update(objective=np.inf, gradient=np.zeros_like(x))
             return cache
 
         trace = []
@@ -240,7 +245,7 @@ def fit():
             'minimum_constraint': minimum, 'mesh_guard': guard, 'trace': trace}
         history.append(entry)
         np.savez_compressed(target/f'round-{round_index:02d}.npz', state=state,
-            active_faces=active, violating_faces=bad, initial_state=start)
+            active_faces=active, violating_faces=bad, initial_state=start, invalid_trials=invalid_trials)
         print(json.dumps({k: v for k, v in entry.items() if k != 'trace'}), flush=True)
         if not result.success or minimum < -1e-7:
             break

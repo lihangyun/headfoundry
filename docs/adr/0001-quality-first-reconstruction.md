@@ -281,6 +281,16 @@ video camera,regional error or complete-head visual result. Failed fixed
 attachment assumptions require a bounded known-geometry test before refitting,
 not another coefficient,focal,regularizer or point-subset sweep.
 
+0244-0246 distinguish a failed prerequisite from an explicitly unaccepted
+geometry diagnostic. A later diagnostic using valid observations must carry
+every required missing/unstable held-view failure forward;it must not silently
+turn a smaller available-view test into full acceptance. All original image,
+3D,visibility,topology and visual gates still apply.0246 demonstrates that even
+safe lower contour residuals can regress independently measured nose/mouth3D.
+Reject that candidate,retain all evidence,and require a supported different
+mechanism before more fitting. Global similarity/camera gauge must be diagnosed
+without using a source-driven post-hoc alignment to manufacture improvement.
+
 Experiment 0112 adds independently implemented Catmull-Clark finite refinement
 as an explicit experimental geometry operation. A control cage, smooth shading
 normals and an evaluated smooth surface are different representations. Fit

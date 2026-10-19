@@ -328,3 +328,23 @@ is adopted. Original case001 video consent covers local observation validation;
 derived exact frames retain source restrictions. The skin scans/bone/case002
 are not used. Stable visually plausible contours are readiness evidence only,
 not biometric/medical accuracy or full-head quality acceptance.
+
+## 2026-10-19: bounded shared-head contour correction rejected independently
+
+0244-0246 reuse the exact previously cleared native FLAME identity asset and
+installed NumPy/SciPy/OpenCV/Pillow/Blender. The unavailable profile detector
+is not replaced by another paid/noncommercial checkpoint or fabricated result.
+0245/0246 use our own anatomical-axis/extremum initializer and checked native
+pose/envelope derivatives;no new model,training,medical segmentation or service.
+The camera initializer is only conditional geometry registration,not physically
+calibrated pose. Finite-domain+inf line-search handling changes no valid residual
+and retains original failures/replay. Required held-view failures are preserved.
+
+The scan process opens only authorized case001 skin/video validation metadata
+after inference terminates,using the original fixed4x4 and exact0237 masks.
+Source evidence rejects rather than validates the new head. A later internal
+candidate-to-video-baseline similarity diagnostic never uses source geometry
+and is not applied to the export/evaluation. No improved likeness,physical
+camera accuracy,full-head performance or new redistribution/training rights are
+claimed. Private images,medical files,meshes and absolute source paths remain
+outside Git;case002 and production defaults stay protected.
