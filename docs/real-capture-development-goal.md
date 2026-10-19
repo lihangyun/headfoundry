@@ -1,0 +1,94 @@
+# Active goal: improve head reconstruction using the real capture pilot
+
+Started: 2026-10-19, explicitly requested by the user. Status: active.
+
+## Outcome
+
+Develop HeadFoundry until video-derived editable head meshes meet the established
+head-geometry gates and actual visual review, especially bilateral nose/lip/chin
+profiles. Use the two consented same-stage video/scan cases to diagnose errors,
+improve algorithms and verify the result. A rendered supplied STL is a reference,
+not a reconstructed output. Goal completion is presently unproven.
+
+The user's current scope is head geometry; hair and texture remain deferred.
+Passing this head-stage pilot does not by itself satisfy the complete original
+product contract, the population benchmark or a claim of KeenTools parity.
+
+## Resources and evidence boundaries
+
+- Only modify this repository. Preserve unrelated changes and all original data.
+- The private0216 manifest binds two videos, two skin STLs and two bone STLs.
+  A separate confirmation binds millimeter units and matched acquisition stage.
+  The user's consent permits local reconstruction/error validation; no upload or
+  model training. Do not infer commercial dataset/redistribution permission.
+- Develop on real-case-001. Keep real-case-002 out of parameter fitting/tuning
+  until the reconstruction method, masks, thresholds and evaluation protocol are
+  frozen. Intake previews of both cases have already been viewed.
+- Scan-assisted camera calibration and dense oracle fits are diagnostic lanes.
+  Final video-only reconstruction must generate the head without using the test
+  subject's scan to produce or deform its geometry. Disclose scan-assisted
+  evaluation alignment and any scale reference.
+- Use free commercially permitted components with exact provenance or independent
+  implementation. No paid/unavailable model fallback, Peek implementation reuse,
+  or KeenTools private services/outputs.
+
+## Head-stage completion evidence
+
+Existing numeric targets are engineering acceptance targets, not medical accuracy
+guarantees. Preserve them; do not lower targets to make a candidate pass.
+
+| Requirement | Required evidence |
+| --- | --- |
+| Camera and observations | Reviewed anatomical support/visibility; valid intrinsics and proper rotations; cheirality, focal plausibility and cross-view consistency; withheld reprojection p95 <=3px on reliable independent observations |
+| Facial surface | Scan point-to-surface p95 <=2mm as specified in `quality.py`, with separately reported reverse-direction error and coverage; regional nose/lip/chin/cheek errors must not be hidden by whole-head averages |
+| Profiles and front | Both profile silhouette IoU >=0.94; frontal landmark NME <=0.025 with explicit normalization; common-camera white meshes and source-photo comparisons |
+| Editable output | Actual complete OBJ/GLB or equivalent editable head, retained topology/provenance and export replay; no substituted reference scan |
+| Mesh and neighboring anatomy | Zero nonmanifold edges, degenerate faces and flipped faces; no visible folds/cracks, lip ledges or ear/neck regressions; inspect source cuts/artifacts separately |
+| Visual and reserved evidence | Actual front, both profiles, obliques and withheld-view review; case002 evaluation only after method freeze; user judges recognizable likeness and side-profile improvement |
+| Reproduction | Immutable inputs/parameters, successful necessary tests, independent output checks, retained rejected runs and local Git commits |
+
+Before evaluating candidates, fix the scan-valid region, defect exclusions,
+sampling density/seeds and alignment convention. Any global similarity for
+evaluation must be declared, applied once to the entire output and held fixed
+across regional measurements. No regional alignment, anisotropic stretching,
+target-driven deformation or post-score mask trimming may conceal errors.
+Coverage and excluded-region images accompany the metrics. Quantify annotation
+and scan uncertainty before using them to claim millimeter precision.
+
+Two cases are a development pilot, not population coverage. Predicted detector
+points and adjacent video frames are not independent ground truth. The complete
+`quality.py` evaluator also requires texture evidence; do not fabricate those
+fields or claim full-product `ACCEPT` while that work is deferred. Keep technical,
+partial, unverified, rejected and accepted evidence distinct.
+
+## Autonomous work and stop policy
+
+Each experiment records one main hypothesis/variable, baseline, predictions,
+protected regions, a finite runtime/evaluation budget and a failure exit before
+execution. Use existing code and installed dependencies first. Ordinary
+engineering fixes, local verification and commits are already authorized.
+
+A negative screen stops that tested configuration. Do not continue amplitude,
+focal, slot, mask, model-size or iteration sweeps under renamed experiments.
+One implementation bug may be repaired with an independent replay; distinguish
+that from changing a hypothesis after viewing its scores. A follow-up requires
+new evidence supporting a materially different mechanism and keeps the failed
+record. Do not deform geometry to compensate for unresolved camera/observation
+errors. Escalate only an actual missing authorization, essential external input
+or irrecoverable blocker; do not repeatedly ask about ordinary engineering.
+
+## Current checkpoint and next action
+
+At commit`ce0ba67`,135 tests pass.0216 supplies the real pilot and confirmed
+metadata.0217's single scan-assisted detector-anchor camera screen is rejected:
+withheld-slot p95 is7.07-22.38px and one outer-eye training anchor is occluded.
+Seven actual source renders replay below0.000504px. Broad source/video placement
+is plausible, but landmark correspondence is not accepted; no new head was fit.
+
+Next inspect and independently define anatomical scan/image correspondences,
+including which measurements are material points versus sliding contours.
+Review and freeze this evidence before another calibration hypothesis. Then
+validate cameras, fit one bounded video-derived head candidate, and compare the
+actual output with the supplied skin scan and withheld images. Complete the
+reserved-case evaluation and visual review before declaring the head-stage goal
+achieved. The goal remains active until that evidence exists.

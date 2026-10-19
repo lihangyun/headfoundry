@@ -6,6 +6,8 @@ The first milestone is deliberately narrow: prove that camera projection can be 
 
 ## Current status
 
+- **Active user goal (2026-10-19):** [real-capture development and acceptance](docs/real-capture-development-goal.md). Continue from the two authorized real video/scan cases through reliable observations/cameras, video-derived editable heads, fixed scan evaluation and actual bilateral-profile/whole-head review. Each hypothesis has a bounded exit; complete the reserved-case and visual gates before claiming success.
+
 - [Experiment0217](docs/experiment-0217-scan-camera-baseline.md) records user-confirmed millimeter units and matched acquisition stage, then runs one scan-assisted camera baseline on real-case-001. Actual source-scan overlays show broadly consistent face placement, but validation p95 is7.07-22.38px and an outer-eye anchor is hidden: `REJECT`, stopped before shape fitting. Automatic scan/video point correspondence is not yet reliable. Seven unchanged-source renders replay below0.000504px; their white meshes are supplied scans, not reconstructed heads. All135 tests pass; case002 remains reserved from fitting.
 
 - [Experiment0216](docs/experiment-0216-real-capture-intake.md) registers two explicitly consented real video/skin-scan/bone-scan cases for local validation. Actual frame sheets and24 source-only scan renders confirm facial coverage; file/rights intake passes and all133 tests pass. Scan units, capture-stage correspondence and camera alignment remain `UNVERIFIED`. Closed eyes, posterior scan artifacts and neck caps require regional evaluation. Use case001 for development and reserve case002 from fitting/tuning until the method is frozen. No new person reconstruction or quality acceptance is claimed.
