@@ -161,3 +161,15 @@ motion-capacity diagnostic using case001's supplied skin scan and declared
 cameras/visible material points; distinguish motion-class inadequacy from
 image-correspondence noise before another algorithm branch. Source scans remain
 diagnostic truth only, not a reconstructed output or a video-only shape input.
+
+0230 implements that exact visible3D diagnostic and catches an anatomical-up
+assumption through actual source render review. The corrected same-sample replay
+shows the fixed global-plane context precondition failing all five true rigid
+motions; a least-squares control and exact/fitted epipolar geometry distinguish
+estimator effects from nonplanar capacity. Source-only meshes are not outputs.
+0231's general context class passes exact3D and has~90% real contextual support,
+but untouched real odd-point line p95 remains4.55-4.90px. Stop planar/focal/ROI
+rescue attempts and require known **nonplanar3D image-observation** precision
+before another real3D solve. No complete video-only head, scan error, independent
+case002 or actual likeness acceptance has been established; the full goal remains
+active and unmet.
