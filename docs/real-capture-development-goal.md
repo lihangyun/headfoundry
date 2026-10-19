@@ -111,3 +111,11 @@ fails focal/coverage checks. Its registered-pair homography support is99.45-100%
 so the next hypothesis concerns rejecting degenerate camera initialization,
 with a deterministic predeclared selection rule and a single attempt. This is
 not permission to manually sweep initial pairs or relax physical/visual gates.
+
+0221 applies one predeclared deterministic degeneracy-aware initializer to the
+same temporal observations. All52 frames register with2540 points and a plausible
+focal under the implemented screen. Actual sparse views show incomplete facial
+geometry with holes/scatter; physical/scan/head acceptance remains unverified.
+Next freeze it, localize exact-identity withheld frames624/1040 with focal fixed,
+and predeclare scan alignment/valid regions before the next head-fit hypothesis.
+No reference scan may replace the video-derived output.
