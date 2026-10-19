@@ -67,3 +67,18 @@ AI-image limitations, semantic visibility checks and whole-head visual review
 remain. A localized trial must preserve surrounding geometry and disclose its
 experimental scope; it cannot relabel these failed full-head registrations as
 accepted or stand in for final recognizable-head delivery.
+
+## 2026-10-19: real paired-source calibration before further shape changes
+
+Two user-authorized real video/skin-scan/bone-scan cases now have local hash-bound
+intake, decoded-frame evidence and actual source-only white-mesh previews
+(0216). This supports moving from independently generated references to a
+paired-source development pilot. It does not yet establish units, acquisition
+stage equivalence, scan accuracy, camera alignment or a recovered head.
+
+Develop calibration on case001 and reserve case002 from parameter fitting until
+the method is frozen. Explicitly disclose scan-assisted alignment versus a
+photo-only pipeline, and keep video frame holdouts out of fitting. Inspect
+nose/cheek/chin projection and scan defect regions before a new shape candidate.
+Closed scan eyes, posterior artifacts, cap-covered video scalp and artificial
+neck closures cannot silently become full-head surface acceptance targets.
