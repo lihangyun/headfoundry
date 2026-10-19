@@ -102,3 +102,13 @@ skin source, freeze valid triangle regions and one whole-output similarity,
 report exact point-to-triangle distance/coverage in both directions, and retain
 source/annotation uncertainty. Nearest-vertex scores and regional re-alignment
 must not masquerade as the2mm surface acceptance metric.
+
+0237 subsequently freezes a **coarse frontal-face diagnostic scope**, not a
+full-head acceptance mask. Preserve original source triangle identities and all
+region samples before any candidate/error map. Apply one hash-bound positive
+similarity to the whole candidate, never regional alignment or nearest-point
+trimming. Use exact closest triangles, retain both distance directions, missing
+area and full-source/unscoped evidence. The reviewed20.3053% scope,177 tests and
+submicron numeric source-self replay do not quantify scanner/annotation accuracy
+or satisfy complete-head/likeness acceptance. Require declared scan-free inference
+provenance; supplied source or metric fixtures cannot become reconstructed heads.

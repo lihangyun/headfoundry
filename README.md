@@ -1,5 +1,10 @@
 # HeadFoundry
 
+[0237](docs/experiment-0237-fixed-scan-surface-protocol.md) freezes a reviewed
+coarse source-face scope and exact bidirectional triangle-distance evaluator,
+with one global similarity and177 passing tests. The20.3% face scope and numeric
+self-check are **not a reconstructed full head or physical accuracy acceptance**.
+
 Direct geometry [0236](docs/experiment-0236-direct-geometry-capacity.md) also fails
 the known coherent3D screen despite structurally valid cameras. No real transfer
 or head fusion follows; fixed scan-region/global-alignment evaluation is next.

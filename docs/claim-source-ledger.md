@@ -261,3 +261,18 @@ implementation is adopted. This is not an anatomical, collision, patent/FTO or
 reconstruction-quality guarantee. Local experiment0213 passes implemented mesh
 guards but misses its gain gate and stops after one case; appearance and
 reference-photo likeness remain `UNVERIFIED`, promotion `REJECT`.
+
+## 2026-10-19: exact local measurement is not anatomical accuracy
+
+0236 reuses only the separately locked Apache DA3-BASE identity; a coherent
+known3D clay evaluation rejects its direct independent-view accuracy. It neither
+changes the asset's rights nor proves all real-photo performance impossible.
+0237 uses installed Blender5.2.1LTS BVH and its bundled NumPy2.3.4, with our own
+fixed-similarity/provenance/sampling logic. Native analytic fixtures verify
+triangle-interior distance and original polygon identity; source-only replay
+and actual region renders verify bounded evaluation machinery, not acquisition
+accuracy or reconstruction. No new learned asset, application implementation,
+medical segmentation model, training permission or binary-redistribution claim
+is introduced. Private case-specific masks/coordinates/images remain local and
+outside Git; source/semantic uncertainty and unscoped whole-head anatomy remain
+explicitly unverified. Complete head and actual visual evidence are still needed.

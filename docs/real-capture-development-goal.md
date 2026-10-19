@@ -79,6 +79,21 @@ or irrecoverable blocker; do not repeatedly ask about ordinary engineering.
 
 ## Current checkpoint and next action
 
+At0237,177 tests pass and a reviewed **coarse face-only diagnostic scope** plus
+exact triangle-distance evaluator is frozen on case001. Its20.3053% source-area
+scope is not full-head acceptance; full-source samples and all omitted/unverified
+anatomy remain explicit. No video-only complete head, accepted real camera set,
+2mm physical-accuracy claim, reserved-case or visual acceptance exists.
+
+Next investigate the already locked XFeat bundle's unused **learned fine-match
+head**, first checking native dense-grid/scale and point-identity semantics.
+This is a distinct learned localization mechanism, not another photometric
+LK/ECC/context/window/threshold rescue. Pre-register one known-transform
+precision/coverage probe before execution; no inference or success is established
+by this read-only source finding. Keep0235/36 frozen and all original gates.
+
+### Historical initial checkpoint
+
 At commit`ce0ba67`,135 tests pass.0216 supplies the real pilot and confirmed
 metadata.0217's single scan-assisted detector-anchor camera screen is rejected:
 withheld-slot p95 is7.07-22.38px and one outer-eye training anchor is occluded.
@@ -200,3 +215,12 @@ decoder, focal or confidence rescue, real transfer or head fusion follows.
 Next close the outstanding fixed scan-region/global-alignment evaluation gap,
 using triangle-surface rather than nearest-vertex proximity and explicit evidence
 status. All full-head, actual-video, regional and user visual gates remain unmet.
+
+0237 implements and independently audits fixed source triangle IDs, coarse face
+regions, area-uniform samples and exact two-direction surface distance under one
+declared global similarity. Six actual source-region views are reviewed; metric
+self/analytic fixtures and177 regression tests pass. This is source/evaluation
+infrastructure only: no real candidate, full-head/source accuracy, or likeness is
+promoted. The20.3053% face scope and unknown acquisition/annotation uncertainty
+cannot be used to silently narrow the complete-head goal. A different learned
+fine-localization probe from existing locked assets is the next bounded decision.

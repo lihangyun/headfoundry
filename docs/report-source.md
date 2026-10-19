@@ -238,3 +238,21 @@ unverified. No Large/Giant or gated VGGT fallback is used. See experiment 0018
 for exact output conventions, implementation limits and the next evidence check.
 
 See `claim-source-ledger.md` for the auditable mapping. Primary sources include KeenTools Cloud documentation and EULA; VGGT and its CVPR paper; VGGTFace and its AAAI paper; UVFaceFusion; Pixel3DMM; FLAME license documentation; FaceScape; Multiface; PyTorch3D; and the nvdiffrast license.
+
+## 2026-10-19 real-pilot checkpoint: stop failed observations, fix the surface metric
+
+0235 stops context-patch refinement after only1/5 known nonplanar precision cases
+passes;0236's already licensed DA3-BASE direct geometry also fails a coherent
+six-view clay screen. Camera-only independent p95=15.50-93.71px despite
+source-pair p95=1.22-1.30px: neither training reprojection nor positive depth
+establishes accepted cameras. No stronger-model/conditioning rescue or real
+head fusion is performed from these failed configurations.
+
+0237 supplies frozen case001 original-triangle engineering regions, actual
+six-direction source review and exact BVH point-to-triangle distances in both
+directions, with one declared positive similarity and no trimming.177 tests and
+analytic/self/barycentric checks pass. The diagnostic face scope covers20.3053%
+of source area; full-source sampling retains unscoped anatomy/artifacts. Scanner
+and semantic-boundary uncertainty remain unverified. This is evaluation
+readiness, not a video-only head, improved likeness, full-head2mm result or
+KeenTools parity. Case002 stays reserved and source data never leaves local scope.
