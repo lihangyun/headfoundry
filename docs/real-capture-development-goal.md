@@ -141,3 +141,13 @@ points. Next isolate **pixel localization accuracy** with known image transforms
 before proposing a subpixel correspondence method or another camera/shape solve.
 No matcher confidence, reference-frame, focal or mask rescue sweep is authorized
 by these negative results. The goal remains active and unmet.
+
+0226 establishes a measurable descriptor endpoint error floor on known2D warps:
+nonidentity raw p95=3.55-4.77px. Descriptor-seeded translation LK improves this
+but fails2/16 fixed1px-budget cases, and exact-truth seeds retain the same bias.
+0227's affine patches fail support even with true seeds (only3.43%-14.58% on the
+two causal checks). Stop these tested configurations without lowering gates;
+do not use their selected small-cohort errors to justify real head fitting.
+A separately registered context-regularized observation hypothesis must first
+verify point-disjoint fitting and the same synthetic precision/coverage checks.
+Complete head, scan error, real camera acceptance and case002 remain unproven.

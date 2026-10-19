@@ -1,4 +1,5 @@
 import unittest
+from unittest.mock import patch
 
 import cv2
 import numpy as np
@@ -26,6 +27,25 @@ class TemporalVideoTrackTests(unittest.TestCase):
         self.assertEqual(len(track_step(image, image, np.empty((0, 2)))[0]), 0)
         with self.assertRaises(ValueError):
             track_step(image, image, np.array([[np.nan, 3.]]))
+
+    def test_descriptor_initial_flow_is_used_in_both_directions(self):
+        image = np.random.default_rng(226).integers(0,256,(512,512),dtype=np.uint8)
+        image = cv2.GaussianBlur(image,(5,5),1)
+        mask = np.zeros_like(image)
+        mask[150:350,150:350] = 255
+        points = cv2.goodFeaturesToTrack(image,60,.01,8,mask=mask).reshape(-1,2)
+        moved = cv2.warpAffine(image,np.float32([[1,0,35.3],[0,1,-20.7]]),(512,512))
+        initial = points + [35.,-21.]
+        with patch.object(cv2,'calcOpticalFlowPyrLK',wraps=cv2.calcOpticalFlowPyrLK) as spy:
+            predicted,keep,_,_ = track_step(image,moved,points,initial=initial)
+        self.assertEqual(spy.call_count,2)
+        for call in spy.call_args_list:
+            self.assertEqual(call.kwargs['flags'],cv2.OPTFLOW_USE_INITIAL_FLOW)
+            self.assertIsNotNone(call.args[3])
+        self.assertGreater(keep.sum(),.9*len(points))
+        self.assertLess(np.linalg.norm(predicted[keep]-points[keep]-[35.3,-20.7],axis=1).max(),.2)
+        with self.assertRaises(ValueError):
+            track_step(image,moved,points,initial=np.zeros((1,2)))
 
     def test_exact_sequential_frame_identity_and_ambiguity(self):
         expected = {0: "a", 12: "b", 24: "c"}

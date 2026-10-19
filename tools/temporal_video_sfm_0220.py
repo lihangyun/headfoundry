@@ -60,22 +60,31 @@ def resolve_frames(video, records):
         capture.release()
 
 
-def track_step(previous, current, points):
+def track_step(previous, current, points, initial=None):
     points = np.asarray(points, np.float32)
     if (previous.ndim != 2 or previous.dtype != np.uint8 or current.shape != previous.shape
             or current.dtype != np.uint8 or points.ndim != 2 or points.shape[1:] != (2,)
             or not np.isfinite(points).all()):
         raise ValueError("Matching uint8 gray images and finite Nx2 points required")
+    if initial is not None:
+        initial = np.asarray(initial, np.float32)
+        if initial.shape != points.shape or not np.isfinite(initial).all():
+            raise ValueError("Finite initial destinations must match source points")
     if not len(points):
         return points.copy(), np.zeros(0, bool), np.empty(0), np.empty(0)
     options = dict(winSize=(21, 21), maxLevel=3,
                    criteria=(cv2.TERM_CRITERIA_COUNT | cv2.TERM_CRITERIA_EPS, 30, .01),
                    minEigThreshold=1e-4)
-    forward, status, error = cv2.calcOpticalFlowPyrLK(previous, current, points[:, None], None, **options)
+    seeded = initial is not None
+    forward, status, error = cv2.calcOpticalFlowPyrLK(previous, current, points[:, None],
+        initial[:, None].copy() if seeded else None,
+        flags=cv2.OPTFLOW_USE_INITIAL_FLOW if seeded else 0, **options)
     forward = forward.reshape(-1, 2)
     valid = np.isfinite(forward).all(1)
     safe = np.where(valid[:, None], forward, points)
-    backward, back_status, _ = cv2.calcOpticalFlowPyrLK(current, previous, safe[:, None], None, **options)
+    backward, back_status, _ = cv2.calcOpticalFlowPyrLK(current, previous, safe[:, None],
+        points[:, None].copy() if seeded else None,
+        flags=cv2.OPTFLOW_USE_INITIAL_FLOW if seeded else 0, **options)
     fb = np.linalg.norm(backward.reshape(-1, 2) - points, axis=1)
     error = error.ravel()
     keep = (status.ravel() != 0) & (back_status.ravel() != 0) & valid & np.isfinite(fb) & np.isfinite(error)
