@@ -79,7 +79,7 @@ or irrecoverable blocker; do not repeatedly ask about ordinary engineering.
 
 ## Current checkpoint and next action
 
-At0239,182 tests pass and a reviewed **coarse face-only diagnostic scope** plus
+At0240,184 tests pass and a reviewed **coarse face-only diagnostic scope** plus
 exact triangle-distance evaluator is frozen on case001. Its20.3053% source-area
 scope is not full-head acceptance; full-source samples and all omitted/unverified
 anatomy remain explicit. No video-only complete head, accepted real camera set,
@@ -89,13 +89,14 @@ anatomy remain explicit. No video-only complete head, accepted real camera set,
 its dense scales/IDs, fixed reference anchors and native defaults. All16 known
 warp precision cases reject it; even identity pairs move from zero raw error to
 2.60-2.93px retained p95. No more local feature/window/threshold/offset rescue.
-Keep0235/36/38 frozen and all original gates.0239's new real-scan prior oracle
-meets all seven facial proximity targets (nose1.30,perioral0.80,chin0.53mm p95),
-but31 prior-relative normal reversals and extreme triangle areas reject the
-whole result. Failure localization identifies eyelid/ear regions; do not trim
-or rescale them. Next pre-register one hard mesh-feasibility hypothesis on the
-unchanged objective/pose/basis, not a ridge/basis sweep. A scan-fit oracle cannot
-be promoted or initialize video-only inference, nor waive full-head/camera gates.
+Keep0235/36/38/39 frozen and all original gates.0240's hard geometry constraints
+remove0239's31 normal reversals on the same source objective/pose/basis,while
+keeping all seven face p95s<=2mm (nose1.35,perioral0.81,chin0.53mm).184 tests and
+actual18-view review establish bounded regional scan-fit capacity only. Full
+source22.46mm/reverse43.08mm,62 native open edges,hidden supports and visual domain
+differences preclude a complete accepted head. Stop oracle tuning. Next register
+scan-free global model-based video fitting from zero identity/native prior; do
+not copy oracle coefficients,similarity,quadratic or geometry into inference.
 
 ### Historical initial checkpoint
 

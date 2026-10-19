@@ -132,3 +132,14 @@ identity fit without ridge/basis/weight/rescaling sweeps. A separately bounded
 hard mesh-feasibility hypothesis may address newly localized violations with
 the same source objective/pose/basis and unchanged final guards. It remains a
 scan-oracle lane; no scan-derived identity may seed video-only inference.
+
+0240's single hard-feasibility solve keeps the exact0239 quadratic,regions,
+identity space,coefficient bounds and frozen similarity. It removes all31 normal
+reversals while retaining seven regional p95s<2mm. All18 common-camera views and
+184 tests support this **bounded source-fit capacity**, not a complete head.
+Full-source/reverse error,open boundaries,hidden supports and generic/unseen
+anatomy remain unresolved. Stop oracle tuning after this positive diagnostic.
+The next global image-fitting branch must start from native generic zero identity
+and video evidence only; no scan-derived coefficients,pose,quadratic,geometry or
+correspondences may enter inference. Keep source scan evaluation in a separate
+process and preserve all physical,regional,full-head and user acceptance gates.

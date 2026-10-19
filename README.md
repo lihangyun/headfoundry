@@ -1,5 +1,11 @@
 # HeadFoundry
 
+[0240](docs/experiment-0240-hard-mesh-feasibility.md) supplies a mesh-feasible
+**scan-fit oracle**,not video reconstruction:0 normal reversals and all seven
+face-region p95s<2mm,with actual bilateral/common-camera white comparisons.
+Full-head errors/open boundaries still fail;184 tests pass. Next is scan-free
+global model-based video fitting,not more source fitting or oracle transfer.
+
 [0239](docs/experiment-0239-real-scan-prior-capacity.md) finds real-scan facial
 prior capacity (nose/perioral/chin p95=1.30/.80/.53mm) but rejects31 normal
 reversals and unsafe full-mesh areas. This is a scan-fit oracle, not video-only

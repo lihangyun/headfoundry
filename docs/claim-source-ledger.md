@@ -276,3 +276,17 @@ medical segmentation model, training permission or binary-redistribution claim
 is introduced. Private case-specific masks/coordinates/images remain local and
 outside Git; source/semantic uncertainty and unscoped whole-head anatomy remain
 explicitly unverified. Complete head and actual visual evidence are still needed.
+
+## 2026-10-19: anatomical-prior feasibility is not video reconstruction
+
+0239/0240 use only the previously cleared exact FLAME2023 Open CC-BY-4.0 safe
+identity conversion and installed NumPy/SciPy/Blender numerics. No separately
+licensed landmark/texture asset or new trained predictor is loaded. Our
+normalized cross-product constraints and analytic Jacobians are independently
+implemented and checked by finite differences/similarity invariance. Exact
+source/asset/objective identities,prior attribution,one fixed alignment,all
+parameters,local numerical evidence and actual white renders stay auditable.
+The safe face-region fit is scan-derived diagnostic geometry,not proof of
+photo inference,physical scan accuracy,whole-head likeness or KeenTools parity.
+Original model/data and production defaults remain unchanged; no additional
+training,publishing or redistribution rights are inferred.

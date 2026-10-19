@@ -256,3 +256,21 @@ of source area; full-source sampling retains unscoped anatomy/artifacts. Scanner
 and semantic-boundary uncertainty remain unverified. This is evaluation
 readiness, not a video-only head, improved likeness, full-head2mm result or
 KeenTools parity. Case002 stays reserved and source data never leaves local scope.
+
+## 2026-10-19 bounded prior capacity, then return to video inference
+
+0238 rejects the native learned XFeat fine recipe,including same-image endpoint
+regressions; it does not rescue the failed camera observations.0239 uses the
+independent real skin source to test the licensed300-D whole-head prior. Facial
+proximity improves below2mm,but31 normal reversals reject the complete output.
+0240 changes only hard mesh feasibility in the same fixed scan-derived objective:
+0 normal reversals,all original facet-area guards,and nose/perioral/chin p95
+1.347/.806/.535mm. All184 tests and actual18-view comparisons support this
+**regional scan-fit capacity**. It is not video-derived reconstruction.
+
+Full-source/reverse p95 remain22.459/43.079mm,with native open boundaries,unseen
+anatomy,hidden proximity supports and source uncertainty. Full-head promotion
+is rejected. Stop source-oracle tuning and start a separately bounded scan-free
+global model-based image branch from native neutral identity. No source-derived
+coefficients,similarity,quadratic,geometry or correspondences may seed inference;
+the scan remains a separate evaluator,not an unseen input to a claimed result.
