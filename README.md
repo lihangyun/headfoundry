@@ -1,5 +1,11 @@
 # HeadFoundry
 
+[0242](docs/experiment-0242-semantic-material-stability.md) finds a decisive
+known-geometry failure in0241's fixed semantic attachments: an unchanged generic
+head rotated45deg has held p95 10.87/12.86px despite exact cameras. Same-image
+control/reprojection replay pass; changed-identity safety abort leaves only5/15
+cases completed. No rescue fit or camera/head promotion;189 unit tests pass.
+
 [0241](docs/experiment-0241-video-only-model-fit.md) now produces an actual
 **video-only experimental OBJ**,without patient-scan input to inference. Mesh
 guards and independent projection/OBJ replay pass,but camera validation p95

@@ -293,3 +293,12 @@ Freeze this fixed semantic-attachment detector-only configuration; independently
 test whether its supposed material correspondences survive known view/shape
 changes before another fit. Do not rescue by deleting hidden points,loosening
 thresholds or using a scan-fitted initialization. The overall goal remains open.
+
+0242 isolates a concrete cause rather than refitting0241: fixed frontal
+semantic attachments drift10.87/12.86px p95 under known45deg poses of the
+unchanged safe generic head. Exact same-image replay and independent camera
+projection controls pass. The identity fixture aborts its mesh precondition,
+so only5/15 planned cases complete; no claim of a full identity benchmark.
+Freeze that material-correspondence premise. Test directly observed visible
+contours as view-dependent geometry,not recycledR-B threshold crossings or
+semantic coordinates. No new real head/camera acceptance follows.
