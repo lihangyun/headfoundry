@@ -151,3 +151,13 @@ do not use their selected small-cohort errors to justify real head fitting.
 A separately registered context-regularized observation hypothesis must first
 verify point-disjoint fitting and the same synthetic precision/coverage checks.
 Complete head, scan error, real camera acceptance and case002 remain unproven.
+
+0228 passes all16 controlled known-image-warp cases at0.111-0.327px nonidentity
+p95 and98.75%-100% retention using point-disjoint coarse context and free local
+residuals.0229 nevertheless rejects real transfer before pose fitting because
+its independent context supports only41/86 and21/68 matches. Do not lower gates
+or treat synthetic precision as real head improvement. Next fix a small known3D
+motion-capacity diagnostic using case001's supplied skin scan and declared
+cameras/visible material points; distinguish motion-class inadequacy from
+image-correspondence noise before another algorithm branch. Source scans remain
+diagnostic truth only, not a reconstructed output or a video-only shape input.
