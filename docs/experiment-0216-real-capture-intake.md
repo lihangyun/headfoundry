@@ -104,3 +104,11 @@ Validation: all133 public tests pass, including exact STL reconstruction and
 corrupt/truncated/nonfinite input rejection. Both actual intake/preview/review
 jobs completed successfully. Current outcome is a usable source-inspection
 foundation; no reconstructed person head has yet passed.
+
+### User metadata confirmation after intake
+
+On2026-10-19 the user confirmed millimeter STL units and matching video/scan
+acquisition stage for both cases, without intervening face-shape-changing events.
+The private `provenance-confirmation.json` binds this statement to the untouched
+original manifest. Independent scan accuracy and expression equivalence remain
+unverified. See0217 for the subsequent rejected camera-association screen.

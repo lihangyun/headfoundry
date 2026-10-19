@@ -82,3 +82,11 @@ photo-only pipeline, and keep video frame holdouts out of fitting. Inspect
 nose/cheek/chin projection and scan defect regions before a new shape candidate.
 Closed scan eyes, posterior artifacts, cap-covered video scalp and artificial
 neck closures cannot silently become full-head surface acceptance targets.
+
+0217 then records the user's millimeter/same-stage confirmation and rejects one
+scan-assisted automatic-landmark camera screen. A known skin scan still gives
+large withheld detector-slot errors and a hidden outer-eye support. Actual
+source overlays show broad alignment, so these residuals cannot all be declared
+camera or identity error. Freeze the failed association set; independently
+review material-point/contour definitions before a new calibration hypothesis.
+Do not deform a head to fit this source of unverified landmark discrepancies.
