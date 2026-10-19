@@ -43,3 +43,19 @@ class VisibleProfileModelTests(unittest.TestCase):
                 - frontal_constraints(beta-delta, base, field, projection, target)[0])/2e-6
         np.testing.assert_allclose(analytic, numerical, atol=2e-7, rtol=1e-5)
         np.testing.assert_allclose(frontal_constraints(np.zeros(4), base, field, projection, target)[0], 4.)
+
+    def test_infinite_outside_domain_cost_backtracks_without_changing_valid_loss(self):
+        from scipy.optimize import minimize
+        invalid = []
+
+        def objective(x):
+            if x[0] <= 0:
+                invalid.append(float(x[0]))
+                return np.inf
+            return float((x[0]-.1)**2)
+
+        result = minimize(objective, [1.], jac=lambda x: 2*(x-.1), method='SLSQP',
+            bounds=[(-2, 2)], options={'ftol': 1e-12})
+        self.assertTrue(result.success)
+        self.assertTrue(invalid)
+        self.assertAlmostEqual(result.x[0], .1, places=8)

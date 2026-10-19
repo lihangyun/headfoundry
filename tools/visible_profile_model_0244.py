@@ -5,6 +5,10 @@ from headfoundry.raster import occluding_edges
 from headfoundry.profile_fit import envelope_edges_with_jacobian, project_with_basis_jacobian
 
 
+class ProfileDomainError(ValueError):
+    """A trial camera cannot cover every required row;never delete those rows."""
+
+
 def pose(state, initial):
     r, dr = cv2.Rodrigues(initial[:3]+.03*state[:3])
     t = initial[3:].copy()
@@ -20,7 +24,7 @@ def envelope(state, template, directions, faces, skin_vertices, initial, intrins
     r, t, dr = pose(state[start:start+6], initial)
     cam = vertices@r.T+t
     if (cam[:, 2] <= 1e-6).any():
-        raise ValueError('Entire mesh must have positive depth')
+        raise ProfileDomainError('Entire mesh must have positive depth')
     edges = occluding_edges(vertices, faces, np.c_[r, t])
     edges = edges[np.isin(edges, skin_vertices).all(axis=1)]
     basis = np.zeros((*cam.shape, len(state)))
@@ -28,8 +32,13 @@ def envelope(state, template, directions, faces, skin_vertices, initial, intrins
     basis[:, :, start:start+3] = .03*np.einsum('kij,vj->vik', dr, vertices)
     basis[:, 0, start+3] = basis[:, 1, start+4] = .005
     basis[:, 2, start+5] = .03*t[2]
-    supports, jacobian = envelope_edges_with_jacobian(cam, edges, intrinsic@np.c_[np.eye(3), np.zeros(3)],
-        rows, direction, basis)
+    try:
+        supports, jacobian = envelope_edges_with_jacobian(cam, edges, intrinsic@np.c_[np.eye(3), np.zeros(3)],
+            rows, direction, basis)
+    except ValueError as error:
+        if str(error) != 'Jacobian requires covered rows':
+            raise
+        raise ProfileDomainError('Every required row must be covered') from error
     return np.array([s[2][0] for s in supports]), jacobian, supports, np.c_[r, t]
 
 
