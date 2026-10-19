@@ -122,3 +122,13 @@ A different global anatomical-model observation route first needs bounded prior
 capacity on the newly available independent scan, with fixed source regions,
 one declared similarity and actual white-head review. A scan-fit oracle is not
 video-only inference, medical accuracy or permission to alter defaults/gates.
+
+0239 uses the new independent real skin source, not the old AI-reference fit.
+Its300-D prior oracle reaches all seven coarse facial2mm proximity targets but
+fails full-output mesh guards (31 normal reversals,area ratios0.028-14.434).
+Do not promote facial proximity or omit the eye/ear damage. Preserve full-source
+22.397mm p95,reverse43.817mm p95 and62 native open edges. Freeze this box-only
+identity fit without ridge/basis/weight/rescaling sweeps. A separately bounded
+hard mesh-feasibility hypothesis may address newly localized violations with
+the same source objective/pose/basis and unchanged final guards. It remains a
+scan-oracle lane; no scan-derived identity may seed video-only inference.

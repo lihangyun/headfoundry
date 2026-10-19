@@ -1,5 +1,10 @@
 # HeadFoundry
 
+[0239](docs/experiment-0239-real-scan-prior-capacity.md) finds real-scan facial
+prior capacity (nose/perioral/chin p95=1.30/.80/.53mm) but rejects31 normal
+reversals and unsafe full-mesh areas. This is a scan-fit oracle, not video-only
+reconstruction.182 tests pass; no accepted head/default change follows.
+
 [0238](docs/experiment-0238-native-learned-fine-localization.md) rejects all16
 native learned fine-localization cases, including identity-image regressions;
 no real camera/head solve follows.179 tests pass; full-head acceptance is unmet.

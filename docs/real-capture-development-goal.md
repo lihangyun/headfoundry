@@ -79,7 +79,7 @@ or irrecoverable blocker; do not repeatedly ask about ordinary engineering.
 
 ## Current checkpoint and next action
 
-At0238,179 tests pass and a reviewed **coarse face-only diagnostic scope** plus
+At0239,182 tests pass and a reviewed **coarse face-only diagnostic scope** plus
 exact triangle-distance evaluator is frozen on case001. Its20.3053% source-area
 scope is not full-head acceptance; full-source samples and all omitted/unverified
 anatomy remain explicit. No video-only complete head, accepted real camera set,
@@ -89,10 +89,13 @@ anatomy remain explicit. No video-only complete head, accepted real camera set,
 its dense scales/IDs, fixed reference anchors and native defaults. All16 known
 warp precision cases reject it; even identity pairs move from zero raw error to
 2.60-2.93px retained p95. No more local feature/window/threshold/offset rescue.
-Keep0235/36/38 frozen and all original gates. Next pre-register one anatomical
-whole-head-prior capacity diagnostic against the independent real scan before
-attempting a distinct global model-based image fit. Such a scan-fit oracle cannot
-be promoted as video reconstruction or used to waive camera/physical/visual gates.
+Keep0235/36/38 frozen and all original gates.0239's new real-scan prior oracle
+meets all seven facial proximity targets (nose1.30,perioral0.80,chin0.53mm p95),
+but31 prior-relative normal reversals and extreme triangle areas reject the
+whole result. Failure localization identifies eyelid/ear regions; do not trim
+or rescale them. Next pre-register one hard mesh-feasibility hypothesis on the
+unchanged objective/pose/basis, not a ridge/basis sweep. A scan-fit oracle cannot
+be promoted or initialize video-only inference, nor waive full-head/camera gates.
 
 ### Historical initial checkpoint
 
