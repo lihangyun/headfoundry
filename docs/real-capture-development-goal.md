@@ -119,3 +119,16 @@ geometry with holes/scatter; physical/scan/head acceptance remains unverified.
 Next freeze it, localize exact-identity withheld frames624/1040 with focal fixed,
 and predeclare scan alignment/valid regions before the next head-fit hypothesis.
 No reference scan may replace the video-derived output.
+
+0222 rejects frozen-model localization on development sentinels624/1040. The
+first reaches9.658699px odd-ID validation p95; the second has only17 pose inliers.
+Independent pairwise pixel-rigidity also fails, so changing head geometry is not
+justified.0223's single direct-versus-temporal endpoint closure retains only58/0
+points, insufficient for the original>=30 points per pose/validation split.
+Stop that LK observation family without tolerance or reference-frame sweeps.
+The next distinct evidence target is direct learned feature/matcher associations
+using the repository's already pinned Apache-2.0 XFeat/LighterGlue assets on the
+real video, followed by a frozen observation coverage/loop check before mapping.
+These inspected sentinels are now development evidence, not fresh held-out data;
+case002 remains excluded from fitting/tuning. No final camera/head acceptance,
+scan error or recognizable identity improvement has yet been established.
