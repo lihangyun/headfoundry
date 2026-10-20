@@ -379,3 +379,14 @@ silhouette-only unknown-pose numerical family after the registered second
 mechanism fails;require independent information rather than another field,
 weight,depth prior,solver or budget change. Preserve the known-motion fixture
 without implying that the failed extension is production-ready.
+
+0257 separates native material-feature observability from camera eligibility.
+One feature in six frames is at most one physical identity candidate,not six
+independent3D supports. A broad soft-tissue patch,unresolved cluster or neighboring
+spot pair cannot silently become a precise rigid point. Record out-of-display
+features separately from proven physical occlusion. Do not claim1px accuracy
+from nearest-neighbor zoom or lower camera support requirements after inspection.
+The bounded audit supports input identity,not calibrated correspondence or head
+acceptance. Record its visual-review budget overrun and stop further expansion;
+retain compact local hypotheses/evidence without starting a fit or changing any
+production,3px,2mm,whole-head or actual-visual requirement.

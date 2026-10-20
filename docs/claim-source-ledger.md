@@ -459,3 +459,15 @@ depths are nuisance variables,not a reconstructed head. Independent pose failure
 prevents real transfer,promotion or quality claims;case002/bone/upload/training
 remain excluded. Compact local evidence and Git source recovery replace the
 failed exclusive implementation under0250 policy.
+
+## 2026-10-20 native material-feature hypotheses are not ground truth
+
+0257 uses only authorizedcase001 video,0252's sequential hash index and existing
+OpenCV/Pillow/NumPy for decoding and nearest-neighbor display. Manual window
+seeds and candidate IDs are our uncertain annotations,not downloaded labels,
+learned predictions,biological classifications or rigid calibration truth.
+Only9 fixed source frames and19 candidate windows are inspected;no scan,bone,
+case002,model,service,training or upload is used. Pixel integrity and visually
+plausible persistence do not establish subpixel/1px accuracy or a camera/head
+pass. Private candidate panels/coordinates remain local under original consent.
+No new asset license or expanded usage grant follows from this source audit.

@@ -484,3 +484,25 @@ or justified motion/shape constraint must be evidenced before more modeling.
 0254 remains a successful known-motion fixture,not real camera recovery. Compact
 private evidence/Git09b0e23 replace0256 exclusive runner/raw outputs. Full target
 is neither achieved nor redefined as this diagnostic.
+
+## 2026-10-20 native material-feature review closes without calibration claims
+
+0257 reviews9 predeclared exact sequential case001 video crops and two native
+candidate panels;all9 source RGB hashes match0252 and display readback is exact.
+One forehead dark point is a plausible persistent identity across6 observations,
+and a lateral jaw point has2 same-side observations. Chin is a broad deformable
+patch;cheek cluster/bridge subfeature IDs remain unresolved. Five groups/19
+display windows are not19 points. No calibrated localization,distributed rigid
+support or complete bilateral/chin-up connection is established. Frame690's
+forehead is outside the fixed display crop,not proven physically occluded.
+
+Input integrity passes;material-track readiness and camera/head quality remain
+UNVERIFIED. This bounded review is not an exhaustive texture census or proof
+that every material method is impossible. Decode takes1.650s,but visual-review
+active time is uninstrumented and wall time already exceeded41minutes;record
+the10-minute budget overrun and stop expansion rather than silently extend it.
+No solve,head,scan/case002 read,training,upload,new dependency or production
+change follows. Compact local evidence and source recovery024035e replace
+redundant display crops;original video/0252 evidence remain intact. Full target
+remains unmet;the next action needs independent information,not retired-route
+parameter variations or treating visual hypotheses as calibrated measurements.
