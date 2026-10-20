@@ -460,3 +460,27 @@ rescue follows. Actual supplied-scan residual panels show regression,not a new
 head. Source recoverable at9985fa1;compact local evidence replaces exclusive
 0255 runner/raw artifacts. Keep successful0254 math/fixture and all originals.
 Full-head/video/2mm/visual objective remains unmet;no default promotion follows.
+
+## 2026-10-20 continuous silhouette witnesses fail the same camera gate
+
+0256 replaces binary counting with explicit positive ray-depth witnesses and
+native outside-mask distance residuals,using existing sparse TRF/LSMR and an
+independently checked dependency pattern. Same images/samples/coarse initial
+cameras/bounds/gauge and physical projection gates;no true3D enters the worker.
+One8.055s fit uses47 solver nfev/41 njev/744 total residual calls. API success is
+only xtol termination,with optimality610.348,not a proof of gradient convergence.
+Mask RMS3.148524->.129130px and coherence.986003 are not reliable pose evidence.
+
+All6 final original-point p95 values fail3px:3.169/19.803/23.352/23.990/28.076/
+15.948px. Five regress;front's small numerical improvement still fails. Full
+original populations,proper rotations/cheirality and<=2.047e-12px independent
+projection replay are preserved. Actual supplied-scan panels are camera-error
+diagnostics,not generated heads or improved anatomy. No real-video transfer,
+case002,bone,training,upload or production change follows.
+
+Close this attempted silhouette-only unknown-pose family,no loss/field/weight/
+depth-prior/solver/iteration rescue. A materially different independent material
+or justified motion/shape constraint must be evidenced before more modeling.
+0254 remains a successful known-motion fixture,not real camera recovery. Compact
+private evidence/Git09b0e23 replace0256 exclusive runner/raw outputs. Full target
+is neither achieved nor redefined as this diagnostic.

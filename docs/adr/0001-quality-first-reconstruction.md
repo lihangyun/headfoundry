@@ -369,3 +369,13 @@ conditions. A demonstrably feasible true solution does not excuse a failed
 initializer/solver,and one failed bounded solve does not prove all silhouette
 methods impossible. Close the registered recipe without budget/seed/threshold
 rescue. Failed camera outputs never initialize a purported accepted head.
+
+0256's continuous explicit witnesses reduce distance loss to.129px RMS while
+every independent camera still fails3px. Step-tolerance termination with large
+reported optimality must not be sold as physical/global convergence. Count loss,
+distance loss and latent feasible witnesses are different measurements;none
+alone proves camera correctness or material correspondence. Close this attempted
+silhouette-only unknown-pose numerical family after the registered second
+mechanism fails;require independent information rather than another field,
+weight,depth prior,solver or budget change. Preserve the known-motion fixture
+without implying that the failed extension is production-ready.

@@ -1,6 +1,7 @@
 # Experiment0256: continuous per-ray feasibility witnesses
 
-Date:2026-10-20. Registered before new optimization. Status:UNVERIFIED.
+Date:2026-10-20. Registered before new optimization.
+Status:REJECT for continuous-witness unknown-pose recovery.
 Previous0255 made progress by rejecting and retiring an untrustworthy camera
 recipe at884d1ea,not by improving a reconstructed head.
 
@@ -93,3 +94,83 @@ dependency pattern and witness equations are independently implemented here.
 [OpenCV distance-transform documentation](https://docs.opencv.org/4.x/d2/dbd/tutorial_distance_transform.html)
 is an API reference,not a face-reconstruction accuracy result. Neither source
 establishes uniqueness of silhouettes or applicability to the real video.
+
+## Executed bounded outcome
+
+Exact pre-result producer/protocol recovery:Git09b0e23. Preparation exports
+only frozen native masks/2D contours/samples;source pixels match0254 exactly.
+Fresh fit worker's STL/private-source denial checks pass. No oracle arrays are
+available there. The eleven procedural interval/bilinear/pose/dependency controls
+pass;the finite-difference sparsity check validates the declared toy fixture,
+not a general formal proof for arbitrary code.
+
+One10.945s process exits0,with8.055s inside fitting. TRF reports xtol termination
+after47 solver nfev/41 njev and744 actual residual calls (including finite
+differences). No retry or budget extension occurs. Raw mask RMS falls
+3.148524->.129130px;final maximum remains4.635638px. All target witness-depth
+barriers are zero,but original polygon coherence is.9860026042,below.99.
+
+The solver success flag is a **step-tolerance stop**,not proof of a near-stationary
+or global solution:reported optimality610.348273 is far above gtol1e-8. Do not
+claim convergence merely because the numerical API reports success. A low
+image-distance cost does not override the independent camera checks.
+
+Post-termination evaluation uses every same original point and one global
+angular-scale gauge. Every final view fails3px;five regress from initialization:
+
+| View | Fixed visible points | Initial p95 px | Final p95 px | Final rotation error deg |
+|---|---:|---:|---:|---:|
+|front|2355|3.180587|3.168551|0.000000|
+|yaw-10|2306|15.563537|19.803494|8.930611|
+|yaw+10|2343|15.236549|23.351503|10.443567|
+|yaw-30|2205|23.835696|23.989603|11.270415|
+|yaw+30|2223|24.371535|28.076385|13.083884|
+|pitch+10|2003|14.671897|15.948450|6.422386|
+
+Final focal1497.7601px remains near the1500px initial guess,not the1083.2579px
+fixture truth. Evaluation-only scale.1205419865 is shared by all final views;
+no per-view alignment/reflection or point deletion. All13435 point-view samples
+per stage remain. Proper rotations/original-point cheirality pass;independent
+OpenCV projection replay is<=2.047e-12px. Actual source-only initial/final clay
+panels with native residual arrows were inspected;they are not new head outputs.
+
+## Enforced exit and next evidence requirement
+
+RecipeREJECT. Execution/mathematical controls passed,but reliable unknown camera
+pose did not. Faster residual minimization and smaller loss are not improved
+camera/head accuracy;front's tiny numerical change still fails its own gate.
+Do not promote a PARTIAL_SUCCESS or move this result to real reconstruction.
+
+**Close this silhouette-only unknown-pose attempt family now.** No next distance
+transform,loss/weight,sampling,depth prior,solver/tolerance,multi-start or added
+iteration variant.0254 is retained solely as successful known-motion evaluation
+math/fixture;its conditional pass is not unknown/real-camera acceptance.
+This does not prove all silhouette theory impossible or uniquely identify the
+failure cause. It establishes that these bounded no-texture/no-prior recipes
+do not provide trustworthy cameras on this clean rigid source-mask regime.
+
+Before further modeling,require genuinely independent material correspondences
+or justified motion/shape information,not more reduction of this silhouette
+loss. Investigating their availability in the already authorized video remains
+in scope;no extra capture,source-scan inference or lower gate is silently assumed.
+No case002/bone content,real-video inference,training,upload,head/texture/default
+change or final quality acceptance occurs here. Full objective remains open.
+
+## Retirement
+
+Source recoverable at09b0e23. Preserve compact local reports,full trace,sanitized
+2D input/control hashes and two bounded source-only projection panels;remove
+exclusive0256 runner/raw outputs/cache before a different route. No package,
+model or framework was added,so none needs removal. Keep originals,0254 math/
+masks/0230 samples,shared tests and unrelated0207 draft. An archived failure is
+not authorization to restore this solver or call its latent depths a head.
+
+Actual closeout:992,009byte private evidence archive,CRC verified,SHA256
+`f0012e363c3756642918fbb8312288985dc134b59cdb7ae56d4b9f37d77dc3dc`.
+Remove14 raw files totaling1,385,428bytes plus the exclusive runner after
+terminal-process/resolved-path/non-symlink checks. No exclusive cache/live
+caller remains. Source recovery matches the executed producer hash;ten protected
+input/consent/intake hashes and retained0254 masks/0230 archive remain exact.
+131 shared tests pass in4.776s;Git whitespace check passes. Byte counts are
+logical file sizes,not independently measured free-disk gain. No new package
+or framework needs uninstalling. Compact numeric/review evidence remains local.

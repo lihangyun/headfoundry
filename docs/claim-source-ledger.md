@@ -445,3 +445,17 @@ post-termination evaluator. All views regress independently;source-clay panels
 are diagnostic evidence,not generated heads. Case002,bone,upload and training
 remain excluded. Retirement preserves compact local evidence/source recovery
 without changing prior asset grants or establishing real-camera/medical quality.
+
+## 2026-10-20 independently implemented continuous ray witnesses
+
+0256's native distance sampling,ray witnesses,Jacobian dependency graph and
+camera controls are our code using already installed NumPy/OpenCV/SciPy. The
+official API references linked in0256 explain distance transforms and bounded
+sparse least squares,not face accuracy or inference rights. No new checkpoint,
+external implementation,medical segmentation,training or service is adopted.
+Authorizedcase001 scan remains only the known-source evaluation diagnostic;
+fresh fitting receives2D masks/samples,not oracle geometry/cameras. Latent
+depths are nuisance variables,not a reconstructed head. Independent pose failure
+prevents real transfer,promotion or quality claims;case002/bone/upload/training
+remain excluded. Compact local evidence and Git source recovery replace the
+failed exclusive implementation under0250 policy.
