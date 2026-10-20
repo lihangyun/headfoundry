@@ -347,3 +347,16 @@ and camera-sounding metadata tags are not physical calibration. Thumbnail review
 can establish qualitative capture limits,not exact pose or metric head accuracy.
 Only current footage is available;continue visible-face research but keep unseen
 scalp/posterior completion explicitly unverified. No full-head gate is waived.
+
+## 2026-10-20 silhouette capacity is conditional camera evidence
+
+0254 permits a texture-free implicit-hull camera diagnostic,not a scan-conditioned
+video reconstruction. Keep every depth interval across concave/holey silhouettes;
+an outer min/max envelope can falsely declare coherence. Positive coherence is
+not sufficient for accurate cameras:score all immutable known material points
+independently,and retain proper matrices/cheirality/projection gates. Report
+cost plateaus separately from optimizer tolerance and physical uncertainty.
+Global similarity scale cannot be inferred from silhouette coherence alone.
+Known rotations in a capacity test must not silently enter real inference.
+No geometry fitting follows before unknown-pose and actual-video applicability
+are independently validated. Original3px/2mm/full-head/visual gates stay intact.

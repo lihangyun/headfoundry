@@ -416,3 +416,27 @@ frame rescue or skin-scan/case002 use follows. Source recoverable atde9b5f7;
 compact local evidence replaces exclusive runner/raw frames under cleanup policy.
 Reliable independent camera/material information remains the next prerequisite;
 no new head,production promotion or visual acceptance is established.
+
+## 2026-10-20 texture-free focal capacity passes under known motion
+
+0254 independently implements complete polygon-cone depth-interval unions and
+silhouette coherence using existing NumPy/OpenCV/SciPy/Blender. This tests a
+different image signal from failed local/semantic/photometric correspondences.
+The source-only transparent masks use unchanged successful0230 geometry/cameras;
+no new identity,real-video fit,case002 or bone data enters.
+
+One36.404s scalar solve with known rotations gives1064.4042px focal versus
+1083.2579px truth,coherence1.0 and0.205960-0.228074px p95 across all6 original
+visible populations (13435 point-view evaluations). Independent OpenCV replay
+is2.274e-13px;proper rotations/positive depth and fixed controls pass. This is
+TECHNICAL_CHECK_PASSED **known-motion capacity**,not recovered real cameras,
+anatomy,visual acceptance or an editable reconstructed head.
+
+Observed unit-coherence focal samples span1064.3550-1150.3372px,so solver
+tolerance cannot be reported as focal precision. Read-only replay of one
+previous non-perfect trace cost confirms all3072 flags invariant under.125
+global translation scaling;absolute radius is a gauge,not extra silhouette
+information. Actual supplied-scan/mask/projection reviews are clearly labeled,
+not presented as new head output.131 tests pass;implementation/source recoverable
+at16217e6 and bounded positive fixture remain local. Next unknown rotations must
+pass independent projection before considering real segmentation/rigidity or fit.

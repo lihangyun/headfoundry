@@ -416,3 +416,19 @@ The observation-count failure prevents any F fit;no relative-pose,focal,3D,
 medical or likeness claim follows. Original authorization does not expand to
 training/upload or distribution of private annotations/images. No scan/case002
 content is consumed. Failed exclusive code/data follow0250 retirement policy.
+
+## 2026-10-20 silhouette coherence principles,independent capacity implementation
+
+[Hernandez et al. author draft](https://carlos-hernandez.org/papers/hernandez_pami07.pdf)
+supports silhouette/visual-hull coherence as a camera cue under circular motion,
+including partial outlines,and warns that coherence alone is insufficient.
+[Zhang and Wong institutional paper](https://hub.hku.hk/bitstream/10722/138033/1/Content.pdf?accept=1)
+supports turntable self-calibration from silhouette image invariants. Their
+assumptions/results do not establish applicability to this human capture.
+No upstream implementation,learned model,dataset license or clinical claim is
+adopted.0254's complete interval-union math and controls are our implementation
+using already installed libraries/Blender. Exact authorizedcase001 skin remains
+source-only oracle geometry with known-motion evaluation,never hidden video
+inference input. All masks,scan/projection reviews and identifiers stay local;
+no case002,bone,training,upload or new model/framework is used. Conditional
+known-rotation focal success does not establish full camera/head acceptance.

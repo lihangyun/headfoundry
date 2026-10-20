@@ -1,7 +1,9 @@
 # Experiment0254: texture-free silhouette focal capacity,known-motion oracle
 
 Date:2026-10-20. Pre-registered before new masks or coherence measurements.
-Status:UNVERIFIED. Previous0253 is progress:a fixed external-reference recipe
+Status:TECHNICAL_CHECK_PASSED for known-motion focal capacity only.
+Unknown-pose/real-video camera and head acceptance:UNVERIFIED.
+Previous0253 is progress:a fixed external-reference recipe
 fails support,closes atd69d881,and its exclusive artifacts are cleaned.
 
 Use ponytail/minimal existing NumPy/SciPy/OpenCV/Blender only. No new model,
@@ -85,3 +87,82 @@ only a separately registered unknown-pose camera capacity check,not real transfe
 If rejected,compact local reports/masks-review/controls suffice;remove exclusive
 runner/raw masks/results after archive/Git source recovery and shared regression
 checks under0250 policy. No original successful fixture is deleted or changed.
+
+## Executed positive capacity result,not a video camera
+
+Exact executed producer/pre-result protocol are recoverable at16217e6.
+One Blender5.2.1LTS process exits0:16.473s wall including startup,5.588s measured
+inside generation. All6 masks preserve the exact original mesh/transform/cameras;
+camera replay passes. Each target has one outer contour in this fixture;the
+synthetic annulus control separately verifies preservation of holes/intervals.
+
+One36.404s cost/optimization run exits0. Truth coherence is1.0,all3072 source
+rays feasible. The single bounded solve terminates after22 evaluations at
+focal1064.4042px versus fixture1083.2579px (1.74046% relative difference).
+Final coherence is1.0. No error-driven sample deletion,realignment or refit.
+
+| Fixed view | All original visible points | Independent projection p95 px |
+|---|---:|---:|
+|front|2355|0.208176|
+|yaw-10|2306|0.206189|
+|yaw+10|2343|0.207620|
+|yaw-30|2205|0.208252|
+|yaw+30|2223|0.205960|
+|pitch+10|2003|0.228074|
+
+All rotations remain proper and every original sample has positive depth.
+Independent OpenCV projection agrees within2.274e-13px. These13435 visible
+sample-view evaluations are conditional on **known rotations**,not a held-out
+real-video camera benchmark or new metric anatomy measurement.
+
+The cost is not sharply identified:visited f1064.3550..1150.3372px all score1.
+Those are observed trace extrema,not computed limits of the entire plateau.
+The solver's.1px stopping tolerance is **not focal uncertainty**. Do not claim
+unique/precise intrinsics from a perfect coherence score or choose another
+plateau point using source-projection errors.
+
+## Read-only global-scale audit and actual visual review
+
+The protocol conservatively called the true angular-scale translation coupling
+unavailable information. It indeed enters the evaluation camera gauge,but not
+the coherence information:global translation scale multiplies every ray-depth
+interval and cannot change their intersection feasibility. Check this without
+refitting,using the already executed first f1775.0776px **non-perfect** trace
+point:scale all camera translations by.125. All3072 feasibility flags remain
+bit-identical;both scores are.9401041667 (one2.575s replay). This is global
+similarity gauge invariance,not new pose knowledge or a recovered physical scale.
+A future optimizer can fix unit radius rather than access this true radius.
+Known relative rotations and the evaluation alignment still limit this oracle.
+
+Actual6-view masks/source-ray sheet and fixed-output projection panels were
+viewed. The panels show the **supplied scan**,not reconstructed output;green
+points are true pixels and red arrows magnify residuals20x for diagnosis.
+Every original visible point contributes to metrics;display points are sampled
+by a fixed ordinal stride,not by error. No new mesh,likeness,2mm score or full
+head acceptance follows. The real video's cap/neck rigidity and segmentation
+are not validated by this clean synthetic source-only mask experiment.
+
+Private bounded evidence is `assets/private/silhouette-focal-0254/`:render/input
+hashes,execution logs,complete trace/per-point errors,mask/projection reviews and
+scale replay. Retain this successful evaluation fixture and implementation;
+there is no failed-route binary/model to accumulate or uninstall. No source,
+case002,bone,production default or old intake artifact changes.
+
+Four standalone interval controls pass. One shared regression additionally
+checks true rigid-cube coherence,deliberately wrong-camera rejection and exact
+global-scale replay. Full suite:131 tests pass in4.973s. These are numerical
+controls,not real head acceptance.
+
+## Next prerequisite
+
+Test unknown relative rotations with the same fixed silhouette cost/populations
+and an independently scored camera gate before any real-video transfer or
+geometry fitting. Do not hide true rotations in a production initializer or
+call the conditional focal result a solved camera pipeline. Only after that
+is the source-video segmentation/rigidity applicability question actionable.
+Do not return to rejected patch/SIFT/photometric settings or relax3px/2mm gates.
+
+Runnable checks: `python tools/check_silhouette_focal_0254.py --self-check` and
+`python -m unittest discover -s tests`. Full mask/solve commands intentionally
+refuse existing private output;do not delete the successful fixture to rerun.
+The pre-result source at16217e6 and recorded input hashes define this execution.
