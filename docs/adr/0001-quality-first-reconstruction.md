@@ -325,3 +325,14 @@ ray field,or that cameras agree with independent physical correspondences.
 Require both checks;reject the current configuration without real-head fitting.
 Some lower camera residuals do not establish a net benefit when joint geometry
 regresses. Keep this bounded failure rather than relaxing the original gates.
+
+## 2026-10-20 failed-route retention policy superseded by user cleanup request
+
+Cleanup0250 keeps failure conclusions,source recovery refs and compact private
+evidence,but removes exclusive failed-route code/tests,generated binaries,
+weights/frameworks and environments before another route starts. Earlier
+instructions to retain all failed candidates mean historical auditability,not
+indefinite storage of every binary. Never remove original consented materials,
+accepted baselines or shared safety/evaluation tests. Follow rootAGENTS.md.
+Historical experiment commands may require Git recovery and reinstallation;
+do not reactivate rejected configurations automatically.

@@ -358,3 +358,14 @@ numbers are lower than0236,while4/5 joint targets worsen:no overall improvement
 or new head acceptance is supported. All populations remain unfiltered;actual
 source-clay overlay review confirms systematic errors.207 tests pass;freeze
 this exact image-only MIT-runtime variant,no real video transfer/case002 tuning.
+
+## 2026-10-20 failed-route active-tree cleanup
+
+User asks to stop accumulating failed scripts/tests,heads,integrations and
+weights. Cleanup0250 removes112 exclusive tools/tests plus7 obsolete asset locks,
+715 private targets(41.15GB logical file sizes) and17 unused model packages.
+An independently CRC/SHA-checked6.17MB local evidence archive and Git source
+recovery pointd443e37 retain the rejection record,not every failed binary.
+127 shared tests and environment dependency checks pass. Generic math,scan
+fixtures,rights and source materials are preserved. No new modeling run or
+quality improvement is claimed. See cleanup-0250-failed-routes.md and rootAGENTS.

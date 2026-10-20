@@ -1,12 +1,8 @@
 import unittest
-import sys
-from pathlib import Path
 
 import numpy as np
 
 from headfoundry.expression_contact import fit_contact_expression
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
-from experiment_0211 import proper_crossings
 
 
 class ExpressionContactTests(unittest.TestCase):
@@ -34,11 +30,6 @@ class ExpressionContactTests(unittest.TestCase):
                 fit_contact_expression(self.v, self.f, self.b, up, low,
                                        contact_sigma=sigma, motion_sigma=1.)
 
-    def test_section_crossing_and_declared_contact_tolerance(self):
-        a = np.array([[[-1., -1.], [1., 1.]]])
-        b = np.array([[[-1., 1.], [1., -1.]]])
-        self.assertEqual(proper_crossings(a, b, np.array([2., 2.])), 1)
-        self.assertEqual(proper_crossings(a, b, np.array([0., 0.])), 0)
 
 
 if __name__ == "__main__":
