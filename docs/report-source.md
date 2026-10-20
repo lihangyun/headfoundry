@@ -383,3 +383,21 @@ numbers,not video inference or a new head. No point/target is deleted to pass.
 Following0250 policy,the exclusive runner/predictions are removed after compact
 local archiving;exact source recovery is commit3a74131. No real transfer or
 new model installation follows;unknown shape/focal/lighting remain unresolved.
+
+## 2026-10-20 source observability and frame identity repair
+
+Audit0252 sequentially decodes all1041 case001 frames in12.438s and reviews all9
+chronological pages. Existing16 seeked intake PNGs include10 ordinal errors of
+1-2frames. Shared intake now counts reads without seeking;independent real-video
+RGB-hash replay matches16/16 corrected ordinals. Original intake/source artifacts
+remain unchanged.130 regressions pass;this isTECHNICAL_CHECK_PASSED input repair,
+not new camera,geometry,likeness acceptance or an explanation of every failure.
+
+Qualitative coverage shows bilateral turns and pitch,not a posterior-head orbit;
+the cap stays on. Recognized bounded container metadata supplies no calibrated
+K/pose;opaque payloads and physical lens calibration stay unverified. User has
+only this current video. Continue visible-face/profile work without waiting for
+more capture,but do not claim unseen patient-specific scalp/posterior recovery
+or waive full acceptance. Unknown-focal camera/material evidence needs a distinct
+bounded hypothesis before another shape fit. No scan/case002 bytes or new model
+are used;private frame pages and actual review remain local.

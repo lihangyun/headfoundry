@@ -209,11 +209,13 @@ def audit(manifest_path, output, budget=120.):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('manifest', type=Path)
-    parser.add_argument('output', type=Path)
+    parser.add_argument('manifest', type=Path, nargs='?')
+    parser.add_argument('output', type=Path, nargs='?')
     parser.add_argument('--self-check', action='store_true')
     args = parser.parse_args()
     if args.self_check:
         print(json.dumps(self_check()))
     else:
+        if args.manifest is None or args.output is None:
+            parser.error('manifest and output are required unless --self-check is used')
         audit(args.manifest, args.output)

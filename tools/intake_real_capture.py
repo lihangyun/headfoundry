@@ -1,5 +1,6 @@
 """Inventory consented local videos/scans without fitting or modifying sources."""
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import time
@@ -56,14 +57,17 @@ def video_review(path, output):
         ids = np.linspace(0, count - 1, 16).round().astype(int)
         sheet = Image.new("RGB", (720, 4 * 348), (25, 25, 25))
         records = []
-        for slot, index in enumerate(ids):
-            capture.set(cv2.CAP_PROP_POS_FRAMES, int(index))
+        slot, ordinal = 0, -1
+        # A decoder's seek position does not prove pixel identity. Count reads
+        # from the start,including every intermediate frame,without seeking.
+        while slot < len(ids):
             ok, bgr = capture.read()
+            ordinal += 1
             if not ok:
                 raise ValueError("Selected video frame failed to decode")
-            decoded_index = int(round(capture.get(cv2.CAP_PROP_POS_FRAMES))) - 1
-            if decoded_index != index:
-                raise ValueError("Video frame seek did not return declared frame")
+            if ordinal != ids[slot]:
+                continue
+            index = ordinal
             image = Image.fromarray(cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB))
             frame_path = output / f"frame-{index:06d}.png"
             image.save(frame_path)
@@ -75,7 +79,9 @@ def video_review(path, output):
             gray = cv2.cvtColor(bgr, cv2.COLOR_BGR2GRAY)
             records.append({"frame": int(index), "nominal_time_seconds": float(index / fps),
                             "path": frame_path.name, "sha256": sha256_file(frame_path),
+                            "decoded_ordinal": index, "rgb_sha256": hashlib.sha256(image.tobytes()).hexdigest(),
                             "whole_frame_laplacian_variance": float(cv2.Laplacian(gray, cv2.CV_64F).var())})
+            slot += 1
         sheet.save(output / "video-contact-sheet.png")
         return {"fps_reported": fps, "frame_count_reported": count,
                 "duration_nominal_seconds": count / fps,
@@ -83,6 +89,7 @@ def video_review(path, output):
                 "height_reported": int(capture.get(cv2.CAP_PROP_FRAME_HEIGHT)),
                 "orientation_metadata_degrees": capture.get(cv2.CAP_PROP_ORIENTATION_META),
                 "frames": records, "coverage_and_expression_status": "UNVERIFIED",
+                "extraction_method": "sequential decode from ordinal zero;no seeking",
                 "timing_note": "Frame index/fps is nominal, not verified container presentation timestamps.",
                 "clarity_note": "Whole-image sharpness is descriptive, not face-region acceptance."}
     finally:

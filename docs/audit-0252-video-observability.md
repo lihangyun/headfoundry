@@ -1,6 +1,7 @@
 # Audit0252: source video coverage and calibration evidence
 
-Date:2026-10-20. Registered before full sequential decoding. Status:UNVERIFIED.
+Date:2026-10-20. Registered before full sequential decoding.
+Input-integrity status:TECHNICAL_CHECK_PASSED. Camera/head acceptance:UNVERIFIED.
 Input audit,not a reconstruction route or an excuse to weaken the full goal.
 
 Previous turn is progress:0251 provided a new bounded negative result,independent
@@ -49,3 +50,64 @@ Unobserved scalp/posterior geometry may be completed with a prior but cannot be
 presented as verified patient-specific geometry. Do not use the supplied scan
 to hide such missing video evidence. Record necessary additional evidence if
 full requested acceptance is not observable from current material.
+
+## Executed result and bounded visual review
+
+One12.438s audit decodes all1041 reported frames at720x1280 without seeking.
+Source SHA256 remains
+`96fb14b83bc35be92bb9a92a90db38f524778c9a2fec930997c37105b8ade892`.
+The original pre-registration and exact executed producer are retained privately;
+producer source is recoverable from commit0cdc759. Later CLI-only polishing
+makes `--self-check` usable without source/output arguments;it does not alter
+the executed decoding/parser result.
+
+All9 chronological pages were actually reviewed,covering ordinals0-1040.
+They show frontal,bilateral turning,chin-up and chin-down phases,not a full
+posterior-head orbit. The cap remains on;ears/hair partly obscure surfaces and
+neck shape changes during pitch. This is qualitative thumbnail coverage review,
+not measured yaw,subpixel inspection,calibrated visibility or metric acceptance.
+User confirms only this current video is available. Do not wait for new footage
+or silently reduce the complete-head goal to a face patch. Continue research on
+visible face/profiles;unseen scalp/posterior prior completion staysUNVERIFIED.
+
+Recognized bounded container tags have no calibration keys. A WXVer text marker
+is present,but it alone does not establish the processing/provenance chain.
+Opaque codec/vendor payloads remain unparsed. Neither tag absence nor display
+transforms establish physical intrinsics,distortion or extrinsics. OpenCV's
+reported29.94247fps and backend milliseconds are not independently parsed PTS.
+Unknown focal/camera estimation remains an algorithmic requirement,not proof
+that self-calibration is impossible.
+
+## Confirmed frame-identity defect and shared repair
+
+All16 old intake PNGs have unique exact RGB matches. Ten were mislabeled:
+
+| Old declared ordinal | Actual sequential ordinal |
+|---|---|
+|347,416,485,555,624,693,763|348,417,486,556,625,694,764|
+|832,901,971|834,903,973|
+
+The other0,69,139,208,277,1040 labels match. Seeking and trusting the decoder's
+reported frame position therefore did not ensure pixel identity. Shared
+`tools/intake_real_capture.py` now counts every decode from ordinal zero,
+without seeking,and records decoded ordinal and full RGB SHA256. It retains
+the same16 nominal selections and timing caveats. No old intake artifact or
+source manifest was overwritten;historical identities remain auditable.
+
+A separate real-video replay generates the fixed16 PNGs temporarily and checks
+each RGB hash against the full sequential audit at the same ordinal:16/16 match.
+Temporary replay images are removed,not accumulated. Existing0241/0243 runs
+already using correct sequential decoding are not invalidated;this defect is
+not an explanation for every prior modeling failure. No new camera/head is fit.
+
+Three shared regressions check bounded metadata,calibration non-inference and
+sequential pixel identity/premature EOF with a deliberately false decoder seek
+position. Full suite:130 tests passed in5.272s. Private reports,all-frame page
+hashes,actual review and repair replay live in
+`assets/private/video-observability-0252/`;the9 review pages total4,994,412bytes.
+No case002/scan bytes,new model/framework,training or upload is used.
+
+The next modeling prerequisite remains a defensible camera/material observation
+method with unknown focal,not more fitting of rejected0251 or local-patch recipes.
+Require a distinct pre-registered mechanism and independent projection evidence
+before geometry changes. Full3px/2mm/whole-head/visual gates remain unchanged.

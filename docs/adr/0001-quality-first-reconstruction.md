@@ -336,3 +336,14 @@ indefinite storage of every binary. Never remove original consented materials,
 accepted baselines or shared safety/evaluation tests. Follow rootAGENTS.md.
 Historical experiment commands may require Git recovery and reinstallation;
 do not reactivate rejected configurations automatically.
+
+## 2026-10-20 source frame identity and observable coverage
+
+0252 proves backend seek-position labels can differ from actual decoded pixels.
+Authoritative frame identity requires sequential ordinal plus RGB digest,not
+merely a successful seek or matching backend counter. Preserve old artifact
+identities;do not silently rewrite historical inputs. Container display matrices
+and camera-sounding metadata tags are not physical calibration. Thumbnail review
+can establish qualitative capture limits,not exact pose or metric head accuracy.
+Only current footage is available;continue visible-face research but keep unseen
+scalp/posterior completion explicitly unverified. No full-head gate is waived.

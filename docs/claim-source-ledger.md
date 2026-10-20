@@ -393,3 +393,14 @@ video-only inference input. Final projected errors are independently replayed;
 the complete recipe isREJECT despite four lower projection errors. Source-scan
 clay panels are not reconstructed heads. Per user cleanup policy,the compact
 private archive/Git recovery ref replace the active runner and raw predictions.
+
+## 2026-10-20 original-video integrity evidence
+
+0252 independently implements bounded ISO-BMFF metadata inspection and sequential
+RGB identity checking using installed standard-library/OpenCV/Pillow/NumPy
+facilities. No trained model,upstream application logic,service or new dataset
+is adopted. Only authorizedcase001 video and original intake metadata/PNGs are
+read;case002 and scan bytes remain excluded. All source thumbnails and metadata
+identifiers stay local. Complete sequential review and16/16 repaired hash matches
+support input identity,not physical camera calibration,anatomy,medical accuracy
+or visual reconstruction acceptance. No additional upload/training rights follow.
