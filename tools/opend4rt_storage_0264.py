@@ -39,8 +39,9 @@ def pack(source, prefix, expected_sha):
                     or not tensor.is_contiguous() or tensor.storage_offset() != 0 or tensor.numel() <= 0):
                 raise ValueError("Unsupported model storage:" + name)
             storage = tensor.untyped_storage()
-            offset, size = storage._checkpoint_offset, storage.nbytes()
-            if offset in seen or size != tensor.numel() * 4:
+            # Torch2.10 fake storages overstate nbytes;the real ZIP length below is authoritative.
+            offset, size = storage._checkpoint_offset, tensor.numel() * 4
+            if offset in seen:
                 raise ValueError("Aliased/oversized model storage:" + name)
             seen.add(offset)
             info = by_offset[offset]
