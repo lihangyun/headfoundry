@@ -14,6 +14,10 @@ class RecurrentMaterialControls(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         module.controls()
+        import numpy as np
+        points = np.array([[13.25, 167.75], [699.5, 637.25]])
+        self.assertTrue(np.allclose(module.from_model(module.to_model(points, (720, 640)),
+                                                     (720, 640)), points, atol=1e-12))
         optimized = subprocess.run([sys.executable, "-O", str(path), "controls"],
                                    capture_output=True, text=True, timeout=10)
         self.assertNotEqual(optimized.returncode, 0)

@@ -52,13 +52,13 @@ def project(homographies, points):
     return hp[..., :2] / hp[..., 2:]
 
 
-def to_model(points):
+def to_model(points, extent=(440, 500)):
     """Integer-center xy to raster-corner yx,not a fitted offset."""
-    return ((np.asarray(points) + .5) * [256 / 440, 256 / 500])[..., ::-1].copy()
+    return ((np.asarray(points) + .5) * (256 / np.asarray(extent)))[..., ::-1].copy()
 
 
-def from_model(points):
-    return np.asarray(points)[..., ::-1] * [440 / 256, 500 / 256] - .5
+def from_model(points, extent=(440, 500)):
+    return np.asarray(points)[..., ::-1] * (np.asarray(extent) / 256) - .5
 
 
 def controls():
@@ -123,7 +123,7 @@ def prepare():
     print(json.dumps(report))
 
 
-def infer():
+def infer(destination=OUT, extent=(440, 500)):
     started = time.perf_counter()
     lock = json.loads(LOCK.read_text())
     assert lock["license"] == lock["checkpoint"]["license"] == "Apache-2.0"
@@ -134,7 +134,7 @@ def infer():
     checkpoint = OUT / "tapnextpp_ckpt.pt"
     assert checkpoint.stat().st_size == lock["checkpoint"]["bytes"]
     assert sha(checkpoint) == lock["checkpoint"]["sha256"]
-    assert sha(OUT / "input.npz") == json.loads((OUT / "preparation.json").read_text())["input_sha256"]
+    assert sha(destination / "input.npz") == json.loads((destination / "preparation.json").read_text())["input_sha256"]
     import torch
     import torchvision
     import einops
@@ -153,9 +153,10 @@ def infer():
     loaded = model.load_state_dict(state_dict, strict=True)
     del state_dict, checkpoint_data
     model.eval()
-    with np.load(OUT / "input.npz", allow_pickle=False) as data:
+    with np.load(destination / "input.npz", allow_pickle=False) as data:
+        assert set(data.files) == {"video", "queries_yx"}
         video = data["video"].copy()
-        queries = np.c_[np.zeros(64), data["queries_yx"]].astype(np.float32)
+        queries = np.c_[np.zeros(len(data["queries_yx"])), data["queries_yx"]].astype(np.float32)
     tracks, visible, times = [], [], []
     state = None
     with torch.inference_mode():
@@ -164,20 +165,20 @@ def infer():
             tensor = torch.from_numpy(frame.copy()).float()[None, None] / 127.5 - 1
             pred, _, logits, state = model(tensor, query_points=torch.from_numpy(queries)[None]
                                           if state is None else None, state=state)
-            tracks.append(from_model(pred[0, 0].cpu().numpy()))
+            tracks.append(from_model(pred[0, 0].cpu().numpy(), extent))
             visible.append((logits[0, 0, :, 0] > 0).cpu().numpy())
             times.append(time.perf_counter() - tick)
             print(json.dumps(dict(completed_frames=len(tracks), seconds=times[-1])), flush=True)
-    np.savez_compressed(OUT / "predictions.npz", tracks_xy=tracks, visible=visible)
+    np.savez_compressed(destination / "predictions.npz", tracks_xy=tracks, visible=visible)
     report = dict(status="TECHNICAL_CHECK_PASSED", scope="execution_only", strict_load=True,
                   missing_keys=list(loaded.missing_keys), unexpected_keys=list(loaded.unexpected_keys),
                   model_parameters=sum(p.numel() for p in model.parameters()),
                   seconds=time.perf_counter() - started, frame_seconds=times,
                   versions=dict(torch=torch.__version__, torchvision=torchvision.__version__,
                                 einops=einops.__version__, numpy=np.__version__),
-                  device="cpu", dtype="float32", queries=64, frames=9,
-                  input_sha256=sha(OUT / "input.npz"), prediction_sha256=sha(OUT / "predictions.npz"))
-    (OUT / "inference.json").write_text(json.dumps(report, indent=2))
+                  device="cpu", dtype="float32", queries=len(queries), frames=len(video),
+                  input_sha256=sha(destination / "input.npz"), prediction_sha256=sha(destination / "predictions.npz"))
+    (destination / "inference.json").write_text(json.dumps(report, indent=2))
 
 
 def evaluate():
