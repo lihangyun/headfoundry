@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "purpose": "local_known3d_capacity_validation_only",
+  "source_lock": "examples/opend4rt-loader-0262.source-lock.json",
+  "checkpoint_lock": "examples/opend4rt-checkpoint-0263.asset-lock.json",
+  "source_license": "Apache-2.0",
+  "checkpoint_license": "Apache-2.0",
+  "checkpoint_sha256": "1f63305422fdc2000b057fbbc1d37459ac1a8063bbfcd0e3b7d473f5485943f5",
+  "known_motion_sha256": "eea2cca6a7461c594779997ba9deff785e5aabb833319dd3878513d858e79942",
+  "forward_allowed": true,
+  "input_model_data": ["rendered_case001_source_diagnostic_rgb", "frame0_2d_seeds", "query_times"],
+  "renderer_only_asset_ids": ["real-case-001-skin"],
+  "real_video_inference_allowed": false,
+  "head_fitting_allowed": false,
+  "training_allowed": false,
+  "upload_allowed": false,
+  "runtime": {"torch": "2.10.0+cpu", "numpy": "2.2.5", "PyYAML": "6.0.3"},
+  "image_preparation": {"numpy": "2.5.2", "opencv": "5.0.0"},
+  "blender": "5.2.1 LTS"
+}
