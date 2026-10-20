@@ -91,3 +91,16 @@ numeric fixture/reports and shared checks;do not present its2D success as a3D
 pass. Follow cleanup0250 and commit closeout before another route.
 Success is onlyTECHNICAL_CHECK_PASSED conditional3D tracking capacity,not actual
 video applicability,material rigidity,cameras,2mm head or visual acceptance.
+
+Pre-inference clarification:appearance and query population also differ from
+0258,so cross-experiment error differences cannot be causally attributed to
+3D motion alone. This is a conditional capacity validation under a fixed
+idealized appearance,not a matched-image motion-only ablation or proof of
+real-video texture applicability. No extra run or revised gate is introduced.
+
+First Blender launch fails before image generation because Blender does not
+automatically add the script's tools directory to sys.path. Its default process
+exit is0 despite the Python exception;required render metadata is absent,so
+this is not a technical pass. One pre-valid-run repair explicitly adds the
+tools path and uses Blender's --python-exit-code1 option. Original logs remain;
+no source image/model inference or parameter trial has run on that attempt.

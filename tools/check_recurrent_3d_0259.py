@@ -8,9 +8,10 @@ import time
 
 import numpy as np
 
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "tools"))
 from check_recurrent_material_0258 import sha, to_model, from_model, infer
 
-ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets/private/recurrent-3d-0259"
 BASE = ROOT / "assets/private/real-capture-pilot-v1"
 REFERENCE = BASE / "scan-motion-truth-0230-upright"
@@ -27,7 +28,6 @@ def reference():
 
 def render():
     import bpy
-    from mathutils import Vector
     sys.path.insert(0, str(ROOT / "src"))
     from headfoundry.manifest import validate_input_assets
     from headfoundry.scan import read_binary_stl
