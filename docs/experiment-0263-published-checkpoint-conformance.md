@@ -4,6 +4,10 @@ Date:2026-10-20. Registered before binary download/execution. Previous0262 at
 feaf3a3 is completed progress,not model/head acceptance. Goal remains active;
 current ordinary account use is allowed. No duplicate work process is live.
 
+Original registered download budget:REJECT (exhausted before acquisition);
+released-state conformance and model/head quality:UNVERIFIED. See the distinct
+installation-completion operation below;do not rewrite the original budget pass.
+
 ## Hypothesis and one variable
 
 The published fixed32-frame OpenD4RT artifact may strictly match the reviewed
@@ -140,3 +144,34 @@ the clock. This ordinary pre-valid IO repair does not change revision,hash,
 weights,strictness,metadata strategy or the40minute whole-phase boundary.
 No other model or failed integration is reinstated. Completion/conformance
 remainUNVERIFIED until the required whole-file and strict-state evidence exists.
+
+## Original transport stop and one installation-completion operation
+
+The resumed HTTP206 transfer exits curl28 after648.055s with5174119530 additional
+bytes. Combined partial length12725222049bytes;1224784633bytes remain. Both
+transfer processes are confirmed gone. The original1800s acquisition deadline
+is exhausted,not extended,and the original registered acquisition budget is
+REJECT. No released-state deserialization or model trial occurred,so strict
+compatibility/accuracy remainUNVERIFIED,not an algorithm failure. The original
+30minute transfer estimate left insufficient bandwidth/interruption margin;
+this is our engineering planning error,not evidence against the model.
+
+Before any further network operation,register exactly one additional **asset
+installation completion**,not a different model route or a numerical retry:
+reuse this exact partial file/revision/URL/SHA under a separate<=600s overall
+deadline,one curl worker<=540s,then whole-file length/SHA verification. Do not
+reset phase-start.json,call the expired original downloader,change any original
+result,model/precision/state key or perform inference. Retain original logs and
+record the separate start/end/PIDs/elapsed/verified digest. No new framework,
+account,paid execution,private data or user-process termination is permitted.
+Only after exact bytes are verified may any separately recorded strict metadata
+inspection happen;the original acquisition budget remains failed even then.
+
+This is bounded repair of an incomplete public dependency,not rescue of failed
+reconstruction evidence:no model has been scored and no new technical route is
+started. Temporarily retaining the resumable public bytes avoids discarding
+12.73GB of useful transfer. If this one completion attempt also fails,retain
+compact logs/hash/recovery evidence and delete the unusable partial download;
+do not keep retrying or start a new model route before that closeout. Successful
+0262 fixture/shared checks and original human assets stay protected. Keep
+full-model finite values,resources,3D/camera/head and visual gates unchanged.
