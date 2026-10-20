@@ -479,3 +479,11 @@ Do not change0264 or label its batch failure a harmless false positive. A future
 trial may only use a prospectively approved fixed execution contract with all
 physical gates intact;no arbitrary-batch equivalence claim follows. Audit-only
 permission does not authorize that trial or indefinitely retain a rejected route.
+
+0266 is separately authorized and prospectively registered. Record batch
+consistency as a diagnostic without changing physical gates,then measure the
+complete canonical schedule. The full run completes but fails0/31 physical
+views,including bilateral point/visibility/localization gates. Reject and retire
+this exact frozen recipe;do not reinterpret completed execution as a head or
+rescue it with another preprocessing/checkpoint/budget sweep. Preserve exact
+compact diagnostics and source recovery,not failed exclusive model infrastructure.

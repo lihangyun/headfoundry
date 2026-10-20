@@ -686,3 +686,33 @@ no rerun attempts to recover them.0264 staysREJECT;physical3D/headUNVERIFIED.
 No tolerance/source/default change or new dependency follows.0265 documents a
 separately authorized future canonical-schedule capacity check as a recommendation,
 not an active experiment or permission to waive3px/2mm/whole-head/visual gates.
+
+## 2026-10-20 authorized canonical-schedule capacity fails physical gates
+
+0266 follows explicit user permission and prospective registration,not an
+automatic rerun. Exact weights/input/2355 points/32 frames/512 chunks/CPU FP32
+and physical gates remain unchanged;the uncalibrated batch comparison becomes
+a complete raw diagnostic rather than a physical-quality proxy. One actual
+404.221s job finishes both modes and unchanged learned-byte verification,
+peak6559100928bytes. Execution isTECHNICAL_CHECK_PASSED only.
+
+All66861 visible/6144 occluded non-query pairs count;0/31 frames pass. Bilateral
+30deg2D p95=28.534/33.295px,max=41.422/47.756px;fixed global Sim3 point3D p95=
+46.893/43.960mm and visible recall=.316/.000. This is actual physicalREJECT,
+not a tensor-comparison interruption. No confidence pruning or alignment rescue.
+Two native panels were actually reviewed:fixed scan-derived source inputs and
+predicted/true point displacements,not reconstructed heads. Domain applicability
+beyond this frozen appearance remains unmeasured;do not generalize impossibility.
+
+Stop the recipe without new appearance/frame/crop/precision/model sweeps;archive
+compact evidence/source3058d35 and retire exclusive0262-0266 integration under
+0250. Preserve originals/rights,small positive fixtures/shared gates/unrelated0207
+and defaults. There is no accepted head,real-video camera or side-profile gain.
+
+Closeout removes21529 identified exclusive files/19260463279logicalbytes including
+five runners/three locks;source3058d35 and a1891015-byte,157-member private archive
+with two actual panels replace failed binaries. CRC/member hashes pass,15 selected
+protected hashes remain unchanged,133 tests pass in5.365s and the39-package main
+environment remains compatible/no Torch. Original raw materials/shared successful
+fixtures/defaults/unrelated0207 are protected;case002 is not rehashed. Public
+weights must be redownloaded and generated binaries rerun for historical recovery.

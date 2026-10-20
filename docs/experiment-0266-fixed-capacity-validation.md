@@ -77,3 +77,84 @@ exclusive0262-0266 runners/locks/weights/framework/runtime and failed artifacts.
 Protect original inputs/rights,shared gates,successful tiny/evaluation fixtures,
 unrelated0207 and defaults. Verify targets/archive/tests and commit cleanup
 before a different route. No complete-head/likeness or KeenTools parity claim.
+
+## Actual result:REJECT physical capacity,not a floating-point stop
+
+Source recovery:3058d35;registration8ac1f52. Implementation/tests/launch fit the
+original600s preparation window. One actual model process completes404.221s
+parent/400.671s worker with6559100928-byte peak working set. Both full modes,
+all2355 points x32 frames and post-forward source-tensor hashes complete. No
+resource guard triggers,no second model run,precision or input change occurs.
+These execution checks areTECHNICAL_CHECK_PASSED,not physical acceptance.
+
+All12 named mode/head controls and exact raw arrays are saved. This new run
+identifies localXYZ as3/27 components outside the old tolerance;other head deltas
+also exceed it. Both visibility-call control disagreement counts are zero. These
+are0266 measurements,not retroactive recovery of0264's missing head/arrays.
+Actual complete prediction SHA256:
+`61475dfea81ed477aa04a05bda407827116bd4bb6df8a3f77d980e4440766505`.
+
+All66861 truly visible and6144 truly occluded non-query point/frame pairs are
+scored without confidence pruning. **0/31 non-query frames pass all gates.**
+
+| Fixed view | 2D p95 / max(px) | Point3D p95 / max(mm) | Visible recall |
+|---|---:|---:|---:|
+| frame0/query | 7.856 / 8.526 | 42.239 / 67.947 | 1.000 |
+| frame6,+30deg | 28.534 / 41.422 | 46.893 / 71.819 | .316 |
+| frame18,-30deg | 33.295 / 47.756 | 43.960 / 68.262 | .000 |
+
+Frame6/18 occluded recalls are.956/1.000;required local depths are positive.
+Those partial checks cannot override localization,point3D and visible-recall
+failures. Worst non-query p95s are33.295px/46.893mm. The point errors use exactly
+one all-frame0-point proper positive Sim3 frozen across all frames,not surface
+distance,post-hoc trimming or independent per-view alignment.
+
+Both native-resolution bilateral panels were actually inspected within84.614s
+of evaluation start,inside180s. They show systematic red predicted versus green
+true displacements on a fixed every40th-original-ID display;all actual scoring
+still uses complete visible populations. Left panels are **existing scan-derived
+inputs**,not newly reconstructed white heads. No patient-specific head,side-
+profile improvement or real-video camera result was produced.
+
+Stop this exact frozen candidate recipe. The diagnostic-only protocol correction
+enabled a complete answer;it did not rescue physical performance. Domain shift
+from this fixed procedural source appearance to training/real-video appearance
+is not quantified. This result neither proves every OpenD4RT use impossible nor
+permits an appearance/crop/frame/chunk/threshold/checkpoint sweep. No further
+model or head fit follows. Retire exclusive integration under the registered
+cleanup policy,keeping compact exact evidence and successful generic fixtures.
+
+## Completed failed-route cleanup
+
+Private closeout:`assets/private/closed-experiments/0266-fixed-capacity`.
+`evidence.zip` is1891015bytes,157 members,two diagnostic images,CRC and every
+member SHA verified. SHA256:
+`d20e33b0414a0184ace722d4ef03338239ff17ae118a1af102688bdd31cd7cd3`.
+It contains compact reports,per-ID errors,raw batch controls,source/asset/rights
+identities and two actually reviewed panels,not full predictions/checkpoints or
+a complete binary backup. Two identical-hash panel copies remain directly
+viewable in that private closeout folder. Prior0264 evidence remains unchanged.
+
+After confirming terminal workers,54 exact repository-contained targets are
+resolved/checked for reparse points and overlap before deletion. Removed21521
+private files/19260397480bytes plus eight tracked runner/lock files/65799bytes:
+**21529 files,19260463279bytes total** (19.26decimalGB logical sizes,not measured
+free-disk gain). This removes the original/derived large weights,isolated638MB
+runtime,downloaded framework source/exclusive caches,32 source renders and
+failed inputs/truth/predictions/diagnostic duplicates. Five exclusive runners
+and three active locks are retired;no failed-route caller remains in src/tools/
+tests. Small metadata records are historical,not installed/runnable integrations.
+
+Selected authorizedcase001 skin matches its manifest SHA. Fifteen protected
+original/consent/0230 benchmark/successful tiny fixture hashes match before/after.
+case002 and other originals are deliberately not opened or rehashed;do not infer
+a complete raw-dataset integrity audit. Successful0262 negative-corruption
+controls/tiny positive weights and0264 lossless tiny fixture remain. Shared
+source/defaults,successful0230/0237/0254/0258 and unrelated0207 are untouched.
+
+All133 retained tests pass in5.365s. Main environment has no Torch;39 installed
+packages pass the existing dependency checker. Deleted targets are absent,
+archive hash is unchanged,and no live Python caller refers to the retired model.
+Source recovery is3058d35;public weights require redownloading at the recorded
+SHA,and deleted generated files require historical reexecution. No data is
+uploaded and no new route starts. Overall head/camera/visual goal is unfinished.
