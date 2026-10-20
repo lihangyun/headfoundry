@@ -65,6 +65,8 @@ and-.5. Check asymmetric xy/half-pixel/warp inverse controls before the run.
 Resize to256x256 with linear sampling,normalize RGB to[-1,1],CPU float32,
 8 threads,eval/inference mode,online one frame at a time,strict state loading,
 weights_only=True,no compilation,AMP,query reset or downstream patch refinement.
+Read the checkpoint with memory mapping to avoid an unnecessary full-file memory
+copy;this changes neither weights nor numerical precision.
 
 ## Gate,budget and stop
 

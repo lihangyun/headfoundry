@@ -144,7 +144,7 @@ def infer():
     sys.path.insert(0, str(OUT / "source"))
     from tapnet.tapnext.tapnext_torch import TAPNext
     model = TAPNext(image_size=(256, 256))
-    checkpoint_data = torch.load(checkpoint, map_location="cpu", weights_only=True)
+    checkpoint_data = torch.load(checkpoint, map_location="cpu", weights_only=True, mmap=True)
     state_dict = checkpoint_data.get("state_dict", checkpoint_data)
     state_dict = {k.removeprefix("tapnext."): v for k, v in state_dict.items()}
     loaded = model.load_state_dict(state_dict, strict=True)
