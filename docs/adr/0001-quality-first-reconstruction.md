@@ -420,3 +420,14 @@ install a14GB artifact solely on a license badge or paper score. GeoCalib's
 intrinsics/gravity are an optional cue,not complete head-relative extrinsics;
 a same-K/gravity counterexample is retained as a shared safety regression.
 No new model adoption,patient run or camera/head acceptance follows this screen.
+
+0261 allows further bounded work on the published permissive OpenD4RT path but
+does not clear runtime/accuracy. Require explicit strict full-state loading and
+safe weights-only serialization;do not accept warning-only partial loads or
+unsafe pickle fallback. File size,parameter payload and measured peak are
+different resource facts. A documented mmap/meta/assign adapter may preserve
+weights/FP32 while reducing duplication,but must restore deterministic
+nonpersistent buffers and prove query-chunk invariance before reliance. Do not
+silently quantize,change architecture or prune point populations to fit memory.
+Published scene-camera quantities must not replace moving-head material/pose
+evidence. Camera,2mm,whole-head and actual human visual gates remain unchanged.

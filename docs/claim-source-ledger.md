@@ -521,3 +521,21 @@ GeoCalib's availability does not supply moving-head extrinsics or physical
 material IDs. Our same-intrinsics/gravity ambiguity regression is independently
 implemented NumPy math,not upstream algorithm code or private human evidence.
 No data consent expands;production/head/camera quality remains unverified.
+
+## 2026-10-20 OpenD4RT source path and independent upstream model grants
+
+0261 records the pinned independent implementation's Apache software license,
+its publisherHF Apache model declaration and exact expected32-frame object
+identity. VideoMAEv2 source is MIT and its separate officialHF model repository
+706cc172d65ebd4dedbee3f9c0183a93df9fa125 declares Apache-2.0. Older account-form
+instructions are not assumed current access evidence. That extra initializer
+is disabled by the published inference config and is not downloaded. Reviewed
+direct model imports contain no NC model dependency;this is published-rights
+review,not training-data contract/FTO advice or complete binary verification.
+
+Only public text/metadata and local hardware are inspected. Static allocation
+arithmetic is independently written standard-library math. No implementation,
+checkpoint,training data,private patient file or service is adopted/run. Official
+PyTorch mmap/meta/assign documentation motivates a future safe loader test,not
+a current success claim or unsafe-unpickling permission. CPU/GPU execution and
+physical camera/head accuracy still need actual independent evidence.

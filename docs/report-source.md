@@ -576,3 +576,25 @@ inference. Next only a bounded public-source provenance/import/resource screen
 is justified;no automatic download or private-data trial. Do not claim all
 open-source possibilities exhausted or reinterpret the full head goal as a
 calibration-component pass. See0260 for pinned sources and missing prerequisites.
+
+## 2026-10-20 OpenD4RT published-rights/resource preflight
+
+0261 checks pinned publisher sources/config/model metadata without installing
+code or reading patient files. Apache code/model grants and upstream VideoMAE2
+MIT code/separate Apache weight declaration support a permissible source path.
+The fixed inference config disables extra pretraining weights. The released
+model has a CPU branch/no_grad path,but its evaluation loader only warns on
+strict=False mismatches. Actual checkpoint compatibility remains unknown.
+
+Independent source arithmetic gives1162433293 parameters,4.650GB ifFP32,versus
+a13.950GB training-style checkpoint file. Naive file-plus-model accounting is
+18.600GB,not measured peak;current available RAM is only about9.45GB at the
+first snapshot and NVML fails. Source-frame duplication for4096 queries adds
+3.221GB;query-independent chunking and documented mmap/meta/assign loading are
+plausible untested IO mitigations,not a model/precision change or accuracy pass.
+
+Next first verify a strict low-peak loader/nonpersistent-buffer and independent
+query controls in an isolated bounded precondition. No14GB download,private
+inference,camera or head fit follows this source-only audit. Keep scene-camera
+coordinates distinct from head-relative motion.133 shared regressions remain
+passing;full executable readiness and original head goal remainUNVERIFIED.
