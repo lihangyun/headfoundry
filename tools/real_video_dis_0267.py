@@ -1,6 +1,8 @@
 """Native video-motion readiness only;no scan,camera solve or reconstructed head."""
 import hashlib
 import json
+import datetime
+import os
 from pathlib import Path
 import sys
 import time
@@ -38,6 +40,7 @@ def sample(field,points):
 def transport(first,second,points,mask):
     f=cv2.DISOpticalFlow_create(cv2.DISOPTICAL_FLOW_PRESET_MEDIUM).calc(first,second,None)
     b=cv2.DISOpticalFlow_create(cv2.DISOPTICAL_FLOW_PRESET_MEDIUM).calc(second,first,None)
+    if not np.isfinite(f).all() or not np.isfinite(b).all():raise ValueError("Nonfinite dense field")
     target=points+sample(f,points);back=target+sample(b,target)
     error=np.linalg.norm(back-points,axis=1)
     valid=np.isfinite(target).all(1)&np.isfinite(error)&(error<=.75)
@@ -71,6 +74,10 @@ def controls():
 
 def run():
     started=time.perf_counter();cv2.setNumThreads(4)
+    phase=json.loads((OUT/"phase-start.json").read_text())
+    deadline=datetime.datetime.fromisoformat(phase["utc"].replace("Z","+00:00")).timestamp()+1800
+    limit=min(360,deadline-time.time()-300)
+    if limit<=0:raise TimeoutError("Original whole-phase budget exhausted")
     if (cv2.__version__,np.__version__)!=("5.0.0","2.5.2"):raise ValueError("Runtime drift")
     control=controls();(OUT/"controls.json").write_text(json.dumps(control,indent=2))
     manifest=json.loads((PILOT/"manifest.json").read_text(encoding="utf-8"))
@@ -84,7 +91,7 @@ def run():
     capture=cv2.VideoCapture(str(source));keys=set(range(0,1041,12))|{624,1040}
     snapshots={};steps=[];cycles=[];observed=[];xy=np.empty((0,2),np.float32);ids=np.empty(0,np.int64);next_id=0;previous=None;reference=None
     for ordinal in range(1041):
-        if time.perf_counter()-started>360:raise TimeoutError("Registered360s video budget")
+        if time.perf_counter()-started>limit:raise TimeoutError("Registered video/whole-phase budget")
         ok,image=capture.read()
         if not ok:raise ValueError("Premature video EOF")
         rgb=cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
@@ -157,7 +164,7 @@ if __name__=="__main__":
     try:
         if sys.argv[1:]==["controls"]:print(json.dumps(controls()))
         elif sys.argv[1:]==["run"]:
-            with (OUT/"run-once.json").open("x") as f:json.dump(dict(started=time.time()),f)
+            with (OUT/"run-once.json").open("x") as f:json.dump(dict(started=time.time(),actual_pid=os.getpid()),f)
             run()
         else:raise SystemExit("controls|run required")
     except BaseException as error:
