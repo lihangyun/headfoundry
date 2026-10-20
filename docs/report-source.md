@@ -622,3 +622,28 @@ real checkpoint key/dtype compatibility,actual resource use and known3D
 correspondence remain the next separately registered gates. No video/scan,
 case002,training,upload,camera solve or head fit occurs,and no visual progress
 or KeenTools parity is claimed.
+
+## 2026-10-20 released OpenD4RT artifact matches strict metadata,not yet inference
+
+0263 acquires the exact reviewed32-frame13.950GB artifact and verifies the full
+published SHA256 before deserialization. Original30minute acquisition fails
+its budget after a truncated connection and bounded resume;thatREJECT is not
+erased. A separately registered one-off dependency installation completion
+adds140.695s and succeeds. No model was scored during those transport failures.
+
+Before released-state loading,a Windows safety correction replaces full-file
+copy-on-write mapping with documented Torch2.10 FakeTensorMode and mmap=False.
+An unchanged85-entry small fixture retains keys/shapes/dtypes/strides while a
+forbidden-file-mapping control and unsupported-serialization rejection pass.
+The single actual metadata run strictly matches627 FP32 state entries and the
+1162433293-parameter architecture,without key rewrites,partial loads or casts.
+22.565s parent/282.739MB peak describe metadata only,not actual model inference.
+
+Keep the verified candidate for finite-value/materialization/resource and known3D
+checks,not private-video head fitting. The full training-style file still has
+a distinct commit footprint from its4.650GB model payload. No human files,
+case002,training,upload or default change occurs. A source-only review also
+requires explicitly case-scoped validation before reusing old scan generators,
+because a full-manifest validator intentionally opens every listed asset.
+Technical artifact conformance does not move camera3px,scan2mm,complete editable
+head or genuine visual acceptance to passed. The full goal remains unmet.

@@ -5,8 +5,9 @@ feaf3a3 is completed progress,not model/head acceptance. Goal remains active;
 current ordinary account use is allowed. No duplicate work process is live.
 
 Original registered download budget:REJECT (exhausted before acquisition);
-released-state conformance and model/head quality:UNVERIFIED. See the distinct
-installation-completion operation below;do not rewrite the original budget pass.
+released-state **metadata** conformance:TECHNICAL_CHECK_PASSED after the distinct
+installation completion;materialized model/head quality:UNVERIFIED. Do not
+rewrite the original acquisition budget as passed.
 
 ## Hypothesis and one variable
 
@@ -175,3 +176,37 @@ compact logs/hash/recovery evidence and delete the unusable partial download;
 do not keep retrying or start a new model route before that closeout. Successful
 0262 fixture/shared checks and original human assets stay protected. Keep
 full-model finite values,resources,3D/camera/head and visual gates unchanged.
+
+## Actual installation and strict metadata result
+
+Installation completion succeeds in140.695s,including127.284s resumed HTTP206
+and whole-file verification. Exactly13950006682bytes match the predeclared
+SHA2561f63305422fdc2000b057fbbc1d37459ac1a8063bbfcd0e3b7d473f5485943f5.
+The original30minute transfer budget remainsREJECT;the separate<=600s completion
+passes its own installation budget. No original start time or record is reset.
+
+The one strict metadata worker then succeeds:21.723s inside worker/22.565s
+parent wall,282738688bytes peak working set. Its parent hard limit is247.843s,
+shorter than300s to preserve the remaining original40minute phase boundary.
+Fresh resource headroom is12235161600bytes physical/12990611456bytes process
+commitable. FakeTensorMode avoids full-file mapping;all627 model state entries
+match strict keys/shapes and FP32,1162433293 parameters/4649733172bytes. All
+parameters remain meta. The checkpoint has ordinary model/optimizer/scheduler/
+scaler and training-config dictionaries plus primitive progress fields;none
+is executed as training or used to change the reviewed model/config.
+
+Result isTECHNICAL_CHECK_PASSED **metadata conformance only**,not finite weight
+values,materialized parameter identity,CPU inference resources,camera/material
+accuracy or head acceptance. There is no model forward,patient read,training,
+upload,scan substitution or case002 tuning. Keep those gatesUNVERIFIED.
+Do not interpret the282.739MB meta peak as the full model's memory cost;current
+commit headroom is still less than a13.95GB copy-on-write file mapping.
+
+Private exact records under`assets/private/opend4rt-checkpoint-0263` retain
+original/amended protocols,both failed transfer logs,installation completion
+start/invocation/handles/terminal/hash,the full verified public checkpoint,
+metadata tensor inventory,report and inspection logs/parent terminal. Original
+source recovery34b74be/ee5072c;installation pre-registration6a47110. No failed
+model trial occurred and no new route is started,so the successful candidate
+and0262 fixture remain pending the separately registered actual3D screen. No
+unverified partial checkpoint is retained after the successful rename.

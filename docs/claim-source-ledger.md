@@ -557,3 +557,22 @@ including NumPy's bundled runtime exceptions;no training/visualization/CUDA
 stack or commercial service is adopted. Full source/hash review and a passing
 IO invariant are not training-data clearance or accuracy evidence. No consent
 expands,and no physical camera/head acceptance follows.
+
+## 2026-10-20 released32-frame artifact is acquired,not validated for head quality
+
+0263 acquires exactly the publisher artifact/revision/license reviewed0261 and
+records its expected whole-file SHA256/length unchanged in
+`examples/opend4rt-checkpoint-0263.asset-lock.json`. Actual bytes match before
+weights_only=True deserialization. No alternate checkpoint,extra initializer,
+training data or service is adopted. The model grant remains publisher Apache
+permission,not an independently audited training-data/FTO opinion.
+
+The pinned [Torch2.10 metadata contract](https://docs.pytorch.org/docs/2.10/notes/serialization.html#layout-control)
+supports no-storage inspection. Microsoft's
+[copy-on-write mapping contract](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-mapviewoffile)
+motivates avoiding full-file commit reservation;the current full Torch mapping
+is not actually attempted or claimed successful. Exact key/shape/FP32 metadata
+matching is executed,but tensor values and actual model inference are not.
+All human material remains excluded from this phase;rights,consent,3D accuracy
+and complete visual acceptance are separate claims. Original transport-budget
+failure and the separate bounded installation completion remain explicit.

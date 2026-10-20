@@ -25,7 +25,7 @@ retired0259 integration stay unchanged. Retain bundled notices and source hashes
 
 Use the actual source class with an explicitly tiny **test-only** configuration:
 2frames,8x8 RGB,encoder/decoder width16,2layers,4heads,MLP ratio2,patch1x4x4,
-8 Fourier bands,9x9 source patch and13 output heads. Seed262,CPU FP32,eval,
+8 Fourier bands,9x9 source patch and13 output components across6 heads. Seed262,CPU FP32,eval,
 8threads,no gradients. Save its tensor state and harmless training-style extra
 states to a tiny zip checkpoint;never fit/train or use it on human images.
 This is a loader fixture,not a substitute reconstruction model.
