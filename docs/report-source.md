@@ -716,3 +716,20 @@ protected hashes remain unchanged,133 tests pass in5.365s and the39-package main
 environment remains compatible/no Torch. Original raw materials/shared successful
 fixtures/defaults/unrelated0207 are protected;case002 is not rehashed. Public
 weights must be redownloaded and generated binaries rerun for historical recovery.
+
+## 2026-10-20 user reaffirms video-to-medical-reference task
+
+The actual requested product remains video-derived editable geometry compared
+against the paired medical skin scan,with free-commercial components and our
+own algorithms as needed. The old five independently generated photos do not
+limit extraction from the real video. Direct scan cleanup/retopology is not an
+authorized substitute for demonstrating video reconstruction. See
+task-video-to-medical-reference.md for the current input/evaluation/delivery
+contract. Original data restrictions,held-outcase002 and actual gates stand.
+
+Read-only reinspection confirms1041 decoded case001 frames and bilateral/pitch
+appearance in the existing source overview;this is not a new coverage/calibration
+certificate.0230/0232 already document the upright axes and non-photorealistic
+emission appearance. No new axis defect is established.0266 rejects its exact
+configuration,not every possible method on the actual video. No failed model is
+reinstalled and no new head/visual acceptance is claimed by this clarification.
