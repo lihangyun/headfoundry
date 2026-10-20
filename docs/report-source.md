@@ -756,3 +756,20 @@ SHA25654aa2b303e4fa6f0599628f677bf359e4125dccd1df867ea70f8b9e19154c612.
 Five raw duplicates/2525221bytes and the exclusive runner are removed after
 terminal/path/overlap checks. Selected video SHA is unchanged,no scan/case002
 bytes are read,133 tests pass in4.738s and shared runtime/source/defaults remain.
+
+## 2026-10-20 short-track observability distinguishes two failure meanings
+
+0268 independently tests a fixed five-camera/30-point overlapping visibility
+graph,with no point common to first/last views. Gauge-fixed unknown focal,
+point coordinates and poses have an analytic local Jacobian of rank114/114,
+minimum singular value.308459;removing last-view observations drops rank108.
+Finite-difference/scale/proper-depth controls pass. No human inputs or model
+assets are read. This supports a limited synthetic local counterexample,not
+global convergence,actual correspondence quality or a real head/camera pass.
+
+Thus missing a single permanent track must not become a universal veto on
+joint multiview reconstruction.0267 still fails its original contract and its
+real graph disconnect at888 remains unresolved. Future evidence must bridge
+actual components/rigidity independently;do not relabel failed observations or
+relax3px/2mm/visual gates. A small generic regression is retained;no failed
+framework is restored or new appearance fit attempted.

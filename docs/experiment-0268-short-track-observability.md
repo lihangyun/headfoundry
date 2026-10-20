@@ -34,3 +34,25 @@ sufficient. If positive,retain one small generic regression;otherwise archive
 and remove exclusive failed code. Current real disconnected component still
 needs independently verified inter-component constraints,not track relabeling.
 No Ceres dependency is installed;use existing NumPy/OpenCV and independent code.
+
+## Actual result:conditional local counterexample passes
+
+One fixed scene,source0974ebc,returns rank114/114;smallest singular value
+.3084592616 is separated from the predeclared1e-4 tolerance. Removing camera4
+observations lowers rank to108. Two independent finite-difference steps agree
+with analytic derivatives within9.387e-8/1.961e-7. Unfixed global scale changes
+projections by at most2.274e-13px. No point is observed by both first and last
+cameras;all required depths/proper rotations pass.
+
+This isTECHNICAL_CHECK_PASSED **numerical local observability of this synthetic
+scene**,not global reconstruction recovery,initialization,robustness or an actual
+video result. It establishes why a single permanent identity is too strong as
+a universal prerequisite. It does not change0267's failed registered contract,
+authorize a parameter rescue or make its direct associations correct.
+
+The real0267 graph has a connected0..876 component and a disjoint888..1040
+portion;that remains a genuine constraint gap. Next work should verify actual
+inter-component identity/rigidity and consider joint overlapping multi-view
+geometry,not assume longer sequential tracks are mandatory or a connected
+count alone is sufficient. No patient points/cameras are estimated here and no
+failed model/source/runtime is restored. Retain this small generic regression.

@@ -9,6 +9,11 @@
 
 ## 当前状态
 
+[0268](docs/experiment-0268-short-track-observability.md) 已通过一个小型几何反例：
+重叠短轨可以在没有全程公共点时形成局部可观测的相机约束，因此不能把“某点
+全程丢失”直接当作所有重建方法的否决条件。但真实视频第 888 帧后的轨迹分量
+仍未建立可信连接；没有新相机或头模结果，原物理误差门禁不变。
+
 新的持续目标已按[真实视频任务](docs/task-video-to-medical-reference.md)建立并启动。
 [0267](docs/experiment-0267-native-dense-video-motion.md) 已核验全部 1041 帧：
 稠密短程轨迹图连接了双侧，但长程身份一致性未过关，停止该固定配置并清理。
