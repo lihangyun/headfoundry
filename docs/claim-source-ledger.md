@@ -509,3 +509,15 @@ than misrepresenting license clearance as accuracy. Keep compact public-source
 identity/license records and local failure evidence;the0258 small positive
 fixture remains historical evidence only. No new rights grant or3D head/camera
 acceptance follows,and no claim about every possible tracker is established.
+
+## 2026-10-20 replacement screen records permissions,not asset adoption
+
+0260's pinned primary source links distinguish NC Fast3R/Pow3R,GeoCalib's
+Apache code versus explicit CC-BY4 weights,and original D4RT research from
+unofficial OpenD4RT artifacts. No source implementation is incorporated or
+weight downloaded. Published OpenD4RT code/model license labels do not yet
+establish its full pretrained/dependency provenance or runtime permission.
+GeoCalib's availability does not supply moving-head extrinsics or physical
+material IDs. Our same-intrinsics/gravity ambiguity regression is independently
+implemented NumPy math,not upstream algorithm code or private human evidence.
+No data consent expands;production/head/camera quality remains unverified.

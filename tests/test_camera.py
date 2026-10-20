@@ -6,6 +6,24 @@ from headfoundry.camera import estimate_projection_dlt, invert_camera_poses, pro
 
 
 class CameraTests(unittest.TestCase):
+    def test_intrinsics_and_gravity_do_not_determine_object_pose(self):
+        intrinsic = np.array([[1000., 0, 360.], [0, 1000., 640.], [0, 0, 1.]])
+        angle = np.deg2rad(15.)
+        c, s = np.cos(angle), np.sin(angle)
+        rotation = np.array([[c, 0, s], [0, 1., 0], [-s, 0, c]])
+        gravity = np.array([0., 1., 0.])
+        np.testing.assert_allclose(rotation @ gravity, gravity, atol=1e-12)
+        self.assertAlmostEqual(float(np.linalg.det(rotation)), 1.)
+        points = np.array([[x, y, z] for x in [-.6, .6]
+                           for y in [-.8, .8] for z in [-.4, .4]])
+        first = np.c_[np.eye(3), [0., 0., 6.]]
+        second = np.c_[rotation, [.3, 0., 6.]]
+        self.assertTrue(((points @ first[:, :3].T + first[:, 3])[:, 2] > 0).all())
+        self.assertTrue(((points @ second[:, :3].T + second[:, 3])[:, 2] > 0).all())
+        error = np.linalg.norm(project(intrinsic @ first, points)
+                               - project(intrinsic @ second, points), axis=1)
+        self.assertGreater(float(np.quantile(error, .95)), 3.)
+
     def test_pose_inverse_roundtrip_and_invalid_frames(self):
         angle = .43
         c, s = np.cos(angle), np.sin(angle)

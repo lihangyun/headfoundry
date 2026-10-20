@@ -558,3 +558,21 @@ frame density,noise scale,query batch,crop,resolution or threshold. Stop this
 configuration before cameras/geometry. Compact private evidence/Gitb14fa90
 replace its exclusive integration/runtime/weights/renders;successful small0258
 controls and shared source/scan fixtures remain. Full user target stays unmet.
+
+## 2026-10-20 bounded replacement eligibility screen,not another model swap
+
+0260 screens four families from primary sources within733.737s,without human
+input,weights,frameworks,training or inference. Fast3R andPow3R are NC and
+ineligible. GeoCalib has explicit Apache code/CC-BY4 model grants and released
+weights,but its focal/gravity outputs cannot identify full head-relative SE3.
+A shared NumPy counterexample preserves K/gravity/positive depths/proper R
+while changing projected positions66.896px p95;no patient data is needed.
+
+Original D4RT deployable model release/license is not established by inspected
+official pages. An independent,explicitly unofficial OpenD4RT implementation
+does release ungated Apache-labeled checkpoints,about13.95GB each. This is a
+new3D coordinate-query research lead,not original-author endorsement or cleared
+inference. Next only a bounded public-source provenance/import/resource screen
+is justified;no automatic download or private-data trial. Do not claim all
+open-source possibilities exhausted or reinterpret the full head goal as a
+calibration-component pass. See0260 for pinned sources and missing prerequisites.

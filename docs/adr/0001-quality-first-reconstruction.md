@@ -411,3 +411,12 @@ Close this preregistered recipe without temporal-density,texture,query-count,
 crop,resolution or threshold rescue. Retire its exclusive inference integration
 and runtime while retaining successful small mathematical/2D evaluation evidence.
 No camera/head fitting or relaxation of3px/2mm/full-head/actual visual gates follows.
+
+0260 distinguishes model-family research,available artifacts,published grants,
+and cleared runnable inference. NC releases cannot enter this commercial goal;
+an unofficial D4RT implementation is neither the original model nor necessarily
+unusable,but needs its own checkpoint/dependency/resource preflight. Do not
+install a14GB artifact solely on a license badge or paper score. GeoCalib's
+intrinsics/gravity are an optional cue,not complete head-relative extrinsics;
+a same-K/gravity counterexample is retained as a shared safety regression.
+No new model adoption,patient run or camera/head acceptance follows this screen.
