@@ -431,3 +431,15 @@ nonpersistent buffers and prove query-chunk invariance before reliance. Do not
 silently quantize,change architecture or prune point populations to fit memory.
 Published scene-camera quantities must not replace moving-head material/pose
 evidence. Camera,2mm,whole-head and actual human visual gates remain unchanged.
+
+0262 establishes loading/query invariants on a tiny deterministic fixture and
+full empty meta architecture only. Preserve all tensors,precisions,queries and
+strict keys;restore only the documented deterministic nonpersistent buffer.
+Version-select a patched weights-only loader before trials,not unsafe pickle
+fallback. Explicit local cache paths are ordinary environment repair,not a
+model change. Report failed attempts as well as successful ones. A successful
+small IO check and empty full graph do not establish actual released-checkpoint
+compatibility,full memory/runtime or3D model accuracy. Require those separate
+bounded gates before private real-video cameras or geometry;do not confuse
+282.841MB test peak with the model's4.650GB parameter payload. No threshold,
+head completeness,privacy or actual visual requirement changes.

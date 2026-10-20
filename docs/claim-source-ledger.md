@@ -539,3 +539,21 @@ checkpoint,training data,private patient file or service is adopted/run. Officia
 PyTorch mmap/meta/assign documentation motivates a future safe loader test,not
 a current success claim or unsafe-unpickling permission. CPU/GPU execution and
 physical camera/head accuracy still need actual independent evidence.
+
+## 2026-10-20 exact-source loader fixture and patched isolated runtime
+
+0262 downloads16 exact reviewed Apache source/license modules from0261's pinned
+OpenD4RT commit and its pinned model config. The source-lock is for local
+synthetic IO checks only;it explicitly forbids actual released-checkpoint
+execution,human material and training in this phase. The small saved tensors
+are locally deterministic initialization,not a trained or substitute head model.
+No13.95GB checkpoint,VideoMAE initializer or private data is downloaded/read.
+
+The official [PyTorch security advisory](https://github.com/pytorch/pytorch/security/advisories/GHSA-63cw-57p8-fm3p)
+motivates Torch2.10.0+cpu instead of affected releases<=2.9.1. This does not
+claim universal deserialization safety. Actual installed metadata and bundled
+notices are retained for Torch,NumPy,PyYAML and transitive infrastructure,
+including NumPy's bundled runtime exceptions;no training/visualization/CUDA
+stack or commercial service is adopted. Full source/hash review and a passing
+IO invariant are not training-data clearance or accuracy evidence. No consent
+expands,and no physical camera/head acceptance follows.

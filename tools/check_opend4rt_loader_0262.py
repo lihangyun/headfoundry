@@ -1,10 +1,10 @@
 """Deterministic IO checks,not released-model inference or reconstruction."""
 
-import copy
 import ctypes
 from ctypes import wintypes
 import datetime
 import json
+import os
 from pathlib import Path
 import pickle
 import sys
@@ -15,6 +15,8 @@ if not __debug__:
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets/private/opend4rt-loader-0262"
+# Meta dispatch imports Dynamo internally;pin its cache without requiring an OS login name.
+os.environ["TORCHINDUCTOR_CACHE_DIR"] = str(OUT / "torch-cache")
 sys.path.insert(0, str(ROOT / "src"))
 from headfoundry.manifest import sha256_file
 

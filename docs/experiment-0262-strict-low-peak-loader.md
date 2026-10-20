@@ -65,3 +65,56 @@ hash-locked32-frame known3D model screen after fresh resource checks,not a head
 claim or a return to a rejected recipe. Failure preserves compact logs/source
 recovery then removes exclusive failed code/source/runtime/fixture before any
 new route. Preserve original inputs,shared tests and successful prior fixtures.
+
+## Actual result and replay
+
+Result:TECHNICAL_CHECK_PASSED for the declared synthetic IO/structural scope.
+Pre-execution source recovery:ce1aab5;preregistration:85f2ece. The exact16 source
+file hashes and pinned config match `examples/opend4rt-loader-0262.source-lock.json`.
+The actual source constructor is used;the tiny state is not a trained model.
+
+- Isolated setup exits0 in141.625s;Python3.12.13,Torch2.10.0+cpu,NumPy2.2.5,
+  PyYAML6.0.3 and pip dependency check are confirmed. Installed package versions,
+  metadata and bundled license/notice paths are retained locally. No TorchVision,
+  CUDA,training or service dependencies are installed in the shared environment.
+- All learned tensors are bit-equal,assigned storage pointers alias the loaded
+  tensors,and the nonpersistent Fourier buffer equals ordinary construction.
+  Ordinary versus low-peak output max error0;9 queries split3+3+3 have maximum
+  absolute error3.2782554626464844e-7,within the fixed1e-6 tolerance. No query is
+  discarded,parameter changed or tensor downcast.
+- All7 negative fixtures are rejected:missing/extra keys,shape,dtype,nonfinite
+  values,checksum mismatch and unsupported serialization. There is no unsafe
+  unpickling fallback. Synthetic fixture SHA256:
+  `7f3176c8f90b3f55528c63cc4c22c310ad768dbe5fb34cfd4290f8c287e73400`.
+- The full pinned architecture is constructed **on meta only**:1162433293
+  parameters,4649733172 FP32 bytes,all parameters remain meta. This is not actual
+  checkpoint tensor inspection or evidence its values/keys/dtypes are compatible.
+- Valid worker:5.655s inside script,6.331s parent wall,282841088bytes peak working
+  set. Those are fixture/empty-graph measurements,not a full-model memory saving
+  benchmark or a promise of actual inference speed/capacity. Shared133 tests
+  pass in7.019s;no reconstruction-quality threshold or production default changes.
+
+One ordinary pre-valid environment error is retained rather than erased:
+the first6.403s attempt imports Dynamo through meta arange;its default cache
+path calls getpass.getuser without an available Windows account environment,
+then tries the Unix-only pwd module. Set TORCHINDUCTOR_CACHE_DIR explicitly
+inside this repository before importing Torch. No architecture,model,dtype,
+numerical tolerance or framework version changes. The next fixed run passes.
+Original logs and the precise repair reason remain private.
+
+Private records:`assets/private/opend4rt-loader-0262/` contains the executed
+protocol,setup/check parent invocations and terminal records,source/licenses,
+installed packages/notices,small fixtures,report and shared-test log. Replay
+in the retained isolated environment:
+
+```powershell
+.venv-opend4rt0262/Scripts/python.exe tools/check_opend4rt_loader_0262.py
+```
+
+No released checkpoint,patient file,scan,bone or case002 is read;no training,
+upload or head fit occurs. Existing raw-human integrity is not rehashed in this
+phase because private inputs are deliberately outside its read scope. The new
+code is isolated from shared source/defaults and original data. Keep this
+successful prerequisite,not an accepted reconstruction. Real checkpoint
+compatibility,full inference resource use,physical3D correspondence,cameras,
+2mm head accuracy and actual full-head visual acceptance remainUNVERIFIED.

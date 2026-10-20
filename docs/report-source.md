@@ -598,3 +598,27 @@ query controls in an isolated bounded precondition. No14GB download,private
 inference,camera or head fit follows this source-only audit. Keep scene-camera
 coordinates distinct from head-relative motion.133 shared regressions remain
 passing;full executable readiness and original head goal remainUNVERIFIED.
+
+## 2026-10-20 strict loader and independent-query prerequisite
+
+0262 executes the pinned OpenD4RT class only with a deterministic tiny fixture
+and a full-size meta graph,not the published checkpoint or human material.
+The isolated CPU runtime uses Torch2.10.0 because the official weights-only
+security advisory fixes affected versions through2.9.1;it is not a precision
+or accuracy rescue. Shared environment,retired integrations and defaults stay.
+
+Strict mmap/meta/assign loading preserves every learned tensor bit-for-bit and
+shares loaded storage;the source nonpersistent Fourier buffer is restored
+exactly. Ordinary-versus-low-peak output error is0;fixed query chunks differ
+at most3.2783e-7,inside the declared1e-6 tolerance. All7 corrupt/ineligible test
+states reject without unsafe deserialization. Full meta structure confirms
+1162433293 parameters/4649733172 FP32 bytes. No parameter data are allocated
+for that full graph. Actual valid worker5.655s/peak282.841MB is not a full-model
+resource measurement. An initial getpass/cache-path error is retained and
+fixed by a repository-local explicit Torch cache path,without numerical changes.
+
+133 shared regressions pass. This successful IO prerequisite is retained;
+real checkpoint key/dtype compatibility,actual resource use and known3D
+correspondence remain the next separately registered gates. No video/scan,
+case002,training,upload,camera solve or head fit occurs,and no visual progress
+or KeenTools parity is claimed.
