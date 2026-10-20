@@ -443,3 +443,14 @@ compatibility,full memory/runtime or3D model accuracy. Require those separate
 bounded gates before private real-video cameras or geometry;do not confuse
 282.841MB test peak with the model's4.650GB parameter payload. No threshold,
 head completeness,privacy or actual visual requirement changes.
+
+0263 corrects a pre-valid Windows resource assumption:copy-on-write mappings
+may charge commit for the entire file even when resident working set is small.
+Do not treat the0262 small-file success or available physical RAM alone as
+large-file mapping clearance. Before released-state execution,record a safety
+amendment using the pinned Torch FakeTensorMode metadata path without full-file
+mapping;prove its small-fixture invariants and retain the original protocol.
+This is not model-value materialization or numerical rescue. Never silently
+extend the registered transport deadline,relax strict matching,change the model
+or use a writable shared mapping to avoid commit requirements. Actual model
+inference still needs independent RAM/commit and physical3D accuracy evidence.

@@ -17,7 +17,7 @@ OUT = ROOT / "assets/private/opend4rt-checkpoint-0263"
 FILE = OUT / "opend4rt.ckpt"
 
 
-def available_memory():
+def memory_headroom():
     class Memory(ctypes.Structure):
         _fields_ = [("length", wintypes.DWORD), ("load", wintypes.DWORD)] + [
             (n, ctypes.c_ulonglong) for n in ["total", "available", "page_total", "page_available",
@@ -26,7 +26,7 @@ def available_memory():
     status.length = ctypes.sizeof(status)
     if not ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(status)):
         raise ctypes.WinError()
-    return status.available
+    return {"available_ram_bytes": status.available, "process_commitable_bytes": status.page_available}
 
 
 def checked_lock():
@@ -34,8 +34,9 @@ def checked_lock():
     if (lock.get("purpose") != "published_checkpoint_structural_conformance_only"
             or lock.get("source_license") != "Apache-2.0"
             or lock.get("checkpoint_license") != "Apache-2.0"
-            or lock.get("deserialization") != {"weights_only": True, "mmap": True,
-                                                "map_location": "meta", "strict": True}
+            or lock.get("deserialization") != {"weights_only": True, "mmap": False,
+                                                "map_location": "meta", "strict": True,
+                                                "metadata_mode": "FakeTensorMode"}
             or any(lock.get(k) is not False for k in ["forward_allowed", "human_material_allowed",
                                                       "training_allowed", "upload_allowed"])):
         raise ValueError("Missing rights or incompatible diagnostic scope")
@@ -83,9 +84,47 @@ def download(lock):
     print("Exact published artifact length/SHA256 verified")
 
 
+def fake_metadata(path):
+    import torch
+    from torch._subclasses.fake_tensor import FakeTensorMode
+    # No full-file copy-on-write mapping/commit reservation,even for a training checkpoint.
+    with FakeTensorMode():
+        return torch.load(path, weights_only=True, mmap=False, map_location="meta")
+
+
+def self_check(lock):
+    import pickle
+    import torch
+    from unittest.mock import patch
+    fixture = ROOT / "assets/private/opend4rt-loader-0262/fixture-good.pt"
+    digest = sha256_file(fixture)
+    ordinary = torch.load(fixture, weights_only=True, mmap=False)["model"]
+    with patch.object(torch.UntypedStorage, "from_file", side_effect=AssertionError("File mapping forbidden")):
+        fake = fake_metadata(fixture)["model"]
+    if (ordinary.keys() != fake.keys() or not all(v.is_meta for v in fake.values())
+            or any((v.shape, v.dtype, v.stride()) != (fake[k].shape, fake[k].dtype, fake[k].stride())
+                   for k, v in ordinary.items())):
+        raise ValueError("Metadata-only fixture mismatch")
+    try:
+        fake_metadata(fixture.with_name("fixture-unsupported.pt"))
+    except pickle.UnpicklingError:
+        pass
+    else:
+        raise AssertionError("Unsupported serialization accepted")
+    if sha256_file(fixture) != digest:
+        raise ValueError("Fixture changed")
+    report = {"status": "TECHNICAL_CHECK_PASSED", "scope": "small_metadata_io_control_only",
+              "torch_version": torch.__version__, "state_entries": len(fake),
+              "all_meta": True, "file_mapping_forbidden_control_passed": True,
+              "shape_dtype_stride_equal": True, "unsupported_serialization_rejected": True,
+              "fixture_unchanged": True, "peak_working_set_bytes": peak_working_set()}
+    (OUT / "self-check-report.json").write_text(json.dumps(report, indent=2))
+    print(json.dumps(report))
+
+
 def inspect(lock):
-    before = available_memory()
-    if before < 2_000_000_000:
+    before = memory_headroom()
+    if min(before.values()) < 2_000_000_000:
         raise RuntimeError("Insufficient metadata-inspection memory headroom")
     verify_file(lock)  # Before importing Torch or deserializing anything.
     source = check_sources()
@@ -99,7 +138,7 @@ def inspect(lock):
     from src.model.d4rt import D4RTModel
     torch.set_num_threads(8)
     torch.set_num_interop_threads(1)
-    payload = torch.load(FILE, weights_only=True, mmap=True, map_location="meta")
+    payload = fake_metadata(FILE)
     state = payload["model"]
     if not isinstance(state, dict) or not state:
         raise ValueError("Missing pure tensor model state")
@@ -127,7 +166,8 @@ def inspect(lock):
                   checkpoint_sha256=lock["checkpoint_sha256"], whole_file_verified=True,
                   payload_categories={str(k): type(v).__name__ for k, v in payload.items()},
                   strict_model_state_entries=len(state), parameter_count=count, parameter_bytes=size,
-                  all_model_parameters_meta=True, dtype="float32", available_memory_before=before,
+                  all_model_parameters_meta=True, dtype="float32", resource_headroom_before=before,
+                  metadata_mode="FakeTensorMode", full_file_mapping=False,
                   peak_working_set_bytes=peak, finite_parameter_values="UNVERIFIED",
                   materialized_model_resources="UNVERIFIED", known3d_accuracy="UNVERIFIED",
                   camera_status="UNVERIFIED", head_status="UNVERIFIED", human_material_read=False,
@@ -138,13 +178,13 @@ def inspect(lock):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["download", "inspect"])
+    parser.add_argument("action", choices=["download", "inspect", "self-check"])
     action = parser.parse_args().action
     OUT.mkdir(parents=True, exist_ok=True)
     started = time.perf_counter()
     result = {"pid": os.getpid(), "action": action, "status": "RUNNING"}
     try:
-        {"download": download, "inspect": inspect}[action](checked_lock())
+        {"download": download, "inspect": inspect, "self-check": self_check}[action](checked_lock())
         result["status"] = "SUCCEEDED"
     except BaseException as error:
         result.update(status="FAILED", error_type=type(error).__name__, error=str(error))

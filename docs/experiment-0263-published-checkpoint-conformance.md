@@ -35,12 +35,12 @@ Torch deserialization;rename only after success. No unchecked partial-file load.
 Network retries may resume the same object within the original deadline,not
 change revision/model. Disk free must exceed25GB before starting.
 
-Then one<=300s process uses explicit weights_only=True,mmap=True and
-map_location='meta'. The installed Torch source shows mmap overall storage
-slices are mapped and restored to meta without reading parameter values.
+Then one<=300s process uses explicit weights_only=True,mmap=False and
+map_location='meta' inside FakeTensorMode,as amended below before any released
+checkpoint load. No full-file mapping or tensor storage is materialized.
 This is **metadata structural inspection**,not full weight materialization or
 the finite-value/actual-resource gate. Require available RAM>=2GB before this
-process and process peak working set<1GB. Construct the full source class on
+process,process commitable headroom>=2GB and peak working set<1GB. Construct the full source class on
 meta,strictly load every exact key/shape and preserve FP32 dtypes. Require all
 1162433293 parameters/4649733172bytes and no unexpected learned/buffer state.
 Record top-level payload categories and exact metadata inventory/hash locally;
@@ -70,3 +70,36 @@ remove the exclusive failed artifact and integration under0250 rules,verify and
 commit before a new route. Preserve raw inputs/consent,shared/successful fixture
 evidence and unrelated0207. Transient network/resource unavailability is not
 proof of model inaccuracy,head improvement or completion.
+
+## Pre-valid Windows IO safety amendment
+
+Registered while the original same download is live,before the public artifact
+is complete or any released-state deserialization/valid model trial. Original
+protocol remains in Git a4b72b4 and the private executed-protocol copy. Download
+worker/revision/hash/1800s deadline,40minute phase budget,strict keys,dtypes and
+all accuracy/resource requirements are unchanged. No download is restarted.
+
+The first protocol incorrectly considered only resident working set for mmap.
+Microsoft's [MapViewOfFile contract](https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-mapviewoffile)
+states copy-on-write views take commit charge for the entire view. The separate
+[MEMORYSTATUSEX contract](https://learn.microsoft.com/en-us/windows/win32/api/sysinfoapi/ns-sysinfoapi-memorystatusex)
+defines ullAvailPageFile as process commitable headroom,not free physical RAM or
+literal pagefile free space. A current snapshot gives7.017GB available RAM but
+only8.587GB process commitable headroom,less than this13.950GB file. This is a
+resource risk/inference from the mapping contract,not a measured full-file
+Torch mapping failure. Do not force that allocation or change system pagefile.
+
+The pinned [PyTorch2.10 serialization documentation](https://docs.pytorch.org/docs/2.10/notes/serialization.html#layout-control)
+documents FakeTensorMode metadata inspection without storage-data allocation.
+Installed2.10 source also skips get_storage_from_record in its fake-mode branch.
+Use that mode with explicit mmap=False/weights_only=True,not a writable shared
+mapping,an unsafe pickle fallback or a model/precision change. This is a
+pre-valid OS/IO correction,not evidence the original full mapping passed.
+
+Retain one runnable `self-check` control:compare metadata of the unchanged0262
+small state,forbid UntypedStorage.from_file via a failing mock,require every
+returned tensor on meta and identical keys/shapes/dtypes/strides,retain the
+unsupported-serialization rejection and unchanged fixture hash. Passing this
+control does not establish released-model compatibility or finite values.
+Later actual materialization still needs fresh full RAM **and commit** planning;
+the previous8GB physical prerequisite is necessary,not sufficient.
