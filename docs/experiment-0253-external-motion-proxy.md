@@ -1,7 +1,7 @@
 # Experiment0253: independent external-motion proxy prerequisite
 
 Date:2026-10-20. Pre-registered before descriptors,matching or geometry scoring.
-Status:UNVERIFIED. Previous0252 is actual progress:frame identity repaired,
+Status:REJECT at observation-count prerequisite. Previous0252 is actual progress:frame identity repaired,
 16/16 real-video hash replay and130 regressions pass;not new head acceptance.
 
 ## Distinct hypothesis and strict scope
@@ -82,3 +82,60 @@ our matches accurate. Installed5.0.0 API/version is checked locally rather than
 assuming redirected4.x docs define exact current binary behavior. No third-party
 sample implementation is copied. This external-proxy proposal is our inference,
 not an established clinical or reconstruction-quality result.
+
+## Actual single-run result and enforced stop
+
+One2.405s scoring run completes(exit0). All synthetic analytic/OpenCV line
+controls pass. All9 exact sequential source-frame RGB hashes match0252.
+The source-only region sheet was reviewed before feature extraction;the final
+all-matches sheet was actually viewed after execution. No annotation/region,
+pair,ratio,descriptor setting or seed is changed after results.
+
+| Pair | All cap matches | Fit / held cap | All untouched face matches |
+|---|---:|---:|---:|
+|0-60|0|0 /0|0|
+|60-120|17|9 /8|1|
+|240-300|1|1 /0|2|
+|300-360|1|1 /0|1|
+|360-420|14|7 /7|0|
+|540-600|3|2 /1|1|
+
+No pair reaches30 fit cap observations;no F is fitted. No epipolar p95,
+homography degeneracy,focal,pose,3D or millimeter accuracy can consequently be
+reported. This rejects the **specific conservative-region/default-SIFT direct
+external-proxy observation recipe**,not the mathematical possibility of cap
+rigidity,all feature matching or reconstruction. The result exposes insufficient
+direct cross-view associations rather than measuring cap slippage/deformation.
+After support/duplicate filtering,source-cap counts are30-180 versus140-425 raw
+detections,and face counts1-35 versus12-75 raw. Texture density is not usable
+cross-view identity. No fallback to chained flow,larger regions or ratio changes.
+
+Preparation initially decoded and saved the9 correct frames but hit a str/Path
+type error during its final source-hash metadata write. The recovery rereads
+the existing PNGs,verifies each original sequential RGB hash and original video
+digest,then writes the missing input record without redecoding or substitution.
+That engineering recovery and original error are retained in the private archive.
+It does not alter the actual single scoring run or hide a failed model attempt.
+
+Source recovery commit:`de9b5f7`. The exclusive runner and raw temporary source
+PNGs/review duplicates are retired after compact private archive verification.
+`assets/private/closed-experiments/0253/evidence.zip` retains reports,full match
+arrays,exact annotations/control hashes,execution logs,pre-result protocol and
+two bounded region/match review sheets. No new dependency/checkpoint exists to
+uninstall. Original video,intake,0252 audit/shared fix,successful scan evaluators,
+case002,production defaults and unrelated0207 draft remain untouched.
+
+The full-head goal remains unachieved. No video head or camera is promoted.
+Another region/density/temporal-hop variant is not justified by this result;
+a distinct observation mechanism must first demonstrate sufficient independent
+camera information. No image-only/fitting-residual success may replace the
+original3px reprojection,2mm scan-region and actual whole-head visual gates.
+
+Closeout verification:817,044byte private archive,CRC checked,SHA256
+`69e38e464f366160a05a6ed599040378d325fb9849b9cc444f7e6785b40cf2ec`.
+After checking the terminal process and resolved non-symlink private target,
+remove20 raw files totaling7,341,667bytes plus the tracked exclusive runner.
+This is logical file size,not a measured free-disk delta. Ten protected source/
+consent/intake hashes remain unchanged.130 retained tests pass in4.989s;
+Git whitespace check passes. The archive preserves bounded evidence,not the
+deleted source PNGs;those can be regenerated at their saved exact ordinals.

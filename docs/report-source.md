@@ -401,3 +401,18 @@ more capture,but do not claim unseen patient-specific scalp/posterior recovery
 or waive full acceptance. Unknown-focal camera/material evidence needs a distinct
 bounded hypothesis before another shape fit. No scan/case002 bytes or new model
 are used;private frame pages and actual review remain local.
+
+## 2026-10-20 external cap motion-reference observation prerequisite rejected
+
+0253 tests a genuinely different reference domain before any reconstruction:
+cap-only geometry would need to explain untouched face correspondences. One
+2.405s default-SIFT/direct-mutual-match run on6 predeclared exact-frame pairs
+returns0/17/1/1/14/3 cap matches and0/1/2/1/0/1 face matches. No pair has30 cap
+fit observations,so no F/camera is estimated and no geometric error is invented.
+This is an observation-support failure of this exact conservative-region recipe,
+not measured cap nonrigidity or a proof all reconstruction is impossible.
+Actual pre-fit regions/final match sheets were inspected. No parameter/region/
+frame rescue or skin-scan/case002 use follows. Source recoverable atde9b5f7;
+compact local evidence replaces exclusive runner/raw frames under cleanup policy.
+Reliable independent camera/material information remains the next prerequisite;
+no new head,production promotion or visual acceptance is established.

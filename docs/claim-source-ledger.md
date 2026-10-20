@@ -404,3 +404,15 @@ read;case002 and scan bytes remain excluded. All source thumbnails and metadata
 identifiers stay local. Complete sequential review and16/16 repaired hash matches
 support input identity,not physical camera calibration,anatomy,medical accuracy
 or visual reconstruction acceptance. No additional upload/training rights follow.
+
+## 2026-10-20 external proxy consistency is a hypothesis,not camera evidence
+
+0253 uses existing OpenCV5.0.0 SIFT/BFMatcher/F estimation APIs and our own
+fixed-region,duplicate/split/error/control/report logic. The linked primary
+OpenCV documentation in0253 motivates the mathematics,not cap rigidity or
+patient-specific accuracy. No new source/model/service is downloaded. Exact
+source-frame identities and manual input-region annotations stay private/local.
+The observation-count failure prevents any F fit;no relative-pose,focal,3D,
+medical or likeness claim follows. Original authorization does not expand to
+training/upload or distribution of private annotations/images. No scan/case002
+content is consumed. Failed exclusive code/data follow0250 retirement policy.
