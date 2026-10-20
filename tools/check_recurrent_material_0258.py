@@ -9,6 +9,9 @@ import time
 
 import numpy as np
 
+if not __debug__:
+    raise RuntimeError("This diagnostic requires assertions;run without -O.")
+
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets/private/recurrent-material-0258"
 LOCK = ROOT / "examples/tapnextpp-0258.asset-lock.json"
@@ -179,10 +182,19 @@ def infer():
 
 def evaluate():
     controls()
+    preparation = json.loads((OUT / "preparation.json").read_text())
+    inference = json.loads((OUT / "inference.json").read_text())
+    assert sha(OUT / "input.npz") == preparation["input_sha256"] == inference["input_sha256"]
+    assert sha(OUT / "truth.npz") == preparation["truth_sha256"]
+    assert sha(OUT / "predictions.npz") == inference["prediction_sha256"]
     with np.load(OUT / "predictions.npz", allow_pickle=False) as data:
         tracks, visible = data["tracks_xy"], data["visible"]
     with np.load(OUT / "truth.npz", allow_pickle=False) as data:
         target = data["target_xy"]
+        assert np.array_equal(data["homographies"], matrices())
+        queries = np.array([(80 + 40 * i, 120 + 40 * j) for j in range(8) for i in range(8)])
+        assert np.array_equal(data["queries_xy"], queries)
+        assert np.array_equal(target, project(matrices(), queries))
     assert tracks.shape == target.shape == (9, 64, 2) and visible.shape == (9, 64)
     errors = np.linalg.norm(tracks - target, axis=-1)
     rows = [dict(frame=i, count=64, p95=float(np.quantile(e, .95)),

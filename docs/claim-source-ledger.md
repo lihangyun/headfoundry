@@ -471,3 +471,24 @@ case002,model,service,training or upload is used. Pixel integrity and visually
 plausible persistence do not establish subpixel/1px accuracy or a camera/head
 pass. Private candidate panels/coordinates remain local under original consent.
 No new asset license or expanded usage grant follows from this source audit.
+
+## 2026-10-20 TAPNext++ frozen permissive inference candidate
+
+0258 pins Google DeepMind TAP source730cda1c730877cfedbe01bf87fb1cadb78a565d.
+Its [README checkpoint grant](https://github.com/google-deepmind/tapnet/blob/730cda1c730877cfedbe01bf87fb1cadb78a565d/README.md#license-and-disclaimer)
+and [TAPNext++ explicit grant](https://github.com/google-deepmind/tapnet/blob/730cda1c730877cfedbe01bf87fb1cadb78a565d/tapnet/tapnextpp/README.md#license)
+cover the exact released checkpoint under Apache-2.0,not merely repository code.
+Published benchmark performance motivates the candidate,not patient accuracy.
+`examples/tapnextpp-0258.asset-lock.json` locks reviewed module/license hashes,
+official Google-hosted URL and independent officialHF LFS SHA;actual bytes match.
+Keep notices and reject missing rights,changed hashes or checkpoint fallback.
+This is reliance on published permissions,not a general legal clearance opinion.
+
+Three unmodified Apache inference modules import existing-style NumPy plus a
+new isolated,pinned CPU Torch/TorchVision/einops runtime;all installed version
+metadata/bundled notices remain private for replay. Dependencies use permissive
+BSD/MIT/PSF and related bundled notices;no NC model,cloud demo,training corpus or
+upstream training stack is adopted. Only authorizedcase001 video ordinal0 and
+its planar validation warps are used locally. Source human pixels/queries and
+predictions never leave the machine;no scan,bone,case002 or training is involved.
+Planar pixel precision is not certified3D material identity,cameras or anatomy.

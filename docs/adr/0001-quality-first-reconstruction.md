@@ -390,3 +390,13 @@ The bounded audit supports input identity,not calibrated correspondence or head
 acceptance. Record its visual-review budget overrun and stop further expansion;
 retain compact local hypotheses/evidence without starting a fit or changing any
 production,3px,2mm,whole-head or actual-visual requirement.
+
+0258 permits one separately locked Apache TAPNext++ recurrent observation model
+because global image tokens/temporal learned state are distinct from retired
+local trackers,not a tracker-threshold rescue. Its all-point planar precision
+screen passes without filtering or post-hoc coordinate/bias correction. Preserve
+that positive prerequisite but never transfer its result directly to3D:known
+planar warps have neither true out-of-plane visibility nor skin rigidity. Require
+independent3D motion/visibility and real applicability before camera/head fitting.
+Model and checkpoint rights are reviewed separately,imports kept minimal in an
+isolated runtime,and no human upload/training or production change is authorized.

@@ -506,3 +506,30 @@ change follows. Compact local evidence and source recovery024035e replace
 redundant display crops;original video/0252 evidence remain intact. Full target
 remains unmet;the next action needs independent information,not retired-route
 parameter variations or treating visual hypotheses as calibrated measurements.
+
+## 2026-10-20 recurrent tracker passes frozen planar precision prerequisite
+
+0258 introduces a materially distinct observation mechanism:the official frozen
+TAPNext++256 recurrent transformer,not a local tracker/patch/descriptor threshold
+retry. Its source and weights are explicitly Apache-2.0,pinned by commit/hash;
+CoTracker NC is excluded. Only three reviewed inference modules and a separate
+CPU Torch/TorchVision/einops environment are needed;no training/JAX/data stack.
+One exactcase001 video frame is sequentially verified against0252 and transformed
+by9 predeclared analytic homographies. No scan,bone,case002 or manual identity
+labels enter. This is validation,not training or simulated physical3D motion.
+
+One28.954s parent process strictly loads194202881 parameters and tracks all64
+grid queries,without confidence/error pruning. All512 non-query observations
+pass the fixed per-frame native1px p95/3px maximum/.95 visibility screen:
+p95.470346-.723442px,global maximum.985245px,all visibility fractions1.0.
+Identity returns and asymmetric raster-coordinate controls pass. Model input is
+only resized RGB and frame0 queries;analytic targets/H remain evaluator-only,
+and hashes/targets are independently rechecked after termination. Actual two
+native source/20x-residual panels are inspected and labeled as2D diagnostics.
+
+Setup verification upper bound472.197s and inference28.954s meet their budgets.
+132 tests pass before final evaluator hardening. This is a meaningful positive
+necessary precision result,not camera/head acceptance or evidence that real
+occluded/deforming skin is rigid. Keep the locked candidate and positive fixture
+for a separately registered true3D rotation/visibility screen. Do not narrow the
+full objective or infer likeness/2mm anatomy from these planar errors.

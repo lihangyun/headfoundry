@@ -2,6 +2,8 @@
 
 import importlib.util
 from pathlib import Path
+import subprocess
+import sys
 import unittest
 
 
@@ -12,6 +14,10 @@ class RecurrentMaterialControls(unittest.TestCase):
         module = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(module)
         module.controls()
+        optimized = subprocess.run([sys.executable, "-O", str(path), "controls"],
+                                   capture_output=True, text=True, timeout=10)
+        self.assertNotEqual(optimized.returncode, 0)
+        self.assertIn("run without -O", optimized.stderr)
 
 
 if __name__ == "__main__":
