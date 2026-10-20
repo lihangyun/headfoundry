@@ -223,8 +223,25 @@ def prepare():
         truth_sha256=sha256_file(OUT/"evaluation-truth.npz"),query_count=len(ids),uninitialized_original_ids=5000-len(ids),seconds=time.perf_counter()-started),indent=2))
 
 
-def infer():
-    (OUT/"inference-live.json").write_text(json.dumps(dict(pid=os.getpid(),run_token=os.environ["HF0264_RUN_TOKEN"])))
+def compare_batch_head(single, chunked, expected_shape):
+    import torch
+    if (tuple(single.shape)!=expected_shape or chunked.shape!=single.shape
+            or single.dtype!=torch.float32 or chunked.dtype!=torch.float32
+            or not torch.isfinite(single).all() or not torch.isfinite(chunked).all()):
+        raise ValueError("Invalid finite FP32 diagnostic head")
+    a,b=single.double(),chunked.double();delta=(a-b).abs()
+    mismatch=~torch.isclose(single,chunked,atol=1e-6,rtol=1e-6)
+    details=dict(shape=list(a.shape),all_component_max_abs=float(delta.max()),
+                 old_1e6_mismatch_components=int(mismatch.sum()),old_1e6_pass=False)
+    try: torch.testing.assert_close(single,chunked,atol=1e-6,rtol=1e-6)
+    except AssertionError as error: details["old_1e6_message"]=str(error)
+    else: details["old_1e6_pass"]=True
+    return details
+
+
+def infer(result_dir=OUT, batch_diagnostic=False):
+    result_dir = Path(result_dir)
+    (result_dir/"inference-live.json").write_text(json.dumps(dict(pid=os.getpid(),run_token=os.environ["HF0264_RUN_TOKEN"])))
     import torch
     import yaml
     from check_opend4rt_loader_0262 import check_sources,peak_working_set
@@ -250,7 +267,7 @@ def infer():
     aspect=torch.from_numpy(data["aspect"])[None]
     uv=torch.from_numpy(data["uv"])
     if not torch.isfinite(uv).all() or not ((uv>=0)&(uv<=1)).all() or float(aspect[0,0])!=1.125: raise ValueError("Invalid normalized source queries")
-    output={};control_errors={}
+    output={};control_errors={};raw_controls={};control_details={}
     with torch.inference_mode():
         memory=model.encode_video(video,aspect)
         times=torch.tensor([0,3,6,9,12,15,18,21,31])
@@ -258,10 +275,31 @@ def infer():
             q=dict(u=uv[:9,0][None],v=uv[:9,1][None],t_src=torch.zeros((1,9),dtype=torch.long),t_tgt=times[None],t_cam=(times if mode=="local" else torch.zeros_like(times))[None])
             single=model.decode_queries(video,q,memory)
             parts=[model.decode_queries(video,{k:v[:,i:i+3] for k,v in q.items()},memory) for i in range(0,9,3)]
+            if batch_diagnostic:
+                for key,value in q.items(): raw_controls[mode+"_query_"+key]=value.cpu().numpy()
+                for key in single:
+                    raw_controls[mode+"_single_"+key]=single[key].cpu().numpy()
+                    raw_controls[mode+"_chunked_"+key]=torch.cat([p[key] for p in parts],1).cpu().numpy()
+                # Persist exact values/names before any check can stop this worker.
+                np.savez_compressed(result_dir/"batch-control-raw.npz",**raw_controls)
+                expected={"xyz_3d":(1,9,3),"uv_2d":(1,9,2),"visibility":(1,9),
+                          "displacement":(1,9,3),"normal":(1,9,3),"confidence":(1,9)}
+                if set(single)!=set(expected) or any(set(p)!=set(expected) for p in parts):
+                    raise ValueError("Unexpected diagnostic output heads")
             for key in single:
                 chunked=torch.cat([p[key] for p in parts],1)
-                torch.testing.assert_close(single[key],chunked,atol=1e-6,rtol=1e-6)
+                if batch_diagnostic:
+                    details=compare_batch_head(single[key],chunked,expected[key])
+                    if key=="visibility": details["visibility_call_disagreements"]=int(((single[key]>0)!=(chunked>0)).sum())
+                    control_details[mode+"_"+key]=details
+                    (result_dir/"batch-control.json").write_text(json.dumps(dict(
+                        scope="diagnostic_not_physical_quality_gate",heads=control_details,
+                        raw_sha256=sha256_file(result_dir/"batch-control-raw.npz")),indent=2))
+                else:
+                    torch.testing.assert_close(single[key],chunked,atol=1e-6,rtol=1e-6)
                 control_errors[mode+"_"+key]=float((single[key]-chunked).abs().max())
+        # Both modes' raw controls now exist before the complete canonical schedule.
+        for mode in ["local","reference"]:
             u,v=uv[:,0].repeat_interleave(32),uv[:,1].repeat_interleave(32)
             target=torch.arange(32).repeat(len(uv));pieces={}
             for start in range(0,len(u),512):
@@ -273,23 +311,24 @@ def infer():
                     if not torch.isfinite(value).all(): raise ValueError("Nonfinite model output")
                     pieces.setdefault(key,[]).append(value[0].cpu().numpy())
                 if start%10240==0:
-                    (OUT/"inference-progress.json").write_text(json.dumps(dict(mode=mode,completed=end,total=len(u),seconds=time.perf_counter()-started,peak_working_set_bytes=peak_working_set())))
+                    (result_dir/"inference-progress.json").write_text(json.dumps(dict(mode=mode,completed=end,total=len(u),seconds=time.perf_counter()-started,peak_working_set_bytes=peak_working_set())))
             for key,parts in pieces.items():
                 values=np.concatenate(parts,0);values=values.reshape(2355,32,*values.shape[1:])
                 output[mode+"_"+key]=np.swapaxes(values,0,1)
     verify_bound(model,weights)
     if peak_working_set()>=7_000_000_000: raise RuntimeError("Working-set budget exceeded")
-    np.savez_compressed(OUT/"predictions.npz",**output)
-    (OUT/"inference.json").write_text(json.dumps(dict(status="TECHNICAL_CHECK_PASSED",scope="execution_not_accuracy",input_sha256=input_lock["input_sha256"],
-        prediction_sha256=sha256_file(OUT/"predictions.npz"),all_model_bytes_unchanged=True,all_model_values_finite=True,
+    np.savez_compressed(result_dir/"predictions.npz",**output)
+    (result_dir/"inference.json").write_text(json.dumps(dict(status="TECHNICAL_CHECK_PASSED",scope="execution_not_accuracy",input_sha256=input_lock["input_sha256"],
+        prediction_sha256=sha256_file(result_dir/"predictions.npz"),all_model_bytes_unchanged=True,all_model_values_finite=True,
         actual_chunk_controls=control_errors,seconds=time.perf_counter()-started,peak_working_set_bytes=peak_working_set(),model_points=2355,frames=32),indent=2))
 
 
-def evaluate():
-    record=json.loads((OUT/"preparation.json").read_text());execution=json.loads((OUT/"inference.json").read_text())
+def evaluate(result_dir=OUT):
+    result_dir=Path(result_dir)
+    record=json.loads((OUT/"preparation.json").read_text());execution=json.loads((result_dir/"inference.json").read_text())
     if (sha256_file(OUT/"evaluation-truth.npz")!=record["truth_sha256"] or sha256_file(OUT/"input.npz")!=execution["input_sha256"]
-            or sha256_file(OUT/"predictions.npz")!=execution["prediction_sha256"]): raise ValueError("Changed evaluation evidence")
-    truth=np.load(OUT/"evaluation-truth.npz",allow_pickle=False);pred=np.load(OUT/"predictions.npz",allow_pickle=False)
+            or sha256_file(result_dir/"predictions.npz")!=execution["prediction_sha256"]): raise ValueError("Changed evaluation evidence")
+    truth=np.load(OUT/"evaluation-truth.npz",allow_pickle=False);pred=np.load(result_dir/"predictions.npz",allow_pickle=False)
     for key in pred.files:
         if not np.isfinite(pred[key]).all(): raise ValueError("Nonfinite full output")
     xy=pred["local_uv_2d"]*np.array([719,639]);errors=np.linalg.norm(xy-truth["target_xy"],axis=-1)
@@ -307,13 +346,13 @@ def evaluate():
         row["passed"]=bool(row["p95_px"]<=1 and row["max_px"]<=3 and row["visible_recall"]>=.95
             and (row["occluded_recall"] is None or row["occluded_recall"]>=.95) and row["point3d_p95_mm"]<=2 and row["all_required_depths_positive"])
         rows.append(row)
-    np.savez_compressed(OUT/"errors.npz",pixel_errors=errors,point3d_errors_mm=distances,ids=truth["ids"],visible=truth["visible"])
+    np.savez_compressed(result_dir/"errors.npz",pixel_errors=errors,point3d_errors_mm=distances,ids=truth["ids"],visible=truth["visible"])
     passed=all(r["passed"] for r in rows[1:]) and rows[0]["point3d_p95_mm"]<=2
     report=dict(status="TECHNICAL_CHECK_PASSED" if passed else "REJECT",scope="known_source_conditional_capacity_only",rows=rows,
         initialized_ids=2355,uninitialized_original_ids=2645,all_true_visible_pairs_scored=int(truth["visible"][1:].sum()),
         all_true_occluded_pairs_scored=int((~truth["visible"][1:]).sum()),fixed_global_similarity=transform.tolist(),
         camera="UNVERIFIED",head="UNVERIFIED",real_video="UNVERIFIED",no_training_or_upload=True)
-    (OUT/"report.json").write_text(json.dumps(report,indent=2));print(json.dumps(report))
+    (result_dir/"report.json").write_text(json.dumps(report,indent=2));print(json.dumps(report))
 
 
 if __name__=="__main__":
