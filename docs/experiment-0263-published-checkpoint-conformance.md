@@ -103,3 +103,23 @@ unsupported-serialization rejection and unchanged fixture hash. Passing this
 control does not establish released-model compatibility or finite values.
 Later actual materialization still needs fresh full RAM **and commit** planning;
 the previous8GB physical prerequisite is necessary,not sufficient.
+
+## Source-only preparation for the next gate
+
+While the original download remains live,inspect only retained generic tools
+and public project documents,not private geometry/images/manifests. The old
+`generate_scan_motion_0230.py` passes its entire manifest to
+`validate_input_assets`,whose intentional contract hashes every listed input.
+If handed a multi-case manifest,this would read a held-out case before the
+later case001 selection. This is a future invocation risk,not evidence that
+case002 was actually read in this phase or a finding about historical inputs.
+
+Do not run that old generator as-is for a case001-only trial. Before any future
+private fixture access,use an explicit exact case001 asset-ID subset,retain
+the original confirmation/manifest identity as metadata,and test with a held-out
+sentinel that other-case files are never opened. Keep shared validation's
+default full-manifest safety semantics unchanged. Retained0230 geometry and
+0237 fixed-region evaluation helpers may be reused after the separate next
+registration;do not restore failed0259 integration. Source/scan diagnostics
+remain oracle evaluation,not independent video reconstruction. No new route,
+private-file access,model forward or shared-source edit occurs in this review.
