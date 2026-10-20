@@ -466,3 +466,16 @@ not complete inference,physical correspondence or head acceptance. Seek one
 explicit choice before treating still-untested public weights as disposable
 failed assets or conducting a separate control-design audit;start no new route
 while pending. Retain source recovery/compact evidence and protect originals.
+
+0265 records the user's audit-only/temporary-retention choice. Distinguish exact
+asset identity and finite/execution safety from numerical batching diagnostics
+and physical quality. A blanket tensor tolerance across coordinate/logit/normal
+heads needs an independently justified purpose/error budget;generic library
+defaults or the just-observed mismatch are not such a derivation. Missing head
+names/raw controls must be declared unknown,not silently reconstructed. Persist
+future diagnostic evidence before a failure,if separately authorized to execute.
+
+Do not change0264 or label its batch failure a harmless false positive. A future
+trial may only use a prospectively approved fixed execution contract with all
+physical gates intact;no arbitrary-batch equivalence claim follows. Audit-only
+permission does not authorize that trial or indefinitely retain a rejected route.

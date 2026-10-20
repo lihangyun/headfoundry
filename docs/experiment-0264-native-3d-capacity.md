@@ -192,3 +192,16 @@ predicted residual panels. It is not a backup of full checkpoints/runtime or
 all generated data. Human originals/shared successful fixtures/defaults remain
 protected. Further audit or retirement follows the user's choice,not an
 automatic threshold rescue or another unsupported model swap.
+
+## Follow-up0265:explicit audit/retention permission received
+
+User chose a separate precondition audit with temporary public-weight retention.
+[Audit0265](audit-0265-numerical-precondition.md) does not rerun this model or
+change its recipe/gates. The original pending-choice record/archive remains
+historical;the new private audit record documents the resolved choice.
+
+Statistical clarification from the actual Torch2.10 reporter:the logged maximum
+absolute/relative deltas are over **mismatched components only**,not certified
+maxima over all27 values or other heads. No missing raw tensor is reconstructed
+from the exception. OriginalREJECT and unmeasured physical3DUNVERIFIED stand;
+future model execution requires separate authorization and registration.

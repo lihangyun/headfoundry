@@ -667,3 +667,22 @@ reconstruction or OpenD4RT itself is impossible,and no relaxed threshold rerun
 is authorized by the observed failure. Compact local evidence is verified;
 retirement versus a separate numerical-design audit awaits one explicit user
 choice. No new route or deletion of unresolved public assets occurs meanwhile.
+
+## 2026-10-20 numerical-precondition audit,not another forward
+
+User explicitly permits0265 source/log/control-design review and temporary public
+weight retention,not a model rerun or changed physical gates. All16 pinned
+upstream file hashes match. Uniformatol/rtol1e-6 compares batching implementations,
+not physical ground truth;its full-width error budget is unestablished. Torch2.10
+permits floating-point batch/slice differences but does not prove this failure
+harmless. The actual reporter masks matching components before its maxima,so
+1.66893e-6 is only the reported mismatch maximum,not the complete output maximum.
+
+Five tiny standard-library arithmetic witnesses pass without model/human input:
+non-associativity,UV-unit conversion,identically wrong predictions,visibility
+sign flips and mismatch-only statistics. They demonstrate limits of this test,
+not actual reconstruction performance. Failed head/raw arrays remain missing;
+no rerun attempts to recover them.0264 staysREJECT;physical3D/headUNVERIFIED.
+No tolerance/source/default change or new dependency follows.0265 documents a
+separately authorized future canonical-schedule capacity check as a recommendation,
+not an active experiment or permission to waive3px/2mm/whole-head/visual gates.
