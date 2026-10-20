@@ -377,3 +377,19 @@ overlay uses supplied clay with projection residuals and must never be presented
 as an improved head result. Some lower camera errors versus0236 are insufficient
 to claim net improvement or PARTIAL_SUCCESS;4/5 joint targets regress. No extra
 training,upload,case002 access or accepted production asset follows.
+
+## 2026-10-20 direct photometric camera capacity,known geometry only
+
+0251 independently implements a six-parameter rigid pose and linear SH lighting
+elimination with installed NumPy/SciPy/Pillow. No trained checkpoint,third-party
+implementation,training,downloaded model or service is introduced. The research
+paper linked in0251 is motivation,not a source of adopted implementation or an
+accuracy transfer. Only authorizedcase001 skin is read,with exact consent/source
+and known-render hashes;case002,bone and real-video inference are not used.
+
+Exact patient geometry,cameras/focal for the perturbed local seed and visibility
+assist this **capacity oracle**. They must never be hidden in a purported
+video-only inference input. Final projected errors are independently replayed;
+the complete recipe isREJECT despite four lower projection errors. Source-scan
+clay panels are not reconstructed heads. Per user cleanup policy,the compact
+private archive/Git recovery ref replace the active runner and raw predictions.

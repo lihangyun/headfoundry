@@ -369,3 +369,17 @@ recovery pointd443e37 retain the rejection record,not every failed binary.
 127 shared tests and environment dependency checks pass. Generic math,scan
 fixtures,rights and source materials are preserved. No new modeling run or
 quality improvement is claimed. See cleanup-0250-failed-routes.md and rootAGENTS.
+
+## 2026-10-20 direct photometric rigid-pose prerequisite rejected
+
+0251 tests a single global SE3 camera and eliminated9-D SH lighting on protected
+known source geometry,not local point matching or another checkpoint. The
+truth-derived pose seed,focal and visibility make this only a favorable local
+capacity diagnostic. One2.176s run obtains held projection p95.534,6.140,.713,
+.828,1.292px;all five illumination fits violate positivity and+30 does not
+converge within the registered60 evaluations. Complete recipeREJECT. Actual
+projection panels and independent OpenCV replay(9.55e-12px max) support these
+numbers,not video inference or a new head. No point/target is deleted to pass.
+Following0250 policy,the exclusive runner/predictions are removed after compact
+local archiving;exact source recovery is commit3a74131. No real transfer or
+new model installation follows;unknown shape/focal/lighting remain unresolved.
