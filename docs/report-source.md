@@ -440,3 +440,23 @@ information. Actual supplied-scan/mask/projection reviews are clearly labeled,
 not presented as new head output.131 tests pass;implementation/source recoverable
 at16217e6 and bounded positive fixture remain local. Next unknown rotations must
 pass independent projection before considering real segmentation/rigidity or fit.
+
+## 2026-10-20 unknown-rotation extension fails independent cameras
+
+0255 exports only frozen2D contours/samples to a fresh Python-guarded worker;
+true rotations/points remain outside fitting. All15 relative orientation
+coordinates and common focal are free within a constrained fixed-pivot model.
+One605.852s/400-evaluation Powell solve raises coherence.735677->.888672 but
+terminates at its evaluation limit. Post-termination source-only evaluation
+rejects all6 views:final p95s3.612/30.710/33.236/81.472/38.537/32.492px,all worse
+than fixed initial values3.181/15.564/15.237/23.836/24.372/14.672px. Proper cameras,
+cheirality and independent5.685e-13px projection replay do not override failure.
+
+The known cameras are feasible,so this is not proof the global silhouette
+problem is impossible;the bounded initialization/cost/solver recipe fails to
+recover them.0254's conditional positive result is not real pose recovery.
+No extra iterations,seeds,freedom reduction,mask/offset or score-based selection
+rescue follows. Actual supplied-scan residual panels show regression,not a new
+head. Source recoverable at9985fa1;compact local evidence replaces exclusive
+0255 runner/raw artifacts. Keep successful0254 math/fixture and all originals.
+Full-head/video/2mm/visual objective remains unmet;no default promotion follows.

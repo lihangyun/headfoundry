@@ -360,3 +360,12 @@ Global similarity scale cannot be inferred from silhouette coherence alone.
 Known rotations in a capacity test must not silently enter real inference.
 No geometry fitting follows before unknown-pose and actual-video applicability
 are independently validated. Original3px/2mm/full-head/visual gates stay intact.
+
+0255's higher silhouette coherence accompanies worse independent projection in
+every view and unsuccessful bounded termination. Do not transfer a known-pose
+capacity result to unknown pose or interpret numerical improvement as physical
+camera recovery. Preserve both successes and counterevidence with their actual
+conditions. A demonstrably feasible true solution does not excuse a failed
+initializer/solver,and one failed bounded solve does not prove all silhouette
+methods impossible. Close the registered recipe without budget/seed/threshold
+rescue. Failed camera outputs never initialize a purported accepted head.

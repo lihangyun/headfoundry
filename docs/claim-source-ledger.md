@@ -432,3 +432,16 @@ source-only oracle geometry with known-motion evaluation,never hidden video
 inference input. All masks,scan/projection reviews and identifiers stay local;
 no case002,bone,training,upload or new model/framework is used. Conditional
 known-rotation focal success does not establish full camera/head acceptance.
+
+## 2026-10-20 isolated unknown-rotation capacity counterevidence
+
+0255 reuses only our0254 silhouette interval implementation and installed
+NumPy/SciPy/OpenCV. No external implementation,model,training,service or dataset
+is added. Fixed source silhouettes derive from already authorizedcase001 skin
+as a diagnostic oracle,not from a reconstructed patient. A fresh worker receives
+only sanitized2D arrays;the Python file guard is audited,not a native-code
+security guarantee. True points/cameras and one fixed gauge enter only the
+post-termination evaluator. All views regress independently;source-clay panels
+are diagnostic evidence,not generated heads. Case002,bone,upload and training
+remain excluded. Retirement preserves compact local evidence/source recovery
+without changing prior asset grants or establishing real-camera/medical quality.
