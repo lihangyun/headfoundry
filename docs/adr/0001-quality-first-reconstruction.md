@@ -454,3 +454,15 @@ This is not model-value materialization or numerical rescue. Never silently
 extend the registered transport deadline,relax strict matching,change the model
 or use a writable shared mapping to avoid commit requirements. Actual model
 inference still needs independent RAM/commit and physical3D accuracy evidence.
+
+0264 separates a failed floating-point chunk-invariance precondition from
+unmeasured3D reconstruction accuracy. Preserve the registered stop and do not
+post-hoc tune tolerance/batch/precision. Conversely,do not classify a three-
+component tensor delta as physical pixel/mm error or invent the failing head
+when logs omit its name. Tiny-model invariance does not prove full-width FP32
+batch invariance;the numerical control itself needs an independently justified
+error budget. Source finite-byte/strict-load success and a partial forward are
+not complete inference,physical correspondence or head acceptance. Seek one
+explicit choice before treating still-untested public weights as disposable
+failed assets or conducting a separate control-design audit;start no new route
+while pending. Retain source recovery/compact evidence and protect originals.

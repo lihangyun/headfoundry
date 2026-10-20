@@ -647,3 +647,23 @@ requires explicitly case-scoped validation before reusing old scan generators,
 because a full-manifest validator intentionally opens every listed asset.
 Technical artifact conformance does not move camera3px,scan2mm,complete editable
 head or genuine visual acceptance to passed. The full goal remains unmet.
+
+## 2026-10-20 actual full model stops before capacity scoring
+
+0264 packages only the exact627 source model storages without changing learned
+bytes or FP32,checks source finite values and tiny output invariance,and renders
+the registered32-frame known-source fixture with every original ID retained.
+The case001-only sentinel and fixed camera replay pass;case002/bone/video and
+training/upload remain excluded. Full CPU weights are bound and verified before
+the actual encoder/control forward,observed working set about6.52GB.
+
+The job stops after51.143s at the registered1e-6 chunk comparison:3/27 scalar
+components differ,max absolute1.66893e-6. No complete all-point predictions or
+physical2D/3D scores exist. Failure head name/raw tensors are missing,so the
+earlier XYZ attribution is corrected. Current recipe isREJECT;model3D capacity,
+actual cameras and head quality remainUNVERIFIED. Batch rounding is plausible
+from official Torch guidance but not proven. This is not evidence that head
+reconstruction or OpenD4RT itself is impossible,and no relaxed threshold rerun
+is authorized by the observed failure. Compact local evidence is verified;
+retirement versus a separate numerical-design audit awaits one explicit user
+choice. No new route or deletion of unresolved public assets occurs meanwhile.

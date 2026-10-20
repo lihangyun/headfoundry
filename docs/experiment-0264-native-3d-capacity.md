@@ -121,3 +121,74 @@ Pass onlyTECHNICAL_CHECK_PASSED known-source conditional3D capacity. Real-video
 material rigidity/head-relative cameras,3px physical camera recovery,0237 fixed
 surface2mm,complete editable head/ears/neck and genuine visual acceptance remain
 UNVERIFIED. No head,likeness or KeenTools-quality claim follows this oracle test.
+
+## Actual stop:REJECT numeric precondition,capacity accuracy UNVERIFIED
+
+Source recovery:f79522a (storage implementation fe137cc). Tiny packaging initially
+rejects a fake-storage size discrepancy;actual768 FP32 elements have3072bytes
+but Torch2.10 fake storage reports12288bytes. One pre-valid correction uses
+numel*4 plus independent actual ZIP member length,not a relaxed size/layout
+condition. Original logs remain. Repaired pack/control parent50.531s ends within
+the original300s packing window. All627 actual source storages/4649733172bytes
+are finite FP32;the85-entry tiny control preserves learned bytes and outputs.
+Full derived-file SHA256:
+`72f6b2f7e5eec64012a94b33c72d8aca8935598685549383cd6c9729a0590551`.
+
+Held-out sentinel,proper similarity/inverse/reflection and raster controls pass.
+The32-frame source-only render completes26.385s and preparation1.256s parent
+(.704s inside preparation). All key cameras/projections/visibility replay the
+unchanged0230 fixture;2355 initialized/2645 uninitialized IDs remain explicit.
+Input SHA25680c765f00a330aa004aea4ecc222e632cf985429f894d9532dd62a193de43415.
+No case002/bone/original-video bytes or scan-conditioned inference are used.
+
+Implementation and initial parent are complete at880.98s,within900s. A later
+conversation/scheduling gap consumes wall time before the model starts;it is
+not excluded or treated as a user pause. Keep original phase-start unchanged.
+The effective single-worker deadline is the remaining original3600s minus300s
+closeout reserve,capped by1200s;the initial unnecessary requirement that a full
+1200s window remain is removed **before** starting any model. Inputs,points,
+precision,control tolerance and accuracy gates stay fixed. No budget is reset.
+
+One actual model process runs51.143s parent/48.598s to worker failure. All full
+learned bytes are verified against source storage hashes before forward;the
+32-frame encoder and9-query batching control execute. The first failing
+comparison reports3 of27 scalar components outside atol/rtol1e-6,maximum absolute
+delta1.6689300537109375e-6 and relative delta3.422239842620911e-6. **The failing
+head name/raw arrays were not recorded**;three-component outputs include XYZ,
+displacement and normal,so do not assert which one failed. An earlier commentary
+identifying XYZ is explicitly corrected. These are tensor-value deltas,not
+pixel/millimeter reconstruction errors or three failed material IDs.
+
+The live parent observes maximum6523318272bytes actual-worker working set at
+one-second sampling;this is not a completed-task peak certificate. No memory
+stop is triggered. Post-forward parameter hashing and complete all-point
+predictions are not reached. Therefore no31-frame tracking/visibility/3D point
+metrics,real-video cameras,new head or likeness improvement are established.
+Do not rerun with a different batch,tolerance,precision or checkpoint.
+
+## Numerical-design limitation and pending asset classification
+
+The official [Torch2.10 numerical-accuracy note](https://docs.pytorch.org/docs/2.10/notes/numerical_accuracy.html#batched-computations-or-slice-computations)
+allows batch-versus-slice floating-point differences despite mathematical
+equivalence. This supports rounding as a plausible explanation,not a measured
+root cause or permission to silently relax the registered condition. The1e-6
+test has not been tied to physical3px/2mm error;its failure cannot honestly be
+reported as proof the published model cannot reconstruct this head. Likewise,
+successful loading/finite weights do not establish that it can.
+
+Current recipe is stopped. Before destructive classification of this untested
+public model as a failed asset,a single user question asks whether to permit a
+separate precondition-design audit and temporarily retain public weights,or
+apply the original full retirement rule. No new model trial/route starts while
+that choice is pending;no original quality gate or acceptance claim changes.
+No cleanup is claimed complete and no public weights/framework are yet deleted.
+
+Compact private evidence at`assets/private/closed-experiments/0264-pending-policy/evidence.zip`
+has61 members/731648bytes,CRC and all member SHA verified,SHA256
+`3ff549df69074ee087fa60f314ac58dcabd5d5561cd16210911a085ca97fc973`.
+It keeps exact logs/protocols/hashes/source recovery/rights,successful tiny
+storage fixture and only two **source input** images,not inferred heads or
+predicted residual panels. It is not a backup of full checkpoints/runtime or
+all generated data. Human originals/shared successful fixtures/defaults remain
+protected. Further audit or retirement follows the user's choice,not an
+automatic threshold rescue or another unsupported model swap.
