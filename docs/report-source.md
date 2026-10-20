@@ -733,3 +733,26 @@ certificate.0230/0232 already document the upright axes and non-photorealistic
 emission appearance. No new axis defect is established.0266 rejects its exact
 configuration,not every possible method on the actual video. No failed model is
 reinstalled and no new head/visual acceptance is claimed by this clarification.
+
+## 2026-10-20 active goal and native dense video readiness
+
+User explicitly requests a goal and execution. No existing goal remains at the
+tool boundary;one new active goal uses the video-to-independent-medical-reference
+contract,without a user-unspecified token budget or duplicate process.0267 is
+registered before native DIS execution,using only existing OpenCV/NumPy and
+authorizedcase001 video,no new model/environment or scan-conditioned inference.
+
+One180.775s run validates1041 sequential source RGB hashes and source-file SHA,
+giving85/87 adjacent support edges and74/88 frames in the largest component.
+Development624 consistency passes,but no reference612 sequential IDs reach1040;
+direct bidirectional agreement alone is not a recovered identity. Readiness is
+REJECT,physical cameras/head remainUNVERIFIED. Actual two-profile source sheets
+are reviewed,not shown as head outputs. Close this fixed recipe under0250;
+preserve compact evidence/source49f56b8 and shared OpenCV/originals,not failed
+exclusive runner/raw tracks. Overall goal stays active and unfinished.
+
+0267 closeout keeps a2423135-byte/17-member/two-image verified private archive,
+SHA25654aa2b303e4fa6f0599628f677bf359e4125dccd1df867ea70f8b9e19154c612.
+Five raw duplicates/2525221bytes and the exclusive runner are removed after
+terminal/path/overlap checks. Selected video SHA is unchanged,no scan/case002
+bytes are read,133 tests pass in4.738s and shared runtime/source/defaults remain.

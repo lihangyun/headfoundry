@@ -9,6 +9,11 @@
 
 ## 当前状态
 
+新的持续目标已按[真实视频任务](docs/task-video-to-medical-reference.md)建立并启动。
+[0267](docs/experiment-0267-native-dense-video-motion.md) 已核验全部 1041 帧：
+稠密短程轨迹图连接了双侧，但长程身份一致性未过关，停止该固定配置并清理。
+未启动相机或头模拟合；目标仍未完成，不把轨迹数量当作头模改善。
+
 [0266](docs/experiment-0266-fixed-capacity-validation.md) 已完成一次固定配置的全量
 精度验证，结果 **REJECT**：31 个非查询帧无一满足全部门禁。左右 30° 的二维
 误差 p95 为 28.53／33.29px，固定全局对齐后的三维点误差 p95 为

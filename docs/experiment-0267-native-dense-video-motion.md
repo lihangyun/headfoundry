@@ -54,3 +54,50 @@ at most two necessary source/track sheets. Failed readiness stops before any
 camera/head solve. Archive exact small reports/control/tracks/hashes/Git source,
 then remove exclusive runner/tests/raw outputs before another route. Shared
 OpenCV/main environment and all originals/successful fixtures stay. Keep0207.
+
+## Actual result:REJECT long-sequence readiness
+
+Registratione04ac52,executed source49f56b8. Six synthetic controls pass;known
+translation p95=.041937px,not physical3D evidence. One180.775s actual-video run
+decodes/verifies all1041 native frames. There are88 keyframes/7909 seeded track
+IDs.85/87 adjacent pairs have>=50 common IDs;the largest component is74/88
+keyframes and includes both profile intervals. Raw graph readiness passes,
+but graph density is not a physical-correspondence certificate.
+
+| Development sentinel | Both-valid direct/sequence | Unfiltered disagreement p95 | Closure even/odd | Result |
+|---|---:|---:|---:|---|
+|624|377|2.592px|55/77|technical consistency pass|
+|1040|0|unavailable|0/0|REJECT|
+
+Reference612 has786 IDs. At1040 none survives the sequential path,although612
+direct DIS associations pass the local bidirectional criterion. Therefore no
+long-range identity bridge is established. This is lost persistence under the
+fixed recipe,not proof those direct associations are anatomically correct or
+all short tracks are unusable. No unknown pixel/3D truth error is invented.
+
+Actual source-track sheets144/408 were inspected:marks occupy the selected
+face/ear interior,not a new head output. Locations alone do not prove identity
+or rigidity. Camera/head/medical-surface/visual gates remainUNVERIFIED. No scan,
+bone,case002,training,upload,new asset or camera/head fit occurs. Stop this dense
+sequential-readiness recipe without preset/mask/sampling/closure sweeps. Future
+work needs an independently justified observation/rigidity mechanism,not more
+sequential tracks merely because their graph connects.
+
+## Completed closeout
+
+Private archive:`assets/private/closed-experiments/0267-native-dense-video/evidence.zip`:
+2423135bytes,17 members,two source-track images,CRC/member SHA verified,SHA256
+`54aa2b303e4fa6f0599628f677bf359e4125dccd1df867ea70f8b9e19154c612`.
+It retains exact observations/cycle arrays,reports/controls/review and source
+recovery49f56b8;these are private failed-route evidence,not accepted observations.
+
+After terminal-worker and exact path/reparse checks,remove five raw NPZ/PNG
+duplicates totaling2525221bytes and the exclusive runner. No framework,weights
+or environment was installed,so shared OpenCV/NumPy must not be uninstalled.
+Original selected video SHA remains unchanged;scan/case002 bytes are not opened.
+Other originals,successful fixtures,shared source/defaults and unrelated0207
+remain untouched. No live Python caller remains.133 tests pass in4.738s.
+The phase closes within its original30-minute budget;overall goal stays active.
+Future work must establish trustworthy long-range identity/rigidity rather than
+silently relaxing this failed sequential-chain contract. No new route starts
+before this cleanup commit.
