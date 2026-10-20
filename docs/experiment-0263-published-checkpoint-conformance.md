@@ -123,3 +123,20 @@ default full-manifest safety semantics unchanged. Retained0230 geometry and
 registration;do not restore failed0259 integration. Source/scan diagnostics
 remain oracle evaluation,not independent video reconstruction. No new route,
 private-file access,model forward or shared-source edit occurs in this review.
+
+## Transport interruption and bounded same-object resume
+
+The first HTTP transfer terminates with curl18 after1031.211s,with7551102519
+of13950006682bytes present;stderr reports6398904163bytes missing. This is a
+verified terminal network truncation,not an observation timeout,checkpoint
+incompatibility or model-accuracy result. Preserve attempt1 logs/handle/stats;
+do not deserialize or label the partial file verified.
+
+One same-object resume uses the existing partial file and exactly the original
+deadline. The invocation initially has653.302s remaining,not a new1800s budget.
+The downloader now derives both curl and parent timeouts from the immutable
+phase-start record;an expired-budget self-check must reject rather than reset
+the clock. This ordinary pre-valid IO repair does not change revision,hash,
+weights,strictness,metadata strategy or the40minute whole-phase boundary.
+No other model or failed integration is reinstated. Completion/conformance
+remainUNVERIFIED until the required whole-file and strict-state evidence exists.
