@@ -3,6 +3,7 @@
 import argparse
 import ctypes
 from ctypes import wintypes
+from datetime import datetime
 import json
 import os
 from pathlib import Path
@@ -53,6 +54,16 @@ def verify_file(lock, path=FILE):
         raise ValueError("Wrong whole-file SHA256")
 
 
+def download_seconds_left():
+    phase = json.loads((OUT / "phase-start.json").read_text())
+    if phase.get("download_seconds") != 1800:
+        raise ValueError("Unexpected original download budget")
+    remaining = 1800 - (time.time() - datetime.fromisoformat(phase["utc"]).timestamp())
+    if remaining <= 0:
+        raise RuntimeError("Original download deadline exhausted")
+    return remaining
+
+
 def download(lock):
     if FILE.exists():
         verify_file(lock)
@@ -61,16 +72,23 @@ def download(lock):
     if shutil.disk_usage(ROOT).free < 25_000_000_000:
         raise RuntimeError("Insufficient disk headroom")
     partial = OUT / "opend4rt.ckpt.part"
+    if partial.is_symlink() or partial.resolve().parent != OUT.resolve():
+        raise ValueError("Unexpected partial-file target")
+    remaining = download_seconds_left()
+    curl_seconds = str(max(1, int(remaining) - 5))
     command = ["curl.exe", "--fail", "--location", "--silent", "--show-error",
-               "--connect-timeout", "30", "--max-time", "1790", "--retry", "2",
-               "--retry-max-time", "1790", "--continue-at", "-", "--output", str(partial),
+               "--connect-timeout", "30", "--max-time", curl_seconds, "--retry", "2",
+               "--retry-max-time", curl_seconds, "--continue-at", "-", "--output", str(partial),
                "--write-out", '{"code":%{http_code},"bytes":%{size_download},"seconds":%{time_total}}',
                lock["checkpoint_url"]]
     with (OUT / "download-stats.json").open("w") as stdout, (OUT / "download-stderr.txt").open("w") as stderr:
         worker = subprocess.Popen(command, cwd=ROOT, stdout=stdout, stderr=stderr)
-        (OUT / "download-handle.json").write_text(json.dumps({"parent_pid": os.getpid(), "worker_pid": worker.pid}))
+        (OUT / "download-handle.json").write_text(json.dumps({
+            "parent_pid": os.getpid(), "worker_pid": worker.pid,
+            "remaining_original_seconds": remaining,
+            "resume_offset_bytes": partial.stat().st_size if partial.exists() else 0}))
         try:
-            code = worker.wait(timeout=1800)
+            code = worker.wait(timeout=remaining)
         except subprocess.TimeoutExpired:
             worker.kill()
             worker.wait()
@@ -96,6 +114,15 @@ def self_check(lock):
     import pickle
     import torch
     from unittest.mock import patch
+    phase = json.loads((OUT / "phase-start.json").read_text())
+    expired = datetime.fromisoformat(phase["utc"]).timestamp() + 1801
+    with patch("time.time", return_value=expired):
+        try:
+            download_seconds_left()
+        except RuntimeError:
+            pass
+        else:
+            raise AssertionError("Expired original deadline accepted")
     fixture = ROOT / "assets/private/opend4rt-loader-0262/fixture-good.pt"
     digest = sha256_file(fixture)
     ordinary = torch.load(fixture, weights_only=True, mmap=False)["model"]
@@ -117,6 +144,7 @@ def self_check(lock):
               "torch_version": torch.__version__, "state_entries": len(fake),
               "all_meta": True, "file_mapping_forbidden_control_passed": True,
               "shape_dtype_stride_equal": True, "unsupported_serialization_rejected": True,
+              "expired_original_download_deadline_rejected": True,
               "fixture_unchanged": True, "peak_working_set_bytes": peak_working_set()}
     (OUT / "self-check-report.json").write_text(json.dumps(report, indent=2))
     print(json.dumps(report))
