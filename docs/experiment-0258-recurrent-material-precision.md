@@ -169,3 +169,13 @@ process timeout,as recorded in private `inference-invocation.json`. Do not run a
 second model trial merely to recreate the report. Source/license/checkpoint
 identities and exact runtime versions are in the public asset lock;required
 local permissions and fixtures are not distributed with the repository.
+
+Subsequent0259 fails the independently registered3D screen. Its closeout retires
+this model inference function,active example lock,downloaded source/weights and
+isolated environment. The middle replay command above is now historical,not a
+current runnable model entry. `prepare`,stored-output `evaluate` and pure
+coordinate/rights controls remain with the small successful2D fixture. Asset
+identities/notices are recoverable from Gitb14fa90 and0259's compact private
+archive;large weights require redownloading,not restoring from that archive.
+Do not automatically reinstall the failed recipe or turn this historical2D
+precision pass into a3D/camera/head pass.

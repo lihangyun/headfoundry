@@ -1,11 +1,10 @@
-"""Bounded TAPNext++ planar precision screen; not camera/head reconstruction."""
+"""Retained successful planar fixture/replay;model inference retired after0259."""
 
 import argparse
 import hashlib
 import json
 from pathlib import Path
 import sys
-import time
 
 import numpy as np
 
@@ -14,7 +13,6 @@ if not __debug__:
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "assets/private/recurrent-material-0258"
-LOCK = ROOT / "examples/tapnextpp-0258.asset-lock.json"
 ROWS = [(0, 1, 0, 0, 0, 0), (0, 1, 4, -3, 0, 0),
         (3, 1.01, 8, -6, 0, 0), (6, 1.02, 12, -9, .00005, -.00003),
         (3, 1.01, 8, -6, 0, 0), (0, 1, 0, 0, 0, 0),
@@ -123,64 +121,6 @@ def prepare():
     print(json.dumps(report))
 
 
-def infer(destination=OUT, extent=(440, 500)):
-    started = time.perf_counter()
-    lock = json.loads(LOCK.read_text())
-    assert lock["license"] == lock["checkpoint"]["license"] == "Apache-2.0"
-    assert lock["rights"]["commercial_use_permitted_by_published_license"] is True
-    assert lock["rights"]["fallback_checkpoint_allowed"] is False
-    for name, expected in lock["source_sha256"].items():
-        assert sha(OUT / "source" / name) == expected, name
-    checkpoint = OUT / "tapnextpp_ckpt.pt"
-    assert checkpoint.stat().st_size == lock["checkpoint"]["bytes"]
-    assert sha(checkpoint) == lock["checkpoint"]["sha256"]
-    assert sha(destination / "input.npz") == json.loads((destination / "preparation.json").read_text())["input_sha256"]
-    import torch
-    import torchvision
-    import einops
-    assert torch.__version__ == lock["runtime"]["torch"]
-    assert torchvision.__version__ == lock["runtime"]["torchvision"]
-    assert einops.__version__ == lock["runtime"]["einops"]
-    assert np.__version__ == lock["runtime"]["numpy"]
-    torch.set_num_threads(8)
-    torch.set_num_interop_threads(1)
-    sys.path.insert(0, str(OUT / "source"))
-    from tapnet.tapnext.tapnext_torch import TAPNext
-    model = TAPNext(image_size=(256, 256))
-    checkpoint_data = torch.load(checkpoint, map_location="cpu", weights_only=True, mmap=True)
-    state_dict = checkpoint_data.get("state_dict", checkpoint_data)
-    state_dict = {k.removeprefix("tapnext."): v for k, v in state_dict.items()}
-    loaded = model.load_state_dict(state_dict, strict=True)
-    del state_dict, checkpoint_data
-    model.eval()
-    with np.load(destination / "input.npz", allow_pickle=False) as data:
-        assert set(data.files) == {"video", "queries_yx"}
-        video = data["video"].copy()
-        queries = np.c_[np.zeros(len(data["queries_yx"])), data["queries_yx"]].astype(np.float32)
-    tracks, visible, times = [], [], []
-    state = None
-    with torch.inference_mode():
-        for frame in video:
-            tick = time.perf_counter()
-            tensor = torch.from_numpy(frame.copy()).float()[None, None] / 127.5 - 1
-            pred, _, logits, state = model(tensor, query_points=torch.from_numpy(queries)[None]
-                                          if state is None else None, state=state)
-            tracks.append(from_model(pred[0, 0].cpu().numpy(), extent))
-            visible.append((logits[0, 0, :, 0] > 0).cpu().numpy())
-            times.append(time.perf_counter() - tick)
-            print(json.dumps(dict(completed_frames=len(tracks), seconds=times[-1])), flush=True)
-    np.savez_compressed(destination / "predictions.npz", tracks_xy=tracks, visible=visible)
-    report = dict(status="TECHNICAL_CHECK_PASSED", scope="execution_only", strict_load=True,
-                  missing_keys=list(loaded.missing_keys), unexpected_keys=list(loaded.unexpected_keys),
-                  model_parameters=sum(p.numel() for p in model.parameters()),
-                  seconds=time.perf_counter() - started, frame_seconds=times,
-                  versions=dict(torch=torch.__version__, torchvision=torchvision.__version__,
-                                einops=einops.__version__, numpy=np.__version__),
-                  device="cpu", dtype="float32", queries=len(queries), frames=len(video),
-                  input_sha256=sha(destination / "input.npz"), prediction_sha256=sha(destination / "predictions.npz"))
-    (destination / "inference.json").write_text(json.dumps(report, indent=2))
-
-
 def evaluate():
     controls()
     preparation = json.loads((OUT / "preparation.json").read_text())
@@ -215,6 +155,6 @@ def evaluate():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["prepare", "infer", "evaluate", "controls"])
+    parser.add_argument("action", choices=["prepare", "evaluate", "controls"])
     args = parser.parse_args()
-    {"prepare": prepare, "infer": infer, "evaluate": evaluate, "controls": controls}[args.action]()
+    {"prepare": prepare, "evaluate": evaluate, "controls": controls}[args.action]()

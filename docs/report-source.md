@@ -533,3 +533,28 @@ necessary precision result,not camera/head acceptance or evidence that real
 occluded/deforming skin is rigid. Keep the locked candidate and positive fixture
 for a separately registered true3D rotation/visibility screen. Do not narrow the
 full objective or infer likeness/2mm anatomy from these planar errors.
+
+## 2026-10-20 recurrent3D material screen rejects the conditional transfer
+
+0259 tests unchanged TAPNext++256 under actual known3D rotations/first-hit
+occlusion,with a fixed synthetic surface texture on authorizedcase001 scan.
+Geometry/cameras/all5000 evaluator IDs remain unchanged;only rendering-side
+source skin is read. No case002/bone/training/upload or real-video inference.
+The model receives11 prescribed images and all2355 initially visible2D query
+seeds,not geometry,camera matrices,target tracks or visibility. All21258 required
+visible pairs and2292 occluded pairs survive evaluation,no confidence pruning.
+
+One97.531s process loads the exact model and fails all10 non-query frame gates.
+At bilateral30deg,p95 errors46.223/54.589px,max56.969/65.861px;visible recalls
+.713/.766 and occluded recalls.647/.812. Even exact front image returns have
+p951.315-1.719px. Independent coordinate/matrix/hash checks,132 unit tests and
+0258's unchanged stored-output2D replay pass,but do not establish physical
+material correspondence. Actual1x bilateral panels confirm broad mismatch.
+
+This idealized appearance,sparse motion and joint query population are not a
+matched-image ablation against0258 or a proof every tracker/video is impossible.
+They are also not grounds to ignore a failed preregistration and tune another
+frame density,noise scale,query batch,crop,resolution or threshold. Stop this
+configuration before cameras/geometry. Compact private evidence/Gitb14fa90
+replace its exclusive integration/runtime/weights/renders;successful small0258
+controls and shared source/scan fixtures remain. Full user target stays unmet.

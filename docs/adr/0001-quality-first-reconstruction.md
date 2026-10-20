@@ -400,3 +400,14 @@ planar warps have neither true out-of-plane visibility nor skin rigidity. Requir
 independent3D motion/visibility and real applicability before camera/head fitting.
 Model and checkpoint rights are reviewed separately,imports kept minimal in an
 isolated runtime,and no human upload/training or production change is authorized.
+
+0259 fails conditional3D material tracking and occlusion despite0258's planar
+pass. Exact image returns,numerical replay and permissive assets cannot waive
+physical correspondence. Score every true-visible initialized ID even when
+the model calls it hidden;retain both visibility recalls and never initialize
+unseen material IDs with hidden oracle3D. Do not attribute cross-fixture error
+differences solely to rotation when appearance/query population also change.
+Close this preregistered recipe without temporal-density,texture,query-count,
+crop,resolution or threshold rescue. Retire its exclusive inference integration
+and runtime while retaining successful small mathematical/2D evaluation evidence.
+No camera/head fitting or relaxation of3px/2mm/full-head/actual visual gates follows.

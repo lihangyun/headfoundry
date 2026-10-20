@@ -492,3 +492,20 @@ upstream training stack is adopted. Only authorizedcase001 video ordinal0 and
 its planar validation warps are used locally. Source human pixels/queries and
 predictions never leave the machine;no scan,bone,case002 or training is involved.
 Planar pixel precision is not certified3D material identity,cameras or anatomy.
+
+## 2026-10-20 conditional3D tracker failure and permissive-asset retirement
+
+0259 reuses only the exact0258 Apache checkpoint/source and installed runtime.
+Blender is existing GPL infrastructure;our small source-only renderer uses the
+retained camera/scan helpers and fixed object-coordinate procedural appearance,
+not a third-party training corpus or recovered human albedo. Only the selected,
+consentedcase001 skin is validated/read on the rendering/evaluation side.
+No original video,case002,bone,training,upload or private competitive service is
+used. The input worker gets images/query seeds only;oracle provenance is explicit.
+
+The source/weight/license checks pass but correspondence/occlusion gates fail.
+Retire exclusive downloaded code/checkpoint/environment and active lock rather
+than misrepresenting license clearance as accuracy. Keep compact public-source
+identity/license records and local failure evidence;the0258 small positive
+fixture remains historical evidence only. No new rights grant or3D head/camera
+acceptance follows,and no claim about every possible tracker is established.

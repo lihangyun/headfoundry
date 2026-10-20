@@ -104,3 +104,100 @@ exit is0 despite the Python exception;required render metadata is absent,so
 this is not a technical pass. One pre-valid-run repair explicitly adds the
 tools path and uses Blender's --python-exit-code1 option. Original logs remain;
 no source image/model inference or parameter trial has run on that attempt.
+
+## Actual result: REJECT,do not transfer to video/head fitting
+
+Source recovery:`b14fa90`;first pre-valid import failure remains recorded.
+The corrected source render process finishes in8.594s;preparation in.210s.
+Original5000 IDs/cameras/projections/visibility and source-normalization sample
+replay remain unchanged. Every truly visible original point is inside the fixed
+crop,so no support is removed for image coverage. All2355 initially visible IDs
+are queried;2645 not initially visible IDs remain outside this conditional task,
+not claimed successfully tracked. All21258 non-query true-visible pairs are
+scored,including predictions labeled hidden;2292 true-occluded pairs are retained.
+
+One97.531s inference process finishes normally,96.378s in worker including strict
+load/hash checks. No missing/unexpected keys,194202881 parameters,the exact0258
+CPU float32 source/checkpoint/runtime,and7.71-8.32s per frame. No new trial,
+query split,reset,checkpoint,resolution or precision adjustment occurs.
+
+| Frame / source view | True-visible IDs | p95 px | Max px | Visible recall | Occluded recall |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 0 / front,self-query only | 2355 | 1.143 | 4.592 | 1.000 | n/a |
+| 1 / yaw+10 | 2163 | 20.304 | 24.341 | .944 | .198 |
+| 2 / yaw+30 | 1874 | 46.223 | 56.969 | .713 | .647 |
+| 3 / yaw+10 | 2163 | 14.781 | 19.364 | .795 | .911 |
+| 4 / front return | 2355 | 1.719 | 3.170 | .983 | n/a |
+| 5 / yaw-10 | 2151 | 24.560 | 30.529 | .901 | .613 |
+| 6 / yaw-30 | 1818 | 54.589 | 65.861 | .766 | .812 |
+| 7 / yaw-10 | 2151 | 22.548 | 28.465 | .853 | .956 |
+| 8 / front return | 2355 | 1.660 | 2.998 | .973 | n/a |
+| 9 / pitch+10 | 1873 | 28.097 | 33.611 | .971 | .774 |
+| 10 / front return | 2355 | 1.315 | 2.375 | .982 | n/a |
+
+All10 non-query frames fail the predeclared full gate,including exact front
+image returns. No camera/mesh is fitted. Matrix/axis/half-pixel checks and132
+unit tests (7.577s) pass;unchanged0258 stored predictions still pass their
+independent2D evaluator. These checks do not override this3D correspondence
+failure. Input/output/truth hashes and original-ID association are checked.
+
+Actual fixed bilateral30deg source/residual panels were inspected in27.988s,
+within the300s review budget. Vectors are actual1x,not magnification. Read-only
+motion summaries show true/predicted median displacement38.443/19.501px at+30
+and38.230/14.798px at-30;the model is not simply emitting no motion,but does not
+preserve the declared material locations. This is observation,not a causal
+diagnosis. Repeated front input images are exactly equal;no post-hoc correction
+or re-inference is applied to the failed results.
+
+Limits:ideal procedural appearance,sparse10/20deg view changes,joint2355 queries
+and this256px configuration differ from natural continuous video and0258's2D
+fixture. Do not claim the result proves all learned tracking,all TAPNext
+configurations or reconstruction impossible. Equally,do not carry2D success
+past failed3D evidence. No temporal-density/texture/query-count/crop/weight/
+threshold rescue follows this registered recipe. Camera/head/real-video quality
+remainUNVERIFIED;there is no PARTIAL_SUCCESS or ACCEPT and no new head result.
+
+## Required retirement
+
+Archive compact local reports,exact invocations,per-ID error/visibility arrays,
+source/weight/license identities,original protocol and only two0259 panels.
+Remove0259 exclusive source/renders/inputs/predictions,0258's now-exclusive model
+inference function/active asset lock,and its downloaded source/checkpoint and
+isolated environment. Keep0258's successful small2D fixture,source-only builder,
+stored-output evaluator and numerical coordinate/rights regression. Their
+continued availability does not imply a retained3D model integration. All raw
+originals/consent,shared helpers,0230/0254 successful fixtures,production defaults
+and unrelated0207 draft are protected. Verify and commit before another route.
+
+## Verified cleanup and recovery boundary
+
+Compact private `assets/private/closed-experiments/0259/evidence.zip` has38
+members,642196bytes,only two images;CRC and every member SHA pass. Archive
+SHA256=`72537f6229403db4557034b62b0765fafd47ba9da01e99a1dc7f9d6c74822ace`.
+Per-ID errors/visibility,exact protocols/invocations,reports/license identities
+remain local,not full failed predictions,input renders,weights or runtime.
+
+Removed6 prevalidated private targets,21757 files,5914112770bytes logical
+(5.91decimalGB,not a measured free-space claim):raw0259 run,checkpoint,downloaded
+source,the dedicated environment and two old module caches. Exclusive0259 tool
+and active model example lock are retired from Git;0258 model inference is
+removed while its successful builder/offline evaluator/numerical test stay.
+No source/default in `src/headfoundry` changes. No matching active Python/Blender
+job exists before deletion. All95 protected inputs/consent/0230/0254/0258 evidence
+hashes remain unchanged. New shared mathematical bytecode may regenerate during
+tests;that is not retention of the retired model integration.
+
+Gitb14fa90 recovers our source and asset records. Deleted upstream source/large
+weights need pinned redownload;deleted renders/predictions require rerunning,
+not extraction from the compact evidence. Do not restore automatically.0258's
+older runtime/file verification records are historical;its new retired-model
+record makes current absence explicit. Original external human sources remain
+untouched;case002 remains unused. Full target is still unmet.
+
+Final132 tests pass in5.531s after retirement,and stored0258 output still passes
+its independent planar evaluator without any model/runtime installed. Remaining
+code has no live TAPNet/Torch/TorchVision/einops imports;those packages are absent
+from the shared environment. Technical closeout verification completes751.392s
+after render start,within the1500s whole-phase budget;the single two-panel review
+is27.988s. Detailed protected-hash checks,source001 video/skin hash replay and
+phase timing are local. Cleanup completion is not goal/head completion.
