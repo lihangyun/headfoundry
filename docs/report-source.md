@@ -4,6 +4,19 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 different dense observation source screened,not adopted
+
+0277 screens original RoMa outdoor/DINOv2 using pinned publisher code,author
+MIT weight-hosting repository,Meta's explicit Apache backbone-model statement
+and unauthenticated official HEAD metadata. No weights/runtime/patient inference
+is installed by this screen. Source review finds an important loader boundary:
+the descriptor backbone is held in a plain list and must be validated separately
+from wrapper parameters;pixel-edge/OpenCV center conventions also need independent
+controls. Generic scene results do not prove skin/head applicability. RoMaV2's
+custom DINOv3 terms and Pi3/Pi3X NC models are not silently substituted. Next is
+a single registered installation/conformance/resource gate,not another solver
+parameter rescue or a claim that patient correspondence/2mm accuracy is solved.
+
 ## 2026-10-21 complete synthetic geometry chain isolates a software alternative
 
 0276 independently generates exact3D observations with short overlapping tracks,

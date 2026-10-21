@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 2026-10-21 original RoMa versus its separately licensed backbone
+
+0277 pins original RoMa source77f8d688,author weight-hosting MIT license6fed4401,
+and Meta DINOv2 explicit Apache code/model statement7764ea0f. These support a
+scoped next asset verification,not a mirror-derived blanket clearance. The
+original descriptor checkpoint is not Cell/XRay-DINO or DINOv3. No weight bytes
+are acquired,so hashes/tensors/CPU resources and physical accuracy remain
+UNVERIFIED. Exact local two-component validation is necessary because the
+backbone is outside the wrapper's registered parameter tree. No user data is
+uploaded/trained or supplied to any hosted matcher.
+
 ## 2026-10-21 global geometric infrastructure is not a BSD-only product grant
 
 0275 pins the official PyCOLMAP4.2.0 Windows wheel and upstream tagged source.
