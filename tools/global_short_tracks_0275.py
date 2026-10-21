@@ -159,7 +159,22 @@ def run():
     save('prepared.json', {'seconds': time.monotonic()-started})
     t = time.monotonic()
     timer = deadline('verification_calibration', 180)
-    pc.verify_matches(OUT / 'tracks.db', OUT / 'pairs.txt', options=g)
+    # The batch wrapper forbids parallel RANSAC. Call the same estimator
+    # sequentially by pair, preserving its registered four-thread options.
+    with pc.Database.open(OUT / 'tracks.db') as db:
+        images = {im.name: im for im in db.read_all_images()}
+        pair_counts = []
+        for line in (OUT / 'pairs.txt').read_text().splitlines():
+            n1, n2 = line.split()
+            a, b = images[n1], images[n2]
+            geometry = pc.estimate_two_view_geometry(
+                db.read_camera(a.camera_id), db.read_keypoints(a.image_id),
+                db.read_camera(b.camera_id), db.read_keypoints(b.image_id),
+                db.read_matches(a.image_id, b.image_id), options=g)
+            db.write_two_view_geometry(a.image_id, b.image_id, geometry)
+            pair_counts.append([a.image_id, b.image_id, len(geometry.inlier_matches),
+                                int(geometry.config)])
+    save('pair-verification.json', pair_counts)
     calibrated = pc.calibrate_view_graph(OUT / 'tracks.db', options=c)
     timer.cancel()
     with pc.Database.open(OUT / 'tracks.db') as db:
