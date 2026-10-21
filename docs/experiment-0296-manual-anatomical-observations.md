@@ -66,3 +66,52 @@ results remain reported. Otherwise duplicated names for one image corner could
 inflate an8point graph. This adds no camera-error filtering or new threshold
 search. Verify the guard on a synthetic duplicated-location sentinel before the
 single real numeric audit. Source preparation is not repeated.
+
+## Actual result:REJECT this manual-seed/local-corner recipe
+
+Source preparation3c4af6a completes2.672s,all9RGBhashes match0252;OpenCV5.0.0.
+Known checker corner recovers15.5pxwithin.01px and textureless input rejects.
+Duplicate-label synthetic sentinel passes after the preregistered guard(d3f2b41).
+No new model/library is installed. Source video unchanged;no skin/bone/case002.
+
+Manual review begins22:52:51.675Z,all9fixed source crops/rulers and one seed
+overlay viewed. Two obvious alar-seed corrections were made ONLY from source
+pixels before any numeric result. Freeze22:59:52.942Z,421.267s within600s.
+Annotation SHA1abcd80f3da4377aa4d89b6a419388ad156282392bb999334486406a0517d309,
+162explicit statuses,85approximate visual seeds;77remain missing/unresolved.
+Six forehead seeds reuse0257's explicitly unverified manual hypotheses. Neither
+these seed coordinates nor their local refinements are anatomical ground truth.
+The archived final overlay reflects frozen data,not the earlier two seed positions.
+
+One numeric audit d3f2b41,.250s,all85visible candidates counted;13stable local
+attractors,58fail diameter only,14fail both diameter/displacement. No duplicates
+were found;the guard did not cause the failure. No seed/window/frame/threshold
+edits or numeric replay follow. Annotation hash unchanged after audit.
+
+| Native ordinal | Manual candidates | Stable distinct local attractors |
+| --- | ---: | ---: |
+| 0 | 12 | 1 |
+| 60 | 7 | 2 |
+| 120 | 7 | 1 |
+| 240 | 12 | 3 |
+| 300 | 12 | 4 |
+| 360 | 6 | 0 |
+| 420 | 6 | 0 |
+| 600 | 12 | 1 |
+| 690 | 11 | 1 |
+
+The registered8common-ID graph connects no additional frame to0. Stop this
+recipe before camera/head fitting. This measures stability of an approximate
+agent annotation plus fixed small corner window,NOT true localization errors,
+rigidity,video camera errors or medical millimeters. Inaccurate seeds,soft-tissue
+edges and inappropriate corner models can all contribute;no unique cause is
+established. It does not prove a human cannot annotate these pictures precisely,
+that anatomical modeling is impossible,or that the source video has no information.
+The8common-ID count is only this audit's necessary recipe condition,NOT a
+universal observability theorem or a replacement for the actual3px/2mm gates.
+
+Compact local evidence under closed-experiments/0296-manual-anatomical-observations
+retains all seeds/statuses/four refinements,exact identities/execution and one
+frozen annotated source panel. No new head is depicted. Exclusive runner and
+redundant source derivatives are retired next;source recovery d3f2b41. No
+production defaults,shared numerical code or unrelated0207change is authorized.
