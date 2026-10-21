@@ -80,3 +80,39 @@ reports/controls/hashes/Git recovery;remove failed exclusive runner/raw output/
 bytecode before another route. Original materials/rights/successful fixtures,
 common runtime/defaults and unrelated0207 stay. Verify/tests/local cleanup
 commit,no push and no fabricatedACCEPT.
+
+## Actual result:projective fit passes training,metric controlREJECT
+
+Executed7f3eade. Syntax/AST checks prove control,patient and held scorer unchanged
+from4dff222;Euclidean bundle only accepts the metric-upgrade initial focal.
+One29.641s worker. Reduced-gradient check20coordinates:maximum absolute
+3.99434e-9,relative2.55969e-7. pOSE stops at its fixed400iteration limit,
+433evaluations,objective.00213842349,28.968s;no convergence claim. One subsequent
+projective BA converges in8evaluations/.641s,trainingp954.0709132e-11px,zero
+nonpositive denominators. These are training/numerical facts,not held geometry.
+
+Linear metric upgrade fails its required three-positive-mode condition. Eigenvalues
+[-.00467916223,-.00172175906,-.00026585496,1.00038785526];no clamp or alternative
+is tried. Its two smallest constraint singular values are2.66279e-13 and
+3.64928e-16,next.122470. Only the last singular vector was used by this frozen
+implementation. Thus linear ambiguity is a specific issue worth testing rather
+than treating a tiny projection error as true metric recovery. No Euclidean BA,
+held/negative score,patient manifest/observations,medical geometry or head run.
+Overall control/inferenceREJECT;camera/head/medical accuracy remainsUNVERIFIED.
+
+### Read-only analytic diagnosis,not a repaired estimate
+
+The known control generator has P_i=[R_i|t],t=(0,0,10),normalized trueK=I.
+For Q0=diag(1,1,1,0),P_i Q0 P_iT=I. But rank1Q1=diag(0,0,0,1) also gives
+P_i Q1 P_iT=diag(0,0,100). Both exactly satisfy the four selected linear
+zero-skew/centered/square-pixel constraints for all rotations. Direct independent
+arithmetic checks maximum residual below1e-15. Only Q0 is rank3 with a valid
+nonzero focal camera metric. A single linear null-vector is therefore not a
+sufficient upgrade algorithm on this control. This analytic oracle diagnosis
+uses known synthetic cameras only,after failure;it is NOT fed to the estimator,
+does not rerun it,does not prove an actual-video solution or change0283REJECT.
+
+A future separately registered algorithm may enforce rank3 within the ambiguous
+linear subspace and select using training-only camera constraints. It must not
+choose by known synthetic focal/pose,held observations or medical geometry;no
+new attempt starts until this route is archived,cleaned,verified and committed.
