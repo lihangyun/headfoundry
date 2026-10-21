@@ -144,3 +144,30 @@ Stop/freeze this pOSE+quadric application recipe without another optimizer,
 calibration-subspace or point/mask sweep. Future work needs independently
 justified observation/rigidity or initialization evidence,not a nicer training
 loss. The original video/medical resources and full end goal stay protected.
+
+## Verified closeout
+
+Executedf473f61,diagnosticdc9a374,source recovery1426054. Private archive
+assets/private/closed-experiments/0285-batched-varpro/evidence.zip contains
+9members,221914bytes,zeroimages,SHA256
+3ce9c2442e0a6bb9ae40ac2d474bcaccc4f054c95cb405d5155fcc5c394b43fe.
+CRC/all member SHA pass after deletion. Complete fixed-input audit,optimizer
+reports/all quadric roots,control state,small actual projective state and all
+11694held residuals survive locally. Actual frozen state SHA
+4920cb9d10c130db0899c6e2607f4c1dd6fd8e9dbceae20e87ed7a95fc74f31f
+is unchanged. Only frame408passes the necessary3px projective test;73/74fail,
+minimum59held rows/view. No sparse projection is called a head or metric camera.
+
+After terminal-worker/diagnostic/exact-path/reparse/archive/caller checks,remove
+9raw duplicates/273689logical bytes and two exclusive runners24801/5094bytes:
+11files/303584logical bytes. No exclusive bytecode/new framework/environment/
+weight remains. Generic batched point math/reference/check and one shared
+regression stay because equality/speed genuinely passed,not the failed app.
+Source is recoverable from Git;full original observations stay in0267 archive,
+not a new source-video copy. Public checkpoint downloads are not needed.
+
+All five protected hashes unchanged,case002/skin/bone geometry unopened,shared
+source/defaults unchanged and unrelated0207 untouched/untracked.139 retained
+tests pass in5.736s. Local cleanup commit before another route,no push. Original
+2400s phase and300s diagnostic budgets met. Overall goal remains active and
+unachieved;no full head,medical2mm or visual acceptance claim.

@@ -531,3 +531,13 @@ resource failure and unmeasured physical precision. Keep the small algebra
 regression,not the failed application. Do not raise time limits or swap inputs
 to hide the stop;any implementation acceleration first proves fixed-input
 objective/gradient and pixel-replay equivalence under a separate bounded audit.
+
+0285 supplies that fixed-input audit and3.49xconditional-kernel speedup without
+changing original data/objective/iterations/budgets or quality gates. This is
+not a promise of identical nonconvex optimizer trajectories;fresh held control
+is still required and passes. Actual projective refinement/metric eligibility
+fails,and frozen held-camera prediction also fails7.57px. Resource acceleration
+does not upgrade head quality. Freeze this fixed pOSE+quadric recipe;no more
+iteration,calibration-subspace or residual-based point/mask rescue. A new route
+needs independently justified observation/rigidity or initialization evidence.
+Keep only successful generic math and minimal private evidence,not failed apps.

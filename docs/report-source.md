@@ -960,3 +960,22 @@ physical score. Reject resources,do not invent patient-camera/mm error. Retain
 small successful quadric math/regression and compact evidence/sourcea90f8d7;
 clean failed exclusive runner/duplicates. Next engineering action requires a
 fixed-input conditional-solve equality/timing audit,not more optimization time.
+
+## 2026-10-21 conditional math acceleration exposes actual projection failure
+
+0285 audits all47754training rows at three predetermined camera states before
+optimization:median conditional-kernel speedup3.4877x,objective/gradient relative
+differences<1.2e-15,all observed native projection delta<4.1e-13px. It retains
+the original per-point lstsq cutoff and float64,not normal equations/downcast.
+Fresh full synthetic chain passes480heldp952.105e-8px,but tiny reduction changes
+alter the nonconvex trajectory;no bitwise-path or whole-pipeline speed claim.
+
+Actual prefix now completes56.047s at the unchanged400iteration limit;projective
+BA stops at60evaluations/56.766s with trainingp956.3297px,no valid metric root.
+An explicitly registered frozen-camera diagnostic counts all11694held rows,
+no invalids,p957.5695px;73/74frames fail the necessary3px test. These are
+projective consistency failures,not medical millimeters or universal input
+impossibility. Freeze this application recipe rather than keep changing its
+optimization/calibration subspace. Retain successful batch math/regression,
+compact221914-byte archive/source1426054,remove exclusive runners/duplicates.
+139shared tests/default/original-data checks pass,no accepted head exists.
