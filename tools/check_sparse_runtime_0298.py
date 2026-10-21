@@ -105,7 +105,9 @@ def operator_controls(runtime, reference):
     field = torch.stack((x, y)).float()[None]
     pixels = field.permute(0, 2, 3, 1)
     normalized = runtime.normalized_from_cv(pixels, 1280, 720)
-    sampled = runtime.F.grid_sample(field, normalized, align_corners=False).permute(0, 2, 3, 1)
+    # Analytic ramp is border-extended; learned descriptor sampling remains publisher zero-padding.
+    sampled = runtime.F.grid_sample(field, normalized, align_corners=False,
+                                    padding_mode='border').permute(0, 2, 3, 1)
     ramp_error = float((sampled-pixels).abs().max())
     coordinate_error = float((runtime.cv_pixels(normalized, 1280, 720)-pixels).abs().max())
     if ramp_error > .001 or coordinate_error > .001:

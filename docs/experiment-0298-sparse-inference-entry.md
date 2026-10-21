@@ -48,6 +48,9 @@ Fixed controls(seed298),all values counted:
 
 - Independent native720x1280XYramp/align_corners=False roundtrip,all1843200values,
   max<=.001inputpx. Explicit pixel-edge<->OpenCVcenter conversion,not guessed.
+  The analytic ramp uses border extension so finite-precision cell-center
+  arithmetic does not sample a discontinuous zero exterior. Publisher learned
+  descriptor zero-padding is unchanged and separately compared end-to-end.
 - Operator reference versus own inference helpers,B2/H32/W48,64keys,FP32:exact
   chosen indices/normalized coordinates,all scores within32eps*max(1,reference
   magnitude). Match probabilities on fixed nonzero random descriptors within
