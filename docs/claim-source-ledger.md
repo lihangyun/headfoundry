@@ -697,3 +697,13 @@ Actual source still seeds sliding windows temporally,so no drift-free claim.
 Static native-window correlation alone exceeds local GPU capacity;execution
 and physical quality remainUNVERIFIED. CoTracker's[official NC license](https://github.com/facebookresearch/co-tracker/blob/main/LICENSE.md)
 excludes that alternative. No human materials reach these public sources.
+
+0290 verifies actual full-byte publisher source/card/checkpoint hashes and
+fourteen runtime wheels in examples/alltracker-0290-lock.json. BSD/MIT/PSF and
+bundled notice hashes recorded;fsspec's missing PyPI field is filled only after
+checking its[fixed publisher BSD3 license](https://github.com/fsspec/filesystem_spec/blob/2026.7.0/LICENSE).
+Full checkpoint SHAffd9ebcfb6d206d594b646999a150540f92c049cf9b2bf940facf7123f62aa1d;
+strict finiteFP32 state passes236keys/16476962parameters,no backbone download.
+This is local inference preparation,not permission to train/upload people or
+redistribute every binary without notices. No model forward/patient precision
+has been measured;no benchmark or visual acceptance claim is transferred.

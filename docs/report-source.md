@@ -1035,3 +1035,15 @@ download speed. Matching TorchVision ABI/hash/size and detached dependency/licen
 metadata are pinned. This justifies testing parallel full-byte transport plus
 offline install under its own SAME600s transfer budget,not extending0288 or
 changing models/physical gates. No runtime/model/private input executed here.
+
+0290 changes only provisioning:eight locked exact ranges,whole-wheel hashes and
+offline install. Complete transport269.578s/install27.875s pass600/180s budgets;
+fourteen wheels compatible. Initial torchvision import fails before CUDA/model
+because our child has no username cache field. OriginalREJECT/full stack survive;
+one prospective process-cache repair precedes the first actual CUDA/state check.
+RTX3070FP32identity matmul passes;236keys/16476962parameters strict/finiteFP32,
+no backbone fallback. No network forward yet. OverallPARTIAL_SUCCESS records
+the setup-protocol deviation,not native capacity/material identity/head quality.
+Retain verified runtime only for bounded next controls;later scored failure
+cleans it.140tests/protected hashes pass,no defaults or human material changed.
+Archive9010bytes/source3fa7db7;not visual acceptance or a product head result.

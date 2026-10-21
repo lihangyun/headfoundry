@@ -93,3 +93,36 @@ measurement. Retaining the already verified runtime during this software fix
 avoids treating our own launch error as model failure;no different model route
 begins. First CUDA/state execution after this correction stays60s each,with
 unchanged checks. Another actual scored failure stops and triggers cleanup.
+
+## Actual result:verified runtime/state,overallPARTIAL_SUCCESS
+
+Transport source97e9722,admission repair3fa7db7. All eight exact ranges complete;
+Torch full2867409626-byte SHA matches in244.750s. Fourteen local wheels,
+publisher source/license and complete checkpoint hashes pass. Transport including
+all assets269.578s<600;offline install/check27.875s<180,whole provision297.453s.
+UV confirms fourteen installed packages compatible with no online resolution.
+Bundled license/notice file hashes are saved for all fourteen wheels.
+
+Original import9.719sREJECT retained. After the prospectively documented cache-
+identity repair,first actual CUDA matmul passes exactly on RTX3070/compute8.6,
+TorchCUDA12.8. Device total8589410304/free7458521088bytes at observation,
+peak reserved23068672bytes. Smoke including imports11.750s. Strict state.547s:
+236keys/235parameter tensors/16476962parameters,all floating tensors finiteFP32,
+keys/shapes/dtypes exact,no missing/unexpected state,external pretrained fetch0.
+No model forward is executed;no native capacity,point/camera/medical/head score.
+Repaired subchecksTECHNICAL_CHECK_PASSED,but original setup-stop deviation leaves
+overallPARTIAL_SUCCESS,not retrospectively full protocol success orACCEPT.
+
+Private archive assets/private/closed-experiments/0290-offline-runtime-admission/
+evidence.zip has8members9010bytes,zeroimages,SHA
+b0e4dd3f4e3f2b4f237d8eef5b38ebbc326c16497c72399f8a186662233db945.
+CRC/every member verified;logs,original failure/stack,repaired result,lock/source,
+protected hashes and tests survive. All five protected hashes unchanged,
+140shared tests5.695s pass. Main environment/shared source/defaults/0207unchanged.
+Whole2400s budget met;no model-quality claim.
+
+Retain verified assets/private/alltracker-0290 only for the next separately
+bounded complete-network equivalence/native-capacity trial,not indefinitely.
+Any later scored failure closes/cleans this exclusive integration before another
+route. Original0288transport failure unchanged. No training,human material
+upload or system-driver change was needed. No model/head acceptance exists.
