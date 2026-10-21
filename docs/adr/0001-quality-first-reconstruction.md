@@ -551,3 +551,12 @@ nonrigidity causally. A synthetic along-epipolar-line mismatch passes despite
 replace3pxcamera/2mmskin gates. Preserve complete pair failures/eligibility and
 require independent observation evidence,not residual-based track selection or
 another retired-solver replay. No actual head/visual acceptance follows.
+
+0291's resource implementation moves a linear dot through bilinear sampling
+without shrinking input/model/window/point capacity. Require whole-network
+pixel-output controls,not a blanket raw tensor tolerance,then measured native
+resources. Fixed smaller-control equality and algebra still cannot guarantee
+all native nonlinear FP32outputs or actual material identities. Confidence
+threshold comparisons are diagnostics,not calibrated physical acceptance or
+permission to filter a cohort. A full native forward is only capacity evidence;
+known3D/visibility,actual camera and independent medical/head gates remain.

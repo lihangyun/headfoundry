@@ -1047,3 +1047,14 @@ the setup-protocol deviation,not native capacity/material identity/head quality.
 Retain verified runtime only for bounded next controls;later scored failure
 cleans it.140tests/protected hashes pass,no defaults or human material changed.
 Archive9010bytes/source3fa7db7;not visual acceptance or a product head result.
+
+0291 passes one complete loaded-network pixel equivalence audit,not merely raw
+tensor tolerance:all1572864control flow pixels,max7.8642e-6inputpx. A sampled
+correlation lookup keeps every point/window/weight/FP32value and performs the
+same linear dot after bilinear feature sampling. Native1280x720/16frame forward
+then completes16.453s,peak GPU reserved6914310144bytes/working set1989718016.
+This establishes local capacity,not physical tracking:the smaller control is
+not a universal native-resolution nonlinear error bound,and timings are not a
+cold/warm-controlled speedup study. No person,scan or camera/head prediction.
+Archive1439068bytes/source58c4918 retains all control pixel deltas;140shared
+tests/protected checks pass. Next3Dcorrespondence/visibility gate still required.
