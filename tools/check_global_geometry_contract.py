@@ -120,14 +120,14 @@ def run(out):
     if not pc.calibrate_view_graph(out / 'synthetic.db', options=c):
         save('result.json', {'status': 'REJECT', 'reason': 'calibration_failed'})
         timer.cancel()
-        return
+        return False
     (out / 'empty-images').mkdir()
     models = pc.global_mapping(out / 'synthetic.db', out / 'empty-images', out / 'sparse', options=m)
     save('mapping.json', {'models': {str(i): model.summary() for i, model in models.items()}})
     if len(models) != 1 or next(iter(models.values())).num_reg_images() != 5:
         save('result.json', {'status': 'REJECT', 'reason': 'missing_model_or_cameras', 'models': len(models)})
         timer.cancel()
-        return
+        return False
     model = next(iter(models.values()))
     poses = {int(im.name[6:10]): im.cam_from_world().matrix()
              for im in model.images.values() if im.has_pose}
@@ -176,7 +176,8 @@ def run(out):
          'positive_depths': positive, 'negative_control_p95_px': negative_p95,
          'worker_seconds': time.monotonic()-start, 'patient_accuracy': 'UNVERIFIED'})
     timer.cancel()
+    return passed
 
 
 if __name__ == '__main__':
-    run(Path(sys.argv[1]).resolve())
+    sys.exit(0 if run(Path(sys.argv[1]).resolve()) else 1)
