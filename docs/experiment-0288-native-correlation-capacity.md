@@ -55,3 +55,23 @@ the first scored execution and must be recorded. Failed exclusive integration
 is archived minimally/recovery-committed and removed before any different route;
 protect originals/shared tests/defaults/0207. A technical pass may retain only
 the now-verified runtime for the NEXT separately bounded precision trial.
+
+## External goal-state interlock before any scored execution
+
+2026-10-21T14:03:28Z:authoritative get_goal now reports blocked,whereas this
+turn began active;account ordinaryUsageAllowed remains true. No goal status
+mutation,new goal,duplicate installer or model/control execution is authorized
+to work around this transition. One existing installation remains live under
+its600s timeout(parent50284/base-interpreter34768/uv12600 observed). Let that
+already-authorized atomic installation settle;do not launch inference. Assets
+are staged,not model-qualityREJECT and not verified inference. The goal-card
+manual-resume reminder is issued once for this interlock;unchanged monitor
+checks must stay quiet. Need actual user/product goal recovery before scoring.
+
+Pre-execution source tracing also finds that five correlation levels perform an
+extra final feature downsample. The planned128x192full-network fixture would
+end at a zero spatial extent;it has NOT run. On recovery,prospectively correct
+that implementation-control input to256x384(min feature axis32) before scoring,
+retaining all weights,16frames,iterations,native-capacity test and pixel gates.
+This is an unexecuted fixture-contract issue,not an observed precision failure
+or permission to retry a failed numerical gate. No operator runner exists yet.
