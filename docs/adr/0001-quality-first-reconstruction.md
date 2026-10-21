@@ -20,6 +20,14 @@ passes,but CUDA/full-network equivalence and native capacity remain unproven.
 Require those checks before another physical correspondence experiment. A
 smaller symbolic temporary or passing software oracle is not camera/head quality.
 
+0294subsequently passes fixed complete-network equality and native capacity;
+0295still fails actual known-motion material/occlusion precision. Retire the
+model-specific integration while keeping small independent software oracles.
+PNG metadata is separate from model RGB identity:retain the initial hash stop
+and explicit pre-inference record repair;missing historical pixels stay
+unverified. No substantive physical threshold,cohort or input-error selection
+is justified by a serialization repair. No second scored forward follows failure.
+
 ### 2026-10-21 model-output index contracts precede geometric interpretation
 
 0270's pinned HF path passes strict learned-state loading but fails a known

@@ -117,3 +117,24 @@ licenses,source recovery and cleanup plan survive. Seven protected hashes
 (six original controls plus successful0293oracle) match.0294software success
 archive stays;physical failure does not erase software equivalence evidence.
 Clean exclusive0294/0295runtime/runners/output before any different route.
+
+### Actual exclusive cleanup
+
+Before deletion,all runtime handles were terminal and a fresh process inventory
+returned no Python/Blender/uv jobs. Three exact repository-contained directories
+had zero reparse points and matched the archived plan:32091files and
+12277496159logical bytes. Five exclusive runners/lock add48216bytes. Total
+removed32096files/12277544375logical bytes(12.28decimalGB,not independently
+measured free-disk gain). No exclusive0294/0295bytecode or retained live imports
+remain. Public weights/framework wheels need redownloading;generated binaries
+need historical-source reexecution. Compact archive is not a full binary backup.
+
+2026-10-21T22:43:10Zverification,497.867s from original render start before
+final documentation/commit:all targets absent,all seven protected hashes and
+0290/0291/0292/0294/0295compact archive hashes/CRCs unchanged.140shared tests
+pass4.999s. Shared source/tests/defaults and unrelated untracked0207document
+untouched. No camera/head promotion,training,upload,case002 or bone use. The
+successful0293NumPyoracle remains;model-specific passed0294runner is retired
+with failed application,its evidence/source recovery stays. Next requires a
+genuinely different supported observation hypothesis,not this configuration's
+threshold/input/precision/optimizer rescue. Goal remains unachieved.

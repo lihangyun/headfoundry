@@ -1,5 +1,28 @@
 # Claim-to-source ledger
 
+## 2026-10-21 pinned tracker software equality is not physical head accuracy
+
+0293independent NumPy convex-upsample oracle and0294batch1wrapper change only
+allocation,not learned weights or ownership rights.0294reacquires identical
+officialMIT source/model and14licensed runtime wheels from0290at full hashes;
+strict complete FP32state and all fixed software pixel comparisons pass. Source
+notices/weight card/bundled notices survive privately,no dataset/train/upload
+grant or broad binary redistribution clearance is inferred. Installation was
+isolated to this repository,not a paid/NC/private fallback.
+
+0295uses authorizedcase001skin ONLY in known-motion benchmark rendering and
+independent scoring;blind prediction reads RGB and original2Dseeds. These are
+supplied-scan test pictures,not video-reconstructed heads or scan-guided fitting.
+PNGDate/RenderTime caused a file-identity protocol stop before inference. Keep
+that failure and one prospective input-record repair explicit;both retained
+historical controls have identical pixels,but four old pixel baselines are
+unavailable. No claim of six-image historical equality or causal improvement.
+The single scored attempt then fails material/occlusion precision and retires
+the exclusive runtime/runners/assets. Source recovery e807ee4 and small raw
+evidence survive locally;successful0294software evidence is not rewritten.
+No actual-video camera,medical surface-mm,editable head,visual acceptance,
+KeenTools quality,case002result,neural training or private upload is claimed.
+
 ## 2026-10-21 complete official foundation checkpoints,not an accuracy pass
 
 0278 acquires exact official RoMa outdoor and original DINOv2 checkpoint bytes
