@@ -69,3 +69,46 @@ Pass onlyTECHNICAL_CHECK_PASSED scoped software/asset capacity. Physical sparse
 matching precision,missing associations,spatial/graph support and actual-video
 camera require separate preregistration before head fitting. NoACCEPT/no
 KeenTools-equivalence/no medical accuracy or recognizable result claim follows.
+
+## Actual result:TECHNICAL_CHECK_PASSED,physical quality UNVERIFIED
+
+Executed source923a150;provision sourced54e926. One installer PID5828 exits0,
+one scored control PID47792 exits0;no retry. Provision started2026-10-21T23:30:38.507Z.
+Transport/hashes269.985s,offline install31.484s,total301.469s. Full scored worker
+14.5s. Shared verification completed at23:42:12.150Z,693.643s from provision;
+evidence/commit completed within the registered2400s whole budget.
+
+Official acquired detector SHA256
+4113809dd9e0367af013a45fc2255a6b243ff241cd06520d17a65d9e231bdc17,
+descriptor8eccfc270ec990ced60cd54a434411a47c4c504de13586f596d042e005b3022b;
+exact58483585/54257185bytes. Pre-inference receipt SHA256
+b5a5ad149f979c7cd01102c71f3f9476b3d3a11dae19cda624c834b0b5b05083.
+These actual hashes are now frozen in the lock;no publisher-signed digest exists.
+Source/reference/wheel hashes and50actual bundled dependency notices are retained.
+
+- Detector416state tensors/272parameter tensors/14559749parameters;descriptor
+  308/200/13518817. All keys/shapes/dtypes/finite FP32and copied bytes verified
+  before AND after inference. No training or automatic checkpoint download.
+- Native analytic1843200-value ramp max error0.0000610352px;coordinate conversion
+  max0.0000305176px. All chosen indices/256coordinates match the reference exactly.
+  All128scores and8192matching probabilities have delta0. Permutation/ties and
+  all four invalid-input controls pass;ties are not counted as independent matches.
+- Complete small pipeline64points/16384descriptor values/64scores has delta0.
+- Native1280x720/4096keys returns1048576finite descriptor values in0.422s warm
+  context;this is one procedural-image capacity measurement,not general video
+  latency. GPUreserved6285164544bytes(5.85GiB),peak working set1724526592bytes.
+  Both resource caps pass. Torch2.10.0+cu128/TorchVision0.25.0+cu128/RTX3070.
+
+All140shared tests pass in5.272s;all seven protected hashes unchanged,including
+original video/skin,consent,successful fixtures and unrelated0207. Deprecated
+TorchVision pretrained=False and reference meshgrid-indexing warnings are recorded,
+not silently removed. Post-run changes only pin acquired hashes and make the
+existing state checker locally import Torch for reuse;no model is rerun.
+
+Compact private evidence:assets/private/closed-experiments/0298-sparse-inference-entry/
+evidence.zip,225463bytes/64members/0images,CRCverified,SHA256
+2afd5b157e6b83ae7cd7c3666fed93e5808380ab0df5e0e7077b3d46cfc8c3cb.
+The archive is not a full binary backup. Successful minimal runtime remains local
+for a separately registered real-image correspondence test;no failed route is
+left active. This result supplies no physical matches,camera,head,scan-mm score
+or human acceptance. It does not justify fitting a head yet.

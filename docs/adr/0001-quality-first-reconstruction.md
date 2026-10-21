@@ -585,3 +585,12 @@ with unmeasured physical quality. A large batch-independent upsampling temporary
 is evidence for a future exact-memory implementation audit,not permission to
 change model/frames/precision,allocator flags or budget after failure. Retire
 failed exclusive integration before a materially different,registered repair.
+
+0298admits a narrow sparse detector/descriptor runtime,not a head route promotion.
+Keep exact publisher asset IDs and pre-inference acquired-byte hashes,strict full
+state and all parameter-byte checks. RootMIT does not erase third-party copied
+utilities;use only the scoped cleared core/independent glue and retain notices.
+Reference software equality and measured native capacity cannot establish
+anatomical identity,visibility,3Dcamera recovery or2mmskin accuracy. Next test must
+measure actual-image correspondence evidence under a prospectively fixed cohort,
+with no medical geometry in the estimator and no head fitting before camera gates.

@@ -64,6 +64,7 @@ def peak_working_set():
 
 
 def state_check(model, raw):
+    import torch
     actual = model.state_dict()
     if set(actual) != set(raw):
         raise ValueError('full released-state keys differ')

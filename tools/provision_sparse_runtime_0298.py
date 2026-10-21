@@ -145,6 +145,8 @@ def main():
             path = DEST/model['name']
             stream(model['url'],path,model['bytes'])
             actual_hash = sha(path)
+            if model.get('sha256') and actual_hash != model['sha256']:
+                raise ValueError('previously frozen acquired-byte identity differs')
             after = publisher_record(model)
             if before!=after:
                 raise ValueError('publisher asset metadata changed during download')

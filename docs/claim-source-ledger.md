@@ -1,5 +1,21 @@
 # Claim-to-source ledger
 
+## 2026-10-22 scoped sparse runtime admitted,not physical reconstruction
+
+0298acquires the exact0297official L-v2/B assets under the explicit pinnedMIT model
+grant and uses only the pinnedMIT core with independent inference glue. Whole
+upstream mixed-attribution utilities are not imported;no G/DINO/training code or
+extra pretrained VGG checkpoint. All14runtime wheels and50bundled notice texts
+are verified and preserved. This is scoped local use,not a blanket commercial
+redistribution or training-data clearance. No human data entered this test.
+
+Official assets lack published digests:full acquired-byte hashes were frozen in a
+receipt BEFORE inference and are now pinned for repeat acquisition. This is not
+an independent publisher signature. Complete state/copy/software/native-capacity
+checks pass in one attempt,with all tensors unchanged. Physical sparse matching,
+actual-video cameras,medical-mm,complete editable head and visual acceptance
+remainUNVERIFIED. A0.422s procedural warm forward is not a video speed benchmark.
+
 ## 2026-10-21 sparse repeatability preflight has explicit scope limits
 
 0297pins official Parskatt/DeDoDe6d156183f4dc84cd704ae779eebc8350995c5b06,
