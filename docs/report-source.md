@@ -4,6 +4,18 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 complete synthetic geometry chain isolates a software alternative
+
+0276 independently generates exact3D observations with short overlapping tracks,
+unknown shared focal and54whole identities excluded from the estimator. One
+same-version/default global chain recovers all5cameras/216training points and
+retains them through final retriangulation;162held projections havep95=.001131px.
+A .1rad wrong camera scores123.483px and is rejected. This is a narrow positive
+software control,not patient-camera/head/medical validation. Tagged source
+already fixes first scale;the old zero-point gauge warning does not prove a
+missing initial gauge constraint. No patient data or old candidate is rerun.
+Keep only the small optional regression/compact report,remove disposable binaries.
+
 ## 2026-10-21 frozen real-video short tracks do not survive global geometry
 
 0275 tests global COLMAP4.2 geometry on0267's frozen native-step observations,

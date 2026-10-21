@@ -61,3 +61,33 @@ cache/database before another route. On success keep only a small optional
 software regression and summary;remove disposable environment/generated data.
 Success proves this synthetic software chain,not real identities/rigidity,
 patient focal/cameras/surface accuracy,complete head,likeness or ACCEPT.
+
+## Actual result:bounded software chain passes
+
+Source31daf22,one complete worker0.187s. All5cameras/216training points survive
+including the same final retriangulation/refinement that failed in0275. The
+seven training edges have0rotation-filter rejections. Estimated shared focal
+1199.999126px (relative error7.2814e-7). All162 genuinely withheld projections
+are scored: p95=.001131176px,max=.001197709px. Maximum rotation error
+5.0206e-5deg,maximum center error3.08745e-7 scene units. Proper rotations and
+positive held/fitted depths pass. The deliberate wrong camera has heldp95
+123.483215px,so the independent evaluator rejects it as required.
+
+This isTECHNICAL_CHECK_PASSED for this exact synthetic software chain,not a
+universal solver guarantee or patient result. Empty image-folder color-extraction
+warnings are expected:the control has2D numeric observations,no raster images;
+no appearance or texture is evaluated. No actual images/scans are rendered or
+presented as reconstruction. No patient sequence is rerun or old failure changed.
+
+The evidence rules out a universally broken database/pixel/unknown-focal/global-
+mapping integration and a universal need for a permanent track. It does **not**
+prove0267's identities,rigidity or focal.0275's failure remains specific to its
+actual data/estimator combination;rotation inconsistencies and data/calibration
+ambiguity require independent evidence rather than a solver threshold rescue.
+No reason is established to patch an allegedly missing scale constraint.
+
+Keep the small optional `tools/check_global_geometry_contract.py` as a successful
+software regression;it uses NumPy and an explicitly installed pinnedPyCOLMAP
+only when run,not as a shared runtime dependency. It is not a production head
+pipeline. Generated database/model/truth and the disposable install are removed
+after compact evidence verification;cleanup details follow below.
