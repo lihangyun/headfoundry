@@ -65,7 +65,7 @@ def check():
         pass
     else:
         raise ValueError('singular pencil was not rejected')
-    for invalid in (np.eye(3),np.full((4,4),np.nan),np.triu(np.ones((4,4)))):
+    for invalid in (np.eye(3),np.full((4,4),np.nan),np.triu(np.ones((4,4))),a+1j*b):
         try:
             quadric_candidates(invalid,b)
         except ValueError:

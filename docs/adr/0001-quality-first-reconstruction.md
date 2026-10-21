@@ -522,3 +522,12 @@ singular vector merely because its constraint residual is tiny. A separate
 prospective rank-constrained alternative needs training-only selection and
 independent held evaluation,not known focal/pose or medical geometry as an oracle.
 0283 staysREJECT and is cleaned before such a different attempt.
+
+0284 explicitly registers finite rank-three candidates,records every root and
+selects by training-only pinhole error before untouched held scoring. Its frozen
+prefix/new-upgrade control passes without known pose/focal/medical selection;
+actual prefix hits its180s resource stop. Distinguish successful necessary math,
+resource failure and unmeasured physical precision. Keep the small algebra
+regression,not the failed application. Do not raise time limits or swap inputs
+to hide the stop;any implementation acceleration first proves fixed-input
+objective/gradient and pixel-replay equivalence under a separate bounded audit.

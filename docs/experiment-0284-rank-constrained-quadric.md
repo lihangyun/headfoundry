@@ -104,3 +104,25 @@ with explicit non-camera/non-head scope and finite symmetric input guards.
 Remove exclusive failed application runner/raw duplicates after compact evidence.
 Any later performance work first needs a separate fixed-input equality/timing
 audit,not a hidden longer optimization budget or relaxed physical gate.
+
+## Verified closeout
+
+Executed d674f42,source recoverya90f8d7. Private archive
+assets/private/closed-experiments/0284-rank-quadric/evidence.zip:5members,
+11084bytes,zeroimages,SHA256
+4fe9ca6afd0edf187f5b260e766cc8be67201a336fcd70724f986b729ec72bf1.
+CRC/all member hashes pass after deletion. It retains every root/candidate,
+control cameras/480held errors,resource failure,recovery/source hashes and
+protected hashes,not a patient3Dmodel or a complete-prefix success claim.
+Original0283prefix remains at its unchanged archive;new code can be restored
+from Git. No model/framework/environment/weight was installed or needs recovery.
+
+After terminal-worker/exact-path/reparse/archive/caller checks,remove5raw
+duplicates/31936logical bytes and23564-byte exclusive runner:6files/55500
+logical bytes. No route-specific bytecode remains. Keep only the generic
+necessary rank-three arithmetic helper incheck_quadric_rank_contract.py and
+one shared regression,not the failed application pipeline. All five protected
+hashes unchanged,case002 unopened,source/defaults unchanged.138 retained tests
+pass in5.980s including the final complex-input guard case(the earlier replay
+was5.787s). Unrelated0207 remains untouched/untracked. Local
+cleanup commit before another route,no push;2400s budget met.

@@ -946,3 +946,17 @@ linear upgrade fails. An analytic synthetic counterexample confirms that the
 chosen linear constraints admit rank1 as well as valid rank3 quadrics. Whole
 controlREJECT before patient input;no held/head/medical score. Preserve compact
 prefix evidence/sourcea2fd33f,clean failed runner,keep137shared tests/defaults.
+
+## 2026-10-21 rank-constrained upgrade control and actual resource boundary
+
+0284 replaces an arbitrary linear vector by four homogeneous generalized roots
+in the fixed two-vector quadric subspace. On frozen0283prefix evidence,three
+rank1roots are rejected and one rank3candidate restoresf1500 using training
+eligibility/cheirality only;480untouched held predictionsp958.609e-9px and the
+negative check passes. This is a fixed synthetic component-chain control,not
+universal unknown-focal success or a newly rerun projective prefix.
+The full actual-video prefix then times out at its registered180s before a
+physical score. Reject resources,do not invent patient-camera/mm error. Retain
+small successful quadric math/regression and compact evidence/sourcea90f8d7;
+clean failed exclusive runner/duplicates. Next engineering action requires a
+fixed-input conditional-solve equality/timing audit,not more optimization time.
