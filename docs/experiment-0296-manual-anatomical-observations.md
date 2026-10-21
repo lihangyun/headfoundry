@@ -115,3 +115,21 @@ retains all seeds/statuses/four refinements,exact identities/execution and one
 frozen annotated source panel. No new head is depicted. Exclusive runner and
 redundant source derivatives are retired next;source recovery d3f2b41. No
 production defaults,shared numerical code or unrelated0207change is authorized.
+
+### Closeout
+
+Verified archive9members,one frozen source-review panel,3071847bytes,SHA
+0a63f886abb5a5a7b112f18470c64f6aab38f1c0fbc979aaf7b7be2507a97058.
+CRC/member equality and frozen annotation SHA pass. Full raw four-seed local
+outputs and all missing states survive,not only stable points. No failed model,
+weights or environment existed. Source recoverable fromd3f2b41;deleted source
+derivative images require original-video regeneration,not byte-for-byte recovery
+from this compact archive.
+
+Fresh process/path inventory before deletion found no runtime jobs/reparse points.
+Removed36exclusive derivative files21590985bytes and9161byte runner:37files,
+21600146logical bytes. Six protected hashes(video,rights,successful fixtures,
+0293oracle,unrelated0207)unchanged;no original input is deleted.140retained
+tests pass after cleanup. Shared source/defaults unchanged. Actual wall/review
+timestamps and detailed tests/absence/CRC verification remain privately beside
+archive. No independent camera,3D or user-visual gate was tested or passed.
