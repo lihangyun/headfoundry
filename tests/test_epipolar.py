@@ -4,6 +4,13 @@ from headfoundry.epipolar import fundamental, sampson_distance, calibrated_pose,
 
 
 class EpipolarTests(unittest.TestCase):
+    def test_along_epipolar_line_displacement_is_not_depth_or_identity_proof(self):
+        f=np.array([[0.,0,0],[0,0,-1],[0,1,0]])
+        a=np.array([[10.,20],[40,80],[90,100]])
+        b=a+[15.,0]
+        np.testing.assert_allclose(sampson_distance(f,a,b+[100.,0]),0,atol=1e-12)
+        np.testing.assert_allclose(sampson_distance(f,a,b+[0.,40]),40/np.sqrt(2))
+
     def test_independent_points_and_corrupted_validation(self):
         rng=np.random.default_rng(42)
         points=rng.uniform(-1,1,(50,3));points[:,2]+=5
