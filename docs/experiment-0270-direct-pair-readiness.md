@@ -70,3 +70,10 @@ a different route. Positive limited readiness may retain only necessary assets
 for separately preregistered physical identity/rigidity/camera evaluation.
 No scan2mm,3px camera, whole-head, ears/neck, mesh or actual human acceptance is
 waived. Defaults/unrelated0207/original material remain unchanged; no upload.
+
+Before any model construction/forward, the first worker fails importing Torch's
+Dynamo cache helper: this controlled host lacks a Windows username variable and
+getpass attempts unavailable pwd. Preserve that failure/log, make one ordinary
+pre-valid-launch cache-location repair with TORCHINDUCTOR_CACHE_DIR inside this
+exclusive experiment. No model/config/preprocessing change and no budget reset:
+the original first-worker wall-clock180s deadline still includes this repair.

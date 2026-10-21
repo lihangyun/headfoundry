@@ -166,7 +166,8 @@ def memory_bytes():
 
 
 def infer():
-    started = time.perf_counter()
+    phase = json.loads((OUT / 'phase.json').read_text())
+    started = time.perf_counter() - max(0, time.time() - phase['inference_started_epoch'])
     sys.addaudithook(private_guard)
     import torch
     from safetensors.torch import load_file
