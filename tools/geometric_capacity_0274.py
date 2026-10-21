@@ -85,6 +85,9 @@ def render():
     scene.render.film_transparent=True;scene.view_settings.view_transform='Standard'
     bpy.ops.object.camera_add();camera=bpy.context.object;scene.camera=camera
     rows=[];names=truth['view_names'].tolist();k=truth['intrinsic']
+    first=truth['extrinsics_normalized'][names.index('front')]
+    points0=truth['vertices_normalized']@first[:,:3].T+first[:,3]
+    numerical=[]
     for short,name in VIEWS:
         deadline(started);index=names.index(name);e=truth['extrinsics_normalized'][index]
         set_camera(camera,k,e,720,1280);bpy.context.view_layer.update()
@@ -92,9 +95,22 @@ def render():
         if replay['max_px']>.05:raise ValueError('Blender pinhole replay')
         scene.render.filepath=str(OUT/(short+'.png'));bpy.ops.render.render(write_still=True)
         rows.append({'view':short,'sha256':sha256_file(OUT/(short+'.png')),'projection_replay':replay})
+        if short!='front':
+            relative=np.c_[e[:,:3]@first[:,:3].T,e[:,3]-(e[:,:3]@first[:,:3].T)@first[:,3]]
+            common=truth['visible'][names.index('front')]&truth['visible'][index]
+            p=truth['pixels'][names.index('front'),common];q=truth['pixels'][index,common]
+            exact_error=np.abs(project(k@relative,points0[common])-q).max()
+            replay3d=_triangulate(p,q,k@np.c_[np.eye(3),np.zeros(3)],k@relative)
+            metric_error=np.linalg.norm(replay3d-points0[common],axis=1).max()*controls['radius_mm']
+            wrong=relative.copy();wrong[1,3]+=.1
+            negative=float(np.percentile(np.linalg.norm(project(k@wrong,points0[common])-q,axis=1),95))
+            if exact_error>1e-8 or metric_error>1e-6 or negative<=3:raise ValueError('Independent evaluator controls')
+            numerical.append({'view':short,'true_relative_replay_max_px':float(exact_error),
+                              'true_triangulation_max_mm':float(metric_error),'wrong_translation_p95_px':negative})
     save('input-calibration.json',{'intrinsic':k.tolist(),'width':720,'height':1280,'given_not_estimated':True})
     save('render-report.json',{'role':'SOURCE_SCAN_NOT_RECONSTRUCTION','fixture_sha256':FIXTURE_SHA,
-        'source_sha256':controls['source_sha256'],'renders':rows,'elapsed_seconds':time.perf_counter()-started})
+        'source_sha256':controls['source_sha256'],'renders':rows,'evaluator_controls':numerical,
+        'elapsed_seconds':time.perf_counter()-started})
 
 
 def foreground(points,alpha):

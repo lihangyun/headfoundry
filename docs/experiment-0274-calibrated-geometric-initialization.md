@@ -34,6 +34,10 @@ confirmation and original source hash. Render exact front,yaw+30,yaw-30 at
 emission1,Standard RGBA. This is persistent idealized texture,not recovered
 albedo,training or a photorealistic patient. Check independent camera replay
 <=.05px and original-mm/normalized sample replay;no resampling.
+Before model use,also require true relative-camera projection replay<=1e-8px,
+true-correspondence triangulation<=1e-6mm and one fixed normalized camera-Y
+translation+.1 negative control with projection p95>3px. These evaluate the
+measurement contract,not a candidate or a new fitted pose.
 
 The neural worker receives only the3 RGBA images and local model files. Actual
 two index-contract controls,strict full finite learned state and exact source/
