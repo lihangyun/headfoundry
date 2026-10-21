@@ -193,6 +193,46 @@ def fit():
         'scope':'Given calibration/unit baselines,not physical acceptance','rows':rows,'elapsed_seconds':time.perf_counter()-started})
 
 
+def diagnose_observations():
+    """Read-only failure scoring,no camera fitting or triangulated candidate."""
+    from mathutils import Vector
+    from mathutils.bvhtree import BVHTree
+    started=time.perf_counter();deadline();vertices,faces,truth,controls=source_scene()
+    names=truth['view_names'].tolist();first=truth['extrinsics_normalized'][names.index('front')]
+    origin=-first[:,:3].T@first[:,3];k=truth['intrinsic'];inverse=np.linalg.inv(k)
+    tree=BVHTree.FromPolygons(vertices.tolist(),faces.tolist(),all_triangles=True);rows=[]
+    for short,name in VIEWS[1:]:
+        deadline(started);e=truth['extrinsics_normalized'][names.index(name)];center=-e[:,:3].T@e[:,3]
+        raw=np.load(OUT/(short+'-matches.npz'),allow_pickle=False);a,b=raw['points'][:,raw['eligible']]
+        common=[];projection_errors=[];surface_pair_distances=[];missing_source=0;missing_target=0
+        for p,q in zip(a,b):
+            source_hit=tree.ray_cast(Vector(origin),Vector(first[:,:3].T@(inverse@np.r_[p,1])))[0]
+            target_hit=tree.ray_cast(Vector(center),Vector(e[:,:3].T@(inverse@np.r_[q,1])))[0]
+            if source_hit is None:
+                missing_source+=1;common.append(False);projection_errors.append(np.nan)
+            else:
+                xyz=np.asarray(source_hit);hit=tree.ray_cast(Vector(center),Vector(xyz-center))[0]
+                visible=hit is not None and np.linalg.norm(np.asarray(hit)-xyz)*controls['radius_mm']<=.01
+                common.append(visible);projection_errors.append(float(np.linalg.norm(project(k@e,xyz[None])[0]-q)))
+            if target_hit is None:missing_target+=1
+            surface_pair_distances.append(float(np.linalg.norm(np.asarray(source_hit)-np.asarray(target_hit))*controls['radius_mm'])
+                if source_hit is not None and target_hit is not None else np.nan)
+        common=np.array(common,bool);errors=np.array(projection_errors);surface=np.array(surface_pair_distances)
+        held=np.arange(len(a))%2==1
+        np.savez_compressed(OUT/(short+'-observation-diagnostic.npz'),common=common,
+            projection_error_px=errors,supplied_surface_pair_distance_mm=surface,held=held)
+        def summary(values):
+            return {'count':len(values),'p95':float(np.percentile(values,95)),'max':float(values.max())} if len(values) else None
+        rows.append({'view':short,'all_eligible':len(a),'true_common':int(common.sum()),'source_misses':missing_source,
+            'target_misses':missing_target,'all_common_projection_px':summary(errors[common]),
+            'held_common_projection_px':summary(errors[common&held]),
+            'supplied_surface_pair_mismatch_mm':summary(surface[np.isfinite(surface)])})
+    deadline(started)
+    save('observation-diagnosis.json',{'recipe_status':'REJECT','rows':rows,'elapsed_seconds':time.perf_counter()-started,
+        'scope':'Existing raw observations scored against supplied-source truth,NOT estimated camera/triangulated/reconstructed error',
+        'new_neural_or_pose_run':False,'candidate_camera_missing':True,'actual_video_head':'UNVERIFIED'})
+
+
 def evaluate():
     from mathutils import Vector
     from mathutils.bvhtree import BVHTree
