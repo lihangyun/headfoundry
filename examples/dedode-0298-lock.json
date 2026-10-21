@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "source_license": "MIT scoped model/core;not mixed-attribution full utils",
+  "model_license": "MIT per pinned author README",
+  "source_revision": "6d156183f4dc84cd704ae779eebc8350995c5b06",
+  "source_base_url": "https://raw.githubusercontent.com/Parskatt/DeDoDe/",
+  "source_files": {
+    "LICENSE": "6f02ad61c3fd4509343d619b55501354bcebfd67ad5460c853d02c7ab46ff4bd",
+    "README.md": "d1bbec492b33ad40b2c4609c3ad068ff78b568624cd64893c43302db354cbca9",
+    "DeDoDe/encoder.py": "84adf310081002ed8347e1ae27c58adfaa36d192a6a916fc41441af03288c728",
+    "DeDoDe/decoder.py": "f0736610f5e2f173d8d0592fdb31b3e3ffa7187642963aa223a36b624f2011c1",
+    "DeDoDe/detectors/dedode_detector.py": "087360c3b72b3b9d0d4120e39ec530625d8a3bf454e5b15926a0e19110f2e709",
+    "DeDoDe/descriptors/dedode_descriptor.py": "728e9be4a48aeea0528e5929b7498d9d7bcec7ff2e545410a0fde513e0ebdc11",
+    "DeDoDe/model_zoo/dedode_models.py": "5627fb1a0c3cb7bb1b95ae95d03f1d34354d40d0175a50578fe079cb9ac8aa69",
+    "DeDoDe/matchers/dual_softmax_matcher.py": "f3b85f0c3efd49856a9209eecf20ee053f21c04c0ff69e1564dfafaa970b572d"
+  },
+  "reference_utils": {
+    "url": "https://raw.githubusercontent.com/Parskatt/DeDoDe/6d156183f4dc84cd704ae779eebc8350995c5b06/DeDoDe/utils.py",
+    "sha256": "d0c486e0278c59f4941cfb99531e9f22a70aaad1585d51bd4b304751bb92569d",
+    "functions": [
+      "get_best_device",
+      "get_grid",
+      "sample_keypoints",
+      "to_pixel_coords",
+      "to_normalized_coords",
+      "dual_softmax_matcher"
+    ]
+  },
+  "checkpoint_assets": [
+    {
+      "release": "v2",
+      "releaseId": 151373853,
+      "id": 162415420,
+      "name": "dedode_detector_L_v2.pth",
+      "bytes": 58483585,
+      "digest": null,
+      "url": "https://github.com/Parskatt/DeDoDe/releases/download/v2/dedode_detector_L_v2.pth",
+      "updated": "2024-04-16T13:50:44Z"
+    },
+    {
+      "release": "dedode_pretrained_models",
+      "releaseId": 112954869,
+      "id": 117830512,
+      "name": "dedode_descriptor_B.pth",
+      "bytes": 54257185,
+      "digest": null,
+      "url": "https://github.com/Parskatt/DeDoDe/releases/download/dedode_pretrained_models/dedode_descriptor_B.pth",
+      "updated": "2023-07-20T11:59:18Z"
+    }
+  ],
+  "wheels": [
+    {
+      "name": "torch",
+      "version": "2.10.0+cu128",
+      "filename": "torch-2.10.0+cu128-cp312-cp312-win_amd64.whl",
+      "url": "https://download-r2.pytorch.org/whl/cu128/torch-2.10.0%2Bcu128-cp312-cp312-win_amd64.whl",
+      "bytes": 2867409626,
+      "sha256": "fbde8f6a9ec8c76979a0d14df21c10b9e5cab6f0d106a73ca73e2179bc597cae",
+      "license": "BSD-3-Clause",
+      "metadata_url": "https://download-r2.pytorch.org/whl/cu128/torch-2.10.0%2Bcu128-cp312-cp312-win_amd64.whl.metadata",
+      "metadata_sha256": "d969f0ff6611d019b9d8cc883fc15a4b78c8818b069a0b7bd413b777bc6b4106"
+    },
+    {
+      "name": "torchvision",
+      "version": "0.25.0+cu128",
+      "filename": "torchvision-0.25.0+cu128-cp312-cp312-win_amd64.whl",
+      "url": "https://download-r2.pytorch.org/whl/cu128/torchvision-0.25.0%2Bcu128-cp312-cp312-win_amd64.whl",
+      "bytes": 9632349,
+      "sha256": "068e519838b4a8b32a09521244b170edd8c2ac9eeb6538b7bf492cd70e57ebf5",
+      "license": "BSD",
+      "metadata_url": "https://download-r2.pytorch.org/whl/cu128/torchvision-0.25.0%2Bcu128-cp312-cp312-win_amd64.whl.metadata",
+      "metadata_sha256": "5382da695e2c85aab07c0f60613169c3ac5995840ac87fe4837a7ed74a74062d"
+    },
+    {
+      "name": "numpy",
+      "version": "2.5.2",
+      "url": "https://files.pythonhosted.org/packages/7f/b9/87fea2769fe1c47c1b5b01d8310772c9d1a85d485de7cf386ef7a3332b02/numpy-2.5.2-cp312-cp312-win_amd64.whl",
+      "filename": "numpy-2.5.2-cp312-cp312-win_amd64.whl",
+      "bytes": 12464674,
+      "sha256": "28ac63476ec7651484215ee7fa15a1f78b57c14621f01e392afe17b9a1390ce4",
+      "license": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+      "metadata_url": "https://pypi.org/pypi/numpy/2.5.2/json"
+    },
+    {
+      "name": "pillow",
+      "version": "12.3.0",
+      "url": "https://files.pythonhosted.org/packages/45/89/da2f7971a317f83d807fdd4065c0af40208e59e692cc43d315a71a0e96d1/pillow-12.3.0-cp312-cp312-win_amd64.whl",
+      "filename": "pillow-12.3.0-cp312-cp312-win_amd64.whl",
+      "bytes": 7227137,
+      "sha256": "a2b55dd6b2a4c4b7d87ffa56bdb33fdc5fdb9a462173861a7bc097f17d91cb09",
+      "license": "MIT-CMU",
+      "metadata_url": "https://pypi.org/pypi/pillow/12.3.0/json"
+    },
+    {
+      "name": "einops",
+      "version": "0.8.0",
+      "url": "https://files.pythonhosted.org/packages/44/5a/f0b9ad6c0a9017e62d4735daaeb11ba3b6c009d69a26141b258cd37b5588/einops-0.8.0-py3-none-any.whl",
+      "filename": "einops-0.8.0-py3-none-any.whl",
+      "bytes": 43223,
+      "sha256": "9572fb63046264a862693b0a87088af3bdc8c068fde03de63453cbbde245465f",
+      "license": "MIT",
+      "metadata_url": "https://pypi.org/pypi/einops/0.8.0/json"
+    },
+    {
+      "name": "filelock",
+      "version": "3.32.3",
+      "url": "https://files.pythonhosted.org/packages/a7/8e/50f46a9c0ce8d2861a394c1347caae037ea0431d2f67d7feb151cbc4649a/filelock-3.32.3-py3-none-any.whl",
+      "filename": "filelock-3.32.3-py3-none-any.whl",
+      "bytes": 98901,
+      "sha256": "7f0ca4bcc0e181c60dbbd8aa9ab5b120ebb99e4e064e83636340056f833a1f09",
+      "license": "MIT",
+      "metadata_url": "https://pypi.org/pypi/filelock/3.32.3/json"
+    },
+    {
+      "name": "typing-extensions",
+      "version": "4.16.0",
+      "url": "https://files.pythonhosted.org/packages/49/d3/b8441a820a491ddfc024b0b0cf0393375b75ea13866d9c66727e54c2fc80/typing_extensions-4.16.0-py3-none-any.whl",
+      "filename": "typing_extensions-4.16.0-py3-none-any.whl",
+      "bytes": 45571,
+      "sha256": "481caa481374e813c1b176ada14e97f1f67a4539ce9cfeb3f350d78d6370c2e8",
+      "license": "PSF-2.0",
+      "metadata_url": "https://pypi.org/pypi/typing-extensions/4.16.0/json"
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0",
+      "url": "https://files.pythonhosted.org/packages/a2/09/77d55d46fd61b4a135c444fc97158ef34a095e5681d0a6c10b75bf356191/sympy-1.14.0-py3-none-any.whl",
+      "filename": "sympy-1.14.0-py3-none-any.whl",
+      "bytes": 6299353,
+      "sha256": "e091cc3e99d2141a0ba2847328f5479b05d94a6635cb96148ccb3f34671bd8f5",
+      "license": "BSD",
+      "metadata_url": "https://pypi.org/pypi/sympy/1.14.0/json"
+    },
+    {
+      "name": "networkx",
+      "version": "3.6.1",
+      "url": "https://files.pythonhosted.org/packages/9e/c9/b2622292ea83fbb4ec318f5b9ab867d0a28ab43c5717bb85b0a5f6b3b0a4/networkx-3.6.1-py3-none-any.whl",
+      "filename": "networkx-3.6.1-py3-none-any.whl",
+      "bytes": 2068504,
+      "sha256": "d47fbf302e7d9cbbb9e2555a0d267983d2aa476bac30e90dfbe5669bd57f3762",
+      "license": "BSD-3-Clause",
+      "metadata_url": "https://pypi.org/pypi/networkx/3.6.1/json"
+    },
+    {
+      "name": "jinja2",
+      "version": "3.1.6",
+      "url": "https://files.pythonhosted.org/packages/62/a1/3d680cbfd5f4b8f15abc1d571870c5fc3e594bb582bc3b64ea099db13e56/jinja2-3.1.6-py3-none-any.whl",
+      "filename": "jinja2-3.1.6-py3-none-any.whl",
+      "bytes": 134899,
+      "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+      "license": "License :: OSI Approved :: BSD License",
+      "metadata_url": "https://pypi.org/pypi/jinja2/3.1.6/json"
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.7.0",
+      "url": "https://files.pythonhosted.org/packages/fd/3c/6a2bf344106328fd04963664a60b9bb6496fc25df8e962fcdc1367285fb9/fsspec-2026.7.0-py3-none-any.whl",
+      "filename": "fsspec-2026.7.0-py3-none-any.whl",
+      "bytes": 206583,
+      "sha256": "b57ddbafedfaef7018c1ecab32aa200a9d7ca26b77965f64e48b70061249d279",
+      "license": "BSD-3-Clause",
+      "metadata_url": "https://pypi.org/pypi/fsspec/2026.7.0/json",
+      "license_evidence": {
+        "url": "https://raw.githubusercontent.com/fsspec/filesystem_spec/2026.7.0/LICENSE",
+        "sha256": "2dc35496ce53a7307915c008a844aad53e772b49b34cdd00445067691407ec94"
+      }
+    },
+    {
+      "name": "setuptools",
+      "version": "80.9.0",
+      "url": "https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl",
+      "filename": "setuptools-80.9.0-py3-none-any.whl",
+      "bytes": 1201486,
+      "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922",
+      "license": "MIT",
+      "metadata_url": "https://pypi.org/pypi/setuptools/80.9.0/json"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "url": "https://files.pythonhosted.org/packages/43/e3/7d92a15f894aa0c9c4b49b8ee9ac9850d6e63b03c9c32c0367a13ae62209/mpmath-1.3.0-py3-none-any.whl",
+      "filename": "mpmath-1.3.0-py3-none-any.whl",
+      "bytes": 536198,
+      "sha256": "a0b2b9fe80bbcd81a6647ff13108738cfb482d481d826cc0e02f5b35e5c88d2c",
+      "license": "BSD",
+      "metadata_url": "https://pypi.org/pypi/mpmath/1.3.0/json"
+    },
+    {
+      "name": "markupsafe",
+      "version": "3.0.3",
+      "url": "https://files.pythonhosted.org/packages/aa/5b/bec5aa9bbbb2c946ca2733ef9c4ca91c91b6a24580193e891b5f7dbe8e1e/markupsafe-3.0.3-cp312-cp312-win_amd64.whl",
+      "filename": "markupsafe-3.0.3-cp312-cp312-win_amd64.whl",
+      "bytes": 15105,
+      "sha256": "26a5784ded40c9e318cfc2bdb30fe164bdb8665ded9cd64d500a34fb42067b1c",
+      "license": "BSD-3-Clause",
+      "metadata_url": "https://pypi.org/pypi/markupsafe/3.0.3/json"
+    }
+  ]
+}
