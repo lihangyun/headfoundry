@@ -156,3 +156,28 @@ notices/hash references and one labeled diagnostic image. Do not retain full
 raw dense tensors,duplicate inputimages,checkpoint/framework/environment/cache
 or exclusive failed runners. Retain the successful generic streaming-state and
 grid regressions. Actual verified deletion/test/commit details follow below.
+
+## Verified cleanup
+
+Private evidence:assets/private/closed-experiments/0279-roma-lifetime/evidence.zip,
+37members,328989bytes,one explicitly labeled diagnostic image,SHA256
+d2b714062cea4257d207e12836461fc382ea5c9063f4cd7ac5715d0c331710bd.
+CRC/all member SHA verified after deletion. Source recovery7265dbf includes
+the exclusive installer/worker;originald4e33e2 and export replay6a8a148 remain
+distinguished. Queried fixed-cohort observations/reports survive,not dense maps,
+weights or environments. Source images stay in unchanged0274. Binary recovery
+requires official downloads and regeneration,not restoring this compact ZIP.
+
+After terminal-worker/exact-path/reparse/archive/caller checks,remove33359data/
+cache/bytecode files totaling2808812907logical bytes,and two tracked source files
+totaling24729bytes via apply_patch. Combined33361files/2808837636logical bytes;
+not independently measured free-disk gain. Successful generic exact-state/grid
+math and regressions remain;main environment has noTorch and no live failed
+model imports. Production source/defaults match2b817d1. Five protected original/
+authorization/fixture/unrelated-file hashes are unchanged,including0207.
+
+Post-removal137shared tests pass in6.071s. Pre-final-commit phase2277.347s is
+within original2400s;the single-forward-count deviation still remainsREJECT.
+Focused local cleanup commit follows. No push,patient head,medical surface
+error or visual acceptance claim. Goal stays active;no additional resource/
+proxy/parameter rescue of this fixed configuration is performed.
