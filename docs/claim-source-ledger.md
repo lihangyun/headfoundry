@@ -1,5 +1,24 @@
 # Claim-to-source ledger
 
+## 2026-10-21 sparse repeatability preflight has explicit scope limits
+
+0297pins official Parskatt/DeDoDe6d156183f4dc84cd704ae779eebc8350995c5b06,
+whose[README](https://github.com/Parskatt/DeDoDe/blob/6d156183f4dc84cd704ae779eebc8350995c5b06/README.md)
+explicitly declares its modelsMIT(except G's ApacheDINOcomponent). Only L-v2/B
+are prospective,no G/backbone/default download is adopted. Official asset IDs
+and sizes are recorded;published digests are null and binary state/accuracy are
+unverified. This does not import training-data rights,permit human training or
+validate a camera/head. No model/runtime/patient inference is installed.
+
+RootMIT must not obscure copied third-party material:utils.py identifies pose
+helpers from pinned DenseMatching,whose actual root license isGPLv3,plus other
+attributed transforms. No whole-package permissive redistribution claim follows.
+Future minimal inference requires a clear core boundary/independent utilities
+or explicit license compliance. Free commercial permission and permissive
+redistribution are not interchangeable. No third-party wrapper code or private
+KeenTools/Peek implementation was read/copied. Public product descriptions
+motivate an observation hypothesis,not a quality or implementation claim.
+
 ## 2026-10-21 pinned tracker software equality is not physical head accuracy
 
 0293independent NumPy convex-upsample oracle and0294batch1wrapper change only
