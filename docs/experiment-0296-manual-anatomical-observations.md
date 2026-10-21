@@ -59,3 +59,10 @@ clean exclusive failed runner/crops/fullframes/numeric outputs before a new
 route. Protect originals/0230/0293/shared source/defaults/0207/prior archives.
 Success onlyTECHNICAL_CHECK_PASSED source/local-count diagnostics;physical
 material/camera/head remainsUNVERIFIED. No training,new permission orACCEPT.
+
+Pre-numeric bookkeeping guard:two distinct IDs converging closer than2nativepx
+are marked colliding and BOTH withheld from independent support counts;all raw
+results remain reported. Otherwise duplicated names for one image corner could
+inflate an8point graph. This adds no camera-error filtering or new threshold
+search. Verify the guard on a synthetic duplicated-location sentinel before the
+single real numeric audit. Source preparation is not repeated.

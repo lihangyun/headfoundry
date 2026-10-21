@@ -61,6 +61,16 @@ def self_check():
     return {'known_corner': result, 'textureless_rejected': True}
 
 
+def independent_ids(rows):
+    points = [(r['id'], np.asarray(r['location'])) for r in rows if r.get('local_attractor_stable')]
+    colliding = set()
+    for i, (name, point) in enumerate(points):
+        for other, target in points[i+1:]:
+            if np.linalg.norm(point-target) < 2:
+                colliding.update((name, other))
+    return {name for name, _ in points}-colliding, sorted(colliding)
+
+
 def prepare():
     started = time.monotonic()
     OUT.mkdir(exist_ok=False)
@@ -149,9 +159,12 @@ def audit():
                 if row['local_attractor_stable']:
                     stable.add(name)
             rows.append(row)
-        points = [r['location'] for r in rows if r.get('local_attractor_stable')]
+        raw_stable_count = len(stable)
+        stable, collisions = independent_ids(rows)
+        points = [r['location'] for r in rows if r['id'] in stable]
         spread = np.ptp(points, axis=0).tolist() if points else None
         results.append({'ordinal': annotation['ordinal'], 'rows': rows,
+                        'raw_stable_count': raw_stable_count, 'colliding_ids': collisions,
                         'stable_count': len(stable), 'stable_spread_xy_px': spread})
         sets.append(stable)
     edges = [{'a': FRAMES[i], 'b': FRAMES[j], 'common': len(sets[i] & sets[j])}
