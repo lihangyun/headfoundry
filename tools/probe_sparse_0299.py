@@ -271,13 +271,164 @@ def infer():
     return 0 if report['status'] == 'TECHNICAL_CHECK_PASSED' else 1
 
 
+def analyze():
+    import cv2
+    import numpy as np
+    from PIL import Image, ImageDraw
+    started = time.monotonic()
+    report = {'status':'REJECT', 'camera':'UNVERIFIED', 'physical_identity':'UNVERIFIED'}
+    inference = json.loads((OUT/'inference.json').read_text())
+    regions = json.loads((OUT/'regions.json').read_text())['polygons']
+
+    def symmetric_error(matrix, a, b):
+        a = np.column_stack((a, np.ones(len(a))))
+        b = np.column_stack((b, np.ones(len(b))))
+        line_b, line_a = a@matrix.T, b@matrix
+        denominator_a = np.sum(line_a[:, :2]**2, axis=1)
+        denominator_b = np.sum(line_b[:, :2]**2, axis=1)
+        if min(denominator_a.min(), denominator_b.min()) <= 1e-20:
+            raise ValueError('degenerate epipolar line')
+        residual = np.sum(b*line_b, axis=1)
+        return np.sqrt(.5*residual**2*(1/denominator_a+1/denominator_b))
+
+    # Independent exact projection witness for distance convention and solver.
+    rng = np.random.default_rng(299)
+    points = rng.uniform([-1, -1, 4], [1, 1, 7], (80, 3))
+    k = np.array([[900., 0, 359.5], [0, 900., 639.5], [0, 0, 1]])
+    rotation, _ = cv2.Rodrigues(np.array([.02, .2, -.03]))
+    def project(points):
+        p = points@k.T
+        return p[:, :2]/p[:, 2:]
+    aa, bb = project(points), project(points@rotation.T+[.5, .1, .02])
+    cv2.setRNGSeed(299)
+    ff, _ = cv2.findFundamentalMat(aa[:56], bb[:56], cv2.USAC_MAGSAC, 1.5, .999, 10000)
+    control_error = symmetric_error(ff, aa[56:], bb[56:])
+    if control_error.max() > .001:
+        raise ValueError('exact perspective distance/solver witness failed')
+    report['exact_projection_control_max_px'] = float(control_error.max())
+
+    def panel(left, right, a, b, title):
+        # Fixed source-only review crop;never used for model or error selection.
+        crop = (120, 240, 640, 960)
+        sheet = Image.new('RGB', (1040, 748), (25, 25, 25))
+        sheet.paste(Image.open(OUT/(left+'.png')).convert('RGB').crop(crop), (0, 28))
+        sheet.paste(Image.open(OUT/(right+'.png')).convert('RGB').crop(crop), (520, 28))
+        draw = ImageDraw.Draw(sheet)
+        draw.text((5, 5), title+' | RAW SPATIAL SAMPLE,NOT A HEAD', fill='white')
+        if len(a):
+            normalized = (a-a.min(0))/np.maximum(np.ptp(a, axis=0), 1)
+            chosen = [0]
+            while len(chosen) < min(16, len(a)):
+                distance = ((normalized[:, None]-normalized[chosen])**2).sum(2).min(1)
+                distance[chosen] = -1
+                chosen.append(int(distance.argmax()))
+            for slot, index in enumerate(chosen):
+                color = (40+slot*59%215, 40+slot*97%215, 40+slot*139%215)
+                first = a[index]-[120, 240]+[0, 28]
+                second = b[index]-[120, 240]+[520, 28]
+                draw.line([tuple(first), tuple(second)], fill=color, width=1)
+                for point in (first, second):
+                    x, y = point
+                    draw.ellipse((x-3, y-3, x+3, y+3), fill=color)
+                    draw.text((x+4, y-10), str(slot), fill=color)
+        return sheet
+
+    if inference['status'] != 'TECHNICAL_CHECK_PASSED':
+        if (OUT/'control-pairs.npz').exists():
+            pair = np.load(OUT/'control-pairs.npz')
+            ids = pair['pairs'][pair['unique']]
+            a = np.load(OUT/'frame-0240-features.npz')['points'][ids[:, 0]]
+            b = np.load(OUT/'warp-0240-features.npz')['points'][ids[:, 1]]
+            panel('frame-0240', 'warp-0240', a, b, 'KNOWN 2D CONTROL').save(OUT/'control-review.jpg', quality=90)
+        report['failure'] = 'inference/control not admitted;actual geometry not run'
+        report['seconds'] = time.monotonic()-started
+        save('geometry.json', report)
+        return 1
+
+    features = {frame:dict(np.load(OUT/f'frame-{frame:04}-features.npz')) for frame in FRAMES}
+    rows, adjacency, parent = [], {frame:set() for frame in FRAMES}, {}
+    def root(node):
+        parent.setdefault(node, node)
+        while parent[node] != node:
+            parent[node] = parent[parent[node]]
+            node = parent[node]
+        return node
+    def union(a, b):
+        parent[root(a)] = root(b)
+    for slot, frame in enumerate(FRAMES):
+        for other in FRAMES[slot+1:]:
+            if time.monotonic()-started > 180:
+                raise ValueError('fixed geometry deadline')
+            raw = np.load(OUT/f'pair-{frame:04}-{other:04}.npz')
+            ids = raw['pairs'][raw['unique']]
+            a, b = features[frame]['points'][ids[:, 0]], features[other]['points'][ids[:, 1]]
+            global_a, global_b = features[frame]['global_ids'][ids[:, 0]], features[other]['global_ids'][ids[:, 1]]
+            train = np.asarray([int.from_bytes(hashlib.sha256(f'{frame}/{x}/{other}/{y}'.encode()).digest()[:8], 'little')%10 < 7
+                                for x, y in zip(global_a, global_b)], dtype=bool)
+            row = {'frames':[frame, other], 'unique_matches':len(ids), 'train':int(train.sum()),
+                   'held':int((~train).sum()), 'source_cells':cells(a, regions[str(frame)]),
+                   'target_cells':cells(b, regions[str(other)]), 'eligible':False}
+            for x, y in zip(global_a, global_b):
+                union(FRAMES.index(frame)*4096+int(x), FRAMES.index(other)*4096+int(y))
+            if train.sum() >= 16 and (~train).sum() >= 8:
+                cv2.setRNGSeed(299)
+                matrix, inliers = cv2.findFundamentalMat(a[train], b[train], cv2.USAC_MAGSAC, 1.5, .999, 10000)
+                if matrix is not None and matrix.shape == (3, 3) and np.isfinite(matrix).all():
+                    singular = np.linalg.svd(matrix, compute_uv=False)
+                    if singular[1] > 0 and singular[2] <= 1e-6*singular[1]:
+                        errors = symmetric_error(matrix, a[~train], b[~train])
+                        row.update(held_p95_px=float(np.percentile(errors, 95)), held_max_px=float(errors.max()),
+                                   train_inliers=int(inliers.sum()), held_over_3px=int((errors > 3).sum()))
+                        np.savez_compressed(OUT/f'geometry-{frame:04}-{other:04}.npz', F=matrix,
+                                            train=train, held_errors_px=errors, held_pairs=ids[~train], train_inliers=inliers)
+                        row['eligible'] = bool(min(row['source_cells'], row['target_cells']) >= 4 and row['held_p95_px'] <= 3)
+            if row['eligible']:
+                adjacency[frame].add(other)
+                adjacency[other].add(frame)
+            rows.append(row)
+    seen, queue = {FRAMES[0]}, [FRAMES[0]]
+    while queue:
+        for other in adjacency[queue.pop()]-seen:
+            seen.add(other)
+            queue.append(other)
+    components = {}
+    for node in parent:
+        components.setdefault(root(node), []).append(node)
+    consistent, conflicts = [], []
+    for nodes in components.values():
+        frames = [node//4096 for node in nodes]
+        (consistent if len(set(frames)) == len(frames) else conflicts).append(nodes)
+    report.update(pairs=rows, passing_edges=sum(row['eligible'] for row in rows), connected_frames=sorted(seen),
+                  raw_components=len(components), conflicting_components=len(conflicts),
+                  consistent_track_lengths={str(n):sum(len(c)==n for c in consistent) for n in range(2, 10)},
+                  geometry_status='NECESSARY_ONLY_NOT_PHYSICAL_IDENTITY')
+    np.savez_compressed(OUT/'track-components.npz', **{f'component_{i}':np.asarray(c) for i, c in enumerate(components.values())})
+    reviews = [(0, 60), (240, 300), (300, 360), (600, 690)]
+    for slot in range(2):
+        sheet = Image.new('RGB', (1040, 1496))
+        for position, (a, b) in enumerate(reviews[slot*2:slot*2+2]):
+            raw = np.load(OUT/f'pair-{a:04}-{b:04}.npz')
+            ids = raw['pairs'][raw['unique']]
+            aa, bb = features[a]['points'][ids[:, 0]], features[b]['points'][ids[:, 1]]
+            sheet.paste(panel(f'frame-{a:04}', f'frame-{b:04}', aa, bb, f'RAW PAIR {a}/{b}'), (0, position*748))
+        sheet.save(OUT/f'raw-pair-review-{slot}.jpg', quality=90)
+    report['status'] = 'TECHNICAL_CHECK_PASSED' if len(seen) == len(FRAMES) else 'REJECT'
+    if len(seen) != len(FRAMES):
+        report['failure'] = 'fixed nine-frame readiness graph disconnected'
+    report['seconds'] = time.monotonic()-started
+    save('geometry.json', report)
+    return 0 if report['status'] == 'TECHNICAL_CHECK_PASSED' else 1
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('phase', choices=['prepare', 'freeze', 'infer'])
+    parser.add_argument('phase', choices=['prepare', 'freeze', 'infer', 'analyze'])
     parser.add_argument('frozen_sha256', nargs='?')
     args = parser.parse_args()
     if args.phase == 'infer':
         return infer()
+    if args.phase == 'analyze':
+        return analyze()
     if args.phase == 'freeze':
         freeze()
     else:
