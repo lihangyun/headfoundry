@@ -1,5 +1,17 @@
 # Claim-to-source ledger
 
+## 2026-10-21 global geometric infrastructure is not a BSD-only product grant
+
+0275 pins the official PyCOLMAP4.2.0 Windows wheel and upstream tagged source.
+The COLMAP coreBSD notice expressly excludes dependencies:the official wheel
+also bundles GPL/LGPL components,GCC runtime libraries and proprietary Microsoft
+redistributables. Versioned vcpkg/upstream rights records permit the scoped local
+research use without paid assets;this is not a full redistribution/commercial
+product legal clearance. No trained model or data upload is involved. All frozen
+patient observations stay local;source scan/bone/case002 are not estimator input.
+One fixed global mapping call returns0models,not an accepted camera/head or any
+measured medical millimeter result. Failed exclusive integration is retired.
+
 ## 2026-10-21: source-only physical observation diagnosis is not a recovered head
 
 0274 reuses only the separately pinned Apache HF model/runtime and unchanged

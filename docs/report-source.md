@@ -4,6 +4,19 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 frozen real-video short tracks do not survive global geometry
+
+0275 tests global COLMAP4.2 geometry on0267's frozen native-step observations,
+not another flow/model/focal sweep. Whole held identities are excluded before
+verification.74frames/1382raw pairs connect,but one30.704s verification/calibration
+and8.296s global mapping attempt returns0models after retriangulation leaves no
+valid3D points. No held/head/medical error is measured. Stop this combination;
+connectivity and low internal optimization cost are not physical validation.
+Two pre-estimate API repairs preserve exact observations/matches and thresholds.
+CoreBSD does not cover every bundled library;copyleft/system notices are recorded
+for local research,not proprietary redistribution approval. No weights/training/
+upload/skin geometry/case002 or production default changes.
+
 ## 2026-10-21 calibrated geometric estimator stops,physical correspondence diagnosis
 
 0274 gives only images to the unchanged index-corrected observation component,

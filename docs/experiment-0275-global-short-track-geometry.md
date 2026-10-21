@@ -88,3 +88,62 @@ environment,downloads,cache/database/failed point output;verify protected
 originals/shared fixtures/tests and commit local closeout before another route.
 Keep the unrelated0207 document and production defaults. Never label a sparse
 point cloud or supplied scan rendering as the requested editable head.
+
+## Executed result:REJECT before held geometry or head fitting
+
+Source019f7ad registered the experiment;9abd5c8 is the final executed source.
+The fixed2D data yield74 images and1382 candidate training pairs. The shared
+camera calibration returns3814.87909065px (inside the registered broad range,
+not independently verified). Verification/calibration takes30.704s;one global
+mapping call takes8.296s and returns **zero models**. No full camera/point/head
+candidate is exported,and no held-pixel or medical-surface precision is measured.
+
+The log records1065 pose-graph edges and rejects741 relative rotations at the
+unchanged10deg default,then6 more. It establishes2603 tracks for global
+positioning,but iterative retriangulation/refinement has no3D points left;
+bundle adjustment reports insufficient gauge points and global mapping fails.
+Graph connectivity,calibration returningtrue and optimizer convergence do not
+override this failure. The data/estimator combination is rejected;the log does
+not uniquely distinguish bad identities,nonrigidity,calibration,weak geometry
+or numerical degeneracy. Do not claim all global SfM or all video reconstruction
+is impossible. No focal,mask,pair,tracking,solver or acceptance-threshold sweep.
+
+## Engineering controls and rights qualification
+
+Two ordinary API failures occur before any patient geometric estimate:the camera
+projection control initially passes a2D normalized ray where4.2 requires a3D
+camera point;the batch verification wrapper then refuses parallel RANSAC before
+writing any two-view geometry (0rows). First error sources/logs are retained.
+Use the correct3D API and sequential direct calls to the **same** public
+two-view estimator,retaining registered4-thread RANSAC/options/matches. No
+scientific estimate is rerun after a failed score. Images,keypoints and matches
+tables exactly replay the pre-wrapper-failure database;camera parameters change
+only in the registered calibration. Independent synthetic projection error0px,
+DLT error8.909e-16 scene units and duplicate rejection pass. These do not establish
+patient accuracy. Implementation completes in<600s;scientific solve has one run.
+
+Official wheel hash/size match registration. CoreBSD is **not** the license of
+every bundled DLL. The pinned vcpkg baseline127402f1 records dependency rights:
+permissive licenses,CHOLMOD LGPL/Apache,SPQR GPL and GCC runtime exception,
+quadmath LGPL,winpthreads MIT/BSD;empty liblzma metadata is resolved by upstream
+5.8.3COPYING (0BSD),LAPACK by lapack-reference BSD metadata. Microsoft runtime
+DLLs are proprietary redistributables,not open source. This authorizes only
+unmodified local research use of the official distribution,with no model fee;
+it is **not** approval to repackage a proprietary product or omit copyleft/
+redistribution notices. No trained weights,paid asset,training or upload occurs.
+Source URLs/notices and exact metadata are retained privately. Future product
+distribution needs its own complete dependency/notice review,not a BSD-only label.
+
+The unexecuted held scheme also has a protocol limitation:first/last anchors
+cannot give an independent interior residual for the globally earliest/latest
+views. This run fails before that code is reached,so it contributes no patient
+failure score. A future protocol must prospectively provide genuine leave-one-
+view-out anchors/coverage,not count fitted anchors as independent predictions
+or misattribute this design defect to a model. No retrospective pass is granted.
+
+## Closeout
+
+Archive/source recovery,actual cleanup bytes and post-removal shared test result
+are recorded below after verification.0275 exclusive code/environment/downloads
+will not remain active. Original video and four protected authorization/shared/
+unrelated files hash unchanged;skin,bone andcase002 geometry are not read.
