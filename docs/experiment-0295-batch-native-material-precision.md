@@ -44,3 +44,35 @@ tests/defaults/0207,and commit independent closeout. Public binaries need
 redownloading;compact archive is not a full binary backup. No upload/training.
 Pass onlyTECHNICAL_CHECK_PASSED conditional3D material/occlusion;not actual
 video camera,medical2mm,head or user visual acceptance. Do not markACCEPT.
+
+## Pre-inference protocol deviation and one prospective serialization repair
+
+Original0bf6f60render exits Blender0 but raises input-image identity error;
+render-failure.json is authoritative,not the process exit. All six images were
+produced once;no inference/prediction/physical score exists. Original strict
+file-identity recipe is REJECT and is NOT rewritten as passed. Diagnostic
+JSON initially needed a bytes-metadata serialization repair;no rerender occurred.
+
+Read-only pixel audit at22:36Z finds both retained original +/-30PNG pictures
+equal at ALL720x1280x4decoded values (zero changed values);Date and RenderTime
+metadata differ. Four other old images have only file hashes retained,so their
+historical pixel equality CANNOT be verified. Do not claim six-image byte/pixel
+identity or a causal fixed-image improvement versus0292. It had no predictions.
+
+Before ANY physical inference,register one ordinary input-record repair within
+the same technical route:reuse the six already generated files unchanged,no
+second renderer. Record fresh full-file AND decoded RGB8(size,mode,bytes)hashes
+for every file,source-query equality to0292,and unchanged5000point/camera/source
+recipe. Compare every decoded pixel of both surviving historical controls.
+An in-memory PNG metadata-only sentinel must keep pixel identity while changing
+file identity,and a one-pixel change must alter it. Missing/corrupt/different
+size/control/source-query identity stops. Preserve original render failure and
+explicit historical four-image identity gap;overall recipe can at best be
+PARTIAL_SUCCESS even if the physical gate passes. No quality threshold changes.
+
+This is an explicitly recorded pre-inference bookkeeping deviation,not another
+algorithm route or an extra model attempt. Reuse current admitted runtime until
+the ONE still-unexecuted physical trial ends;on actual scored/resource failure
+perform the registered full exclusive cleanup before a different technical route.
+Whole1500s budget from original render start remains unchanged,repair<=180s.
+No neural output/error is available to choose inputs,points or a repair threshold.

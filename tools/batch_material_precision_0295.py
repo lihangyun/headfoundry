@@ -118,6 +118,63 @@ def render():
                         'source_unchanged':sha(source)==controls['source_sha256']})
 
 
+def record_existing_inputs():
+    """One pre-inference metadata repair;never renders or changes image pixels."""
+    import io
+    import zipfile
+    from PIL import Image, PngImagePlugin
+    def identity(image):
+        return hashlib.sha256(image.convert('RGB').tobytes()).hexdigest()
+    sentinel = Image.new('RGB',(3,2),(17,33,49))
+    first,second = io.BytesIO(),io.BytesIO()
+    sentinel.save(first,format='PNG')
+    info = PngImagePlugin.PngInfo()
+    info.add_text('Date','DIFFERENT_METADATA')
+    sentinel.save(second,format='PNG',pnginfo=info)
+    if first.getvalue()==second.getvalue() or identity(Image.open(first))!=identity(Image.open(second)):
+        raise ValueError('metadata-only sentinel failed')
+    changed = sentinel.copy()
+    changed.putpixel((1,1),(18,33,49))
+    if identity(changed)==identity(sentinel):
+        raise ValueError('changed pixel not detected')
+    failure = json.loads((OUT/'render-failure.json').read_text())
+    if failure['error']!='ValueError:original evaluation pictures changed;no inference permitted':
+        raise ValueError('repair not applicable to original failure')
+    archive = ROOT/'assets/private/closed-experiments/0292-native-material-resource/evidence.zip'
+    if sha(archive)!='c72086d1f26853c4b777bf8b808be5cc1085d4ed0ace0f007b0c87bc5f48e5cf':
+        raise ValueError('original evidence changed')
+    rows,controls = [],[]
+    with zipfile.ZipFile(archive) as stored:
+        original = json.loads(stored.read('input.json'))
+        if original['sequence']!=SEQUENCE or sha(OUT/'source-queries.npz')!=original['query_sha256']:
+            raise ValueError('original source queries changed')
+        for row in original['images']:
+            path = OUT/row['path']
+            if path.name!=row['path']:
+                raise ValueError('nonlocal image path')
+            with Image.open(path) as image:
+                image.load()
+                if image.size!=(720,1280) or image.mode!='RGBA':
+                    raise ValueError('native renderer image mode/size changed')
+                pixel_sha = identity(image)
+                if path.name in stored.namelist():
+                    with Image.open(io.BytesIO(stored.read(path.name))) as old:
+                        if old.mode!=image.mode or old.size!=image.size or old.tobytes()!=image.tobytes():
+                            raise ValueError('retained historical pixels changed')
+                    controls.append(row['view'])
+            rows.append({'view':row['view'],'path':path.name,'sha256':sha(path),
+                         'rgb8_sha256':pixel_sha,'size':[720,1280],'model_mode':'RGB'})
+    if set(controls)!={'yaw-30','yaw+30'}:
+        raise ValueError('two historical controls unavailable')
+    save('input.json',{'sequence':SEQUENCE,'images':rows,'query_sha256':original['query_sha256'],
+                       'role':'SUPPLIED_SCAN_BENCHMARK_NOT_RECONSTRUCTION',
+                       'protocol_deviation':'PNG metadata;historical equality only verified for two controls'})
+    save('input-record-repair.json',{'status':'PARTIAL_SUCCESS','rerendered':False,
+                                   'inference_executed':False,'metadata_sentinel':True,
+                                   'changed_pixel_sentinel':True,'historical_controls':controls,
+                                   'historical_other_four_pixel_identity':'UNVERIFIED','images':rows})
+
+
 def worker():
     from PIL import Image
     from check_batch_upsampling_0294 import SampledCorrelation,model_module,torch,DEST,LOCK,blocked,peak_working_set,batch_upsample
@@ -141,7 +198,11 @@ def worker():
             path = OUT/row['path']
             if sha(path)!=row['sha256']:
                 raise ValueError('image hash changed')
-            images[row['view']] = np.array(Image.open(path).convert('RGB'))
+            with Image.open(path) as image:
+                rgb = image.convert('RGB')
+                if rgb.size!=(720,1280) or hashlib.sha256(rgb.tobytes()).hexdigest()!=row['rgb8_sha256']:
+                    raise ValueError('native decoded RGB input changed')
+                images[row['view']] = np.array(rgb)
         query = np.load(OUT/'source-queries.npz',allow_pickle=False)
         xy = torch.from_numpy(query['xy']).float()
         if xy.shape!=(2355,2) or (xy<0).any() or (xy[:,0]>=720).any() or (xy[:,1]>=1280).any():
@@ -229,7 +290,8 @@ def evaluate():
 if __name__=='__main__':
     mode = sys.argv[-1]
     try:
-        {'render':render,'worker':worker,'evaluate':evaluate}[mode]()
+        {'render':render,'record-existing-inputs':record_existing_inputs,
+         'worker':worker,'evaluate':evaluate}[mode]()
     except Exception as error:
         if OUT.exists():
             save(mode+'-failure.json',{'status':'REJECT','error':type(error).__name__+':'+str(error)})
