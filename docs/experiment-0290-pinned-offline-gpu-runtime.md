@@ -69,3 +69,27 @@ Exact64-padding correction before any network forward:native1280x720pads
 7238320128bytes/6.7412GiB;512x288pads512x320,558366720bytes/.5200GiB.
 Earlier unpadded values remain lower bounds,not peaks. These do NOT establish
 any sampled implementation capacity or precision.
+
+## Prospective setup repair before first actual CUDA/state scoring
+
+The first admission stops9.719s during torchvision import:ModuleNotFoundError
+pwd. No CUDA field/kernel,model constructor/state or network forward ran. Keep
+the original admissionREJECT,do not overwrite it as an original-protocol pass.
+Torch-only import diagnosis passes4.735s;one torchvision-only diagnostic9.469s
+captures the exact stack:roi_align ->dynamo/package ->inductor/cache_dir_utils
+->getpass.getuser ->Unixpwd. All four username environment variables are absent
+in our supplied child environment,while USERPROFILE is present. This is a
+specific process/cache contract error,not a model/numerical gate failure.
+
+Before any actual CUDA/state score,one bounded ordinary engineering repair:
+restore only this child process's cache username from its existing USERPROFILE
+basename,and set its compiler cache explicitly inside the private repository.
+Do not patch Torch,install pwd,change binaries/weights/FP32 or claim a scientific
+rescue. Preserve original report/full diagnostic stack and record this deviation
+from the original strict setup-stop wording:overall phase can at most be
+PARTIAL_SUCCESS even if repaired technical subchecks pass. No failed physical
+model route is retained/replayed;there has been no model forward or quality
+measurement. Retaining the already verified runtime during this software fix
+avoids treating our own launch error as model failure;no different model route
+begins. First CUDA/state execution after this correction stays60s each,with
+unchanged checks. Another actual scored failure stops and triggers cleanup.

@@ -55,6 +55,13 @@ def main():
                 raise ValueError('source fingerprint mismatch')
         if digest(DEST/'alltracker.pth')!=LOCK['checkpoint']['sha256'] or digest(DEST/'weight-license.md')!=LOCK['weight_license']['sha256']:
             raise ValueError('checkpoint/rights mismatch')
+        if not any(os.environ.get(name) for name in ('LOGNAME','USER','LNAME','USERNAME')):
+            profile = os.environ.get('USERPROFILE')
+            if not profile:
+                raise ValueError('missing local process user identity')
+            os.environ['USERNAME'] = Path(profile).name
+            REPORT['restored_process_username_for_cache'] = True
+        os.environ['TORCHINDUCTOR_CACHE_DIR'] = str(DEST/'inductor-cache')
         import torch
         import torchvision
         torch.set_num_threads(4)
