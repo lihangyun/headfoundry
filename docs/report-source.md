@@ -1012,3 +1012,18 @@ not a successful tensor runtime. Native16-window FP32 correlations alone need
 16.44GiB,so default native execution is not resource-cleared. Any different
 capacity schedule requires prospective native-pixel/complete-state/resource
 controls. No private inputs/head/medical score changed;goal remains active.
+
+## 2026-10-21 native-capacity trial stops before model execution
+
+0288 verifies the full66MB publisher checkpoint/source hashes,but isolated
+CUDA Torch installation exceeds600s. Seed-only site-packages and partial
+Torch cache extraction do not establish a compatible runtime. No model,
+operator equivalence,native capacity,private input or physical score runs.
+Goal interlock then recovery is recorded separately;whole2400s wall exceeded
+across that external wait,not relabelled met. A600s install stop is not3D error.
+
+Retire15112exclusive files2833108471bytes after exact-target/own-terminal/
+archive/reparse checks. Compact3385-byte evidence/source4bf0195 survives,not
+binary weights/runtime.140shared tests/protected hashes pass;default source/
+main environment and0207stay unchanged. A different installation transport
+must first have evidence,not another unbounded retry or a model-quality claim.

@@ -75,3 +75,48 @@ that implementation-control input to256x384(min feature axis32) before scoring,
 retaining all weights,16frames,iterations,native-capacity test and pixel gates.
 This is an unexecuted fixture-contract issue,not an observed precision failure
 or permission to retry a failed numerical gate. No operator runner exists yet.
+
+## Actual result:installation timeout;precision and capacity NOT measured
+
+On product goal recovery2026-10-21T14:57:38Z,get_goal is active again;quota is
+available. The original worker is terminal0 but its installation reportREJECT:
+UV pip install exceeds its remaining581.328s,total600.016s. This is not a
+successful install merely because Python caught the timeout and returned0.
+All seven pinned public source/license/checkpoint files pass full-byte hashes;
+the66005722-byte full checkpoint is verified. Environment site-packages has
+only the two virtualenv seed files,no Torch. No model/operator/CUDA tensor,
+equivalence/native-capacity/private-input/head/medical scoring ever ran.
+
+Read-only exclusive-tree inspection finds staged Torch CUDA DLLs in a temporary
+cache directory,15111files/2833104304logical bytes,no reparse points. This proves
+partial extraction/staging,not whether network throughput,unpacking or another
+transport issue caused the deadline. UV--version succeeds0.11.16;there is no
+captured stderr to identify a narrower cause. Do not blame model precision,
+GPU memory or license,and do not extend/replay this installation to hide failure.
+The original2400s wall budget is exceeded across the external goal interlock;
+no work/optimization was performed during that wait. Do not relabel it met.
+
+Closeout has a separate300s verification/cleanup budget from14:57:38Z. Private
+archive assets/private/closed-experiments/0288-native-capacity-installation/
+evidence.zip contains4members,3385bytes,zeroimages,SHA256
+f3e3e4514b1345cb5b9101c5515f06b986c7fe8e7f6e9ff26314db98985d3284.
+Report,source/diagnostic,protected hashes and complete captured worker output
+survive;source recovery4bf0195,interlock record3c3e01a. Archive is NOT a binary
+checkpoint/runtime backup. Future use requires redownloading pinned assets.
+All five protected hashes unchanged. Main runtime/source/defaults and0207
+remain untouched. Targeted cleanup and full shared regression precede a local
+closure commit. Any renewed installation needs a materially different documented
+transport hypothesis and prospective budget,not more of the same timeout.
+
+### Verified closeout
+
+Terminal own-process/path/reparse/archive/count/byte checks precede deletion.
+Removed15111exclusive asset/env/cache files2833104304bytes plus4167-byte
+installer:15112files2833108471logical bytes. No source weight/binary backup
+kept;public pinned files need downloading again. No sampled-correlation runner
+or failed-route-only test was ever created. Main environment untouched.
+Archive CRC/all four member hashes pass after deletion. All five protected
+hashes unchanged;140shared tests pass5.799s;shared src/tests/pyproject unchanged.
+Unrelated untracked0207preserved. Verified15:01:05Z,local cleanup commit before
+another route;300s closeout met,no push. Goal remains active/unachieved. A
+later transport audit may explain this stop,but may not rewrite0288as success.
