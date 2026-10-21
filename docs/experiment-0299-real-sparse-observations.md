@@ -40,8 +40,10 @@ Stop this recipe immediately if this necessary control fails;no real-video pair
 inference or head fitting then. Never silently relax to make this control pass.
 
 Only after2Dcontrol passes,extract the remaining eight fixed frames once. Match
-ALL36unordered actual pairs with the same contract. Save full coordinates,
-descriptors,scores/identities and full matches. Geometry diagnostic in main
+ALL36unordered actual pairs with the same contract. Save full face-cohort
+coordinates,descriptors,scores/global identities and full matches,plus all4096
+native coordinates;outside-face descriptors are not a matching population.
+Geometry diagnostic in main
 existing OpenCV/NumPy environment,not another installed framework:deterministic
 SHA256 endpoint-index split70%train/30%held,USAC_MAGSAC1.5px/confidence.999/
 10000max iterations on train only. Score EVERY held match with symmetric
@@ -76,3 +78,13 @@ AND now-failed0298model/runtime/weights/wheels/cache/framework/lock/runners afte
 its successful software evidence is verified. Protect original inputs/consent,
 0230/0293/shared code/defaults/unrelated0207. Verify and commit cleanup BEFORE
 another different route. Do not silently retain the failed model infrastructure.
+
+## Source-only freeze before inference
+
+Preparation started2026-10-21T23:50:27.062Z;one sequential worker PID6644exits0
+in2.016s,all nine native RGBhashes match0252. First source review23:50:37.528Z,
+regions/control frozen171.726s later,inside240s. Only source pixels were inspected.
+Frozen-input receipt SHA256
+e717a6887ab6a968d2c3a6dae67b6658c9e998e11578e6ff1c578b895a4927d3.
+Conservative polygons omit cap/ears/neck and may omit some occlusion-edge skin;
+this limitation stays fixed and cannot be corrected after matching results.
