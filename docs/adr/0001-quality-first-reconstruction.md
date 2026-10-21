@@ -10,6 +10,16 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-10-21 allocation changes require output equivalence,not weaker inputs
+
+0292 resource failure does not measure physical tracking precision. Preserve the
+stop,retire exclusive assets before a different hypothesis,and do not alter
+resolution,points,FP32,sequence or resource caps to call it passed.0293 permits
+investigating independent-batch convex-upsample allocation only:NumPy algebra
+passes,but CUDA/full-network equivalence and native capacity remain unproven.
+Require those checks before another physical correspondence experiment. A
+smaller symbolic temporary or passing software oracle is not camera/head quality.
+
 ### 2026-10-21 model-output index contracts precede geometric interpretation
 
 0270's pinned HF path passes strict learned-state loading but fails a known

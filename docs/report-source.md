@@ -4,6 +4,21 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 resource failure has an identified temporary,not a physical score
+
+0292 stops at a1.0546875GiB9-neighbor broadcast product before any predictions.
+Physical material accuracy remainsUNVERIFIED. After product-quota recovery,
+separate bounded closeout retires12.28GB exclusive integration at7c0a4ae;
+original wall budget was not met and is not retroactively called passed.
+0293 independently checks batch-axis partition of this convex upsampling:
+all394240NumPy outputs match bit-for-bit,scalar indexing max6.33272e-7px.
+The batch axis is not reduced or mixed;both flow and visibility-logit callers
+must preserve factor8/neighbor/softmax/subpixel order. This supports a distinct
+allocation hypothesis,not a new checkpoint/precision/input/threshold sweep.
+Analytical product size is not measured CUDA capacity;whole-network equivalence
+and actual3D/occlusion precision still require separately registered controls.
+No accepted camera,head,medical2mm result or visual acceptance is obtained.
+
 ## 2026-10-21 exact-state lifetime works,source-only physical correspondence fails
 
 0279 releases duplicate copied checkpoints with exact streaming fingerprints,

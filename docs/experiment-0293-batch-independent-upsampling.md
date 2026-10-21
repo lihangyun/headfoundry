@@ -35,3 +35,16 @@ requires its own bounded preregistration. Camera3px,skin2mm and head gates stay.
 On failure archive compact report/hash/source and clean only exclusive new
 runner/output before a different route;successful generic numerical oracle may
 remain. No video/scan/case002/training/upload/default changes or head output.
+
+## Actual result:TECHNICAL_CHECK_PASSED for algebra/index only
+
+Executed6916eed,one audit terminal0 in.140s. All394240FP32 batch/chunk values
+are bit-for-bit equal across the six fixed contiguous/strided controls. Two
+independently indexed fixtures each score all1536values;asymmetric max delta
+6.33272e-7px,uniform/border1.58946e-7px. Seven invalid inputs are rejected.
+The analytical temporary bound is1132462080versus70778880bytes,not measured
+CUDA memory.140shared tests pass in5.030s;finished22:23:12Z within900s.
+Source checker SHA f98f335363fc654c81a44645935a752f41faa3b4f1120f3cc3bbc8b6b173c359.
+Compact audit/test/identity records remain under assets/private/convex-upsampling-0293.
+No runtime/checkpoint/medical input is installed/read. Actual GPU/software-network
+equivalence and physical precision remainUNVERIFIED;no camera/head is generated.
