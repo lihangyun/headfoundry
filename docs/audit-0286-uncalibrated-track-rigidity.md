@@ -104,3 +104,15 @@ recoveryf00c54f3891fec52380b1cc0cc41287788b7063c before exclusive runner cleanup
 All five protected hashes unchanged,including original authorized video,
 successful fixture and unrelated0207.140shared tests pass in5.652s. No source
 frame decode,scan/bone/case002 geometry read,new model/runtime,upload or training.
+
+## Verified retirement
+
+Results/recovery recorded ateb5842e before deletion. Workerpid36428terminated0;
+no Python/Blender/uvjob remains. Exact resolved target/reparse/count/byte/hash
+and archive checks precede removal:2raw duplicates2447679logical bytes plus
+8404-byte exclusive runner,3files2456083bytes total. Source remains recoverable
+atf00c54f,complete compact evidence retained;archive CRC/all four member hashes
+pass after deletion. No exclusive bytecode,model,framework/environment was
+created. Generic epipolar-blindspot regression remains;shared source/defaults
+unchanged. Final full tests/protected checks and local cleanup commit follow
+before another method;overall1200s budget retained. Goal remains unachieved.
