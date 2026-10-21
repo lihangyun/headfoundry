@@ -100,3 +100,28 @@ hash checks only,not scan-derived estimates;case002 is not opened. Worker never
 reaches its patient manifest/archive branch. No model/environment is installed.
 Closeout preserves the small report/control-camera evidence and source recovery,
 then removes the failed exclusive runner and raw output duplicates.
+
+The executed negative control uses x offsets17*view_index^2 pixels,not a uniform
+17px offset as the brief registration wording could imply. It was frozen in
+source before any solve,not tuned after errors,but is a protocol clarification/
+deviation,not evidence the exact uniform-offset negative was tested. The positive
+unknown-pose control already fails independently;no protocol pass is granted.
+
+## Verified closeout
+
+Source recovery23ab9ce;executed4dff222. Private archive
+assets/private/closed-experiments/0280-global-factorization/evidence.zip contains
+four members,7322bytes,zeroimages,SHA256
+a5255d4529a172fa9a344ed1a477222b11db18aa68f8103bba764ca877ec291a.
+CRC/all member hashes verify after cleanup. It retains reports,480 control
+residuals/five fitted control cameras,protected hashes and source refs,not a head
+or patient-camera result. Source is recoverable from Git;no third-party weight,
+framework,environment or copied input was installed and none needs redownloading.
+
+After terminal-worker/exact repository-path/reparse/archive/caller checks,remove
+four raw duplicate files/10149logical bytes and the exclusive12293-byte runner:
+five files/22442logical bytes total. No route-specific bytecode exists. Shared
+environment,source/production defaults and all five protected hashes stay intact;
+unrelated0207 remains untracked/unchanged.137 retained tests pass in5.790s.
+No dangling caller or new accepted camera/head. Cleanup is committed locally
+before another route;no push. Whole phase remains within its1500s budget.
