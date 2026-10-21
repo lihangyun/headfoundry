@@ -560,3 +560,10 @@ all native nonlinear FP32outputs or actual material identities. Confidence
 threshold comparisons are diagnostics,not calibrated physical acceptance or
 permission to filter a cohort. A full native forward is only capacity evidence;
 known3D/visibility,actual camera and independent medical/head gates remain.
+
+0292shows that a successful fixed16-frame capacity control does not certify all
+sequence/padding allocation patterns. Preserve an actual OOM as resourceREJECT
+with unmeasured physical quality. A large batch-independent upsampling temporary
+is evidence for a future exact-memory implementation audit,not permission to
+change model/frames/precision,allocator flags or budget after failure. Retire
+failed exclusive integration before a materially different,registered repair.

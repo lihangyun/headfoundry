@@ -41,3 +41,42 @@ source/cache/wheels,0290/0291/0292runners/lock and failed outputs before another
 route. Protect all originals/successful0230fixture/shared gates/defaults/0207.
 Pass onlyTECHNICAL_CHECK_PASSED conditional capacity,not actual video camera,
 medical2mm,editable complete head,visual acceptance orKeenTools quality.
+
+## Actual result:REJECT resources,before physical precision is measured
+
+Executed703f292. One Blender process exits0;source render body5.587s,complete
+by15:40:59Z. All six fixed camera replays max<=7.18372e-5px,all original5000
+material samples replay unchanged,2355source queries retained,skin hash unchanged.
+Only source renderer sees authorized medical geometry;worker gets images/2Dseeds.
+
+One blind worker launched15:41:27Z,terminal1 observed15:42:14Z(<47s);exact worker
+forward duration is not recorded because exception interrupts output metadata.
+CUDA OOM occurs in source Net.upsample_data at(mask*up_flow).sum(dim=2),request
+1.05GiB. Error reports8GB total,7GiBprocess budget,3.72GiBallocated and2.38GiB
+reserved/unallocated,618.11MiBdevice free. No prediction file,worker success or
+material/visibility score. Do NOT report1px/3px/mm passed or failed,or interpret
+this resource failure as actual natural-video reconstruction impossibility.
+
+The known temporary product shape16x2x9x8x8x160x96requires1132462080bytes
+(1.0546875GiB),matching the reported allocation. Fragmentation/lifetime is a
+plausible component,not uniquely established;the message's allocator suggestion
+does not authorize a flag/limit/precision/frame retry.0291's16-frame software
+capacity pass does not certify every logical sequence/padding allocation pattern.
+No extra run,smaller input,query drop,new allocator flag or raised cap follows.
+
+Future materially different engineering hypothesis:batch-independent convex
+upsampling could avoid this full-batch temporary while preserving every result.
+First require algebra/index/complete-network pixel-equivalence and bounded
+capacity evidence under separate preregistration;no claim it already works or
+rescues physical precision. Current model recipe stops and is cleaned first.
+
+Private archive assets/private/closed-experiments/0292-native-material-resource/
+evidence.zip has13members609033bytes,two explicitly evaluation-source images,
+SHA c72086d1f26853c4b777bf8b808be5cc1085d4ed0ace0f007b0c87bc5f48e5cf.
+CRC/member equality verified. Full exception/logs,render/projection/input hashes,
+source query IDs,cleanup plan,licenses,protected hashes/source703f292survive.
+No failed prediction/head exists to preserve. Existing0290/0291compact evidence
+remains;their technical successes are not retrospectively erased. All six
+protected hashes match,including original skin/video and successful0230fixture.
+No case002/bone/video content used in inference,no training/upload or defaults
+changed. Cleanup/remaining tests/local commit before any different attempt.

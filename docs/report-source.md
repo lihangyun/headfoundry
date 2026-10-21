@@ -1058,3 +1058,14 @@ not a universal native-resolution nonlinear error bound,and timings are not a
 cold/warm-controlled speedup study. No person,scan or camera/head prediction.
 Archive1439068bytes/source58c4918 retains all control pixel deltas;140shared
 tests/protected checks pass. Next3Dcorrespondence/visibility gate still required.
+
+0292 reaches one native3Dblind worker but stops at a1.05GiB CUDA upsampling
+temporary allocation. Frozen scan benchmark renders/projection/sample/rights
+checks pass;2355initial queries never receive complete predictions. Physical
+point/visibility/camera/medical/head accuracy remainsUNVERIFIED,not a numerical
+precisionREJECT. Prior16-frame procedural capacity does not cover every padded
+sequence allocation pattern. Do not raise limits/change allocator/frame/point/
+precision after this stop. Archive609033bytes/source703f292and retire exclusive
+0290/0291/0292integration. Future exact batchwise upsampling needs a separate
+prospective equivalence/capacity audit,not repeated inference or optimistic
+quality transfer. Original data/defaults/shared gates remain protected.
