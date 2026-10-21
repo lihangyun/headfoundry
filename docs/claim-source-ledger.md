@@ -652,3 +652,28 @@ unavailable,so the publication listing is not claimed as a complete implementati
 specification. Existing NumPy/SciPy infrastructure only,no new model/license/data
 source. Software control fails before human geometric input;private protected
 files are only integrity-hashed. No new consent,training,upload or quality claim.
+
+## 2026-10-21 post0282 admission recheck,no replacement adopted
+
+The [current Pi3/Pi3X publisher repository](https://github.com/yyfz/Pi3#-license)
+explicitly separates BSD3 code from CC-BY-NC4 model weights. The
+[Pi3X model card](https://huggingface.co/yyfz233/Pi3X#license) agrees. The
+[older Pi3 card](https://huggingface.co/yyfz233/Pi3#-license) still has BSD2
+metadata but restricts its academic/commercial terms in the body;metadata is
+not commercial clearance. These remain excluded,no download or integration.
+This confirms an existing exclusion,not a newly discovered reconstruction gain.
+
+[StreamME's primary project page](https://songluchuan.github.io/StreamME/)
+describes per-video on-the-fly training and Gaussian appearance reconstruction,
+not measured editable skin geometry. Its linked
+[official code repository](https://github.com/Songluchuan/StreamMEcode) currently
+shows only a README and explicitly omits the head tracker. No usable licensed
+complete runtime/model is verified. It is not admitted,and no person-specific
+neural training is authorized by the local-validation-only consent. Do not
+conflate permitted geometric optimization with permission to train a neural
+avatar. No assets/private files are submitted to these sites or their demos.
+
+These are narrow availability/rights/task-fit checks,not a proof that no free
+commercial method can work. Do not reinstall retired MapAnything/DA3 routes
+merely because they appear in the same search.0282's actual-video affine metric
+failure remains independent of model license screening and synthetic repair.
