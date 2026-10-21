@@ -911,3 +911,14 @@ real graph disconnect at888 remains unresolved. Future evidence must bridge
 actual components/rigidity independently;do not relabel failed observations or
 relax3px/2mm/visual gates. A small generic regression is retained;no failed
 framework is restored or new appearance fit attempted.
+
+## 2026-10-21 global factorization initializer stops at software control
+
+0280 independently implements missing-track affine factorization,metric upgrade
+and one sparse unknown-focal perspective refinement;no publisher implementation,
+model weight or failed framework is restored. Source4dff222 fails its complete
+unknown-pose control:480 untouched held predictions,p956.857703px,nearly bounded
+f4000. Neither positive metric/depth nor ftol convergence overrides this failure.
+Patient observations/cameras and medical accuracy are not measured. Reject this
+fixed initializer without parameter/reflection sweeps;keep compact evidence and
+retire exclusive runner before another route. Original3px/2mm/visual gates stand.

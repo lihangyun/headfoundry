@@ -642,3 +642,13 @@ matching is executed,but tensor values and actual model inference are not.
 All human material remains excluded from this phase;rights,consent,3D accuracy
 and complete visual acceptance are separate claims. Original transport-budget
 failure and the separate bounded installation completion remain explicit.
+
+## 2026-10-21 independently implemented factorization,not a new asset grant
+
+0280 uses the Tomasi/Kanade1992 mathematical factorization idea,attributed through
+the [official CMU publication record](https://publications.ri.cmu.edu/shape-and-motion-from-image-streams-under-orthography-a-factorization-method).
+No paper text/implementation is copied or redistributed;full paper retrieval was
+unavailable,so the publication listing is not claimed as a complete implementation
+specification. Existing NumPy/SciPy infrastructure only,no new model/license/data
+source. Software control fails before human geometric input;private protected
+files are only integrity-hashed. No new consent,training,upload or quality claim.

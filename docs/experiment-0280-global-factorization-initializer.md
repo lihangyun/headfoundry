@@ -71,3 +71,32 @@ before estimates may be repaired with disclosure. Failure:preserve compact
 reports/observational errors/hashes/Git recovery,remove exclusive runner/output/
 bytecode,verify protected originals/shared tests,focused local cleanup commit
 before another route. Shared environment/production defaults and0207 stay.
+
+## Actual result:controlREJECT,patient geometry not executed
+
+Executed source4dff222. One process completes in2.015s.480 training/120 entirely
+held identities and480 leave-one-view-out predictions are scored. The affine
+trainingp95 is3.783626px. Metric eigenvalues(.284188,.469216,.836184) are positive;
+this establishes no perspective recovery guarantee. One perspective solve reports
+ftol convergence after48evaluations,butf3999.999999998 nearly saturates the4000
+bound,trainingp95 is5.119345px and independent heldp95 is6.857703px. Per-view held
+p95 is8.946314,5.249052,3.180540,5.255673,9.883681px;all96rows/view remain counted.
+No invalid/negative-depth held point is removed. Wrong-observation control is
+168.948342px. Proper rotations/positive depths and optimizer success do not pass
+the registered<.1px software-recovery control or actual3px target.
+
+Stop before loading0267 observations or estimating patient cameras. The quoted
+errors are synthetic control pixels,not actual video/medical millimeters. No
+patient geometric error,head,scan comparison or visual improvement is measured.
+No focal/iteration/reflection/threshold rescue. Local minima,approximation and
+depth-handedness ambiguity are plausible mechanisms,not uniquely established
+causes. This rejects the fixed initializer implementation,not global geometry
+in general. A future claim needs reliable unknown-pose recovery on a complete
+independent control;do not proceed just because a metric matrix is positive.
+
+Five protected hashes remain unchanged,including selected originalcase001video,
+authorization/input manifests,successful0230fixture and unrelated0207. They are
+hash checks only,not scan-derived estimates;case002 is not opened. Worker never
+reaches its patient manifest/archive branch. No model/environment is installed.
+Closeout preserves the small report/control-camera evidence and source recovery,
+then removes the failed exclusive runner and raw output duplicates.

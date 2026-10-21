@@ -498,3 +498,11 @@ views,including bilateral point/visibility/localization gates. Reject and retire
 this exact frozen recipe;do not reinterpret completed execution as a head or
 rescue it with another preprocessing/checkpoint/budget sweep. Preserve exact
 compact diagnostics and source recovery,not failed exclusive model infrastructure.
+
+0280 adds no new product architecture. An affine metric upgrade is only an
+initializer;positive definiteness,proper rotations,positive depth and optimizer
+termination cannot stand in for independent unknown-pose perspective recovery.
+Its software control fails,so patient estimation stops rather than fitting a head
+or declaring the video's physical identities invalid. Keep original gates and
+retire the fixed failed implementation;do not normalize a focal-bound solution
+into success or start an unregistered reflection/threshold/iteration search.
