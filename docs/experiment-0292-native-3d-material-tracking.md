@@ -80,3 +80,32 @@ remains;their technical successes are not retrospectively erased. All six
 protected hashes match,including original skin/video and successful0230fixture.
 No case002/bone/video content used in inference,no training/upload or defaults
 changed. Cleanup/remaining tests/local commit before any different attempt.
+
+## Recovery closeout registration
+
+2026-10-21T22:18:10Z:goal is active again;account short4%/weekly55%used,
+ordinary usage allowed. The previous turn stopped under product usageLimited
+before deletion. The original1500s wall budget including closeout was NOT met;
+waiting does not retroactively turn it into a pass. No additional inference ran.
+Register a separate900s closeout-only budget from this timestamp:recheck jobs,
+archive/targets/protected hashes;delete only the recorded exclusive directories
+and five runner/lock files;run retained tests and commit. No model retry,new
+input,allocator change or physical-accuracy claim is permitted by this closeout.
+Source recovery703f292,result633d639;archive is a compact record,not a binary
+backup. Deleted public weights/framework wheels require redownloading;generated
+outputs require rerunning historical source. Shared source/defaults and the
+unrelated untracked0207document remain untouched. Actual counts/results follow.
+
+### Actual recovery closeout
+
+Verified2026-10-21T22:20:02Z,111.475s after separate closeout registration,
+before final documentation/commit. No Python/Blender/uv jobs were live at deletion.
+Three exact repository-contained private directories had no reparse points and
+matched archived counts before removal:32078files/12278231552logical bytes.
+Five exclusive runners/lock add42254bytes:total32083files/12278273806bytes
+(12.28decimalGB,not measured free-disk gain). No exclusive bytecode remains.
+No live retained caller refers to removed modules. Shared source/tests/defaults,
+six protected hashes and0290/0291/0292archives remain unchanged;all archive CRCs
+and full hashes pass.140retained tests pass in5.248s. No physical precision or
+head acceptance is inferred from this cleanup. Private precheck/verification
+JSONs beside evidence.zip record full targets,hashes,counts and test output.
