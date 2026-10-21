@@ -47,3 +47,12 @@ env/cache/runner before another route. Preserve originals/shared defaults/0207.
 If this admission genuinely passes,retain staged verified runtime for a separately
 bounded complete-network equivalence/precision trial;do not keep it indefinitely
 after a later failed model route. No push or goal-complete/head-quality claim.
+
+## Pre-transfer client correction,not a binary/model retry
+
+Before any full asset transfer,the Node metadata client returns fetch failed
+without useful details. One read-only Python-standard-library diagnostic on
+einops0.8.0PyPI metadata returns HTTP200/.718s. Use that existing client for
+metadata preparation,within the original180s budget. No wheel/model attempt,
+scored numerical test,source identity,range count or time limit changes;do not
+invent a specific proxy/DNS cause from this client difference.
