@@ -4,6 +4,23 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 allocation is corrected,but measured3D tracking is rejected
+
+0294fixed CUDA operator and complete-network controls compare all values with
+zero delta;11frame native padded forward completes15.532s/6.38672GiBreserved.
+0295then runs one full native physical trial,with2355unchanged initial points.
+Original PNG file-identity precondition fails on volatile Date/RenderTime;
+the initial rejection and one pre-inference record amendment are preserved,
+not retroactively passed. Two retained historical images have identical pixels;
+four other historical pixel identities cannot be verified. Fresh six images
+are fixed before model output,no rerender/input-error selection or second forward.
+All21258nonquery visible/2292occluded pairs are counted. Side30degreep95 errors
+31.84854/27.79361px and failed visibility reject this configuration before any
+camera/head fit. These are supplied-scan procedural-noise material tests,not
+actual-video camera,medical reconstructed-surface errors or proof natural-video
+reconstruction is universally impossible. Retire exclusive model integration;
+keep software oracles,compact raw scores and exact failure/deviation history.
+
 ## 2026-10-21 resource failure has an identified temporary,not a physical score
 
 0292 stops at a1.0546875GiB9-neighbor broadcast product before any predictions.

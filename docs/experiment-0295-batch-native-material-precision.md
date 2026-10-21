@@ -76,3 +76,44 @@ the ONE still-unexecuted physical trial ends;on actual scored/resource failure
 perform the registered full exclusive cleanup before a different technical route.
 Whole1500s budget from original render start remains unchanged,repair<=180s.
 No neural output/error is available to choose inputs,points or a repair threshold.
+
+## Actual result:REJECT physical material/occlusion precision
+
+Source e807ee4 preserves the original PNG-identity rejection and prospective
+pre-inference bookkeeping deviation. One renderer22:34:52.996Z->22:35:01.502Z;
+no second render. Both historical side controls match every RGBApixel;four old
+pixel baselines remain unavailable. Current six file/RGB hashes are fixed in
+input.json before prediction;all2355original source seeds are unchanged.
+Bookkeeping sentinels pass;this does not retroactively pass original file identity.
+
+ONE blind worker43592exits0,22:38:39.174Z->22:39:06.009Z. Worker body16.860s,
+2355points/11frames,adapter max.0001220703px;peak GPU6792675328bytes and working
+set1851400192bytes. Full output finite/shape/resource checks pass. Unlike0292,
+this run obtains actual physical point/occlusion scores;no prior accuracy score
+exists for a causal0292improvement ratio. Independent evaluator.094s,all21258
+nonquery visible pairs and2292hidden pairs counted,no confidence filtering.
+
+| First side frame | p95px | maxpx | visible recall | occluded recall |
+| --- | ---: | ---: | ---: | ---: |
+| yaw+30 | 31.84854 | 67.30141 | .84152 | .90852 |
+| yaw-30 | 27.79361 | 47.93131 | .89439 | .91248 |
+
+Seven of ten nonquery frames fail;the three passing frames are exact front-image
+repeats. All out-of-plane frames fail registered precision/visibility gates.
+Other out-of-plane p95 values8.29-10.16px do not meet1px either. Stop this
+configuration,no second forward,point/frame/appearance/threshold/precision
+change or camera/head fit. These are conditional supplied-scan noise-material
+2Dcorrespondence errors,NOT actual-video camera or reconstructed surface-mm
+errors. Viewed input is an unlit gray procedural-noise silhouette,not natural
+skin imagery;this failure alone cannot establish universal video impossibility.
+No video-derived head,accepted camera,medical2mm or actual visual result exists.
+
+Private archive assets/private/closed-experiments/0295-batch-material-precision/
+evidence.zip:19members,1288760bytes,two evaluation-source pictures,
+SHA e7ee80a42535b1a2020a2ab9f9149a5446e34fa5d9fbdb2ea0e9648b06388213.
+Every member matches its source and CRC passes. All raw predictions/per-ID
+errors/probabilities/visibility,input identities,original failure/amendment,
+licenses,source recovery and cleanup plan survive. Seven protected hashes
+(six original controls plus successful0293oracle) match.0294software success
+archive stays;physical failure does not erase software equivalence evidence.
+Clean exclusive0294/0295runtime/runners/output before any different route.
