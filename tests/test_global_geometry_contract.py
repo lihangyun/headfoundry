@@ -7,9 +7,13 @@ from tools.check_global_geometry_contract import project, scene, similarity
 from tools.check_dense_grid_contract import check
 from tools.check_state_fingerprint import check as check_state_fingerprint
 from tools.check_quadric_rank_contract import check as check_quadric_rank
+from tools.batched_point_elimination import check as check_batched_points
 
 
 class GlobalGeometryContractTests(unittest.TestCase):
+    def test_batched_point_elimination_matches_scalar_with_missing_views(self):
+        check_batched_points()
+
     def test_quadric_rank_three_not_rank_one_or_singular_pencil(self):
         check_quadric_rank()
 

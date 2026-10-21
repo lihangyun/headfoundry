@@ -96,3 +96,51 @@ at<1e-8px and a25px shifted camera must fail3px,before actual evaluation.
 No original source frame decoding/plot or persistent alternative candidate.
 Preserve compact diagnostic source/report/residuals with main failure,then
 delete exclusive runners/duplicates and finish the required cleanup commit.
+
+## Actual result:engineering passes,actual geometryREJECT
+
+Executedf473f61,diagnosticdc9a374. Compile/AST checks confirm unchanged pOSE
+optimizer options and downstream projective refinement,quadric selection,
+Euclidean BA,control/held scorer. Original scalar point loop is verbatim.
+Three full47754-training-row probes give scalar timings .4773064/.4620948/
+.4346227s and batch .1324928/.1265338/.1408738s:median ratio3.4876974.
+Maximum objective relative difference9.439e-16,gradient1.159e-15,native
+projection delta4.099e-13px. All rows counted,no solver/rank/precision change.
+This is conditional-kernel speed/equality,not whole-pipeline speed or likeness.
+
+Fresh full synthetic prefix control passes:batchedpOSE400iterations/426calls/
+1.438s objective.00241732607,not optimizer convergence. Its trajectory differs
+from0283 under floating reductions,as explicitly permitted;no bitwise-path
+claim. Projective BA9evaluations/.765s,trainingp958.238e-11px. One valid rank3
+quadric givesf1500.000000013;training-only chirality/sign choice. One Euclidean
+BA2evaluations/.344s. All480held projectionsp952.104828e-8px,zero invalids,
+negative153.222192px. This isTECHNICAL_CHECK_PASSED on the fixed synthetic
+chain,not physical patient or general unknown-focal accuracy.
+
+Actual full cohort:batchedpOSE400iterations/413calls/56.047s,objective.65962955,
+hits the fixed iteration count,not convergence. It clears the previous resource
+stop without extending180s. Projective BA hits60evaluations in56.766s without
+convergence,trainingp956.329669px,zero nonpositive projective denominators.
+All four quadric-pencil roots fail the three-positive/one-null-mode condition;
+no eligible metric camera. No Euclidean BA,metric held score,medical mm or head.
+Whole worker117.657s,overallREJECT. Do not increase iterations,change alpha,
+rank/subspace/thresholds or fit a head to absorb these errors. Failure is specific
+to this fixed recipe;poor optimization,observations/nonrigidity/model mismatch
+are not uniquely separated. Retain generic successful batch math,not application.
+
+### Frozen projective leave-one-out diagnostic
+
+Controls:exact projective-gauge p951.3101761e-13px;25px shifted-camera negative
+527.768641px. One4.046s actual diagnostic counts ALL11694rows/905whole held IDs,
+zero rank/projection invalids;globalp957.569525px. This is unpruned projective
+prediction consistency,not physical camera or surface error. Camera output SHA
+is checked before/after and remains unchanged. Per-frame range2.985471..13.677427px;
+the saved complete74-view table,counts and raw residuals remain private. It fails
+the necessary3px screen. Thus metric-upgrade repair alone cannot call this frozen
+camera set accepted. No held residual selected cameras or changed inference.
+No causal claim that all material tracks or every reconstruction method fail.
+
+Stop/freeze this pOSE+quadric application recipe without another optimizer,
+calibration-subspace or point/mask sweep. Future work needs independently
+justified observation/rigidity or initialization evidence,not a nicer training
+loss. The original video/medical resources and full end goal stay protected.
