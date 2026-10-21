@@ -143,7 +143,26 @@ or misattribute this design defect to a model. No retrospective pass is granted.
 
 ## Closeout
 
-Archive/source recovery,actual cleanup bytes and post-removal shared test result
-are recorded below after verification.0275 exclusive code/environment/downloads
-will not remain active. Original video and four protected authorization/shared/
-unrelated files hash unchanged;skin,bone andcase002 geometry are not read.
+Private archive:assets/private/closed-experiments/0275-global-short-track/evidence.zip,
+32members,70506bytes,zeroimages,SHA256
+ad63799ccdc3261717d286012923f2dde304d06469ddcd5ab78fb9b1f4550796.
+CRC/every member hash reverified after deletion. Source recovery26b4aa7;
+executed runner9abd5c8. It retains compact reports/options/rights/errors,not
+the full database/wheel/environment. Original0267 observations remain at their
+unchanged archive hash. Recovering code uses Git;the official public wheel must
+be downloaded again and generated databases need rerunning,not archive recovery.
+
+After authoritative terminal-worker and exact repository-path/reparse checks,
+remove175files/172731465logical bytes from the exclusive environment,working
+directory/cache/wheel/databases and runner bytecode. Remove the exclusive Python
+runner from the active tree;no failed-route-only test remains. Actual free-disk
+gain is not independently measured. Main environment has no PyCOLMAP import;
+shared source/tests/defaults match0e6717f. Original video and four protected
+authorization/shared/unrelated files hash unchanged;skin,bone andcase002 geometry
+are not read. The unrelated0207 document remains untracked and untouched.
+
+Post-removal134shared tests pass in5.862s. Evidence/checks/closeout complete
+within the registered2400s;pre-final-commit elapsed748.845s. Local focused cleanup
+commit follows;no push,threshold reduction,new head or acceptance claim. Goal
+remains active,notcomplete. Future work needs a different evidenced hypothesis
+and a valid independent evaluation design,not reuse of this failed configuration.
