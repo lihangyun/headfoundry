@@ -68,3 +68,39 @@ On failure preserve compact reports/all roots/prefix source hashes/control
 evidence/Git recovery;remove exclusive runner/raw output/bytecode,verify original
 hashes/consent/0207/shared tests/defaults,local cleanup commit before another
 route. No new dependencies,paid/noncommercial asset,push or fake acceptance.
+
+## Actual result:upgrade control passes,actual prefix resourceREJECT
+
+Executed sourced674f42. AST checks prove pOSE,projective refinement,Euclidean
+BA,control/patient cohorts and held scorer unchanged from7f3eade. Algebra checks
+reject rank1infinite roots/common-null pencils and retain the unique rank3oracle
+solution under basis scaling. Frozen prefix hash/CRC/shape checks pass;training
+replayp954.0704169e-11px,not a newly executed prefix.
+
+In the frozen control's four generalized roots,three have one positive/three
+null modes and are rejected. Root2 has eigenvalues approximately
+[3.096e-16,.3153331593,.3153331593,.8950586558]. Its positive last-column sign
+has0/1920positive training depths and is rejected;negative sign has1920/1920,
+f1499.999999998,principal mismatch<4.5e-9px and trainingMSE1.04248e-17px^2.
+Training-only choice precedes held scoring. One Euclidean BA converges in2
+evaluations/.375s. All480held predictions,96/view,remain counted;zeroinvalid/
+weak-ray cases,globalp958.6089445e-9px and every-viewp95<9e-9px. Wrong-observation
+negative153.222192px. ControlTECHNICAL_CHECK_PASSED applies to the retained
+prefix/new-upgrade chain,not a fresh complete prefix execution or patient head.
+0283 remainsREJECT. No known synthetic camera/focal/3D entered candidate choice.
+
+Actualcase001video rights/hash and0267archive identity pass. The full actual
+prefix starts on74frames/59448rows,3865training/905held IDs. It raises the
+registeredpOSE180s TimeoutError before a completed prefix or actual metric/held
+score. Whole worker181.062s,terminalexit0 with reportstatusREJECT,not a successful
+reconstruction. No patient pixel/point/surface-mm precision is measured;those
+remainUNVERIFIED. Resource failure is not proof of poor physical model accuracy
+or unusable video. No deadline extension,seed/loss/alpha/point/frame/rank sweep,
+optimizer restart or formal head fit follows. The per-point conditional solver
+is a possible implementation cost,not a uniquely established timeout cause.
+
+Retain only the successful necessary quadric-rank arithmetic helper/regression,
+with explicit non-camera/non-head scope and finite symmetric input guards.
+Remove exclusive failed application runner/raw duplicates after compact evidence.
+Any later performance work first needs a separate fixed-input equality/timing
+audit,not a hidden longer optimization budget or relaxed physical gate.

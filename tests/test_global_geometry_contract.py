@@ -6,9 +6,13 @@ import numpy as np
 from tools.check_global_geometry_contract import project, scene, similarity
 from tools.check_dense_grid_contract import check
 from tools.check_state_fingerprint import check as check_state_fingerprint
+from tools.check_quadric_rank_contract import check as check_quadric_rank
 
 
 class GlobalGeometryContractTests(unittest.TestCase):
+    def test_quadric_rank_three_not_rank_one_or_singular_pencil(self):
+        check_quadric_rank()
+
     def test_exact_streaming_state_fingerprint(self):
         check_state_fingerprint()
 
