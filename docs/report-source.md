@@ -33,6 +33,21 @@ the fine-axis discrepancy. No learned or physical performance is measured.
 Only those two contract corrections support a future fixed-byte,batch1 trial;
 do not also change the native-shared padding convention or claim full batching.
 
+0272 executes one separately registered unchanged-weight index-corrected port.
+Actual Torch contract controls pass(3coarse edges,162fine pairs,maxerror0),strict
+learned state/HF source/runtime checks pass,and inputNPZ equals0270 exactly.
+One18.005s CPU run peaks1.402GB. All211 eligible planar points count:p95=1.07945px,
+max=1.47801px,so the registered1px observation budget fails. Stop before real
+pairs;no3D/camera/head/medical surface result is measured. Earlier202-point and
+current211-point populations differ;do not claim a fixed-ID gain percentage.
+
+No constant error correction is supported or applied. Do not infer3D impossibility
+from this conservative planar prerequisite or relax it retroactively. Further
+work needs a prospective physical error-budget question,not a port/threshold
+sweep. Exclusive adapters,runtime/cache/weights/raw outputs are retired,about
+1.270GBlogical;compact86-member evidence/source08f83d6 remain. The actual3px/2mm,
+complete-head and human acceptance gates and production defaults are unchanged.
+
 ## 2026-10-13 head-only visible-support result
 
 Experiment0205 replaces hidden static contours with actual visible jaw edges and

@@ -11,6 +11,15 @@ Source-path/public-grant review is not checkpoint-byte validation, training-data
 clearance, actual CPU execution, physical correspondence or head acceptance.
 The float forward output must not inherit the display helper's int32 truncation.
 
+0271 reproduces two parameter-free pair/window contract defects with independent
+NumPy witnesses.0272 modifies only those sites in a notice-preserving narrow
+Apache-derived subclass,leaving exact publisher learned bytes and HF files intact.
+Strict/contract checks pass,but the known planar precision recipe fails and is
+retired before physical matching or head reconstruction. Published license,
+source repair and lower diagnostic error do not establish new dataset rights,
+medical accuracy or likeness. Historical source08f83d6 and compact private evidence
+replace exclusive code/runtime/weights;the successful small generic checker stays.
+
 ## 2026-10-14: bilateral profile fit is not subject acceptance
 
 Experiment 0206 uses the already pinned GNM identity basis and locally reviewed
