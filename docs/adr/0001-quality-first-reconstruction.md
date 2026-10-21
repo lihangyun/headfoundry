@@ -541,3 +541,13 @@ does not upgrade head quality. Freeze this fixed pOSE+quadric recipe;no more
 iteration,calibration-subspace or residual-based point/mask rescue. A new route
 needs independently justified observation/rigidity or initialization evidence.
 Keep only successful generic math and minimal private evidence,not failed apps.
+
+0286 separates calibration-free local image consistency from global camera
+initialization and physical geometry. Frozen held tracks increasingly fail the
+predefined pair screen at longer separations,so global optimizer repair alone
+cannot certify those observations. This association does not identify drift or
+nonrigidity causally. A synthetic along-epipolar-line mismatch passes despite
+40px error:passing the necessary constraint cannot certify identity/depth or
+replace3pxcamera/2mmskin gates. Preserve complete pair failures/eligibility and
+require independent observation evidence,not residual-based track selection or
+another retired-solver replay. No actual head/visual acceptance follows.

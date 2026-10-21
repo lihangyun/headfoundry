@@ -979,3 +979,21 @@ impossibility. Freeze this application recipe rather than keep changing its
 optimization/calibration subspace. Retain successful batch math/regression,
 compact221914-byte archive/source1426054,remove exclusive runners/duplicates.
 139shared tests/default/original-data checks pass,no accepted head exists.
+
+## 2026-10-21 calibration-free observation audit localizes an additional problem
+
+0286 fits F/H once per eligible pair using training IDs only,with no focal,
+camera/shape initialization or medical input. All2701frozen0267pairs are counted;
+1021meet count/spread criteria. All held observations per pair remain unpruned.
+Adjacent gaps pass72/73,24..120gaps214/590,>120gaps11/358;724/1021fail the
+diagnostic3px screen,including14undefined F models. This is Sampson distance,
+not the actual camera-reprojection or2mm head gate. Execution7.625s,one trial.
+Longer-gap cohorts differ in motion/visibility/IDs,so no causal drift claim.
+
+Synthetic40pxalong-line mismatch still passes,where perpendicular mismatch
+fails. Low epipolar residual cannot verify material identity/depth/rigidity.
+Many frozen correspondences fail without0285's global initialization;do not
+keep rescuing that solver or select residual-pruned tracks. Need independent
+physical-identity evidence for a new observation route. Compact262729-byte
+private archive/sourcef00c54f retains all pair accounting/matrices/options;
+140shared tests pass,originals/defaults/0207unchanged,no head/medical result.

@@ -56,3 +56,51 @@ matrices/hashes/Git recovery,remove exclusive case-audit runner/raw duplicates
 after closeout,retain only useful generic regression. Verify original hashes,
 shared tests/defaults/0207 and local cleanup commit before another route. No
 model/geometry fitting,push,actual acceptance or changed full3px/2mm/head goal.
+
+## Actual result:local checks degrade with temporal separation
+
+Executedf00c54f,one worker7.625s including controls/input;actual pair audit6.906s.
+All2701pairs are accounted:1021eligible,1666insufficient common held/training
+IDs,14insufficient spatial spread. No pair was selected by its fit residual.
+Of1021eligible pairs,1007yield a finite rank-two F;14model failures count as
+screen failures,not omitted successes. All H estimates return a finite model.
+
+| Predefined stratum | Eligible | Held screen passes | Failures | Median finite pairp95(px) |
+| --- | ---: | ---: | ---: | ---: |
+| All | 1021 | 297 | 724 | 4.243604 |
+| Native frame gap12 | 73 | 72 | 1 | .951859 |
+| Gap24..120 | 590 | 214 | 376 | 3.648977 |
+| Gap>120 | 358 | 11 | 347 | 5.572028 |
+| Non-H-dominated | 968 | 244 | 724 | 4.414082 |
+
+These are pairwise Sampson residuals,not camera reprojection or medical mm.
+The median column excludes undefined scores;the failure column includes them.
+Every eligible pair's untouched held partition is scored without outlier removal.
+The cohort is selected by common tracks/spread,so these counts are not an
+estimate of all possible video correspondences. Longer gaps also differ in
+pose/visibility/track population;this is not a controlled causal time-drift test.
+
+Synthetic heldp95=.0000708388px;40px perpendicular displacement gives28.782018px,
+while40px ALONG the epipolar line still gives.0000706051px. Thus a pass can hide
+large wrong correspondences along the line. No depth/identity/rigidity certificate
+follows,even for72/73adjacent passes. ExecutionTECHNICAL_CHECK_PASSED;frozen-data
+screenREJECT;actual physical camera/head/medical/visual acceptanceUNVERIFIED.
+
+Failure is not confined to0285's global camera initialization or focal upgrade:
+many frozen held correspondences fail this separately fitted local image test.
+This does NOT distinguish accumulated flow drift,nonrigidity,occlusion,estimator
+degeneracy or other error,and does NOT prove the original video unreconstructable.
+Do not rescue these tracks by residual pruning,shortening a selected cohort,
+threshold changes or rerunning the retired global solver. A future observation
+route needs independent physical-identity evidence and a prospective budget.
+
+Private evidence assets/private/closed-experiments/0286-uncalibrated-tracks/
+evidence.zip contains4members,262729bytes,zeroimages,SHA256
+ea1fc5cbf67d817202d734da5dd85e2da623851a92a3e22ccde55a93b3ec8484.
+Complete2701pair accounting/F/H matrices,controls/options,sourcefile hashes,
+protected hashes and140-test output are retained;no duplicate source points,
+human images or guessed geometry. Input archive remains unchanged. Source
+recoveryf00c54f3891fec52380b1cc0cc41287788b7063c before exclusive runner cleanup.
+All five protected hashes unchanged,including original authorized video,
+successful fixture and unrelated0207.140shared tests pass in5.652s. No source
+frame decode,scan/bone/case002 geometry read,new model/runtime,upload or training.
