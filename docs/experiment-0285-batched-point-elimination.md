@@ -72,3 +72,27 @@ protect originals/rights/successful fixtures/0207/shared tests,local cleanup
 commit before another route. Retain a generic batch-math regression only if
 equality genuinely passes,not failed application code or a performance claim
 misrepresented as reconstruction improvement.
+
+## Prospectively registered failure-closeout diagnostic
+
+2026-10-21T13:20:20Z,before the following measurement. Main optimization has
+terminatedREJECT(no metric candidate);no camera or optimization replay follows.
+Within the original2400s phase,allow<=300s implementation/control/evaluation on
+the ALREADY FROZEN patient-projective.npz. Hash before/after. Only its74projective
+cameras and unchanged0267held2D observations are evaluator inputs;no scan/shape/
+true pose/medical oracle or new camera fit. This is a read-only failure diagnosis,
+not another reconstruction route or the unexecuted metric-camera held gate.
+
+For every905held ID and every11694original target row,unweighted homogeneous
+DLT from ALL OTHER observed cameras;normalize each equation row by its norm
+to remove arbitrary camera scale,do not dehomogenize3Dpoints in an arbitrary
+projective gauge. Score the untouched target in native pixels. Rank-deficient
+anchors,zero/ill-defined projection or nonfinite errors count as failures,not
+exclusions. Report global/per-frame nearest-rankp95/counts and invalids;no data
+selection or metric ray-angle/cheirality claim. The3px line is a necessary
+projective consistency diagnostic only,never a physical camera/medical pass.
+Keep all raw residuals. A synthetic exact-projective-gauge control must replay
+at<1e-8px and a25px shifted camera must fail3px,before actual evaluation.
+No original source frame decoding/plot or persistent alternative candidate.
+Preserve compact diagnostic source/report/residuals with main failure,then
+delete exclusive runners/duplicates and finish the required cleanup commit.
