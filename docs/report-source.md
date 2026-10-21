@@ -4,6 +4,21 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 calibrated geometric estimator stops,physical correspondence diagnosis
+
+0274 gives only images to the unchanged index-corrected observation component,
+then2D training matches/known K to a separate existing robust pose solver. It
+fails39/70consensus versus42required;no complete camera or triangulated/head
+candidate is exported. Independent source-only evaluator controls pass at
+<1e-8px/<1e-6mm,and read-only diagnosis of existing outputs finds actual3D-motion
+correspondence p95=28.134/39.805px on135/144 true-common outputs. Associated
+source-surface-pair distances40.984/44.008mm are NOT reconstructed-surface errors.
+All missing/occluded associations remain reported. Source inputs have idealized
+procedural texture,not real albedo;do not generalize universal impossibility.
+Stop without threshold/texture/formula/precision rescue,retire exclusive
+integration and about1.265GBlogical contents,retain compact105-member evidence
+and source88f00f3. No real-video camera,head or visual improvement is established.
+
 ## 2026-10-21 physical observation budget,not a threshold rescue
 
 0273's two fixed known-camera point witnesses show why a1px observation test

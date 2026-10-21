@@ -1,5 +1,17 @@
 # Claim-to-source ledger
 
+## 2026-10-21: source-only physical observation diagnosis is not a recovered head
+
+0274 reuses only the separately pinned Apache HF model/runtime and unchanged
+index corrections. Supplied authorizedcase001 skin is confined to fixed source
+rendering/evaluation;inference gets images,and geometry fitting gets2D plus
+explicitly given K. No scan geometry enters the fitter. Pose failure is retained;
+later source-pair material distances are diagnostic associations on the SUPPLIED
+surface,not reconstructed mesh errors. Source-only procedural texture does not
+prove real-video applicability or universal impossibility. Failed exclusive
+infrastructure is retired;small numerical evidence/notices stay local. No
+training,upload,case002 access,new grant,head or medical quality claim follows.
+
 ## 2026-10-21: historical HF EfficientLoFTR versus current native PRL
 
 [0269](audit-0269-efficientloftr-rights-preflight.md) distinguishes the author's

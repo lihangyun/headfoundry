@@ -94,3 +94,72 @@ precision,texture,point count,focal,alignment or budget rescue. Success is only
 TECHNICAL_CHECK_PASSED conditional physical initialization;actual-video cameras,
 surface2mm,complete editable head,ears/neck and real visual acceptance stay
 UNVERIFIED. Keep the full user goal active. No uploads/training/new data rights.
+
+## Actual result: REJECT before complete camera output
+
+Source recovery88f00f3;estimator/control source61c3b32. Implementation finishes
+before05:48:18Z. Exact safetensors/full finite state,three HF file hashes,
+all26 runtime versions and rendered-image hashes pass. Front-end canonical
+source matches0272;one extra trailing newline initially fails raw comparison,
+recorded and qualified before any forward without changing executable code.
+Transport/install verification is under300s,with all caches local.
+
+Source generation takes5.693s internally,observed terminal within180s. Native
+Blender replay max<=7.184e-5px;true relative-pose replay<=3.411e-13px and true
+triangulation<=7.210e-13mm. Fixed wrong translation exceeds20.20px p95.
+These are evaluator controls,not candidate-camera or head results.
+
+One offline neural worker completes18.609s internally,peak1558196224bytes,
+producing140/157 eligible observations for+30/-30 out of4032 slots each.
+Actual3-edge/162-fine-pair index controls pass. No neural retry,formula,
+precision,texture or threshold change occurs. The first geometric fit stops
+at39/70 training consensus,below required42(.6fraction). No complete/refined
+two-camera artifact is exported;second camera fitting is not attempted.
+Physical camera/triangulated-point errors remain unmeasured,no head is generated.
+
+### Read-only failure diagnosis,not a rescued estimator
+
+After terminal fit failure,a source-only evaluator scores existing raw outputs
+without new neural/pose execution or a triangulated candidate. Paired pixels
+are cast into the supplied surface,source hits projected through TRUE target
+cameras,and true visibility/missing hits recorded. OriginalREJECT is unchanged.
+
+| Target | Eligible | True-common | Common projection p95 px | Held-common p95 px | Supplied-surface pair mismatch p95 mm |
+|---|---:|---:|---:|---:|---:|
+|+30|140|135|28.1340|29.6825(67)|40.9840(140)|
+|-30|157|144|39.8052|39.2019(73)|44.0083(155)|
+
+Source/target misses are0/0 and2/1;all misses/occluded associations stay reported.
+Common-only pixel counts are135/144;parentheses give held-common and finite
+paired-hit counts respectively. The last metric compares TWO SUPPLIED-surface
+locations associated by a matcher:NOT a reconstructed mesh,triangulated point,
+or fixed-region surface error. Do not say a generated head is40mm wrong.
+
+Diagnosis takes1.104s internally,observed terminal within180s. Two actual source
+inputs are inspected in55.442s,inside180s:flat high-frequency gray procedural
+texture,not natural albedo/anatomical lighting. Results concern this frozen
+source-only appearance/configuration,not every real video/learned matcher.
+Mismatch is substantial,not merely0272's .079px excess. No texture/angle/crop/
+formula/consensus sweep follows. Overall goal remains active and unfinished.
+
+## Verified retirement
+
+Private`assets/private/closed-experiments/0274-calibrated-capacity/evidence.zip`
+has105members,836068bytes,two explicitly labeled SOURCE input images,SHA256
+`4a401e543f4133ef9a45287eca7e7bdcf2c24b7e7a83068e09be8c5126993437`.
+CRC/every member hash pass. Controls,raw numerical observations/diagnoses,
+original failure,identities/notices survive,not full model/environment,the third
+input image or any supposed reconstructed head.
+
+Two prevalidated private roots remove37095files/1264847929logicalbytes:
+exclusive environment and raw0274 model/cache/renders/outputs. Both exclusive
+Python entries are removed. No matching worker is live;all paths stay in this
+repo,reparse targets refused. Four protected hashes and original source skin
+remain unchanged;original video/case002/bone contents are not read. Shared
+math/fixtures/defaults and unrelated0207 stay. Git88f00f3 and pinned redownloads
+are needed for historical replay;the compact archive is not a binary backup.
+Final shared regression/timing verification follows removal.
+
+After removal134 shared tests pass in5.424s;no live Torch/adapter imports remain.
+Complete verified closeout at1050.595s stays below1500s. No production default,
+human permission or quality threshold changes. Overall goal is still unfinished.
