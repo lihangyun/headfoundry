@@ -1,0 +1,72 @@
+# Experiment0279: exact-state checkpoint lifetime,unchanged physical test
+
+Registered2026-10-21T07:01:11Z,before installing/loading/forward. Whole2400s
+including implementation,assets,one forward,scoring and closeout.0278 is
+resourceREJECT and fully cleaned at2b817d1;this does not reverse that result.
+Current head/camera/medical/visual acceptance remainsUNVERIFIED.
+
+## Evidence and single engineering variable
+
+0278 passes complete946-state-item loading at3.728GB peak but the first default
+forward exceeds its8GiB cap before a prediction. Its worker keeps both mapped
+checkpoint dictionaries live with fully copied model parameters until after
+forward. Their tensor payload is about1.663GB;the actual resident saving is not
+yet measured. Source uses default copying load_state_dict,not assign=True.
+
+Main variable:release the duplicate checkpoint objects after full strict loaded-
+state validation and replace retained-dictionary postchecking by streaming exact
+state fingerprints. This changes storage lifetime,not learned values,network
+architecture,precision,batch/input/default resolution,thresholds or cap. It is
+a materially justified resource-isolation experiment,not a model/solver sweep.
+One rewrite only;failure stops without another memory/precision/resolution rescue.
+
+Reuse0278's exact author source77f8d688,17 runtime versions,Torch2.10.0+cpu/
+TorchVision0.25.0+cpu,CPU4threads,FP32,highest float32 matmul precision and
+seed278. Same two official components must match the now-established hashes:
+RoMac7a45c80d41ad788a63c641d1b686d7cb3f297f40097c6f4e75039889e5cc8ba,
+DINOv2d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428.
+No cache/weights survived0278;download again only from the same official URLs.
+MIT/Apache/runtime notices remain distinct;no paid/gated/NC/model substitution.
+
+## Prospective exact-state proof
+
+First test streaming fingerprints on tiny deterministic arrays:ordering/layout
+invariance,one-ULP mutation sensitivity,dtype/shape distinction,scalar handling
+and object rejection. Use at most1MiB data chunks,not a full copied state blob.
+On a tiny Torch mmap checkpoint verify strict model copy has distinct storage,
+exact equal fingerprints,checkpoint weakrefs die after del/gc,and one inference
+leaves model fingerprint unchanged. Reset Torch seed278 before constructing the
+full model so the test cannot perturb its initialization path.
+
+Then repeat both complete strict finite/key/shape/dtype/loaded-byte checks for
+the actual wrapper and descriptor. Assert nonempty tensors do not alias source
+checkpoint storage. Fingerprint both full model components,release checkpoint
+dictionaries,force ordinary GC and require all checkpoint-tensor weakrefs dead.
+Record **current** working set before/after separately from historical peak;
+do not claim a reduction until measured. Require model fingerprints unchanged
+immediately after release and after the one unchanged neural forward. No
+quantization,weight modification,offload/tiling/compilation or changed batching.
+
+## Unchanged physical test and budgets
+
+Every scientific input,role and gate is inherited verbatim from0278:the exact
+archived supplied-scan diagnostic pos/neg images,5000material-ID0230 fixture,
+1343common-visible points,source-only input rights,network denial,knownK and
+single true-baseline gauge disclosure,even training/untouched odd scoring,
+.05confidence,2px/.6support/1deg/512/seed278 existing pose solver,3px camera/
+2mm **point** capacity and3px composed pose. No original video or medicalSTL,
+case002,head fitting or training/upload. This is not an actual-video/surface/head
+claim. AST checks must prove evaluate/project/bilinear/pixel_controls unchanged
+from scientific source7780d5d;the model.match call/default config also stay fixed.
+
+Same default560/864 symmetric pair and8GiB peak-working-set limit. Implementation
+<=600s,asset/runtime install<=300s,exact-state control/full load<=180s,one complete
+forward<=180s,physical score<=120s;all closeout within2400s. No neural rerun after
+any scientific/resource failure. If the interface itself fails before inference,
+record a narrowly scoped ordinary repair without changing this contract.
+
+On failure preserve compact reports/notices/hashes/source refs,no extra source
+images (0274 already retains two),remove all exclusive code/model/framework/
+cache/env/output,verify protected originals/shared tests and commit local cleanup
+before a different route. Retain successful generic fingerprint/grid regressions
+only. No production default changed;do not promote conformance into ACCEPT.
