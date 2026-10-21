@@ -97,3 +97,9 @@ Cleanup itself is not quality/goal completion. After removal134 shared tests
 pass in5.783s and the retained generic index checker passes;no dangling live
 Torch/adapter imports remain. Complete closeout verification at416.787s is
 inside1200s. No user visual acceptance,production promotion or goal completion.
+
+Integrity-scope qualification:as in0270,protected-file verification hashes the
+successful0230 known-motion NPZ as opaque bytes,without decoding its arrays or
+passing geometry/cameras to this trial. This is a limited integrity-only
+exception to broad no-scan-fixture-read wording,not zero derived-fixture IO.
+OriginalSTL/bone/case002 contents are not opened. No failed result is rescued.

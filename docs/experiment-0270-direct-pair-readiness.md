@@ -135,6 +135,13 @@ paths stay inside this repo,with reparse targets refused. Four selected protecte
 hashes (rights/confirmation,successful0230 fixture,unrelated0207) and original video
 SHA remain unchanged. No STL orcase002 bytes are read in this phase.
 
+Integrity-scope qualification:cleanup's protected-hash replay does read the
+retained0230 known-motion NPZ as opaque bytes. No arrays are decoded or supplied
+to inference/evaluation;this is not zero scan-derived-fixture IO. Record this
+limited integrity-only exception to the broad preregistered no-fixture-read
+wording rather than claiming that no such bytes were touched. OriginalSTL,
+bone andcase002 contents remain unread,and the failed verdict is unchanged.
+
 Git recovery plus pinned public redownloads is needed for historical replay;
 this compact archive is not a full binary backup. Shared runtime,source/defaults,
 original human data and prior successful fixtures are untouched. Final shared
