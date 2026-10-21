@@ -53,3 +53,41 @@ visibility contract. On failure preserve small reports/hash/source and at most
 two control images,clean exclusive0294source/weights/wheels/env/cache/runners/
 lock/output,verify originals/shared tests and commit BEFORE another route.
 Successful0293oracle and prior compact archives stay. No head is accepted.
+
+## Actual result:TECHNICAL_CHECK_PASSED,physical precision UNVERIFIED
+
+Executed installation32b9664,controlb578c9a. Single provision300.313s:
+transport/full hashes261.579s,offline install38.734s. All14wheels and bundled
+notices verified. Admission10.046s,actual RTX3070CUDAidentity matmul exact,
+236state keys/235parameter tensors/16476962FP32finiteparameters strictly loaded;
+no external pretrained download. Initial cache/process-identity repair was
+already in the registered recipe;no failed admission/forward was retried.
+
+One control worker23.328s exits0. Independent CUDA pixel oracle scores1536values,
+max4.77451e-7px. Native standalone operator compares all31457280values/
+15728640vectors,max delta0. Original peak reserved2430599168bytes versus
+batch1822083584bytes;this is the same fixed operator input,not a full-network
+or universal memory-reduction factor. No point/pixel filtering.
+
+Paired complete network counts1572864flowpixels,vector delta0,all confidence
+deltas0,visibility decision flips0. Both smaller network peaks2109734912bytes;
+this control does NOT demonstrate a network-memory reduction or speedup.
+One11-frame native padded forward15.532s,output1x11x2x1280x720,20275200finite
+values per output. Peak GPU reserved6857687040bytes(6.38672GiB),worker working
+set1930977280bytes. Native original network baseline was not executed here;
+there is no direct native-network equality measurement or physical point score.
+
+Source worker SHA fee8204261dd3c2ccfd3f11c3b3a89b3f3372cf0689f46adae08c3fcec7a66fa.
+140shared tests pass5.192s;all six protected hashes unchanged. Verification
+finished22:32:08Z,413.655s after installation start,within2400s whole budget.
+No private video/scan content beyond integrity hashes,no training/upload/new
+camera/head or production/default change. Successful runtime retained only
+for separately registered unchanged-input physical tracking. All clinical,
+camera3px,skin2mm,editable complete head and visual gates remainUNVERIFIED.
+
+Verified compact archive assets/private/closed-experiments/0294-batch-upsample-equivalence/
+evidence.zip:13members,zeroimages,14046bytes,SHA
+f727fe3ca580f824ca92922823b611f99bea60e916bfee7765145eaebc57cb29.
+Includes all full-network deltas,operator/resource reports,installation/admission
+logs,license/asset identities,protected hashes and tests. CRC and every member's
+bytes match. No checkpoint/framework binary is included in this compact backup.
