@@ -14,6 +14,17 @@ weight or environment is adopted by the audit. Actual CPU/correspondence/3D/head
 quality is still unmeasured. A concrete adapter risk is the HF display processor's
 integer keypoint conversion; retain raw floating coordinates in any later trial.
 
+0270 actually executes the pinned safetensors/HF path after one retained pre-valid
+cache repair,within the original180s worker clock. Strict full finite state/source
+checks pass,peak1.406GB. All202 eligible planar outputs fail precision:p95=22.407px,
+max=29.578px. Real direct pairs are not reached;no3D,camera or head is produced.
+An interior three-cycle source-ordering counterexample exposes incorrect coarse
+pair construction in the pinned port,not a quantified cause of every observed
+error or a proof about the neural architecture. Stop this exact recipe and audit
+pair/fine index semantics before another inference. Exclusive integration and
+1.268GBlogical failed contents are retired;compact90-member private evidence and
+Git696654a remain. Do not change3px/2mm/full-head gates or production defaults.
+
 ## 2026-10-13 head-only visible-support result
 
 Experiment0205 replaces hidden static contours with actual visible jaw edges and

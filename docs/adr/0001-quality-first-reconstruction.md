@@ -10,6 +10,17 @@ Status meanings are fixed: `TECHNICAL_CHECK_PASSED` is a bounded non-visual engi
 
 ## Decision
 
+### 2026-10-21 model-output index contracts precede geometric interpretation
+
+0270's pinned HF path passes strict learned-state loading but fails a known
+planar correspondence gate. Preserve its failure and retire exclusive assets.
+A deterministic interior coarse-match permutation exposes an upstream pair-order
+contract hazard;do not silently reassociate predictions or label this as proof
+that every release/architecture fails. Independently audit coarse identities,
+fine-window axis/padding and floating pixel transforms before another bounded
+trial. This is a supported source-correctness question,not permission to sweep
+models/thresholds or waive physical camera,2mm,whole-head and visual acceptance.
+
 ### 2026-10-13 actual visible aperture and exported-mesh safety
 
 Normal-facing transition edges are contour candidates, not visibility evidence;
