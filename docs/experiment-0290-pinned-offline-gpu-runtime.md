@@ -56,3 +56,16 @@ einops0.8.0PyPI metadata returns HTTP200/.718s. Use that existing client for
 metadata preparation,within the original180s budget. No wheel/model attempt,
 scored numerical test,source identity,range count or time limit changes;do not
 invent a specific proxy/DNS cause from this client difference.
+
+Metadata preparation finishes15:10:18Z,166s within180s. Every selected package
+has an explicit permissive declaration;fsspec's empty PyPI field is not treated
+as clearance:its fixed2026.7.0publisher BSD3LICENSE is checked and hashed in
+the lock. All wheel byte URLs/SHA/ABI are fixed before transfer starts15:12:30Z.
+Runtime versions match retained common dependencies(except explicit patched
+setuptools80.9.0);no training extras. Public metadata/source read only.
+
+Exact64-padding correction before any network forward:native1280x720pads
+1280x768,correlation-only20112998400bytes/18.7317GiB;1024x576stays
+7238320128bytes/6.7412GiB;512x288pads512x320,558366720bytes/.5200GiB.
+Earlier unpadded values remain lower bounds,not peaks. These do NOT establish
+any sampled implementation capacity or precision.
