@@ -997,3 +997,18 @@ keep rescuing that solver or select residual-pruned tracks. Need independent
 physical-identity evidence for a new observation route. Compact262729-byte
 private archive/sourcef00c54f retains all pair accounting/matrices/options;
 140shared tests pass,originals/defaults/0207unchanged,no head/medical result.
+
+## 2026-10-21 new direct-query mechanism screened before any installation
+
+0287 finds an untried AllTracker candidate with independent official MIT code/
+weight declarations and pinned revisions/hash metadata. This differs from0267's
+chained DIS;it does not guarantee drift-free physical identities. Core still
+propagates initial estimates between sliding windows. No model was installed
+or run. Source reveals extra ConvNeXt default downloads,mutable main URLs and
+demo frame truncation/downscaling;future loading must explicitly prevent them.
+
+Read-only CUDA driver probe identifies RTX3070/~8GB despite failing NVML;this is
+not a successful tensor runtime. Native16-window FP32 correlations alone need
+16.44GiB,so default native execution is not resource-cleared. Any different
+capacity schedule requires prospective native-pixel/complete-state/resource
+controls. No private inputs/head/medical score changed;goal remains active.

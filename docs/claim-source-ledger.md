@@ -677,3 +677,23 @@ These are narrow availability/rights/task-fit checks,not a proof that no free
 commercial method can work. Do not reinstall retired MapAnything/DA3 routes
 merely because they appear in the same search.0282's actual-video affine metric
 failure remains independent of model license screening and synthetic repair.
+
+## 2026-10-21 direct-query tracker preflight,not an installed model
+
+0287 independently verifies AllTracker's[fixed source MIT notice](https://github.com/aharley/alltracker/blob/e7553135e7b361590dbccd10e2b274b024f41cd6/LICENSE)
+and the publisher's[MIT weight card](https://huggingface.co/aharley/alltracker).
+Model repository revisionc8ba31225828cab9ec512d0627f0f826e641a877/default full
+alltracker.pth metadata66005722bytes/SHA
+ffd9ebcfb6d206d594b646999a150540f92c049cf9b2bf940facf7123f62aa1d.
+No downloaded-byte verification or inference occurred. Exact fingerprints,
+dependency/device/default external-pretraining hazards and resource arithmetic
+are in audit-0287-direct-query-tracker-preflight.md. Instantiate future code
+without default ConvNeXt downloads and require strict full-state coverage.
+MIT declaration is not independent dataset/privacy/patent/dependency clearance.
+
+The[primary paper](https://arxiv.org/abs/2506.07310v2) motivates direct query-to-
+many-frame correspondence,but its benchmark is not patient-face precision.
+Actual source still seeds sliding windows temporally,so no drift-free claim.
+Static native-window correlation alone exceeds local GPU capacity;execution
+and physical quality remainUNVERIFIED. CoTracker's[official NC license](https://github.com/facebookresearch/co-tracker/blob/main/LICENSE.md)
+excludes that alternative. No human materials reach these public sources.
