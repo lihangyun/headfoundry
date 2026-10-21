@@ -72,3 +72,37 @@ necessary initial-camera evidence/source hashes and Git recovery;remove failed
 exclusive runner/raw outputs/bytecode,not common runtime or original evidence.
 Verify protected originals/0207/shared tests/defaults and commit local cleanup
 before another route. No push or false visual acceptance.
+
+## Actual result:software recovery passes,actual initializerREJECT
+
+Executed source59b4158. AST comparison to4dff222 proves factorize,control,
+patient and held_score unchanged;bundle differs only by exporting sol.cost.
+Onlysolve adds the registered parity construction/choice and diagnostic output.
+One worker completes in10.797s,no interface repair or scientific replay.
+
+On the unchanged control,affine XY parity discrepancy is4.4408921e-16 scene
+units and properness/involution checks pass. Branch0 exactly replays0280's
+trainingp955.119345px andf3999.999999998,cost3517.980870,48evaluations. Branch1
+has trainingcost0,25evaluations,f1499.999999942,trainingp951.434e-10px. Training
+cost chooses1 before any held scoring. All480 untouched held predictions remain
+counted,zero invalid/weak/negative cases,heldp952.1343407e-10px,per-view maximum
+2.7169898e-10px;negative check157.304092px. This isTECHNICAL_CHECK_PASSED for
+complete synthetic unknown-camera recovery,not patient/head or medical accuracy.
+The structural intervention works on this fixed control;it does not establish
+universal convergence or uniquely prove the archived initial0280branch.
+
+Actualcase001 video rights/hash pass before reading unchanged0267 observations.
+Frozen74frames yield59448rows,3865training and905held whole identities. Actual
+training-only affinep95 is16.773670px. Its metric eigenvalues are
+[-.0130633968828171,.011194648687657438,1.0095805021123612],so the unchanged SPD
+requirement rejects before any patient parity/BA/held-camera solve. Do not clamp
+the negative eigenvalue,change ALS/rank/frames or fit a head. Held IDs were not
+used to estimate this metric. Patient camera/3D point/medical-surface-mm/visual
+accuracy remainsUNVERIFIED,not16.77px medical error.
+
+This rejects the fixed affine initializer on these actual observations;it does
+not uniquely identify drift,nonrigidity,perspective approximation,missing-data
+conditioning or their combination. No source scan,bone,case002,training/upload,
+new model/runtime or head output. Preserve complete small reports and successful
+synthetic camera/initial evidence;retire failed exclusive runner/raw duplicates.
+Do not repeat canonical/flipped parameter sweeps or relabel0280/0267 as passes.
