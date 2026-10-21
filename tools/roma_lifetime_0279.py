@@ -199,6 +199,10 @@ def infer():
               full_state(torch, descriptor, checkpoints[1])]
     assert descriptor not in list(model.modules())
     fingerprints = [component_fingerprint(model), component_fingerprint(descriptor)]
+    from check_state_fingerprint import state_fingerprint
+    expected_fingerprints = [state_fingerprint({name: value.detach().cpu().numpy()
+                             for name, value in checkpoint.items()}) for checkpoint in checkpoints]
+    assert fingerprints == expected_fingerprints
     before_release = memory_usage()
     references = [weakref.ref(value) for checkpoint in checkpoints for value in checkpoint.values()]
     del checkpoints
@@ -221,6 +225,15 @@ def infer():
     with Image.open(OUT / 'pos.png') as a, Image.open(OUT / 'neg.png') as b:
         warp, certainty = model.match(a.convert('RGB'), b.convert('RGB'), device='cpu')
     forward_seconds = time.monotonic()-start
+    save('forward-return.json', {'raw_warp_shape': list(warp.shape),
+         'raw_certainty_shape': list(certainty.shape), 'forward_seconds': forward_seconds,
+         'peak_bytes_at_return': peak()})
+    assert warp.numel()*warp.element_size()+certainty.numel()*certainty.element_size() <= 64*1024**2
+    np.savez_compressed(OUT / 'dense-raw.npz', warp=warp.cpu().numpy(),
+                        certainty=certainty.cpu().numpy())
+    assert tuple(warp.shape) == (1, 864, 1728, 4) and tuple(certainty.shape) == (1, 864, 1728)
+    # Publisher batched=True output: an index view, no numeric transformation.
+    warp, certainty = warp[0], certainty[0]
     assert tuple(warp.shape) == (864, 1728, 4) and tuple(certainty.shape) == (864, 1728)
     assert bool(torch.isfinite(warp).all()) and bool(torch.isfinite(certainty).all())
     assert float(certainty.min()) >= 0 and float(certainty.max()) <= 1
@@ -231,6 +244,7 @@ def infer():
                        float((warp[:, 864:, 2:]-grid).abs().max()))*864/2
     assert source_error <= .001
     assert fingerprints == [component_fingerprint(model), component_fingerprint(descriptor)]
+    assert peak() <= 8*1024**3
     np.savez_compressed(OUT / 'dense-output.npz', warp=warp.cpu().numpy(),
                         certainty=certainty.cpu().numpy())
     save('inference.json', {'status': 'TECHNICAL_CHECK_PASSED',

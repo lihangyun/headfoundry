@@ -70,3 +70,27 @@ images (0274 already retains two),remove all exclusive code/model/framework/
 cache/env/output,verify protected originals/shared tests and commit local cleanup
 before a different route. Retain successful generic fingerprint/grid regressions
 only. No production default changed;do not promote conformance into ACCEPT.
+
+## Engineering export exception,registered before any physical score
+
+First source d4e33e2 strictly loads both components and verifies weakref release
+and unchanged model fingerprints. Current working set falls3710214144->2047188992
+bytes (1663025152bytes measured). One model.match call returns,but the inherited
+shape assertion stops before saving any prediction or physical score. The pinned
+publisher's batched=True path returns(1,H,2W,4)/(1,H,2W),whereas the inherited
+exporter expected(H,2W,4)/(H,2W). No scientific precision failure is observed.
+The process is terminal;there is no surviving tensor to export without replay.
+
+Register **one** ordinary engineering replay,within the same original2400s and
+8GiB/180s forward limits:drop only the known singleton batch axis after saving
+the immutable raw tensors and returned shapes/time/peak. The index view changes
+no value,model call,input,seed,dtype,resolution or scientific score. Require final
+measured peak<=8GiB,not merely absence of a polling abort. Add an exact checkpoint-
+fingerprint versus loaded-model comparison before releasing dictionaries.
+
+This is an explicit deviation from the original single-forward count;preserve
+that protocol failure rather than silently calling the original attempt passed.
+Original source/log/failure/control remain separately archived. No score or
+validation residual existed when authorizing this representation-only repair;
+no further replay,scientific parameter change or budget reset follows failure.
+Replay capacity facts,if any,are reported separately from whole-protocol status.
