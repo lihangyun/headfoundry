@@ -76,3 +76,56 @@ source/diagnostic views and whole-phase budget includes closeout. Any failed
 stage stops progression to patient head fitting. Preserve compact numeric/rights/
 source evidence,remove exclusive runners/weights/framework/cache/env/outputs,
 verify protected inputs/shared tests and commit local cleanup before a new route.
+
+## Actual result:resourceREJECT,physical precision remainsUNVERIFIED
+
+Registeredefd9704,installer4c88762,scientific worker7780d5d. Atomic official
+asset/runtime installation completes in152.015s. Actual model SHA256 locks:
+RoMac7a45c80d41ad788a63c641d1b686d7cb3f297f40097c6f4e75039889e5cc8ba,
+DINOv2d5383ea8f4877b2472eb973e0fd72d557c7da5d3611bd527ceeb1d7162cbf428.
+These are measured official-byte identities,not invented publisher signatures.
+Exact audited source hashes and original input-render/archive hashes pass.
+Source-specific local consent is checked with the shared fail-closed input
+validator;no original medical mesh enters inference and networking is denied.
+
+Complete two-component conformance passes in23.531s at3728023552peak working
+set bytes. RoMa603state items/111356534values/111288336parameters AND the
+unregistered descriptor343state items/304368640parameters strictly match their
+own checkpoint keys/shapes/dtypes/finite values/loaded bytes. Total learned
+parameters415656976;checking only the wrapper would miss most of them.
+NumPy pixel roundtrip error0,TorchFP32 bilinear replay7.6294e-7px;wrong omitted
+half-pixel=.5000001px. Independent NumPy evaluator sampler error2.2204e-16 in
+normalized units. These areTECHNICAL_CHECK_PASSED software/asset checks only.
+
+One default560/864FP32 symmetric forward is attempted. During it the Windows
+peak-working-set guard records8865333248bytes (>8589934592limit) and exits124.
+This is the registered resource rejection,not an OS out-of-memory crash or
+physical accuracy failure. The process is authoritatively terminal. No dense
+prediction is saved,no forward completion time is measured,and no relative
+pose/triangulation/held error/head is produced. Do not invent3px/2mm results.
+No lower resolution,precision,confidence,alternate checkpoint or raised cap retry.
+
+Source review identifies a specific avoidable lifetime:both mapped checkpoint
+dictionaries remain live alongside the fully copied model for post-forward byte
+comparison. Their state contains roughly1.663GB of tensor payload;this is not
+an independently measured resident-page saving. A different bounded engineering
+test could release those duplicates after strict validation and use streaming
+pre/post state fingerprints instead. It must preserve exact weights,FP32,
+images,default resolutions and8GiB cap;it is not permission to rerun0278 or
+silently classify the model as accurate. First close this failed resource run.
+
+## Rights and closeout scope
+
+No paid/gated asset or hosted matching service is used. CPU Torch/TorchVision,
+NumPy/Pillow and the small inference dependencies have recorded free-commercial
+license declarations/notices. Empty metadata fields forcolorama/Jinja2/setuptools
+are resolved by bundled BSD/MIT notices;loguru declares MIT in its classifier.
+Setuptools also bundles LGPL components;do not relabel all runtime files MIT.
+No redistribution legal clearance or training-data ownership warranty is claimed.
+
+Keep compact reports/rights/source refs and the successful standalone dense-grid
+arithmetic regression,not the exclusive failed installer/model runner. The two
+source PNGs already survive in0274;do not keep another image set. Remove0278's
+weights/source/cache/environment/duplicates after archive verification. Public
+weights need a new official download for recovery;the compact evidence is not
+a full binary backup. Actual deletion/tests/cleanup commit are recorded below.

@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 2026-10-21 complete official foundation checkpoints,not an accuracy pass
+
+0278 acquires exact official RoMa outdoor and original DINOv2 checkpoint bytes
+under separately preserved authorMIT/MetaApache grants. Checks cover both model
+components,including the descriptor outside the wrapper's state tree. Runtime
+notices are not a blanket MIT label or a full redistribution warranty. No
+training/upload/paid or gated fallback occurs. Neural execution is locally
+network-denied. The first full forward exceeds its8GiB resource cap before any
+prediction/physical scoring. Neither a failed precision claim nor a successful
+3px/2mm/head claim is supported. Resource failure is retained and cleaned.
+
 ## 2026-10-21 original RoMa versus its separately licensed backbone
 
 0277 pins original RoMa source77f8d688,author weight-hosting MIT license6fed4401,

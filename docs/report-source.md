@@ -4,6 +4,19 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 complete foundation loading passes,registered memory cap stops forward
+
+0278 downloads and locks both official RoMa/DINOv2 components,strictly verifies
+946state items/415656976learned parameters including the unregistered backbone,
+and independently checks pixel/grid math. Installation152.015s,conformance23.531s.
+The single default560/864FP32 forward records8865333248peak working-set bytes,
+exceeds the unchanged8GiB cap and exits124 before predictions/scoring. Overall
+resourceREJECT,physical accuracyUNVERIFIED. No patient head or3px/2mm result.
+Both mapped checkpoint dictionaries were retained unnecessarily for a later
+byte comparison;this is a prospective exact-state lifetime hypothesis,not a
+measured saving or permission to raise the cap/change precision/rerun. Retire
+this exclusive integration after compact evidence;retain only generic grid math.
+
 ## 2026-10-21 different dense observation source screened,not adopted
 
 0277 screens original RoMa outdoor/DINOv2 using pinned publisher code,author

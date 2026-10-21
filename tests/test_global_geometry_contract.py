@@ -4,9 +4,13 @@ import unittest
 import numpy as np
 
 from tools.check_global_geometry_contract import project, scene, similarity
+from tools.check_dense_grid_contract import check
 
 
 class GlobalGeometryContractTests(unittest.TestCase):
+    def test_dense_pixel_edge_center_and_invalid_queries(self):
+        check()
+
     def test_visibility_holdout_and_similarity_gauge(self):
         xyz, centers, poses, k, observations = scene()
         self.assertEqual(len(xyz), 270)
