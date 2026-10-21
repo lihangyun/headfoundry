@@ -35,7 +35,7 @@ def prepare():
     # Validate only case001 video;case002/scan content is never opened here.
     source = next(row for row in manifest['inputs'] if row['id'] == 'real-case-001-video')
     minimal = {**manifest, 'inputs': [source]}
-    errors = validate_input_assets(minimal, base_dir=manifest_path.parent)
+    errors = validate_input_assets(minimal, manifest_path.parent)
     if errors:
         raise ValueError(str(errors))
     audit = json.loads((ROOT/'assets/private/video-observability-0252/report.json').read_text())
