@@ -506,3 +506,11 @@ Its software control fails,so patient estimation stops rather than fitting a hea
 or declaring the video's physical identities invalid. Keep original gates and
 retire the fixed failed implementation;do not normalize a focal-bound solution
 into success or start an unregistered reflection/threshold/iteration search.
+
+0281 supplies explicit frozen-camera reflection evidence;0282 separately
+registers the two discrete affine-depth alternatives and training-only objective
+choice,not a parameter sweep. Its exact-data control recovers the true camera
+without held selection,but actual training observations give an indefinite
+metric. Do not clamp that metric or promote synthetic recovery to patient/head
+success. Structural implementation repairs and actual-video applicability are
+separate gates;preserve the original failures and clean failed exclusive code.

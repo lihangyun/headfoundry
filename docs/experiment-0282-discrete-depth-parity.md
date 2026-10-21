@@ -106,3 +106,23 @@ conditioning or their combination. No source scan,bone,case002,training/upload,
 new model/runtime or head output. Preserve complete small reports and successful
 synthetic camera/initial evidence;retire failed exclusive runner/raw duplicates.
 Do not repeat canonical/flipped parameter sweeps or relabel0280/0267 as passes.
+
+## Verified closeout
+
+Source recovery964d055;executed59b4158. Private archive
+assets/private/closed-experiments/0282-depth-parity/evidence.zip:6members,
+21732bytes,zeroimages,SHA256
+e50b865c08f95ca74874ac5d1815fbd32eca8f1881b759eb72fc43bbc4ecf67f.
+CRC/member SHA verify after deletion. It retains full reports,both training
+branch diagnostics,initial/successful control cameras/shape and held errors,
+source refs/protected hashes. No patient camera/failed head or complete video
+copy exists. Git restores source;regeneration needs the unchanged local0267
+archive,not a new framework/download. Old failure conclusions remain intact.
+
+After terminal-process/exact-target/reparse/archive/caller verification,remove
+6raw files/30549logical bytes and the exclusive14342-byte runner,7files and
+44891logical bytes total. No new environment,weights or route bytecode remains.
+Five protected hashes are unchanged,including originalcase001video,consent/
+manifest,successful0230fixture and unrelated0207. case002 is not opened. Shared
+source/defaults match7a9046f.137 retained tests pass in5.919s. Focused local
+cleanup commit precedes a different route;no push. Phase closes inside2400s.

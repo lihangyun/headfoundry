@@ -922,3 +922,15 @@ f4000. Neither positive metric/depth nor ftol convergence overrides this failure
 Patient observations/cameras and medical accuracy are not measured. Reject this
 fixed initializer without parameter/reflection sweeps;keep compact evidence and
 retire exclusive runner before another route. Original3px/2mm/visual gates stand.
+
+## 2026-10-21 explicit parity mechanism passes control,not actual geometry
+
+0281's frozen depth-reflection evidence justifies0282's new preregistration:
+exactly two algebraic parity alternatives,unchanged solvers/data/gates,choose
+only by training objective before held scoring. Canonical branch reproduces
+0280;alternative restoresf1500 and480heldp952.134e-10px,software check only.
+Actual0267 training observations instead yield an indefinite metric,so stop
+before patient BA or head. This isolates a real software limitation without
+pretending to solve actual video correspondence/nonrigidity/perspective issues.
+Keep compact control evidence/source964d055,retire exclusive runner/raw outputs,
+preserve originals/defaults/shared137tests. No head/medical/visual acceptance.
