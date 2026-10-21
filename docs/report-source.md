@@ -934,3 +934,15 @@ before patient BA or head. This isolates a real software limitation without
 pretending to solve actual video correspondence/nonrigidity/perspective issues.
 Keep compact control evidence/source964d055,retire exclusive runner/raw outputs,
 preserve originals/defaults/shared137tests. No head/medical/visual acceptance.
+
+## 2026-10-21 projective training fit is not metric calibration
+
+0283 independently implements the pOSE mathematical residual and exact point
+elimination/gradient,not the external C++ implementation. The
+[2026 primary study](https://arxiv.org/html/2608.18028v1) motivates the separation
+of projective optimization and metric reconstruction;no paper performance is
+transferred. Gradient controls pass,projective trainingp954.071e-11px,but the
+linear upgrade fails. An analytic synthetic counterexample confirms that the
+chosen linear constraints admit rank1 as well as valid rank3 quadrics. Whole
+controlREJECT before patient input;no held/head/medical score. Preserve compact
+prefix evidence/sourcea2fd33f,clean failed runner,keep137shared tests/defaults.

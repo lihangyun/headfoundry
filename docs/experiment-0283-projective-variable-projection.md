@@ -116,3 +116,23 @@ A future separately registered algorithm may enforce rank3 within the ambiguous
 linear subspace and select using training-only camera constraints. It must not
 choose by known synthetic focal/pose,held observations or medical geometry;no
 new attempt starts until this route is archived,cleaned,verified and committed.
+
+## Verified closeout
+
+Executed7f3eade,source recoverya2fd33f. Private archive
+assets/private/closed-experiments/0283-projective-varpro/evidence.zip:6members,
+15660bytes,noimages,SHA256
+45636fc9c2d9cb1a534e5ce5f60b0f5865709d5d00ea1377f0fbf497bfd2014f.
+Archive CRC/all member hashes reverify after cleanup. Complete small control
+projective cameras/480training points,analytic diagnostic,reports/source refs/
+protected hashes survive. No head,patient output,weight/framework/environment
+or source-video duplicate exists. Code is recoverable through Git;the prefix
+control state is retained for independent later upgrade tests,not silently
+called a successful whole pipeline. No need to redownload a model/runtime.
+
+After archive/terminal-job/exact-path/reparse/caller checks,remove6raw duplicates
+totaling19647logical bytes plus the18604-byte exclusive runner:7files/38251
+logical bytes. No route bytecode remains. Five protected hashes unchanged,
+including original video/authorization/successful fixture/unrelated0207;case002
+unopened. Shared source/defaults match1b4d075.137 retained tests pass in5.840s.
+Focused local cleanup commit precedes another route;no push.2400s budget met.

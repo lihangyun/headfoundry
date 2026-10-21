@@ -514,3 +514,11 @@ without held selection,but actual training observations give an indefinite
 metric. Do not clamp that metric or promote synthetic recovery to patient/head
 success. Structural implementation repairs and actual-video applicability are
 separate gates;preserve the original failures and clean failed exclusive code.
+
+0283's control demonstrates that exact projective training reprojection does not
+certify a valid metric upgrade. The analytic control camera family admits a
+rank1 linear-quadric solution alongside rank3;never accept an arbitrary last
+singular vector merely because its constraint residual is tiny. A separate
+prospective rank-constrained alternative needs training-only selection and
+independent held evaluation,not known focal/pose or medical geometry as an oracle.
+0283 staysREJECT and is cleaned before such a different attempt.
