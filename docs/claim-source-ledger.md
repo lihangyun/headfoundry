@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 2026-10-21: historical HF EfficientLoFTR versus current native PRL
+
+[0269](audit-0269-efficientloftr-rights-preflight.md) distinguishes the author's
+current PRL source (free project registration required) from a pre-change author
+Apache release, its explicit HF endorsement, the2025 Apache-declared HF model
+revision and the independently Apache HF runtime. Only those pinned HF assets
+are proposed, not the current native source; no form/contact data is submitted.
+Source-path/public-grant review is not checkpoint-byte validation, training-data
+clearance, actual CPU execution, physical correspondence or head acceptance.
+The float forward output must not inherit the display helper's int32 truncation.
+
 ## 2026-10-14: bilateral profile fit is not subject acceptance
 
 Experiment 0206 uses the already pinned GNM identity basis and locally reviewed

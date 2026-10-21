@@ -4,6 +4,16 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 direct matcher source screen
+
+0269 identifies a bounded detector-free pair-conditioned alternative to retired
+sequential tracks. Current EfficientLoFTR native source has PRL project-registration
+terms; the selected earlier HF release/runtime have separately pinned Apache
+grants and pre-change author endorsement. No current native source, registration,
+weight or environment is adopted by the audit. Actual CPU/correspondence/3D/head
+quality is still unmeasured. A concrete adapter risk is the HF display processor's
+integer keypoint conversion; retain raw floating coordinates in any later trial.
+
 ## 2026-10-13 head-only visible-support result
 
 Experiment0205 replaces hidden static contours with actual visible jaw edges and
