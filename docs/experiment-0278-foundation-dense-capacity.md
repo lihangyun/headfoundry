@@ -129,3 +129,30 @@ source PNGs already survive in0274;do not keep another image set. Remove0278's
 weights/source/cache/environment/duplicates after archive verification. Public
 weights need a new official download for recovery;the compact evidence is not
 a full binary backup. Actual deletion/tests/cleanup commit are recorded below.
+
+## Verified cleanup
+
+Private evidence:assets/private/closed-experiments/0278-roma-capacity/evidence.zip,
+18members,187106bytes,zeroadditional images,SHA256
+aa80d7f589f6512b03770e1ff61f41835016620681f4ae9e63dac32504616718.
+CRC/all member SHA rechecked after deletion. Source recovery8f14268 contains
+the two exclusive runners;neural execution source7780d5d. The compact archive
+contains reports/notices/identities,not checkpoints,framework or predictions.
+The unchanged source images still exist only in the prior0274 evidence archive.
+
+After terminal-worker/exact-path/reparse/archive and caller checks,remove
+33336files/2770461590logical bytes:exclusive environment,weights,source/cache,
+two input duplicates and exclusive bytecode. Remove both failed installer and
+model runner from active Git tree. Logical sizes are not measured disk gain.
+Retain only the successful independent dense-grid math control and its generic
+regression;no failed-model test or runtime remains. Main environment has noTorch
+and no live model import. Production source/defaults remain unchanged.
+
+Original video/protected authorization/0230fixture/unrelated0207 hashes match
+their prior identities (five protected files). The video is read only for its
+final integrity hash,not decoded or supplied to inference. No original skin/
+bone/case002 data is consumed.136shared tests pass in5.610s after cleanup.
+Pre-final-commit elapsed1184.749s,within original2400s. Focused local cleanup
+commit follows;no push,head acceptance or retrospective resource pass. Any
+memory-lifetime rewrite needs its own exact-state controls and new registration;
+do not quietly reuse this failed run or increase the cap.
