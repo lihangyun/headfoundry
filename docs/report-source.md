@@ -4,6 +4,18 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 physical observation budget,not a threshold rescue
+
+0273's two fixed known-camera point witnesses show why a1px observation test
+cannot replace3px held projection/2mm physical evaluation:the .75px/narrow
+baseline case fails both,while the1.1px/wide baseline case conditionally passes
+those point-level bounds. Metric scale remains a separate gauge. Numerical
+facts were saved within59s,but interrupted documented closeout exceeds the
+registered wall deadline and is explicitly not a whole-phase budget pass.
+No camera/head is estimated and no failed integration is restored. Next work
+must measure a materially different geometric estimator on independent3D
+targets,not loosen0272 or infer whole-surface accuracy from a single point.
+
 ## 2026-10-21 direct matcher source screen
 
 0269 identifies a bounded detector-free pair-conditioned alternative to retired

@@ -36,3 +36,28 @@ planar recipe with a looser threshold or treating this audit as asset adoption.
 Any future use of a retired component needs a materially different information/
 estimation hypothesis and bounded registration. Existing3px/2mm/full-head/visual
 gates,defaults,input rights and cleanup rules remain unchanged.
+
+## Actual evidence and timing qualification
+
+The saved report is timestamped01:24:26.680Z,58.680s after registration start.
+Existing DLT,OpenCV and closed-form depth agree. With.75px observations,the
+20mm-baseline point error is25.8373mm and held error7.5000px. With1.1px
+observations,the420mm-baseline point error is1.87981mm and held error.523810px.
+Zero-noise,positive-depth,native-bounds,invalid-disparity and2.3x scale controls
+pass. Global scaling preserves pixels but scales the metric point error2.3x.
+These are conditional point witnesses,not a mesh/medical acceptance result.
+
+On resumption05:28Z the report/script exist unchanged and no worker is live.
+Complete documented closeout is after the original01:33:28Z deadline:do not call
+the entire phase budget a pass or interpret the intervening wall time as measured
+compute. Protocol closeout islate/REJECT;the timely saved numerical facts remain
+TECHNICAL_CHECK_PASSED in their stated scope. No expired audit/model is restarted.
+
+The useful conclusion is not that1.079px is acceptable for this person:that is
+still unmeasured. It is that1px alone is neither a universal sufficient nor
+necessary point-level physical budget. Camera geometry,calibration and metric
+gauge matter. A future phase should estimate actual cameras and evaluate them
+against independent3D targets under fixed physical gates,not weaken the old
+pixel threshold.0270/0272 remainREJECT with retired assets. No checkpoint,
+environment,private input or exclusive framework exists to clean here. Retain
+the small generic successful numerical witness;it is not a failed model runner.
