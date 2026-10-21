@@ -594,3 +594,11 @@ Reference software equality and measured native capacity cannot establish
 anatomical identity,visibility,3Dcamera recovery or2mmskin accuracy. Next test must
 measure actual-image correspondence evidence under a prospectively fixed cohort,
 with no medical geometry in the estimator and no head fitting before camera gates.
+
+0299rejects a fixed raw sparse matching contract on real input,not model execution.
+Preserve gross matches even when a percentile passes;numeric endpoint uniqueness
+does not establish semantic/material identity. Distinguish count-ineligible pairs
+from actual held residual failures. A training-RANSAC fit cannot certify untouched
+putative held matches,but failure of this raw contract is also not a test of every
+robust SfM association pipeline. Retire the failed exclusive integration before
+new hypotheses;no post-error score/mask/pruning or camera/shape sweep to rescue it.

@@ -88,3 +88,49 @@ Frozen-input receipt SHA256
 e717a6887ab6a968d2c3a6dae67b6658c9e998e11578e6ff1c578b895a4927d3.
 Conservative polygons omit cap/ears/neck and may omit some occlusion-edge skin;
 this limitation stays fixed and cannot be corrected after matching results.
+
+## Actual result:REJECT the fixed raw sparse observation recipe
+
+One preparation PID6644exits0. Inference sourceccbd3e4,one worker PID53412exits0
+in13.515s;geometry source19fa961,one worker PID22040exits1 with completed
+REJECT report in0.688s. No second forward,threshold/precision/frame/mask rescue.
+Before spawn,a Node variable scope error prevented dispatch;the exact frozen
+receipt was re-read and verified before the ONLY worker started. No input/model
+or scientific configuration changed. Strict complete state/copy checks before
+and after pass;GPUreserved6272581632bytes,peak working set1770373120bytes.
+
+Known affine control has117unique mutual matches/8cells per side,p95=2.09303px,
+so its prospectively registered interpolated-p95/count gate passes. It is NOT a
+clean correspondence set:6/117errors exceed3px,max141.90852px. Preserve those
+outliers and the exact interpolated percentile,not an invented claim that every
+match or at least95%of empirical rows is within3px. No equal-score endpoint ties
+occurred;semantic lookalikes can still be grossly wrong without numeric ties.
+
+Actual face-cohort counts for0/60/120/240/300/360/420/600/690 are
+114/89/123/168/85/104/80/146/197. All36pairs were matched once.22pairs lack the
+registered16train/8held minimum and are NOT measured physical-precision failures.
+All14eligible numerical checks exceed3pxheld epipolar RMS p95;range4.44560–
+166.61433px. Exact perspective software witness max0.000662873pxpasses. Selected
+actual pairs:0/60=78.43923px,240/300=8.56932px,300/360=68.21262px,
+600/690=166.61433px. Even near-repeat240/600=4.44560px. Passing edges0/36;
+root component onlyframe0. No actual camera or head is estimated.
+
+Raw multi-view graph has91components,12with duplicate-frame identity conflicts;
+consistent lengths2/3/4/5 are60/16/1/2. Neither graph counts nor training-RANSAC
+inliers are physical identity acceptance. Predeclared raw spatial panels reveal
+forehead-to-cheek and forehead-to-chin mismatches. Other semantically plausible
+matches do not establish rigid tissue or subpixel truth. Full arrays/statuses
+remain in compact private evidence;the two panels are diagnostic input matches,
+not a reconstructed white head or the user's visual acceptance.
+
+Scope:reject this one-shot detector/descriptor+raw dual-softmax observation
+contract,not the entire DeDoDe family,all robust SfM pipelines,all video evidence
+or every free/self-developed method. Normal robust geometric association was
+NOT evaluated as a reconstruction pipeline here. A future materially different
+identity/outlier mechanism needs independent controls and preregistration;do not
+reinterpret this failure as permission for threshold/mask/point/focal sweeps.
+Actual3pxcamera/2mmskin/head-completeness/mesh/visual gates remainUNVERIFIED.
+
+Failure closeout must preserve0298successful software archive,0299full raw
+face-cohort/control/pair/held evidence and two source panels,then retire the
+exclusive0298/0299integration. It is not an accepted reusable observation asset.

@@ -1,5 +1,17 @@
 # Claim-to-source ledger
 
+## 2026-10-22 actual source sparse trial rejects raw observation contract
+
+0299uses authorizedcase001video locally,not synthetic five-photo consistency or
+medical geometry. Exact0298licensed models/state are unchanged. Nine source-only
+face polygons and native frame hashes freeze before inference. Known2Dcontrol
+p95passes,but six gross/out-of-budget rows remain reported;confidence/numeric
+mutual uniqueness is not material identity. Actual held pair constraints fail
+all14scorable combinations;22other pairs are count-ineligible. This is not a
+medical surface-mm result or a camera/head,not universal DeDoDe/SfM impossibility.
+Raw spatial panels support specific mismatches,not subpixel or human acceptance.
+No training,upload,case002content,paid/NC/private source or head promotion.
+
 ## 2026-10-22 scoped sparse runtime admitted,not physical reconstruction
 
 0298acquires the exact0297official L-v2/B assets under the explicit pinnedMIT model
