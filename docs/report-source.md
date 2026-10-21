@@ -1027,3 +1027,11 @@ archive/reparse checks. Compact3385-byte evidence/source4bf0195 survives,not
 binary weights/runtime.140shared tests/protected hashes pass;default source/
 main environment and0207stay unchanged. A different installation transport
 must first have evidence,not another unbounded retry or a model-quality claim.
+
+0289's separately registered official-wheel contract confirms the same CUDA
+Torch wheel is2867409626compressed bytes and supports exact byte-range206
+responses. Nine fixed1MiBprobes pass;small cached probes do not establish whole
+download speed. Matching TorchVision ABI/hash/size and detached dependency/license
+metadata are pinned. This justifies testing parallel full-byte transport plus
+offline install under its own SAME600s transfer budget,not extending0288 or
+changing models/physical gates. No runtime/model/private input executed here.
