@@ -5,9 +5,13 @@ import numpy as np
 
 from tools.check_global_geometry_contract import project, scene, similarity
 from tools.check_dense_grid_contract import check
+from tools.check_state_fingerprint import check as check_state_fingerprint
 
 
 class GlobalGeometryContractTests(unittest.TestCase):
+    def test_exact_streaming_state_fingerprint(self):
+        check_state_fingerprint()
+
     def test_dense_pixel_edge_center_and_invalid_queries(self):
         check()
 
