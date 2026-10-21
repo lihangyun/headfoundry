@@ -94,3 +94,65 @@ Original source/log/failure/control remain separately archived. No score or
 validation residual existed when authorizing this representation-only repair;
 no further replay,scientific parameter change or budget reset follows failure.
 Replay capacity facts,if any,are reported separately from whole-protocol status.
+
+## Actual result:memory control passes,physical capacityREJECT
+
+Installer1272d01 completes in151.985s with the exact0278official model hashes.
+Scientific first sourced4e33e2;export replay6a8a148. Tiny mmap-copy/weakref and
+bounded fingerprint tests pass. Both complete actual component states match
+their checkpoint values/storage checks;the replay additionally compares full
+checkpoint-value fingerprints to model fingerprints before release. Model
+fingerprints remain unchanged after release and after the exported forward.
+
+The first load measures current working set3710214144->2047188992bytes;
+replay3700281344->2037256192bytes. Both measured reductions are1663025152bytes.
+Historical peak is reported separately and is not claimed to fall. The replay
+completes one full default forward in57.422s;whole process peak7267807232bytes
+(about6.77GiB) is below the unchanged8GiB cap. Source-grid error0px,raw batched
+and unbatched export shapes/dtypes/value-byte hashes match exactly after index0.
+This isTECHNICAL_CHECK_PASSED resource/state/representation evidence only.
+
+One independent scorer consumes only saved predictions. Both true-camera/
+triangulation evaluator controls pass. Every1343true-common point is counted,
+including low-confidence outputs;none is removed by its error.
+
+| Direction | Source-visible | Training | Untouched odd held | All-common correspondence p95 | Common confidence>=.05 |
+|---|---:|---:|---:|---:|---:|
+|+30->-30|2223|239|650|126.059798px|250/1343|
+|-30->+30|2205|246|650|135.649944px|274/1343|
+
+First pose fails ambiguous/insufficient positive-depth support;reverse pose
+fails convergence or positive-depth check. No complete camera/triangulated
+candidate exists,so camera-p95/point-mm/surface-mm/head errors remainUNVERIFIED.
+The pixel numbers are **correspondence** errors on this diagnostic source pair,
+not reconstructed-head millimeters or actual-video error. Do not compare them
+as a matched-cohort improvement percentage against0274's front->30pairs.
+Stop this configuration;no threshold,confidence,precision,resolution/crop/texture
+or checkpoint rescue. Original one-forward protocol remainsREJECT due the
+explicitly recorded extra interface replay,not quietly relabeled a whole pass.
+
+## Read-only failure checks and applicability boundary
+
+Trace original producer88f00f3:VIEWS maps pos->yaw+30 andneg->yaw-30. Thus no
+sign/filename swap is inferred from the score. Independent center/edge and
+source-grid controls and raw/export exact-byte checks also pass. A deterministic
+every67th-common-ID overlay was actually viewed;source material locations and
+predictions disagree substantially. It is labeled SUPPLIED-SCAN INPUTS / NOT
+A RECONSTRUCTED HEAD,not a recovered identity or a medical quality image.
+
+The source input is a small unlit gray/noise head silhouette on black,without
+natural facial albedo/shading. This is a serious representativeness limitation
+for a foundation-image matcher,not proof of the sole failure cause. Known3D
+truth validates the arithmetic and this conditional capacity test;it does not
+make the rendered appearance representative of the authorized video. Do not
+generalize failure to all natural-video methods,or keep rerunning this proxy
+with different paint/crops. Future route selection needs evidence tied to the
+actual video's observation/rigidity problem,not another surrogate-only promise.
+
+## Closeout scope
+
+Keep compact reports,source refs,complete fixed-cohort queried predictions,
+notices/hash references and one labeled diagnostic image. Do not retain full
+raw dense tensors,duplicate inputimages,checkpoint/framework/environment/cache
+or exclusive failed runners. Retain the successful generic streaming-state and
+grid regressions. Actual verified deletion/test/commit details follow below.

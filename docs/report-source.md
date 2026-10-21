@@ -4,6 +4,22 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-21 exact-state lifetime works,source-only physical correspondence fails
+
+0279 releases duplicate copied checkpoints with exact streaming fingerprints,
+measuring1663025152bytes current-working-set reduction. The same560/864FP32
+forward completes57.422s/7267807232peak bytes without changing weights or8GiB cap.
+A publisher-batch-axis exporter defect requires one explicitly registered same-
+configuration replay;original single-forward protocol is not called passed.
+Unchanged independent scoring counts all1343common material points per direction:
+correspondencep95=126.0598/135.6499px,and both pose fits fail. Camera/point/surface/
+actual-video/head quality isUNVERIFIED,not a measured head error. Producer labels,
+coordinate controls and raw/export value bytes are checked independently. Viewed
+inputs are unlit noise silhouettes,not natural face images;this proxy cannot
+establish universal real-video impossibility. Stop without proxy/parameter sweep,
+retire exclusive integration and retain only generic successful fingerprint/grid
+math plus minimal private diagnostic evidence.
+
 ## 2026-10-21 complete foundation loading passes,registered memory cap stops forward
 
 0278 downloads and locks both official RoMa/DINOv2 components,strictly verifies
