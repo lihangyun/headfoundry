@@ -91,3 +91,24 @@ software regression;it uses NumPy and an explicitly installed pinnedPyCOLMAP
 only when run,not as a shared runtime dependency. It is not a production head
 pipeline. Generated database/model/truth and the disposable install are removed
 after compact evidence verification;cleanup details follow below.
+
+## Verified closeout
+
+Private evidence:assets/private/closed-experiments/0276-global-software-control/
+evidence.zip,10members,7331bytes,zeroimages,SHA256
+1b15fe4687e25c5c603b56aeec7df9611e4201250c7c097e963bcd882de17786.
+CRC/all member hashes pass. Source31daf22 is the scientific execution;5e6b424
+adds only the successful NumPy/gauge regression and nonzero CLI status on a
+rejected control,no scientific rerun. The unchanged dependency-rights evidence
+is referenced by0275 archive hash,not copied into a BSD-only notice.
+
+After authoritative terminal-worker/exact-path/reparse/archive checks,remove
+153files/159950360logical bytes:isolated environment,public wheel/cache,synthetic
+database/points/truth. This is not independently measured free-disk gain.
+Reports and deterministic source remain;regenerating the binary test requires
+installing the pinned official wheel again. No patient geometry/images are
+read by the audit;protected authorization and unrelated0207 hashes are unchanged.
+Main environment still has noPyCOLMAP;the retained math regression imports
+without it. Production source/defaults unchanged.135shared tests pass in6.309s.
+Focused local cleanup commit follows within the original1200s;goal stays active
+and no head/camera/medical acceptance is claimed.
