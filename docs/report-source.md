@@ -25,6 +25,14 @@ pair/fine index semantics before another inference. Exclusive integration and
 1.268GBlogical failed contents are retired;compact90-member private evidence and
 Git696654a remain. Do not change3px/2mm/full-head gates or production defaults.
 
+0271's independent NumPy witnesses reproduce two specific source index hazards:
+same-ordinal coarse maps lose all3 interior-cycle identities;match-axis gather
+misselects159/162 fixed fine cells while window-axis gather has exactly0 error.
+Identity/empty/invalid controls pass. Native3D versus HF4D tensor layout explains
+the fine-axis discrepancy. No learned or physical performance is measured.
+Only those two contract corrections support a future fixed-byte,batch1 trial;
+do not also change the native-shared padding convention or claim full batching.
+
 ## 2026-10-13 head-only visible-support result
 
 Experiment0205 replaces hidden static contours with actual visible jaw edges and

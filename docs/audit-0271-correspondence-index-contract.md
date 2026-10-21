@@ -36,3 +36,29 @@ semantics should change is unmeasured. Its batch[0] selection does not affect ou
 single-pair batch. Neither is included in a proposed minimal port-conformance
 repair. Only demonstrated coarse identity layout and batch-added gather axis
 would be eligible for a separately preregistered, unchanged-weight trial.
+
+## Actual result: two independent contract counterexamples
+
+`tools/check_correspondence_index_contract.py` passes its fixed NumPy checks.
+The interior three-cycle's aligned construction preserves3/3 true pairs;the
+same-ordinal column/row construction preserves0/3. Identity and empty controls
+pass. Across162 fixed fine-cell queries,window-axis gathering exactly equals
+independently enumeratedxy (maximum difference0);match-axis gathering is wrong
+for159/162. All invalid-index controls reject. No Torch,private input or model
+is installed or run. This check is retained as a small generic successful
+index-safety witness,not a neural implementation or failed-route integration.
+
+Historical native fine matching uses a3D match/window/xy tensor and gather axis1.
+The HF port adds a leading batch dimension,then retains axis1 on a4D tensor:
+it now gathers candidate matches instead of window cells. The paired coarse
+maps have a separate order mismatch. These are concrete differences from the
+published pair/window contracts,not just another choice of model threshold.
+No claim is made that the two fixes alone restore learned accuracy. Existing
+padding convention is intentionally untouched;full multi-pair batching remains
+unverified and is not authorized by this local two-batch gather check.
+
+A later trial may preserve all learned bytes,pixels,precision,model config and
+gates while changing only the two index-contract sites,using batch1 exclusively.
+It must be separately bounded/registered;do not patch0270's historical outputs
+or infer its corrected result. Actual correspondence,3D,rigidity,cameras and
+head/medical/visual acceptance remainUNVERIFIED.
