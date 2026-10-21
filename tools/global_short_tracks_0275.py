@@ -76,7 +76,7 @@ def controls():
     x = triangulate(p1, p2, u1, u2)
     camera = pc.Camera(model='SIMPLE_PINHOLE', width=720, height=1280,
                        params=[1500., 360., 640.])
-    lib_xy = camera.img_from_cam(truth[:2] / truth[2])
+    lib_xy = camera.img_from_cam(truth)
     replay = float(np.max(np.abs(lib_xy-u1)))
     err = float(np.linalg.norm(x-truth))
     # Stored OpenCV coordinates are COLMAP pixel centers minus .5.
