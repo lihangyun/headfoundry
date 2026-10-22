@@ -602,3 +602,11 @@ from actual held residual failures. A training-RANSAC fit cannot certify untouch
 putative held matches,but failure of this raw contract is also not a test of every
 robust SfM association pipeline. Retire the failed exclusive integration before
 new hypotheses;no post-error score/mask/pruning or camera/shape sweep to rescue it.
+
+0300shows a structural interaction between independent holdout and incremental
+PnP:three-view tracks leave only two training observations,so an initial stereo
+point cannot attach another camera. Preserve this stop;do not leak the held view
+or infer global unobservability. Retain successful coordinate-free graph controls
+without calling cycles physical truth. Any different globally coupled initializer
+must prove unknown-camera/scale recovery on the unchanged corrupted short-track
+control before patient construction. No head/medical gate or default changes.

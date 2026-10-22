@@ -96,3 +96,44 @@ then remove exclusive0300runner/tests/output before next route. No model weights
 exist to delete. Protect original archive,inputs/consent,0230/0293/shared math,
 defaults and unrelated0207. Verify shared tests/protected hashes and commit local
 closeout. No private upload,training,push or automatic old-integration restoration.
+
+## Actual result:REJECT initializer before actual-patient construction
+
+Executed source581422f,one worker PID45452starts2026-10-22T00:15:44.397Z,
+exits1 in0.046s;peak working set88870912bytes. No timeout/retry. The fixed
+corruption identity control retains141tracks,100%material purity and52.2222%
+true-point recall,with162corrupted pair edges. False-bridge and coherent-false-
+clique limitation sentinels pass. This is scoped graph software evidence,not
+case001physical correspondence or reconstruction acceptance.
+
+Training-only shared-focal initialization estimates1199.914873px(true1200,
+relative error0.00709%),from seven F pairs. This is only an initializer,NOT the
+completed unknown-camera control. Pair2/3has36positive training points and
+10.5864degree median parallax. Before any BA,the next camera has0available
+training3Dpoints and stops at the preregistered six-point attachment condition.
+
+Independent audit of frozen-observations.npz confirms EVERY selected track has
+exactly TWO training observations:the third was held. Thus a point triangulated
+from the initial pair cannot also have a training observation in a third camera.
+All remaining cameras0/1/4have exactly0initial3Dattachments. This is a structural
+limitation of the chosen two-view+PnP initializer,not a noisy threshold,bad
+material identity,medical error or proof that globally coupled short tracks are
+unobservable. Do not consume held data/change folds or add frames to rescue it.
+
+No complete control camera model,no final GT-pixel/point error and NO actual
+patient feature archive construction,camera or head run occurred.3px/2mm/full
+head/mesh/visual remainUNVERIFIED. Do not report an actual-video precision failure.
+
+Retain only the successful generic coordinate-free graph kernel as
+tools/cycle_consensus.py and one shared regression,including its explicit false-
+identity limitation and ambiguity rejection. The generic cap gets a pre-use
+off-by-one guard(>=100000);the scored small fixture never approached the cap.
+This is not retaining the rejected camera application or changing its result.
+Retire exclusive0300runner/output after compact evidence/protected-hash checks.
+
+Next hypothesis is a globally coupled relative-pose/bearing initializer that
+uses already available training F edges without requiring a third observation
+of an initialized point. It must first prove unknown camera/scale recovery on
+the SAME frozen short-track control and held split,not bypass the holdout or
+relax camera3px. A separately registered different initializer may reuse fixed
+backend math,not silently rerun0300or restore any model integration.

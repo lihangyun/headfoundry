@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 2026-10-22 coordinate-free cycle software is not patient identity acceptance
+
+0300adds independent graph/camera math using installed NumPy/SciPy/OpenCV and
+shared procedural0276geometry. No trained asset,rights grant,patient/scan content
+or new dependency is acquired. Corrupted synthetic short-track identity selection
+passes,but the held split exposes a structural two-view+PnP initialization stop
+before BA or patient construction. The rejected application must retire;only
+generic tested graph code is retained. Its coherent false-clique sentinel proves
+that combinatorial cycles alone cannot certify physical identity. No medical
+accuracy,actual-video camera,head,training/upload orACCEPT follows.
+
 ## 2026-10-22 actual source sparse trial rejects raw observation contract
 
 0299uses authorizedcase001video locally,not synthetic five-photo consistency or
