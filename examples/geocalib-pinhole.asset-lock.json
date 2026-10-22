@@ -1,0 +1,21 @@
+{
+  "asset_id": "cvg-geocalib-v1.0-pinhole-focal-prior",
+  "source_repository": "https://github.com/cvg/GeoCalib",
+  "source_ref": "1dedb29f94fc11b896c5f572005978aeebccd67f",
+  "code_license": "Apache-2.0",
+  "weight_license": "CC-BY-4.0",
+  "code_notice_sha256": "b458637616125d96702f04666c7717d3a1ade0824f6ea6ccf512b4828f35c8d5",
+  "weight_notice_sha256": "2e0ae239ec372d4ab2ccad3b8280f8fa985badd7fb2765097aec2503c892bb8a",
+  "weight_license_source": "https://github.com/cvg/GeoCalib/blob/1dedb29f94fc11b896c5f572005978aeebccd67f/LICENSE-WEIGHTS",
+  "checkpoint": {
+    "url": "https://github.com/cvg/GeoCalib/releases/download/v1.0/geocalib-pinhole.tar",
+    "release_asset_id": 191236355,
+    "bytes": 116074121,
+    "sha256": "86d6aeacd8bbd974c59ce39f61854e00d36911c732ad89be471476fd708722ac"
+  },
+  "hash_basis": "first official HTTPS acquisition;independent publisher digest absent",
+  "runtime_admitted": false,
+  "physical_accuracy": "UNVERIFIED",
+  "role": "focal prior only;not SE3or verified capture calibration",
+  "automatic_download_or_fallback": false
+}

@@ -30,3 +30,35 @@ If acquisition fails,retain compact report/source recovery/hash evidence and
 remove partial candidate-only payload/runner/test after verified cleanup. If
 successful,retain one candidate weight and lock for the next offline software
 gate;do not reinstall0308or infer SE3from focal/gravity. No retry/sweep.
+
+## Actual acquisition and interrupted closeout
+
+Executed producer252f080. Worker started2026-10-22T09:54:10.285Z,finished
+in12.047s(parent),11.719s(payload),conservative process-tree peak49565696bytes.
+One official116074121-byte asset downloaded,893ZIPmembers/CRC verified.
+SHA25686d6aeacd8bbd974c59ce39f61854e00d36911c732ad89be471476fd708722ac.
+Publisher independent digest remains absent,not publisher-checksum verified.
+The public example lock records source/notice hashes and prohibits fallback.
+Offline --verify checks actual bytes/size/identity;negative tests fail closed.
+
+Stdlib pickletools disassembled data.pkl only;no deserialization/Torch/model:
+globals collections.OrderedDict,torch.FloatStorage,torch.LongStorage and
+torch._utils._rebuild_tensor_v2. This is not tensor-shape/value conformance.
+Retain one candidate binary and source snapshot pending strict offline software
+admission. No runtime installed,private pixels/scan/case002/training/upload.
+TECHNICAL_CHECK_PASSED acquisition only;camera/head accuracyUNVERIFIED.
+
+Private assets/private/geocalib-runtime-0314/acquisition-evidence.zip:
+21592bytes,13members,CRC verified,SHA256
+d9f591204ae5f10aec2fd782c69957ee97e3a7c58577cfb2f8512b5884a2651a.
+This metadata/source capsule excludes the116MBbinary,not a full binary backup.
+The original32protected-file ledger checks28unchanged plus4explicit previously
+committed generic amendments;defaults/0207unchanged.148tests passed7.613s.
+
+Budget:the transfer/worker resource limits passed. Whole900s registration-to-
+commit budget did NOT pass. Evidence finalized10:00:07UTC;subsequent account
+usage interruption stopped work and product left goal usageLimited.
+Conservative registration09:51:54UTC implied10:06:54deadline;goal was manually
+resumed15:22UTC. No retry happened during this gap. Closeout now documents
+the overrun rather than resetting the original timer or calling it a pass.
+This interruption is not model-quality rejection;model remains unexecuted.

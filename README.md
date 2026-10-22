@@ -1,5 +1,10 @@
 # HeadFoundry
 
+[0314 权重获取](docs/experiment-0314-geocalib-weight-acquisition.md)已完成：官方单一 pinhole 权重已下载并锁定本地 SHA256。
+只通过来源、字节和归档检查；尚未加载模型或测得相机、头模精度。收尾被额度中断，原整轮时间预算未通过。
+
+以下0313为获取权重之前的历史状态：
+
 [0313 焦距先验入口](docs/experiment-0313-geocalib-source-entry.md)已完成公开源码及许可快照；
 模型权重尚未下载，离线加载、预测精度和真人适用性仍未验证。不会直接拿预测焦距继续拟合头模。
 

@@ -1212,3 +1212,12 @@ runtime imports or private inputs. Nineteen source/metadata responses263635bytes
 hash-verified;entry evidence0313records rights and all missing checks.146tests
 pass after driver retirement. Only the small public snapshot remains pending a
 strict offline software and known-camera test. No model/camera/head promotion.
+
+# 0314:one official checkpoint acquired,physical use still unverified
+
+Executed252f080;official pinhole asset191236355/116074121bytes SHA86d6aeac...22ac
+locked on first official HTTPS acquisition,not an independent publisher digest.
+893ZIPmembers/CRC and metadata-only pickle disassembly pass;no model loaded.
+148tests pass. Whole900scloseout budget missed after usage interruption;the
+12.047s/49565696-byte worker itself passed its resource cap. Candidate retained
+only for strict offline state/import and known-camera tests;no human data used.

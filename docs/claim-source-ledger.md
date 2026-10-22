@@ -876,3 +876,13 @@ Rights snapshot is not downloaded-byte verification. Candidate plan deliberately
 leaves SHAunknown/runtime_admitted=false. Strict state/import/resource/pixel and
 known-camera checks remainUNVERIFIED;upstream flexible_load may call strict=False.
 No fallback checkpoint,model execution,actual-patient input or accepted camera.
+
+# 0314:local byte identity is not runtime or physical accuracy
+
+Official v1.0pinhole191236355downloaded116074121bytes;SHA256
+86d6aeacd8bbd974c59ce39f61854e00d36911c732ad89be471476fd708722ac.
+Publisher digest absent:trust-on-first-official-HTTPS-acquisition only.
+Source/code/weight notice hashes fixed in examples/geocalib-pinhole.asset-lock.json.
+ZIP/byte verification and148unit tests are technical checks,not model load,
+learned focal accuracy,head SE3or3px/2mmacceptance. Whole closeout budget missed
+after product usage interruption;no alternative weight or private-data inference.

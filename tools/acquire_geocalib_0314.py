@@ -36,6 +36,18 @@ def validate_plan(plan):
 def write(name,value):
     (OUT/name).write_text(json.dumps(value,indent=2,allow_nan=False))
 
+def verify_locked_asset(lock,path):
+    if lock.get('source_ref')!=REF or lock.get('code_license')!='Apache-2.0' or lock.get('weight_license')!='CC-BY-4.0':
+        raise ValueError('missing/wrong locked source or rights')
+    checkpoint=lock.get('checkpoint',{})
+    if (checkpoint.get('release_asset_id'),checkpoint.get('bytes'),checkpoint.get('url'))!=(191236355,116074121,URL):
+        raise ValueError('wrong locked checkpoint;no fallback')
+    if not re.fullmatch('[0-9a-f]{64}',checkpoint.get('sha256','')):
+        raise ValueError('missing/invalid frozen weight hash')
+    if not path.is_file() or path.stat().st_size!=checkpoint['bytes'] or sha256_file(path)!=checkpoint['sha256']:
+        raise ValueError('locked weight bytes differ')
+    return {'status':'TECHNICAL_CHECK_PASSED','scope':'offline locked bytes only;not tensors/model/physical accuracy'}
+
 def worker():
     start=time.monotonic()
     plan=json.loads((SOURCE/'asset-plan.json').read_text())
@@ -90,7 +102,10 @@ def worker():
         bytes=count,sha256=digest,is_zip=is_zip,archive_members=len(archive),seconds=time.monotonic()-start)))
 
 if __name__=='__main__':
-    if sys.argv[1:]==['worker']:
+    if sys.argv[1:]==['--verify']:
+        lock=json.loads((ROOT/'examples/geocalib-pinhole.asset-lock.json').read_text())
+        print(json.dumps(verify_locked_asset(lock,OUT/'geocalib-pinhole.tar')))
+    elif sys.argv[1:]==['worker']:
         worker()
     else:
         from bounded_process import run

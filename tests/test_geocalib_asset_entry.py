@@ -5,9 +5,17 @@ import sys
 import unittest
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
-from acquire_geocalib_0314 import REF,URL,validate_plan
+from acquire_geocalib_0314 import REF,URL,validate_plan,verify_locked_asset
 
 class GeoCalibAssetEntryTest(unittest.TestCase):
+    def test_frozen_hash_is_required_and_bytes_fail_closed(self):
+        lock=json.loads((Path(__file__).resolve().parents[1]/'examples/geocalib-pinhole.asset-lock.json').read_text())
+        bad=copy.deepcopy(lock);del bad['checkpoint']['sha256']
+        with self.assertRaises(ValueError):verify_locked_asset(bad,Path(__file__))
+        bad=copy.deepcopy(lock);del bad['weight_license']
+        with self.assertRaises(ValueError):verify_locked_asset(bad,Path(__file__))
+        with self.assertRaises(ValueError):verify_locked_asset(lock,Path(__file__))
+
     def test_exact_selection_and_missing_rights_reject(self):
         plan=dict(source_ref=REF,rights=dict(code_license='Apache-2.0',weight_license='CC-BY-4.0',
             code_notice=dict(sha256='a'*64,url=f'https://raw.githubusercontent.com/cvg/GeoCalib/{REF}/LICENSE'),
