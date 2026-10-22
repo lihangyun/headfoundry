@@ -20,7 +20,6 @@ def write(name,value):
 def prepare():
     import numpy as np
     from prepare_makehuman_head import extract_head
-    from bounded_process import run
     OUT.mkdir(exist_ok=False)
     write('started.json',dict(epoch=time.time(),deadline_utc='2026-10-22T15:59:00Z'))
     asset=OUT/'cc0';asset.mkdir()
@@ -37,21 +36,32 @@ def prepare():
     vertices,faces,_=extract_head((asset/'base.obj').read_text(),include_eye_helpers=True)
     vertices=(vertices-(vertices.min(0)+vertices.max(0))/2)/(vertices[:,1].max()-vertices[:,1].min())
     np.savez_compressed(OUT/'generic-mesh.npz',vertices=vertices,faces=faces)
+    render_stage()
+
+def render_stage(fixed=False):
+    from bounded_process import run
+    from PIL import Image,ImageDraw
     blend=Path('C:/Program Files/Blender Foundation/Blender 5.2/blender.exe')
     assert blend.is_file()
     env=os.environ.copy()
     for key,name in [('BLENDER_USER_CONFIG','config'),('BLENDER_USER_SCRIPTS','scripts'),('TEMP','temp'),('TMP','temp')]:
         folder=OUT/name;folder.mkdir(exist_ok=True);env[key]=str(folder)
-    record=run([str(blend),'--background','--factory-startup','--python',str(Path(__file__)),'--','render'],
-        str(ROOT),env,OUT/'render.log',OUT/'render-worker.json',180,3*1024**3)
+    suffix='-fixed' if fixed else ''
+    record=run([str(blend),'--background','--factory-startup','--python-exit-code','1','--python',str(Path(__file__)),'--','render'],
+        str(ROOT),env,OUT/f'render{suffix}.log',OUT/f'render-worker{suffix}.json',180,3*1024**3)
     assert record['status']=='TECHNICAL_CHECK_PASSED',record
+    assert (OUT/'render.json').is_file(),'Blender exit code is not a render completion certificate'
+    sheet=Image.new('RGB',(720,680),'#171d25')
+    for i,name in enumerate(NAMES):
+        im=Image.open(OUT/f'{name}.png').convert('RGB');im.thumbnail((180,640))
+        sheet.paste(im,(i*180,25));ImageDraw.Draw(sheet).text((i*180+5,5),name,fill='white')
+    sheet.save(OUT/'inputs.png')
     print(json.dumps(record))
 
 def render():
     import bpy
     import numpy as np
     from mathutils import Vector
-    from PIL import Image,ImageDraw
     from blender_camera_diagnostic import set_camera,projection_error
     mesh=np.load(OUT/'generic-mesh.npz',allow_pickle=False)
     vertices,faces=mesh['vertices'],mesh['faces']
@@ -116,11 +126,6 @@ def render():
         bpy.ops.render.render(write_still=True)
         records.append(dict(name=name,yaw=yaw,world_to_camera=e.tolist(),projection_replay=check,
                             image_sha256=sha256_file(OUT/f'{name}.png')))
-    sheet=Image.new('RGB',(720,680),'#171d25')
-    for i,name in enumerate(NAMES):
-        im=Image.open(OUT/f'{name}.png').convert('RGB');im.thumbnail((180,640))
-        sheet.paste(im,(i*180,25));ImageDraw.Draw(sheet).text((i*180+5,5),name,fill='white')
-    sheet.save(OUT/'inputs.png')
     truth=edge_k.copy();truth[0,2]-=.5;truth[1,2]-=.5
     write('render.json',dict(source='CC0generic asset only;not a patient',blender=bpy.app.version_string,
         integer_center_K=truth.tolist(),edge_coordinate_K=edge_k.tolist(),views=records))
@@ -193,6 +198,10 @@ def worker():
 
 if __name__=='__main__':
     if 'render' in sys.argv:render()
+    elif sys.argv[1:]==['rerender']:
+        assert not (OUT/'forward-started.json').exists() and not list(OUT.glob('*.png')) and not (OUT/'render.json').exists()
+        assert 'No module named' in (OUT/'render.log').read_text()
+        render_stage(fixed=True)
     elif sys.argv[1:]==['worker']:worker()
     elif sys.argv[1:]==['predict']:predict()
     else:prepare()

@@ -46,3 +46,11 @@ protected-file checks and independent local cleanup commit. Shared renderer,
 extractor,licenses/originals/defaults/0207remain. No physical camera/head/medical
 claim can follow a software pass;even this conditional fixture pass would need
 independent actual-video correspondence/pose evidence. No upload or Git push.
+
+Pre-forward runner repair15:42UTC:initial Blender script imported Pillow,which
+is absent in its bundled Python. It failed before ANY render/image/NN invocation;
+Blender default exit0masked the Python error at process-exit level. No input
+completion sentinel existed,so inference was never allowed. Move only contact
+sheet construction to existing main Pillow,require render.json and request
+Blender --python-exit-code1. Keep first log/record,one render-only rerun from
+unchanged acquired mesh/config,not another NN trial or appearance adjustment.
