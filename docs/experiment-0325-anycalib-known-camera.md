@@ -55,3 +55,16 @@ consent/shared numerical helpers/accepted fixtures/defaults/unrelated0207.
 Verify CRC/SHA/positive resolved targets/protected identities/shared suite,
 independent local cleanup commit. Actual camera/head/medical/visual quality
 staysUNVERIFIED,no user acceptance or KeenTools quality inferred.
+
+## Pre-input render-entry repair
+
+Initial sourced28b2fbpreparation exits5.516s/302043136peak bytes;inputs directory
+is empty,no completion sentinel or prediction exists. Parent traceback only
+records child exit1;initial child diagnostics were not captured,so its precise
+cause is UNVERIFIED,not guessed as a confirmed renderer/model defect.
+Before another renderer-only attempt,explicitly expose the existing tools path
+to Blender Python and capture child stdout/stderr. Reuse exact verified public
+asset/derived head bytes,not re-acquire/fit/change images,geometry,K,materials,
+lights or seeds. One guarded rerender is allowed only while inputs remain empty
+and no inference has run. Preserve initial log/worker record. Whole deadline
+unchanged;this is not a model or scored-precision retry.

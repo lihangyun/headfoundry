@@ -47,9 +47,17 @@ def prepare():
     with (OUT/'generic-head.obj').open('x') as stream:
         for vertex in vertices:stream.write('v '+' '.join(map(str,vertex))+'\n')
         for face in faces:stream.write('f '+' '.join(str(int(i)+1) for i in face)+'\n')
+    render_inputs()
+
+
+def render_inputs():
     command=['C:/Program Files/Blender Foundation/Blender 5.2/blender.exe','-b','--python-exit-code','1',
              '--python',str(ROOT/'tools/blender_anycalib_0325.py'),'--',str(OUT)]
-    subprocess.run(command,cwd=ROOT,check=True,timeout=150,creationflags=subprocess.CREATE_NO_WINDOW)
+    rendered=subprocess.run(command,cwd=ROOT,capture_output=True,text=True,encoding='utf8',errors='replace',
+                 timeout=150,creationflags=subprocess.CREATE_NO_WINDOW)
+    (OUT/'blender-stdout.log').write_text(rendered.stdout,encoding='utf8');(OUT/'blender-stderr.log').write_text(rendered.stderr,encoding='utf8')
+    print(rendered.stdout,rendered.stderr,flush=True)
+    if rendered.returncode:raise ValueError('Blender render failed,see captured diagnostics')
     if not (OUT/'truth.json').is_file():raise ValueError('no completed render sentinel')
     images={name:sha(OUT/'inputs'/(name+'.png')) for name in NAMES}
     save('images.json',images)
@@ -146,8 +154,15 @@ def score():
 
 if __name__=='__main__':
     mode=sys.argv[1]
-    if mode in ['prepare','predict']:
+    if mode in ['prepare','repair-render','predict']:
         if mode=='prepare':OUT.mkdir(exist_ok=False);(OUT/'tmp').mkdir()
+        elif mode=='repair-render':
+            if (OUT/'prepared.json').exists() or (OUT/'infer-worker.json').exists() or any((OUT/'inputs').iterdir()):
+                raise ValueError('only empty pre-input terminal render stop may repair')
+            lock=json.loads((ROOT/'examples/makehuman-base-asset-lock.json').read_text())
+            for name,expected in lock['sha256'].items():
+                if sha(OUT/'assets'/name)!=expected:raise ValueError('pre-input public asset changed')
+            for name in ['make-inputs-worker.json','make-inputs.log']:(OUT/name).rename(OUT/('first-'+name))
         else:
             if (OUT/'infer-worker.json').exists() or not (OUT/'prepared.json').exists():raise ValueError('no repeat/incomplete input')
             entry=json.loads((ROOT/'assets/private/anycalib-software-0324/entry.json').read_text())
@@ -158,11 +173,12 @@ if __name__=='__main__':
                 if sha(SOURCE/row['path'])!=row['sha256']:raise ValueError('source/grant changed')
         env=os.environ.copy();env.update({key:'4' for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']})
         env.update(PYTHONDONTWRITEBYTECODE='1',XFORMERS_DISABLED='1',TMP=str(OUT/'tmp'),TEMP=str(OUT/'tmp'),TORCH_HOME=str(OUT/'torch-cache'))
-        stage='make-inputs' if mode=='prepare' else 'infer'
-        record=run([sys.executable,str(Path(__file__).resolve()),stage],str(ROOT),env,OUT/(stage+'.log'),OUT/(stage+'-worker.json'),180,(3 if mode=='prepare' else 5)*1024**3)
+        stage='make-inputs' if mode=='prepare' else ('rerender' if mode=='repair-render' else 'infer')
+        record=run([sys.executable,str(Path(__file__).resolve()),stage],str(ROOT),env,OUT/(stage+'.log'),OUT/(stage+'-worker.json'),180,(5 if mode=='predict' else 3)*1024**3)
         print(json.dumps(record,indent=2))
         if record['status']!='TECHNICAL_CHECK_PASSED':raise SystemExit(1)
         if mode=='predict':score()
     elif mode=='make-inputs':prepare()
+    elif mode=='rerender':render_inputs()
     elif mode=='infer':inference()
     else:raise ValueError('unknown mode')

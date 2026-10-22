@@ -9,6 +9,7 @@ import bpy
 import numpy as np
 from mathutils import Matrix,Vector
 
+sys.path.insert(0,str(Path(__file__).resolve().parent))
 from blender_camera_diagnostic import set_camera,projection_error
 
 OUT=Path(sys.argv[sys.argv.index('--')+1]).resolve()
