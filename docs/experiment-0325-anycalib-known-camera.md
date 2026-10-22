@@ -96,3 +96,41 @@ outputs once,not a second neural call or different ROI/threshold. No predicted
 value or quality result was examined when choosing this correction;source
 manifest/source-frame/weight/model settings stay unchanged. Record both rather
 than silently calling the original metric contract valid.
+
+## Actual conditional precision result:REJECT
+
+One complete four-image sequence,b10f6d1inference source;independent scorer
+correctionad566bf. No NNretry. Worker37.594s/2990313472peak bytes;forwards room/
+front/+60/-60=3.500/3.344/3.250/3.453s. Full loaded/post-forward state fingerprint
+unchanged,all four explicit success flags true,all arrays finite/unit rays.
+This software success is separate from the physical failure below.
+
+Truefx=fy1200in every input;each625-ray grid uses the ORIGINAL registered
+x140..580/y330..950. Shared Blender replay max<=.000211px across all contexts.
+Normative edge/native and independent exact-resampling mappings both fail.
+
+| Context | Predicted fx | Predicted fy | Native-ray p95px upstream / exact |
+| --- | --- | --- | --- |
+| Room | 796.017 | 1101.804 | 83.774099 / 83.774096 |
+| Front | 1194.262 | 1497.800 | 84.156486 / 84.156520 |
+| +60 | 1104.902 | 1298.967 | 172.809033 / 172.809033 |
+| -60 | 1223.240 | 1440.715 | 77.626766 / 77.626800 |
+
+Frontfxalone is close butfyerrs24.817%;+60nativecx203.847versus true359.5is
+also a large error. Do not averagefx/fy,fix principal point or select a side to
+rescue the model. Room also fails,not evidence of exclusively head-specific or
+universal photographic failure. These are generic untextured conditional scenes,
+not real-person millimeter errors,population uncertainty or head reconstruction.
+
+First incorrect endpoint scores (84.378/172.891/77.796headp95) also failed,and
+stay archived alongside the corrected scores. Only metric code is repaired to
+the original registration;no changed image/NNoutput/geometry/ROIselection or
+second model forward is hidden. The initial render exit and subsequent parent
+metadata failure remain explicit,not retroactively passed preparation workers.
+
+Stop this candidate's precision use,not another checkpoint/image/crop/model/
+config sweep. No actual-videoK/SE3fit,head or medical-mm evaluation follows.
+Compact reports/field hashes/input sheet/source refs are retained;exclusive
+source/weight/runtime/runners/locks retire under cleanup0325. The successful
+generic pixel-origin arithmetic/regression is decoupled and retained,not the
+failed integration. Main goal remains active/unmet and actual3px/2mmunchanged.

@@ -1,5 +1,18 @@
 # Claim-to-source ledger
 
+## 0325:commercial permission and strict loading do not certify image calibration
+
+Exact publisher-approved edit state is unchanged across four owned input calls;
+strict399-item conformance and all explicit success flags pass,but independent
+head-ray p95=84.1565/172.8090/77.6268pxrejects the conditional3pxadmission. Inputs
+are CC0generic geometry plus owned Blender scenes,not patient or photorealistic
+images. No hidden scan seed,trueKinput,training/private upload or actual-person
+millimeter result. Preserve both original wrong-endpoint and corrected scores;
+same NNoutputs,not an image/ROIselection or extra neural attempt. Retire the
+whole candidate after compact provenance;license is still permissive,but not
+an accuracy grant or blanket FTO/redistribution clearance. Do not silently
+reinstall after reading older0322-0324software/asset records.
+
 ## 0324:strict state and scoped runtime are not an accuracy grant
 
 AnyCalib edit uses the same pinned Apache source/model;no neural training or

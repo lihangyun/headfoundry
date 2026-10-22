@@ -1,5 +1,10 @@
 # HeadFoundry
 
+[0325 已知相机精度试验](docs/experiment-0325-anycalib-known-camera.md)未通过：正面和双侧通用头的误差p95约84、173、78像素，
+均超过3像素门禁。已止损并[清理专用集成](docs/cleanup-0325-anycalib.md)，仍没有合格真人头模或医学毫米误差结果。
+
+以下0323–0324为历史软件接入记录，相关候选权重、运行环境和专用入口已退役：
+
 [0324 严格软件检查](docs/experiment-0324-anycalib-strict-software.md)已通过完整状态加载、坐标对照和一次CPU运行，
 152项测试通过。仍只是软件接入；已知相机精度、真人头模和医学毫米误差尚未验证。
 

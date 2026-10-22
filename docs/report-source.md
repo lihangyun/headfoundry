@@ -1,5 +1,17 @@
 # HeadFoundry technical research report
 
+## 0325:finite ray-calibrator outputs fail independent conditional3pxprecision
+
+One four-image sequence b10f6d1;unchanged weights/software/state. Input-entry
+repairs occurred before prediction,one scorer-only endpoint correctionad566bf
+restores original bounds without a new NNcall. Head fixed-rayp95=84.1565/
+172.8090/77.6268px,both native mappings fail;room83.7741also fails. Output
+success/covariance/near-correct frontfxcannot certify physicalK. No patient/
+medical geometry inference or claim that all natural photographs are impossible.
+Retire complete candidate source/weight/runtime and exclusive applications,
+retain597896-byte capsule/one sheet and correct generic pixel-origin arithmetic.
+Full real-video head objective remains unmet,actual3px/2mmgates unchanged.
+
 ## 0324:complete ray-calibrator software contract,not physicalK
 
 Source6c0496fplus pre-install host repair3690598. Fixed two official wheels,

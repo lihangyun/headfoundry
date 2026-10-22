@@ -5,10 +5,10 @@ import unittest
 import numpy as np
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
-from anycalib_adapter import native_intrinsics
+from pinhole_conventions import native_intrinsics
 
 
-class AnyCalibCoordinates(unittest.TestCase):
+class PinholeCoordinates(unittest.TestCase):
     def test_edge_to_native_preserves_two_focals(self):
         np.testing.assert_array_equal(native_intrinsics([1200,1250,347.5,631.5]),
             [[1200,0,347],[0,1250,631],[0,0,1]])
