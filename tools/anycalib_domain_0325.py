@@ -51,6 +51,7 @@ def prepare():
 
 
 def render_inputs():
+    lock=json.loads((ROOT/'examples/makehuman-base-asset-lock.json').read_text())
     command=['C:/Program Files/Blender Foundation/Blender 5.2/blender.exe','-b','--python-exit-code','1',
              '--python',str(ROOT/'tools/blender_anycalib_0325.py'),'--',str(OUT)]
     rendered=subprocess.run(command,cwd=ROOT,capture_output=True,text=True,encoding='utf8',errors='replace',
@@ -154,7 +155,16 @@ def score():
 
 if __name__=='__main__':
     mode=sys.argv[1]
-    if mode in ['prepare','repair-render','predict']:
+    if mode=='finalize-inputs':
+        if (OUT/'prepared.json').exists() or (OUT/'infer-worker.json').exists():raise ValueError('metadata already finalized/predicted')
+        truth=json.loads((OUT/'truth.json').read_text());lock=json.loads((ROOT/'examples/makehuman-base-asset-lock.json').read_text())
+        images={name:sha(OUT/'inputs'/(name+'.png')) for name in NAMES}
+        if any(images[name]!=truth['contexts'][name]['sha256'] for name in NAMES):raise ValueError('rendered pixels changed')
+        for name,expected in lock['sha256'].items():
+            if sha(OUT/'assets'/name)!=expected:raise ValueError('CC0grant or mesh changed')
+        save('prepared.json',{'status':'TECHNICAL_CHECK_PASSED','base':lock,'images':images,
+            'source_identity':sha(ROOT/'tools/blender_anycalib_0325.py'),'metadata_only_finalization':True})
+    elif mode in ['prepare','repair-render','predict']:
         if mode=='prepare':OUT.mkdir(exist_ok=False);(OUT/'tmp').mkdir()
         elif mode=='repair-render':
             if (OUT/'prepared.json').exists() or (OUT/'infer-worker.json').exists() or any((OUT/'inputs').iterdir()):

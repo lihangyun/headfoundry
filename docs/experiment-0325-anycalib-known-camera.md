@@ -68,3 +68,13 @@ asset/derived head bytes,not re-acquire/fit/change images,geometry,K,materials,
 lights or seeds. One guarded rerender is allowed only while inputs remain empty
 and no inference has run. Preserve initial log/worker record. Whole deadline
 unchanged;this is not a model or scored-precision retry.
+
+The repaired Blender child completes all four PNGs,truth/replay JSON and its
+completion sentinel. Its parent then exits on NameError:lock during prepared-
+receipt finalization (the factoring moved a local variable out of scope).
+All original PNGs/images.json/contactsheet already exist;no prediction exists.
+Repair only receipt scope and permit one metadata-only finalization after
+matching all four PNG SHAsto the already written renderer truth and matching
+the3CC0asset/grant hashes. No further Blender call,rerender,input-pixel or scene
+change. Preserve this failed parent log/worker record separately;do not call
+that whole worker a pass merely because its renderer completed.
