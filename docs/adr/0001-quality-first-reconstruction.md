@@ -674,3 +674,12 @@ priority from speculative solver replacement to genuinely additional information
 does not admit0310or excuse nonconvergence. No cached real-data retry/new model
 installation is warranted merely by0310's8.46%error. Retain checked generic
 read-only math;do not change actual camera/head/medical acceptance gates.
+
+# 0315:strict software and domain-level calibration are different admissions
+
+GeoCalib candidate is fully state-checked including persistent BNbuffers and
+one bounded offline CPU forward. Do not use upstream flexible_load or replace
+absent uncertainty with zero. Record continuous versus actual integer-pixel
+crop/resize conventions. A software pass on an arbitrary procedural image has
+no known physical focal target and grants no right to fit a patient head. Next
+must test known-camera domain evidence,not reuse rejected0308camera outputs.

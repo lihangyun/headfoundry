@@ -1221,3 +1221,12 @@ locked on first official HTTPS acquisition,not an independent publisher digest.
 148tests pass. Whole900scloseout budget missed after usage interruption;the
 12.047s/49565696-byte worker itself passed its resource cap. Candidate retained
 only for strict offline state/import and known-camera tests;no human data used.
+
+# 0315:complete offline software,not learned calibration accuracy
+
+Producer c3c4f2c:889exact state items/141buffers,28925637parameters,six invalid
+state controls reject. One CPU procedural forward1.875s,worker14.531s/940142592B.
+No default-zero uncertainty or partial flexible_load. Main versions/defaults/
+originals unchanged;148tests7.014s. Coordinate conventions recorded separately.
+Candidate isolated overlay retained pending actual known-camera/domain test.
+Physical SE3/head/medical/likenessUNVERIFIED. No private pixels/scan/uploads.

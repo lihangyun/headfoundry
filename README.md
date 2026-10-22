@@ -1,5 +1,8 @@
 # HeadFoundry
 
+[0315 本地软件检查](docs/experiment-0315-geocalib-software.md)通过完整权重加载及一次 CPU 运行。
+这不是相机精度通过；下一关是在已知相机的头部画面上检验预测焦距，不直接拟合真人。
+
 [0314 权重获取](docs/experiment-0314-geocalib-weight-acquisition.md)已完成：官方单一 pinhole 权重已下载并锁定本地 SHA256。
 只通过来源、字节和归档检查；尚未加载模型或测得相机、头模精度。收尾被额度中断，原整轮时间预算未通过。
 
