@@ -40,3 +40,29 @@ only. If fail,record evidence/Git recovery and retire exclusive failed files
 before any different route. No package/model/private media/scan/case002read,
 training/upload/default/source-asset change. Protected files remain unchanged.
 All actual-camera/head/medical precision/likeness acceptance stays UNVERIFIED.
+
+## Actual implementation result
+
+Registration bb2bd04;new direct_patch_graph reuses unchanged0320pair residual
+and restores exact requested edge order after grouping host/target pairs. All
+four deterministic regressions pass(.876s):sparse nonzero-exposure translated
+plane residual <=2e-15;complete Cartesian equivalence residual <=1e-14 and
+warps <=1e-10px;noncommuting global camera matrices replay independent OpenCV
+projectPoints <=1e-10px;global pose and photometric gauges preserve results.
+Bounds are asserted algebra tolerances,not measured patient pixel errors.
+Bad graph IDs/self/duplicate/orphan edges,off-image/behind/reflected states,
+zero depth,NaN/overflow/exposure-domain and an invalid unused camera reject.
+No connectivity/rank or unknown initialization assertion was added by stealth.
+
+Full retained suite154tests passes8.467s. No package,weight,framework,private
+pixel or scan geometry was read for reconstruction. Generic arithmetic only
+is TECHNICAL_CHECK_PASSED. No camera solve,physical precision,head,medical
+millimeter score or visual acceptance was produced. The concrete next gate
+is one independently generated partial-visibility unknown-camera solve,with
+image-only initialization and separate truth evaluation,NOT rerunning0321's
+34cached complete tracks. That full gate needs its own bounded registration.
+
+All38prior protected input/consent/fixture/shared-file identities verify after
+tests(private verification.json). No heavy or failed exclusive output exists
+to remove;retain only the correct opt-in helper/regression. Closeout19:20UTC
+is within the19:29:20UTCdeadline. Production defaults and unrelated0207unchanged.

@@ -1,5 +1,9 @@
 # HeadFoundry
 
+[0326 局部可见图像约束](docs/experiment-0326-sparse-host-patch-contract.md)通过154项测试：
+支持不同局部点使用各自可见视角，已验证非参考相机、曝光及坐标变换。
+本轮仅完成算法基础层；完整未知相机求解、真人头模与医学毫米精度仍未通过。
+
 [0325 已知相机精度试验](docs/experiment-0325-anycalib-known-camera.md)未通过：正面和双侧通用头的误差p95约84、173、78像素，
 均超过3像素门禁。已止损并[清理专用集成](docs/cleanup-0325-anycalib.md)，仍没有合格真人头模或医学毫米误差结果。
 

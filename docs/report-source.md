@@ -1,5 +1,15 @@
 # HeadFoundry technical research report
 
+## 0326:sparse hosts remove a Cartesian implementation restriction,not calibration uncertainty
+
+0321never executed its direct solver because of complete-track coverage.
+New independently written host/target wrapper follows the published direct
+observation structure without reusing that recipe's inputs/solver. Four math
+controls and154retained tests pass;noncommuting host transforms and affine
+exposure differences checked independently. Connectivity/visibility/rank and
+image-only unknownK/SE3/depth recovery are not certified by a valid residual.
+No new camera/head/medical result;next gate must test the full sparse solve.
+
 ## 0325:finite ray-calibrator outputs fail independent conditional3pxprecision
 
 One four-image sequence b10f6d1;unchanged weights/software/state. Input-entry

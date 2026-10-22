@@ -1,5 +1,15 @@
 # Claim-to-source ledger
 
+## 0326:partial visibility is an observation structure,not a solved initialization
+
+DSO paper Eq4-8/Sec2.2(https://arxiv.org/html/1607.02565v2) supports point-host
+and visible-target photometric factors. It does not establish a calibration-
+free initializer for this project. Our new independent wrapper only verifies
+that structure,world-to-camera relative transforms and exposure gauges using
+analytic and OpenCV controls.154shared tests pass. Actual camera3px/head2mm/
+user visual gates remain UNVERIFIED. No license/asset/model claim or restored
+failed integration is implied by reusing the correct0320math.
+
 ## 0325:commercial permission and strict loading do not certify image calibration
 
 Exact publisher-approved edit state is unchanged across four owned input calls;
