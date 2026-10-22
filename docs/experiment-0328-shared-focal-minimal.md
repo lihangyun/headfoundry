@@ -78,3 +78,42 @@ distinct(sourcef956d2d1...,wheelf2974dfc...). Python entry and12-line symbol
 export helper inspected:local C++extension only,no automatic download/build.
 Finalization1.500s/109359104bytes;no main dependency installation. Reverify
 installed runtime against exact pinned wheel and frozen input before import.
+
+## Exact-case stop and prospective static postmortem
+
+Exact inference runs once;physical evaluator rejects:f451.3697502instead of1200,
+heldp95173.2618/259.2332pxalthough all96training rows are RANSACinliers.
+Noisy case is NOT run,no pose/focal result selected or retried. This is a
+registered conditional failure,not yet proof of a faulty solver/library.
+Potential confound:the owned target orbit has equal pivot distance. Before
+cleanup,one <=300sread-only algebraic postmortem will compare the frozen output
+with truth,derive centered trueFand full Demazure polynomial coefficients under
+symbolic focal scaling,check all training Sampson/retriangulation residuals
+without dropping rows. No library/tracker/optimization call,new camera solve,
+input/threshold/seed change or patient/scan read. Purpose:distinguish a bad
+algorithm result from multiple/continuous calibration solutions in the fixture.
+It cannot rescue the original physical pass or authorize a new head fit.
+
+## Verified critical-motion confound,not a library precision conclusion
+
+Static postmortem completes. First polynomial-code attempt stops on NumPy's
+polymul trimming trailing zero coefficients;fixed-length convolution corrects
+the algebra accumulator without changing inputs or rerunning any estimator.
+Full normalized Demazure cubic coefficient maximum4.15357279e-17,below1e-12
+roundoff witness. This is a polynomial identity,not a sampledfocal sweep.
+For nonzero rank-two true centeredF,the diagonal transformation preserves rank
+for any positive focal scale. The zero cubic means a continuous family of
+essential matrices,so exact two-view data do not uniquely identify truef here.
+
+The returned and true normalizedFagree1.69861984e-12. All96training Sampson
+errors max1.71259007e-9px(candidate),3.18693721e-13px(true). Retriangulation
+under candidate451.36975has positive depths and maxreprojection1.24807138e-9px.
+Thus two physically different camera/shape explanations match the same data.
+The candidate STILL FAILS registered physical projection,so no pass is granted;
+but claiming PoseLib is generally inaccurate from this critical fixture would
+be unsupported. Noisy case remains UNVERIFIED. Keep successful exact-fixture
+polynomial witness/regression;one fixed+.3radial-translation negative control
+must break the identity,without any estimator call or camera acceptance claim.
+Do not extrapolate this two-view result to all earlier multiview contexts or
+the actual video without analyzing their own constraints. Nonzero polynomial
+alone is NOT sufficient uniqueness/noise-conditioning/3pxcertification.

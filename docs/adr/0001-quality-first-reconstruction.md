@@ -1,5 +1,22 @@
 # ADR 0001: quality-first clean-room reconstruction
 
+## 2026-10-22:calibration fixtures must identify the claimed unknowns
+
+0328exposes a critical two-view equal-pivot-radius orbit:the true centered
+rank-twoFhas an identically zero Demazure cubic under any positive focal
+scale. A wrongf451and true1200both explain all exact image correspondences
+with positive retriangulated depths. Known3Dprojection correctly rejects the
+wrong physical camera,but this fixture cannot determine a solver's unique-f
+recovery accuracy. Matrix validity,cheirality,inlier count,noncollinear motion
+or zero reprojection alone must never substitute for identifiability.
+Keep the numerical polynomial witness and a fixed radial-motion negative
+control. A nonzero polynomial is not itself unique/stable calibration or a
+noisy physical pass. Before another conditional calibration test,justify
+genuinely sufficient information;do not merely swap solvers or tweak frozen
+failed trajectories. This exact two-view result does not prove actual video
+or earlier multiview runs unobservable;those need their own evidence. No
+patient/head/medical gate,prior-as-truth restriction or production default changes.
+
 ## 2026-10-22:separate failed initialization entry from unmeasured direct accuracy
 
 0321's fixed image-only full-track screen admits34of96queries,not its required48.
