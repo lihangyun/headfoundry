@@ -634,3 +634,12 @@ cannot be replaced post-hoc,while its qualitatively judged domain also cannot
 prove all784detections unusable. Future reuse requires a distinct explicit domain/
 visibility protocol. Relative z/AR transforms/presence are not physical cameras,
 material identity or independent truth.3px/2mm/head gates and defaults stay fixed.
+# 0304:separate bounded optimization failure from physical impossibility
+
+Anatomical VIDEO semantic observations are hypotheses,not fixed material truth.
+The four-view solve has valid matrices/positive depth/nonbound focal,but misses
+held3pxand one sample-count condition at a nonconverged300-evaluation limit.
+Reject and clean the exact configuration without parameter/point/frame rescue;
+do not infer a physical lower bound or quietly fit a head from these cameras.
+Shared software controls do not replace medical or user-visual acceptance.
+

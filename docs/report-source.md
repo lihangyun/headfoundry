@@ -4,6 +4,19 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-22 actual anatomical-video camera score,not head acceptance
+
+0304uses28named nose/canthus IDs in four source-reviewed natural video frames,
+not generic dense material bindings or predicted depth. Exact shared unknown-
+camera software control passes. Real solve has four proper positive-depth poses,
+full-rank positive bearing scales and final1067.210pxnonbound focal,but held
+per-view p953.192/.842/3.868/3.153pxand5held IDs in one view fail the unchanged
+gate. It also reaches the fixed300evaluation cap without convergence;these
+numbers are not a converged physical lower bound or proof the video cannot
+be reconstructed. Stop exact configuration,no iteration/frame/point rescue.
+Keep all raw rows/matrices privately and clean the exclusive application.
+Head/medical2mm/full profiles/user likeness are stillUNVERIFIED.
+
 ## 2026-10-22 continuous semantic observations:coverage rejected,3Dunmeasured
 
 0303processes all1041case001frames once with the existing locked VIDEO task.

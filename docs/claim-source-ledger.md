@@ -822,3 +822,12 @@ strict finiteFP32 state passes236keys/16476962parameters,no backbone download.
 This is local inference preparation,not permission to train/upload people or
 redistribute every binary without notices. No model forward/patient precision
 has been measured;no benchmark or visual acceptance claim is transferred.
+# 0304 actual four-view conditional camera evidence
+
+Sourcec5ce8f3;registered28nose/canthus IDs and four source-reviewed frames.
+All112observations retained;no predicted depth/scan used. Shared procedural true-
+geometry control TECHNICAL_CHECK_PASSED. Actual proper matrices/cheirality/focal
+checks pass,but per-view held p953.192/.842/3.868/3.153pxand one5-IDheld count
+reject this configuration.300evaluation cap reached,not converged. No universal
+landmark/video failure,accepted camera,head,medical mm orvisual acceptance claim.
+

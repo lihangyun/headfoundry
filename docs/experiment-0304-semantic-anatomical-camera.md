@@ -80,3 +80,38 @@ Source-only panel reviewed before any camera/control result:no gross region
 occlusion identified;individual locations/rigidity remainUNVERIFIED. Closely
 spaced nose IDs are not claimed to be independent material measurements.
 No coordinate/point/frame edit;this is agent source review,not user acceptance.
+
+## Actual one-shot result:REJECT,not a converged physical impossibility claim
+
+Sourcec5ce8f3,one worker PID35224,2026-10-22T07:29:06.905Z,terminal exit1.
+Both stages complete in2.732s;peak working set93036544bytes. The unchanged
+procedural control passes:141pure tracks,52.22%recall,true-point reprojection
+p957.833458e-7px,wrong-camera123.6459px. This is software evidence only.
+
+All six real training relative-pose edges initialize;median parallax2.252..29.761
+degrees,bearing rank15/15,all six scales positive. Tree negative witness10/12.
+All four final4x4cameras proper,all train/held depths positive. Focal initializer
+touches640pxlower bound,then bundle result1067.210pxis inside original bounds;
+this does not independently establish true physical focal length.
+
+| Native frame | Held IDs | Held p95px | Maximum px |
+| --- | ---: | ---: | ---: |
+| 0 | 8 | 3.191618 | 3.315417 |
+| 240 | 6 | .842326 | .845226 |
+| 300 | 5 | 3.867704 | 4.029560 |
+| 630 | 9 | 3.153292 | 3.338553 |
+
+All28tracks/112observations retained:84training and28held. Training p951.180039px,
+overall held p953.330456px. Three views exceed3pxand300also lacks the required
+six held IDs. The frozen hash split/count rule is this protocol's condition,not
+a universal observability theorem. Do not claim failure caused by count alone.
+Optimizer reaches300evaluations and explicitly reports nonconvergence. Therefore
+the trial rejects this bounded configuration,NOT all anatomical observations or
+the existence of a better optimum. No added iterations/point/frame substitution
+or second real fit follows. No scan geometry,predicted depth orcase002content
+was read;no head or medical millimeter result was generated.
+
+Retire this exact protocol after full score/matrix/point/observation archive.
+Do not reinterpret it as a head-quality improvement or compare its error directly
+with the different0299population. Any later numerical audit must separate
+solver convergence from physical correspondence,with no silent gate relaxation.
