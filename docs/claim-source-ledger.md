@@ -831,3 +831,14 @@ checks pass,but per-view held p953.192/.842/3.868/3.153pxand one5-IDheld count
 reject this configuration.300evaluation cap reached,not converged. No universal
 landmark/video failure,accepted camera,head,medical mm orvisual acceptance claim.
 
+# 0306-0307 noncausal global-query tracker:software admission only
+
+[Pinned publisher grant](https://github.com/google-deepmind/tapnet/blob/730cda1c730877cfedbe01bf87fb1cadb78a565d/README.md#license-and-disclaimer)
+explicitly includes the linked BootsTAPIR weights under Apache-2.0. Actual
+218886140bytes match publisher LFS SHA8493c7a69e02c85b9382fbb3c7b8b539b36bc08ede744b9e99feb739a0129f4b.
+All three code hashes,complete218state tensors/54699335parameters,independent
+coordinate controls and one CPU procedural forward pass. No private pixels,
+medical inference,training or upload. This is TECHNICAL_CHECK_PASSED software,
+not3pxcamera/2mmhead or a demonstrated advantage over the failed recurrent model.
+Do not infer actual-video success from public tracking benchmarks.
+

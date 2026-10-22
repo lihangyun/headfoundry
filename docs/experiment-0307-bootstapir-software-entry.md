@@ -68,3 +68,28 @@ has64characters;correct only the handwritten field/docs to that captured value.
 Commit8e4c85acontains the initial failing regression,not a passing test claim.
 Also compare all source/weight fields programmatically with the captured primary
 ledgers before setup,so even a well-formed wrong hash fails without downloading.
+
+## Actual result:TECHNICAL_CHECK_PASSED software only
+
+Executed sourcea55268a. Setup PID39752starts2026-10-22T08:11:50.380Z,terminal
+exit0 in64.484s. Complete218886140byte checkpoint matches the corrected original
+publisher SHA. Six private packages install at the pinned versions;all declared
+runtime requirements pass against the process-local overlay plus read-only main
+packages. Package notices retained. Static post-check index additionally records
+15resolved infrastructure packages and notice hashes;it is not a second forward
+or a claim those metadata were captured inside the original inference process.
+
+One offline worker PID46352starts08:13:22.888Z,terminal exit0 after16.891s.
+Single4frame/8query procedural forward8.625s,peak working1245847552bytes.
+Strict218state tensors/54699335parameters pass keys/shapes/dtypes/finite and
+bitwise loaded-state equality. File SHA/state unchanged after forward. Pixel
+oracle error exactly0;both private-input and network denial sentinels pass.
+All raw random-fixture tracks/logits/queries and input hash remain privately
+recorded,not a true3D material benchmark or a face/medical comparison.
+
+144shared tests pass in6.470s. All27protected hashes/original archives unchanged;
+main environment and production/defaults/0207untouched. Verification385.91s
+after setup,within1800s. No actual video pixel,scan,case002,training or upload.
+No software failure framework cleanup is triggered;retain this provisional
+runtime for ONE separately frozen actual-video trial. Public-data fetch and
+closeout-only helpers are removed. Physical tracks/camera/head remainUNVERIFIED.

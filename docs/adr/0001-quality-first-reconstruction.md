@@ -643,3 +643,12 @@ Reject and clean the exact configuration without parameter/point/frame rescue;
 do not infer a physical lower bound or quietly fit a head from these cameras.
 Shared software controls do not replace medical or user-visual acceptance.
 
+# 0307:admit a distinct observation mechanism,not a recurrent checkpoint rescue
+
+Noncausal TAPIR queries each frame globally before local temporal refinement;
+it is not a reinstallation/threshold variant of rejected recurrent TAPNext++.
+Publisher code/checkpoint grants,full weight/state identities,coordinate oracles
+and bounded CPU smoke test pass. Keep one provisional runtime for an independently
+registered real-video trial. No physical correspondence,head or medical acceptance
+is inherited from software admission or model-family benchmark claims.
+

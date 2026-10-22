@@ -4,6 +4,18 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 0306-0307:distinct global-query tracker admitted for one actual test
+
+Contour+prior work0243-0247was already tested and is not re-created. Noncausal
+BootsTAPIR uses per-frame global query matching plus trajectory refinement,not
+0259's recurrent TAPNext++ architecture. Pinned publisher source/license and
+actual complete checkpoint hash pass;the explicit Apache-2.0 grant includes
+weights. Three inference files,six private CPU dependencies,read-only shared
+infrastructure,no JAX/training/CUDA framework. One procedural forward8.625s,
+peak1.246GB,and independent pixel convention controls pass. All218loaded state
+tensors remain identical. This justifies a separately frozen actual-video trial,
+not a favorable material/camera/head/medical result. Whole prior goal unchanged.
+
 ## 0305 numerical audit does not justify a camera rescue
 
 Frozen0304training objective replays within8e-13px;independent finite-difference
