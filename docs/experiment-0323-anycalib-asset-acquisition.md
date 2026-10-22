@@ -36,3 +36,45 @@ original/default/protected identities plus retained tests verify at closeout.
 On failure,compact logs/hashes/source recovery,remove exclusive partial bytes/
 runner and failed-only assets per AGENTSbefore another route. Do not re-download
 retired GeoCalib/trackers or use0321's archived matches as a rescue.
+
+## Actual acquired identity and scope
+
+Executed source2d17dc5. Official HFmetadata for the same exact1281194246-byte
+file publishes LFS SHA2569e599ade6013a094a816c5793e5a08644663947939150a3f157f09b987e8aa34,
+pointer blobff9e8773ccbe462e7a428d46f4ab750ab225d2b9. The complete official GitHub
+download matches that SHA. GitHub release digest remains null,but this result
+IS a published HF LFS/GitHub cross-check,not the possible TOFU-only branch.
+The ongoing installation entry now hard-locks this known SHA even if later
+optional metadata lookup is unavailable;changed published hash rejects,no switch.
+Public identity/grant/purpose lock:examples/anycalib-edit-asset-lock.json.
+
+Worker109.469s,conservative observed process-tree peak51433472bytes,exit0.
+403ZIPmembers pass path/duplicate/inflation/CRC controls. Metadata uses only
+OrderedDict,FloatStorage and rebuild_tensor_v2global references.885candidate
+state-like KEY STRINGS include metadata and are NOT a counted/matched model
+state schema. No tensors unpickled or model imported;full keys/shapes/dtypes/
+finiteness/loaded bytes remainUNVERIFIED. No neural accuracy or camera passed.
+
+Post-acquisition review fixes two reporting/interface defects without another
+download:save opcode NAMES rather than object-address reprs,and return nonzero
+CLI exit for a rejected monitored worker. Same checkpoint metadata hash is
+verified before regenerating opcode text only;mocked success/reject worker CLI
+regression checks both exit paths with no network/model/data access. These
+changes do not retroactively represent another acquisition or scientific run.
+
+Known SHA is now required on every future acquisition;the one candidate stays
+private and inactive pending strict offline software and independent physical
+tests. Main environment has no torch;no dependency installation occurred.
+All34protected source/consent/shared identities and source/notices hashes verify.
+Final151tests pass7.445s,including two candidate-only public lock/CLI regressions;
+the temporary verification helper is retired. No production src/default diff.
+Closeout18:23UTCis inside18:34deadline;head/medical objective still active.
+
+Existing acquisition entry is opt-in research infrastructure,not production
+reconstruction:python tools/acquire_anycalib_0323.py requires the separately
+verified0322local source/notices receipt and a fresh own asset directory. It
+refuses to overwrite this completed installation;it never deletes/replaces a
+candidate automatically. Current source/install location and full checks are
+recorded privately;there is no need to acquire another checkpoint. Next gate
+is offline strict complete-state/import and known-coordinate conformance,
+followed by independent known-camera domain precision BEFORE real-video use.

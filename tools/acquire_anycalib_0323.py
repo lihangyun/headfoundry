@@ -4,7 +4,6 @@ import json
 import os
 from pathlib import Path
 import pickletools
-import subprocess
 import sys
 import time
 import urllib.parse
@@ -18,6 +17,7 @@ SOURCE=ROOT/'assets/private/anycalib-source-0322'
 OUT=ROOT/'assets/private/anycalib-asset-0323'
 NAME='anycalib_edit.pt'
 SIZE=1281194246
+SHA='9e599ade6013a094a816c5793e5a08644663947939150a3f157f09b987e8aa34'
 URL='https://github.com/javrtg/AnyCalib/releases/download/v1.0.0/'+NAME
 
 
@@ -43,7 +43,7 @@ def worker():
         raise ValueError('explicit code AND weight grant missing')
     if not (SOURCE/'snapshot/LICENSE').read_text().lstrip().startswith('Apache License'):
         raise ValueError('Apache grant missing')
-    expected_sha=None;hf_record={'status':'UNVERIFIED','lfs_sha256':None}
+    expected_sha=SHA;hf_record={'status':'UNVERIFIED','lfs_sha256':None}
     metadata_url='https://huggingface.co/api/models/javrtg/AnyCalib/tree/main'
     try:
         request=urllib.request.Request(metadata_url,headers={'User-Agent':'HeadFoundry-fixed-asset-entry'})
@@ -56,7 +56,7 @@ def worker():
             if row['size']!=SIZE:raise ValueError('official HF size conflicts with fixed GitHub asset')
             if value is not None:
                 if len(value)!=64 or any(c not in '0123456789abcdef' for c in value):raise ValueError('invalid LFS SHA')
-                expected_sha=value
+                if value!=SHA:raise ValueError('published digest changed from locked asset')
             hf_record={'status':'TECHNICAL_CHECK_PASSED' if value else 'UNVERIFIED',
                 'lfs_sha256':value,'file_metadata':row,'response_sha256':hashlib.sha256(content).hexdigest()}
     except (OSError,TimeoutError,json.JSONDecodeError) as error:
@@ -106,10 +106,10 @@ def worker():
                 raise ValueError('unsupported executable pickle metadata:'+opcode.name)
             elif opcode.name in ['BINUNICODE','SHORT_BINUNICODE'] and isinstance(arg,str) and any(arg.startswith(prefix) for prefix in ('backbone.','decoder.','head.')):
                 tensor_keys.append(arg)
-        (OUT/'data.pkl-opcodes.txt').write_text('\n'.join(str(row) for row in pickletools.genops(data)),encoding='utf8')
+        (OUT/'data.pkl-opcodes.txt').write_text('\n'.join(f'{pos} {op.name} {arg!r}' for op,arg,pos in pickletools.genops(data)),encoding='utf8')
     save('result.json',{'status':'TECHNICAL_CHECK_PASSED','scope':'acquired byte/ZIP/opcode metadata only',
         'asset_name':NAME,'asset_bytes':total,'asset_sha256':actual,'publisher_hf_lfs_sha256':expected_sha,
-        'identity_basis':'official HF LFS/GitHub cross-check' if expected_sha else 'TOFU official HTTPS acquisition',
+        'identity_basis':'official HF LFS/GitHub cross-check' if hf_record['lfs_sha256']==SHA else 'previously locked publisher HF LFS SHA256',
         'zip_members':len(entries),'pickle_globals':sorted(set(globals_)),'candidate_state_key_strings':len(tensor_keys),
         'pickle_metadata_sha256':hashlib.sha256(data).hexdigest(),'seconds':time.monotonic()-start,
         'state_compatible':'UNVERIFIED','tensor_finite':'UNVERIFIED','loaded_model':'UNVERIFIED',
@@ -122,8 +122,10 @@ if __name__=='__main__':
         record=run([sys.executable,str(Path(__file__).resolve()),'worker'],str(ROOT),os.environ.copy(),
             OUT/'worker.log',OUT/'worker.json',600,128*1024**2)
         print(json.dumps(record,indent=2))
-    else:
+        sys.exit(0 if record['status']=='TECHNICAL_CHECK_PASSED' else 1)
+    elif sys.argv[1:]==['worker']:
         try:worker()
         except Exception as error:
             save('failure.json',{'status':'REJECT','error':repr(error),'epoch':time.time()})
             raise
+    else:raise SystemExit('internal worker argument only')

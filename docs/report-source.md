@@ -1,5 +1,16 @@
 # HeadFoundry technical research report
 
+## 0323:complete fixed candidate bytes,not learned camera evidence
+
+One official AnyCalib edit release file1281194246bytes acquired under0322's
+pinned Apache code/weight grant. Complete GitHub bytes match publisher HF LFS
+SHA9e599ade...aa34,not only TOFU;GitHub digest remains null. Worker109.469s/
+51433472peak bytes;403ZIPmembers/CRC/safe opcode metadata pass. No model import,
+unpickle/finite-state/physical prediction or human input.885state-like strings
+are NOT verified state tensors. Lock source/purpose/notices and expected SHA;
+strict offline software and known-camera domain evidence must come next,not
+another checkpoint or current patient/head/default promotion.
+
 ## 0322:screen circular inputs before choosing another camera observation
 
 DSO's host/visible-target graph does not require complete tracks,but its stock

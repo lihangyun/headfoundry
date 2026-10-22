@@ -1,5 +1,8 @@
 # HeadFoundry
 
+[0323 新标定候选](docs/experiment-0323-anycalib-asset-acquisition.md)：AnyCalib 的单一已许可权重已完整获取，
+与发布者公开哈希一致。仅资产完整性通过；尚未加载模型、验证相机精度或生成新头模。
+
 [0321 完整图像相机尝试](docs/experiment-0321-image-only-direct-camera.md)在初始化入口止损：
 96个候选点中只有34条完整轨迹，未达到预登记48条。尚未运行直接图像优化，不能判断其三维精度。
 已清理本轮专用实现和约41.75MB产物；没有新增合格相机、真人头模或医学毫米误差结果。

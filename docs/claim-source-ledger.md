@@ -1,5 +1,23 @@
 # Claim-to-source ledger
 
+## 0322-0323:permissive FoV/ray candidate,not a calibrated camera
+
+The pinned[AnyCalib publisher grant](https://github.com/javrtg/AnyCalib/blob/027a8497d893f4b2596f23d6324c05e4b81064ed/README.md#license)
+expressly includes code AND weights under Apache2. Preserve separately sourced
+DINOv2Apache2,DPTMIT,RAFTBSD3and OpenCapApache2notices;do not infer blanket
+training-data/privacy/patent or downstream binary-distribution clearance.
+Only public sources/metadata and exactv1.0.0edit checkpoint are acquired,no
+siclibtraining/evaluation integration,private upload or human neural input.
+
+GitHub asset238336622/1281194246bytes SHA9e599ade6013a094a816c5793e5a08644663947939150a3f157f09b987e8aa34
+matches the official javrtg/AnyCalib HF LFS metadata. GitHub release digest is
+null,but the current cross-source identity is stronger than first-download
+TOFUalone. ZIP/opcode checks do NOT certify keys/shapes/finite values/loading
+or intrinsic/SE3/head/medical accuracy. Output would beK/rays,not metricdepth.
+Prospective edited-model selection reflects unknown crop provenance,not evidence
+that the real video was edited or a post-score checkpoint search. No model
+forward has run. Keep trueK,scan and query identities out of future inference.
+
 ## 2026-10-22 semantic video coverage is not physical accuracy
 
 0303pins four existing task components/three official Apache model cards and runs
