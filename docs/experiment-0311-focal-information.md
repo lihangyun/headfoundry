@@ -65,3 +65,22 @@ one public regression;no production camera implementation/default changed.
 The two intentional source/test changes relative to earlier protection ledgers
 must be explicitly amended without replacing old hashes. Active one-off driver
 is retired after compact raw Jacobian/ranks/replay/source/worker evidence.
+
+## Verified closeout
+
+Local capsule assets/private/closed-experiments/0311-focal-information/evidence.zip,
+65001bytes,nine members,no images,CRC verified;SHA256
+204b58525e91a8a2c50c7b5520615633417ac3d43f369e0480a2cd7f21b5d8ac.
+Full raw Jacobian/clean training/truth transform/singular values/ranks/replay,
+source hashes and exact executed driver/protocol remain. Source recovery7415597,
+result638b4b8. Six exclusive loose files76436bytes and the one-off driver retired;
+no framework,weights or environment installed or removed. All observed worker
+handles terminal before scoped nonrecursive deletion;resolved containment,
+no-reparse,file-only inventory and archive hash/CRC checked.
+
+146retained tests pass in7.855s. Four explicit generic diagnostic/monitor source
+changes versus the original32-file protection snapshot are separately recorded;
+the other28original/fixture/unrelated hashes match,including0207. Old snapshot
+is not overwritten. Verified linearization/information math and its public test
+remain active;camera source/defaults unchanged. Whole closeout within1200sfrom
+09:20:28Z. No actual-patient camera/head or new medical score produced.
