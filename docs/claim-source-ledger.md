@@ -848,3 +848,10 @@ medical inference,training or upload. This is TECHNICAL_CHECK_PASSED software,
 not3pxcamera/2mmhead or a demonstrated advantage over the failed recurrent model.
 Do not infer actual-video success from public tracking benchmarks.
 
+# 0310:noisy procedural counterexample,not a new medical reconstruction
+
+Source8881e50;one sigma.5nativepx/axis perturbation of unchanged0301coordinates,
+same141pure tracks. Conditional five-viewp95<3px,but focal error8.463755%and
+max300nonconvergence;physical controlREJECT. Actual-patient accuracyUNVERIFIED.
+Large point/projection scores depend on near-collinear-center alignment and
+are not a physical error lower bound. No patient image/model/medical rerun.

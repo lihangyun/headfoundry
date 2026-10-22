@@ -658,3 +658,11 @@ and bounded CPU smoke test pass. Keep one provisional runtime for an independent
 registered real-video trial. No physical correspondence,head or medical acceptance
 is inherited from software admission or model-family benchmark claims.
 
+# 0310:require independent noisy physical camera evidence before another tracker
+
+One unchanged procedural camera fit with deterministic sigma.5px/axis noise
+passes conditional3px/matrix/depth checks yet has8.46%focal error and max300
+nonconvergence. REJECT physical control;do not infer all real errors are caused
+by the NN. No longer treat the exact-coordinate fixture as evidence of noisy
+physical camera readiness. No production default/actual3px/2mmgate changed,
+no current real-video rescue. See experiment0310for gauge/scoring caveats.

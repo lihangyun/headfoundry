@@ -1179,3 +1179,12 @@ Private compact archive and cleanup details:docs/cleanup-0308-global-query.md.
 The four failed-only code/test/lock files and dedicated runtime/weight/source
 are retired.145retained tests pass;original task and all quality gates unchanged.
 Next method must add independent evidence,not repeat this cached solve.
+
+## 0310independent noise control:camera chain not physically admitted
+
+One fixed procedural sigma.5px/axis observation perturbation,source8881e50,
+preserves141pure tracks. All noisy-held viewp95<3px/proper/positive/nonbound
+conditions pass,but focal1098.435versus true1200errs8.46%;max300notconverged.
+AuditREJECT. No patient/model rerun. Do not exclude camera error just because
+noiseless controls pass. Other physical scores use a nearly-collinear-center
+gauge and are not gauge-independent error lower bounds. Details0310protocol.

@@ -35,3 +35,38 @@ proof that all previous real failures have the same cause. Preserve shared
 software/math/defaults and local original material. Remove one-off runner after
 compact evidence and source recovery ref;no framework/weights/environment exists.
 This audit alone authorizes NO0308cached rescue or new real-head experiment.
+
+## Actual result:physical-control REJECT despite conditional3pxpass
+
+Executed source8881e50,one fit,worker start09:07:28.862Z. Whole parent6.079s,
+camera+scoring4.750s;conservative observed process-tree peak105082880bytes,
+three observed processes including actual payload. No assets/dependencies were
+installed;no human data opened. Same141tracks,100%identity purity,52.2222%recall;
+noise radialp95=1.267672px. These are Gaussian samples with sigma.5per axis,
+not an assertion that every point is displaced less than.5px.
+
+All five matrices/depths/focal-bound checks pass and each heldp95is2.14..2.39px.
+Fitted focal1098.434938px versus true1200px:8.463755%error,above the registered
+2%physical control. Backend uses all300evaluations without convergence. Thus
+its TECHNICAL_CHECK_PASSED status describes conditional pixel/matrix consistency,
+not calibrated physical recovery. The audit-level result is REJECT. No increase
+in iterations or precision/solver/focal/point/seed/noise rerun follows.
+
+Other originally registered scores are retained:centers max.027402scene units,
+pointsp95.195420,noise-free truth projectionp95=65.741977px. These use the
+unchanged three-camera-center similarity gauge(0,2,4);those centers are nearly
+collinear,so orientation alignment can be noise-sensitive. Do not interpret the
+large projected/point errors as a gauge-independent lower bound,medical-mm
+measurement or proof of one optimizer cause. The8.46%focal error is itself
+gauge-independent. Max300termination also prevents claiming a converged optimum
+or fundamental impossibility. This ONE control demonstrates that the current
+bounded unknown-focal chain does not satisfy its physical fixture at this noise
+sample,not that all real-video failures share this cause or that all noise levels
+fail. Noisy-held consistency alone is insufficient,as already required by the
+technical-versus-physical distinction.
+
+Consequent decision:do not download another tracker on the assumption that the
+camera backend has been excluded by noiseless controls. Establish a physically
+accurate,noise-tolerant camera mechanism on independent controls before another
+real camera/head route. This is not permission to restore0308or sweep its cached
+points. Keep actual3px/2mm/whole-head/user visual gates unchanged.
