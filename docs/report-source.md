@@ -1240,3 +1240,13 @@ REJECTconditional head-domain K use;not a patient error or universal photographi
 model failure. All finite/nonboundary state and renderer checks cannot rescue
 physical error. No actual-video/head fit/medical-mm result. Candidate-only code,
 weight/source/overlay retired under cleanup0316;shared math/defaults protected.
+
+# 0317:bounded external-cue census,not universal absence or calibration
+
+Producer01a7e81decodes1041native frames,all hashes match0252;fixed edge bands
+yield771segments/486frames. Reviewed8preselected chronological longest-line
+maxima show foreground hair/cap/garment cues,not certified orthogonal scene
+families. Other candidates/pixels are NOT ruled out. Corneal source screen
+documents missing prerequisites rather than installing another speculative
+model. One-off runner/loose images retired after188173-byte private evidence
+capsule;originals/defaults unchanged. No camera fit/head/medical-mm acceptance.
