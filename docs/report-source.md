@@ -1204,3 +1204,11 @@ recipe invokes NC UniDepth despite Apache top-level code. DepthPro explicitly
 permits code/weights under its terms but requires a larger full FOV-feature graph
 and isolated NumPy<2runtime. Prefer separately auditing GeoCalib as focal PRIOR,
 never head SE3or verified K. No model installed,actual-video retry or quality gain.
+# 0313:source snapshot only,not calibration/model admission
+
+Owned producer6f6d944captures pinned GeoCalib source1dedb29f...and releasev1.0
+pinhole asset191236355/116074121bytes. Publisher digest null;zero weight bytes,
+runtime imports or private inputs. Nineteen source/metadata responses263635bytes
+hash-verified;entry evidence0313records rights and all missing checks.146tests
+pass after driver retirement. Only the small public snapshot remains pending a
+strict offline software and known-camera test. No model/camera/head promotion.

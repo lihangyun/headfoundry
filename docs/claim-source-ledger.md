@@ -869,3 +869,10 @@ does not follow from top-level license. DroidCalib AGPLis not noncommercial;
 MegaSaM stock UniDepth path is NC. DepthPro explicitly includes model weights
 in its grant. GeoCalib remains only a conditional learned focal-prior candidate,
 not an accepted moving-head camera. No binary/digest/accuracy admission here.
+# 0313:explicit unresolved weight identity and flexible-load risks
+
+Source/metadata capture6f6d944;official assetID191236355,size116074121,digestnull.
+Rights snapshot is not downloaded-byte verification. Candidate plan deliberately
+leaves SHAunknown/runtime_admitted=false. Strict state/import/resource/pixel and
+known-camera checks remainUNVERIFIED;upstream flexible_load may call strict=False.
+No fallback checkpoint,model execution,actual-patient input or accepted camera.
