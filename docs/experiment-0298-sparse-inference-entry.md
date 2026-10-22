@@ -112,3 +112,8 @@ The archive is not a full binary backup. Successful minimal runtime remains loca
 for a separately registered real-image correspondence test;no failed route is
 left active. This result supplies no physical matches,camera,head,scan-mm score
 or human acceptance. It does not justify fitting a head yet.
+
+Subsequent0299actual-video raw matching fails. Its verified closeout retires
+this successful but model-specific admission runtime/lock/runners as well,while
+preserving the0298software evidence archive and Git recovery points. The runtime
+retention sentence above describes0298closeout only,not current installation.

@@ -134,3 +134,36 @@ Actual3pxcamera/2mmskin/head-completeness/mesh/visual gates remainUNVERIFIED.
 Failure closeout must preserve0298successful software archive,0299full raw
 face-cohort/control/pair/held evidence and two source panels,then retire the
 exclusive0298/0299integration. It is not an accepted reusable observation asset.
+
+## Verified cleanup and recovery
+
+Result commit97b1dea;complete inference sourceccbd3e4/geometry source19fa961.
+Compact private assets/private/closed-experiments/0299-real-sparse-observations/
+evidence.zip contains76members/two raw review panels,2003208bytes,CRCverified,
+SHA256=479842be79bb6f272b4792dac05d1303b9dca6ba55a8e8a36860dd5f432d6f3d.
+It includes full face-cohort feature/descriptor arrays,all36raw match sets,all14
+held-error arrays,control outliers,graph components,source-only regions/input
+hashes/protocols/receipt references.0298successful software archive stays separately
+verified;its50actual dependency notice texts are retained there,not discarded.
+
+After exact root-contained targets,all-file reparse/inventory guards,archive
+hashes and zero scoped live workers were verified,five exclusive source/lock
+files and two runtime/output directories were removed. Total32165files/
+12331420239logical bytes(12.33decimalGB),not measured disk-space gain. Native
+directory cleanup PID49812exits0 at2026-10-21T23:59:35.633Z. No model-specific
+cache or live import remains.140shared tests pass in5.244s. All seven protected
+hashes match after deletion;original video/skin,authorization,0230/0293shared
+fixtures,defaults and unrelated0207are intact. No case002content was read.
+
+Git can recover source and the exact asset lock,not deleted public binaries.
+Checkpoints/framework/wheels would require reacquisition at their recorded
+hashes;full native source frames would need sequential re-decoding. Compact
+evidence is not a full binary backup and stays private/local. There is no
+background model worker and no accepted head. Whole closeout is within2400s.
+
+Next research question is materially different robust multi-view identity/outlier
+verification,not rescoring raw matches or another threshold sweep. Raw putative
+matches are not final SfM observations;neither their rejection nor normal
+training-RANSAC inliers establish physical identity. Any new geometry pipeline
+needs its own independent unknown-camera/outlier witness and fixed held-view
+validation before patient fitting. Do not restore this runtime automatically.
