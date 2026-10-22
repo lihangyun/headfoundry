@@ -130,3 +130,30 @@ Next work must change justified observation/association acquisition,not keep
 changing this now-controlled camera initializer or filter by the resulting
 medical/held errors. The original video still permits other preregistered source
 observations;this experiment does not prove all open/self-developed routes fail.
+
+## Verified closeout
+
+Result/shared-backend commite10cbe9;scored source6480d63. Private
+closed-experiments/0301-bearing-camera/evidence.zip is89628bytes/24members/
+0images,CRCverified,SHA256
+f8c997811bb4a465392d7872a2ba42a063b3e84eac908a0c1a8f31f533ae3472.
+It retains full procedural raw input/truth/selected train+held/solution/errors,
+bearing systems/ranks/scales,actual raw source coordinates/edges/all candidate
+cliques/folds/failed initialization,byte/static/extraction audits and both the
+first extraction error and repaired test log. All numerical fit ASTmatches the
+retained generic backend after excluding the controller-only evidence-hash guard.
+
+After root-contained/reparse/inventory/archive/terminal-worker checks,the
+exclusive application and output directory are removed:24files/186886logical
+bytes. No public weight/framework/environment exists or was reacquired. Generic
+camera/graph math and procedural shared checks remain;no dangling application
+import or production source/default change.142shared tests pass after cleanup
+in5.475s. All15protected hashes unchanged,including original inputs/consent,
+successful fixtures,unrelated0207,the two prior raw/control archives and retained
+math/regressions. Original STLbytes are only hashed for integrity,not parsed or
+passed to any estimator;case002content is untouched. No active model/job remains.
+
+Source recovery is Git;compact evidence preserves these small numerical outputs,
+not original full video/large historical binaries. Recreating other derived
+images requires their source workflows. This closeout is within2400s;no user
+action/new authority is required. Goal remains active and unachieved.
