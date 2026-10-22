@@ -31,18 +31,28 @@ def project(k, poses, points, observations):
     return uv, z
 
 
-def fit(data, tracks, folder):
-    folder.mkdir(exist_ok=False)
+def split_observations(data, tracks, held_eligible=None):
+    """Freeze one held vertex/track;optional eligibility excludes supplied queries."""
     if not tracks:
         raise ValueError('no cycle-certified tracks')
     frames = data['frames']
     frame_index = {f:i for i, f in enumerate(frames)}
     train, held = [], []
     for index, track in enumerate(tracks):
-        withheld = min(track, key=lambda v:hashlib.sha256(f'300/hold/{v[0]}/{v[1]}'.encode()).digest())
+        eligible = track if held_eligible is None else [vertex for vertex in track if vertex in held_eligible]
+        if not eligible:
+            raise ValueError('track has no eligible held observation')
+        withheld = min(eligible, key=lambda v:hashlib.sha256(f'300/hold/{v[0]}/{v[1]}'.encode()).digest())
         for vertex in track:
             (held if vertex == withheld else train).append([frame_index[vertex[0]], index, *data['xy'][vertex]])
     train, held = np.asarray(train, dtype=float), np.asarray(held, dtype=float)
+    return train, held
+
+
+def fit(data, tracks, folder, held_eligible=None):
+    folder.mkdir(exist_ok=False)
+    frames = data['frames']
+    train, held = split_observations(data, tracks, held_eligible)
     np.savez_compressed(folder/'frozen-observations.npz', train=train, held=held)
     by_frame = [{int(row[1]):row[2:] for row in train if int(row[0]) == camera} for camera in range(len(frames))]
     fundamentals = []
