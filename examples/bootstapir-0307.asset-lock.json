@@ -11,9 +11,9 @@
   "weights_sha256": "8493c7a69e02c85b9382fbb3c7b8b539b36bcc08ede744b9e99feb739a0129f4b",
   "identity_source": "Publisher google/tapnet HF LFS object, captured in tapir-preflight-0306/hf-metadata.json",
   "sources": {
-    "tapnet/torch/tapir_model.py": "87c05fb17d48d0f4353a00b67c9d40d3a264e13e43d88e3f7b58291198455e3ba",
+    "tapnet/torch/tapir_model.py": "87c05fb17d48d0f4353a00b67c9d40d3a264e13e43d88e3f7b5829119845e3ba",
     "tapnet/torch/nets.py": "4961a8e4882e8c9ac219c4714f6f2c811cc1ab665a439d4d2e79942002a9517c",
-    "tapnet/torch/utils.py": "a4267b3a6bd8ecf2dfe5effacab9f7a43664dc5d008966c98f6a0cc68f5ccedd3"
+    "tapnet/torch/utils.py": "a4267b3a6bd8ecf2dfe5effacab9f7a43664dc5d08966c98f6a0cc68f5ccedd3"
   },
   "torch": "2.6.0+cpu",
   "extra_packages": ["einshape==1.0", "dm-tree==0.1.10", "attrs==25.3.0", "wrapt==1.17.2", "sympy==1.13.1"],

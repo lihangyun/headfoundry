@@ -27,9 +27,16 @@ def digest(path):
         return hashlib.file_digest(handle, 'sha256').hexdigest()
 
 
-def verify_sources(lock):
+def validate_lock(lock):
     if lock['commercial_use'] is not True or lock['license_id'] != 'Apache-2.0':
         raise ValueError('unapproved rights')
+    values = [lock.get(key) for key in ['license_sha256', 'readme_sha256', 'weights_sha256']]+list(lock.get('sources', {}).values())
+    if len(values)!=6 or any(not isinstance(value,str) or len(value)!=64 or any(c not in '0123456789abcdef' for c in value) for value in values):
+        raise ValueError('all six SHA256 identities must be64lowercase hex characters')
+
+
+def verify_sources(lock):
+    validate_lock(lock)
     for path, expected in {**lock['sources'], 'LICENSE':lock['license_sha256'], 'README.md':lock['readme_sha256']}.items():
         if digest(SOURCE/path) != expected:
             raise ValueError('source/license identity differs:'+path)

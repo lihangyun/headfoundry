@@ -53,3 +53,11 @@ any patient forward. On software failure preserve small raw evidence/hashes/Git
 source,remove exclusive target/runtime/weight/source integration after protection
 checks and shared tests/local closeout commit. On success keep provisional runtime
 for that one next physical trial,not a deployed/approved reconstruction pipeline.
+
+Pre-install engineering stop:3f616cdlock hand transcription introduced one extra
+character in two source hashes. Existing comparison fails closed BEFORE creating
+runtime directory/install/download/inference. Independent Windows SHA tool agrees
+with the original0306source ledger;fix only lock transcription,not source bytes.
+Add a public-only64hex/rights regression to catch malformed metadata earlier.
+Original failed lock/error recovery3f616cd. No model attempt or measured score
+exists yet;this is not checkpoint substitution or a failed physical trial retry.
