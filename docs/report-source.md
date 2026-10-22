@@ -1,5 +1,20 @@
 # HeadFoundry technical research report
 
+## 0329:joint information exists,but the intended training fold must preserve it
+
+Same owned0328points/poses,two-view and repeated-view analytic matrices have
+no independent focal rank;independent third-view commonXYZadds one. Local
+sigma(logf)=.00699860at assumed.5pxnoise is diagnostic,not recovered precision.
+Analytic/native projection replay and central differences agree,but the latter
+still invent tiny focal rank in known critical controls at1e-12. Keep analytic
+null witnesses rather than adjust tolerance to obtain a desired result.
+Original query-excluding one-held-target split removes third-view consistency:
+120points,240trainrows,zero target-target shared points,analyticfocalranknone.
+A three-view full-observation information result cannot certify that training
+protocol. Next method needs sufficient training constraints plus honest held
+evidence,not simply another two-view solver or leaked validation rows.
+156software tests pass;no camera/point optimization,patient input,head or2mmresult.
+
 ## 0328:two-view spherical motion confounds conditional focal recovery
 
 PoseLib2.0.5BSD3exact880059-byte publisher wheel/private overlay passes asset/

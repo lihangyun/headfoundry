@@ -1,5 +1,20 @@
 # ADR 0001: quality-first clean-room reconstruction
 
+## 2026-10-22:validate information on the final training fold
+
+0329shows one exact three-view common-point geometry has locally independent
+focal information whereas two/repeated views do not. The unchanged source-query-
+excluding one-held-target fold destroys that constraint. A full-observation
+rank result cannot justify a solver protocol with a different training graph.
+Check the actual training/held split before execution,without leaking held
+pixels or discarding independent validation. This is not permission to sweep
+view counts/angles or reduce camera/medical gates. Local information is not
+global uniqueness,achieved accuracy or patient evidence.
+Near a known exact null,central derivatives can create spurious tiny rank even
+when relative derivative error is1e-10. Require an independent analytic/null
+witness rather than tuning rank tolerance to the preferred outcome. Preserve
+the original data/gauges and record both numerical and analytic results.
+
 ## 2026-10-22:calibration fixtures must identify the claimed unknowns
 
 0328exposes a critical two-view equal-pivot-radius orbit:the true centered

@@ -1,5 +1,17 @@
 # Claim-to-source ledger
 
+## 0329:local joint observability is not independent validation or achieved accuracy
+
+Owned-coordinate analytic Jacobian uses existing OpenCV derivatives plus explicit
+logf/XYZ/unit-baseline chain rule,checked against two central steps. Joint three
+views have focal rank while two/copy controls do not;finite differences alone
+misreport tiny rank despite close global derivative agreement. No parameter
+or physical threshold is changed to hide this. Actual query-excluding holdout
+removes the demonstrated constraint;held pixels cannot be silently put back.
+Conditional local.006999sigma(logf)does not establish noisy/global/real-video
+3pxor2mmquality. Keep all data/ranks/rowIDs and source166283a;retire one-off
+audit entry.156tests are software evidence,not recognizable-head acceptance.
+
 ## 0328:an ambiguous physical fixture is not a general algorithm rejection
 
 Official PoseLibv2.0.5LICENSEgrants BSD3source/binary use;official PyPIsha pins
