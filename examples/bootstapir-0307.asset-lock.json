@@ -8,7 +8,7 @@
   "readme_sha256": "c0cda10a66a91513fd78e1638ff6db7789d4320dc24e5897ce6bc1bd567c15c3",
   "weights_url": "https://storage.googleapis.com/dm-tapnet/bootstap/bootstapir_checkpoint_v2.pt",
   "weights_bytes": 218886140,
-  "weights_sha256": "8493c7a69e02c85b9382fbb3c7b8b539b36bcc08ede744b9e99feb739a0129f4b",
+  "weights_sha256": "8493c7a69e02c85b9382fbb3c7b8b539b36bc08ede744b9e99feb739a0129f4b",
   "identity_source": "Publisher google/tapnet HF LFS object, captured in tapir-preflight-0306/hf-metadata.json",
   "sources": {
     "tapnet/torch/tapir_model.py": "87c05fb17d48d0f4353a00b67c9d40d3a264e13e43d88e3f7b5829119845e3ba",

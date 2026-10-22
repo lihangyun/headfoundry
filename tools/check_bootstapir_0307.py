@@ -32,13 +32,18 @@ def validate_lock(lock):
         raise ValueError('unapproved rights')
     values = [lock.get(key) for key in ['license_sha256', 'readme_sha256', 'weights_sha256']]+list(lock.get('sources', {}).values())
     if len(values)!=6 or any(not isinstance(value,str) or len(value)!=64 or any(c not in '0123456789abcdef' for c in value) for value in values):
-        raise ValueError('all six SHA256 identities must be64lowercase hex characters')
+        raise ValueError('all six SHA256 identities must be64lowercase hex characters:'+str([(len(value),value) for value in values if isinstance(value,str) and len(value)!=64]))
 
 
 def verify_sources(lock):
     validate_lock(lock)
+    published = json.loads((SOURCE/'hf-metadata.json').read_text())
+    weight = next(row for row in published if row.get('path')=='bootstapir_checkpoint_v2.pt')
+    if lock['weights_sha256']!=weight['lfs']['oid'] or lock['weights_bytes']!=weight['size']:
+        raise ValueError('checkpoint lock differs from captured publisher metadata')
+    recorded = {row['path']:row['sha256'] for row in json.loads((SOURCE/'sources.json').read_text())['sources']}
     for path, expected in {**lock['sources'], 'LICENSE':lock['license_sha256'], 'README.md':lock['readme_sha256']}.items():
-        if digest(SOURCE/path) != expected:
+        if recorded.get(path)!=expected or digest(SOURCE/path) != expected:
             raise ValueError('source/license identity differs:'+path)
 
 

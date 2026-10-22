@@ -50,7 +50,7 @@ or training package downloaded. Source modules/actual notebook inference reviewe
 
 Chosen noncausal bootstapir_checkpoint_v2.pt is218886140bytes,officialGoogle
 Storage HEAD200. Linked publisherHF LFS object supplies expected SHA256
-8493c7a69e02c85b9382fbb3c7b8b539b36bcc08ede744b9e99feb739a0129f4b.
+8493c7a69e02c85b9382fbb3c7b8b539b36bc08ede744b9e99feb739a0129f4b.
 This is metadata identity,not downloaded-byte verification. No alternative is
 authorized. README explicitly grants Apache-2.0 to all linked checkpoints;
 datasets/examples do not inherit a blanket license. Source notice hash and
@@ -82,3 +82,8 @@ Next:separately register one CPU setup/conformance check with procedural pixels
 only,strict entire-state/key/dtype/finite/hash/notice checks and independent pixel
 oracle. Do not promote any software result to material3D/camera/head acceptance.
 No failed integration was created;only temporary public-fetch helpers are removed.
+
+Later pre-install validation0307corrects a one-character documentation hash
+transcription against the unchanged original hf-metadata.json. The actual
+captured LFS object/hash/source payload was never changed. Original draft54b58bc
+is retained in Git;no weight download or score occurred under the malformed hash.

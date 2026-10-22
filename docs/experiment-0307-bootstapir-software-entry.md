@@ -19,7 +19,7 @@ requirements and record exact source paths/versions/notices. This is a process-
 local overlay,not a fully isolated environment or a production dependency change.
 Keep temporary installer/cache files in this repo. No paid license or account.
 
-Require complete weight bytes218886140/SHA8493c7a69e02c85b9382fbb3c7b8b539b36bcc08ede744b9e99feb739a0129f4b,
+Require complete weight bytes218886140/SHA8493c7a69e02c85b9382fbb3c7b8b539b36bc08ede744b9e99feb739a0129f4b,
 atomic install,exact three source hashes/license/README grant. Safe weights_only
 CPU loading,full expected key/shape/dtype equality,all finite,strict load and
 bitwise equality of every loaded state tensor before and after the forward.
@@ -61,3 +61,10 @@ with the original0306source ledger;fix only lock transcription,not source bytes.
 Add a public-only64hex/rights regression to catch malformed metadata earlier.
 Original failed lock/error recovery3f616cd. No model attempt or measured score
 exists yet;this is not checkpoint substitution or a failed physical trial retry.
+
+The new format regression then catches the same extra-character transcription
+in the checkpoint field before any install. Original publisher hf-metadata.json
+has64characters;correct only the handwritten field/docs to that captured value.
+Commit8e4c85acontains the initial failing regression,not a passing test claim.
+Also compare all source/weight fields programmatically with the captured primary
+ledgers before setup,so even a well-formed wrong hash fails without downloading.
