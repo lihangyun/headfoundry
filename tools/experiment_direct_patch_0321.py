@@ -202,11 +202,13 @@ def evaluate(folder):
 
 
 def controller():
-    OUT.mkdir(exist_ok=False)
+    # The first entry stopped before any file/worker;only that empty directory may be reused.
+    if OUT.exists() and any(OUT.iterdir()):raise ValueError('nonempty experiment output refuses rerun')
+    OUT.mkdir(exist_ok=True)
     plan=json.loads((ROOT/'assets/private/closed-experiments/0316-geocalib-domain/plan.json').read_text())
     protected=[]
     for row in plan['protected']:
-        path=Path(row['path']);expected=plan['amendments'].get(str(path),row.get('prior_expected',row['expected']))
+        path=Path(row['path']);expected=plan['amendments'].get(str(path),row['expected'])
         actual=digest(path)
         if expected!=actual:raise ValueError('pre-run protected identity mismatch:'+path.name)
         protected.append({'path':str(path),'sha256':actual})

@@ -85,3 +85,14 @@ hash checks;remove exclusive controller/solver/generated bulk/pycache,retain
 0320correct pure arithmetic/shared regressions;independent local cleanup commit.
 Passing both controls retains only opt-in solver plus minimum runnable check,
 and requires a separately registered real-observation admission,not blind headfit.
+
+## Pre-generation entry repair
+
+Initial implementation07bdcab stops before entry.json,any image generation or
+worker:the protected-ledger reader chose short_track_camera.py's older
+prior_expected instead of its current expected hash. Actual byte SHA4a9196cb...
+79d0b equals the ledger's expected and Git source has no diff. Correct the
+reader to expected (explicit generic amendments still take precedence),not
+rebaseline the shared file. Only the positively verified empty own output
+directory can be reused;nonempty refuses execution. Preserve this first stop;
+no tracker/optimizer/scored input has run and no experiment setting changes.
