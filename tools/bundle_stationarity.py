@@ -5,8 +5,8 @@ from scipy.sparse.linalg import lsmr
 from short_track_camera import intrinsics, project
 
 
-def audit(k, poses, points, train, anchor, baseline):
-    """Evaluate original frozen soft_l1 objective;no held observations accepted."""
+def linearize(k, poses, points, train, anchor, baseline):
+    """Original frozen parameterization/Jacobian;never fits or applies a step."""
     values, blocks = [float(np.log(k[0, 0]))], {}
     for camera in range(len(poses)):
         if camera == anchor:
@@ -54,6 +54,33 @@ def audit(k, poses, points, train, anchor, baseline):
     witness = jacobian(.5e-5)
     consistency = float(np.linalg.norm(jac-witness)/max(np.linalg.norm(witness), 1e-30))
     assert consistency <= 1e-5, 'finite-difference witness differs'
+    return r, jac, replay, consistency
+
+
+def focal_information(jac, rcond=1e-12):
+    """Local unit-noise focal sensitivity;undefined when nuisance-confounded."""
+    jac = np.asarray(jac, dtype=float)
+    if jac.ndim != 2 or jac.shape[1] < 1 or not np.isfinite(jac).all():
+        raise ValueError('finite two-dimensional Jacobian with focal column required')
+    scales = np.linalg.norm(jac, axis=0)
+    normalized = jac/np.maximum(scales, 1e-30)
+    nuisance = normalized[:, 1:]
+    coefficient, _, nuisance_rank, nuisance_singular = np.linalg.lstsq(nuisance, jac[:, 0], rcond=rcond)
+    contrast = jac[:, 0]-nuisance@coefficient
+    singular = np.linalg.svd(normalized, compute_uv=False)
+    rank = int(np.sum(singular > (singular[0]*rcond if len(singular) else 0)))
+    identifiable = bool(rank == nuisance_rank+1 and scales[0] > 0)
+    norm = float(np.linalg.norm(contrast))
+    return {'focal_identifiable_locally':identifiable, 'rank':rank, 'nuisance_rank':int(nuisance_rank),
+            'column_normalized_singular_values':singular.tolist(),
+            'nuisance_column_normalized_singular_values':nuisance_singular.tolist(),
+            'profile_focal_column_norm':norm, 'raw_focal_column_norm':float(scales[0]),
+            'sigma_log_f_per_unit_pixel_noise':float(1/norm) if identifiable and norm > 0 else None}
+
+
+def audit(k, poses, points, train, anchor, baseline):
+    """Evaluate original frozen soft_l1 objective;no held observations accepted."""
+    r, jac, replay, consistency = linearize(k, poses, points, train, anchor, baseline)
     # Exact soft_l1 score and Gauss-Newton curvature at the fixed endpoint.
     root = np.sqrt(1+(r/1.5)**2)
     psi = r/root
@@ -73,12 +100,12 @@ def audit(k, poses, points, train, anchor, baseline):
                 'normal_residual_inf':float(np.max(np.abs(matrix.T@remaining)))}
 
     return {'forward_replay_max_px':replay, 'jacobian_relative_witness_error':consistency,
-            'rows':len(r), 'variables':len(values), 'rank_at_relative_1e_minus_12':int(rank),
+            'rows':len(r), 'variables':jac.shape[1], 'rank_at_relative_1e_minus_12':int(rank),
             'column_normalized_singular_values':singular.tolist(),
             'soft_l1_cost':float(np.sum(2.25*(root-1))),
             'unscaled_gradient_inf':float(np.max(np.abs(jac.T@psi))),
             'column_normalized_gradient_inf':float(np.max(np.abs(gradient))),
             'dense_local_linear':linear_result(dense), 'lsmr_local_linear':linear_result(iterative[0]),
             'lsmr_stop':int(iterative[1]), 'lsmr_iterations':int(iterative[2]),
-            'array_bytes':int(jac.nbytes+witness.nbytes+matrix.nbytes+values.nbytes+target.nbytes),
+            'array_bytes':int(2*jac.nbytes+matrix.nbytes+jac.shape[1]*8+target.nbytes),
             'no_step_applied':True, 'scope':'undamped local linearization,not actual trust-region trajectory'}
