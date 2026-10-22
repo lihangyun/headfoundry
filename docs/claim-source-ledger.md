@@ -1,5 +1,18 @@
 # Claim-to-source ledger
 
+## 0328:an ambiguous physical fixture is not a general algorithm rejection
+
+Official PoseLibv2.0.5LICENSEgrants BSD3source/binary use;official PyPIsha pins
+one Windowswheel. This is scoped publisher provenance,not FTO/build attestation.
+One exact96-row inference fails physicalknown3Dprojections but produces the
+sameFas truth and positive retriangulation at a differentf. Independent full
+Demazure polynomial verifies continuous essential family in THIS equal-radius
+two-view setup. Keep physicalREJECT,softwareTECHNICAL_CHECK_PASSEDand actual
+video/noisy precisionUNVERIFIEDseparate;no selectingtruefposthoc. A fixed radial
+negative control breaks the identity but does not prove noisy calibration.
+Primary source:https://github.com/PoseLib/PoseLib/tree/v2.0.5;
+https://pypi.org/project/poselib/2.0.5/. Never infer head/profile acceptance.
+
 ## 0327:passing observation coverage is not valid calibration
 
 New independent multi-host recipe exceeds its coverage gate without complete

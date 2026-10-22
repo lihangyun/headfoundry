@@ -1,5 +1,22 @@
 # HeadFoundry technical research report
 
+## 0328:two-view spherical motion confounds conditional focal recovery
+
+PoseLib2.0.5BSD3exact880059-byte publisher wheel/private overlay passes asset/
+grant/RECORD/runtime identity and one two-view inference. GrantCRCRLFversusLF
+is corrected by full-text line-ending normalization before import,not a grant
+waiver or solver retry. No main-package install. Physical exactcase rejects
+f451.36975versus1200,p95173.2618/259.2332px. Noisy case never runs.
+Static algebra then proves this fixed two-view fixture is critical:normalized
+Demazure focal-polynomial coefficients max4.15357e-17,returnedFmatchestrueF
+1.69862e-12and wrong-f retriangulation fits all96rows within1.24807e-9px,
+allpositive depths. This distinguishes calibration ambiguity from evidence of
+bad general solver precision. Do not extend the result to the actual video or
+all earlier multiview scenes. Successful exact polynomial/control remains;
+failed exclusive experiment/binary overlay retires with compact evidence.
+Next conditional test must establish calibration information first;more
+solver/threshold swapping is not additional information. Head/medical gates unmet.
+
 ## 0327:partial observations pass coverage but fail physical initialization
 
 One owned six-image capacity context9cda3a1,not human input or synthetic training.

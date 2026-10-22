@@ -117,3 +117,16 @@ must break the identity,without any estimator call or camera acceptance claim.
 Do not extrapolate this two-view result to all earlier multiview contexts or
 the actual video without analyzing their own constraints. Nonzero polynomial
 alone is NOT sufficient uniqueness/noise-conditioning/3pxcertification.
+
+## Software/cleanup evidence and next boundary
+
+Exact inference1.547s/111300608peak bytes;known3Devaluation1.375s/102903808.
+Asset/runtime SOFTWAREcheck passes;the chosen physical camera fails and the
+test itself lacks focal identifiability. No general PoseLibprecision rejection,
+actual-video result,medical error or head accepted.155shared tests pass8.521s,
+including fixed critical and radial noncritical algebra controls. Retire this
+exclusive entry and4.026479MBbinary/generated tree,keep76578-byte/37member
+capsule under cleanup0328. Correct general polynomial test remains active.
+No new library/weight installation is justified merely by the wrongfhere;
+future work needs sufficient multiview/prior information and evidence that
+the validation setup can determine the claimed unknowns. No reduced gate.
