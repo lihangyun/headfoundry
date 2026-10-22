@@ -12,3 +12,7 @@ Private capsule0330-joint-selfcal/evidence.zip27497bytes/11members/no images,
 CRCverified,SHA25605063e446b81dcc05197d589111d14859e68a68bf58dbb7364e3cfa1aa367e46.
 All small raw states/fixtures/errors/logs/source fully recoverable from this
 capsule;no generated human mesh or binary checkpoint exists. SourceGit8adb91a.
+
+156retained tests pass8.572s;38protected identities verify after retirement,
+no active one-off caller. Unrelated0207remains the only untracked change.
+No production src/default/dependency installation or actual-head promotion.
