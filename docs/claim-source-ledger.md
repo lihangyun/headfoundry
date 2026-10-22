@@ -862,3 +862,10 @@ Profile sigma(logf)=.0760183for declared sigma.5px/axis. Forward4.55e-13px,
 public closed-form/confounding witnesses and old-audit all-field replay pass.
 Local Gaussian regular-unbiased assumptions only;no patient interval,global
 impossibility,actual camera/head/2mmclaim. Additional information takes priority.
+# 0312:role and dependency-level licensing/cost screen
+
+See audit0312for primary links and caveats. Whole-stack commercial eligibility
+does not follow from top-level license. DroidCalib AGPLis not noncommercial;
+MegaSaM stock UniDepth path is NC. DepthPro explicitly includes model weights
+in its grant. GeoCalib remains only a conditional learned focal-prior candidate,
+not an accepted moving-head camera. No binary/digest/accuracy admission here.

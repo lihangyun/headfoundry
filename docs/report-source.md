@@ -1196,3 +1196,11 @@ replay passes. Procedural sigma.5px/axis Fisher profiling gives local sigma(logf
 another optimizer on the assumption that0310data already specifies2%focal.
 This does not prove global impossibility or predict patient uncertainty. No
 actual video/model/scan is used;no physical camera/head gate passes.
+# 0312:screen additional calibration information before any new install
+
+Four bounded source-only leads recorded in audit0312. Current8GBGPUdoes not
+clear DroidCalib's12GBreference demo;AGPLis not an NClicense. MegaSaM stock
+recipe invokes NC UniDepth despite Apache top-level code. DepthPro explicitly
+permits code/weights under its terms but requires a larger full FOV-feature graph
+and isolated NumPy<2runtime. Prefer separately auditing GeoCalib as focal PRIOR,
+never head SE3or verified K. No model installed,actual-video retry or quality gain.
