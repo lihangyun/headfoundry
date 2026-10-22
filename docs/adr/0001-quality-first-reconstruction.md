@@ -1,5 +1,15 @@
 # ADR 0001: quality-first clean-room reconstruction
 
+## 2026-10-22:separate failed initialization entry from unmeasured direct accuracy
+
+0321's fixed image-only full-track screen admits34of96queries,not its required48.
+Stop before joint direct-patch optimization or known-camera physical scoring.
+Do not call the unexecuted optimizer physically rejected or synthetic coverage
+a patient result;do not lower entry support or tune LK/scene/angle/count to
+salvage it. Correct residual math0320remains useful independently of the failed
+application. Retire exclusive0321code/bulk with compact provenance before any
+different architecture. TrueK/pose/scan may never seed image-only inference.
+
 Status: accepted for implementation; final product quality remains `UNVERIFIED`.
 
 ## 2026-09-04 implementation amendment

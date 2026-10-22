@@ -1,5 +1,18 @@
 # HeadFoundry technical research report
 
+## 0321:image-only direct-camera recipe stops before optimization
+
+Actual source eb10d0b generates one owned textured multi-depth panel scene in
+13.219s/225689600peak bytes. Fixed image-only initialization admits34of96source
+queries across all six views,below the registered48;worker stops1.609s before
+geometric/photometric fitting. No physical score or curved-context run exists.
+REJECT coverage of this minimum full-track recipe,not a measured direct-method
+precision failure. No corner/angle/LK/count/threshold rescue. Retire exclusive
+solver/controller and41.75MBgenerated bulk after442804-byte compact evidence;
+0320correct pure residual remains. No patient/default/medical gate changes or
+new head. A future design must resolve the initialization dependency with a
+materially different architecture,not seed truth or relabel34tracks as pass.
+
 Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.

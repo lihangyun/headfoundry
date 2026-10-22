@@ -96,3 +96,31 @@ reader to expected (explicit generic amendments still take precedence),not
 rebaseline the shared file. Only the positively verified empty own output
 directory can be reused;nonempty refuses execution. Preserve this first stop;
 no tracker/optimizer/scored input has run and no experiment setting changes.
+
+## Actual fixed execution and stop
+
+Executed source eb10d0b after the documented pre-generation repair. Panel image
+generation completes13.219s/225689600peak bytes. The one image-only initializer
+detects96source corners but only34meet the fixed full-six-view FB/support
+screen (minimum48). It stops1.609s/197435392peak bytes before geometric fit.
+No threshold,count,angle,seed,image,pyramid or repeat is changed after seeing
+this count. No source-video pixels or scan geometry are used in this experiment.
+
+REJECT complete registered recipe at observation coverage. Direct residual
+optimization,unknown-camera physical precision and curvature context are all
+UNVERIFIED,not measured precision failures:the direct optimizer never runs.
+The independent true-pose evaluator is also not run after this stop. This does
+not establish that direct optimization or patient-video reconstruction is
+impossible,and it is not a new acceptable camera/head/medical result.
+
+The inspected fixed input sheet confirms multiple depths and noncollinear
+view motion;it is not a human-reconstruction comparison. Complete-view LK
+coverage is a prerequisite imposed by this minimum prototype,not a fundamental
+requirement of all direct methods. Freeze this exact capacity recipe;do not
+lower48,add corners or change LK/angles to rescue it. A new direct design must
+justify an actually different initialization/observation architecture before
+registration,not quietly recycle this34-track set or assume trueK/pose.
+
+Only0320's previously verified pure residual/regression stays active. Exclusive
+0321solver/controller and generated bulk retire under cleanup0321. Full target
+is still active and unmet;no patient camera,head or2mmmeasurement exists.
