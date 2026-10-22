@@ -113,3 +113,24 @@ justified source observations,not reinterpret this graph as accepted or mutate
 the controlled camera backend. This is the promised stop-loss,not a pause of
 the overall video-to-head goal. No additional permanent graph helper is kept
 from0302;retire its exclusive runner/output after compact evidence verification.
+
+## Verified closeout
+
+Result commited374f8;scored source2527ae9. Private closed-experiments/
+0302-triangle-observations/evidence.zip is87152bytes/20members/0images,CRCverified,
+SHA256=14538a6fb11db6fad302ffce02e6b90bfab48442c1d47dac334a069b2c3929ab.
+It preserves full procedural raw/truth/error arrays,raw-byte equality,literal
+controls,actual source coordinates/edges/all component decisions,selected folds,
+failed relative-pose initialization and worker logs. Static AST audit confirms
+the independent unknown-camera acceptance condition is identical to the shared
+verifier. No new shared source/default is introduced by this failed variant.
+
+Exact resolved targets,reparse/inventory/archive checks and zero scoped live
+workers precede cleanup. Removed exclusive runner/output:20files/164417logical
+bytes. Existing code recovers from Git;these small numerical outputs remain in
+the private archive,not a promise to retain original video or old large binaries
+there. All16protected hashes unchanged,including original video/skin/consent,
+0230/0293fixtures,prior raw/control archives,shared math/tests and unrelated0207.
+STLbytes are only hashed for integrity,no scan geometry used.142shared tests pass
+after cleanup in5.696s;no live imports reference the retired application. Whole
+closeout stays within1800s. Goal remains active;no actual head orACCEPT exists.
