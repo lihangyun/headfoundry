@@ -64,3 +64,23 @@ admit actual-videoK,head-relativeSE3or2mmgeometry. Failure:compact source/logs/
 hashes/one necessary evidence image if any,then retire exclusive source/weight/
 overlay/runners/tests perAGENTS,verifyprotected/shared suite,local cleanup commit
 before any different route. No user visual acceptance is generated or inferred.
+
+## Pre-install source-host repair (no model import or forward)
+
+Initial source6c0496fsetup stops19.156s/64180224bytes at the URL allowlist:
+official PyTorch's SymPy1.13.1index links the wheel on files.pythonhosted.org,
+not download.pytorch.org. Torch's206493444-byte wheel is already acquired and
+hash-verified;no packages are installed and no software/model worker ran.
+This is an installer host-assumption defect,not model/state/precision failure.
+
+Before any installation,verify that exact SymPy wheel against official PyPI1.13.1
+metadata as well:filename/URL/index digest must all agree. Allow only that
+official PyPI delivery host for SymPy,not arbitrary mirror/fallback versions.
+Reuse the already verified Torch wheel without redownload. Retain first logs/
+failure/worker record and original index bytes;one explicit guarded setup resume
+is permitted only from this exact terminal pre-install stop,with remaining
+original600ssetup allowance and unchanged whole18:57deadline. No model inference,
+image/config/precision/checkpoint or actual3px/2mmgate changes/retries.
+
+Primary host evidence:[official CPU index](https://download.pytorch.org/whl/cpu/sympy/),
+[official PyPI release metadata](https://pypi.org/pypi/sympy/1.13.1/json).

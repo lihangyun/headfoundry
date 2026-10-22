@@ -38,9 +38,12 @@ def setup():
     wheels=[]
     for package,filename in [('torch','torch-2.6.0+cpu-cp312-cp312-win_amd64.whl'),('sympy','sympy-1.13.1-py3-none-any.whl')]:
         url='https://download.pytorch.org/whl/cpu/'+package+'/'
-        with urllib.request.urlopen(url,timeout=30) as response:content=response.read(2*1024**2+1)
+        index_path=OUT/(package+'-index.html')
+        if index_path.exists():content=index_path.read_bytes()
+        else:
+            with urllib.request.urlopen(url,timeout=30) as response:content=response.read(2*1024**2+1)
         if len(content)>2*1024**2:raise ValueError('wheel index budget')
-        (OUT/(package+'-index.html')).write_bytes(content)
+        if not index_path.exists():index_path.write_bytes(content)
         parser=Links();parser.feed(content.decode());matches=[]
         for link in parser.links:
             parsed=urllib.parse.urlsplit(urllib.parse.urljoin(url,link))
@@ -48,20 +51,35 @@ def setup():
         if len(matches)!=1:raise ValueError('fixed wheel not unique:'+filename)
         parsed=matches[0];expected=urllib.parse.parse_qs(parsed.fragment).get('sha256',[''])[0]
         if len(expected)!=64 or any(c not in '0123456789abcdef' for c in expected):raise ValueError('wheel SHA missing')
-        if parsed.scheme!='https' or parsed.hostname not in ['download.pytorch.org','download-r2.pytorch.org']:
+        allowed_hosts=['download.pytorch.org','download-r2.pytorch.org']
+        if package=='sympy' and parsed.hostname=='files.pythonhosted.org':
+            with urllib.request.urlopen('https://pypi.org/pypi/sympy/1.13.1/json',timeout=20) as response:
+                package_metadata=response.read(256*1024+1)
+            if len(package_metadata)>256*1024:raise ValueError('PyPI metadata budget')
+            records=[row for row in json.loads(package_metadata)['urls'] if row['filename']==filename]
+            if len(records)!=1 or records[0]['digests']['sha256']!=expected or records[0]['url']!=urllib.parse.urlunsplit(parsed._replace(fragment='')):
+                raise ValueError('PyTorch-index/PyPI fixed wheel identity conflicts')
+            (OUT/'sympy-pypi.json').write_bytes(package_metadata)
+            allowed_hosts.append('files.pythonhosted.org')
+        if parsed.scheme!='https' or parsed.hostname not in allowed_hosts:
             raise ValueError('nonofficial wheel URL')
         url=urllib.parse.urlunsplit(parsed._replace(fragment=''))
         path=RUNTIME/'wheels'/filename;path.parent.mkdir(exist_ok=True)
         digest=hashlib.sha256();count=0
-        with urllib.request.urlopen(url,timeout=30) as response,path.open('xb') as stream:
-            while True:
-                block=response.read(1024**2)
-                if not block:break
-                count+=len(block)
-                if count+sum(row['bytes'] for row in wheels)>320*1024**2:raise ValueError('wheel byte budget')
-                stream.write(block);digest.update(block)
-        if digest.hexdigest()!=expected:raise ValueError('wheel checksum mismatch')
-        wheels.append({'path':str(path),'url':url,'bytes':count,'sha256':expected})
+        reused=path.exists()
+        if reused:
+            count=path.stat().st_size
+            if sha(path)!=expected:raise ValueError('existing wheel SHA differs')
+        else:
+            with urllib.request.urlopen(url,timeout=30) as response,path.open('xb') as stream:
+                while True:
+                    block=response.read(1024**2)
+                    if not block:break
+                    count+=len(block)
+                    if count+sum(row['bytes'] for row in wheels)>320*1024**2:raise ValueError('wheel byte budget')
+                    stream.write(block);digest.update(block)
+            if digest.hexdigest()!=expected:raise ValueError('wheel checksum mismatch')
+        wheels.append({'path':str(path),'url':url,'bytes':count,'sha256':expected,'reused_verified_bytes':reused})
     save('wheels.json',wheels)
     import subprocess
     command=['C:/Users/lihan/.local/bin/uv.exe','pip','install','--no-index','--no-deps','--no-cache',
@@ -185,10 +203,16 @@ def software():
         'norm_error':norm_error,'state_fingerprint_before_after':after,'physical_camera_head_medical':'UNVERIFIED'})
 
 
-def controller():
-    OUT.mkdir(exist_ok=False);RUNTIME.mkdir(exist_ok=False)
-    for parent in [OUT,RUNTIME]:
-        (parent/'tmp').mkdir()
+def controller(resume=False):
+    if resume:
+        if (json.loads((OUT/'failure.json').read_text())['error']!="ValueError('nonofficial wheel URL')"
+                or (OUT/'software-worker.json').exists() or (RUNTIME/'site').exists()):
+            raise ValueError('only the pre-install host-selection stop can resume')
+        for name in ['setup-worker.json','setup.log','failure.json']:
+            (OUT/name).rename(OUT/('first-'+name))
+    else:
+        OUT.mkdir(exist_ok=False);RUNTIME.mkdir(exist_ok=False)
+        for parent in [OUT,RUNTIME]:(parent/'tmp').mkdir()
     before=json.loads((SOURCE/'verification.json').read_text())
     for row in before['protected']:
         if sha(Path(row['path']))!=row['sha256']:raise ValueError('protected input changed')
@@ -196,12 +220,13 @@ def controller():
     if sha(ASSET)!=public['checkpoint']['sha256']:raise ValueError('asset changed')
     for row in json.loads((SOURCE/'result.json').read_text())['responses']+json.loads((SOURCE/'notices.json').read_text()):
         if sha(SOURCE/row['path'])!=row['sha256']:raise ValueError('source/grant/notice changed')
-    save('entry.json',{'protected':before['protected'],'source_sha':public['revision'],'asset_sha':sha(ASSET),
+    save('repair-entry.json' if resume else 'entry.json',{'protected':before['protected'],'source_sha':public['revision'],'asset_sha':sha(ASSET),
         'epoch':time.time(),'main_packages_before':sorted((d.metadata['Name'],d.version) for d in importlib.metadata.distributions())})
     env=os.environ.copy();env.update({key:'4' for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']})
     env.update(PYTHONDONTWRITEBYTECODE='1',XFORMERS_DISABLED='1',TMP=str(OUT/'tmp'),TEMP=str(OUT/'tmp'),
                TORCH_HOME=str(OUT/'torch-cache'),HF_HOME=str(OUT/'hf-cache'),UV_CACHE_DIR=str(RUNTIME/'uv-cache'))
     for stage,seconds,gib in [('setup',600,.75),('software',240,5)]:
+        if resume and stage=='setup':seconds-=json.loads((OUT/'first-setup-worker.json').read_text())['seconds']
         record=run([sys.executable,str(Path(__file__).resolve()),stage],str(ROOT),env,
             OUT/(stage+'.log'),OUT/(stage+'-worker.json'),seconds,int(gib*1024**3))
         print(stage,json.dumps(record),flush=True)
@@ -210,6 +235,7 @@ def controller():
 
 if __name__=='__main__':
     if len(sys.argv)==1:controller()
+    elif sys.argv[1:]==['resume-setup']:controller(True)
     else:
         try:
             if sys.argv[1:] == ['setup']:setup()
