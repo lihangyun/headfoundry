@@ -34,3 +34,10 @@ No quality promotion. Original complete-head/3px/2mm/visual gates unchanged.
 No edge clamping,focal sweep,point pruning or longer optimizer rescue. Any next
 route needs new independent evidence and a new bounded preregistration. Cleanup
 is not a new reconstruction experiment.
+
+Budget deviation:the cleanup commit e6c983b completed by08:59:03Z,at most
+1835.12s after08:28:27.882Z preparation,35.12s past the registered1800swhole
+budget. The archive was verified at1729.92s;inference and camera stage times
+were within their individual caps. Do not mark whole-budget compliance passed.
+The final whitespace check initially reported an EOF blank line in the research
+log;fixed in the subsequent verification record,not concealed as an initial pass.
