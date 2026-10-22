@@ -1,5 +1,18 @@
 # HeadFoundry technical research report
 
+## 0322:screen circular inputs before choosing another camera observation
+
+DSO's host/visible-target graph does not require complete tracks,but its stock
+initialization still expects starting calibration. DepthPro's existing full
+graph/runtime cost remains deferred;FLARE's official NClicense excludes adoption.
+New AnyCalib uses dense optical-axis tangent/FoV fields rather than gravity/
+horizon fields;publisher explicitly grants code/weights Apache2. Pinned source
+027a8497...064ed,releasev1.0.0 edit asset238336622/1281194246bytes identified,
+but publisher digest null and NO weight bytes acquired yet.450185source/API
+bytes acquired,upstream notices retained,46responses SHAchecked;149tests7.204s,
+34protected identities pass. Source-only candidate,not an admitted runtime or
+physicalK/SE3/head. Whole real-video/medical objective remains unchanged.
+
 ## 0321:image-only direct-camera recipe stops before optimization
 
 Actual source eb10d0b generates one owned textured multi-depth panel scene in

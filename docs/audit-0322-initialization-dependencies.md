@@ -104,3 +104,15 @@ dependencies/defaults/originals change. Whole-head objective remains unmet.
   [pinhole parameter convention](https://github.com/javrtg/AnyCalib/blob/027a8497d893f4b2596f23d6324c05e4b81064ed/anycalib/cameras/pinhole.py).
 
 Mutable comparison links are research citations,not installation locks.
+
+## Source-only closeout
+
+Acquisition/audit-driver recoveryaf54c1c. Both one-off drivers retired;the small
+pinned public source/metadata snapshot stays pending a separately registered
+candidate trial.46original source/API responses and four upstream notice hashes
+verify;all34protected identities verify;149retained tests pass7.204s. Main
+environment has no torch and production src has no diff. No package installer
+or downloaded model code was run. Local verification evidence stays with the
+private snapshot. Closed18:13UTCwithin the15minute screen;zero neural/physical/
+head/medical acceptance claims. This is a different next hypothesis,not a pass
+for0321or permission to fit a head with unvalidated predicted intrinsics.
