@@ -55,6 +55,16 @@ def acquire():
         data=fetch('https://raw.githubusercontent.com/PoseLib/PoseLib/'+ref['sha']+'/'+path)
         target=OUT/'source'/path;target.parent.mkdir(parents=True,exist_ok=True);target.write_bytes(data)
         source[path]=digest(data)
+    finalize()
+
+
+def finalize():
+    wheel=(OUT/WHEEL).read_bytes()
+    if digest(wheel)!=WHEEL_SHA:raise ValueError('cached wheel identity changed')
+    ref=json.loads((OUT/('annotated-tag.json' if (OUT/'annotated-tag.json').exists() else 'tag.json')).read_text())['object']
+    if ref['type']!='commit' or len(ref['sha'])!=40:raise ValueError('unresolved source commit')
+    source={path:digest((OUT/'source'/path).read_bytes()) for path in
+            ('LICENSE','README.md','PoseLib/robust.h','PoseLib/robust/ransac.h','pybind/pyposelib.cc')}
     license_bytes=(OUT/'source/LICENSE').read_bytes()
     if b'BSD 3-Clause License' not in license_bytes or b'binary forms' not in license_bytes:raise ValueError('source grant absent')
     with zipfile.ZipFile(io.BytesIO(wheel)) as archive:
@@ -74,7 +84,8 @@ def acquire():
                     raise ValueError('wheel RECORD mismatch')
             elif name!=records[0]:raise ValueError('unsigned unexpected wheel record')
         licenses=[name for name in names if 'LICENSE' in name and '.dist-info/' in name]
-        if len(licenses)!=1 or archive.read(licenses[0]).strip()!=license_bytes.strip():raise ValueError('wheel/source grant mismatch')
+        canonical=lambda data:data.replace(b'\r\r\n',b'\n').replace(b'\r\n',b'\n').replace(b'\r',b'\n').strip()
+        if len(licenses)!=1 or canonical(archive.read(licenses[0]))!=canonical(license_bytes):raise ValueError('wheel/source grant mismatch')
         site=OUT/'site';site.mkdir()
         for name in names:
             info=archive.getinfo(name)
@@ -118,7 +129,9 @@ def infer(case):
     if (OUT/'site') not in Path(poselib.__file__).resolve().parents:raise ValueError('runtime outside private overlay')
     data=dict(np.load(OUT/(case+'-input.npz')))
     options={'seed':328,'max_iterations':10000,'max_epipolar_error':1.5,'success_prob':.999}
-    write(OUT/(case+'-options.json'),{'ransac':poselib.RansacOptions(options),'bundle':poselib.BundleOptions()})
+    actual=poselib.RansacOptions(options)
+    if any(actual[key]!=value for key,value in options.items()):raise ValueError('RANSAC options not applied')
+    write(OUT/(case+'-options.json'),{'ransac':actual,'bundle':poselib.BundleOptions({'loss_scale':.75})})
     start=time.monotonic()
     pair,stats=poselib.estimate_shared_focal_relative_pose(data['first'],data['second'],data['principal'],options,{})
     f1=float(pair.camera1.focal());f2=float(pair.camera2.focal());pose=np.asarray(pair.pose.Rt)
@@ -173,6 +186,7 @@ def controller(stage):
 if __name__=='__main__':
     stage=sys.argv[1]
     if stage=='acquire-worker':acquire()
+    elif stage=='finalize-worker':finalize()
     elif stage=='prepare-worker':prepare()
     elif stage.startswith('infer-') and stage.endswith('-worker'):infer(stage[6:-7])
     elif stage.startswith('evaluate-') and stage.endswith('-worker'):evaluate(stage[9:-7])

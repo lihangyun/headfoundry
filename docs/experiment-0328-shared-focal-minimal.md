@@ -58,3 +58,16 @@ remain UNVERIFIED. No production defaults,shared sources,0207or case002change.
 Primary sources:https://github.com/PoseLib/PoseLib/tree/v2.0.5,
 https://raw.githubusercontent.com/PoseLib/PoseLib/v2.0.5/LICENSE,
 https://pypi.org/project/poselib/2.0.5/.
+
+## Pre-import grant-text format correction
+
+First acquisition c0dddc0downloads the exact wheel and five tagged source files,
+validates wheelCRC/RECORDbut stops6.172s/117637120bytes before extracting/importing:
+wheel grant containsCRCRLFwhile source hasLF. Raw wheel/source hashes differ
+as expected;manual text inspection identifies no word/content difference.
+Retain original bytes/hashes and the failed worker/log. Canonicalize ONLY
+CRCRLF/CRLF/CRtoLFfor full-text equality,not copyright/terms/whitespace words.
+Finalize the already hash-verified local bytes without redownload/solver call.
+This is pre-execution packaging repair,not a physical threshold/precision change.
+Record the effective wrapper bundle loss_scale.75(.5*1.5)rather than misleading
+unmodified class default1.0;no solver has run and registered behavior is unchanged.
