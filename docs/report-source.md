@@ -1250,3 +1250,14 @@ families. Other candidates/pixels are NOT ruled out. Corneal source screen
 documents missing prerequisites rather than installing another speculative
 model. One-off runner/loose images retired after188173-byte private evidence
 capsule;originals/defaults unchanged. No camera fit/head/medical-mm acceptance.
+
+# 0318:cross-axis information helps but does not clear registered precision cue
+
+Producer bedea11;fixed141-point procedural training plus ONE141-row view,all old
+Jacobian blocks exactly preserved. Same6free new camera nuisances/846rows in
+both variants. Repeat sigma(logf)=.0504460versus pitch20sigma=.0208726at declared
+.5px/axis noise;original .0760183. This supports geometry over merely repeated
+observations,but pitch still not below.02. No count/angle/solver/model rescue.
+Local ideal information only,not actual uncertainty or achieved camera/head.
+161611-byte private capsule preserves both full raw controls;driver retired,
+146tests7.360s/protected sources pass;actual3px/2mm/defaults unchanged.
