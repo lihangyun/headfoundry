@@ -1,5 +1,17 @@
 # HeadFoundry technical research report
 
+## 0324:complete ray-calibrator software contract,not physicalK
+
+Source6c0496fplus pre-install host repair3690598. Fixed two official wheels,
+six retained notice/RECORDidentities,isolated torch2.6CPU/sympy1.13.1;main remains
+unchanged. Exact399state items/320259771parameters/two buffers,finite values and
+loaded/post-forward byte fingerprints pass;six invalid-state controls reject.
+Offline one procedural input completes3.453s,software worker42.422s/2.982GBpeak.
+Native720x1280is resized420x238by upstream,not full-native inference. FP64pixel
+replays<1e-7and explicit FP32crop-transfer bound pass. Finite procedural output
+is not calibration truth;full domainK/SE3/head/medical quality stillUNVERIFIED.
+152tests7.461s,34protected hashes verify;no private neural input/default changes.
+
 ## 0323:complete fixed candidate bytes,not learned camera evidence
 
 One official AnyCalib edit release file1281194246bytes acquired under0322's

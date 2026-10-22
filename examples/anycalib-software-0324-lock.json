@@ -1,0 +1,30 @@
+{
+  "model_asset_lock": "anycalib-edit-asset-lock.json",
+  "source_revision": "027a8497d893f4b2596f23d6324c05e4b81064ed",
+  "model_id": "anycalib_edit",
+  "camera_model": "pinhole",
+  "torch": "2.6.0+cpu",
+  "python": "3.12.13",
+  "numpy": "2.5.2",
+  "private_sympy": "1.13.1",
+  "device": "cpu",
+  "precision": "float32",
+  "math_threads": 4,
+  "interop_threads": 1,
+  "xformers": false,
+  "automatic_model_download": false,
+  "fallback_to_sac": false,
+  "fix_principal_point": false,
+  "calibration": {"max_iters": 10, "res_tangent": "fitted", "solver": "normal"},
+  "state": {
+    "items": 399,
+    "parameters": 320259771,
+    "persistent_buffers": ["backbone.image_mean", "backbone.image_std"],
+    "exact_loaded_value_fingerprint": "82a4929d5371797bb888864e0c3c90b5c8b48d95f8105c44dd30b294b6b818bd"
+  },
+  "wheels": [
+    {"name": "torch-2.6.0+cpu-cp312-cp312-win_amd64.whl", "bytes": 206493444, "sha256": "4027d982eb2781c93825ab9527f17fbbb12dbabf422298e4b954be60016f87d8", "source": "https://download-r2.pytorch.org/whl/cpu/torch-2.6.0%2Bcpu-cp312-cp312-win_amd64.whl"},
+    {"name": "sympy-1.13.1-py3-none-any.whl", "bytes": 6189177, "sha256": "db36cdc64bf61b9b24578b6f7bab1ecdd2452cf008f34faa33776680c26d66f8", "source": "https://files.pythonhosted.org/packages/b2/fe/81695a1aa331a842b582453b605175f419fe8540355886031328089d840a/sympy-1.13.1-py3-none-any.whl"}
+  ],
+  "scope": "TECHNICAL_CHECK_PASSED strict software only. Native image input is resized by upstream to420x238; one unlabelled procedural prediction is not physical accuracy or video latency. K/rays do not supply head-relative SE3 or metric depth. Information matrix remains in working-grid intrinsic coordinates, not calibrated physical covariance. Actual head/camera/medical quality UNVERIFIED."
+}

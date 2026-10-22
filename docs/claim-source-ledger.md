@@ -1,5 +1,22 @@
 # Claim-to-source ledger
 
+## 0324:strict state and scoped runtime are not an accuracy grant
+
+AnyCalib edit uses the same pinned Apache source/model;no neural training or
+human data enter its one procedural forward. Whole399-item state/320259771params
+and two normalization buffers match in schema,finite values and exact loaded/
+post-forward bytes. Offline import uses only the pinned core plus isolated
+Torch CPU/SymPy,and shared installed infrastructure. Retain full bundled notices
+and installed RECORDhashes;do not label all transitive binary components as
+merely BSDor infer independent training-data/patent/distribution clearance.
+The initial setup host guard rejected official-index SymPy's PyPI link before
+installation;one source-verified same-version/byte repair,no model retry.
+
+Integer-center/edge-origin conversion preserves fx/fy separately;working-grid
+information is not relabeled native calibrated covariance. Good software
+replay/unit rays or finite returnedKdo not certify learned calibration. Known
+camera-domain precision,actual head-relativeSE3and medical2mmare still absent.
+
 ## 0322-0323:permissive FoV/ray candidate,not a calibrated camera
 
 The pinned[AnyCalib publisher grant](https://github.com/javrtg/AnyCalib/blob/027a8497d893f4b2596f23d6324c05e4b81064ed/README.md#license)

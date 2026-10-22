@@ -84,3 +84,46 @@ image/config/precision/checkpoint or actual3px/2mmgate changes/retries.
 
 Primary host evidence:[official CPU index](https://download.pytorch.org/whl/cpu/sympy/),
 [official PyPI release metadata](https://pypi.org/pypi/sympy/1.13.1/json).
+
+## Actual strict software result
+
+Original source6c0496f;pre-install-only source-host repair3690598. The one corrected
+setup completes29.437s/278003712peak process-tree bytes;combined setup workers
+48.593swithin the original600sallowance. Same Torch wheel is hash-verified and
+reused,SymPybytes match BOTH official CPU index and PyPI digest. Private runtime
+disk1398373572bytes including two wheels;no main package changed,not a restored
+GeoCalib overlay. Six bundled notice/RECORDidentities stay with the runtime;
+their local use is not a blanket redistribution/FTOclearance.
+
+Software worker42.422s/2982428672peak bytes passes. Exact399state items,
+320259771parameters and both persistent image_mean/std buffers match complete
+source schema/dtypes and all finite values. Missing/extra/shape/dtype/NaN/Inf
+controls all reject before copy. Complete acquired/loaded/post-forward value
+fingerprint82a4929d5371797bb888864e0c3c90b5c8b48d95f8105c44dd30b294b6b818bd
+is identical;no random/missing flexible_load or model/backbone download.
+
+Independent FP64ray fit replay6.36646e-12px;nonidentity OpenCVprojection max
+2.84217e-13px. Native resize target420x238,totalheightcrop9/top4,actual separate
+scale coefficients and shift are recorded. FP32affine transfer error1.58567e-5px
+is below its .00244140625pxroundoff bound;not a relaxed3pxphysical gate.
+Convert edge-origincxcy to integer-center by-.5,keep separatefx/fy.
+
+One full unbatched procedural-image prediction3.453s,explicit successTrue,
+finite full ray/tangent/information outputs,unit-ray norm error5.96046e-8.
+The720x1280input is internally cropped/resized420x238,NOT full-native neural
+resolution. Its unlabelled-imagefx/fy2580.158/3719.240andcx/cy72.878/374.708
+are arbitrary estimates without physical truth,not validated scene calibration.
+The information matrix is in working-grid intrinsic coordinates;it is not
+silently called a native physical covariance or used to certify uncertainty.
+
+Main environment distribution rows exactly unchanged,all34protected input/
+consent/shared-file identities and source/notices/checkpoint hashes verify.
+152retained tests pass7.461s. Temporary verification helper retired;only opt-in
+adapter/entry/regression and this single provisional source/weight/runtime stay.
+Public replay identity:examples/anycalib-software-0324-lock.json. No production
+src/default changes,patient pixels/scan/case002,training/upload or new head.
+
+TECHNICAL_CHECK_PASSED software only. Actual intrinsic-domain precision,head
+relativeSE3,2mmmedical geometry and real visual acceptance remainUNVERIFIED.
+Next is separately fixed known-camera head-domain prediction/scoring;do not
+substitute the finite proceduralKfor its truth or restart a cached patient fit.

@@ -1,5 +1,8 @@
 # HeadFoundry
 
+[0324 严格软件检查](docs/experiment-0324-anycalib-strict-software.md)已通过完整状态加载、坐标对照和一次CPU运行，
+152项测试通过。仍只是软件接入；已知相机精度、真人头模和医学毫米误差尚未验证。
+
 [0323 新标定候选](docs/experiment-0323-anycalib-asset-acquisition.md)：AnyCalib 的单一已许可权重已完整获取，
 与发布者公开哈希一致。仅资产完整性通过；尚未加载模型、验证相机精度或生成新头模。
 
