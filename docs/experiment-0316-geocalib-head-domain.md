@@ -1,7 +1,7 @@
 # Experiment0316:known-camera head-domain calibration,not patient fitting
 
-Registered2026-10-22T15:40UTC after software fcccbdd,before new input acquisition,
-rendering or prediction. Whole1200s to16:00UTC includes closeout/tests/commit.
+Registered2026-10-22T15:39UTC after software fcccbdd,before new input acquisition,
+rendering or prediction. Whole1200s to15:59UTC includes closeout/tests/commit.
 Hypothesis:the additional learned focal prior can meet the existing3pxcamera
 budget on a head/blue-wall domain,not merely run on arbitrary gradient pixels.
 Single main variable scene context:a simple owned Manhattan room control versus
