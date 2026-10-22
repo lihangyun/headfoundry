@@ -82,3 +82,23 @@ shared tests and local closeout commit. Shared existing model/runtime/inputs and
 successful fixtures/defaults/0207are protected,not exclusive disposable weights.
 On technical success retain replayable acquisition and raw private observations
 for separately registered camera eligibility;all physical qualityUNVERIFIED.
+
+## Actual result:REJECT fixed coverage,not measured3Dfailure
+
+Sourcee7546a5;one worker PID54108starts2026-10-22T01:17:12.829Z,exits1 in
+20.954s,peak277671936bytes. All1041native RGBhashes match0252;all36keyframes
+retained. Full task/components/cards pass,and task bytes remain unchanged.
+Coordinate witness max0px.784frames have finite478-point predictions;257are
+missing/NaN. Nine of ten fixed anchors detect;330does not. No retry/substitution.
+
+Source-only sheet and full330visually reviewed. Its true angle was NOT calibrated;
+the preselected oblique label is qualitative. Preserve this coverage rejection,
+but do not infer all784other predictions are unusable or globally inadequate.
+No material localization,camera,medical-mm,head or visual acceptance was measured.
+Any later reuse needs a different justified domain/visibility/observation protocol,
+not replacing330with a detected neighbor or retroactively passing this trial.
+
+Keep all raw/absent rows and two sheets in compact private evidence;retire exclusive
+runner/derived outputs. Common model/runtime/component provenance and public PDF
+cards remain protected;temporary PDF page PNGs are disposable.142shared tests
+pass in5.801s before cleanup. No scan geometry/case002/training/upload occurred.

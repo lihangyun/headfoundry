@@ -4,6 +4,20 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 2026-10-22 continuous semantic observations:coverage rejected,3Dunmeasured
+
+0303processes all1041case001frames once with the existing locked VIDEO task.
+All source RGB hashes and task bytes match;784frames return finite478-point
+predictions,257are missing. Preselected anchor330is missing,so the registered
+coverage requirement is REJECT;no camera/head solve or medical surface score was
+run. Detection count does not establish material correspondence or3pxaccuracy.
+The true angle of330is uncalibrated;this entry failure is not evidence that all
+other predictions are unusable. Preserve the full raw observations/missingness
+and two review sheets privately;retire the exclusive runner/derived output.
+Common asset/component/license provenance stays. Further use needs a materially
+different,source-justified domain/visibility protocol,not a replacement anchor
+or post-hoc pass. Actual reconstruction/likeness remains UNVERIFIED.
+
 ## 2026-10-21 allocation is corrected,but measured3D tracking is rejected
 
 0294fixed CUDA operator and complete-network controls compare all values with

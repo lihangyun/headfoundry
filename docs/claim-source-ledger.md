@@ -1,5 +1,14 @@
 # Claim-to-source ledger
 
+## 2026-10-22 semantic video coverage is not physical accuracy
+
+0303pins four existing task components/three official Apache model cards and runs
+one local native1041-frame VIDEO pass.784detections do not establish visibility,
+identity or metric depth;missing fixed330anchor stops before camera/head. Its
+domain was judged qualitatively,not calibrated:do not declare all other outputs
+unusable. Common provenance stays;exclusive failed app retires. No scan geometry,
+case002content,training/upload/new model,medical-mm or visual acceptance.
+
 ## 2026-10-22 partial cycle closure is not newly acquired physical evidence
 
 0302uses only the same authorized local raw source archive with a different

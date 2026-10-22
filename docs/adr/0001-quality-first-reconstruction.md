@@ -628,3 +628,9 @@ and retire the fixed application;freeze further closure/score/forest/clustering
 variants on this cached cohort. Do not promote a partial tree into complete
 metric cameras or count growth into shape accuracy. New work needs genuinely
 different justified source observations,not another solver/threshold sweep.
+
+0303separates complete inference from failed fixed-anchor coverage. Missing330
+cannot be replaced post-hoc,while its qualitatively judged domain also cannot
+prove all784detections unusable. Future reuse requires a distinct explicit domain/
+visibility protocol. Relative z/AR transforms/presence are not physical cameras,
+material identity or independent truth.3px/2mm/head gates and defaults stay fixed.
