@@ -70,3 +70,28 @@ camera backend has been excluded by noiseless controls. Establish a physically
 accurate,noise-tolerant camera mechanism on independent controls before another
 real camera/head route. This is not permission to restore0308or sweep its cached
 points. Keep actual3px/2mm/whole-head/user visual gates unchanged.
+
+## Verified closeout
+
+Source recovery8881e50,result1f0e193. Private compact evidence:
+assets/private/closed-experiments/0310-camera-noise-control/evidence.zip,
+105548bytes,15members,no images,CRC verified;SHA256
+02904964cc00551dd15ee1a44cf28e6388508afdb5c89fd08575c1389399352b.
+Preserves all raw clean/noisy observations/labels/edges/folds/truth,bearing and
+BA solutions/scores,worker records,exact source/protocol. No input/model output
+selection. Thirteen exclusive generated files139537bytes and one-off runner
+removed after source/archive/resolved-target/reparse/inventory/no-live-worker
+checks. No weights/framework/environment existed. All four shared camera/graph
+sources unchanged;archived runner bytes match the pre-run source hash.
+
+145retained tests pass in7.929s;39installed packages compatible. Thirty protected
+original/fixture/unrelated files remain exact with the two earlier explicitly
+recorded generic resource-monitor repairs preserved. First final-verification
+script used a slash-specific source-name comparison;Windows backslash names
+caused a missing-runner error after intentional deletion. Normalize path names
+and verify archived bytes;no camera fit re-executed. Actual max OpenCV thread
+count was not measured;the4thread configuration is the BLAS/OMP environment,
+not an independently certified process-wide thread maximum. Worker memory/time
+records cover the actual descendant tree. No production default or quality gate
+changed. Closeout within the900swhole budget from the conservative09:06:01Z
+start. No new route begins before this independent cleanup commit.

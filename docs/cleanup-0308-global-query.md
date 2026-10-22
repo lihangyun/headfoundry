@@ -39,5 +39,9 @@ Budget deviation:the cleanup commit e6c983b completed by08:59:03Z,at most
 1835.12s after08:28:27.882Z preparation,35.12s past the registered1800swhole
 budget. The archive was verified at1729.92s;inference and camera stage times
 were within their individual caps. Do not mark whole-budget compliance passed.
+Clarification after reading Git timestamps:initial cleanup e6c983b was1834.12s
+after preparation;the final verification/overrun record f9da7ec was1919.12s,
+so the complete0308closeout exceeded1800sby119.12s,not merely the initial
+commit's~35s. The initial bound above is not the full closeout completion time.
 The final whitespace check initially reported an EOF blank line in the research
 log;fixed in the subsequent verification record,not concealed as an initial pass.
