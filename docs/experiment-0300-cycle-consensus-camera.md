@@ -137,3 +137,22 @@ of an initialized point. It must first prove unknown camera/scale recovery on
 the SAME frozen short-track control and held split,not bypass the holdout or
 relax camera3px. A separately registered different initializer may reuse fixed
 backend math,not silently rerun0300or restore any model integration.
+
+## Verified closeout
+
+Result8f6a4b6;source581422f. Private closed-experiments/0300-cycle-camera/evidence.zip
+is15713bytes/9members/0images,CRCverified,SHA256
+1a232f8418ee34ad4fb65871b9f9bed7662d66b30e5611ecd720374aa5bfcd65.
+It preserves the scored selected train/held coordinates,candidate clique graph,
+identity/focal/attachment reports,structural audit/logs/protocol. Full procedural
+truth/raw edges were not persisted before the stop;their deterministic generator
+is recoverable from Git,not claimed as an independently frozen binary input.
+
+After resolved-target/reparse/inventory/archive/terminal-worker checks,exclusive
+runner plus output directory are removed:9files/66569logical bytes. No framework,
+weight or model environment was downloaded. Generic graph helper/regression and
+shared0276scene stay. All11protected hashes unchanged,including original video/
+skin/consent/0230/0293/unrelated0207and prior0299archive.141shared tests pass after
+cleanup in5.184s;no live import references the retired runner. Source recoverable
+from Git;generated binaries require replay,not promised by the compact archive.
+No user action or new permission is required for the next distinct initializer.
