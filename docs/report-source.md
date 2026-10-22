@@ -1188,3 +1188,11 @@ conditions pass,but focal1098.435versus true1200errs8.46%;max300notconverged.
 AuditREJECT. No patient/model rerun. Do not exclude camera error just because
 noiseless controls pass. Other physical scores use a nearly-collinear-center
 gauge and are not gauge-independent error lower bounds. Details0310protocol.
+# 0311:profiled focal information changes the next action
+
+Source7415597,no refit/step. Exact truth replay4.55e-13px;old diagnostic all-field
+replay passes. Procedural sigma.5px/axis Fisher profiling gives local sigma(logf)
+.0760183. Prioritize genuinely additional geometry/calibration information,not
+another optimizer on the assumption that0310data already specifies2%focal.
+This does not prove global impossibility or predict patient uncertainty. No
+actual video/model/scan is used;no physical camera/head gate passes.

@@ -855,3 +855,10 @@ same141pure tracks. Conditional five-viewp95<3px,but focal error8.463755%and
 max300nonconvergence;physical controlREJECT. Actual-patient accuracyUNVERIFIED.
 Large point/projection scores depend on near-collinear-center alignment and
 are not a physical error lower bound. No patient image/model/medical rerun.
+# 0311:local uncertainty evidence,not achieved accuracy
+
+Owned mathematical diagnostic7415597;same frozen procedural truth/fold,no fit.
+Profile sigma(logf)=.0760183for declared sigma.5px/axis. Forward4.55e-13px,
+public closed-form/confounding witnesses and old-audit all-field replay pass.
+Local Gaussian regular-unbiased assumptions only;no patient interval,global
+impossibility,actual camera/head/2mmclaim. Additional information takes priority.

@@ -666,3 +666,11 @@ nonconvergence. REJECT physical control;do not infer all real errors are caused
 by the NN. No longer treat the exact-coordinate fixture as evidence of noisy
 physical camera readiness. No production default/actual3px/2mmgate changed,
 no current real-video rescue. See experiment0310for gauge/scoring caveats.
+# 0311:do not infer optimizer fault from a weak-information physical fixture
+
+Independent truth-linearization profile gives sigma(logf)=.0760183at sigma.5px
+for0310geometry/folds. This is local/unbiased/Gaussian only. It changes the
+priority from speculative solver replacement to genuinely additional information;
+does not admit0310or excuse nonconvergence. No cached real-data retry/new model
+installation is warranted merely by0310's8.46%error. Retain checked generic
+read-only math;do not change actual camera/head/medical acceptance gates.
