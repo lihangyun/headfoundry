@@ -102,3 +102,26 @@ Keep all raw/absent rows and two sheets in compact private evidence;retire exclu
 runner/derived outputs. Common model/runtime/component provenance and public PDF
 cards remain protected;temporary PDF page PNGs are disposable.142shared tests
 pass in5.801s before cleanup. No scan geometry/case002/training/upload occurred.
+
+## Closeout after product-quota interruption
+
+Result commitfcc134c. Original1800s whole wall budget was NOT met because quota
+stopped closeout;recovery is not a retroactive budget pass. The single inference
+remains terminal/no retry. Local evidence.zip contains13members/all four raw
+arrays/full frame ledger/reports/two review sheets,8578185bytes,SHA256
+0c1d4e82a60f6be70bf5d49edb0b0ed056eb085549a4a953e9b65be8df24ec26.
+Location:assets/private/closed-experiments/0303-semantic-video. CRC/SHA verified.
+
+Removed53exclusive files,39685114logical bytes:the runner,derived output and five
+temporary PDF page PNGs. Thirty-six native frame PNGs are not in the archive;
+regenerate from protected video/0252index if needed. Source recoverye7546a5.
+Shared model/runtime and improved common component/model-card provenance stay;
+there is no new failed framework to uninstall. All25protected hashes unchanged,
+including originals/consent/shared fixtures/0207/common model and provenance.
+
+Observer timed out during closeout;native execution recovered after checking
+actual process/file state. No Python worker remained and no inference was
+restarted. A fresh shared test verification passes142tests in6.721s. Active
+source/defaults unchanged;no dangling runner import. Temporary closeout-only
+verification scripts are also removed separately,not counted in the53trial files.
+The raw acquisition is evidence only,not approved camera input or an accepted head.
