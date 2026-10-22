@@ -124,6 +124,14 @@ def infer(case):
             if reading and (path.name=='truth.npz' or path.suffix=='.stl' or (private in path.parents and OUT not in path.parents)):
                 raise PermissionError('truth/geometry/unrelated private read denied')
     sys.addaudithook(audit);sys.path.insert(0,str(OUT/'site'))
+    wheel=(OUT/WHEEL).read_bytes()
+    if digest(wheel)!=WHEEL_SHA:raise ValueError('wheel changed before import')
+    with zipfile.ZipFile(io.BytesIO(wheel)) as archive:
+        for name in archive.namelist():
+            if not archive.getinfo(name).is_dir() and (OUT/'site'/name).read_bytes()!=archive.read(name):
+                raise ValueError('installed runtime differs from verified wheel')
+    identity=json.loads((OUT/'input-identities.json').read_text())[case+'-input.npz']
+    if digest((OUT/(case+'-input.npz')).read_bytes())!=identity:raise ValueError('input changed')
     import poselib
     if poselib.__version__!='2.0.5':raise ValueError('wrong runtime version')
     if (OUT/'site') not in Path(poselib.__file__).resolve().parents:raise ValueError('runtime outside private overlay')

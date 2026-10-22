@@ -71,3 +71,10 @@ Finalize the already hash-verified local bytes without redownload/solver call.
 This is pre-execution packaging repair,not a physical threshold/precision change.
 Record the effective wrapper bundle loss_scale.75(.5*1.5)rather than misleading
 unmodified class default1.0;no solver has run and registered behavior is unchanged.
+
+Resolved source7e9f5f53372e43f89655040d4dfc4a00e5ace11c;wheel880059bytes,
+nine members. Full normalized grant equality passes;raw grant identities remain
+distinct(sourcef956d2d1...,wheelf2974dfc...). Python entry and12-line symbol
+export helper inspected:local C++extension only,no automatic download/build.
+Finalization1.500s/109359104bytes;no main dependency installation. Reverify
+installed runtime against exact pinned wheel and frozen input before import.
