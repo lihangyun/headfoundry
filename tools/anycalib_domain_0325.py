@@ -122,7 +122,9 @@ def inference():
 
 def score():
     truth=json.loads((OUT/'truth.json').read_text());predictions=json.loads((OUT/'predictions.json').read_text())
-    yy,xx=np.mgrid[330:951:25j,140:581:25j];pixels=np.c_[xx.ravel(),yy.ravel()]
+    yy,xx=np.mgrid[330:950:25j,140:580:25j];pixels=np.c_[xx.ravel(),yy.ravel()]
+    if pixels.shape!=(625,2) or not np.array_equal(pixels.min(0),[140,330]) or not np.array_equal(pixels.max(0),[580,950]):
+        raise ValueError('registered fixed ROI endpoints')
     rows={};raw={}
     for name in NAMES:
         correct=np.array(truth['contexts'][name]['edge_K']);correct[:2,2]-=.5
@@ -149,13 +151,19 @@ def score():
     np.savez_compressed(OUT/'scores.npz',pixels=pixels,**raw)
     save('result.json',{'status':'TECHNICAL_CHECK_PASSED' if passed else 'REJECT',
        'scope':'conditional generic-head intrinsic test,not real-person camera/head/medical accuracy','contexts':rows,
+       'roi':{'count':len(pixels),'min':pixels.min(0).tolist(),'max':pixels.max(0).tolist()},
        'physical_head_SE3_medical':'UNVERIFIED'})
     print(json.dumps(rows,indent=2))
 
 
 if __name__=='__main__':
     mode=sys.argv[1]
-    if mode=='finalize-inputs':
+    if mode=='score-only':
+        if not (OUT/'inference-complete.json').exists() or (OUT/'first-score-result.json').exists():raise ValueError('requires terminal complete predictions and one scoring correction only')
+        for name in ['result.json','scores.npz']:
+            if (OUT/name).exists():(OUT/name).rename(OUT/('first-score-'+name))
+        score()
+    elif mode=='finalize-inputs':
         if (OUT/'prepared.json').exists() or (OUT/'infer-worker.json').exists():raise ValueError('metadata already finalized/predicted')
         truth=json.loads((OUT/'truth.json').read_text());lock=json.loads((ROOT/'examples/makehuman-base-asset-lock.json').read_text())
         images={name:sha(OUT/'inputs'/(name+'.png')) for name in NAMES}

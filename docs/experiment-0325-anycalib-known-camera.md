@@ -86,3 +86,13 @@ untextured skin and generic untextured eye helpers are visible limitations,
 not a reconstructed subject or natural-photo benchmark. Keep all original
 pixels/declared grid/no post-review appearance changes. Input IDs are frozen;
 verify model/source/runtime-wheel/notice/RECORDreceipts before the one trial.
+
+Pre-output-review scoring-code audit:NumPycomplex-step mgrid includes its stop
+endpoint. The initial scorer incorrectly used581/951instead of the registered
+580/950. Fix these two constants to the ORIGINAL registered bounds,assert all
+625rows and both minima/maxima,and retain any first scorer report/raw errors
+under first-score names. Permit only re-scoring the unchanged complete rawK
+outputs once,not a second neural call or different ROI/threshold. No predicted
+value or quality result was examined when choosing this correction;source
+manifest/source-frame/weight/model settings stay unchanged. Record both rather
+than silently calling the original metric contract valid.
