@@ -39,11 +39,15 @@ def residual(images,pixels,inverse_depth,poses,log_gains,biases,log_focal):
     flat=pixels.reshape(-1,2)
     reference=bilinear(images[0],flat,[720,1280]).reshape(pixels.shape[:2])
     rays=np.c_[flat,np.ones(len(flat))]@np.linalg.inv(k).T
-    points=rays/np.repeat(inverse_depth,pixels.shape[1])[:,None]
+    try:
+        with np.errstate(over='raise',invalid='raise'):
+            points=rays/np.repeat(inverse_depth,pixels.shape[1])[:,None]
+    except FloatingPointError as error:
+        raise ValueError('inverse-depth backprojection overflow') from error
     rows=np.array([[camera,point,0.,0.] for camera in range(1,len(images)) for point in range(len(points))])
     uv,depth=project(k,poses,points,rows)
-    if not np.isfinite(uv).all() or not np.isfinite(depth).all() or (depth<=0).any():
-        raise ValueError('all patch rays must have positive target depth')
+    if not np.isfinite(uv).all() or not np.isfinite(depth).all() or (depth<=1e-9).any():
+        raise ValueError('all rays must be in the unclamped projector domain Z>1e-9')
     warps=uv.reshape(len(images)-1,*pixels.shape)
     samples=np.stack([bilinear(images[camera],warp.reshape(-1,2),[720,1280]).reshape(reference.shape)
                       for camera,warp in enumerate(warps,1)])

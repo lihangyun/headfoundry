@@ -1272,3 +1272,15 @@ model installed. DSOis a conditional published direct-patch/inverse-depth lead,
 not admitted self-calibration;its own initialization/calibration/rolling-shutter
 caveats remain. Any original minimum prototype needs a new bounded unknown-
 intrinsic physical control,not an SH/source-scan or cached-tracker retry.
+
+# 0320:original direct-image residual math,not an admitted camera solver
+
+Pure opt-in patch residual couples shared focal/free SE3/inverse depths and
+positive image gains,bypassing neither invalid rays nor missing support. Reuses
+retained projection/grid arithmetic;independent analytic image homography,
+OpenCVprojection,exposure derivatives and failure controls pass.149tests7.612s.
+Small initial source55840f7plus explicit unclamped-domain guard retained;no
+model/DSOcode/runtime copied or installed. No fit/private input/head/medical
+score. Multi-view unknown-camera capacity,real radiometry/occlusions/rolling
+shutter remainUNVERIFIED. This is a necessary implementation contract,not an
+easier replacement for the requested real-video editable-head outcome.

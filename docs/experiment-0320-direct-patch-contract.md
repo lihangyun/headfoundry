@@ -33,3 +33,35 @@ Run retained suite under120s;no parameter/seed/precision sweep. A pass retains
 only minimum pure math and its regression,clearly marks physical camera/head
 UNVERIFIED,and permits design of a separate full unknown-camera capacity test.
 Failure stops,with compact evidence/source recovery and exclusive cleanup.
+
+## Actual pure-math result and scope
+
+Initial source55840f7;one valid-domain guard was tightened after source review:
+shared projector uses a1e-9depth denominator floor,so this primitive explicitly
+rejects Z<=1e-9(including tiny positive Z) before it can silently inherit that
+clamp. An optical-axis/tiny-positive-depth negative control verifies rejection.
+Backprojection/exposure overflow also fail closed. This is a numerical domain
+boundary,not a change to actual3px/2mmor an accepted camera near plane.
+
+Three deterministic public regressions pass initially(.158s)and in the final
+149-test suite(7.612s). Analytic plane/image/exposure residual is within2e-15;
+nonidentity OpenCVprojection agrees within1e-10px;central gain/bias derivatives
+within1e-10. Fixed focal/depth changes affect the residual. Invalid support,
+reflection,negative/tiny depth,empty/NaNstates and exposure failures all reject.
+These assertions verify arithmetic only,not focal uniqueness or recovery:a
+single plane still has important geometry/focal ambiguities. No fit was run.
+
+TECHNICAL_CHECK_PASSED pure residual contract. Full joint unknown-focal/SE3/
+inverse-depth optimizer and independent noisy physical capacity remain
+UNVERIFIED,as do actual-video cameras/head/medical error/likeness. No output
+mesh,pose estimate or patient-specific exposure calibration was generated.
+Real skin radiometry,rolling shutter,occlusions,changing visibility and the
+one-depth-per-small-patch approximation are unresolved,not silently assumed
+valid. Future multi-view/multi-anchor support and invalid-domain handling must
+be explicitly specified before any actual camera solve;this is not yet DSO.
+
+Retain only the small opt-in tools/direct_patch_camera.py and its regression,
+reusing unchanged existing bilinear/projector math. There are no generated
+heavy outputs,downloaded assets or exclusive failed framework to clean. No
+other production path/default/source/asset or unrelated0207was changed. Local
+closeout16:26UTCwithin16:37deadline. Full objective remains active,not complete.

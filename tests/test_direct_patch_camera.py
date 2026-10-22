@@ -63,3 +63,6 @@ class DirectPatchCameraTest(unittest.TestCase):
                         dict(poses=behind),dict(images=nan),dict(log_gains=np.array([0.,1000.])),
                         dict(biases=np.array([0.,-1.])),dict(pixels=self.pixels[:0])]:
             with self.assertRaises(ValueError):self.call(**changes)
+        near=self.poses.copy();near[1,:3,3]=[0,0,-4+5e-10]
+        with self.assertRaises(ValueError):
+            self.call(pixels=np.array([[[359.5,639.5]]]),inverse_depth=np.array([.25]),poses=near)
