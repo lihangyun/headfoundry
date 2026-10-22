@@ -1,5 +1,14 @@
 # HeadFoundry technical research report
 
+## 0330:joint camera control passes,but point capacity still rejects
+
+One fixed joint solve8adb91a,26evaluations2.328s,unknownf/poses/XYZand full
+training triplets;whole24point holdout stays independent. f1204.712525versus1200,
+heldknown3Dp951.090659/2.328945/2.171750px,proper/positive/nonbound/replay controls
+pass. TrainingXYZp95.01249014>.01sceneunitrejects whole recipe,not a medicalmm
+measurement. No realvideo/head admission or parameter rescue.27497-byte capsule
+keeps all small raw states,exclusive runner/output retired before different work.
+
 ## 0329:joint information exists,but the intended training fold must preserve it
 
 Same owned0328points/poses,two-view and repeated-view analytic matrices have

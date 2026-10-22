@@ -40,3 +40,33 @@ subprocess(cooperative not hostile sandbox). No human/case002/training/upload/
 source/default change. Failure freezes recipe,archives tiny states/scores/source,
 retires exclusive entry/output/cache,verifies38protected hashes and commits
 independent cleanup before new method. Pass retains opt-in replay,not promotion.
+
+## Actual result:conditional cameras pass,point precision rejects the recipe
+
+Source8adb91a,registration41bbbad. One worker2.328s/123637760peak bytes,
+26evaluations,ftoltermination success. No second solve or setting change.
+Focal1280initial->1204.712525final(true1200),relativeerror.00392710438.
+All24independent heldknown3Dprojections in each of three cameras:initialp95
+18.5151/70.4061/25.3884px;final1.090659/2.328945/2.171750px. Proper matrices,
+positive held/training depths,nonboundf,OpenCVreplay5.116e-13px,wrong-camera
+negative126.2941pxall pass. This is TECHNICAL_CHECK_PASSED conditional camera
+subgate on owned noisy coordinates,not actual-video camera acceptance.
+
+TrainingXYZp95error.31063226initial->.0124901413sceneunits final,still greater
+than registered.01. Whole recipe REJECT. Scene units are NOTmedicalmm;do not
+convert this into a patient2mmclaim or relax.01after seeing the near miss.
+All truth/whole held IDs stayed outside inference;no inlier/held pruning or
+selected initial/final promotion. The result supports joint estimation rather
+than pairwisefocal inversion,but does not admit a head or guarantee actual
+image correspondences match this independentGaussian coordinate model.
+
+Compact evidence assets/private/closed-experiments/0330-joint-selfcal/evidence.zip:
+27497bytes/11members/no images,CRCverified,SHA256
+05063e446b81dcc05197d589111d14859e68a68bf58dbb7364e3cfa1aa367e46.
+Keep ALLsmall input/truth/initial/final/score arrays,logs/identities/source.
+After actual worker PID checks,10loose files24978bytes compacted,exclusive
+entry retired. All small fixtures recover exactly from archive;sourceGit
+8adb91arestores the runner. No weights/packages/framework to uninstall.
+38protected identities verify before/after;production defaults and0207unchanged.
+No extra noise/seed/point/iteration trial follows this stop. Full target remains
+active:real-video cameras,editable head,medical error and visual acceptance unmet.

@@ -1,5 +1,13 @@
 # Claim-to-source ledger
 
+## 0330:conditional camera subgate is not full reconstruction acceptance
+
+Owned coordinate experiment passes independent held3Dcamera projection3pxand
+focal2%checks,but misses registered point.01sceneunitcontrol. Keep subgate
+TECHNICAL_CHECK_PASSEDand fullREJECTseparate;not actual-video/medicalmm/head/
+user acceptance. No extra seed/point/noise/iteration or post-scoregate reduction.
+Raw states/scores/source8adb91akept privately,exclusive failed entry retired.
+
 ## 0329:local joint observability is not independent validation or achieved accuracy
 
 Owned-coordinate analytic Jacobian uses existing OpenCV derivatives plus explicit
