@@ -1,4 +1,4 @@
-#0308closeout:global-query camera trial
+# Cleanup0308:global-query camera trial
 
 2026-10-22. Executed source e926629; result and generic process-tree monitor
 repair3248346. Actual real-video camera initialization is REJECT:25/53relative

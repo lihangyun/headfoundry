@@ -1167,7 +1167,7 @@ precision after this stop. Archive609033bytes/source703f292and retire exclusive
 0290/0291/0292integration. Future exact batchwise upsampling needs a separate
 prospective equivalence/capacity audit,not repeated inference or optimistic
 quality transfer. Original data/defaults/shared gates remain protected.
-##0308actual-video closeout,2026-10-22
+## 0308actual-video closeout,2026-10-22
 
 One36-frame423-query BootsTAPIR forward completed;402tracks admitted without
 residual pruning. Camera initialization failed25/53positive edge-scale checks
