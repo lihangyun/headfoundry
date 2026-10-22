@@ -71,3 +71,62 @@ failure preserve tiny reports/full arrays/hash/sourceGit point,remove exclusive
 0301runner/output and verify shared tests/protected hashes/independent commit
 BEFORE another route. Keep successful generic graph/math and original archives,
 inputs/consent/fixtures/defaults/unrelated0207. No new permission needed.
+
+## Actual result:software control passed,actual fixed application REJECT
+
+Executed source6480d63,one worker PID39124starts2026-10-22T00:26:56.400Z,
+exits1 with a completed report in0.437s;peak working set92528640bytes,no GPU.
+No main-worker retry or parameter change. Static audit confirms the complete
+synthetic generator,intrinsics/projection,focal solver and BA/output blocks are
+unchanged from0300. ALL selected control vertices and1128train/564held scalar
+array values are byte-identical to0300;ZIPmetadata is not used as equality.
+
+### Independent unknown-camera control:TECHNICAL_CHECK_PASSED
+
+Same141selected tracks/100%purity/52.2222%recall with162wrong raw pair edges.
+Global bearing system has rank19/19unknowns;tree-only negative has rank13/16,
+so simple graph connection would not suffice. Every recovered edge scale is
+positive. Five proper cameras/positive training and held depths recover without
+a third initialized-point observation. BA uses6evaluations,f=1199.999999127px
+(true1200,relative error7.27e-10). Independent held GT-point projection
+p95=0.000000783346px;center max1.261e-10scene units,pointp95=2.613e-9scene units.
+Wrong+.1rad camera gives123.646px. These tiny values concern exact noiseless
+procedural geometry after putative-edge corruption,NOT real-video or skin-mm
+accuracy. Full raw/procedural truth/solution/error arrays were saved this time.
+
+### Actual source:stopped before a camera solution,not measured3Derror
+
+Unchanged raw sparse graph:877matched vertices/1037edges,153candidate cliques,
+44selected tracks(34length3,10length4),142selected observations. Source fold
+counts(train,held)for0/60/120/240/300/360/420/600/690:
+(7,8),(7,3),(5,3),(17,8),(12,7),(5,3),(13,0),(27,6),(5,6).
+Four views lack six held rows independently of the initializer. This is selected
+recipe support,not a theorem that the full video has insufficient information.
+
+Only training pair240/600has enough common tracks for F estimation. It is a
+near-repeat,not a useful stereo baseline:5/9positive points,median parallax
+0.023932degree,focal initialization reaches5119.999999999992pxupper bound.
+No pair meets unchanged positive/support/1degree criteria. Stop as registered:
+no actual global bearing solve,BA,camera model,head or medical surface error.
+Do NOT reduce angle/cheirality/support limits,extend focal bounds,leak held rows
+or retry the same44tracks. All actual quality/whole-head/visual gatesUNVERIFIED.
+
+### Preserved successful infrastructure,not failed application
+
+Retain tools/short_track_camera.py:bounded native720x1280 unknown-focal/proper-
+matrix/bearing/BA math with no private input/model paths. Retain procedural
+tools/check_cycle_camera_contract.py and ONE shared regression. No blanket
+physical identity or camera accuracy grant follows from this fixture. The
+experiment controller/raw-patient application is retired after evidence checks.
+
+During shared-fixture extraction,first test invocation fails only with missing
+itertools import;original failure log preserved. The import is repaired and all
+142shared tests then pass in5.352s,including the independent geometry replay.
+No actual-patient rerun occurred. Generic extraction changes no numerical fit
+code;the old private-evidence equality guard is intentionally controller-only,
+not a private-file dependency of shared tests. Existing defaults stay unchanged.
+
+Next work must change justified observation/association acquisition,not keep
+changing this now-controlled camera initializer or filter by the resulting
+medical/held errors. The original video still permits other preregistered source
+observations;this experiment does not prove all open/self-developed routes fail.

@@ -610,3 +610,12 @@ or infer global unobservability. Retain successful coordinate-free graph control
 without calling cycles physical truth. Any different globally coupled initializer
 must prove unknown-camera/scale recovery on the unchanged corrupted short-track
 control before patient construction. No head/medical gate or default changes.
+
+0301proves the different global bearing initializer on identical controlled
+tracks/folds,not merely proper rotations or optimizer termination. Require full
+bearing rank/positive scales and preserve the deficient-tree counterexample.
+Its exact synthetic recovery supports a generic numerical backend,not every
+observation graph. The fixed real cohort provides only a near-repeat F pair,
+nonphysical focal boundary and no valid stereo baseline;stop before patient
+geometry. Do not lower parallax/cheirality/hold-support or extend f to rescue it.
+Keep successful standalone math/control while retiring the failed application.

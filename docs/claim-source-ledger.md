@@ -1,5 +1,18 @@
 # Claim-to-source ledger
 
+## 2026-10-22 controlled global short-track camera math,not real geometry success
+
+0301replaces only the structurally unsuitable initializer with independent
+relative-rotation/bearing-scale math. Synthetic cohorts/folds byte-match0300;
+unknown cameras/focal/scale recover on the unchanged procedural corruption
+control,including a deficient-tree negative and wrong-camera rejection. This
+supports retained generic software/math,not a real/video physical accuracy claim.
+Actual authorized local0299observations are first constructed only after that
+control passes;the fixed cohort supplies no valid training baseline and stops.
+No scan content,case002,neural weights,library acquisition,upload/training or
+actual camera/head/medical-mm/visual acceptance. Failed application retires;
+generic camera and standalone procedural regression contain no private paths.
+
 ## 2026-10-22 coordinate-free cycle software is not patient identity acceptance
 
 0300adds independent graph/camera math using installed NumPy/SciPy/OpenCV and
