@@ -4,6 +4,16 @@ Date: 2026-09-04
 Decision: proceed with a clean-room, optimization-first product.  
 Quality status: `UNVERIFIED` until the full benchmark passes.
 
+## 0305 numerical audit does not justify a camera rescue
+
+Frozen0304training objective replays within8e-13px;independent finite-difference
+witness agrees within5e-11relative. Its nonzero normalized gradient.000221is
+not a converged certificate,but the undamped SVD/LSMR residual norms differ only
+~3.94ppm. This limited diagnostic does not establish an actual trust-region bug
+or justify another real iteration/solver sweep. Keep generic stationary/wrong-
+pose controls,not a new reconstruction integration. No patient solution changes;
+actual-observation and full-head acceptance remain unresolved.
+
 ## 2026-10-22 actual anatomical-video camera score,not head acceptance
 
 0304uses28named nose/canthus IDs in four source-reviewed natural video frames,

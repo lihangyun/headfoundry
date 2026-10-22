@@ -33,3 +33,28 @@ report/tests/local commit. Fail on replay/Jacobian mismatch,do not fit around it
 Keep concise reports/hashes and generic verified numerical checks;remove failed
 exclusive application if necessary. Original archives/protected inputs unchanged.
 Full reconstruction/camera acceptance/medical2mm/visual target remains active.
+
+## Actual result:TECHNICAL_CHECK_PASSED diagnostic,no physical promotion
+
+Source928e4a3;one audit completes.328s,no patient refit/held-field read/step applied.
+Exact forward replay maxima9.095e-13px(control)/7.958e-13px(real);half-step
+Jacobian relative differences6.191e-11/4.942e-11. Independent procedural positive
+and wrong-pose negative regression passes without modifying input arrays.
+
+Control normalized gradient infinity norm5.141e-11. Real frozen training cost
+11.181554 and normalized gradient.000221216(unscaled.560260) are not exactly
+stationary. Its normalized Jacobian rank102/102,smallest singular.00269030.
+LSMR local normal residual2.7464e-5vsSVD9.2027e-15,but residual norms differ only
+5.257780187vs5.257759494(~3.94ppm). This does NOT identify a large linear-solver
+failure or prove that another real solve/extra iterations would pass held data.
+Actual damped/history-dependent trust-region behavior was not reconstructed.
+Do not use the tiny numerical difference as a pretext for an iteration/solver
+knob sweep.0304remainsREJECT,all physical/head/medical/visual gatesUNVERIFIED.
+
+Working arrays6.06MBcontrol/.414MBreal,within cap. Raw report privately retained
+atassets/private/bundle-stationarity-0305/report.json. Generic no-fit auditor and
+one procedural positive/negative test stay as successful mathematical checks;
+the one-off private-archive wrapper is retired(source928e4a3). No framework/model
+or failed geometry was added.143shared tests pass in6.460s. Production/defaults,
+original evidence and unrelated0207unchanged. Next work must improve independently
+justified actual observations,not rerun the same28semantic points.
