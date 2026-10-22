@@ -67,3 +67,43 @@ Retire exclusive failed runner/solver/tests/generated arrays/pycache before
 another route,independent local cleanup commit. Correct0320/0326pure shared
 regressions remain. A pass keeps only opt-in solver and minimum runnable check;
 real-observation admission remains separately gated before any head fit.
+
+## Actual bounded result and stop
+
+Source9cda3a1,registered e8f33b2. One procedural preparation completes7.922s,
+peak327749632bytes. Six fixed views inspected19:21:40UTCbefore tracking;all
+contain the registered tiled material,yaw/pitch/depth variation. Periodic
+texture and some overlaps are limitations,not a realistic skin benchmark.
+
+The image-only initializer runs once2.016s/236933120peak bytes. It admits159
+host points(32/26/25/29/26/21),650target observations;only66points span all six
+views. Thus the new sparse admission genuinely runs beyond the complete-track
+restriction without lowering that retired recipe's48threshold or reusing its
+34matches. All15fundamental-pair initializations qualify locally,but fitted
+focal hits640lower bound(true1200)and the full-rank30/30bearing system gives
+two negative edge scales(-.00369888,-.01361430). The shared initializer fails
+closed before bundle adjustment,initial-state completion or direct optimization.
+No bound/point/scene/seed/tracker/solver/iteration rescue or second run occurs.
+
+REJECT this complete sparse camera recipe at initialization. Direct refinement,
+the final physical3pxgate and curvature/real-video/head/medical2mmaccuracy are
+UNVERIFIED,not measured failures of a direct optimized state. No new head exists.
+More accepted image tracks do not by themselves supply valid physical cameras.
+
+Postmortem is one read-only comparison of ALREADY frozen source/target rows
+with owned analytic geometry;no tracker,fit,correction or resubmission. All159
+host queries hit a surface;3of650included targets are actually occluded or
+on the wrong visible surface. Target coordinate error median.40380786px,
+p953.08771639px,34rows>3px. These are observation errors on this fixed synthetic
+scene,not final camera errors or medical millimeters. They establish imperfect
+observations,not that those34rows alone caused the focal/scale failure;no such
+causal claim is verified. No offending row was dropped to rescue calibration.
+
+Keep correct0320/0326pure regressions only. Compact426640-byte capsule,
+17members/one input sheet,CRCverified,SHA256
+69d4f8c08881b6165ad929e0f57e749db8421871f52cbb1448fbc1624829c03a.
+It contains complete frozen graph/rows,bearing states,truth/errors,logs/hashes
+and recoverable source. Remove exact own output tree/pycache23files2879582bytes
+and retire exclusive controller/solver. Full-resolution PNGs are deleted;
+hashes/seed/source remain,not a complete binary backup. See cleanup0327.
+All38protected identities verify before/after;no new dependency to uninstall.

@@ -1,5 +1,18 @@
 # HeadFoundry technical research report
 
+## 0327:partial observations pass coverage but fail physical initialization
+
+One owned six-image capacity context9cda3a1,not human input or synthetic training.
+159hosts/650target observations pass coverage;66complete points,so local graph
+is actually used. Fixed common-focal initialization reaches640bound;global
+bearing system full-rank30/30but two nonpositive scales. Stop before BA/direct
+optimizer. Frozen-row postmortem has3target visibility misses,p95coordinate
+error3.087716px,34/650over3px;not a final-camera or patient-mmerror and not proof
+those observations alone caused the initialization failure. No pruning/refit.
+Recipe REJECT;direct optimized precision remains UNVERIFIED. Compact426640-byte
+capsule/source9cda3a1kept;23exclusive generated files2879582bytes retired,shared
+math/defaults and38protected identities preserved. No claim of profile gain.
+
 ## 0326:sparse hosts remove a Cartesian implementation restriction,not calibration uncertainty
 
 0321never executed its direct solver because of complete-track coverage.

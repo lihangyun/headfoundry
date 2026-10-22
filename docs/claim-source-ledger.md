@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 0327:passing observation coverage is not valid calibration
+
+New independent multi-host recipe exceeds its coverage gate without complete
+tracks or trueKinput,but known-camera physical initialization is not reached:
+focal bound640,two negative global bearing scales. Do not report the15eligible
+pairwise poses/full bearing rank as a camera pass. Static truth comparison
+only diagnoses frozen synthetic rows;it is not a second scored fit or patient
+measurement. Direct refinement never ran. Preserve REJECT versus UNVERIFIED,
+retire exclusive implementation,keep tested generic0326arithmetic. No material
+head/side-profile/mmimprovement can be claimed from154software regressions.
+
 ## 0326:partial visibility is an observation structure,not a solved initialization
 
 DSO paper Eq4-8/Sec2.2(https://arxiv.org/html/1607.02565v2) supports point-host
