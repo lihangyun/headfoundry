@@ -1,0 +1,23 @@
+{
+  "id": "BootsTAPIR-noncausal-v2",
+  "license_id": "Apache-2.0",
+  "commercial_use": true,
+  "revision": "730cda1c730877cfedbe01bf87fb1cadb78a565d",
+  "license_url": "https://github.com/google-deepmind/tapnet/blob/730cda1c730877cfedbe01bf87fb1cadb78a565d/README.md#license-and-disclaimer",
+  "license_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+  "readme_sha256": "c0cda10a66a91513fd78e1638ff6db7789d4320dc24e5897ce6bc1bd567c15c3",
+  "weights_url": "https://storage.googleapis.com/dm-tapnet/bootstap/bootstapir_checkpoint_v2.pt",
+  "weights_bytes": 218886140,
+  "weights_sha256": "8493c7a69e02c85b9382fbb3c7b8b539b36bcc08ede744b9e99feb739a0129f4b",
+  "identity_source": "Publisher google/tapnet HF LFS object, captured in tapir-preflight-0306/hf-metadata.json",
+  "sources": {
+    "tapnet/torch/tapir_model.py": "87c05fb17d48d0f4353a00b67c9d40d3a264e13e43d88e3f7b58291198455e3ba",
+    "tapnet/torch/nets.py": "4961a8e4882e8c9ac219c4714f6f2c811cc1ab665a439d4d2e79942002a9517c",
+    "tapnet/torch/utils.py": "a4267b3a6bd8ecf2dfe5effacab9f7a43664dc5d008966c98f6a0cc68f5ccedd3"
+  },
+  "torch": "2.6.0+cpu",
+  "extra_packages": ["einshape==1.0", "dm-tree==0.1.10", "attrs==25.3.0", "wrapt==1.17.2", "sympy==1.13.1"],
+  "inference": "CPU float32 only;no compile,AMP,training,CUDA or alternate checkpoint",
+  "attribution": "Google DeepMind TAPIR/BootsTAPIR authors;Apache-2.0 notices retained. Dataset rights are separate.",
+  "status": "UNVERIFIED until complete bytes/state/coordinate/software check"
+}
