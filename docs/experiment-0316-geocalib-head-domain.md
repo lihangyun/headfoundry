@@ -54,3 +54,38 @@ completion sentinel existed,so inference was never allowed. Move only contact
 sheet construction to existing main Pillow,require render.json and request
 Blender --python-exit-code1. Keep first log/record,one render-only rerun from
 unchanged acquired mesh/config,not another NN trial or appearance adjustment.
+
+## Actual conditional domain result:REJECT
+
+Initial producer7bfdf0a;pre-forward-only runner repair12f53f1. Reviewed the
+four-image input sheet before prediction:upright front/bilateral generic heads,
+complete face/ears and blue background;lower open-neck crop and untextured
+surfaces remain limitations,not patient or photorealistic data. Room input is
+also procedural. Shared Blender projection replay max<=.000183px(all contexts).
+The repaired render worker7.234s,conservative tree peak653492224bytes.
+
+One exact sequence of four NNforwards(seed316each),no priors or refits. Worker
+60.375s,conservative tree peak1045823488bytes;individual forwards2.875,3.031,
+2.719,2.922s. Full runtime/weight/source inventories verified before import.
+All matrices finite/positive/nonboundary and all four outputs retained locally.
+Runtime exit/resource pass is not the physical result below.
+
+| Context | True focal | Predicted focal(nativepx) | Relative error | Fixed-ray p95px(upstream / exact-resampling) |
+| --- | --- | --- | --- | --- |
+| Room | 1200 | 733.297 | 38.89% | 131.869 / 131.855 |
+| Front head | 1200 | 2275.081 | 89.59% | 303.763 / 303.749 |
+| +60 head | 1200 | 1212.997 | 1.083% | 3.964 / 4.672 |
+| -60 head | 1200 | 1581.898 | 31.82% | 107.898 / 107.989 |
+
+None of the head contexts passes both3pxmappings. Different coordinate choices
+cannot rescue this result;do not select the one near-correct side. Room also
+fails,so this is NOT evidence of an exclusively head-domain failure or universal
+failure on real photographs. Small conditional untextured controls establish
+no calibrated population uncertainty or real-patient error lower bound. They
+DO prevent treating this learned focal prior as verified high-precision K in
+our pipeline. Stop candidate;no other scene/seed/renderer/weight/precision run,
+no cached0308camera rescue,actual video/head fit or new medical-mm score.
+
+Next technical investigation must add independently constrained camera/material
+information;another unvalidated monocular focal guess is not sufficient.
+Main task remains unmet and active. Source/defaults/actual3px/2mmgates unchanged.

@@ -683,3 +683,13 @@ absent uncertainty with zero. Record continuous versus actual integer-pixel
 crop/resize conventions. A software pass on an arbitrary procedural image has
 no known physical focal target and grants no right to fit a patient head. Next
 must test known-camera domain evidence,not reuse rejected0308camera outputs.
+
+# 0316:do not turn a varying monocular focal prediction into a hard camera prior
+
+Same1200pxcamera across generic head views yields2275/1213/1582pxpredictions;
+all fail conditional native3pxray-error admission. Room also fails. Stop exact
+candidate without selecting the near-correct side or changing renderer/seed/
+focal/precision. This does not prove real photographic calibration impossible.
+Retire exclusive source/weights/runtime and record the domain limitation before
+a genuinely different information source. No actual-video/cached camera retry
+is authorized merely by a software-pass or a plausible predicted number.

@@ -1230,3 +1230,13 @@ No default-zero uncertainty or partial flexible_load. Main versions/defaults/
 originals unchanged;148tests7.014s. Coordinate conventions recorded separately.
 Candidate isolated overlay retained pending actual known-camera/domain test.
 Physical SE3/head/medical/likenessUNVERIFIED. No private pixels/scan/uploads.
+
+# 0316:known-camera context fixture rejects high-precision learned K use
+
+Producer7bfdf0a,pre-forward renderer-only repair12f53f1. Four complete fixed
+CPU predictions;truef1200,room/front/+60/-60predict733/2275/1213/1582px.
+Head fixed-ray p95upstream303.763/3.964/107.898px;exact pixel mapping also fails.
+REJECTconditional head-domain K use;not a patient error or universal photographic
+model failure. All finite/nonboundary state and renderer checks cannot rescue
+physical error. No actual-video/head fit/medical-mm result. Candidate-only code,
+weight/source/overlay retired under cleanup0316;shared math/defaults protected.

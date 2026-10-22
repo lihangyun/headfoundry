@@ -886,3 +886,13 @@ Source/code/weight notice hashes fixed in examples/geocalib-pinhole.asset-lock.j
 ZIP/byte verification and148unit tests are technical checks,not model load,
 learned focal accuracy,head SE3or3px/2mmacceptance. Whole closeout budget missed
 after product usage interruption;no alternative weight or private-data inference.
+
+# 0316:software completion does not establish learned focal accuracy
+
+Strict889-item pinhole state and CPU software gate0315passes. Fixed four-context
+Blender5.2knownK control0316rejects high-precision use:all3head views fail the
+3pxfixed-ray p95budget under both pixel mappings. Truef1200versus2275/1213/1582.
+Procedural untextured CC0head/room only;no patient pixel,training,scan or output
+upload. No population/photographic impossibility or medical-error claim.
+SHA/source grants and compact local evidence remain;active example lock and
+candidate runtime have been retired,not silently fallback-replaced.
