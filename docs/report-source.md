@@ -1261,3 +1261,14 @@ observations,but pitch still not below.02. No count/angle/solver/model rescue.
 Local ideal information only,not actual uncertainty or achieved camera/head.
 161611-byte private capsule preserves both full raw controls;driver retired,
 146tests7.360s/protected sources pass;actual3px/2mm/defaults unchanged.
+
+# 0319:screen role and entire license before another install
+
+Source-only audit0319records five observation leads. Current SpaTrackerV2and
+MFTIQintegration grants are NC;TAPTRmain is IDEA NCand exactv3branch rights
+not resolved. TAPIP3D'sknown-depth/K/pose interface does not independently solve
+those missing inputs,and stockRGBdemo documents upstream auto-downloads. No
+model installed. DSOis a conditional published direct-patch/inverse-depth lead,
+not admitted self-calibration;its own initialization/calibration/rolling-shutter
+caveats remain. Any original minimum prototype needs a new bounded unknown-
+intrinsic physical control,not an SH/source-scan or cached-tracker retry.
