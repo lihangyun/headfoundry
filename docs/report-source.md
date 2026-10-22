@@ -14,6 +14,23 @@ or justify another real iteration/solver sweep. Keep generic stationary/wrong-
 pose controls,not a new reconstruction integration. No patient solution changes;
 actual-observation and full-head acceptance remain unresolved.
 
+### Read-only replacement lead,not a new installed integration
+
+[OpenSeeFace publisher](https://github.com/emilianavt/OpenSeeFace#license)
+explicitly licenses both code and models BSD-2-Clause. It is not present in
+earlier project records. However its publisher also says the66landmarks use
+quasi3Dcontours and prioritize avatar animation over exact image localization;
+its built-in personalized3D/PnP output is not independent surface truth.
+Current[dependency declarations](https://github.com/emilianavt/OpenSeeFace/blob/master/pyproject.toml)
+pinPython3.9/NumPy1.21.3/ORT1.9,unlike this localPython3.12/NumPy2.5runtime,
+which has no ONNX Runtime installed. No source/model download,install,inference
+or human upload occurred in this read-only screen. Do not install its entire
+tracker or treat publisher tracking claims as3px/2mm evidence. It remains a
+conditional lower-priority observation lead,not approved accuracy or a selected
+new production route;any adoption needs immutable source/weight identity and a
+genuinely different bounded measurement protocol. Existing rejected semantic
+camera protocols remain rejected;this is not permission to cycle model variants.
+
 ## 2026-10-22 actual anatomical-video camera score,not head acceptance
 
 0304uses28named nose/canthus IDs in four source-reviewed natural video frames,
