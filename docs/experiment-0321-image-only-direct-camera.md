@@ -1,7 +1,7 @@
 # Experiment0321:image-only direct-patch unknown-camera capacity
 
-Registered2026-10-22T17:51UTC,before generation,tracking or a scored solve.
-Whole2400s,deadline18:31UTC. No patient/scan/case002,model,download,new dependency,
+Registered2026-10-22T17:50UTC,before generation,tracking or a scored solve.
+Whole2400s,deadline18:30UTC. No patient/scan/case002,model,download,new dependency,
 training,upload or production-default change. Use ponytail's existing-math-first
 rule and CAMERA/INPUT_DATA diagnosis,not appearance promotion or Peek code.
 
