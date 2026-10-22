@@ -101,3 +101,41 @@ inspection-driven good-point selection is allowed.146shared tests pass before
 inference,including backwards-compatible hold splitting and a bounded-worker
 success/terminal-timeout regression. Only helpers needed by this experiment are
 added;no production change,learned depth or formal head output.
+
+## Actual result:initialization REJECT,resource coverage UNVERIFIED
+
+Executed sourcee926629. One real forward in actual payloadPID48896completes
+157.719s including local serialization/state verification(parent161.672s).
+All36frames/423queries/full logits retained;per-frame predicted-visible counts
+118..222. Raw SHAaff7dcbeb4673d1b08a57811ec90828eb9d08f636f069ca3844eaca4dd59c84d.
+No model/point/frame/focal changes or second real inference follow.
+
+402tracks meet the frozen source/visibility/count admission. Exact software
+control passes. Real initialization has61training fundamental pairs,53eligible
+relative-pose edges and bearing rank92/92,but25unconstrained edge scales are
+nonpositive(range-.004857568...013978186). Focal initializer touches640pxlower
+bound. Stop at the declared positive-scale gate before full BA/triangulated
+head or medical-mm score. This does not establish a converged physical error,
+prove all423tracks wrong or rule out an independently better camera initializer.
+Do not force positive scales,drop edges/frames or sweep focal/solver parameters.
+
+Audit finds parentPID8856is a Windows venv redirector,not payload48896. Original
+budget helper reports~6MBredirector peak and would kill only that parent on a
+timeout. Therefore actual0308peak6GiBcompliance is UNVERIFIED,not retrospectively
+passed. Original process/log records remain untouched;no live scoped worker
+remains when checked.0307self-measured software peak is a different valid
+measurement,not a substitute for0308peak. Fix the generic process-tree monitor
+and strengthen its public60MBchild/memory/timeout/descendant-termination controls;
+do not rerun human inference to replace the missing resource evidence.
+
+The predeclared raw review initially hits an OpenCV5colormap vector-layout
+IndexError;reshape only the color array toNx3and replay the display,not model/
+camera calculations. Original error sourcee926629. Fixed query/target IDs and
+all raw predictions remain unchanged. Query source and raw target contact sheets
+were visually reviewed;they are source observations,not reconstructed head or
+certified subpixel material identities. No user visual acceptance is fabricated.
+
+Close exact configuration with all raw evidence. No accepted camera,head or new
+medical error exists. Future reuse of raw observations needs genuinely new
+independent information(e.g. verified capture intrinsics),not clamping this640px
+estimate or another cached graph/threshold variant. Original task stays active.

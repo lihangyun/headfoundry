@@ -302,7 +302,7 @@ def review():
     for frame in ANCHORS:
         ids = np.flatnonzero(native[:,0]==frame)
         representatives.extend(ids[[0,len(ids)//2,-1]].tolist())
-    colors = cv2.applyColorMap(np.linspace(0,255,len(representatives)).astype(np.uint8),cv2.COLORMAP_TURBO)[:,0]
+    colors = cv2.applyColorMap(np.linspace(0,255,len(representatives)).astype(np.uint8),cv2.COLORMAP_TURBO).reshape(-1,3)
     panels = []
     for frame in ANCHORS+[120,420,600]:
         panel = cv2.cvtColor(video[FRAMES.index(frame)],cv2.COLOR_RGB2BGR)
