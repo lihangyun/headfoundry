@@ -78,3 +78,11 @@ matching all four PNG SHAsto the already written renderer truth and matching
 the3CC0asset/grant hashes. No further Blender call,rerender,input-pixel or scene
 change. Preserve this failed parent log/worker record separately;do not call
 that whole worker a pass merely because its renderer completed.
+
+Pre-prediction input review18:50UTC:the four fixed images show correctly oriented
+front/bilateral generic faces with ears and blue background;room has visible
+checker planes. All head/face framing is intact. Jagged open neck-cut edges,
+untextured skin and generic untextured eye helpers are visible limitations,
+not a reconstructed subject or natural-photo benchmark. Keep all original
+pixels/declared grid/no post-review appearance changes. Input IDs are frozen;
+verify model/source/runtime-wheel/notice/RECORDreceipts before the one trial.

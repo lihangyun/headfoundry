@@ -181,6 +181,11 @@ if __name__=='__main__':
             if sha(ASSET)!=entry['asset_sha']:raise ValueError('model bytes changed')
             for row in json.loads((SOURCE/'result.json').read_text())['responses']+json.loads((SOURCE/'notices.json').read_text()):
                 if sha(SOURCE/row['path'])!=row['sha256']:raise ValueError('source/grant changed')
+            install=json.loads((ROOT/'assets/private/anycalib-software-0324/installed.json').read_text())
+            for row in install['preserved_notice_and_RECORD_files']:
+                if sha(RUNTIME/row['path'])!=row['sha256']:raise ValueError('runtime receipt changed')
+            for row in json.loads((ROOT/'assets/private/anycalib-software-0324/wheels.json').read_text()):
+                if sha(Path(row['path']))!=row['sha256']:raise ValueError('runtime wheel changed')
         env=os.environ.copy();env.update({key:'4' for key in ['OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS']})
         env.update(PYTHONDONTWRITEBYTECODE='1',XFORMERS_DISABLED='1',TMP=str(OUT/'tmp'),TEMP=str(OUT/'tmp'),TORCH_HOME=str(OUT/'torch-cache'))
         stage='make-inputs' if mode=='prepare' else ('rerender' if mode=='repair-render' else 'infer')
