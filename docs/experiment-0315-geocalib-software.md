@@ -49,7 +49,7 @@ Protect originals,shared gates/defaults/0207. No ACCEPT/SE3/head/medical claim.
 ## Actual software result
 
 Producer c3c4f2c. Both isolated wheel installs pass;Torch/vision63.875s,the
-remaining three4.857s. Main package inventory unchanged. All889state items
+remaining three5.359s. Main package inventory unchanged. All889state items
 (28925637learned scalar parameters,141persistent buffers) exactly match keys,
 shapes,dtypes,finite values and post-load tensors. All six negative controls
 reject before changing state. No prefix rewrite or ignored BNstatistics.
