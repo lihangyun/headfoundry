@@ -619,3 +619,12 @@ observation graph. The fixed real cohort provides only a near-repeat F pair,
 nonphysical focal boundary and no valid stereo baseline;stop before patient
 geometry. Do not lower parallax/cheirality/hold-support or extend f to rescue it.
 Keep successful standalone math/control while retiring the failed application.
+
+0302tests partial triangle closure without altering pixels or camera math. Its
+literal counterexample repairs an overly strict completeness assumption,but
+does not establish physical identity. Actual association count increases while
+the full eligible pose graph remains disconnected and focal hits a bound. Stop
+and retire the fixed application;freeze further closure/score/forest/clustering
+variants on this cached cohort. Do not promote a partial tree into complete
+metric cameras or count growth into shape accuracy. New work needs genuinely
+different justified source observations,not another solver/threshold sweep.

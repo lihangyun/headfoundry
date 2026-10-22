@@ -71,3 +71,45 @@ graph/camera math/fixtures/defaults/0207intact. Do not add another permanently
 active association alternative merely because its tiny literal tests pass.
 Verify shared tests/protected hashes and commit independent cleanup before any
 new route. No new permissions or external accounts required.
+
+## Actual result:REJECT fixed nine-frame closure variant
+
+Executed source2527ae9;one worker PID19432starts2026-10-22T00:48:35.162Z,
+exits1 with a completed report in0.485s,peak working set92315648bytes. No second
+attempt. All four existing backend/fixture source hashes remain identical.
+Literal overlap/false-bridge/contradiction/false-identity-limitation controls pass.
+
+Procedural raw6480scalar array values byte-match0301. New constructor selects the
+same141pure tracks/52.2222%recall on this particular corrupted fixture. Five-camera
+control again passes:GT projectionp95=0.000000783346px,center max1.261e-10scene
+units,pointp95=2.613e-9,focal relative error7.27e-10,wrong camera123.646px.
+These are exact noiseless procedural software values,NOT real-video performance.
+
+Actual input is unchanged:1106face-feature observations in nine source frames,
+877vertices appearing in1037raw pair edges.422edges have triangle support;
+615do not. Lack of a triangle is NOT proof those615matches are physically wrong.
+Supported graph has314vertices;59accepted tracks/221observations and9conflicting
+components withheld.0301had44tracks/142observations. This quantity change is not
+measured material precision,actual3Daccuracy or an accepted head improvement.
+
+Six training pairs now permit F estimation,but only0/240,0/600,420/600meet the
+unchanged relative-pose eligibility.0/240has9/9positive points and32.9401degree
+median parallax;0/600has9/10and15.7052degree;420/600has10/10and12.0071degree.
+Others fail support/cheirality/parallax. The eligible component covers only
+0/240/420/600;60/120/300/360/690are missing. It is a four-node/three-edge tree,
+which also cannot generically determine all metric baseline scales. Actual
+focal initializer640.0000000000005pxhits the LOWER bound;it is not valid
+calibration. Stop before complete rotations/bearing solve/BA/held reprojection.
+
+There is NO complete actual camera solution,head,medical-mm score or visual
+acceptance. No camera/shape rescue with omitted views,focal expansion,angle or
+cheirality relaxation,held-row leakage or error-selected points. Source counts
+do not establish universal unobservability of the full video. Shared camera
+software remains tested;actual physical/camera/head gates stayUNVERIFIED.
+
+Decision:further closure/score/forest/clustering variants on this SAME cached
+nine-frame cohort are frozen. Future work must acquire genuinely different
+justified source observations,not reinterpret this graph as accepted or mutate
+the controlled camera backend. This is the promised stop-loss,not a pause of
+the overall video-to-head goal. No additional permanent graph helper is kept
+from0302;retire its exclusive runner/output after compact evidence verification.

@@ -1,5 +1,17 @@
 # Claim-to-source ledger
 
+## 2026-10-22 partial cycle closure is not newly acquired physical evidence
+
+0302uses only the same authorized local raw source archive with a different
+coordinate-free association rule. No model,frame,mask,descriptor score,library,
+scan geometry,training or upload is added. A literal partial-cycle counterexample
+motivates this single alternative,but does not certify real identity. Unchanged
+procedural raw arrays/control and camera backend pass;actual connectivity still
+fails with invalid focal boundary. More accepted rows are NOT physical accuracy
+or medical/head acceptance. Freeze further graph variants on the same nine-frame
+cohort and retire this exclusive application;retain original evidence/shared
+successful infrastructure. No private/KeenTools/Peek implementation accessed.
+
 ## 2026-10-22 controlled global short-track camera math,not real geometry success
 
 0301replaces only the structurally unsuitable initializer with independent
