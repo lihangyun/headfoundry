@@ -833,6 +833,12 @@ landmark/video failure,accepted camera,head,medical mm orvisual acceptance claim
 
 # 0306-0307 noncausal global-query tracker:software admission only
 
+0308actual follow-up REJECT at camera initialization:25/53nonpositive edge
+scales,focal lower bound. No converged3Derror or new head. Peak-memory evidence
+UNVERIFIED;shared process-tree check repaired,not retroactively passed.
+Executed source e926629,result3248346;compact evidence/recovery/retirement in
+docs/cleanup-0308-global-query.md. No tracker/weight remains active.
+
 [Pinned publisher grant](https://github.com/google-deepmind/tapnet/blob/730cda1c730877cfedbe01bf87fb1cadb78a565d/README.md#license-and-disclaimer)
 explicitly includes the linked BootsTAPIR weights under Apache-2.0. Actual
 218886140bytes match publisher LFS SHA8493c7a69e02c85b9382fbb3c7b8b539b36bc08ede744b9e99feb739a0129f4b.

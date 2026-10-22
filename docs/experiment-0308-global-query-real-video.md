@@ -1,5 +1,9 @@
 # Experiment0308:single global-query actual-video correspondence/camera trial
 
+Closed after REJECT;see[cleanup0308](cleanup-0308-global-query.md). Active
+candidate runners/runtime/weights retired;historical commands are not current
+installation instructions. Raw local evidence survives in the compact archive.
+
 Registered2026-10-22 after software admissiond330d69,before any new human pixel
 preparation or model forward. Previous goal turn is progress through explicit
 rights/import/state/coordinate/resource evidence,not a new accepted head.

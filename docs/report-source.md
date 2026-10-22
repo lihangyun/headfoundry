@@ -1167,3 +1167,16 @@ precision after this stop. Archive609033bytes/source703f292and retire exclusive
 0290/0291/0292integration. Future exact batchwise upsampling needs a separate
 prospective equivalence/capacity audit,not repeated inference or optimistic
 quality transfer. Original data/defaults/shared gates remain protected.
+##0308actual-video closeout,2026-10-22
+
+One36-frame423-query BootsTAPIR forward completed;402tracks admitted without
+residual pruning. Camera initialization failed25/53positive edge-scale checks
+and hit the focal lower bound;no full BA/head/new medical-mm measurement.
+No inference/focal/graph/iteration rescue. Actual worker peak-memory evidence
+UNVERIFIED owing to Windows venv redirector monitoring;generic tree accounting
+and termination repaired with public regressions,not a retrospective pass.
+Private compact archive and cleanup details:docs/cleanup-0308-global-query.md.
+The four failed-only code/test/lock files and dedicated runtime/weight/source
+are retired.145retained tests pass;original task and all quality gates unchanged.
+Next method must add independent evidence,not repeat this cached solve.
+

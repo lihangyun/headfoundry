@@ -645,6 +645,12 @@ Shared software controls do not replace medical or user-visual acceptance.
 
 # 0307:admit a distinct observation mechanism,not a recurrent checkpoint rescue
 
+0308follow-up:single actual-video trial failed at positive edge-scale camera
+initialization before full BA/head/medical scoring. Runtime/checkpoint retired
+under cleanup0308. Software admission is historical,not an accepted physical
+tracker or camera. Actual0308peak memory UNVERIFIED because Windows venv parent
+was monitored;generic descendant measurement/termination fixed without NNretry.
+
 Noncausal TAPIR queries each frame globally before local temporal refinement;
 it is not a reinstallation/threshold variant of rejected recurrent TAPNext++.
 Publisher code/checkpoint grants,full weight/state identities,coordinate oracles
