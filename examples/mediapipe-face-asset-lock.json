@@ -15,5 +15,58 @@
     "sha256": "64184e229b263107bc2b804c6625db1341ff2bb731874b0bcc2fe6544e0bc9ff",
     "license_evidence": "Official MediaPipe Face Mesh V2 model card states Apache License 2.0"
   },
-  "scope": "Canonical topology plus the already-reviewed local Face Landmarker output. No photos are uploaded. Relative depth is a learned prediction, not scan truth, camera calibration, identity acceptance or a full-head asset."
+  "scope": "Canonical topology plus the already-reviewed local Face Landmarker output. No photos are uploaded. Relative depth is a learned prediction, not scan truth, camera calibration, identity acceptance or a full-head asset.",
+  "model_cards": [
+    {
+      "name": "face-mesh-v2",
+      "url": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20MediaPipe%20Face%20Mesh%20V2.pdf",
+      "bytes": 3476420,
+      "sha256": "c6add060f4ebfb37b2690136b6c711c7e5fcb7038baa2649ae3338b83979565a",
+      "license_id": "Apache-2.0"
+    },
+    {
+      "name": "face-detector",
+      "url": "https://storage.googleapis.com/mediapipe-assets/MediaPipe%20BlazeFace%20Model%20Card%20(Short%20Range).pdf",
+      "bytes": 434425,
+      "sha256": "cd335c06fc0de7807cd815a0777a697932598bcdb28fa98adaaabf847485f758",
+      "license_id": "Apache-2.0"
+    },
+    {
+      "name": "blendshape-v2",
+      "url": "https://storage.googleapis.com/mediapipe-assets/Model%20Card%20Blendshape%20V2.pdf",
+      "bytes": 2324099,
+      "sha256": "c8e9cf60a39998f4b341740623917590e050d1c97004e2de4568d84e026445ae",
+      "license_id": "Apache-2.0"
+    }
+  ],
+  "bundle_components": [
+    {
+      "name": "face_detector.tflite",
+      "bytes": 229746,
+      "sha256": "b4578f35940bf5a1a655214a1cce5cab13eba73c1297cd78e1a04c2380b0152f",
+      "license_id": "Apache-2.0",
+      "license_scope": "official BlazeFace card linked by task guide"
+    },
+    {
+      "name": "face_landmarks_detector.tflite",
+      "bytes": 2553590,
+      "sha256": "c7d54204ce0448474c7f3fa9af494787c0965cbdd6f20fc72867e43046bd43d5",
+      "license_id": "Apache-2.0",
+      "license_scope": "official FaceMesh V2 card linked by task guide"
+    },
+    {
+      "name": "geometry_pipeline_metadata_landmarks.binarypb",
+      "bytes": 19376,
+      "sha256": "bdbcda96dfcb7da883da124aaa2c55dee49770d934f0fcc71747f8c21bdc75b4",
+      "license_id": "Apache-2.0",
+      "license_scope": "official Apache MediaPipe canonical geometry ecosystem"
+    },
+    {
+      "name": "face_blendshapes.tflite",
+      "bytes": 955312,
+      "sha256": "4f36dded049db18d76048567439b2a7f58f1daabc00d78bfe8f3ad396a2d2082",
+      "license_id": "Apache-2.0",
+      "license_scope": "official Blendshape V2 card;output disabled"
+    }
+  ]
 }
