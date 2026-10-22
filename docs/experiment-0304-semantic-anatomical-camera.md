@@ -115,3 +115,19 @@ Retire this exact protocol after full score/matrix/point/observation archive.
 Do not reinterpret it as a head-quality improvement or compare its error directly
 with the different0299population. Any later numerical audit must separate
 solver convergence from physical correspondence,with no silent gate relaxation.
+
+## Required closeout completed
+
+Resultdcabba6;sourcec5ce8f3. Private closed-experiments/0304-anatomical-camera/
+evidence.zip retains all raw/training/held observations,estimated points/camera
+matrices,initialization/rank/control reports and one source-review panel:
+17members,342443bytes,SHA256b4098c99c478dc223c3d489dddb662dce61f4003712585fbf111355d07385a52.
+CRC/SHA checked;it is not an accepted reconstruction or full source-image backup.
+
+Removed18exclusive trial files,870132logical bytes,including the runner and
+redundant source-sheet preflight copy. No exclusive framework/weight/env existed.
+Original0303raw archive,shared model/provenance and all26protected hashes remain
+unchanged.142shared tests pass in6.391s;no dangling imports or shared source/
+default changes. Temporary cleanup-only helpers removed separately. Verification
+at2026-10-22T07:33:52.925Z,378.17s after preparation,within the1800swall cap.
+No second solve follows. Full editable head/medical2mm/visual goal remains active.
