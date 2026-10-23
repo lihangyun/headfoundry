@@ -86,3 +86,44 @@ no compilation requested. Guards remain active during model execution,original
 numeric methods/config/inputs/budget unchanged. One specifically named repair
 worker is allowed only with original terminalREJECT and no state/features;this
 is an unscored import repair,not a second scientific inference.
+
+## Actual result:REJECT observation entry,not measured3Daccuracy
+
+53804e2actual native worker completes27.515s/2230026240bytes;one model load,
+three independent feature extractions and two source-sharing match calls.
+Postload/after digest unchangede0bac0ab937fe9ccbe092c08fe6bebb2d8288bba24f71d3eda4cc68fcb5c8cce.
+NN/serialization segment10.953s,not pure inference-only timing. No fallback-to-
+mean in any frame;feature counts1024/1024/837. All mutual index/finite/native
+checks pass;this is execution,not material precision. Original0342/0343receipts
+unchanged. No training,model download or human upload.
+
+One1.047s/88109056-byte assembly preserves all source IDs/endpoints/misses before
+coverage stop. Source-only cue contains81of1024features.
+
+| Fixed target | All assignments | Sourcecue assigned | Sourcecue unmatched |
+|---|---:|---:|---:|
+|300|365|35|46|
+|630|400|46|35|
+
+Only22IDs join both targets with native4pxpatch support,below48. Native XYspans
+196.73x255.87/143.69x249.84/196.83x218.27pxpass50px,but do not rescue count.
+Raw observationSHA2567650fc6cbf249a69b4394286309694b2e15417a6b5ff2b61e77709d8770c9e69.
+Trackpanel shows brow/eye/nose/lipconcentration and sparse broad smooth cheek/
+forehead support;not a calibrated material-error diagnosis. No manual point,
+mask,frame,threshold or feature-cap changes follow. Sourcecue is not accepted
+segmentation. Count48is an operational policy,not a proven physical lower bound;
+this stop cannot prove that22points or the full video are mathematically useless.
+
+Stop BEFORE camera control/initializer/direct/LOO/head/medical scoring. The
+new camera helper was authored but NEVERexecuted;retain its Git source only,
+do not call its owned tests passed or preserve it as a successful fixture.
+Old-source0evaluation flaw is documented prospectively,not fixed clinical3D.
+Physical true endpoints/rigidity/focal/cameras/medical2mm remainUNVERIFIED.
+Different observation/support populations forbid a causal improvement claim
+over0337's7dense-flowcycleadmissions. No accepted head or visual progress claim.
+
+Close the entire exact candidate,not only the new runner. Retain successful
+0343complete-domain point fixture without Torch,and all shared/original data.
+Retire candidate-specific0339/0340/0341/0342/0344frameworks,weights,environment,
+source/controllers/rawduplicates after verified compact evidence and recovery.
+Do not increase1024,crop,changeframes or lower48/.2/.1to rescue this result.
