@@ -1,5 +1,18 @@
 # ADR 0001: quality-first clean-room reconstruction
 
+## 2026-10-23:separate conservative cycle admission from physical failure
+
+0338'sindependent visible affine-map witnesses show FB.75can reject1pxtrue
+endpoints and accept16pxwrong ones. It is neither necessary nor sufficient for
+physical endpoint3pxprecision;the metric3D/surface gate is separately required.
+Keep historical operational entryREJECTs and immutable observations,not claims
+of unmeasured physical failure. No replacement threshold or selection policy is
+admitted by these counterexamples. Prospective new estimator validation must
+establish its observation/noise/support and identifiable training graph with
+independent truth/held evidence. Do not replay retired clinical data under weaker
+filters,restore failed models,or fit a head on this audit alone. Actual camera
+3px/fixed medical2mm/full-head/mesh/user visual gates and defaults stay unchanged.
+
 ## 2026-10-23:independent scoring controls must respect their numeric domain
 
 0336'sfirst oracle-equality assertion stops before learned endpoint scoring:

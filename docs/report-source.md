@@ -1,5 +1,15 @@
 # HeadFoundry technical research report
 
+## 0338:internal cycle policy is not necessary/sufficient physical precision
+
+Independent owned affine-map controls,not a clinical/model rerun:all96points
+with1pxtrue error fail FB.75;all96points with16pxforward error pass that cycle.
+Disjoint48marginals do not imply joint support. Fixed rectified2pxdisparity error
+can yield16.949mmdepth error;not the medical surface metric or patient estimate.
+160tests pass9.516s. Audit and analytic bound in audit-0338-cycle-versus-physical-error.md.
+Correct overstrong"necessaryFB"wording;no policy/default/threshold replacement,
+retired model restore or retroactive0337pass. Real-camera3px/skin2mm/headUNVERIFIED.
+
 ## 0337:controlled grid precision passes,but clinical entry rejects
 
 Fixed detector-free grid passes95visible owned pointsp95.395848px. Same actual

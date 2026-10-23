@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 0338:cycle closure cannot certify true pixel or metric precision
+
+See independent audit-0338and two generic regressions in test_endpoint_oracle.py.
+Fixed complete-domain bilinear maps admit0/96for1pxphysical error and96/96for
+16pxforward/12.8pxbackward physical error. Derived inverse-map bound explains
+why;no video/model/scan data used. A2pxstereo-disparity error gives16.949mmdepth
+error only for the explicitly owned geometry,not actual medical surface error.
+160shared tests pass9.516s;logical TECHNICAL_CHECK_PASSEDonly. Earlier operational
+entryREJECTs remain;true0337precision and all actual camera/head/medical/visual
+claims remainUNVERIFIED. No threshold relax/retroactive pass/model restoration.
+
 ## 0337:clinical coverage stop is not measured true pixel/mmerror
 
 9934b8cuses locked0335nativeCPUmodel forfour actualdirections;7/96joint FB.75
@@ -48,7 +59,7 @@ not automatically cleared by rootBSD. Original3px/2mm/defaults unchanged.
 
 Source9b6a058,the registered three actual views yield46rawqueries and0complete
 tracks;all raw predictions preserved before screening.5local admits per target
-do not intersect. Forward/back errors are necessary consistency diagnostics,
+do not intersect. Forward/back errors are internal consistency diagnostics,
 not true correspondence/medical errors. No camera/head precision measured;
 no causal all-method impossibility claim or reversal of0332's controlled pass.
 Private capsuleSHA44b149cf0b8e149cc3d1c1383e04965a10c56e69cb00a9fd48a95bc0e44b22d3,

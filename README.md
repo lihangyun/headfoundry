@@ -1,5 +1,9 @@
 # HeadFoundry
 
+[0338 门禁逻辑审计](docs/audit-0338-cycle-versus-physical-error.md)确认：双向闭环误差
+不能替代真实点位精度，之前的入口止损不等于已测得三维精度失败。
+只完成数学反例与160项共享测试；未改原实验判定或3px／2mm要求，仍没有新增合格真人头模。
+
 [0337 真实视频验证](docs/experiment-0337-detector-free-real-camera.md)在对应点入口止损：
 完成四方向实际推理，但96个固定点仅7个通过三视角双向要求，未达预登记48个；没有运行相机或头模拟合。
 已[退役专用权重与环境](docs/cleanup-0337-detector-free.md)，清理约651MB；158项测试通过。
