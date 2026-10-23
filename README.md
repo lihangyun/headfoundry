@@ -1,5 +1,8 @@
 # HeadFoundry
 
+[0335 新对应算法接入](docs/experiment-0335-pairwise-flow-software.md)通过固定权重、完整状态及原分辨率运行检查：
+CPU单对图像全流程约19秒、峰值内存约2.47GB。仅软件与容量通过，匹配精度尚未评分；没有新增真人头模或医学毫米结果。
+
 [0333 真实视频验证](docs/experiment-0333-real-direct-camera.md)未通过对应点入口：
 固定三个视角检出46个候选点，无完整三视角轨迹通过双向一致性检查；没有运行相机或头模拟合。
 已[止损清理](docs/cleanup-0333-real-direct.md)，保留下述0332成功夹具；尚无新增真人头模或医学毫米结果。

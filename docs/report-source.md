@@ -1,5 +1,18 @@
 # HeadFoundry technical research report
 
+## 0335:strict pairwise learned software/native CPUcapacity passes
+
+Exact publisher79MBsafetensors acquired;452physical tensors/472logical keys
+including persistent buffers and20declared exact storage aliases fully covered.
+Hidden ResNet initializers/unused hub wrapper disabled,all numeric forward ASTs
+unchanged. Original value controls plus separate byte/signed-zero loader audit
+pass;one small and ONE nativeforward,not a physical-accuracy retry. Native whole
+worker19.234s/2469650432bytes,forward11.094s. No half-size wrapper or AMP.
+11isolated distributions/notices recorded with copyleft/bundled qualifications;
+not a blanket BSDredist approval.156tests/76protected identities pass,main39
+packages unchanged/compatible andTorchabsent. Learned physical matching/head/mm
+remainUNVERIFIED;keep only provisional candidate for separately registered scoring.
+
 ## 0334:scoped pairwise learned matcher preflight,no inference yet
 
 Source/history screen rules out repeating0275global short-track geometry and

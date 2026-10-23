@@ -1,5 +1,17 @@
 # Claim-to-source ledger
 
+## 0335:acquired model/full-state/native execution is not learned physical precision
+
+Actual publisher bytes match0334expectedcb8cfbf1SHA,not an alternative/NCweight.
+Exact452physical state tensors/472logical keys include20header-declared genuine
+shared-storage aliases,no missing BNdefaults. Small/native runsource6513a23;
+latera0c2dccbyte-only loader audit does not rerun either forward. All source
+numeric methods retained;stock pretrainedResNet/Hub/resizing paths unused.
+Native outputSHAee70a9304df575e5de03ec14b3f16952fa1e51328179d3bf798a64f9c57cc3b7,
+UNSCORED. Capacity2.30GiB/19.234sCPUis not3px/2mmorhead. Preserve BSD/MITmodel/
+source and complete bundled notices,including LGPL/MPL/test-code exceptions;
+local unmodifiedCPUuse does not grant whole-product redistribution/FTO clearance.
+
 ## 0334:exact candidate publisher grants and source behavior,not acquired weights
 
 SEA-RAFT9137517BSD3source plus author's HFmodel revisioneb97ef34BSD3declaration,
