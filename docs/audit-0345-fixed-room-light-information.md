@@ -165,3 +165,9 @@ camera3px,medical2mm,editable head,likeness or KeenTools-parity claim follows.
 Ponytail kept the change to original NumPy math and existing camera profiling;
 the reconstruction skill's experiment controls prevented promoting rank into
 head acceptance. No Peek implementation or CLI was accessed.
+
+Closeout:12-member462105-byte private capsule preserves all results and source,
+Git recovery91a8272. Seven raw duplicate files618151logical bytes and both
+one-off tools retired. All112protected identities unchanged;163shared tests
+pass9.059s;main39packages compatible. Details in cleanup-0345-fixed-room-light.md.
+This gate is closed;no new method starts as part of this closeout.

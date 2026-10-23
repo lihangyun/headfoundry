@@ -14,6 +14,10 @@ and recovery source preserved in private0345capsule;one-off runner retired after
 verification. Generic normal derivative math retained only as checked software.
 Source research and physical/initialization caveats: audit0345. Actual video
 camera3px/skin2mm/editable complete head/user visual acceptance remainUNVERIFIED.
+Closeout capsule462105bytes/12members,Git recovery91a8272;seven raw duplicates
+618151Bplus two one-off tools retired.112protected hashes/163tests9.059s/main39
+compatible pass. Generic original normal derivatives retained,not an admitted
+head method. See cleanup-0345-fixed-room-light.md for exact source/archive hashes.
 
 ## 0344:actual sparse observations stop before camera estimation
 
