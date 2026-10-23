@@ -127,3 +127,23 @@ Close the entire exact candidate,not only the new runner. Retain successful
 Retire candidate-specific0339/0340/0341/0342/0344frameworks,weights,environment,
 source/controllers/rawduplicates after verified compact evidence and recovery.
 Do not increase1024,crop,changeframes or lower48/.2/.1to rescue this result.
+
+## Read-only route stop audit,not a new experiment
+
+Cross-check against prior records:0275already used74overlapping frames/2603
+shortDIStracks and returned zero models;short tracks/global assembly alone is
+not untested new information.0304did estimate cameras but failed held3pxand
+convergence.0332controlled photometric success does not create real skin point
+identities.0296manual semantic+localcorners gave13stable attractions,not physical
+truth;0257'sfive material candidates were uncalibrated.0309device information
+and0317background lines did not establish calibration.0256unknown-pose pure
+silhouette family is closed. These are specific failures,not exhaustive proof
+that the entire video is unreconstructable.
+
+No immediately justified next NN/feature-count/frame/track-rule variant follows
+this evidence. Stop blind matcher integration;reopen estimation only with a
+genuinely different and traceable source of physical correspondence/calibration
+or independently demonstrated information mechanism. Do not invent such evidence
+from retained22points,scan feedback or an unexecuted helper. This is a research
+prerequisite gap,not a newly measured medical-error lower bound or completed
+goal. No new method was installed/run during this read-only cross-check.
