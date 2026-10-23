@@ -46,3 +46,20 @@ checks,verify suite and independent cleanup commit BEFORE any new hypothesis.
 Preserve0332correct fixture/math/production/unrelated0207and all original inputs.
 Public model/runtime binaries need redownload;compact archive is not full backup.
 On pass retain one provisional stack,not head/camera/medical/visual acceptance.
+
+## Unscored evaluator-control repair before model endpoint scoring
+
+Sourcea86dd67prepares96source/91joint-visible/5not-joint-visible and freezes
+domainSHA74724016b36f4124b6d10e617e54c28d5f27c6b4b581d98c23051c1ac02191fa.
+Initial score worker stops at its oracle exact-equality assertion,BEFORE computing
+any NNendpoint/error/physical metric. It had checked the stored field shape/
+finiteness only. Preserve first-control-stop log/worker and original source ref.
+For nondyadic float64trueUV,adding40and subtracting need not be exactly40.
+This is an evaluator implementation contract mistake,not a measured model fail.
+Replace that equality with an input/dtype-derived conservative roundoff bound
+8*float64epsilon*max(1,max_abs_true_uv+40),independent of the observed error.
+Zero oracle stays exactly0and wrong40oracle must still exceed actual3pxgate.
+Move these independent controls before opening prediction arrays,record actual
+roundoff/bound. Same frozen91visible mask/all96queries/model/field bytes and
+physical3px/native-bounds decision,no new NNcall or physical-score retry. One
+corrected evaluator execution only;do not reinterpret the original stop as passed.

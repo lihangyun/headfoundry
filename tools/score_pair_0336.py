@@ -51,12 +51,18 @@ def score():
     report=json.loads((OUT/'domain.json').read_text())
     if sha(OUT/'frozen-domain.npz')!=report['frozen_domain_sha256']:raise ValueError('frozen geometry/domain changed')
     if sha(SOFTWARE/'native-output.npz')!=PREDICTION_SHA:raise ValueError('prediction identity changed')
-    domain=dict(np.load(OUT/'frozen-domain.npz'));prediction=np.load(SOFTWARE/'native-output.npz')['flow']
-    if prediction.shape!=(1,2,1280,720) or prediction.dtype!=np.float32 or not np.isfinite(prediction).all():raise ValueError('native field contract fails')
+    domain=dict(np.load(OUT/'frozen-domain.npz'))
     q,target,visible=domain['query'],domain['expected'],domain['visible']
     scorer=lambda uv:np.linalg.norm(uv-target,axis=1)
-    if scorer(target).max()!=0 or not np.array_equal(scorer(target+[40,0]),np.full(len(target),40.)):
+    wrong=scorer(target+[40,0]);roundoff_bound=8*np.finfo(np.float64).eps*max(1,float(abs(target).max())+40)
+    wrong_error=float(abs(wrong-40).max())
+    write('oracle-controls.json',{'zero_max_px':float(scorer(target).max()),'wrong40_max_roundoff_px':wrong_error,
+        'roundoff_bound_px':roundoff_bound,'bound_basis':'8*float64 epsilon*max(1,max_abs_true_uv+40),not a physical threshold',
+        'prediction_arrays_opened':False})
+    if scorer(target).max()!=0 or wrong_error>roundoff_bound or float(np.percentile(wrong,95))<=3:
         raise ValueError('independent scoring controls fail')
+    prediction=np.load(SOFTWARE/'native-output.npz')['flow']
+    if prediction.shape!=(1,2,1280,720) or prediction.dtype!=np.float32 or not np.isfinite(prediction).all():raise ValueError('native field contract fails')
     uv=q+bilinear(prediction[0].transpose(1,2,0),q,[720,1280]);error=scorer(uv)
     bounds=np.isfinite(uv).all(1)&(uv>=0).all(1)&(uv<=[719,1279]).all(1)
     p95=float(np.percentile(error[visible],95));passed=bool(p95<=3 and bounds[visible].all())
