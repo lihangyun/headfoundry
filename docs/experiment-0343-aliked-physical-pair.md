@@ -1,5 +1,11 @@
 # Experiment0343:independent physical score of the frozen native sparse pair
 
+Later0344actual observation entry fails and candidate runtime/weights/controllers
+retire undercleanup0344. This positive owned fixture remains unchanged;use
+tools/replay_owned_sparse_fixture.py for model-free full-population replay.
+Original0343source/commands below are historical,recoverable fromGit,not an
+instruction to restore the failed clinical stack.
+
 Registered2026-10-23T10:34:00Z,before any true endpoint/domain scoring.
 0342software35746d6passes;known unscored counts1024/1024features/791pairs are
 explicitly already observed.They are not precision or a basis for tuning.

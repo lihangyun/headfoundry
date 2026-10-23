@@ -36,4 +36,39 @@ files/bytes,verify ZIPCRC and each member SHA before deletion. After deletion,
 verify absence/protected integrity,model-free point replay,remaining tests and
 main environment compatibility;commit retirement independently before next route.
 
-Execution totals and final verification are recorded below only after completion.
+Execution and final checks completed2026-10-23,within11:34:29UTCwhole budget.
+
+## Verified pre-delete plan
+
+Archival source recoveryd5ff6e4,actual neural source53804e2. The prepared exact
+private-file/bytecode list has16794files757747517logical bytes;seven tracked
+candidate tools retire separately viaapply_patch,not included in that byte total.
+112protected identities match before deletion. Archive190members4791253bytes,
+SHA256643ef663a951aa6ec6d00e6cc625fba231fb7a12a3d0b13b89b2c5c2cb181fa5,
+ZIPCRC and per-member SHAverified. Two actual panels,complete raw observation
+cohort and successful0343fixture retained. This is not measured disk-space gain
+or a full runtime/weight/native-frame backup. No source/default promotion.
+
+## Actual completed retirement and validation
+
+Removed the exact16794private files/pycs757747517logical bytes;all five exclusive
+directories absent. Seven tracked candidate tools removed byapply_patch. The
+one-off cleanup helper also retires after verification;its source is in the
+archive/Git,not a new active reconstruction dependency. No broad root deletion,
+shared package uninstall,original input deletion or human upload occurred.
+All recorded original workers are terminal;one PID reused by an unrelated
+protected OSservice is identified and untouched,not killed from stale metadata.
+
+All112protected identities verify after deletion and after tests,including
+complete unchanged0343thirteen-file success fixture. Model-free scalarhypot
+replay0.468s/46288896Bretains1024sourceIDs,732primary assignments and1unsupported
+Inf;p95.5149417758px,roundoff1.110e-16belowderived2.031e-12bound. This is still
+owned-point precision,NOTactual camera/head/medical precision. Original fixture
+receipts are not overwritten;new replay writes only closedout records.
+
+160shared tests pass8.863s(bounded10.766s/499838976B). Main39packages compatible
+andTorchabsent. No live code/test imports the removed candidate. Existing0207,
+production defaults/shared sources and original/success data remain unchanged.
+Private plan/receipt/verification and main-compatibility record preserve exact
+checks. Cleanupcommit closes this route before any new method;no new method is
+started here. Full goal remains unfinished,not paused/completed by this closeout.

@@ -1,5 +1,26 @@
 # HeadFoundry technical research report
 
+## 0344:actual sparse observations stop before camera estimation
+
+Fixed0342ALIKED/LGconfig and actual[240,300,630],all1041videoRGBidentities
+verified. One nativeCPUrun27.515s/2230026240B,features1024/1024/837,no detector
+fallback,state unchanged. Sourcecue81;targetcueassignments35/46;only22complete
+native-patch tracks<48. REJECT entry before camera control/solver/direct/LOO/
+head/medical measurement. ALLrawpoints/misses/scores and two panels preserved.
+An initial TorchVision/tempfile import stop precedes model construction and is
+recorded separately from the one successful actual inference. No NNrescue or
+threshold/crop/count/frame change.0343controlled.515pxdoes not establish real
+precision;different cohorts forbid causal gain over0337. See0344/cleanup0344.
+Prospective LOOaudit found oldsource0only had triangulation residual,not an
+independent held prediction;new helper authored but NOTexecuted,not a new
+passing fixture. Read-only history review finds no currently supported next
+blind matcher variant;independent information is required,not scan feedback.
+No new accepted head/medical result,goal remains unfinished.
+0344closeout retains4.791MB/190membersfull compact evidence,removes16794private
+files757747517Bplus seven tools.112protected identities/160tests8.863s/main39
+packagescompatible pass. Positive0343point fixture replays without Torch;
+cleanup details/recovery boundaries in cleanup-0344-aliked.md.
+
 ## 0343:one physical pair passes without hiding invalid assigned points
 
 Sourcef56eb9b;independent domain freezes1024IDs/917sourcecue/910GTvisible before

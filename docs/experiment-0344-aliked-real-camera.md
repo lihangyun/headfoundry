@@ -147,3 +147,13 @@ or independently demonstrated information mechanism. Do not invent such evidence
 from retained22points,scan feedback or an unexecuted helper. This is a research
 prerequisite gap,not a newly measured medical-error lower bound or completed
 goal. No new method was installed/run during this read-only cross-check.
+
+## Completed retirement
+
+See cleanup-0344-aliked.md. Exact16794private files757747517logical bytes and
+seven candidate tools retired;one-off cleanup source also archived/removed.
+Compact190-member4791253-byte archiveSHA643ef663a951aa6ec6d00e6cc625fba231fb7a12a3d0b13b89b2c5c2cb181fa5,
+recoveryd5ff6e4,full raw observations/two panels/rights/state retained.112protected
+identities unchanged;owned successful0343fixture replays without model/runtime.
+160tests8.863s/main39packagescompatible/Torchabsent. No dangling active candidate
+imports. Complete-head/medical/visual gates remain unmet;goal is not complete.
