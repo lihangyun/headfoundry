@@ -108,7 +108,7 @@ duplicates after exact archive/path/protection checks and independent commit.
 Failed candidate math is not promoted merely because software tests pass.
 Full requested video-head/medical/visual goal remains intact and unfinished.
 
-### Pre-execution schema clarification,2026-10-23T12:18Z
+### Pre-execution schema clarification,2026-10-23T12:15Z
 
 No fixture matrices or scores have been generated. Source review found that
 the prescribed no-rotation t=(1,0,0) projects some complete mesh samples outside
