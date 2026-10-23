@@ -169,7 +169,7 @@ def flow():
     def fresh_writer(name,data):
         captured[str(name)]=data;write(name,data)
     runtime.write=fresh_writer
-    model,torch,np,_=runtime.model_state()
+    model,torch,_numpy,_=runtime.model_state()
     initial_digest=captured['state.json']['postload_logical_state_sha256']
     tensors=[torch.from_numpy(image).permute(2,0,1)[None].float() for image in images]
     fields={}

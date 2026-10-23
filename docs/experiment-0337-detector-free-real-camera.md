@@ -90,3 +90,15 @@ dependency uninstall. Preserve original76identities and successful compact
 0336point fixture/oracle. Public binaries require redownload,not full backup.
 Verify tests and independent cleanup commit before new route. Pass freezes this
 partial-camera result,not whole-head/medical/user-visual success. Goal remains.
+
+## Ordinary intake repair BEFORE any clinical neural forward
+
+683f111control passes on96gridqueries/95visible,pointp95.395847971px,
+max.572177655px. Actualprepare verifiesall1041RGBhashes;256candidate grid sites
+give the fixed96queries. Source/cue/grid reviewed03:19:33UTC before inference.
+First flow worker stops in trusted intake:tuple assignment to a localnpname
+shadows the already imported NumPy before first image conversion. Trace occurs
+BEFORE importing the model helper,constructing model or any neural forward.
+Preserve first-intake-stop log/worker/source683f111. Rename the unused returned
+NumPy alias only;input/model/queries/budget/math untouched. This is not a physical
+NNfailure or scientific repeat;exactly four clinical directed predictions remain.
