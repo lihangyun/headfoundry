@@ -1,5 +1,16 @@
 # HeadFoundry technical research report
 
+## 0337:controlled grid precision passes,but clinical entry rejects
+
+Fixed detector-free grid passes95visible owned pointsp95.395848px. Same actual
+[240,300,630],four-directed nativeCPUrun52.140s/2.672GB,state unchanged.96queries
+yield31/36local FB.75admits,intersection7<48;stop before geometry. ALLrawpoint/
+FB/support arrays retained. True realcamera/medical precisionUNVERIFIED;internal
+closure/count are not physical truth. No threshold reduction or causal comparison
+to different0333population. Retire exact candidate/650877004bytes with2.576MB
+private evidence;keep positive point/grid fixtures and pure oracle.158tests/
+96protected identities pass,no accepted camera/head or hidden clinical upload.
+
 ## 0336:one fixed native pair prediction passes independent physical point scoring
 
 No new NNforward;before error inspection freeze all96original source queries

@@ -102,3 +102,60 @@ BEFORE importing the model helper,constructing model or any neural forward.
 Preserve first-intake-stop log/worker/source683f111. Rename the unused returned
 NumPy alias only;input/model/queries/budget/math untouched. This is not a physical
 NNfailure or scientific repeat;exactly four clinical directed predictions remain.
+
+## Actual result:REJECT fixed observation entry,geometry unmeasured
+
+Executed clinical source9934b8c. One four-direction CPUworker completes52.140s,
+peak2671603712bytes,all nativeFP32outputs finite;parameter/buffer digest stays
+8123e95b762b7fd9cedb57f03872bdaa1194e624898779fda8c7f02840589185.
+Existing0335metadata/input/state/output hashes stay unchanged;writer routing
+creates only fresh0337receipts. No new weights,training,resize or NNretry.
+
+One1.984s/142331904-byte assembly saves ALL96query/forward/back/support/FB
+arrays before count decision. All96forward endpoints have native support.
+
+| Target fromsource240 | Local FB<=.75 admits | Unfiltered FBmedian px | FBp95px |
+|---|---:|---:|---:|
+|300|31/96|1.121840|56.669900|
+|630|36/96|.993668|5.024016|
+
+Intersection only7/96versus registered48. Stop BEFORE initializer,direct fit,
+held camera test,head/medical fitting. No0.75/48relaxation,point/density/ROI/
+frame/model/precision retry. Real true endpoint/rigidity/camera/mmerror remains
+UNVERIFIED. FBis internal consistency only;raw-sheet review03:29:39UTCis not
+subpixel ground truth or head acceptance. Population differs from0333,so more
+local admits are not an isolated causal gain. No pose/depth failure is invented.
+
+Keep controlled successes:0336corner-pointp95.224879pxand0337gridp95.395848px.
+They do not establish skin applicability;this entry stop also cannot uniquely
+identify model error,nonrigidity,occlusion or prove reconstruction impossible.
+48/FB.75are prototype policies,not a derived equivalence to actualcamera3px/
+skin2mm. Any future independent audit cannot retroactively pass this run or
+adjust a threshold from these just-observed numbers.
+
+## Completed independent retirement
+
+Private closed-experiments/0337-detector-free/evidence.zip2575905bytes,
+142members,two actual input/track panels,CRC/member SHAverified;wholeSHA256
+36e4302320e4b01af5db4bff194b6a37488561a04569e85e53a094bbce33debd.
+Keeps ALL96raw observations,field/stage hashes,review/coverage/control/worker
+records,model/source identities,rights/notices and prior positive point evidence.
+Full dense fields/native source PNGs/checkpoint/runtime binaries are NOTincluded.
+Generated data need explicitly justified reexecution;public binaries redownload.
+Not a full binary backup or accepted reconstruction;no human data uploaded.
+
+After exact path/reparse/SHA/CRC and actual terminal-worker/PIDidentity checks,
+remove14791files650877004logical bytes:exclusive0334source,0335weights/runtime/
+cache/outputs,0337derivatives and exactpycs. A reused protected OSprocess PIDis
+distinguished by fresh inventory and left untouched;model-state JSONis not a
+process record. Tracked candidate entries/cleanup helper retired separately.
+No shared package uninstall or broad workspace deletion. Main39packages remain
+compatible,Torchabsent from main environment;no model worker remains.
+
+Original76plus20positive point/grid files(96protected)unchanged before/after
+deletion and suite. Owned0336point/0337grid records replay saved errors exactly
+without weights. Old verifier archived/replaced by fixture-only replay writing a
+NEWreceipt,not old immutable results. Pure endpoint_oracleand two regressions
+remain;failed model controllers/tests do not.158tests pass9.486s(bounded11.359s/
+500436992bytes). Production/defaults/0332fixture/0207unchanged. Independent local
+cleanup commit precedes new work;whole03:51:11deadline respected. Goal active.

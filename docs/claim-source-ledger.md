@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 0337:clinical coverage stop is not measured true pixel/mmerror
+
+9934b8cuses locked0335nativeCPUmodel forfour actualdirections;7/96joint FB.75
+tracks fail fixed48entry. No camera/head/medical score. Fullraw96predictions
+remain,not a filtered success subset;owned gridp95.395848pxdoes not prove skin
+applicability. No uncertainty/threshold/point rescue. Compact evidenceSHA
+36e4302320e4b01af5db4bff194b6a37488561a04569e85e53a094bbce33debd,two private
+panels/source/model/rights/controls retained;exclusive framework/weights/runtime/
+entries retired. Generic oracle and positive owned records stay,not actual3px/
+2mm/head orKeenToolsparity. No clinical input uploaded/trained on.
+
 ## 0336:known physical point error,not camera or skin reconstruction acceptance
 
 Fixed0335nativefield scored ONCE by53715c7after unscored evaluator-oracle fix.

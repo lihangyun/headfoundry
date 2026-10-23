@@ -5,7 +5,7 @@ import unittest
 import numpy as np
 
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'tools'))
-from score_pair_0336 import oracle_controls
+from endpoint_oracle import oracle_controls
 
 class EndpointOracleTest(unittest.TestCase):
     def test_nondyadic_pixel_roundoff_is_not_physical_error(self):
