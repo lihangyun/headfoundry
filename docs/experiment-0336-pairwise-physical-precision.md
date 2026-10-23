@@ -63,3 +63,42 @@ Move these independent controls before opening prediction arrays,record actual
 roundoff/bound. Same frozen91visible mask/all96queries/model/field bytes and
 physical3px/native-bounds decision,no new NNcall or physical-score retry. One
 corrected evaluator execution only;do not reinterpret the original stop as passed.
+
+## Actual conditional material-point result:TECHNICAL_CHECK_PASSED
+
+Corrected score source53715c7,one1.422s/125857792peak-byte scored worker.
+No new neural forward. Visibility freezes BEFORE prediction scoring:96source
+queries,91jointly visible,5not jointly visible;native spread source631.40x969.55
+px,target620.05x989.08px. All96predictions/XYZ/UV/labels/errors/visibility and
+native-domain masks retained,not just91passing points or0332's86DISsubset.
+
+On ALL91frozen visible points:medianEPE.095011639px,p95.224879065px,
+maximum.460942911px,0above3px,0outside native bounds. Five unobservable points
+remain separately accounted(theirp95.499839819pxis a diagnostic,not acceptance
+of hidden identities). Original0/40oracle stop staysREJECTcontrol execution,
+not a model failure. Actual wrong-oracle deviation5.68434e-14pxversus derived
+2.01530e-12pxbound;zeroexact0,wrong40still far above3. No physical threshold,
+cohort/model/image/field changed,and no post-error point removed.
+
+This is precise matching on ONEowned planar-texture/nonplanar-depth pair,
+not camera calibration,curved real-skin generalization,medicalmillimeters or
+fullhead acceptance. Perfect two-view matches alone also do not resolve0328's
+critical focal ambiguity. Next must establish appropriate actual-domain
+observations and independently held multi-axis/multiview cameras,not return
+to a pairwise-focal shortcut or fit a formal head from this score alone.
+
+Subsequent pure extraction of the unchanged oracle control into a callable
+function adds two retained regressions:nondyadic-pixel roundoff and invalid/
+empty inputs. NOscored evaluation or model forward rerun after extraction.
+158tests pass8.878s(bounded10.656s/501215232bytes),76protected identities and
+all0335locked model/input/state/output identities unchanged. Main environment,
+defaults,0332fixture and unrelated0207remain unchanged. All workers terminal.
+
+Private point-scores.npzSHA
+77024f96f271795ea46ddc2aa745c4ca4cff649315b7705c544d915eedb75365,
+resultSHAfaada817fc72aa605450037a42c4868f98577acb4d20de3c2821eebfff322bcf.
+Retain successful evaluator/fixture and one provisional0335runtime. There is no
+failed physical integration to delete here;the initial unscored oracle stop is
+fully preserved. Future stages must not overwrite frozen0335/0336metadata or
+reuse their software-stage loader's output side effects in another experiment.
+No human material/model/scan uploaded or trained on. Goal active/unmet.

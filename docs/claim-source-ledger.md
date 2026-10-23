@@ -1,5 +1,15 @@
 # Claim-to-source ledger
 
+## 0336:known physical point error,not camera or skin reconstruction acceptance
+
+Fixed0335nativefield scored ONCE by53715c7after unscored evaluator-oracle fix.
+Truevisibility frozen91/96before predictions;visiblep95.224879065px,max.460942911px,
+zero>3px/out-of-native. Full96point data retainedSHA77024f96f271795ea46ddc2aa745c4ca4cff649315b7705c544d915eedb75365.
+Oracle roundoff5.68e-14versus derived2.02e-12bound is not model tolerance or
+relaxed physical error. No NNretry,clinical input or hidden-point acceptance.
+Single owned-pair/material control cannot establish actualcamera3px,medical2mm,
+head anatomy orKeenToolsparity. Matrix/selfcal/whole-head/visual gates stay intact.
+
 ## 0335:acquired model/full-state/native execution is not learned physical precision
 
 Actual publisher bytes match0334expectedcb8cfbf1SHA,not an alternative/NCweight.

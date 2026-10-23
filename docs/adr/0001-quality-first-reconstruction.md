@@ -1,5 +1,18 @@
 # ADR 0001: quality-first clean-room reconstruction
 
+## 2026-10-23:independent scoring controls must respect their numeric domain
+
+0336'sfirst oracle-equality assertion stops before learned endpoint scoring:
+float64(trueUV+40)-trueUVneed not be exactly40for nondyadic pixel coordinates.
+Preserve the original stop and separate a dtype/input-magnitude-derived roundoff
+bound from actual pixel/mmquality gates. Do not retrofit a model tolerance from
+its just-observed error or rerun inference to hide failure. Only the unscored
+evaluator control is repaired;all source/model/field/cohort/3pxchoices stay fixed.
+Independent point precision on one owned pair does not prove camera calibration,
+real-skin generalization or final reconstruction. Existing identifiability and
+whole-head/medical/visual gates remain required. Successful phase receipts stay
+immutable;new experiments write their own state/logs rather than overwrite them.
+
 ## 2026-10-23:freeze conditional direct-image capacity before domain transfer
 
 0332fully passes one fixed owned3-view camera/depth control after a different

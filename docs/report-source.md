@@ -1,5 +1,16 @@
 # HeadFoundry technical research report
 
+## 0336:one fixed native pair prediction passes independent physical point scoring
+
+No new NNforward;before error inspection freeze all96original source queries
+and true-geometry91visible/5unobservable mask. ALL91visible EPEp95.224879px,
+max.460943px,no>3px/native-bound misses. All raw96predictions retained. Initial
+oracle exact40equality stops unscored;source53715c7uses a dtype/input-magnitude
+roundoff bound,not a changed3pxgate. First stop/raw logs preserved,no model score
+or inference retry. Two generic oracle regressions added,158tests pass8.878s;
+76protected and0335locked bytes unchanged. This is controlled planar-texture
+matching,not truevideo/head/medical accuracy or two-view focal identifiability.
+
 ## 0335:strict pairwise learned software/native CPUcapacity passes
 
 Exact publisher79MBsafetensors acquired;452physical tensors/472logical keys

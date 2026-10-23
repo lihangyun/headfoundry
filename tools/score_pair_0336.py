@@ -23,6 +23,20 @@ def sha(path):
 def write(name,data):
     (OUT/name).write_text(json.dumps(data,indent=2,allow_nan=False))
 
+def oracle_controls(target):
+    target=np.asarray(target,np.float64)
+    if target.ndim!=2 or target.shape[1]!=2 or not len(target) or not np.isfinite(target).all():
+        raise ValueError('finite nonempty paired pixel coordinates required')
+    scorer=lambda uv:np.linalg.norm(uv-target,axis=1)
+    wrong=scorer(target+[40,0]);roundoff_bound=8*np.finfo(np.float64).eps*max(1,float(abs(target).max())+40)
+    wrong_error=float(abs(wrong-40).max())
+    report={'zero_max_px':float(scorer(target).max()),'wrong40_max_roundoff_px':wrong_error,
+        'roundoff_bound_px':roundoff_bound,'bound_basis':'8*float64 epsilon*max(1,max_abs_true_uv+40),not a physical threshold',
+        'prediction_arrays_opened':False}
+    if report['zero_max_px']!=0 or wrong_error>roundoff_bound or float(np.percentile(wrong,95))<=3:
+        raise ValueError('independent scoring controls fail')
+    return report
+
 def prepare():
     metadata=json.loads((FIXTURE/'inputs.json').read_text());fixed=json.loads((SOFTWARE/'fixed-owned-images.json').read_text())
     for name,identity in fixed.items():
@@ -54,13 +68,7 @@ def score():
     domain=dict(np.load(OUT/'frozen-domain.npz'))
     q,target,visible=domain['query'],domain['expected'],domain['visible']
     scorer=lambda uv:np.linalg.norm(uv-target,axis=1)
-    wrong=scorer(target+[40,0]);roundoff_bound=8*np.finfo(np.float64).eps*max(1,float(abs(target).max())+40)
-    wrong_error=float(abs(wrong-40).max())
-    write('oracle-controls.json',{'zero_max_px':float(scorer(target).max()),'wrong40_max_roundoff_px':wrong_error,
-        'roundoff_bound_px':roundoff_bound,'bound_basis':'8*float64 epsilon*max(1,max_abs_true_uv+40),not a physical threshold',
-        'prediction_arrays_opened':False})
-    if scorer(target).max()!=0 or wrong_error>roundoff_bound or float(np.percentile(wrong,95))<=3:
-        raise ValueError('independent scoring controls fail')
+    write('oracle-controls.json',oracle_controls(target))
     prediction=np.load(SOFTWARE/'native-output.npz')['flow']
     if prediction.shape!=(1,2,1280,720) or prediction.dtype!=np.float32 or not np.isfinite(prediction).all():raise ValueError('native field contract fails')
     uv=q+bilinear(prediction[0].transpose(1,2,0),q,[720,1280]);error=scorer(uv)
