@@ -174,8 +174,8 @@ def optimize():
         for point in range(n):
             rows=slice(((camera-1)*n+point)*8,((camera-1)*n+point+1)*8)
             pattern[rows,0]=1;pattern[rows,16+point]=1
-            pattern[rows,1:6 if camera==1 else 1]=1 if camera==1 else 0
-            if camera==2:pattern[rows,6:12]=1
+            if camera==1:pattern[rows,1:6]=1
+            else:pattern[rows,6:12]=1
             pattern[rows,12+2*(camera-1):14+2*(camera-1)]=1
     pattern=pattern.tocsr();base=objective(values)
     if not np.isfinite(base).all():raise ValueError('initial photometric domain fails')
