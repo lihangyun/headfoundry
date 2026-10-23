@@ -64,3 +64,33 @@ keeps compact raw states/scores/hashes/source and one sheet,retire exclusive
 entry/bulk/cache after PID/path/CRC/hash/protected38checks,independent local
 cleanup commit before new method. Pass is conditional camera/depth capacity,
 not actualvideo/head/medical/visual acceptance or permission to promote defaults.
+
+## Actual entry stop and retirement
+
+Generation5a3735fcompletes4.813s/317198336peak bytes. Three fixed native views
+reviewed01:44:09UTCbefore tracking. b5dc02fonly clarifies equivalent sparse
+column slicing before optimization;no image,parameter or algorithm change.
+One initializer1.563s/170369024bytes detects96queries,admits47complete LKtracks,
+below preregistered48. Stop BEFORE essential/pose/XYZinitialization,geometric
+bundle adjustment,photometric optimizer or evaluator. No47instead of48rescue,
+corner count/window/noise/scene/angle/precision/iteration change or retry.
+
+REJECT exact recipe at observation coverage;direct-image and physical3Daccuracy
+remain UNVERIFIED.48is this prototype's entry policy,not a derived physical
+impossibility bound;this failure cannot diagnose unexecuted photometric quality.
+It does expose dependence on source-to-target pointwise initialization. Individual
+raw query/endpoint arrays were not written before this coverage stop;only count,
+source code and fixed image identities survive. Do not invent a correspondence
+precision or occlusion diagnosis from that count. Future genuinely different
+observation work must save its raw predictions BEFORE its own entry decisions.
+
+Compact evidence220011bytes/11members/one fixed input sheet,CRCverified,SHA256
+8b012c70bff0f111027b91262cdf6cff5f579206358f615181685cbed38a26e5.
+Private closed-experiments/0331-joint-photometric/evidence.zipkeeps truth,
+all image hashes/logs/entry/review/source recovery. Native PNGs removed,exact
+generator/seed5a3735fandb5dc02fretained;not a full binary-image backup. Any new
+generation needs a materially different justified protocol,not automatic retry.
+After actual worker/PID/path/CRC/hash checks14exclusivefiles1538728bytes removed,
+exclusive controller/solver retired.38protected identities verified on both
+sides. No added package/model/runtime or failed test to retain. Shared math,
+production defaults and unrelated0207unchanged. Full head objective active/unmet.

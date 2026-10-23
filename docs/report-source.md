@@ -1,5 +1,16 @@
 # HeadFoundry technical research report
 
+## 0331:pointwise image initialization stops before direct information is measured
+
+Fixed owned3-view planar image generation passes;96queries produce47complete
+LKtracks,less than registered48. No geometric/direct solver/evaluator call,
+so direct camera/depth precision is UNVERIFIED,not physically rejected. This
+prototype entry count is not a mathematical observability/impossibility proof.
+No threshold/window/corner/scene/noise retry;retire exact recipe after220011-byte
+capsule/one sheet. Raw endpoint predictions were not saved before entry failure;
+do not assert their precision or failure cause. Genuinely different observation
+work must preserve first raw outputs before screening. No patient/head/mmresult.
+
 ## 0330:joint camera control passes,but point capacity still rejects
 
 One fixed joint solve8adb91a,26evaluations2.328s,unknownf/poses/XYZand full

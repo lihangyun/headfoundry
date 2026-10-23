@@ -1,5 +1,14 @@
 # Claim-to-source ledger
 
+## 0331:an initialization coverage stop does not measure the unexecuted optimizer
+
+47/96complete3-view tracks fail the explicit48entry policy. No solver or physical
+3Dresult follows. Keep REJECTrecipe versus UNVERIFIEDdirect accuracy,including
+the absence of raw saved endpoint arrays. Count alone is not material identity,
+observability or proof direct methods fail. No post-score gate reduction or
+additional LK/scene attempt. Source5a3735f/b5dc02fand compact private hashes/
+truth/logs/one sheet preserved;exclusive code/bulk retired before a new method.
+
 ## 0330:conditional camera subgate is not full reconstruction acceptance
 
 Owned coordinate experiment passes independent held3Dcamera projection3pxand
