@@ -1,5 +1,15 @@
 # Claim-to-source ledger
 
+## 0342:software count is not physical correspondence precision
+
+Fixed offline native pair gives791mutual assignments,not791proven true points.
+Combined stateSHAe0bac0ab937fe9ccbe092c08fe6bebb2d8288bba24f71d3eda4cc68fcb5c8cce
+includes every loaded tensor plus separately checked DKDgrid;only declared
+9-layer confidencebuffer is source-derived.No hidden defaults.Native matchesSHA
+d6e3f09ca8ffbebfa855a4d6eca5bdc55efca8940e0ea8928cf423c835f2fbe1remainsunscored.
+Owned software checks/160tests do not certify pixel/mm/head.CPUonly notice/
+third-party exceptions explicit;no blanket root-license orGPUapproval.
+
 ## 0341:local source-bound bytes are not publisher-signed or loaded models
 
 Exact official asset131252166now47632827bytes/localSHA256

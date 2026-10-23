@@ -1,8 +1,9 @@
 # Experiment0341:complete the exact candidate's public asset pair
 
 Registered2026-10-23T10:10:00Z,before matcher download/deserialization. Goalactive,
-account allowed;source0339and extractor0340complete. Previous limited turn was
-a verified product-state wait,not reconstruction progress;product now restored.
+account allowed;source0339and extractor0340complete. Earlier product-limited
+checks made no development progress;current goal check confirms active,not a
+live-process wait. This corrects the earlier classification,not an experiment.
 
 Single variable:acquire official ALIKED-LightGlue v0.1_arxiv matcherasset131252166,
 47632827bytes. No alternative variant,matcher tuning or retired model restoration.

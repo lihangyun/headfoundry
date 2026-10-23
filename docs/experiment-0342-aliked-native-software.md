@@ -71,3 +71,53 @@ clean exclusive integration/runtime/raw artifacts after exact safety checks,
 verify tests/protected data and independent cleanupcommit before another route.
 If passed,freeze unscored native outputs for a separately registered independent
 GTdomain/physical score.No camera/head fitting before required actual gates.
+
+## Actual result:TECHNICAL_CHECK_PASSED software/capacity only
+
+Executedf95b495,original numeric modules unchanged.Setup54.015s/266625024bytes,
+17exact wheel hashes verified/compatible,complete installed notices retained.
+Main39packages unchanged/compatible,Torchabsent from main;no shared installation.
+State:extractor76asset tensors/678324stateelements;matcher253asset tensors plus
+one explicitly source-derived buffer,254keys/11884634elements(all-state counts,
+not trainable parameters). BNstats/counters,keys/shapes/dtypes/finiteness,
+bijective anchored renames,strictTrue/postload bytes and separate25-entry DKDgrid
+pass.No other missing/default-filled state.Full combinedSHA256
+e0bac0ab937fe9ccbe092c08fe6bebb2d8288bba24f71d3eda4cc68fcb5c8cce
+is identical across every stage and unchanged after inference.
+
+Controlworker17.421s/454934528bytes,owned operations.485s. Independent replicate,
+dyadicXY/normalization/roundtrip/zero-offsetdeform-conv errors exactly0.Unequal
+3/4point indices,-1andpositive-unmatchedscore/unsupported rawfilterzero-axis
+behavior recorded.Bothmodels reject missingkey/shape/dtype/NaN;renamecollision
+and one-bitfingerprint witnesses pass.Helper models_loadedFalse describes only
+the owned helper,not the parent which deliberately loads both candidate models.
+
+One smallworker17.063s/470937600bytes:107points,0accepted selfmatches.Mean-threshold
+fallback triggers(no candidates>.2).Valid unscored execution with empty assignment,
+NOT identity-matching accuracy.No seed/image/threshold retry follows.
+
+One nativeworker24.312s/2211786752bytes;postload feature/matcher/serialization
+segment7.641s(not separately timed NNforward).NativeW720/H1280;1024points per
+image,791mutual pairs/233unmatched each. NMS>.2candidates3028/2963,no meanfallback.
+Allindices/finite/bounds checks pass.No trueUV/visibility/EPEorcamera score;
+791assignments are NOT791proven correct matches.Sourceq separately savedSHA
+f7c7f7ed5b484630e99699473086b4deb8b88b888e86db162b0c7c2563141892,
+rawmatchesSHA d6e3f09ca8ffbebfa855a4d6eca5bdc55efca8940e0ea8928cf423c835f2fbe1.
+Future independent scorer freezes GTdomain from sourceq before opening target/
+match predictions,no second NNcall or GT-based success subset.
+
+Actual notices:Kornia/Kornia-rsApache2,TorchVisionBSD3retained.No identified extra
+NC/paidgate in this unmodified localCPUlane;not whole-stack redistribution/FTO
+approval.Exceptions remain:NumPyGCCruntime exception,OpenCVFFmpegLGPL,PillowFTL,
+setuptoolsLGPL/MPLvendored code,TorchGPLtests/LGPLffnvcodec.Torch also bundles
+NVIDIA-specific GPU/CuTeDSL/hstu terms;CPUdistribution lacks CUDA/fbgemmGPU DLLs,
+no GPUcall used.Do not apply rootBSD to those terms or authorizeGPU.Kornia-rsRust
+dependency closure is not independently established for product repackaging.
+Full installed notices are retained,not replaced by top-level metadata.
+
+160shared tests pass9.024s(bounded10.938s/503504896bytes).Terminal receipts,
+source/output hashes/0207/main-environment checks pass.No patient/scan/case002
+read,training/upload,newhead/medicalresult orvisualACCEPT.No failed software bulk
+to clean.Successful stage retained only pending physical validation;eventual
+candidate failure still requires full route cleanup.Goal active,resultcommit
+before next separately preregistered physical experiment,within10:57deadline.

@@ -1,5 +1,15 @@
 # HeadFoundry technical research report
 
+## 0342:strict native software admission,not physical matches
+
+Sourcef95b495,17pinned wheel/runtime notice receipts,complete76extractor and
+253asset+1derived matcherstatekeys;combinedSHAe0bac0ab937fe9ccbe092c08fe6bebb2d8288bba24f71d3eda4cc68fcb5c8cce
+unchanged.Owned operator/index/negative-state checks pass.One nativepair24.312s/
+2211786752bytes gives1024/1024features,791assignments,not known correct points.
+Small107feature/0selfmatch execution retained,not hidden or a matching pass.
+160tests9.024s;main39packages/Torchabsence unchanged.Full notice qualifications
+in experiment0342.No patient/GT/camera/head/medical result or physical3pxpass.
+
 ## 0341:both exact candidate assets acquired,not yet executed
 
 Executed aee0bbd,one6.297s/64622592byte worker.Exact official matcherasset131252166

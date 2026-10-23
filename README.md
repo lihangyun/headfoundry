@@ -1,5 +1,9 @@
 # HeadFoundry
 
+[0342 离线加载与运行检查](docs/experiment-0342-aliked-native-software.md)已通过：
+固定候选在原分辨率程序图像上完成一次配对，产生791组匹配；峰值内存约2.21GB，160项测试通过。
+匹配是否正确尚未评分，这不是相机、医学精度或新头模通过；主环境未改。
+
 [0341 匹配器权重核验](docs/experiment-0341-aliked-matcher-asset.md)已完成固定
 LightGlue匹配器的来源、字节及静态容器检查；候选的两份权重齐备，尚未加载或验证精度。
 
