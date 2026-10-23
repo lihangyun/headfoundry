@@ -1,5 +1,18 @@
 # Claim-to-source ledger
 
+## 0344:real observation coverage is not measured clinical3Daccuracy
+
+Evidence:experiment-0344-aliked-real-camera.md;private0344inputs/rights/SHA,
+full raw features/assignments/endpoints/misses,worker logs,state digest and two
+review panels. Three native frames1024/1024/837features;sourcecue81points,
+localcue35/46assignments,22complete tracks<48. Actual model27.515s/2.230GB.
+No mean fallback,training/upload/scaninput. An initial import-only TMPguard
+stop is preserved separately,not a second model inference. Camera/LOO/head/
+medical precision not measured;new owned camera checks were not executed.
+Controlled0343p95.515px does not establish clinical material precision. No
+causal comparison with0337's different population/FBpolicy. Source and matrix
+test design are not implemented-and-tested head delivery;noACCEPTclaim.
+
 ## 0343:controlled source-domain precision is not whole-video validity
 
 Full732sourcecueassignments,p95.5149417758px;1unsupportedInfplus1finite3.6947px

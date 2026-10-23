@@ -1,5 +1,18 @@
 # ADR 0001: quality-first clean-room reconstruction
 
+## 2026-10-23:controlled matching precision does not ensure clinical support
+
+0344full-image ALIKED/LightGlue trial yields22common source-face IDs versus
+registered48,despite0343owned-pairp95.515px. Stop before camera/geometry;
+neither infer clinical3Derror nor increase feature cap/crop/change frames to
+rescue the fixed recipe. Counts/span policies are not physical observability
+theorems;this rejection cannot establish that all22points/video are useless.
+Retain compact full cohort and successful point fixture,retire candidate stack.
+Before inference the audit also found0333source0was only a triangulation
+residual:future conditional camera checks must independently leave out each
+scored view.0344never ran that checker;source code/tests authored is not proof
+they passed. No new actual head/medical or visual acceptance follows.
+
 ## 2026-10-23:source-domain physical scores keep undefined assignments visible
 
 0343passes one ownedpair withp95.515px across all732sourcecueassignments,including
