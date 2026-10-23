@@ -107,3 +107,22 @@ controls/source/hash/worker reports(no images)then retire one-off driver/raw
 duplicates after exact archive/path/protection checks and independent commit.
 Failed candidate math is not promoted merely because software tests pass.
 Full requested video-head/medical/visual goal remains intact and unfinished.
+
+### Pre-execution schema clarification,2026-10-23T12:18Z
+
+No fixture matrices or scores have been generated. Source review found that
+the prescribed no-rotation t=(1,0,0) projects some complete mesh samples outside
+the native sensor:after the original baseline normalization,X is about +/-.48,
+Z about3.2,and u=359.5+1200*(X+1)/Z. This negative is therefore an algebraic
+projection/radiometry control,not a physically imaged native-sensor fixture.
+Keep its exact motion/points and every sample;do not clamp/crop or change t.
+Require positive finite depth and irradiance for all contexts;native bounds and
+front-facing checks remain mandatory for the positive candidate. Report bounds
+for the off-sensor negative,without pretending observations were image pixels.
+All negative observations are their own forward predictions,not residuals
+against positive-case data. Frozen-head is a deliberately incorrect lighting
+model algebraic control,not a measured physical capture.
+"No added focal rank"means rank(J)-rank(J_nuisance)=0;other nuisance/shape ranks
+may increase. Joint whitened sigma is named for the declared two noise scales,
+not legacy unit-pixel noise. No candidate parameter,noise,threshold or budget
+is changed by these pre-score consistency clarifications.
