@@ -98,7 +98,9 @@ information with exact known identities and assumed radiometry;it supplies
 NOimage initializer,real rigidity,actual K,metric surface or user acceptance.
 
 One math worker<=120s/1GiB,shared suite<=120s/1GiB,4BLASthreads,existing bounded
-descendant monitor. No patient/video/scan/case002read,network/model/runtime/
+descendant monitor. No patient/video/scan/case002read by mathematical workers;
+separate housekeeping may hash the inherited protected files for integrity only.
+No network/model/runtime/
 dependency/training/upload/default/0207change. Keep successful pure normal
 derivative helper only if independently checked. Compact all audit arrays/
 controls/source/hash/worker reports(no images)then retire one-off driver/raw
