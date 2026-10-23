@@ -126,3 +126,42 @@ model algebraic control,not a measured physical capture.
 may increase. Joint whitened sigma is named for the declared two noise scales,
 not legacy unit-pixel noise. No candidate parameter,noise,threshold or budget
 is changed by these pre-score consistency clarifications.
+
+## Executed result:REJECT information policy,not a real-head result
+
+Single worker sourcefcc8649,2026-10-23T12:16Z;2.828s/121532416B observed
+conservative worker-tree peak. No retry,parameter sweep,patient input or model
+install. Complete398-column positive analytic derivative checks pass at both
+registered steps:maximum relative errors6.68835e-10/1.42088e-9. Independent
+OpenCVforward replay1.13687e-13px. Separate normal derivatives pass both steps,
+translation/scale null and all six invalid-geometry controls.
+
+|Context|rank(J)/rank(nuisance)|relative focal contrast|conditional sigma(logf)|
+|---|---:|---:|---:|
+|Projection only|294/294|3.39704e-15|undefined|
+|Fixed room light|398/397|9.77037e-6|16.3338460|
+|Independent view lights|401/400|4.90540e-6|32.5330402|
+|Planar|391/391|2.68442e-15|undefined|
+|No rotation|391/391|5.33061e-15|undefined|
+|Ambient only|394/394|3.97611e-15|undefined|
+|Y-axis light|394/394|3.97381e-15|undefined|
+|Frozen-head light|392/392|3.73237e-15|undefined|
+
+All focal-negative controls pass. No-rotation retains54off-sensor samples
+under the documented pre-score algebraic exception;other contexts have none.
+The candidate adds a local focal rank,but its profiled sensitivity is far too
+weak for the fixed sigma(logf)<=.02screen.16.33is a local linear-Gaussian
+diagnostic,not a literal finite confidence interval or measured focal error.
+Independent lights also add focal rank,so shared-room light is not uniquely
+causal for rank here;the different normalized profiled contrasts cannot be
+promoted to actual-video improvement. Full raw matrices/singularvalues and
+all derivative columns retained,not a selected favorable subset.
+
+Conclusion:REJECT this fixed radiometric calibration recipe. It neither fits
+shape nor supplies an image/material-point initializer. Do not increase light
+strength,curvature,frame count or noise precision to rescue it. This one small
+context does not prove every fixed-light/multiview method impossible. No actual
+camera3px,medical2mm,editable head,likeness or KeenTools-parity claim follows.
+Ponytail kept the change to original NumPy math and existing camera profiling;
+the reconstruction skill's experiment controls prevented promoting rank into
+head acceptance. No Peek implementation or CLI was accessed.

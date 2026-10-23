@@ -1,5 +1,20 @@
 # ADR 0001: quality-first clean-room reconstruction
 
+## 2026-10-23:include full shape-derived normals and actual light coordinate frame
+
+0345tests genuinely pose-coupled fixed-room radiometry,not independent viewSH
+or brightness constancy. Normals must derive from ALLfree XYZwith their complete
+derivatives;unknown albedo/light/exposure/principal point/pose cannot be fixed
+to generating truth when claiming focal information. Do not rotate room light
+with the head or omit the R*nchain accidentally. Exact identities and known
+connectivity are ideal assumptions,not an image initializer.
+This fixture adds a focal rank but conditional sigma(logf)16.33fails the fixed
+.02screen despite passing analytic and negative controls. Stop the recipe,
+not rescue it with stronger curvature/light/moreframes or quieter noise. Record
+independent-light rank too;do not make unique causal claims. No camera/head/
+medical/visual gate or default changes. Retain successful generic normal math,
+retire one-off failed application after compact evidence/integrity checks.
+
 ## 2026-10-23:controlled matching precision does not ensure clinical support
 
 0344full-image ALIKED/LightGlue trial yields22common source-face IDs versus

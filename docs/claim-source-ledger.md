@@ -1,5 +1,19 @@
 # Claim-to-source ledger
 
+## 0345:nonzero radiometric focal rank does not establish useful calibration
+
+audit-0345-fixed-room-light-information.md binds sourcefcc8649and full private
+matrices SHA71dee9b179b4fd39640bbb874270882dc1010b5ed64735360bb01984b0464ef9.
+Owned96vertices/two views,all XYZ/normals/pose/albedo/light/gain/bias andcxcy
+profiled. Analytic derivative/control checksTECHNICAL_CHECK_PASSED;information
+policyREJECT:sigma(logf)16.333846at declared.5px/.01linear irradiance noise,
+not actual measured focal error or a meaningful large finite confidence bound.
+Independent lights also add rank;no unique shared-light rank-causality claim.
+No-rotation54off-sensor samples are declared pre-score algebraic controls,not
+native image evidence. No patient input,model/head fit,medical-mmmeasurement,
+visualACCEPTorKeenToolsparity. Source paper's orthographic/held-motion method
+does not establish unknown-perspective recovery;primary links/limits in0345.
+
 ## 0344:real observation coverage is not measured clinical3Daccuracy
 
 Evidence:experiment-0344-aliked-real-camera.md;private0344inputs/rights/SHA,

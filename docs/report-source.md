@@ -1,5 +1,20 @@
 # HeadFoundry technical research report
 
+## 0345:fixed-room rotation coupling adds weak local information,not a camera
+
+New physical constraint versus0194/0251per-view light and0332uniform exposure:
+area normals rotate in one camera/room lighting frame. Pure original math only,
+no human/scan/model input. All398positive analytic columns,two central steps,
+independent projection and normal controls pass;all focal-negative controls pass.
+Candidate rank398/397but conditional sigma(logf)16.333846versus fixed.02screen:
+REJECTinformation policy,not a derivative/API stop. Independent lights also add
+focal rank(sigma32.533040),so do not attribute rank uniquely to the shared light.
+No geometry/light/noise/view sweep. One worker2.828s/121532416B. Full raw matrices
+and recovery source preserved in private0345capsule;one-off runner retired after
+verification. Generic normal derivative math retained only as checked software.
+Source research and physical/initialization caveats: audit0345. Actual video
+camera3px/skin2mm/editable complete head/user visual acceptance remainUNVERIFIED.
+
 ## 0344:actual sparse observations stop before camera estimation
 
 Fixed0342ALIKED/LGconfig and actual[240,300,630],all1041videoRGBidentities
