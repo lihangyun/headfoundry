@@ -1,5 +1,15 @@
 # HeadFoundry technical research report
 
+## 0334:scoped pairwise learned matcher preflight,no inference yet
+
+Source/history screen rules out repeating0275global short-track geometry and
+mistaking OpenCVDeepFlow's pyramidal refinement for DeepMatching. SEA-RAFT M
+source/modelBSD3expected artifact pinned;MetaConvNeXtMIT/RAFTBSDnotices retained.
+Two hidden ResNet pretrained downloads,unsafe flexible loader and stock half-size
+wrapper identified BEFORE use. Native FP32correlation alone1.10016GB,not measured
+peak/capacity.17public snapshots/76protected hashes pass,no weights/package/source
+execution/human data. Candidate conditional eligibility is not runtime/3px/head.
+
 ## 0333:owned-image success does not transfer automatically to real skin
 
 Fixed video[240,300,630],all1041sequentialRGBhashes verified,consent/rights bound.

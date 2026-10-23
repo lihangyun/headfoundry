@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 0334:exact candidate publisher grants and source behavior,not acquired weights
+
+SEA-RAFT9137517BSD3source plus author's HFmodel revisioneb97ef34BSD3declaration,
+expected safetensors78778760bytes/SHAcb8cfbf14c5e0f6734b64add383708b7ff68cc6089a0007c67165d4761346102.
+Keep explicit MetaConvNeXtMITand originalRAFTBSD3notices;no blanket dependency/
+dataset/patent clearance. Full inference sources reviewed without importing them.
+Native cost arithmetic is a lower bound,not measured memory or head feasibility.
+Public rights/source receipt has no human data or actual model result. DeepMatching
+author's restricted code not adopted;WAFTbranch/backbone rights remain unresolved,
+not automatically cleared by rootBSD. Original3px/2mm/defaults unchanged.
+
 ## 0333:separate real observation failure from synthetic capacity and unrun geometry
 
 Source9b6a058,the registered three actual views yield46rawqueries and0complete
