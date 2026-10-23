@@ -131,12 +131,19 @@ def model_state():
     else:raise AssertionError('missing state sentinel accepted')
     result=model.load_state_dict(expanded,strict=True)
     if result.missing_keys or result.unexpected_keys:raise ValueError('strict state load fails')
-    for name,tensor in model.state_dict().items():
-        if not torch.equal(tensor,expanded[name]):raise ValueError('postload full tensor mismatch')
-    write('state.json',{'status':'TECHNICAL_CHECK_PASSED','physical_state_tensors':len(state),'logical_state_keys':len(expected),
+    digest=hashlib.sha256()
+    def tensor_bytes(tensor):return tensor.detach().contiguous().reshape(-1).view(torch.uint8).numpy().tobytes()
+    if tensor_bytes(torch.tensor([0.]))==tensor_bytes(torch.tensor([-0.])):raise AssertionError('signed-zero byte sentinel fails')
+    for name,tensor in sorted(model.state_dict().items()):
+        data=tensor_bytes(tensor)
+        if not torch.equal(tensor,expanded[name]) or data!=tensor_bytes(expanded[name]):raise ValueError('postload full tensor byte/value mismatch')
+        digest.update(name.encode()+b'\0'+data)
+    record={'status':'TECHNICAL_CHECK_PASSED','physical_state_tensors':len(state),'logical_state_keys':len(expected),
         'declared_exact_aliases':used,'state_elements':sum(t.numel() for t in state.values()),'missing_sentinel_rejected':True,
         'torch':torch.__version__,'numpy':np.__version__,'scipy':scipy.__version__,'model_sha256':sha(OUT/'model.safetensors'),
-        'scope':'full state only;no physical matching claim'})
+        'postload_logical_state_sha256':digest.hexdigest(),'signed_zero_byte_sentinel':True,'loader_source_sha256':sha(Path(__file__)),
+        'scope':'full state only;no physical matching claim'}
+    write('state.json',record);write('state-'+sys.argv[1]+'.json',record)
     return model,torch,np,Image
 
 def controls():
