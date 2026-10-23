@@ -64,3 +64,50 @@ originals/consent,0332successfulfixture and useful small independent controls,
 not indefinite failed model environment.Verify/independent cleanupcommit before
 new route.Pass freezes fixture,then separately register actual observation/
 identifiable multiview camera validation.No automatic head promotion.Goalactive.
+
+## Actual result:bounded owned-pair physical screen passes
+
+Executedf56eb9b.No new neural forward.Domainworker1.454s/118358016bytes freezes
+all1024IDs before predictions;both prohibited prediction-read controls reject.
+Source-only cue917points,910joint-visible. Raw full population:4source misses,
+0behind/offscreen,12occluded/hit-mismatched,1008visible. Independent OpenCVtrue
+projection replay7.390e-13px. DomainSHA256
+a03027ff3e00cbf2f571dc209a880a858fb0be3025fbb4208e9b7065f3e0d5bc.
+Oraclezero0,+40pxroundoff5.684e-14<derived2.057e-12bound;not a model tolerance.
+
+One scoreworker1.422s/102031360bytes,all frozen assignments retained:
+
+| Primary source-cue cohort | Result |
+|---|---:|
+| Source / GTjoint-visible | 917 / 910 |
+| Assigned / unassigned | 732 / 185 |
+| GTvisible but unassigned | 179 |
+| All assigned median / p95 px | .184796421 / .514941776 |
+| All assigned maximum | Inf:1unsupported assignment retained |
+| Assigned >3px including unsupported | 2 |
+| Correct<=3px / assigned | 730/732(99.7268%) |
+| Correct<=3px / all GTvisible | 730/910(80.2198%) |
+
+Visible-assigned-only731points p95.510717235px,max3.694731539px. This separate
+diagnostic is NOTthe primary pass population. Whole732assigned p95includes the
+unsupportedInf and one finite>3error,no GTvisibility/error pruning.Source/predicted
+spans678.10x1016.89/663.15x1027.38px satisfy fixed support policy. Outside-cue59
+assignments contain3unsupported points and diagnosticp95Inf;keep this failure,
+do not universalize the sourcecue result or call every raw match valid.
+
+Primary screenTECHNICAL_CHECK_PASSED;not perfect correspondence,not unknown
+camera/calibration/metric surface/skin or head acceptance. Only one programmed
+textured-patch context,not actual curved/deforming/specular human skin.
+The fixed source cue itself is not accepted human segmentation. No production
+selector/default change or permission to trim failed actual observations follows.
+
+Saved all indices/targets/truth/errors/unmatched rows in scoresSHA256
+842147dcb8347c56a9242a6d00c025eb7585e0190a0457754ced9d8d947b501f.
+Independent scalarhypot replay differs at most1.110e-16px from original vector
+scores,below dtype/coordinate-derived2.031e-12bound;all miss/Inf bookkeeping and
+full primary p95replay agree.No second scientific estimate/NNrun.160shared tests
+pass8.867s(bounded10.844s/503848960bytes).0207/source fixture and old outputs
+unchanged;no human input/read/training/upload. No new head or medical result.
+Retain positive point fixture and candidate only for separately preregistered
+actual observations/identifiable multiview camera validation;no failed bulk to
+clean in this passing phase. Local resultcommit closes within11:04UTCbudget.

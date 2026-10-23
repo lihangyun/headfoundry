@@ -1,5 +1,14 @@
 # HeadFoundry technical research report
 
+## 0343:one physical pair passes without hiding invalid assigned points
+
+Sourcef56eb9b;independent domain freezes1024IDs/917sourcecue/910GTvisible before
+prediction read. All732cueassignments count,including1unsupportedInf and1finite
+>3px;primaryp95.514941776px,730correct/910GTvisible.185cuepoints unmatched.
+Outside-cue59includes3unsupported,p95Inf. Scalarhypot replay and160tests8.867s
+pass;no NNrerun,actualpatient,calibration/medical/head or visual acceptance.
+Positive known patch-context precision only;see experiment0343for scope/hashes.
+
 ## 0342:strict native software admission,not physical matches
 
 Sourcef95b495,17pinned wheel/runtime notice receipts,complete76extractor and

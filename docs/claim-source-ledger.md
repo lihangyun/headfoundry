@@ -1,5 +1,14 @@
 # Claim-to-source ledger
 
+## 0343:controlled source-domain precision is not whole-video validity
+
+Full732sourcecueassignments,p95.5149417758px;1unsupportedInfplus1finite3.6947px
+error retained.730/732correctbut730/910GTvisible recall;185sourcecue unmatched.
+Outside-cue diagnosticp95Inf,not suppressed. DomainSHAa03027ff3e00cbf2f571dc209a880a858fb0be3025fbb4208e9b7065f3e0d5bc
+freezes before opening predictions;scoresSHA842147dcb8347c56a9242a6d00c025eb7585e0190a0457754ced9d8d947b501f.
+Independent replay/160tests certify stated owned-pair scope only,not skin,
+unknowncamera3px,medical2mm,head/visualACCEPT.No NNrerun/human data input.
+
 ## 0342:software count is not physical correspondence precision
 
 Fixed offline native pair gives791mutual assignments,not791proven true points.

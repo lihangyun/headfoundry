@@ -1,5 +1,16 @@
 # ADR 0001: quality-first clean-room reconstruction
 
+## 2026-10-23:source-domain physical scores keep undefined assignments visible
+
+0343passes one ownedpair withp95.515px across all732sourcecueassignments,including
+one unsupportedInf. Freeze truth/visibility independently before opening model
+predictions;never use GTto erase inconvenient matches.Unmatched detections have
+no endpoint:report recall/missing counts explicitly rather than silently imposing
+95%detection repeatability throughInf. Scope-limited source masks and output
+support policies are not segmentation/observability proofs. Positive controlled
+precision does not waive actual material/camera/medical/whole-head/visual gates.
+Keep immutable successful fixtures;separately register transfer before fitting.
+
 ## 2026-10-23:separate conservative cycle admission from physical failure
 
 0338'sindependent visible affine-map witnesses show FB.75can reject1pxtrue
