@@ -18,3 +18,7 @@ All image identities,truth,logs/review/coverage and recovery source remain.
 Full PNGs deleted,require newly justified exact generation;no full binary backup.
 Raw per-query LKendpoint arrays were never persisted,so their values are
 UNVERIFIEDand unavailable without reexecution. No model/environment was added.
+
+Actual retained suite156tests passes9.085s before cleanup commit32b1f46;
+protected38 identities pass again at01:53:11UTC after that commit. These are
+integrity/numerical checks only,not new camera/head accuracy evidence.
