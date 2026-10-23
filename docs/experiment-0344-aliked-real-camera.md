@@ -1,6 +1,6 @@
 # Experiment0344:fixed native sparse observations on the authorized video
 
-Registered2026-10-23T10:51:00Z,before actual feature extraction/matching.
+Registered2026-10-23T10:49:29Z,before actual feature extraction/matching.
 0342software and0343owned-pair physical screen pass at9a7bb98. Owned primary
 pointp95.514941776px is evidence for this test,NOT real skin/camera/mm accuracy.
 Goal active/account allowed,no running model worker. This is a distinct learned
@@ -46,8 +46,11 @@ failed camera initializer or pairwise-focal shortcut. Then unchanged0332gray
 eight-offset inverse-depth/affine exposure direct TRF150,bounds/sparsity/domain
 rejection. Keep runtime read audit;never read truth/scan. No formal head fit.
 
-Held evaluation unchanged0333:triangulate each whole held ID0/1→predict2 and
-0/2→predict1,score ALLheld/source residuals without pruning,>=9perview,
+Pre-inference audit corrects0333's incomplete held check:source0was previously
+only a triangulation residual,NOT independently predicted. Prospectively use
+all three leave-one-view-out checks:stereo1/2→predict0,0/2→predict1,0/1→predict2.
+This strengthens evaluation,not a solver/threshold rescue;0337never reached it.
+Score ALLheld IDs once per target without pruning,>=9perview,
 p95<=3px each;proper finite4x4,positive depths,nonboundf640.640..5114.88,
 both optimizer convergence and wrong+.1rad displacement>3 required. Passing
 is at most PARTIAL_SUCCESS necessary conditional consistency,NOTtrue focal/
@@ -56,7 +59,7 @@ stops;do not continue direct fit after a failed geometric stage or fit a head.
 
 ## Budgets,protection and closeout
 
-Whole2700s through independent commit,deadline11:36:00Z. prepare<=120s/2GiB,
+Whole2700s through independent commit,deadline11:34:29Z. prepare<=120s/2GiB,
 NN<=180s/4GiB,assemble<=60s/2GiB,initialize<=120s/2GiB,direct<=300s/2GiB,
 evaluate<=60s/2GiB,suite<=120s/1GiB;one worker/stage,existing descendant monitor.
 No production/default/0207change,no training/upload. Protect original/consent,
