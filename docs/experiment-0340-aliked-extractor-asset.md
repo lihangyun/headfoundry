@@ -13,3 +13,11 @@ admission.No actual camera3px/medical2mm/head claim or changed default/0207.
 This small asset step is not complete runtime or physical precision validation.
 On failure archive tiny error/hash/source evidence and remove exclusive partial
 bytes before a different route.No retries/variant switch.Goal remains active.
+
+Result:TECHNICAL_CHECK_PASSED byte/container identity only. One request completes
+2026-10-23T04:10:47Z,2738091bytes,exact original Gitblob match,78ZIPmembers CRCpass.
+Local SHA256=5be8704840ed662d9d8c561bf7279c222092674e7eb05fd0feab94899e9d82f2.
+No pickle/model execution,dependencies,clinical data,head or precision result.
+Private aliked-assets-0340/result.json binds immutable URL/hash;matcher acquisition,
+offline complete-state/native software and physical accuracy remainUNVERIFIED.
+No framework installed or failed bulk to clean;0207/defaults untouched.

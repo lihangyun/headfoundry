@@ -1,5 +1,8 @@
 # HeadFoundry
 
+[0340 权重字节核验](docs/experiment-0340-aliked-extractor-asset.md)已取得并核验固定
+ALIKED-N16提取器；尚未获取匹配器、加载模型或验证精度，没有新增头模。
+
 [0339 新对应候选预检](docs/audit-0339-aliked-lightglue-source-entry.md)已锁定
 ALIKED-N16／LightGlue官方来源及许可记录，发现自动下载、默认缩图和宽松加载等接入风险。
 仅完成源码检查；未下载权重、运行模型或生成新头模，下一关是独立的固定配置接入与物理精度验证。
