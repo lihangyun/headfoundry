@@ -5,6 +5,7 @@ import json
 import os
 from pathlib import Path
 import sys
+import tempfile
 import time
 
 sys.dont_write_bytecode=True
@@ -106,6 +107,8 @@ def infer():
         if sha(OUT/name)!=digest:raise ValueError('authorized native RGB image changed')
         with Image.open(OUT/name) as image:images.append(np.array(image.convert('RGB'),dtype=np.float32).transpose(2,0,1)/255)
     if len(images)!=3 or any(a.shape!=(3,1280,720) for a in images):raise ValueError('fixed native tensor intake fails')
+    # Standard library probes the trusted,own TMP with O_RDWR before read guard.
+    if Path(tempfile.gettempdir()).resolve()!=(OUT/'tmp').resolve():raise ValueError('own temporary directory required')
     import aliked_native_0342 as native
     def own_writes(event,args):
         if event!='open' or not isinstance(args[0],(str,bytes,os.PathLike)):return
@@ -188,14 +191,18 @@ def controller(stage):
             if getattr(path.lstat(),'st_file_attributes',0)&1024:raise ValueError('reparse target refused')
         (OUT/'tmp').mkdir();write('entry.json',{'source_sha256':sha(__file__),'registered':'c2aba31','started_utc':time.time()})
     if (OUT/(stage+'-worker.json')).exists():raise FileExistsError('one worker per stage')
-    gates={'infer':'inputs-reviewed.json','assemble':'inference.json','initialize':'tracks-reviewed.json',
+    gates={'infer':'inputs-reviewed.json','infer-import-repair':'inputs-reviewed.json','assemble':'inference.json','initialize':'tracks-reviewed.json',
         'optimize':'initial.json','evaluate':'direct.json'}
     if stage in gates and not (OUT/gates[stage]).exists():raise ValueError('required previous gate absent')
+    if stage=='infer-import-repair':
+        stopped=json.loads((OUT/'infer-worker.json').read_text())
+        if stopped['status']!='REJECT' or any(OUT.glob('features-*.npz')) or (OUT/'real0344-state.json').exists():
+            raise ValueError('repair only before state/model/forward')
     env=dict(os.environ);env.update(TEMP=str(OUT/'tmp'),TMP=str(OUT/'tmp'),PYTHONDONTWRITEBYTECODE='1',
         OPENBLAS_NUM_THREADS='4',OMP_NUM_THREADS='4',MKL_NUM_THREADS='4',HF_HUB_OFFLINE='1',
-        TORCH_HOME=str(OUT/'tmp'),HF_HOME=str(OUT/'tmp'),XDG_CACHE_HOME=str(OUT/'tmp'))
-    limits={'prepare':(120,2),'infer':(180,4),'assemble':(60,2),'initialize':(120,2),'optimize':(300,2),'evaluate':(60,2),'check':(60,2)}
-    seconds,gib=limits[stage];executable=str(RUNTIME/'env/Scripts/python.exe') if stage=='infer' else sys.executable
+        TORCH_HOME=str(OUT/'tmp'),HF_HOME=str(OUT/'tmp'),XDG_CACHE_HOME=str(OUT/'tmp'),TORCHINDUCTOR_CACHE_DIR=str(OUT/'tmp/torchinductor'))
+    limits={'prepare':(120,2),'infer':(180,4),'infer-import-repair':(180,4),'assemble':(60,2),'initialize':(120,2),'optimize':(300,2),'evaluate':(60,2),'check':(60,2)}
+    seconds,gib=limits[stage];executable=str(RUNTIME/'env/Scripts/python.exe') if stage in ('infer','infer-import-repair') else sys.executable
     result=run([executable,str(Path(__file__)),stage+'-worker'],str(ROOT),env,OUT/(stage+'.log'),OUT/(stage+'-worker.json'),seconds,gib*1024**3)
     print(json.dumps(result,indent=2));return result['status']=='TECHNICAL_CHECK_PASSED'
 
@@ -204,6 +211,7 @@ if __name__=='__main__':
     stage=sys.argv[1]
     if stage.endswith('-worker'):
         name=stage[:-7];cv2.setNumThreads(4)
+        if name=='infer-import-repair':name='infer'
         if name in ('initialize','optimize','evaluate','check'):
             import sparse_camera_0344 as camera
             getattr(camera,name)()

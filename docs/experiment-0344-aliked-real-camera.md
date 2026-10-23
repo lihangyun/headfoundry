@@ -72,3 +72,17 @@ No broad/private-root deletion or shared uninstall. Verify resolved own paths/
 no-reparse/terminal jobs/archiveCRC+memberSHA/protected hashes/tests and make
 independent cleanupcommit BEFORE any different route. No rescue sweep. Goal
 remains active until actual full head/medical/visual deliverable is accepted.
+
+## Pre-forward import stop and scoped repair
+
+0adce59prepare verifies all1041RGBframes in6.109s/169115648bytes;source cue and
+fixed images reviewed. First actual worker stops14.328s/347570176bytes during
+TorchVision import,BEFORE model construction/state loading/any extractor forward.
+TorchDynamo import requests tempfile;its standard O_RDWR temp-directory probe is
+correctly denied by the added private-read guard on fresh0344. No feature/state
+output exists. Keep original traceback/worker unchanged. Repair only trusted
+TMP preflight before guard and explicitly scope TorchInductor cache to ownTMP;
+no compilation requested. Guards remain active during model execution,original
+numeric methods/config/inputs/budget unchanged. One specifically named repair
+worker is allowed only with original terminalREJECT and no state/features;this
+is an unscored import repair,not a second scientific inference.
