@@ -43,6 +43,9 @@ p95<=3pxEACHcamera,trainpointp95<=.01sceneunit,heldobservedp95<=3pxEACHcamera,
 replay<=1e-9,wrong+.1radcamera>3px and zero true visibility misses. Scene units
 are NOTmedicalmm. Also save independent raw endpoint pixel errors,without using
 them to reject individual tracks or reinitialize/select the solver.
+The raw endpoint diagnostic runs only after the recipe is terminal(either an
+entry/fit failure or completed fits),so its truth cannot influence any admission,
+initialization or optimization. It remains available even if no physical fit ran.
 
 Prepare<=120s/2GiB,initialize<=120s/2GiB,optimize<=300s/2GiB,evaluate<=60s/2GiB,
 suite<=120s,whole1800s includes implementation/review/cleanup. One worker per
