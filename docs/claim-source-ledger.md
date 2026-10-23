@@ -1,5 +1,13 @@
 # Claim-to-source ledger
 
+## 0341:local source-bound bytes are not publisher-signed or loaded models
+
+Exact official asset131252166now47632827bytes/localSHA256
+d975e965b105311a6143194852297dff4f02aea5cc2e10cecfed966ca0e22503.
+Publisherdigestnull;255member ZIP/staticpickle checks prove only stated bounded
+container entry,not safe general deserialization or learned parameter integrity.
+No pickle/model/runtime execution or patient input;physical precisionUNVERIFIED.
+
 ## 0339:source identity is not acquired weights or reconstruction performance
 
 CVGcommit eb42fee2d71449efb0aa5c10549752b5d75384d8and ALIKEDcommit

@@ -1,5 +1,13 @@
 # HeadFoundry technical research report
 
+## 0341:both exact candidate assets acquired,not yet executed
+
+Executed aee0bbd,one6.297s/64622592byte worker.Exact official matcherasset131252166
+47632827bytes freezes localSHAd975e965b105311a6143194852297dff4f02aea5cc2e10cecfed966ca0e22503;
+publisherdigestnull explicitly retained.255member staticZIP/CRC/global/opcode
+checks and owned negative controls pass,without pickle execution or model import.
+ALIKED0340bytes unchanged.No runtime/native/point/camera/medical/head result.
+
 ## 0339:previously untried sparse descriptor/context matcher source entry
 
 See audit-0339-aliked-lightglue-source-entry.md for immutable primary links and

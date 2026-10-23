@@ -1,5 +1,8 @@
 # HeadFoundry
 
+[0341 匹配器权重核验](docs/experiment-0341-aliked-matcher-asset.md)已完成固定
+LightGlue匹配器的来源、字节及静态容器检查；候选的两份权重齐备，尚未加载或验证精度。
+
 [0340 权重字节核验](docs/experiment-0340-aliked-extractor-asset.md)已取得并核验固定
 ALIKED-N16提取器；尚未获取匹配器、加载模型或验证精度，没有新增头模。
 

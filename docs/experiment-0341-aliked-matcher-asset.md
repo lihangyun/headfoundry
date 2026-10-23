@@ -32,3 +32,23 @@ safe path/process checks and independent local cleanupcommit before a new route.
 On pass,next separately bounded admission checks full learned/nonlearned state,
 native coordinates and CPUoperations before any actual correspondence result.
 All camera3px/fixed-skin2mm/full-head/mesh/user visual gates remain.Goalactive.
+
+## Actual byte/security entry result
+
+Executed sourceaee0bbd.One6.297sworker,64622592byte observed process-tree peak,
+exit0;download/inspection5.156s.Owned safe dictionary,unsafe os.system-global
+and malformed-ZIP controls pass before asset inspection.No pickle executed.
+Official metadata still asset131252166/name/47632827bytes;publisherdigestnull.
+Single official HTTPSdownloadSHA256
+d975e965b105311a6143194852297dff4f02aea5cc2e10cecfed966ca0e22503.
+This is locally frozen trusted-source acquisition,not independent publisherSHA.
+
+255ZIPmembers,47581458uncompressed bytes,CRC/path/duplicate/size/opcodechecks
+pass.Only globals:collections.OrderedDict,torch.FloatStorage,
+torch._utils._rebuild_tensor_v2. Static allowed globals are not general pickle
+safety;only future weights_onlyTrue/full-state admission may load this asset.
+Original extractor and0207hashes unchanged.No model/runtime import,inference,
+human input,training or upload.Private aliked-matcher-0341contains source-bound
+publisher/result/container inventories and terminal receipt.No failed bulk exists.
+Both exact candidate binaries are now acquired;full state/nativeCPUcapacity/
+physical precision remainUNVERIFIED.No3px/2mm/head/visual success follows.
