@@ -1,5 +1,17 @@
 # HeadFoundry technical research report
 
+## 0333:owned-image success does not transfer automatically to real skin
+
+Fixed video[240,300,630],all1041sequentialRGBhashes verified,consent/rights bound.
+46source queries,5locally valid per target but0joint3-view tracks;entryREJECT
+before any geometric/direct/held-camera/head fit. All raw arrays persist unlike
+0331;unfiltered FBmedian18.3995/6.8157pxand p95136.3376/47.8937px quantify
+internal inconsistency,not true physical error. Qualitative nose/lip mismatches
+on raw sheet support caution,not a causal rigidity diagnosis. No threshold/frame/
+cue/query/preset rescue. Preserve0332conditional success,retire0333exclusive
+entry/4288826bytes with2320558-byte private capsule and independent cleanup.
+156tests pass8.841s,76original/success identities unchanged. No medicalmm/head.
+
 ## 0332:complete raw-image camera/depth capacity passes on one owned context
 
 Native images hash-identical to0331;only endpoint initializer changes from

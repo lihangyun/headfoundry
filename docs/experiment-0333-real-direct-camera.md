@@ -66,3 +66,50 @@ runner/tests/bulk/cache after exact PID/path/reparse/CRC/SHA/protected38checks,
 verify suite and independent cleanup commit before a different hypothesis.
 On pass freeze partial-camera evidence without promoting defaults or claiming
 whole-head success;next must establish independent physical applicability.
+
+## Actual result:REJECT observation entry,no camera/head fit
+
+Registration22b33f3,executedsource9b6a058. One sequential7.265s/203001856peak
+byte preparation verifies ALL1041RGBhashes and original source/manifest/consent.
+Fixed native[240,300,630]source/cue reviewed02:13:05UTC,without substitutions.
+One2.188s/214114304-byte observation worker detects46source queries(up to96,
+not96actual). It admits0complete3-view tracks,below registered48. Each target
+separately admits5of46but their sets do not intersect. All four raw fields and
+46queries/forward/backward/support/FB arrays saved before coverage decision.
+
+Both targets support all46forward endpoints. Unfiltered forward/back roundtrip
+median=18.399503/6.815673px,p95=136.337619/47.893730px. These are INTERNAL
+consistency errors,not unknown true material-pixel or medicalmmerrors. Source
+queries also number46<48,so the entry would not be sufficient even if all
+returned. No count/quality/ROI/distance/FB/preset/frame/precision rescue follows.
+
+Raw sheet reviewed after terminal entry stop02:13:33UTC. Some displayed nose/
+lip-region identities visibly migrate across neighboring anatomy;this is a
+qualitative wrong-association warning,not manually supplied target coordinates
+or proof of subpixel failure for every point. No tracks are corrected or dropped.
+No geometric solver,direct refinement,held camera test,head/medical fitting ran.
+Their actual physical precision staysUNVERIFIED. This rejects this direct
+large-motion domain-transfer recipe,not0332's retained numerical success or
+every free/commercially permitted reconstruction method. Do not restart the
+old0267sequential chain or tune this fixed initializer;future progress needs a
+genuinely different justified observation mechanism,not more count/FB adjustment.
+
+### Completed independent closeout
+
+Private closed-experiments/0333-real-direct/evidence.zip:2320558bytes,16members,
+two necessary source/track sheets,all raw predictions/fields hashes/review/logs/
+diagnostics,input RGB/nativePNG/provenance hashes and source recovery9b6a058.
+CRC/member SHAverified;wholeSHA256
+44b149cf0b8e149cc3d1c1383e04965a10c56e69cb00a9fd48a95bc0e44b22d3.
+It is not a full native-image backup;three derivative PNGs need sequential
+decode from unchanged original video at preserved RGBhashes. Human archive local
+only,no upload/training. No accepted camera/mesh or scan-derived shape is stored.
+
+Actual terminal-process/PID-reuse and resolved path/reparse/SHA/CRC checks precede
+18exclusive file deletions4288826bytes,including source-image duplicates and one
+exactpycache. Exclusive tracked entry removed separately via source edit;cleanup
+helper retired. No exclusive model/framework/environment was added.76protected
+identities(original38,37successful0332files and0332source)pass before/after
+deletion and suite.156tests pass8.841s(boundedworker10.734s/499773440bytes).
+Shared defaults/0207unchanged. Cleanup independent local commit precedes any
+new method;goal active and not complete. No background model worker remains.

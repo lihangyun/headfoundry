@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 0333:separate real observation failure from synthetic capacity and unrun geometry
+
+Source9b6a058,the registered three actual views yield46rawqueries and0complete
+tracks;all raw predictions preserved before screening.5local admits per target
+do not intersect. Forward/back errors are necessary consistency diagnostics,
+not true correspondence/medical errors. No camera/head precision measured;
+no causal all-method impossibility claim or reversal of0332's controlled pass.
+Private capsuleSHA44b149cf0b8e149cc3d1c1383e04965a10c56e69cb00a9fd48a95bc0e44b22d3,
+two review sheets/source/input rights/hash evidence;exclusive route retired.
+No new asset/service/weight/consent/training;medical/case002excluded from inference.
+
 ## 0332:owned controlled capacity is not patient or medical acceptance
 
 One fixed image-only estimator,sourcef816bdc,passes preregistered physical
