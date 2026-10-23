@@ -182,9 +182,10 @@ if __name__=='__main__':
     if ROOT!=Path('C:/workspace/headfoundry').resolve() or time.time()>DEADLINE:raise ValueError('scope/deadline fails')
     if sys.argv[1:] == ['worker']:worker()
     elif sys.argv[1:] == ['run']:
-        OUT.mkdir(exist_ok=False)
-        for p in (ROOT,ROOT/'assets',ROOT/'assets/private',OUT):
+        for p in (ROOT,ROOT/'assets',ROOT/'assets/private'):
             if getattr(p.lstat(),'st_file_attributes',0)&1024:raise ValueError('reparse output')
+        OUT.mkdir(exist_ok=False)
+        if getattr(OUT.lstat(),'st_file_attributes',0)&1024:raise ValueError('reparse output')
         write('entry.json',{'registered':'bc9fc60','source_sha256':sha(__file__),'started_utc':time.time()})
         env=dict(os.environ);env.update(PYTHONDONTWRITEBYTECODE='1',OPENBLAS_NUM_THREADS='4',OMP_NUM_THREADS='4',MKL_NUM_THREADS='4')
         record=run([sys.executable,'-B',str(Path(__file__)),'worker'],str(ROOT),env,OUT/'audit.log',OUT/'worker.json',120,1024**3)
