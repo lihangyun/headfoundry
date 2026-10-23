@@ -1,5 +1,15 @@
 # HeadFoundry technical research report
 
+## 0339:previously untried sparse descriptor/context matcher source entry
+
+See audit-0339-aliked-lightglue-source-entry.md for immutable primary links and
+limits. ALIKED-N16plus official ALIKED-LightGlue is distinct from retired XFeat/
+LighterGlue,DeDoDe and dense flow;head precision improvement is a hypothesis.
+17public receipts148382bytes pass SHA/Gitblob checks;original/model/main sources
+locked,Hub/resize/strictFalse/default-SuperPoint hazards recorded. No weights,
+dependency installation,inference or patient data opened. Source-only technical
+entry does not certify physical3px/medical2mm/model runtime or a new head.
+
 ## 0338:internal cycle policy is not necessary/sufficient physical precision
 
 Independent owned affine-map controls,not a clinical/model rerun:all96points

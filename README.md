@@ -1,5 +1,9 @@
 # HeadFoundry
 
+[0339 新对应候选预检](docs/audit-0339-aliked-lightglue-source-entry.md)已锁定
+ALIKED-N16／LightGlue官方来源及许可记录，发现自动下载、默认缩图和宽松加载等接入风险。
+仅完成源码检查；未下载权重、运行模型或生成新头模，下一关是独立的固定配置接入与物理精度验证。
+
 [0338 门禁逻辑审计](docs/audit-0338-cycle-versus-physical-error.md)确认：双向闭环误差
 不能替代真实点位精度，之前的入口止损不等于已测得三维精度失败。
 只完成数学反例与160项共享测试；未改原实验判定或3px／2mm要求，仍没有新增合格真人头模。

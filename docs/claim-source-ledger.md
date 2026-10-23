@@ -1,5 +1,16 @@
 # Claim-to-source ledger
 
+## 0339:source identity is not acquired weights or reconstruction performance
+
+CVGcommit eb42fee2d71449efb0aa5c10549752b5d75384d8and ALIKEDcommit
+683d7c65197395c0b3f01ebe76e1084a27e73a65bind17source/metadata receipts148382bytes.
+Exact ALIKED-N16trackedblob9449ca16f784aff7fa4c88ea0925b41f6411eef0is2738091bytes;
+CVGrelease matcherasset131252166is47632827bytes,digestunknown.No downloaded
+checkpoint SHA256/strict runtime/physical accuracy claimed. Separate Apache
+matcher and BSDextractor grants/notices,dependency exceptions and loading hazards
+are recorded in audit0339.No model/clinical decode,training/upload or camera/
+head promotion follows this source-only TECHNICAL_CHECK_PASSED.
+
 ## 0338:cycle closure cannot certify true pixel or metric precision
 
 See independent audit-0338and two generic regressions in test_endpoint_oracle.py.
