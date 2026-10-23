@@ -65,3 +65,54 @@ Sources checked2026-10-23:[native DIS API](https://docs.opencv.org/5.0/main_modu
 LICENSE.txt is MIT;underlyingOpenCV4.5+is Apache2. Reuse existing native library,
 not new model rights or blanket patent/FTO/redistribution clearance;record local
 license files/package identities before execution. No weights are involved.
+
+## Actual result:TECHNICAL_CHECK_PASSED conditional camera/depth capacity
+
+Registrationdf07795,executedsourcef816bdc,SHA256
+1875ffd4091735fdac38de748a5a81ed899f181fe9046b46f678ca20223e15be.
+Exact native image SHA matches0331;generator/camera/direct function ASTs match,
+then post-run independent audit also verifies identical geometric solver tail
+and entire physical evaluator AST. All source/solver identities remain fixed.
+Input sheet reviewed02:02:05UTC before inference;no patient material is opened.
+
+DIS admits86of96queries(69train/17held),not a count-only pass. All four fields
+finite nativefloat32. MEDIUM defaults:coarsestauto(-1),finest1,patch8/stride3,
+gradient25,refinement5,alpha20/delta5/gamma10/epsilon.009999999776,
+mean normalization/spatial propagation true. No parameters/setters changed.
+Geometric18evaluations,then direct12evaluations,each converged. Direct85-column
+omitted-dependency control max0. Whole-vector invalid trials are not pruned.
+
+| Independent fixed score | Geometric initial | Direct final | Required |
+|---|---:|---:|---:|
+| Focal px(true1200) |1200.557354|1200.236373|relative error<=2%|
+| Focal relative error |.000464462|.000196978|.02|
+| Held known3D p95 camera0/1/2 px |.200377/.332907/.379054|.084979/.137996/.131548|each<=3|
+| Held observed p95 camera0/1/2 px |.200377/.412489/.549325|.084979/.252878/.450318|each<=3|
+| Train point p95 normalized sceneunit |.002193199|.000894309|.01|
+| OpenCV replay max px |6.253e-13|5.684e-13|1e-9|
+| Wrong+.1radcamera p95 px |134.8724|134.8283|>3|
+
+Both states proper/positive/nonbound;zero included point/patch true visibility
+misses. Initial and final separately retained,not truth-selected. Paired direct
+refinement improves this single fixture;initial also passes,so do not claim
+photometric refinement alone caused admission orDISuniversally fixes tracking.
+0331rawLKendpoints absent;no per-pointLKaccuracy causal comparison is possible.
+
+Post-terminal raw96endpoint errors p95=2.496933/.561140px;86admitted endpoints
+p95=.302247/.404561px. All96finite/source first-hits valid. All raw predictions,
+FB masks/errors and field identities were saved BEFORE counts or true evaluation.
+These diagnostics never prune/reseed/refit. True visibility applies to the known
+surface projections,not an anatomical assertion about arbitrary video endpoints.
+
+Actual stages:prepare4.797s/315101184peak bytes,initialize2.219s/212844544,
+direct2.719s/147771392,evaluate1.454s/103870464,diagnostic1.437s/102895616.
+Main suite156tests9.652s(bounded worker11.844s/500334592bytes). Protected38and
+native image/source hashes pass. All workers terminal;no package/model/runtime
+installed. Retain small successful fixture atassets/private/dense-photo-0332:
+three input PNGs,one sheet,original truth,raw points,initial/final states,scores,
+source/input/license hashes,review,worker logs and independent verification.
+This is intentional successful evaluation material,not failed bulk to delete.
+
+NO actual-video camera score,new head,medicalmmoruser-visual acceptance. Planar
+patches/affine radiometry/three jointly visible views are declared limitations.
+Case002/skin/bone/training/upload/defaults/unrelated0207untouched. Full goal active.

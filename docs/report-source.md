@@ -1,5 +1,25 @@
 # HeadFoundry technical research report
 
+## 0332:complete raw-image camera/depth capacity passes on one owned context
+
+Native images hash-identical to0331;only endpoint initializer changes from
+independent sparse LK to direct bidirectional DIS MEDIUM.86/96complete queries,
+69train/17whole-point held. Geometric common-f/free-pose/allXYZ solver and direct
+patch/exposure refinement complete,followed by independent truth evaluation.
+Original geometric solver tail and physical evaluator ASTs are unchanged;
+no post-result gate/seed/count/scene/preset/precision retry. Sourcesdf07795/f816bdc.
+Final known3Dheld p95=.084979/.137996/.131548px,focal1200.236373(true1200),
+pointp95=.000894309normalized sceneunit versus required.01. Zero included point/
+patch true visibility misses. Correct initial geometry also passes;paired direct
+refinement improves this fixed fixture,not proof of real-skin/head accuracy.
+0267's failed long sequential DISidentity bridge remainsREJECT;no old runner,
+weights or temporal chain restored. Native spatial propagation is not novel.
+All raw96endpoints/FB/support masks and field hashes saved before admission;
+post-terminal truth diagnostics never feed estimation. Keep successful small
+fixture/source,not another retired model environment.156tests pass9.652s,
+38protected identities and native image hashes pass. Next is separately bounded
+domain/real-video correspondence and camera evidence,not patient head promotion.
+
 ## 0331:pointwise image initialization stops before direct information is measured
 
 Fixed owned3-view planar image generation passes;96queries produce47complete

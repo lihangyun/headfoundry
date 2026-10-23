@@ -1,5 +1,18 @@
 # Claim-to-source ledger
 
+## 0332:owned controlled capacity is not patient or medical acceptance
+
+One fixed image-only estimator,sourcef816bdc,passes preregistered physical
+camera/depth fixture. Final held known3Dmaxp95=.137996px,frel=.000196978,
+trainpointp95=.000894309sceneunit,alltruevisibilitychecks pass. Raw predictions,
+states/input/truth hashes and unchanged-evaluator audit remain local under
+assets/private/dense-photo-0332. NativeDIS uses existing OpenCV5.0.0 under its
+installed Apache2notice(Python packaging MIT);no weights/assets/consent added.
+Original procedural textures,not training data or human skin. No anatomical
+matching/real-video calibration/2mm/complete head/visual ACCEPT follows.0331
+has only count evidence,so no originalLKprecision comparison is claimed.0267
+long-range failure is neither retried nor reversed. Defaults remain unchanged.
+
 ## 0331:an initialization coverage stop does not measure the unexecuted optimizer
 
 47/96complete3-view tracks fail the explicit48entry policy. No solver or physical

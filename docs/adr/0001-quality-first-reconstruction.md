@@ -1,5 +1,17 @@
 # ADR 0001: quality-first clean-room reconstruction
 
+## 2026-10-23:freeze conditional direct-image capacity before domain transfer
+
+0332fully passes one fixed owned3-view camera/depth control after a different
+dense endpoint initializer. Retain the successful small image/truth/state fixture
+and original physical evaluator;do not erase priorLKentry or sequentialDISID
+failures. Passing a planar-patch/radiometric-model-exact context does not establish
+curved/specular/deforming skin observations or real-video anatomical identity.
+Before patient head fitting,require separately registered actual correspondence
+and camera evidence,with independent held scoring and no scan geometry in the
+estimator. Synthetic scene-unit error is not medicalmillimeters;all actual3px/
+fixed-surface2mm/whole-head/visual gates and production defaults stay unchanged.
+
 ## 2026-10-22:validate information on the final training fold
 
 0329shows one exact three-view common-point geometry has locally independent
