@@ -36,3 +36,26 @@ precision rescue. It does not prove all natural-video predictions impossible.
 No head fitting proceeds from a failed camera result. Preserve compact raw
 predictions/errors/source and cleanup exclusive failed integration before
 choosing any different route. Actual human3px/2mm/visual gates remain open.
+
+## Actual result: REJECT
+
+One inference completed in49.141s; conservative process-tree peak10,355,838,976B.
+The separate evaluator completed in1.250s/85,192,704B; its successful execution
+is not a successful physical result. Of96source points,77are inside all fixed
+crops and19are excluded by geometry alone. Per-view native projection p95:
+53.017983/81.290305/62.877786px versus3px. Focal relative errors:
+15.2949%/15.7570%,5.6013%/5.5932%,8.2235%/7.8846% versus2%.
+All scored depths are positive; rotations are proper (orthogonality2.22e-16).
+Truth replay max2.27e-13px and same-evaluator true-camera control2.54e-13px.
+Thus this is measured camera failure,not a numerical precision threshold,
+loading failure,or medical surface evaluation. No second prediction or rescue.
+
+Prediction SHA256:cfc02bee7f56e76b49e7848cd79ac624235b75c70fcd8fa82ab3d5a65458f36c.
+Private compact evidence:assets/private/closed-experiments/0348-lingbot/evidence.zip,
+5,388,789B,SHA256750c7b749e065baab1a8b409fd556e9863194129ca6de1d5cde5f2b780257c48.
+Archive CRC and each member hash verified; includes raw predictions/scores,
+full source/license receipts and local entry/evaluation logs,not weights/env.
+Source recovery35c963b; scoring wrapper and closeout follow in Git.
+No claim about real-video accuracy or general impossibility follows from this
+out-of-domain planar fixture. No new head or medical millimetre result exists.
+Exclusive integration cleanup must finish before another route begins.

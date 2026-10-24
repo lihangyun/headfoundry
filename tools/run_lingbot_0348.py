@@ -131,6 +131,13 @@ if __name__ == '__main__':
         infer()
     elif sys.argv[1:] == ['--evaluate']:
         evaluate()
+    elif sys.argv[1:] == ['--bounded-evaluate']:
+        from bounded_process import run
+        if (OUT/'evaluation-worker.json').exists():
+            raise SystemExit('evaluation already attempted; inspect saved evidence')
+        print(json.dumps(run([sys.executable, str(Path(__file__).resolve()), '--evaluate'],
+            ROOT, dict(os.environ), OUT/'evaluation.log',
+            OUT/'evaluation-worker.json', 60, 1024**3)))
     elif not sys.argv[1:]:
         from bounded_process import run
         OUT.mkdir(exist_ok=False)
