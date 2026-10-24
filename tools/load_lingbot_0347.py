@@ -13,7 +13,7 @@ OUT = ROOT / 'assets/private/lingbot-entry-0347'
 SOURCE = ROOT / 'assets/private/lingbot-source-0346'
 
 
-def verify_container():
+def verify_container(record=True):
     with zipfile.ZipFile(OUT / 'lingbot-map.pt') as archive:
         entries = archive.infolist()
         names = [item.filename for item in entries]
@@ -30,12 +30,13 @@ def verify_container():
                 raise ValueError('unexpected archive content: '+name)
     result = {'status': 'TECHNICAL_CHECK_PASSED', 'members': len(entries),
               'meaning': 'ZIP member inventory only; no pickle deserialization'}
-    (OUT / 'container-check.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+    if record:
+        (OUT / 'container-check.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
     print(json.dumps(result), flush=True)
 
 
-def worker():
-    verify_container()
+def worker(record=True):
+    verify_container(record)
     os.environ['HF_HUB_OFFLINE'] = '1'
     os.environ['HF_HUB_DISABLE_TELEMETRY'] = '1'
     receipt = json.loads((SOURCE / 'receipt.json').read_text(encoding='utf-8'))
@@ -88,7 +89,8 @@ def worker():
                  if not isinstance(state[key], torch.Tensor) or state[key].shape != expected[key].shape]
         coverage = {'missing': missing, 'extra': extra, 'wrong_shape': wrong,
                     'expected_keys': len(expected), 'checkpoint_keys': len(state)}
-        (OUT / 'state-coverage.json').write_text(json.dumps(coverage, indent=2), encoding='utf-8')
+        if record:
+            (OUT / 'state-coverage.json').write_text(json.dumps(coverage, indent=2), encoding='utf-8')
         if missing or extra or wrong:
             raise ValueError('strict state coverage failed')
         del expected
@@ -105,8 +107,10 @@ def worker():
                       torch_version=torch.__version__, device=torch.cuda.get_device_name(),
                       parameter_count=sum(p.numel() for p in model.parameters()),
                       cuda_peak_bytes=torch.cuda.max_memory_allocated(), coverage=coverage)
-        (OUT / 'load-result.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+        if record:
+            (OUT / 'load-result.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
         print(json.dumps(result), flush=True)
+        return model
 
 
 if __name__ == '__main__':
