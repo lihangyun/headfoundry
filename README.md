@@ -1,5 +1,9 @@
 # HeadFoundry
 
+[0347 本地加载](docs/experiment-0347-lingbot-local-entry.md)：固定 LingBot-Map 权重
+已核验并在 RTX3070 严格加载，1342项参数完整对应，显存峰值约2.81GB。
+三项相机坐标适配检查通过。尚未执行模型预测，也没有新增真人头模或医学精度结果。
+
 [0346 新候选源码核验](docs/audit-0346-lingbot-source-preflight.md)已锁定 LingBot-Map
 来源、公开许可和权重身份，核验41份文本并确认相机/裁剪接入约定。
 尚未运行模型，不能据此声称真人精度改善；下一步是固定配置的本地加载与验证。

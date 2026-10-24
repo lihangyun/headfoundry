@@ -5,6 +5,7 @@ import os
 from pathlib import Path
 import socket
 import sys
+import zipfile
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,7 +13,29 @@ OUT = ROOT / 'assets/private/lingbot-entry-0347'
 SOURCE = ROOT / 'assets/private/lingbot-source-0346'
 
 
+def verify_container():
+    with zipfile.ZipFile(OUT / 'lingbot-map.pt') as archive:
+        entries = archive.infolist()
+        names = [item.filename for item in entries]
+        pickles = [name for name in names if name.endswith('/data.pkl')]
+        if len(pickles) != 1 or len(names) != len(set(names)):
+            raise ValueError('ambiguous checkpoint inventory')
+        prefix = pickles[0].removesuffix('data.pkl')
+        allowed = {'data.pkl', 'byteorder', 'version', '.data/serialization_id',
+                   '.format_version', '.storage_alignment'}
+        for name in names:
+            relative = name.removeprefix(prefix)
+            if not name.startswith(prefix) or not (relative in allowed or
+                    relative.startswith('data/') and relative[5:].isdigit()):
+                raise ValueError('unexpected archive content: '+name)
+    result = {'status': 'TECHNICAL_CHECK_PASSED', 'members': len(entries),
+              'meaning': 'ZIP member inventory only; no pickle deserialization'}
+    (OUT / 'container-check.json').write_text(json.dumps(result, indent=2), encoding='utf-8')
+    print(json.dumps(result), flush=True)
+
+
 def worker():
+    verify_container()
     os.environ['HF_HUB_OFFLINE'] = '1'
     os.environ['HF_HUB_DISABLE_TELEMETRY'] = '1'
     receipt = json.loads((SOURCE / 'receipt.json').read_text(encoding='utf-8'))
@@ -87,7 +110,9 @@ def worker():
 
 
 if __name__ == '__main__':
-    if sys.argv[1:] == ['--worker']:
+    if sys.argv[1:] == ['--verify-container']:
+        verify_container()
+    elif sys.argv[1:] == ['--worker']:
         worker()
     elif not sys.argv[1:]:
         from bounded_process import run

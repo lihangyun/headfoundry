@@ -13,18 +13,20 @@ ENV = ROOT / '.venv-lingbot-0347'
 UV = Path('C:/Users/lihan/.local/bin/uv.exe')
 
 
-def install():
-    if ENV.exists():
+def install(recovery=False):
+    if ENV.exists() and not recovery:
         raise FileExistsError(ENV)
     env = dict(os.environ, UV_CACHE_DIR=str(OUT / 'uv-cache'),
                TEMP=str(OUT / 'temp'), TMP=str(OUT / 'temp'))
     (OUT / 'temp').mkdir(exist_ok=True)
-    subprocess.run([str(UV), 'venv', str(ENV), '--python', str(ROOT / '.venv/Scripts/python.exe')],
-                   cwd=ROOT, env=env, check=True)
+    if not recovery:
+        subprocess.run([str(UV), 'venv', str(ENV), '--python', str(ROOT / '.venv/Scripts/python.exe')],
+                       cwd=ROOT, env=env, check=True)
     python = str(ENV / 'Scripts/python.exe')
     subprocess.run([str(UV), 'pip', 'install', '--python', python,
                    'torch==2.8.0', 'torchvision==0.23.0',
-                   '--index-url', 'https://download.pytorch.org/whl/cu128'],
+                   '--index-url', 'https://download.pytorch.org/whl/cu128'] +
+                  (['--offline'] if recovery else []),
                   cwd=ROOT, env=env, check=True)
     subprocess.run([str(UV), 'pip', 'install', '--python', python,
                    'numpy==2.5.2', 'scipy==1.18.1', 'Pillow==12.3.0',
@@ -39,6 +41,13 @@ def install():
 if __name__ == '__main__':
     if sys.argv[1:] == ['--worker']:
         install()
+    elif sys.argv[1:] == ['--recovery-worker']:
+        install(recovery=True)
+    elif sys.argv[1:] == ['--recover-prepared-cache']:
+        record = run([sys.executable, str(Path(__file__).resolve()), '--recovery-worker'],
+                     ROOT, dict(os.environ), OUT / 'setup-recovery.log', OUT / 'setup-recovery-worker.json',
+                     seconds=240, working_bytes=8*1024**3)
+        print(json.dumps(record))
     elif not sys.argv[1:]:
         record = run([sys.executable, str(Path(__file__).resolve()), '--worker'],
                      ROOT, dict(os.environ), OUT / 'setup.log', OUT / 'setup-worker.json',
