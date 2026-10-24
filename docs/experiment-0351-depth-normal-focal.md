@@ -53,7 +53,12 @@ No model weights downloaded and no threshold/precision/conditioning sweep.
 
 Full compact result and resource receipts remain in
 assets/private/depth-normal-0351/{result.json,worker.json,worker.log}.
-Result SHA256 to be recorded with closeout. Source recoverya8f5ff1.
+Result SHA25657a4ba95594dded9a58da02b837167aabb92ce9eef551c56ada662aa6931e76d.
+Source recoverya8f5ff1.
 Real video camera,metric scale,medical2mm and complete head remain UNVERIFIED.
 Before any different route,retire this exclusive experiment runner;preserve
 the small complete report as evidence. No data/model/runtime cleanup required.
+
+Closeout:exclusive checker removed by exact tracked-file patch;no live tools/
+tests callers. No recursive deletion,original input reads or model installations.
+Retained small evidence is complete for this experiment;Git restores its runner.
