@@ -4,10 +4,72 @@ import json
 from pathlib import Path
 import time
 import sys
+import ast
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parents[1]
 REV = 'b9dd1b1de535e6d36e777fb42b8433c781bfd783'
+
+
+def complete_source():
+    """Inspect inert Python text, never load or execute the collected package."""
+    destination = ROOT / 'assets/private/lingbot-source-0346'
+    receipt_path = destination / 'receipt.json'
+    receipt = json.loads(receipt_path.read_text(encoding='utf-8'))
+    start = time.monotonic()
+    tree_url = f'https://api.github.com/repos/Robbyant/lingbot-map/git/trees/{REV}?recursive=1'
+    with urlopen(tree_url, timeout=15) as response:
+        tree_bytes = response.read(500001)
+    if len(tree_bytes) > 500000:
+        raise ValueError('tree metadata cap')
+    tree = json.loads(tree_bytes)
+    if tree.get('truncated') or tree.get('sha') != REV:
+        raise ValueError('incomplete or wrong source tree')
+    entries = [e for e in tree['tree'] if e['type'] == 'blob' and
+               (e['path'].startswith('lingbot_map/') and e['path'].endswith('.py') or
+                'license' in e['path'].lower() or 'notice' in e['path'].lower())]
+    known = {e['path']: e for e in receipt['files']}
+    imports = {}
+    try:
+        for entry in entries:
+            name = entry['path']
+            target = destination / name
+            if not target.resolve().is_relative_to(destination.resolve()) or target.is_symlink():
+                raise ValueError('unsafe source path')
+            if name in known:
+                data = target.read_bytes()
+                if hashlib.sha256(data).hexdigest() != known[name]['sha256']:
+                    raise ValueError('changed source snapshot')
+            else:
+                remaining = 100 - (time.monotonic()-start)
+                if remaining <= 0:
+                    raise TimeoutError('remaining collection budget')
+                url = f'https://raw.githubusercontent.com/Robbyant/lingbot-map/{REV}/{name}'
+                with urlopen(url, timeout=min(15, remaining)) as response:
+                    data = response.read(2*1024*1024 - receipt['bytes'] + 1)
+                if receipt['bytes'] + len(data) > 2*1024*1024:
+                    raise ValueError('total text cap')
+                data.decode('utf-8')
+            if hashlib.sha1(f'blob {len(data)}\0'.encode()+data).hexdigest() != entry['sha']:
+                raise ValueError('Git blob mismatch')
+            if name not in known:
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(data)
+                receipt['files'].append({'path': name, 'url': url, 'bytes': len(data),
+                                         'sha256': hashlib.sha256(data).hexdigest()})
+                receipt['bytes'] += len(data)
+            if name.endswith('.py'):
+                imports[name] = sorted({n.module or '.' for n in ast.walk(ast.parse(data))
+                                       if isinstance(n, ast.ImportFrom)} |
+                                      {a.name for n in ast.walk(ast.parse(data))
+                                       if isinstance(n, ast.Import) for a in n.names})
+        receipt['source_tree_verified'] = True
+        receipt['imports'] = imports
+    finally:
+        receipt['closure_elapsed_seconds'] = time.monotonic()-start
+        receipt_path.write_text(json.dumps(receipt, indent=2), encoding='utf-8')
+    print(json.dumps({'files': len(receipt['files']), 'bytes': receipt['bytes'],
+                      'elapsed': receipt['closure_elapsed_seconds'], 'imports': imports}))
 
 
 def verify_and_pin_card():
@@ -89,6 +151,8 @@ def main():
 if __name__ == '__main__':
     if sys.argv[1:] == ['--verify-and-pin-card']:
         verify_and_pin_card()
+    elif sys.argv[1:] == ['--complete-source']:
+        complete_source()
     elif not sys.argv[1:]:
         main()
     else:

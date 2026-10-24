@@ -88,3 +88,30 @@ bounded local checkpoint acquisition/strict loading and hardware trial. No
 patient pass until coordinate replay and independent camera validation are
 defined. Proceed autonomously within existing authorization. Do not spawn
 another camera-ambiguity toy audit instead of completing this candidate.
+
+## Source closure follow-up,2026-10-24
+
+Collection completed in16.093s:41text files/604069bytes total. All package Python
+files and available license/notice files were checked against the pinned Git
+tree blob identities; an AST import inventory is in receipt.json. This is
+inert text, not an installed framework. Receipt replay verifies all41hashes.
+FlashInfer import is guarded by ImportError; SDPA selection avoids its runtime
+cache path. Optional lietorch/distortion imports are also guarded and unused
+for direct camera/depth inference. DINO backbone contains no load call;
+the optional aggregator load identified above is the remaining load boundary.
+No extra checkpoint fetch is needed by the inspected direct entry. Torch,
+NumPy,SciPy,einops,typing_extensions,huggingface_hub,tqdm are its external
+imports; Pillow/TorchVision are used by the optional image-loading utility.
+Their exact installed distribution licenses/versions must accompany runtime.
+
+Coordinate clarification from geometry.py: upstream unprojection uses integer
+arange pixel coordinates and principal point W/2,H/2. W/2 alone is NOT proof
+of an edge-origin convention. Preserve these numbers in model coordinates;
+apply the actual PIL integer-center resize/crop affine when mapping to native
+pixels. Do not blindly subtract0.5from the predicted principal point. Earlier
+edge-coordinate formula is only a coordinate conversion, not an instruction
+to reinterpret the network output.
+
+TECHNICAL_CHECK_PASSED for pinned source acquisition/inventory; model behavior
+remains UNVERIFIED. Hardware readout: RTX3070,8192MiB total,6493MiB then free;
+this is not a successful capacity test. Source budget stayed below120s/2MiB.
