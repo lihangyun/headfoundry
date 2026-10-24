@@ -62,3 +62,12 @@ assets/private/normal-integrability-0350/result.json. No dense output was made.
 Source recoverybe5fe99. Retire the exclusive checker after recording this result;
 retain the report as necessary evidence,not an active failed runtime. No original
 or successful fixture was modified. No new head or medical precision result.
+
+## Completed closeout
+
+Result SHA2565c88710b27767df6936f37eea8e41b05ba841f4e3f4c589221a829eeee35d00e.
+Removed only tools/check_normal_0350.py through an exact tracked-file patch;
+no recursive deletion,framework,weight or environment changes. Complete small
+JSON is the retained evidence,not a duplicate generated mesh. Source can be
+recovered frombe5fe99;no live callers remain.163shared tests pass in8.550s.
+Unrelated0207SHA remains eebdad1f8c22de9773927ae1e8961ed3159077f84ffff9b14298c0a3290ae8ef.
