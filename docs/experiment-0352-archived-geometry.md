@@ -64,3 +64,11 @@ worker.json and worker.log. Result SHA256
 837a6667de5afa39beb09331110d804b8a3eb4520a01b25771d827d316b6dadd.
 No public weights, extra environment or reconstructed mesh to delete. Retire
 exclusive runner after recording this result; no seed/split/threshold rescue.
+
+Closeout: result committed312fd1f; exclusive runner removed using exact tracked
+path, no callers or 0352 bytecode found. No recursive deletion or original
+patient-file access occurred. Five small evidence files remain; code recoverable
+at ce448e7. Existing0207 SHA remains
+eebdad1f8c22de9773927ae1e8961ed3159077f84ffff9b14298c0a3290ae8ef.
+Remaining shared suite:163 tests passed in9.297s. Production/shared source
+unchanged. No final head and no medical/visual acceptance; goal remains unfinished.
