@@ -50,8 +50,8 @@ Owned checker controls TECHNICAL_CHECK_PASSED: exact leave-one-view-out maximum
 2.5421149729252077e-13px; injected wrong camera0 observations yield40px;
 negative depth rejected. These are software controls, not patient evidence.
 
-Actual geometry REJECT: original recoverPose seed failed its positive-support
-requirement (positive count >=90% of Essential RANSAC support). It stopped before
+Actual geometry REJECT: original recoverPose seed failed its combined-support
+requirement (returned count >=90% of Essential RANSAC support). It stopped before
 bundle optimization, held predictive scoring, direct refinement, mesh or medical
 evaluation. The legacy initializer did not serialize camera index, E or counts
 before raising; these details are unavailable, not guessed. Do not rerun to
@@ -72,3 +72,9 @@ at ce448e7. Existing0207 SHA remains
 eebdad1f8c22de9773927ae1e8961ed3159077f84ffff9b14298c0a3290ae8ef.
 Remaining shared suite:163 tests passed in9.297s. Production/shared source
 unchanged. No final head and no medical/visual acceptance; goal remains unfinished.
+
+Correction0353: recoverPose count includes a far-depth filter, not only positive
+depth. Local exact-scene test confirms this. The earlier wording was too broad;
+the actual patient cause remains unknown because pre-rejection states were not
+serialized. See audit-0353-pose-support-semantics.md. Original REJECT stands,
+with no patient rerun, threshold changes or promotion.
