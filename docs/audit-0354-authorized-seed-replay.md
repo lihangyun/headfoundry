@@ -39,3 +39,9 @@ b3f99fdd5f66580bd5b80aecc4b97c727d392f5269ead8ace8d4d509132abb90;
 result.json SHA256
 9fe07b1158b503f121a8d37495ccf925484da64aa253d35de3fbbcc207873f1e.
 Keep both plus worker.json/worker.log; no model or environment acquired.
+
+Closeout: one-shot runner removed by exact tracked path, no callers; recovery
+38738c1, result commitf3f983b. No recursive deletion or original data modification.
+Four compact diagnostic files retained.164 shared tests passed in8.550s.
+Unrelated0207 SHA unchanged eebdad1f8c22de9773927ae1e8961ed3159077f84ffff9b14298c0a3290ae8ef.
+No production defaults changed, no head generated, no visual/medical acceptance.
