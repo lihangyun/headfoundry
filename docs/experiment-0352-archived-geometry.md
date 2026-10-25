@@ -37,3 +37,30 @@ split, filtering, threshold or precision. Retain complete small receipts/states,
 source Git recovery; remove exclusive runner after failure, test shared suite
 and commit cleanup separately. Existing original inputs, 0207 and defaults stay
 unchanged. No model environment restored. Use existing NumPy/SciPy/OpenCV only.
+
+## Actual result and limits
+
+Source recovery ce448e7. One worker, 4.844 seconds, 116256768 bytes conservative
+tree peak, exit1. Exact archive and raw-observation hashes passed. Read-only
+intake inspection corrected the member name to raw-observations.npz before
+scientific execution; its unchanged admitted_all mask contains the 22 tracks.
+No matching or feature extraction occurred.
+
+Owned checker controls TECHNICAL_CHECK_PASSED: exact leave-one-view-out maximum
+2.5421149729252077e-13px; injected wrong camera0 observations yield40px;
+negative depth rejected. These are software controls, not patient evidence.
+
+Actual geometry REJECT: original recoverPose seed failed its positive-support
+requirement (positive count >=90% of Essential RANSAC support). It stopped before
+bundle optimization, held predictive scoring, direct refinement, mesh or medical
+evaluation. The legacy initializer did not serialize camera index, E or counts
+before raising; these details are unavailable, not guessed. Do not rerun to
+recover them. This does not establish which observations are wrong or prove the
+video impossible. Do not promote this into measured3px/2mm failure or success.
+
+Complete small evidence remains assets/private/archived-geometry-0352:
+partition.npz (all22/endpoints/train13/held9), controls.json, result.json,
+worker.json and worker.log. Result SHA256
+837a6667de5afa39beb09331110d804b8a3eb4520a01b25771d827d316b6dadd.
+No public weights, extra environment or reconstructed mesh to delete. Retire
+exclusive runner after recording this result; no seed/split/threshold rescue.
