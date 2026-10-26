@@ -19,7 +19,7 @@ def denied(*args, **kwargs):
     raise RuntimeError("network forbidden during strict loading")
 
 
-def main():
+def main(report_dir=OUT):
     socket.socket.connect = denied
     socket.create_connection = denied
     import torch
@@ -61,14 +61,15 @@ def main():
     shape_errors = [k for k in set(expected) & set(state) if expected[k].shape != state[k].shape]
     report = dict(status="UNVERIFIED", missing=missing, extra=extra, shape_errors=shape_errors,
                   expected_keys=len(expected), supplied_keys=len(state), model_forward="NOT_RUN")
-    (OUT / "load-result.json").write_text(json.dumps(report, indent=2))
+    (report_dir / "load-result.json").write_text(json.dumps(report, indent=2))
     assert not missing and not extra and not shape_errors
     model.load_state_dict(state, strict=True)
     assert all(torch.equal(v, state[k]) for k, v in model.state_dict().items())
     report.update(status="TECHNICAL_CHECK_PASSED", all_loaded_tensors_exact=True,
                   packages=sorted((d.metadata["Name"], d.version) for d in importlib.metadata.distributions()))
-    (OUT / "load-result.json").write_text(json.dumps(report, indent=2))
+    (report_dir / "load-result.json").write_text(json.dumps(report, indent=2))
     print(json.dumps(report, indent=2))
+    return model
 
 
 if __name__ == "__main__":
