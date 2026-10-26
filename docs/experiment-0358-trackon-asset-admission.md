@@ -34,3 +34,24 @@ Authorize engineering replay `download-birthguard` with new receipt, identical
 assets and original600s/1GiB limits; retain initial failure untouched. No model
 has run, no physical stop condition is being relaxed. Resume inspection only
 if the corrected download succeeds.
+
+## Actual results
+
+Corrected download completed20.110s, observed verified-age worker-tree peak
+49451008bytes. Both binaries match0356 exact publisher size/SHA256; no alternative
+checkpoint. Pinned DINOv2 config matches publisher Git blob5664b325e6258d3960fad8c4c1cff958f3cc2272.
+Safe inspection completed5.078s, observed peak325316608bytes:
+509tracker tensors /23431461elements, all finite;223backbone tensors /
+22056576F32elements, contiguous valid safetensors offsets and full payload size.
+Backbone numerical finiteness is not measured by header inspection. Tracker was
+read with weights_only=True; no arbitrary-pickle fallback. Config says
+384hidden,12layers,6heads,14patch,zero drop-path, matching the selected small model.
+
+Evidence retained locally in `assets/private/trackon-assets-0358`: two exact
+weights, config.json, tensor-inventory.json and original/corrected worker logs
+and receipts. Files are not uploaded or committed. Total selected weight bytes
+182150387. Full architecture/state-key coverage and forward behavior remain
+UNVERIFIED; no inference, head, camera or medical scoring occurred.
+167shared tests pass8.845s. Status TECHNICAL_CHECK_PASSED for asset inspection,
+not reconstruction acceptance. Candidate remains active, not a failed route;
+continue strict architecture loading rather than redownload/reselect weights.

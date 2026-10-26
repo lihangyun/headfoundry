@@ -22,6 +22,13 @@ def verify(path, size, digest):
         raise ValueError("hash mismatch: " + path.name)
 
 
+def verify_config():
+    data = (OUT / "config.json").read_bytes()
+    digest = hashlib.sha1(b"blob " + str(len(data)).encode() + b"\0" + data).hexdigest()
+    if digest != "5664b325e6258d3960fad8c4c1cff958f3cc2272":
+        raise ValueError("config drift")
+
+
 def download():
     for asset in json.loads(LOCK.read_text())["assets"]:
         target = OUT / asset["filename"]
@@ -50,10 +57,12 @@ def download():
         if digest != "5664b325e6258d3960fad8c4c1cff958f3cc2272":
             raise ValueError("config drift")
         config.write_bytes(data)
+    verify_config()
 
 
 def inspect():
     import torch
+    verify_config()
     for asset in json.loads(LOCK.read_text())["assets"]:
         verify(OUT / asset["filename"], asset["expected_bytes"], asset["publisher_sha256"])
     raw = torch.load(OUT / "trackon2_dinov2_checkpoint.pt", map_location="cpu", weights_only=True)
