@@ -29,3 +29,34 @@ One bounded60s/1GiB worker; no human/scan/old predictions, weights or packages.
 Source recovery commit before execution. Save full scalar result and original
 small numeric inputs. No seeds/noise/threshold/precision sweep. On failure keep
 compact evidence and remove exclusive checker before any different route.
+
+## Result: REJECT the unconstrained lifted linear recipe
+
+Source8d3fda6. One worker0.547s/58245120B conservative process-tree peak,exit0.
+Exact input: rank7, focal1200.0000000000011, scale1.2000000000000042,
+shifts0.30000000000000976/-0.20000000000001056. Nonlinear consistency3.39e-14,
+alignment p95 1.32e-14scene units; projection p95 2.84e-13/1.57e-12px.
+Plane control refuses its zero column. These establish conditional algebraic
+capacity only,not noisy-data utility or a pretrained depth-model performance.
+
+Fixed stress: rank7 and positive corrected depths, but focal501.767474px,
+58.186%relative error; projection p95 177.94794/202.90859px. Lifted consistency
+2.251814 fails1e-6 by a large margin. Example:b1=-2.12355 while independently
+estimated b1²=5.56216,not the square of that b1. Multiplicative constraints are
+similarly violated. Unconstrained lifting relaxes physical algebraic relations;
+inexact data need not retain them. This observed mechanism invalidates reading
+the linear solution directly as a physical camera. It is not proof that all
+noise error is due to this relaxation or that a constrained solver will pass.
+
+Stop without changing cutoff,noise,seed,precision or adding post-result fitting.
+No deep model,patient input or reconstructed head was produced. Result JSON,
+40point original input NPZ and worker receipts stay as compact evidence in
+assets/private/depth-distance-0367. They include the successful exact control;
+they are not failed mesh/weight bulk. Full source recoverable at8d3fda6.
+
+Reusable lesson: distance constraints can identify this noiseless configuration;
+the seven lifted terms are not seven physically independent parameters. A
+future mechanism must enforce their coupled relations during estimation and
+verify sensitivity separately. That would need new preregistration,not a claim
+that this failed initializer merely needs a different threshold. This finding
+does not validate any actual monocular depth source or independent visibility.
