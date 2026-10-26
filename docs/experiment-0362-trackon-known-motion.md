@@ -25,3 +25,32 @@ Preparation<=300s/2GiB; forward<=600s/4GiB; one fixed config and input set.
 Stop on source reproduction failure, coverage, runtime/budget or endpoint gate
 failure. No image/point/threshold/precision rescue; failed control prevents
 patient execution and requires documented closeout before another route.
+
+## Actual result
+
+Preregisteredf3a4631; one forward run, no retries. Preparation15.844s /
+284921856bytes verified-age process-tree peak. All three anchor image arrays
+exactly match0332;96source corners,90geometrically visible across all13frames.
+Frozen input archive SHA256:
+7530a914000d6928c81b15d16427cb57649e70d931be1173fa9176a14bae81e1.
+
+Inference45.469s /812318720bytes peak. All13actual feature/track forwards
+completed. Native endpoint p95 by frame in pixels:
+[0.690859,1.325981,1.238681,1.332564,1.267323,1.322763,1.302822,
+1.396594,1.347118,1.272691,1.371948,1.427815,1.590252].
+Every frame passes the preregistered3pxendpoint control; no confidence pruning.
+Evaluation0.484s /46620672bytes.167shared tests pass9.051s.
+
+TECHNICAL_CHECK_PASSED for owned smooth-view endpoint tracking only. The
+model's result has not yet been used to estimate/calibrate a camera; no focal,
+cheirality,held-view camera,head or medical2mm success is claimed. This textured
+rectangle domain is not evidence of human-skin performance. Loader report's
+model_forward=NOT_RUN describes its strict-load substage; infer.log separately
+records completed frames0..12 and predictions.npz preserves their outputs.
+
+Evidence at assets/private/trackon-motion-0362: inputs/truth fixed before
+inference,prepared identity,96point predictions/visibility,all endpoint errors,
+fixed90point mask,result and stage logs/receipts. Successful fixture retained.
+Next gate: camera estimation from predictions only, with scene geometry/K/poses
+held for independent evaluation; do not initialize from benchmark truth or
+promote directly to patient head fitting.
