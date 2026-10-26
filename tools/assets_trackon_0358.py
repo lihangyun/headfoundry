@@ -112,16 +112,17 @@ def main():
         download()
     elif stage == "inspect-worker":
         inspect()
-    elif stage in ("download", "inspect"):
+    elif stage in ("download", "download-birthguard", "inspect"):
         receipt = OUT / (stage + "-worker.json")
         if receipt.exists():
             raise RuntimeError("inspect existing stage receipt before replay")
+        action = "download" if stage == "download-birthguard" else stage
         env = os.environ.copy()
         env.update(PYTHONDONTWRITEBYTECODE="1", OMP_NUM_THREADS="4", HF_HUB_OFFLINE="1")
-        python = ROOT / (".venv/Scripts/python.exe" if stage == "download" else ".venv-trackon0357/Scripts/python.exe")
-        result = run([str(python), __file__, stage + "-worker"], ROOT, env,
-                     OUT / (stage + ".log"), receipt, 600 if stage == "download" else 120,
-                     (1 if stage == "download" else 2) * 1024**3)
+        python = ROOT / (".venv/Scripts/python.exe" if action == "download" else ".venv-trackon0357/Scripts/python.exe")
+        result = run([str(python), __file__, action + "-worker"], ROOT, env,
+                     OUT / (stage + ".log"), receipt, 600 if action == "download" else 120,
+                     (1 if action == "download" else 2) * 1024**3)
         print(json.dumps(result))
         if result["status"] != "TECHNICAL_CHECK_PASSED":
             raise SystemExit(1)

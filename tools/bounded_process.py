@@ -6,6 +6,17 @@ import subprocess
 import time
 
 
+def descendant_ids(rows, root, not_before):
+    """Windows PPIDs outlive their parent; reject reused-PID ancestral links."""
+    eligible = [(pid, parent) for pid, parent, born in rows if born >= not_before]
+    found = {root}
+    while True:
+        expanded = found | {pid for pid, parent in eligible if parent in found}
+        if expanded == found:
+            return found
+        found = expanded
+
+
 def run(command, cwd, env, log_path, record_path, seconds, working_bytes):
     class Memory(ctypes.Structure):
         _fields_ = [('cb',ctypes.c_ulong),('faults',ctypes.c_ulong)]+[
@@ -21,6 +32,8 @@ def run(command, cwd, env, log_path, record_path, seconds, working_bytes):
     kernel.OpenProcess.argtypes = [ctypes.c_ulong,ctypes.c_int,ctypes.c_ulong]
     kernel.OpenProcess.restype = ctypes.c_void_p
     kernel.CloseHandle.argtypes = [ctypes.c_void_p]
+    kernel.GetProcessTimes.argtypes = [ctypes.c_void_p] + [ctypes.POINTER(ctypes.c_ulonglong)] * 4
+    kernel.TerminateProcess.argtypes = [ctypes.c_void_p, ctypes.c_uint]
     measure = ctypes.windll.psapi.GetProcessMemoryInfo
     measure.argtypes = [ctypes.c_void_p,ctypes.POINTER(Memory),ctypes.c_ulong]
 
@@ -36,22 +49,31 @@ def run(command, cwd, env, log_path, record_path, seconds, working_bytes):
             if not ok:
                 raise OSError('process inventory unavailable')
             while ok:
-                rows.append((int(entry.pid),int(entry.parent)))
+                handle = kernel.OpenProcess(0x1000,False,entry.pid)
+                if handle:
+                    try:
+                        times = [ctypes.c_ulonglong() for _ in range(4)]
+                        if kernel.GetProcessTimes(handle, *(ctypes.byref(t) for t in times)):
+                            rows.append((int(entry.pid),int(entry.parent),times[0].value))
+                    finally:
+                        kernel.CloseHandle(handle)
                 ok = kernel.Process32NextW(snapshot,ctypes.byref(entry))
         finally:
             kernel.CloseHandle(snapshot)
-        found = {pid}
-        while True:
-            next_set = found|{child for child,parent in rows if parent in found}
-            if next_set==found:
-                return found
-            found = next_set
+        return descendant_ids(rows, pid, not_before)
 
     def kill_tree(worker):
         if worker.poll() is None:
-            executable = os.path.join(os.environ.get('SystemRoot','C:/Windows'),'System32','taskkill.exe')
-            subprocess.run([executable,'/PID',str(worker.pid),'/T','/F'],stdout=subprocess.DEVNULL,
-                           stderr=subprocess.DEVNULL,creationflags=subprocess.CREATE_NO_WINDOW,timeout=10)
+            # Do not let taskkill /T follow stale parent IDs into unrelated apps.
+            for pid in sorted(descendants(worker.pid) - {worker.pid}):
+                handle = kernel.OpenProcess(0x1001, False, pid)
+                if handle:
+                    try:
+                        times = [ctypes.c_ulonglong() for _ in range(4)]
+                        if kernel.GetProcessTimes(handle, *(ctypes.byref(t) for t in times)) and times[0].value >= not_before:
+                            kernel.TerminateProcess(handle, 1)
+                    finally:
+                        kernel.CloseHandle(handle)
             if worker.poll() is None:
                 worker.kill()
 
@@ -60,6 +82,7 @@ def run(command, cwd, env, log_path, record_path, seconds, working_bytes):
     record = {'status':'RUNNING','started_utc':time.time(),'peak_working_set':0,
               'measurement_scope':'conservative sum of observed worker-tree historical process peaks'}
     with log_path.open('w',encoding='utf8') as log:
+        not_before = int((time.time() + 11644473600) * 10000000)
         worker = subprocess.Popen(command,cwd=cwd,env=env,stdout=log,stderr=subprocess.STDOUT,creationflags=subprocess.CREATE_NO_WINDOW)
         record['pid'] = worker.pid
         record_path.write_text(json.dumps(record,indent=2))
