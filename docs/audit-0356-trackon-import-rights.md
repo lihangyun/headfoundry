@@ -93,3 +93,34 @@ capture with full import closure, independent coordinate helper and explicitly
 offline full-state loader plan. Only after that may software admission install
 an isolated runtime; patient inference remains prohibited until admission and
 physical controls. No original/shared source changed; docs-only validation.
+
+## Actual source capture, 2026-10-26
+
+`tools/capture_trackon_0356.py` now captures ten explicitly selected files as
+non-importable `.txt` evidence under `assets/private/trackon-source-0356`.
+Each file's size and Git blob SHA1 are checked against the pinned repository
+tree; SHA256 and AST import statements are recorded in capture.json. The root
+MIT notice is retained. No weights, runtime, excluded coordinate helper,
+evaluation/training code, patient files or DINOv3 source were downloaded.
+This is source evidence, not an executable or commercially admitted adapter.
+
+Actual capture succeeded; a second `--offline` run revalidated all ten files
+without network access or importing vendor code. The source tree is cached for
+that check. This checks integrity against the captured publisher tree, not an
+independent signature or complete provenance of inherited code.
+
+Inspection of the captured Backbone confirms the DINOv3 import is conditional,
+not an unconditional DINOv2 dependency. Its DINOv2 branch still defaults on any
+other name, so the eventual adapter must enforce exact `dinov2_s`, not retain
+that permissive fallback. Core and reranking still import the excluded
+coordinate module; predictor still imports the excluded evaluator. AST lists
+are an inventory, not a claim that the remaining import closure is runnable.
+MMCV operator replacement and separately pinned backbone loading remain open.
+
+Shared regression:164 tests pass in8.734s. No production source/default changed;
+unrelated0207 SHA256 remains
+eebdad1f8c22de9773927ae1e8961ed3159077f84ffff9b14298c0a3290ae8ef.
+No head, camera, physical accuracy or medical-surface acceptance was measured.
+Next implementation: resolve the retained adapter/operator notices and implement
+the minimal inference boundary, then bounded isolated software admission;
+do not repeat model selection or run patient inference before physical controls.
