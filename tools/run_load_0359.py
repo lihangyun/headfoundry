@@ -14,7 +14,7 @@ def main():
     python = ROOT / ".venv-trackon0357/Scripts/python.exe"
     if stage == "install":
         command = ["C:/Users/lihan/.local/bin/uv.exe", "--no-cache", "pip", "install", "--python", str(python),
-                   "transformers==4.56.1", "safetensors==0.6.2", "numpy==2.2.6"]
+                   "-r", str(ROOT / "examples/trackon-0359-load-requirements.txt")]
         seconds, memory = 600, 4 * 1024**3
     elif stage == "check":
         command = [str(python), str(ROOT / "tools/check_trackon_load_0359.py")]

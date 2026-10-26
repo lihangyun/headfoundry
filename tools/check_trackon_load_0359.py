@@ -32,7 +32,7 @@ def main():
     for asset in json.loads((ROOT / "examples/trackon2-0356.preflight-lock.json").read_text())["assets"]:
         verify(assets / asset["filename"], asset["expected_bytes"], asset["publisher_sha256"])
     args = SimpleNamespace(input_size=[384,512], M=24, M_i=72, D=256, K=16,
-        decoder_layer_num=3, predicton_layer_num=3, rerank_layer_num=3,
+        decoder_layer_num=3, predicton_head_layer_num=3, rerank_layer_num=3,
         vit_backbone="dinov2_s", vit_upsample_factor=1, grad_checkpoint=True, delta_v=.8)
     # Read exact numeric field spelling from frozen config without a YAML dependency.
     for line in (ROOT / "assets/private/trackon-source-0356/config/test_dinov2.yaml.txt").read_text().splitlines():
