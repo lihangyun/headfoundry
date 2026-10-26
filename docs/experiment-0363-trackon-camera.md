@@ -51,4 +51,6 @@ measurement or likeness acceptance was performed. Stop this configuration.
 Closeout pending: inventory exclusive failed-route dependencies, preserve a
 compact hashed archive and successful shared fixtures, then remove failed-route
 components and commit cleanup separately before starting any different route.
-No cleanup has yet been claimed or new route authorized by this result.
+Closeout is now recorded in cleanup-0363-trackon-camera.md. The original
+trackon-camera-0363 directory was removed after its compact evidence was archived
+under assets/private/cleanup-0363/evidence.zip. No new route follows implicitly.
