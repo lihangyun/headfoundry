@@ -60,3 +60,14 @@ future mechanism must enforce their coupled relations during estimation and
 verify sensitivity separately. That would need new preregistration,not a claim
 that this failed initializer merely needs a different threshold. This finding
 does not validate any actual monocular depth source or independent visibility.
+
+## Closeout
+
+Result commit2394b88; removed one exclusive checker3942Git-source bytes through
+an exact file patch, no recursive deletion. No live callers or0367bytecode found.
+No weights/environment installed.167shared tests pass in9.180s. Original human
+assets were never opened or targeted; existing unrelated0207 remains untouched.
+Compact result SHA25609846f8d17c24723118bb1f41393e14c231ccfaa17940bccff0ef63263b2f8f4;
+input SHA256812bbc4ed7c53c3d7d391482efb9dbb70991bba2318d9798172f36d562fd68f3.
+Small input/result/receipts remain complete evidence, not a full pretrained model
+backup. Source recovery8d3fda6. No new route executed before this closeout.
