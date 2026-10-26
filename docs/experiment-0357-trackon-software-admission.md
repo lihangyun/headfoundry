@@ -25,3 +25,41 @@ TECHNICAL_CHECK_PASSED; full model and real reconstruction remain UNVERIFIED.
 Use full pinned Track-On2 requirements only as compatibility evidence; do not
 install its training/evaluation list. Actual selected package versions and
 results will be recorded after execution. Main environment/defaults unchanged.
+
+## Actual operator result
+
+Preregistration746c471. Installation succeeded in115.843s, conservative observed
+process-tree peak88416256bytes. Isolated `.venv-trackon0357` has Torch2.8.0+cpu
+and nine supporting packages, now frozen in
+`examples/trackon-0357-operator-requirements.txt`. Initial install resolved those
+supporting packages; this is not a claim they were all pinned before resolution.
+No MMCV compiled package, transformers, tracker/backbone weights or patient
+inputs were installed/loaded. NumPy is absent in this isolated environment;
+Torch emits an initialization warning, but these controls do not use NumPy.
+
+Operator check succeeded in4.578s, conservative observed peak208703488bytes.
+AST equality confirms the official CPU reference function was not changed.
+Independent scalar bilinear oracle covers2batches,3queries,2heads,2levels,
+4samples,3channels and out-of-bounds samples. Maximum absolute errors:
+FP64 2.220446049250313e-16; FP32 1.3219964589694655e-7.
+Analytic center/outside samples, eight parameter names, identity projection,
+all-masked values, residual addition,2D/4D references and sequence-first layout
+also pass. These are finite software controls, not exhaustive equivalence to
+the CUDA implementation, checkpoint compatibility or model quality evidence.
+
+Sources/notices retained at `assets/private/trackon-software-0357`, with pinned
+SHA256 validation before reuse. Generated `hf_deformable.py` SHA256:
+4a48eb47c274f5cc888cfe75a0761a53701dc106c90ea70626c73a30397a4137.
+Changes from upstream: remove extension/registry/decorator imports, use nn.Module
+and local equivalent initialization helpers, explicitly choose official CPU
+reference. No fake mmcv namespace and no altered learned parameter names.
+Reports:source-record.json,controls.json,install/check-worker.json and logs.
+Network socket connect is denied during controls; this is an in-process guard,
+not an OS-level sandbox. No model code is imported by this control.
+
+Shared164 tests pass in8.898s; unrelated0207 hash remains unchanged. Status is
+TECHNICAL_CHECK_PASSED for operator controls only; real reconstruction remains
+UNVERIFIED. Keep this successful component for the candidate integration.
+Next: inference-only Track-On2 adapter with independently defined coordinates,
+strict local DINOv2 loading and complete checkpoint tensor accounting. Full model
+runtime permission in0356 remains false until those boundaries are implemented.

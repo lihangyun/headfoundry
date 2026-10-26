@@ -84,7 +84,7 @@ def xavier_init(module, distribution="uniform", bias=0.):
     code = header + "\n\n".join(ast.unparse(n) for n in selected) + "\n"
     compile(code, "hf_deformable.py", "exec")  # Syntax only; never execute here.
     assert "ext_module" not in code and "import mmcv" not in code
-    (OUT / "hf_deformable.py").write_text(code, encoding="utf-8")
+    (OUT / "hf_deformable.py").write_text(code, encoding="utf-8", newline="\n")
     report = dict(status="UNVERIFIED", model_runtime_allowed=False, files=records,
                   generated_sha256=hashlib.sha256(code.encode()).hexdigest())
     (OUT / "source-record.json").write_text(json.dumps(report, indent=2) + "\n")

@@ -22,7 +22,8 @@ def main():
             subprocess.run([UV, "--no-cache", "venv", "--python", str(ROOT / ".venv/Scripts/python.exe"),
                             str(PYTHON.parents[1])], check=True, timeout=30, env=env)
         command = [UV, "--no-cache", "pip", "install", "--python", str(PYTHON),
-                   "--index-url", "https://download.pytorch.org/whl/cpu", "torch==2.8.0+cpu"]
+                   "--index-url", "https://download.pytorch.org/whl/cpu", "-r",
+                   str(ROOT / "examples/trackon-0357-operator-requirements.txt")]
         seconds, memory = 600, 4 * 1024**3
     elif stage == "check":
         command = [str(PYTHON), str(ROOT / "tools/check_operator_0357.py")]
