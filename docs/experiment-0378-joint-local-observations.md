@@ -46,3 +46,30 @@ All lower-cost observations are descriptive, never physical truth. On failure
 archive small evidence/hash/recovery, remove exclusive runner and redundant
 images (none planned), verify shared suite/protected hashes, independent cleanup
 commit. Success retains only minimal replayable component/evidence. No sweep.
+
+## Actual fixed execution
+
+Implementation recovery e23b911; one worker9.578s, conservative peak221335552B,
+exit0 (execution only). Owned translated/gain-offset control max error
+0.004618518px; flat and out-of-domain negatives rejected. All1041nativeRGB hashes
+and original rights/source identities verified. No model, scan or case002 read.
+
+All13training patches converged. SourceID270 (partition index9) reached target1
+x displacement-4px, so whole candidate REJECT under the registered3.99boundary
+rule. Other12 passed numerical/domain checks only; none independently certified
+physical accuracy. Every final unrobust residual norm decreased, which is not
+proof of correct identity. All9held observations and all reference coordinates
+are byte-equivalent as arrays. Saved full before/after22tracks and all13results.
+No Essential seed, BA, held3px score, mesh or medical2mm evaluation executed.
+
+Root-cause classification: boundary activation is an observed stopping mechanism,
+not proof of wrong correspondence or insufficient search radius. Translation-only
+patch appearance, viewpoint deformation, illumination, occlusion and initial
+identity/localization remain competing explanations. Do not expand bounds,
+remove270, or claim twelve good matches. The fixed local refinement did not
+establish a usable improvement over0352. Its known-translation control is a
+limited numerical capability, not transferable skin accuracy.
+
+Close this candidate and retain the small complete evidence. No weights/runtime
+were installed. Exclusive runner is retired after archive verification; shared
+bilinear sampling, original inputs, rights and successful fixtures remain intact.
