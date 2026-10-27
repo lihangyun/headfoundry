@@ -31,6 +31,12 @@ def infer():
     cv2.setNumThreads(2)
     sys.path.insert(0, str(BASE / 'source/metric_depth'))
     from depth_anything_v2.dpt import DepthAnythingV2
+    from depth_anything_v2.util.transform import Resize, NormalizeImage, PrepareForNet
+    from torchvision.transforms import Compose
+    transform = Compose([
+        Resize(width=518,height=518,resize_target=False,keep_aspect_ratio=True,
+               ensure_multiple_of=14,resize_method='lower_bound',image_interpolation_method=cv2.INTER_CUBIC),
+        NormalizeImage(mean=[.485,.456,.406],std=[.229,.224,.225]),PrepareForNet()])
     model = DepthAnythingV2(encoder='vits', features=64,
                            out_channels=[48,96,192,384], max_depth=20).eval()
     model.load_state_dict(torch.load(WEIGHT, weights_only=True, map_location='cpu'), strict=True)
@@ -44,7 +50,12 @@ def infer():
         if image.shape != (1280,720,3):
             raise ValueError('input shape mismatch')
         with torch.inference_mode():
-            depth = model.infer_image(image, input_size=518)
+            # Upstream infer_image selects CUDA independently of model.device.
+            # Same official transform/interpolation, explicit registered CPU.
+            tensor = transform({'image':cv2.cvtColor(image,cv2.COLOR_BGR2RGB)/255.0})['image']
+            tensor = torch.from_numpy(tensor).unsqueeze(0).to('cpu')
+            depth = model(tensor)
+            depth = torch.nn.functional.interpolate(depth[:,None],(1280,720),mode='bilinear',align_corners=True)[0,0].numpy()
         if depth.shape != (1280,720) or not np.isfinite(depth).all() or (depth<=0).any():
             raise ValueError('invalid depth output')
         depths.append(depth)
@@ -112,9 +123,16 @@ if __name__=='__main__':
     elif sys.argv[1:]==['evaluate']: evaluate()
     else:
         from bounded_process import run
-        OUT.mkdir(exist_ok=False)
+        repair = sys.argv[1:] == ['device-repair']
+        if repair:
+            previous = json.loads((OUT/'worker.json').read_text())
+            if previous['exit'] != 1 or (OUT/'predictions.npz').exists() or (OUT/'device-repair.json').exists():
+                raise ValueError('repair requires terminal pre-output failure, once only')
+        else:
+            OUT.mkdir(exist_ok=False)
         env=os.environ.copy();env.update(CUDA_VISIBLE_DEVICES='',PYTHONDONTWRITEBYTECODE='1')
         result=run([str(ROOT/'.venv-metric0374/Scripts/python.exe'),__file__,'infer'],ROOT,env,
-                   OUT/'worker.log',OUT/'worker.json',300,4*1024**3)
+                   OUT/('device-repair.log' if repair else 'worker.log'),
+                   OUT/('device-repair.json' if repair else 'worker.json'),292 if repair else 300,4*1024**3)
         print(result)
         sys.exit(0 if result['status']=='TECHNICAL_CHECK_PASSED' else 1)

@@ -31,3 +31,14 @@ this recipe,retain compact evidence/source recovery and clean exclusive
 integration before a new route. It does not prove all real-photo uses fail:
 white-clay appearance and small head coverage are explicit domain limitations.
 Pass would permit next correspondence/unknown-camera test,not head acceptance.
+
+## Pre-output device-routing repair
+
+First worker7.625s stops before first convolution computes: upstream infer_image
+automatically chooses CUDA despite the empty CUDA_VISIBLE_DEVICES on this host,
+while model stays CPU. This is our adapter error,not model accuracy failure.
+A temporary input tensor reached CUDA; no predicted depth exists and no GPU
+model convolution completed. Preserve original log/receipt. One explicit CPU
+adapter uses identical upstream transform and interpolation,not vendor edits;
+remaining worker budget292s,unchanged inputs/weights/precision/gates. No fallback
+model or numerical parameter sweep. Record this protocol deviation honestly.
