@@ -16,7 +16,7 @@ and checkpoint remain pinned by0373; modelimport deferred until dependency
 and source review complete. This step does not license every binary merely
 because the top-level package is open source.
 
-## In-progress handoff
+## Original in-progress handoff (superseded below)
 
 Setup registered6d9d0d1; installation worker started and remained live on
 session4434 at this handoff. Do not start another setup from a stale record:
@@ -33,3 +33,25 @@ installxformers to silence its warning or change the registered precision.
 Main environment and unrelated0207 were not modified. Before inference,review
 installedlicense evidence and runtime report,then strictweights_only loading
 of0373hash. Do not equate the source fetch with physical capacity acceptance.
+
+## Installation completion and offline check, 2026-10-27
+
+Terminal receipt confirms exit0 in487.984s,conservative process-tree peak
+1100431360bytes. Do not restart the installer. Imports report torch2.8.0+cu126,
+torchvision0.23.0+cu126,opencv4.12.0,numpy2.2.6 and CUDA available.
+Installed license inventory exists but is NOT a completed transitive binary
+license review; runtime admission remains UNVERIFIED. No inference has run.
+
+Next engineering check is offline only: verify all16source bytes against their
+saved manifest, fixed checkpoint size/SHA and archive CRCs without unpickling,
+executing vendor code or using patient inputs. Corrupt bytes,wrong size and
+escaping manifest paths must fail. This check is not model-architecture matching
+or a new accuracy experiment. Main environment and production remain unchanged.
+
+Actual offline check:16files verified,checkpoint241archive members CRC-valid;
+all three negative controls passed. Receipt bundle-integrity.json records
+TECHNICAL_CHECK_PASSED solely for integrity,license/accuracyUNVERIFIED and
+inferenceNOT_RUN. Reproduce with tools/check_metric_bundle_0374.py using the
+main Python environment (standard library only; no inference dependencies).
+Regression verification:167shared tests pass in9.974s; git diff whitespace
+check passes. These tests do not validate the new network's physical accuracy.
