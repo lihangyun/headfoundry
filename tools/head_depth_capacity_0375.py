@@ -109,6 +109,9 @@ def evaluate():
                            fit_count=int(even.sum()),held_count=int(odd.sum()),affine=coeff.tolist(),
                            point_p95_mm=p95,raw_axial_p95_mm=float(np.percentile(abs(predicted[odd]*1000-z[odd]),95)),cross=cross))
         arrays[str(name)+'_ids']=selected; arrays[str(name)+'_error_mm']=error
+        arrays[str(name)+'_predicted_m']=predicted
+        arrays[str(name)+'_true_axial_mm']=z
+        arrays[str(name)+'_pixels']=uv
     if oracle_max>1e-8: raise AssertionError('oracle ray geometry mismatch')
     result = dict(status='TECHNICAL_CHECK_PASSED' if all(s['status']=='TECHNICAL_CHECK_PASSED' for s in scores) else 'REJECT',
                   views=scores,oracle_max_mm=oracle_max,scope='oracle-calibrated clay shape capacity,not video reconstruction',

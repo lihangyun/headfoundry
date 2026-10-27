@@ -42,3 +42,29 @@ model convolution completed. Preserve original log/receipt. One explicit CPU
 adapter uses identical upstream transform and interpolation,not vendor edits;
 remaining worker budget292s,unchanged inputs/weights/precision/gates. No fallback
 model or numerical parameter sweep. Record this protocol deviation honestly.
+
+## Result: REJECT for this recipe
+
+Repaired source5a8d6c6; six CPU forwards complete in30.796s with2406879232B
+conservative tree peak. No further inference. Evaluator oracle ray-lift error
+4.59e-13mm; constant-depth rank control rejects. All six positive-slope affine
+fits fail held accuracy. Front/yaw-10/yaw+10/yaw-30/yaw+30/pitch+10 held counts
+1178/1144/1167/1095/1092/1011; pointp95mm respectively
+46.020544/47.505182/51.559683/59.848004/62.726813/44.957025.
+Worst cross-view projection p95 is87.821092px. Raw axial p95 is558–1191mm.
+These are point diagnostics,not reconstructed-surface errors or video results.
+
+Known camera eliminates camera-estimation error from this experiment. A single
+per-view affine correction is demonstrably insufficient for this fixed shape
+output; not merely a global scale/offset mismatch. The relative contributions
+of clay appearance,head image coverage,learned prior and interpolation remain
+unisolated. No claim that a particular one is the unique root cause. No approved
+geometry contribution from this model has been established for the project.
+Retain owned0368/0371 solvers and0230fixture; reject this candidate integration.
+
+Prediction SHA256c2849196cd77c139452e71685a92591bcd9c4932ac4ba72e628f40be6ce2f912.
+Post-terminal evaluator additionally saves all sampled predicted/true depths,
+pixels,IDs/errors for compact diagnosis; this does not rerun inference or change
+scoring. Cleanup must preserve original fixture/model-license evidence and source
+recovery before deleting exclusive0373–0375weights/runtime/source/runners.
+Cleanup is pending; do not start a different route before its verified commit.
