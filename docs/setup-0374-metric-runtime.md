@@ -55,3 +55,32 @@ inferenceNOT_RUN. Reproduce with tools/check_metric_bundle_0374.py using the
 main Python environment (standard library only; no inference dependencies).
 Regression verification:167shared tests pass in9.974s; git diff whitespace
 check passes. These tests do not validate the new network's physical accuracy.
+
+## Scoped runtime review and strict load registration
+
+Local-development review, not a redistribution certification: installed metadata
+and license texts identify Torch/TorchVision/Jinja2/mpmath/SymPy/NetworkX/fsspec
+as BSD-family; filelock/MarkupSafe/setuptools/pip under MIT/BSD terms;
+typing_extensions PSF2; Pillow MIT-CMU. NumPy includes BSD OpenBLAS/LAPACK and
+GCC runtime with its runtime exception. OpenCV wrapper is MIT, core Apache2,
+FFmpeg LGPL2.1 and Intel IPP has its separate binary-use license. Notices and
+license files remain intact. No third-party binaries are modified or distributed.
+This is not an assertion that all bundled components are open source.
+
+CUDA12.6 and cuDNN have separate NVIDIA SDK grants, not Torch's BSD grant:
+https://docs.nvidia.com/cuda/archive/12.6.3/eula/index.html
+https://docs.nvidia.com/deeplearning/cudnn/backend/v9.10.2/reference/eula.html
+Official grant permits installation/use subject to limitations; distribution
+has additional conditions, and CUDA applications target NVIDIA hardware.
+No clinical, safety-critical use, SDK reverse engineering, or redistribution
+is admitted here. Exact bundled cuDNN version is not yet established by this
+review; no GPU execution is admitted by the following CPU-only load check.
+
+Proceed with bounded CPU-only model construction and weights_only strict loading
+of the pinned Small checkpoint:120s/4GiB,2CPUthreads,all tensors finite,all keys
+must match; deleting one checkpoint key must raise. No forward pass,patient
+inputs,network request,training or GPU operation. Review of source imports and
+external-call sites finds no checkpoint download path; optional xformers remains
+absent. Strict-load success only establishes runtime/architecture compatibility.
+Full inference admission and physical capacity remain pending; historical
+runtime.json/license_review is not rewritten as a blanket license clearance.
