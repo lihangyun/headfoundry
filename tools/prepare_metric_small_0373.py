@@ -10,6 +10,8 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'assets/private/metric-small-0373'
 MODEL='depth-anything/Depth-Anything-V2-Metric-Hypersim-Small'
 NAME='depth_anything_v2_metric_hypersim_vits.pth'
+REVISION='3bc65d4e14a6786a61acec16453c50e12bf5f338'
+SHA256='b782898d8a3e8be1f639de33837ed85e9b4b73e40f8f5e5cd99067588d722545'
 
 
 def small(url):
@@ -21,7 +23,7 @@ def small(url):
 
 
 def worker():
-    api=small(f'https://huggingface.co/api/models/{MODEL}?blobs=true')
+    api=small(f'https://huggingface.co/api/models/{MODEL}/revision/{REVISION}?blobs=true')
     meta=json.loads(api)
     revision=meta['sha']
     card=small(f'https://huggingface.co/{MODEL}/raw/{revision}/README.md')
@@ -31,6 +33,8 @@ def worker():
     if len(entries)!=1:
         raise ValueError('exact checkpoint missing')
     identity=entries[0]['lfs'];expected=identity['sha256'];size=identity['size']
+    if revision!=REVISION or expected!=SHA256 or size!=99222290:
+        raise ValueError('frozen asset identity changed')
     if len(expected)!=64 or not 0<size<=150000000:
         raise ValueError('checkpoint identity or size rejected')
     (OUT/'api.json').write_bytes(api);(OUT/'README.md').write_bytes(card)

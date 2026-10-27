@@ -25,3 +25,23 @@ folder and explicit hash manifest. A transfer error is not an accuracy failure.
 Exact runtime license graph and bounded inference must be checked separately.
 Shared main environment remains unchanged; noOpen3D/UI dependency is needed
 for raw prediction,so do not install the full demo requirements blindly.
+
+## Asset preparation result
+
+Source94932cb,one worker11.781s/47091712B conservative tree peak,exit0.
+Official model revision3bc65d4e14a6786a61acec16453c50e12bf5f338,
+99222290bytes,verified SHA256
+b782898d8a3e8be1f639de33837ed85e9b4b73e40f8f5e5cd99067588d722545.
+Saved checkpoint,officialAPI/card,manifest and receipts under
+assets/private/metric-small-0373. Follow-up installer pins this resolved
+revision/hash/size and refuses replacement; no inference results exist.
+No packages installed or main environment modified. TECHNICAL_CHECK_PASSED
+means asset identity/download only; accuracy remainsUNVERIFIED.
+Next step isolated runtime dependency/license lock and bounded local capacity
+test before any patient run. Synthetic .005depth scale must not be reused as
+real model uncertainty. Retained0372public-license/source snapshot is now
+specifically ignored to avoid accidentally committing downloaded vendor code;
+its small local evidence is not removed. No unrelated assets ignored/modified.
+Pinned installer recheck1.625s/44883968B verified the existing file without
+redownloading it; current worker receipt describes this second identity check,
+not the first transfer. No inference or parameter experiment was rerun.

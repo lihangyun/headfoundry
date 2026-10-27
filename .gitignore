@@ -10,3 +10,4 @@ tmp/*
 !tmp/.gitkeep
 artifacts/
 assets/private/
+assets/public/depthpro-source-audit-0372/
