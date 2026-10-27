@@ -84,3 +84,17 @@ external-call sites finds no checkpoint download path; optional xformers remains
 absent. Strict-load success only establishes runtime/architecture compatibility.
 Full inference admission and physical capacity remain pending; historical
 runtime.json/license_review is not rewritten as a blanket license clearance.
+
+### Strict CPU load result
+
+Pre-run source695ddd2; one worker14.656s,760913920B conservative tree peak,exit0.
+All239state entries are finite float32 and match the fixed Small architecture
+with24785089parameters. Deliberately removing one key raises as required.
+OptionalxFormers warnings are expected; no package added to silence them.
+Receipt strict-load.json and strict-load-worker.json are local evidence.
+No forward pass,patientinput,geometryestimate or GPU execution occurred.
+This removes an architecture/checkpoint compatibility uncertainty,not the
+unknown depth bias or correspondence problem. Physical accuracy remainsUNVERIFIED.
+Next capacity registration should use existing known-camera head evidence,
+with model seeing images only and truth restricted to post-prediction scoring;
+do not silently use medical geometry as reconstruction initialization.
