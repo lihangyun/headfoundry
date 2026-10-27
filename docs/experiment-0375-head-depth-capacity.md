@@ -68,3 +68,32 @@ pixels,IDs/errors for compact diagnosis; this does not rerun inference or change
 scoring. Cleanup must preserve original fixture/model-license evidence and source
 recovery before deleting exclusive0373–0375weights/runtime/source/runners.
 Cleanup is pending; do not start a different route before its verified commit.
+
+## Cleanup completed
+
+Source recovery261499f. Private evidence at
+assets/private/closed-experiments/0375-head-depth/evidence.zip:46members,
+657040bytes,SHA2567a3e563400b9d7d1323c94dd546977fb2c4362fcbeb152308d18b99f0731698d.
+CRC and every member SHA verified before deletion. Keeps all sampled depths,
+truth depths,pixels,IDs/errors,results,licensing/provenance,source and receipts;
+not full-frame predictions or a complete binary backup. Initial archive-check
+path-separator error was repaired before deletion; failed check deleted nothing.
+
+No experimental Python process remained. Eleven exact repository-contained
+targets were resolved and checked for reparse points before native PowerShell
+deletion. Removed22066files/7062807220bytes logical size:isolated runtime,
+checkpoint,vendor source,complete predictions,six exclusive runners and one pyc.
+49protected files hash-identical before/after:0230fixture,consent/manifest,
+0368/0371results and unrelated0207. This is not a full original-dataset audit;
+external original videos/STLs andcase002 were not opened or modified.
+PowerShell receipt's protected_files serialized49individual ones rather than
+a scalar count; plan.protected has49keys and all49hash comparisons executed.
+
+No remaining live references to removed modules in tools/src/tests. Source is
+recoverable from Git; deleted weights require redownload at locked hash and
+full predictions require rerun. No new route or model experiment started.
+
+Closeout verification:167retained tests pass in9.561s; whitespace check passes.
+On2026-10-28resume,archive CRC/all46member hashes,all11target absences and all49
+protected-file hashes were reverified before the cleanup commit. No deletion
+or model inference was repeated. Unrelated0207 remains untracked and untouched.
