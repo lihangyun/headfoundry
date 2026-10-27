@@ -73,3 +73,18 @@ limited numerical capability, not transferable skin accuracy.
 Close this candidate and retain the small complete evidence. No weights/runtime
 were installed. Exclusive runner is retired after archive verification; shared
 bilinear sampling, original inputs, rights and successful fixtures remain intact.
+
+## Cleanup verified
+
+Private archive `assets/private/closed-experiments/0378-joint-local/evidence.zip`,
+10members/11213bytes, SHA256
+dceeebf1d03e748eb0e96276aa7eb34a1a6a50266d897697d26aaa5ecb10f203.
+Every member digest and ZIP CRC verified; complete small arrays/receipts and both
+recovery scripts retained. Source recovery e23b911, closeout source a53c6a9.
+Eight original output files removed by exact validated paths (11097bytes), then
+the empty directory; both exclusive tools removed. No environment/images created.
+Archive is a complete backup of this small experiment's outputs, not of source
+video/older model environments. Six protected hashes verified unchanged before
+deletion; no live Python/Blender reconstruction job found. Remaining167tests pass
+in10.304s, no live references in tools/src/tests, Git whitespace check passes.
+Unrelated0207 remains untouched. Goal/physical/visual acceptance still unfinished.
