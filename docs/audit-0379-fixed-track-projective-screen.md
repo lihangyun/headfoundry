@@ -35,3 +35,39 @@ identify nonrigidity: wrong matches, noise, lens effects, poor conditioning and
 the unrobust linear estimator remain possible. Passing does not certify point
 identity, rigidity, common three-view camera, focal, metric scale or medical2mm.
 No follow-on fitting automatically authorized by a low epipolar residual.
+
+## Actual result
+
+Source recovery8bde479. One worker0.813s/49901568B conservative peak, exit0.
+Execution/controls TECHNICAL_CHECK_PASSED; frozen observation screen REJECT.
+
+| Native frame pair | All13train Sampson p95px | All9held Sampson p95px |
+| --- | ---: | ---: |
+| 240/300 | 1.780245 | 4.298664 |
+| 240/630 | 1.200907 | 2.154371 |
+| 300/630 | 22.439483 | 8.551298 |
+
+All3matrices and every22-point error retained, no fit/model failure omitted.
+Known-scene exactp95=1.493e-13px; perpendicular40px perturbation gives28.721px;
+along-line40px perturbation still gives1.635e-13px. Thus even the passing middle
+pair does not certify material identity or physical accuracy.
+
+There is a discrepancy outside the assumed-focal/recoverPose stage: this fixed
+uncalibrated estimator also fails held image constraints. It does not prove no
+fundamental matrix could fit the data, nor uniquely identify nonrigidity. The
+large training residual in300/630 particularly warns that a linear rank2 fit
+may be poorly conditioned or affected by bad correspondences; do not interpret
+its8.55px as irreducible video noise. No RANSAC retry, focal sweep, point deletion
+or camera/head solve follows. All camera/medical/visual accuracy staysUNVERIFIED.
+
+The result supports requiring independent observation/conditioning evidence
+before a new camera recipe; replacing the calibrated pose seed alone is not a
+demonstrated fix. It does not authorize labelling lip/eye points as wrong or
+claiming that only additional recording could solve the entire task.
+
+Compact complete evidence is retained in
+`assets/private/closed-experiments/0379-projective-screen`: result.json with all
+matrices/residuals/source and protected hashes, worker.json and worker.log.
+No generated image, weight, environment or mesh exists. The one-shot runner is
+retired to Git recovery8bde479, shared epipolar math stays unchanged. Original
+partition,0378archive,rights/consent,0207 and shared implementation hashes rechecked.
