@@ -36,3 +36,29 @@ do not declare deformation uniquely proven. If passes, prerequisite geometry
 still remains: independent common three-view metric calibration, not pairwiseF
 assembled into an assumed camera. Preserve small complete evidence, source Git
 recovery, remove exclusive runner after diagnosis, tests and cleanup commit.
+
+## Actual fixed diagnosis
+
+Recovery51467d0. One worker1.437s/88219648B conservative peak, exit0. All three
+fits converge (7/7/30evaluations), all controls pass. Exact held max2.55e-13px;
+fixed noisy control training SSE.604884→.500283. No physical acceptance follows.
+
+| Pair | Linear trainp95 → native trainp95 px | Linear heldp95 → native heldp95 px |
+| --- | --- | --- |
+| 240/300 | 1.780245 → 1.101437 | 4.298664 → 5.176557 |
+| 240/630 | 1.200907 → 1.192951 | 2.154371 → 2.244160 |
+| 300/630 | 22.439483 → 2.564343 | 8.551298 → 8.170887 |
+
+This directly demonstrates that the previous22.44px training error was not an
+irreducible property of these observations: changing only the objective/rank2
+optimization greatly reduces it. However, all-point held screen still REJECT;
+two held pairs remain above3px, one worsens. Objective mismatch alone is not a
+sufficient fix. No proof of a unique wrong point, expression cause, or global
+optimum follows. Pairwise agreement still cannot certify a common metric camera.
+Do not try another loss/seed/threshold on this cohort as an automatic next step.
+
+Complete small JSONs/logs retained under
+`assets/private/closed-experiments/0380-native-objective`, all3F/per-point residuals
+and controls included; protected input/rights/shared-source hashes reverified.
+No images, weights, environments or mesh generated. Retire the one-shot diagnostic
+to source51467d0, keep shared math unchanged. No3D/medical/visual result exists.
