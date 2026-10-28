@@ -36,3 +36,26 @@ Prepare<=60s/2GiB, fit<=420s/2GiB, evaluate<=60s/2GiB, total30minutes incl
 closure. Failure stops and archives minimal evidence/source before exclusive
 code/output cleanup; protect existing model/runtime, shared helpers and inputs.
 No complete-head fitting or actual-video run automatically follows a pass.
+
+## Result: REJECT
+
+One fit terminated normally in349.422s, peak198529024bytes,170candidate
+render/detect calls,15objective evaluations. Solver reached its registered
+evaluation limit without convergence. Execution success is not scientific pass.
+Held semantic p95=2.509015229px passed, but ALL5023 true vertex projection
+p95=8.840041794px/max15.582479098px and focal relative error14.670989692%
+failed. Same-image detector replay0; independent projection/invalid-camera
+controls passed; injected wrong-camera p95=10.117429997px. Candidate and target
+clay renders were inspected; no human inputs or medical accuracy measured.
+
+This establishes a semantic-pass/physical-fail counterexample for this fixed
+configuration. It does NOT establish an irreducible detector ambiguity or prove
+all render-conditioned methods impossible: optimization was not converged.
+Do not spend another seed/iteration/step sweep on this control. Redetection
+avoids asserting fixed material IDs, but semantic agreement alone is still
+insufficient camera evidence. Any later use needs an independently justified
+physical observation, not relaxed thresholds. No real-head promotion.
+
+Source recovery:74b87c1. Closeout archives complete small control evidence,
+then removes only0382runner and generated working outputs; shared licensed
+assets, renderer, runtime, tests, original human data and0207 remain unchanged.
