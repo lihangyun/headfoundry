@@ -71,3 +71,9 @@ matrices/residuals/source and protected hashes, worker.json and worker.log.
 No generated image, weight, environment or mesh exists. The one-shot runner is
 retired to Git recovery8bde479, shared epipolar math stays unchanged. Original
 partition,0378archive,rights/consent,0207 and shared implementation hashes rechecked.
+
+Closeout: three evidence files total8623bytes retained (no redundant private
+output deleted); result SHA256
+3276acb38bd8d09e5c65a138ee0b6ddaca441ce467a90de75d3f15b8160fa9f3.
+Exclusive runner removed, no live callers in tools/src/tests,167shared tests
+pass in10.341s and Git whitespace check passes. No model or scientific rerun.
