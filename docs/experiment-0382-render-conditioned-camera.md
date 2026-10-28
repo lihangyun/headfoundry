@@ -59,3 +59,15 @@ physical observation, not relaxed thresholds. No real-head promotion.
 Source recovery:74b87c1. Closeout archives complete small control evidence,
 then removes only0382runner and generated working outputs; shared licensed
 assets, renderer, runtime, tests, original human data and0207 remain unchanged.
+
+Closeout completed: private closed-experiments/0382-render-conditioned/evidence.zip,
+18members,297269bytes,SHA256
+375f5aada3c2a4526460b3300b2f72dc3c4d74ac525042bf8904e4b94d70ce72.
+CRC and every member SHA verified before removing18working files/300559bytes
+and empty working directory. The archive includes both representative renders,
+all observations/cameras/errors and generic prior; this small control is fully
+recoverable using source74b87c1 and existing shared licensed assets. Archive
+helper recovery2a42371. Both exclusive scripts removed; no live callers found.
+No worker remained before deletion. Model-lock/task hashes unchanged; no patient
+input was read, generated, deleted or uploaded. Shared167tests passed9.352s.
+Production defaults and unrelated untracked0207 document preserved.
