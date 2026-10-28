@@ -88,3 +88,29 @@ video/older model environments. Six protected hashes verified unchanged before
 deletion; no live Python/Blender reconstruction job found. Remaining167tests pass
 in10.304s, no live references in tools/src/tests, Git whitespace check passes.
 Unrelated0207 remains untouched. Goal/physical/visual acceptance still unfinished.
+
+## Source-only follow-up: support anatomy, not a root-cause proof
+
+Reopened the original0344tracks.png from its existing archive in memory and
+verified0378archive SHA before reading all22 original endpoints and the13/9split.
+No image regeneration, matching, refinement, camera fit or scan access occurred.
+SourceID270 is visually on the upper-lip vicinity. Its original coordinates are
+(392.98,766.55), (294.33,773.01), (345.22,687.78) for frames240/300/630.
+The-4px bound activation belongs to the second of these frames, not to a
+posterior-head point or a missing-frame decoding artifact.
+
+Qualitative source-panel inventory of the13training points: IDs0/270/378/657
+are around the upper lip;113/170/188/691 near upper eyelids;182/446 near brows;
+77 forehead,8 nose region,460 cheek. These are visual region labels, not a
+segmentation ground truth, precise material IDs or measured nonrigid motion.
+They do not authorize removing lip/eye points from the frozen cohort.
+
+This localizes a relevant competing explanation: small image residuals in such
+regions can coexist with expression/gaze/occlusion and nonrigid skin motion.
+It does NOT establish that this occurred, how large its3D effect was, or that
+all remaining observations are rigid/correct. All three poses also differ, so
+appearance changes alone cannot distinguish deformation from projection.
+Next-route admission must explicitly address rigid/nonrigid observation support
+and how its evidence is independent of camera fitting. Neither expanding the
+local patch radius nor swapping the camera optimizer addresses that ambiguity.
+No new numerical recipe is admitted by this visual review.
