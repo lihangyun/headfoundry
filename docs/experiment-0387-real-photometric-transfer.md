@@ -1,7 +1,7 @@
 # 0387: archived RoMa camera seed plus existing direct-image backend
 
 2026-10-29 preregistration before image extraction or optimization. Budget20min
-from14:30UTC, deadline14:50UTC; one direct worker<=300s/2GiB, four math threads.
+from14:28:20UTC, deadline14:48:20UTC; one direct worker<=300s/2GiB, four math threads.
 Previous0386closed0a4341b;0385source/results and REJECT remain frozen.
 
 History review rules out simply reviving0220/0223chained/directLK or0227ECC;
