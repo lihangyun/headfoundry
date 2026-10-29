@@ -139,7 +139,36 @@ def controller(stage):
     if result['status']!='TECHNICAL_CHECK_PASSED':raise SystemExit(1)
 
 
+def close_archive():
+    protected=json.loads((BASE/'protected.json').read_text())
+    assert all(sha(path)==digest for path,digest in protected.items())
+    assert json.loads((BASE/'direct-worker.json').read_text())['exit']==1
+    baseline=json.loads((BASE/'baseline-result.json').read_text())
+    final=json.loads((BASE/'evaluation/result.json').read_text())
+    photo=json.loads((BASE/'direct.json').read_text())
+    result=dict(status='REJECT',baseline=baseline,final=final,photometric=photo,
+                note='image residual reduction is not geometry improvement;no head/medical measurement')
+    write(BASE/'result.json',result)
+    destination=CLOSED/'0387-real-photo';destination.mkdir(exist_ok=False)
+    allfiles=sorted(p for p in BASE.rglob('*') if p.is_file())
+    keep={p.relative_to(BASE).as_posix():p for p in allfiles if not p.name.startswith('view-')}
+    keep['source/real_photo_0387.py']=Path(__file__)
+    target=destination/'evidence.zip'
+    with zipfile.ZipFile(target,'x',zipfile.ZIP_DEFLATED) as archive:
+        for name,path in keep.items():archive.write(path,name)
+    members={name:dict(bytes=path.stat().st_size,sha256=sha(path)) for name,path in keep.items()}
+    with zipfile.ZipFile(target) as archive:
+        assert archive.testzip() is None
+        assert all(hashlib.sha256(archive.read(name)).hexdigest()==row['sha256'] for name,row in members.items())
+    index=dict(archive_sha256=sha(target),archive_bytes=target.stat().st_size,members=members,
+               protected=protected,loose_files=len(allfiles),loose_bytes=sum(p.stat().st_size for p in allfiles),
+               result=result)
+    write(destination/'index.json',index)
+    print(json.dumps({k:v for k,v in index.items() if k not in ('members','protected','result')},indent=2))
+
+
 if __name__=='__main__':
     stage=sys.argv[1]
-    if stage.endswith('-worker'):{'intake':intake,'direct':direct}[stage[:-7]]()
+    if stage=='archive':close_archive()
+    elif stage.endswith('-worker'):{'intake':intake,'direct':direct}[stage[:-7]]()
     else:controller(stage)

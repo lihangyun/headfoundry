@@ -46,3 +46,50 @@ states/held errors/receipts/source recovery and hashes, clean exclusive runner,
 gray frame copies and loose outputs; preserve shared0332backend, originals,
 consent, prior archives and0207. Verify shared tests and cleanupcommit. No
 threshold, frame, offset, bounds or iteration sweep and no other route this run.
+
+## Actual outcome: photometric fit improves, held geometry worsens
+
+Preregistration731a64d, implementatione14ff08. Exact1041frameRGB identities,
+source/manifest/consent and archived observations verified. Intake6.891s,
+201306112Bconservative peak. Before solve167shared tests passed8.354s.
+One direct worker10.344s/148766720B, scientific gate rejection, not resource
+failure. No retry, model call, camera reinitialization or geometricBA replay.
+
+Original direct objective converged byxtol after132evaluations. PhotometricRMS
+0.109468892 ->0.058548791 normalized gray (46.52% reduction); focal1199.776568
+->1193.574024px. Bounds remained interior; minimum parameter-bound distance
+0.034168 in heterogeneous parameter units, not a physical uncertainty estimate.
+The omitted sparse derivative dependency check passed. All final poses proper,
+allheld triangulated depths positive. Exact bilinear texels at held centers do
+not overlap training sample texels in any view at initial/final states; this
+does not establish statistical independence over optimization or image context.
+
+| Held predictive p95 px | Original0385 | Final photometric |
+| --- | ---: | ---: |
+| view0 | 0.325038 | 2.001245 |
+| view1 | 3.798079 | 3.380225 |
+| view2 | 2.424998 | 5.192755 |
+
+FinalREJECT: two target views exceed3px. Wrong-camera displacement controls
+94.171/103.233px. Evaluation folder uses the historical evaluator's label
+"initial" for final0387state; it does NOT mean baseline was overwritten.
+Original baseline state/report and all9held observations remain preserved.
+
+Confirmed mechanism at the objective level: reducing this sampled photometric
+loss does not preserve/improve the fixed held geometry. This rules out blaming
+this run on missing observations, nonconvergence, an active search bound or
+insufficient iteration budget. It does NOT uniquely identify lighting,
+nonrigidity, occlusion, patch-depth approximation or initial correspondence bias.
+No patch deletion, alternate metric, extraiterations or changed weights.
+
+Keep0332conditional owned-scene capability, not this failed real transfer as a
+production component. A useful future design would need independently justified
+constraints or observation uncertainty, not assume lower imageRMS means truth.
+No new head, scan surface error, accepted camera or visual improvement exists.
+
+Private archive closed-experiments/0387-real-photo/evidence.zip is389820bytes,
+23members,SHA c4f2d312cff990a7ce930dc1a034f5fb1513885079230dad54d5603054d3655c.
+Contains initial/finalstates, fixed observations, allheldscores, losses, bounds,
+receipts, inputhashes, source and oneinputsheet; nativegraycopies excluded and
+recoverable only by decodingoriginalvideo again. CRC/allmemberhashes verified;
+all9protectedhashes unchanged. No new dependencies, frameworks or weights.
