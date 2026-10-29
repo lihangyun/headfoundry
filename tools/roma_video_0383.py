@@ -224,12 +224,13 @@ def observe():
 def controller(stage):
     if time.time()>1793239764:raise RuntimeError('whole experiment deadline reached')
     if (OUT/(stage+'-worker.json')).exists():raise FileExistsError('no duplicate worker')
-    if stage=='infer' and not (OUT/'input-reviewed.json').exists():raise ValueError('source review missing')
+    if stage.startswith('infer') and not (OUT/'input-reviewed.json').exists():raise ValueError('source review missing')
     if stage=='initialize' and not (OUT/'tracks-reviewed.json').exists():raise ValueError('track review missing')
-    seconds,gib={'prepare':(120,2),'infer':(600,8),'observe':(60,2),'initialize':(180,2),'evaluate':(60,2)}[stage]
-    python=ROOT/'.venv-roma-0383/Scripts/python.exe' if stage=='infer' else Path(sys.executable)
-    script=ROOT/'tools/roma_infer_0383.py' if stage=='infer' else Path(__file__)
-    env=os.environ.copy();env.update(OPENBLAS_NUM_THREADS='4',OMP_NUM_THREADS='4',MKL_NUM_THREADS='4',PYTHONDONTWRITEBYTECODE='1',UV_CACHE_DIR=str(OUT/'cache'))
+    seconds,gib={'prepare':(120,2),'infer':(600,8),'infer-repair':(600,8),'observe':(60,2),'initialize':(180,2),'evaluate':(60,2)}[stage]
+    python=ROOT/'.venv-roma-0383/Scripts/python.exe' if stage.startswith('infer') else Path(sys.executable)
+    script=ROOT/'tools/roma_infer_0383.py' if stage.startswith('infer') else Path(__file__)
+    (OUT/'cache').mkdir(exist_ok=True)
+    env=os.environ.copy();env.update(OPENBLAS_NUM_THREADS='4',OMP_NUM_THREADS='4',MKL_NUM_THREADS='4',PYTHONDONTWRITEBYTECODE='1',UV_CACHE_DIR=str(OUT/'cache'),TORCH_HOME=str(OUT/'cache'),TMP=str(OUT/'cache'),TEMP=str(OUT/'cache'))
     receipt=run([str(python),'-B',str(script),stage+'-worker'],str(ROOT),env,OUT/(stage+'.log'),OUT/(stage+'-worker.json'),seconds,gib*1024**3)
     print(receipt)
     if receipt['status']!='TECHNICAL_CHECK_PASSED':raise RuntimeError('worker failed; inspect receipt')

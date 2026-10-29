@@ -63,3 +63,56 @@ On failure: compact complete queried evidence/receipts/notices, max two private
 sheets, Git recovery; remove exclusive scripts/weights/runtime/large fields and
 frame copies. Preserve originals/consent/shared tools/successfixtures/0207.
 Verify integrity/sharedtests and separatecleanupcommit. No new route in this run.
+
+## Execution notes
+
+Installation completed270.766s, both exact checkpoint hashes match. All1041
+native videoRGB hashes and consent/provenance verified; fixed input sheet viewed.
+Expression/gaze differences visible, not certified rigid skin. No frame changes.
+Engineering deviation: copied installer initially omitted cache isolation, so uv
+used its default cache (UV_CACHE_DIR was unset). It may have written cache data
+outside the repository; no exact external-cache delta was measured and no broad
+external-cache deletion is authorized. Installed environment and model files
+are inside this repository. Recorded implementation adds --no-cache for future
+installer invocation; this did not retroactively change the completed install.
+Inference explicitly redirects Torch/temp caches inside the experiment directory.
+No medical input or case002 content was opened.
+
+First inference worker exited before model construction/forward: publisher utils
+imports cv2, missing from isolated environment. No network prediction or score
+exists. One ordinary pre-forward import repair appends existing main site-packages
+AFTER isolated packages (reuse cv2, no install/version/model change). First
+failure/control receipts preserved separately; repair worker stays within original
+whole deadline and same limits. No model inference replay has occurred.
+
+## Actual outcome: REJECT at observation-count admission
+
+Two actualvideo forward calls completed60.047/58.625s, exact source-grid error0,
+unchanged full two-component fingerprints. Repaired inference worker165.563s,
+conservative observed process-tree peak7325065216bytes (<8GiB). Original
+import-only failed worker remains separately recorded, not a model accuracy run.
+
+Fixed source lattice/cue produced108queries. Pair0/1 admitted49; pair0/2 admitted72;
+intersection37, below registered48. Unfiltered nativeFB median/p95:
+0/1=.854270/22.160193px,0/2=.475059/1.336933px. Complete source span216x240px.
+FB is internal consistency, not measured material error. All raw108points,
+admission masks and predictions saved. Source and raw track sheets inspected;
+no coordinate edits/point pruning/frame replacement or threshold rescue.
+
+Stop before camera initialization, held split, geometric optimization, head or
+medical evaluation. True point/camera/medical accuracy remainUNVERIFIED. Exact
+triangulation/OpenCV and wrong-camera controls ran; downstream invalid-camera
+acceptance paths were not exercised because the observation stage stopped.
+37 is not a mathematical impossibility proof, and no evidence establishes all
+37 as correct. This closes the actualvideo entry question for this configuration,
+not the quality of every conceivable RoMa-assisted method. Unlike prior proxy
+test, natural input has now actually been inferred. No accepted head produced.
+
+Archive:private closed-experiments/0383-roma-video/evidence.zip,2354822bytes,
+SHA25675559d3b50277fddc66b6a50f179d1bb4633e885976fb905dee864c060b62266.
+CRC and every archived member SHA verified; includes all queried results, receipts,
+publisher notices/source recovery and two private source/track sheets. Original
+video/manifest/consent/0252ledger hashes rechecked; no medical or case002 content.
+Keep these potential observations for diagnosis, not the failed active integration.
+Weights/runtime/full dense fields require authorized redownload/regeneration;
+archive is not a complete binary backup. Cleanup verification follows.

@@ -6,6 +6,7 @@ ROOT=Path(__file__).resolve().parents[1]
 OUT=ROOT/'assets/private/roma-video-0383'
 sys.path.insert(0,str(ROOT/'src'))
 sys.path.insert(0,str(OUT/'vendor'))
+sys.path.append(str(ROOT/'.venv/Lib/site-packages'))  # Reuse installed cv2 after isolated runtime packages.
 def save(name, value):
     with (OUT / name).open('x', encoding='utf8') as f:
         json.dump(value, f, indent=2, allow_nan=False)
