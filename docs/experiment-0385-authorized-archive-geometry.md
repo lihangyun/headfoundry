@@ -82,3 +82,13 @@ Next useful discriminator is independent image-local evidence for the fixed
 held residual, not more BA iterations or hiding the worst point. Such diagnosis
 must keep the original held score frozen and cannot use scan geometry to repair
 the result. No further experiment is executed under this once-only allowance.
+
+## Verified cleanup
+
+Source/result recoveryd440afa. After terminal worker receipt and live process
+check, removed exact resolved0385loose directory (20files,24207logical bytes)
+and its one exclusive tracked runner. No weights or environment to remove.
+All21archive members/CRC/SHA and9protected hashes verified again after deletion;
+0383archive unchanged. No tracked live caller remains. Postcleanup167shared
+tests passed8.656s. Original0207untracked change untouched. Closed14:15UTC,
+within14:28:35deadline. Full task remains unfinished; no accepted head.
