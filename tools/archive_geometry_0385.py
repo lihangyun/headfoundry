@@ -130,5 +130,37 @@ def controller():
         raise SystemExit(1)
 
 
+def archive_result():
+    protected = json.loads((OUT/'protected.json').read_text())
+    assert all(sha(path) == digest for path, digest in protected.items())
+    assert sha(ARCHIVE) == '75559d3b50277fddc66b6a50f179d1bb4633e885976fb905dee864c060b62266'
+    receipt = json.loads((OUT/'worker.json').read_text())
+    assert receipt['status'] == 'REJECT' and receipt['exit'] == 1
+    data = dict(np.load(OUT/'observations.npz')); scores = dict(np.load(OUT/'scores.npz'))
+    points = [dict(source_id=int(data['source_ids'][i]), source_xy=data['xy'][0,i].tolist(),
+                   error_view1=float(scores['initial_held_error_1'][slot]),
+                   error_view2=float(scores['initial_held_error_2'][slot]))
+              for slot, i in enumerate(data['held'])]
+    write(OUT/'held-details.json', dict(points=points, note='No point removed or rescored'))
+    destination = ROOT/'assets/private/closed-experiments/0385-archive-geometry'
+    destination.mkdir(exist_ok=False)
+    files = sorted(path for path in OUT.rglob('*') if path.is_file())
+    members = {path.relative_to(OUT).as_posix():path for path in files}
+    members['source/archive_geometry_0385.py'] = Path(__file__)
+    target = destination/'evidence.zip'
+    with zipfile.ZipFile(target, 'x', zipfile.ZIP_DEFLATED) as archive:
+        for name, path in members.items():
+            archive.write(path, name)
+    inventory = {name:dict(bytes=path.stat().st_size, sha256=sha(path)) for name,path in members.items()}
+    with zipfile.ZipFile(target) as archive:
+        assert archive.testzip() is None
+        assert all(hashlib.sha256(archive.read(name)).hexdigest() == row['sha256'] for name,row in inventory.items())
+    index = dict(archive_sha256=sha(target), archive_bytes=target.stat().st_size, members=inventory,
+                 protected=protected, loose_files=len(files), loose_bytes=sum(p.stat().st_size for p in files),
+                 original_archive_sha256=sha(ARCHIVE), result=json.loads((OUT/'result.json').read_text()))
+    write(destination/'index.json', index)
+    print(json.dumps({k:v for k,v in index.items() if k not in ('members','protected')}, indent=2))
+
+
 if __name__ == '__main__':
-    {'prepare': prepare, 'run': controller, 'worker': worker}[sys.argv[1]]()
+    {'prepare': prepare, 'run': controller, 'worker': worker, 'archive': archive_result}[sys.argv[1]]()
