@@ -116,3 +116,15 @@ video/manifest/consent/0252ledger hashes rechecked; no medical or case002 conten
 Keep these potential observations for diagnosis, not the failed active integration.
 Weights/runtime/full dense fields require authorized redownload/regeneration;
 archive is not a complete binary backup. Cleanup verification follows.
+
+## Verified closeout
+
+Source recovery1cf0411 (registrationa9121bd). All workers terminal before exact
+resolved path/reparse checks and deletion. Removed82experiment files1709164572B
+and16025isolated-runtime files536711173B; total16107files2245875745logical bytes,
+plus four exclusive tracked scripts. No live caller remains. Default external
+uv cache deviation above remains an exception, not included in removed bytes.
+No shared runtime/model/production source, successful fixture or0207 removed.
+After deletion: all6protected hashes unchanged,35-member archive SHA/CRC valid,
+167shared tests pass9.824s. Closeout01:23UTC within original02:09:24deadline.
+No new route started; actual camera/medical/head acceptance still unmeasured.
