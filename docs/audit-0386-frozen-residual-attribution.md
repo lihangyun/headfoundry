@@ -75,3 +75,9 @@ Contains all37per-point residuals/confidence/FB/coordinates, controls and source
 Original archives are read-only and retained; no loose image/mesh/model output.
 Audit statusTECHNICAL_CHECK_PASSED means arithmetic only. Reconstruction remains
 REJECT/UNVERIFIED, with no new mesh or medical accuracy gain.
+
+Closeout:source recovery5ec190b. All9protected hashes and both prior archives
+unchanged;0386CRC/hash/source equality verified before removing the one exclusive
+runner. No generated loose files, weights, environments or original data deleted.
+167shared tests passed8.179s; no outside caller of the diagnostic runner.
+Only the compact archive and report remain. No production-default modification.
