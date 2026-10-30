@@ -81,3 +81,34 @@ neutral fixed material template simply because the distance factor is available.
 This is a concrete integration correction within0394, not rejection of the curve
 method. No new head or millimeter improvement yet.176tests passed in9.470s at
 the preceding factor implementation; this review-only addition did not rerun them.
+
+## Native expression component retained and connected
+
+Source inspection found original metadata `expr_source=SUPR_head`,
+`expr_components=last_100`, `n_expr=100`, within the already validated official
+FLAME Open pickle. The source also contains5joint LBSweights and36pose corrective
+directions; their existence does not mean articulation is implemented here.
+Older0149used custom nuisance modes on a different head; its failures do not
+evaluate this native basis. Existing expression_contact implements paired3D
+closure, not image expression recovery, and is not silently used to close lips.
+
+Added `headfoundry.flame_expression` and `tools/prepare_flame_expression.py`.
+The latter checks the existing full rights/source hash chain, uses the existing
+restricted unpickler, verifies all300identity directions exactly, extracts only
+the explicitly named100expression directions, and makes a separate locked NPY.
+No duplicate whole model, new dependency, download or patient input is involved.
+The original identity asset remains unchanged. Conversion output is private at
+`assets/private/FLAME-2023-Open/expression-v1/expression-lock.json`.
+
+Actual conversion/load completed2.13s:5023vertices,100expression components,
+exact expression-basis equality and zero-expression identity replay error0.
+Two focused tests pass for identity/expression separation, nonmutation and
+invalid coefficients. Neutral-pose additive expressions only: no jaw/neck pose
+correctives, automatic safe coefficient range, collision guarantee or anatomical
+accuracy claim. The chosen coefficient bound is an engineering input limit.
+No patient expression coefficients fitted and no new head-quality claim.
+
+Next pipeline integration: determine reviewable model lip curves and visibility,
+then evaluate shared identity with per-view native expression using source-only
+observations. Preserve neutral export separately. Strong ambiguity/unsafe geometry
+must be reported; expression freedom cannot conceal failed camera/medical gates.
