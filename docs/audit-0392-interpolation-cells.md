@@ -43,3 +43,12 @@ Next decision: stop treating numerical differentiation as the main unresolved
 physical bottleneck. Any new reconstruction route must address the independent
 correspondence/coverage and focal-identifiability evidence, not recycle0390.
 0390REJECT remains; real head and medical gates remainUNVERIFIED.
+
+## Cleanup verification
+
+Recovery commit0742055. Archive4881bytes/two members, CRC and archiveSHA verified;
+all11protected identities unchanged. Removed exclusive runner4645bytes; no loose
+private outputs or downloaded environments/weights were created. No remaining
+code callers. Shared170tests pass in9.273s. Unrelated0207left untouched.
+One shell inline verification command failed quoting before execution; repeated
+the read-only check with an argument-array invocation successfully, as above.
