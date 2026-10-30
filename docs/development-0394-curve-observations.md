@@ -112,3 +112,43 @@ Next pipeline integration: determine reviewable model lip curves and visibility,
 then evaluate shared identity with per-view native expression using source-only
 observations. Preserve neutral export separately. Strong ambiguity/unsafe geometry
 must be reported; expression freedom cannot conceal failed camera/medical gates.
+
+### Model-curve attachment step (registered before execution)
+
+Reuse0382's archived generic FLAME mesh, rendered images, detector observations
+and exact rendering cameras as a small known-surface fixture. No failed camera
+solution is supplied to patient inference: both camera matrices are used only
+as recorded rendering transforms of the same generic head. Budget10minutes.
+Lift outer upper/lower chains from the target render onto first-hit triangles,
+retain triangle IDs/barycentric weights, and project into the candidate render.
+Compare fixed-ID point errors to sliding-curve errors against that render's
+saved detector curves, preserving every point and visibility flag. This directly
+checks the proposed observation change with no new render/detector/optimization.
+It cannot prove real-image anatomy or broad pose/identity generalization.
+Keep a provisional attachment only when all source supports hit the surface;
+otherwise report missing support. Require source projection replay and explicit
+target-view first-hit visibility. The distinction between point and curve errors
+will guide integration; no acceptance threshold is adjusted to these results.
+
+Actual two-render transfer: both11point outer curves have all supports visible;
+source projection replay max5.684e-14px. Upper fixed-ID p95 .771934px versus
+curve .766743px; lower .956050px versus .677524px. These are generic512render
+coordinates, not native patient errors. Nearest-curve distance is by construction
+no greater than matching-vertex distance, so this reduction alone does not
+establish anatomical improvement or physical camera accuracy. Limited pose
+transfer cannot undo0242's wider-angle failure. Retain provisional attachments
+and explicit restrictions rather than certify all-angle material bindings.
+
+`prepare_model_lip_curves.py native` verifies exact current-vs-archived topology
+and normalized template equality, then transports both curves through native
+300identity and100expression directions. Independent direct-deformed-surface vs
+composed-curve evaluation agrees within1e-14 at a nonzero algebra control.
+This establishes a usable model-side curve parameterization in native units;
+it does not certify the control's anatomical expression or collision safety.
+Private model-lips/native-curves.npz SHA256
+`ef3a1e57e0db797ef919e7fefb59a4db0e3a26594d0c17b6a3b18ba4d34001df`.
+Attachments SHA256 `61cf06c867aa52a250d7c68248e483a5a641ab11cfd9ae24ad13985ee9af8bba`.
+The native-curves.json provenance links the expression lock and attachment hashes.
+No patient camera or shape fit performed. Next integration can consume observed
+lip curves and native model curves with shared identity/per-view expression,
+while camera initialization, visibility, curve coverage and safety remain explicit.
