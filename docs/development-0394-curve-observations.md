@@ -52,3 +52,32 @@ not establish a better camera, head or medical result. Next work is source revie
 and a visible model-curve attachment that does not repeat0242's fixed frontal
 point hypothesis. Keep this functioning component and data bundle while completing
 that integration; no failed experiment debris was generated in this step.
+
+## Source review and integration decision
+
+`tools/review_lip_curves.py` sequentially decoded to630 and verified each required
+full RGB frame against the frozen bundle. One private comparison sheet uses a
+fixed[180,620,520,860]crop,2xnearest zoom, original beside overlays for all3frames.
+Executed in1.54s; all three panels visually reviewed. Outer upper/lower predictions
+approximately follow vermilion borders; fine localization and corner uncertainty
+are not quantitatively established. Mouth appears closed in these panels: inner
+upper/lower predictions overlap at a contact seam, not two separately observable
+cavity rims. Retain raw curves, but prohibit treating them as independent cavity
+boundary constraints. No numerical score-based point deletion was performed.
+Private anatomical-review.json records this classification and pending accuracy.
+
+Code inspection of prepare_flame_open.py and headfoundry.flame confirms the
+current safe asset retains only300identity directions from400source directions;
+the current adapter has no expression or jaw articulation. This creates a risk
+of absorbing per-frame mouth configuration into identity. It is not a measured
+causal attribution of0241errors, and adding expression alone would not fix camera
+ambiguity. Before changing asset representation, review original model semantics
+and existing mouth experiments; preserve the current locked identity asset.
+
+Keep outer lip curves as reviewable observation candidates. Implement a separate
+visibility-aware model-curve attachment and separate per-view articulation from
+shared identity when supported. Do not force all four observed chains onto a
+neutral fixed material template simply because the distance factor is available.
+This is a concrete integration correction within0394, not rejection of the curve
+method. No new head or millimeter improvement yet.176tests passed in9.470s at
+the preceding factor implementation; this review-only addition did not rerun them.
