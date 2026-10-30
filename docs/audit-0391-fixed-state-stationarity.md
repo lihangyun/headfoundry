@@ -30,3 +30,35 @@ local first-order numerical evidence, not convergence proof/globaloptimality or
 correctcamera. A large residual does not prove insufficient iterations or give
 permission to rerun. Preserve compact report/hash/source and retire diagnostic
 runner after verification. All0390REJECT/medicalUNVERIFIED remain unchanged.
+
+## Actual evidence
+
+One fixed-state worker7.656s/227536896B, controls pass. All1041RGB hashes and
+three exactgrayPNG identities match; residual replaymax0, cost0.1355238746664193.
+No held scoring or parameter update, all original training rows retained.
+
+22observationconstraints active at the predeclared tolerance, plus scalarupper
+columns13and15 (the two target brightness biases). Normalizednormalmatrix44x24,
+rank24. Both brightness biases are at+.05; this contradicts any assumption
+that0390had no active exposureboundary (0387's earlier interiorbound result
+does not transfer to0390). It does not prove relaxing that bound improves truth.
+
+| Normalized difference step | Gradientnorm | NNLS stationarity residualnorm | Ratio |
+| --- | ---: | ---: | ---: |
+| 1e-6 | 0.513256169 | 0.018255379 | 0.035567774 |
+| 5e-7 | 0.516849284 | 0.021314172 | 0.041238660 |
+
+Relative gradient disagreement1.333914%. The two-step results are not identical
+enough to assert precise KKTstationarity from this audit; neither independently
+proves physical accuracy or global uniqueness. Finite-difference sensitivity,
+bilinear cell boundaries and constraint activity remain relevant numerical
+questions. Nonzero residual under both tested estimates is evidence against
+simply declaring a solved optimum; no unregistered convergence threshold is
+introduced and0390nonconvergence/REJECT remains unchanged.
+
+Action: do not additerations or expandexposurebounds blindly. An independent
+piecewise bilinear image-gradient calculation at the frozen state could check
+whether the discrepancy comes from interpolation knots vs derivative error;
+it would be a derivative audit, not permission to rerun0390. More accurate
+derivatives still would not establish the correct focal or medical geometry.
+No new head/camera accepted, no surface millimeter improvement measured.
