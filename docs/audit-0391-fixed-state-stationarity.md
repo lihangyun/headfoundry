@@ -62,3 +62,15 @@ whether the discrepancy comes from interpolation knots vs derivative error;
 it would be a derivative audit, not permission to rerun0390. More accurate
 derivatives still would not establish the correct focal or medical geometry.
 No new head/camera accepted, no surface millimeter improvement measured.
+
+## Closeout
+
+Source/result recovery commit: b0b413e. Private evidence:
+`assets/private/closed-experiments/0391-stationarity/evidence.zip`, 6285 bytes,
+4 members, SHA256 `bbea7583e92a2faf7f23cfd93459cbcd6e07f24ed794bdb52e8d64579f999a70`.
+CRC, every member hash, all 11 protected identities and the0390archive checked
+before and after cleanup. Removed exactly3loose files/7127bytes and the exclusive
+runner `tools/stationarity_0391.py` (7593bytes); source is recoverable from Git
+and the archive. No weights/environments created or removed. No live worker or
+remaining code caller. All170shared tests pass in8.786s. Unrelated0207preserved.
+This closes the diagnostic only;0390REJECT and head/medicalUNVERIFIED unchanged.
