@@ -63,3 +63,19 @@ exclusive source/output before any new route. Keep shared originals/fixtures,
 case002untouched and no patient training/upload. No changed production defaults.
 This document does not claim the complete head target is attainable under the
 present inputs or that constraints alone add new physical information.
+
+## 2026-10-30 implementation admission
+
+Added minimal purethree-view constraint evaluator with analytic chain through
+fixed source rays, logf and log inverse depth. No assets/solver/ACCEPT inference.
+Three tests pass: exact,3pxboundary,6pxbiased and50pxmismatch; allparameter
+central differences; negative/nonfinite depth and malformed arrays. Maximum
+normalized derivative discrepancy5.87825e-7. Exposure columns correctlyzero.
+Bias control demonstrates that true geometry may be infeasible if observations
+are wrong; this component is not an estimator of physical correspondence truth.
+
+Read-only0387archive check, original training indices only: original ray-start
+maximum discrepancy1.712715px, all56targetobservations feasible, minimum
+slack6.066607px_squared. Rejected0387final violates47/56constraints, maximum
+discrepancy75.583617px. This verifies that the proposed constraint would detect
+the observed drift without silently repairing the start. Neither state refit.
