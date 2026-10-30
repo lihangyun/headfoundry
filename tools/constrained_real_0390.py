@@ -99,9 +99,37 @@ def controller(stage):
     if result['status']!='TECHNICAL_CHECK_PASSED':raise SystemExit(1)
 
 
+def archive_result():
+    protected=json.loads((BASE/'protected.json').read_text())
+    protected.update({str(ROOT/p):sha(ROOT/p) for p in
+                      ('tools/observation_constrained_photo.py','tests/test_observation_constrained_photo.py')})
+    assert all(sha(path)==digest for path,digest in protected.items())
+    assert json.loads((BASE/'fit-worker.json').read_text())['exit']==1
+    result=dict(status='REJECT',stage='optimizer_nonconvergence',
+                optimization=json.loads((BASE/'optimization.json').read_text()),
+                held_evaluation='UNVERIFIED:not run after nonconvergence',head_produced=False)
+    write(BASE/'result.json',result)
+    destination=CLOSED/'0390-constrained-photo';destination.mkdir(exist_ok=False)
+    files=sorted(p for p in BASE.rglob('*') if p.is_file())
+    keep={p.relative_to(BASE).as_posix():p for p in files if not p.name.startswith('view-')}
+    keep['source/constrained_real_0390.py']=Path(__file__)
+    target=destination/'evidence.zip'
+    with zipfile.ZipFile(target,'x',zipfile.ZIP_DEFLATED) as archive:
+        for name,path in keep.items():archive.write(path,name)
+    members={name:dict(bytes=path.stat().st_size,sha256=sha(path)) for name,path in keep.items()}
+    with zipfile.ZipFile(target) as archive:
+        assert archive.testzip() is None
+        assert all(hashlib.sha256(archive.read(name)).hexdigest()==row['sha256'] for name,row in members.items())
+    index=dict(archive_sha256=sha(target),archive_bytes=target.stat().st_size,members=members,protected=protected,
+               loose_files=len(files),loose_bytes=sum(p.stat().st_size for p in files),result=result)
+    write(destination/'index.json',index)
+    print(json.dumps({k:v for k,v in index.items() if k not in ('members','protected','result')},indent=2))
+
+
 if __name__=='__main__':
     stage=sys.argv[1]
-    if stage.endswith('-worker'):
+    if stage=='archive':archive_result()
+    elif stage.endswith('-worker'):
         try:
             if stage=='intake-worker':bootstrap();intake()
             elif stage=='fit-worker':fit()

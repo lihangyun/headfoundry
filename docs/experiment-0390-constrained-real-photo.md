@@ -41,3 +41,40 @@ bilateral/fullhead, earneck/mesh anduseracceptance remainUNVERIFIED. No headfit.
 On failure record source/hash/evidence and cleanup exclusive runner/graycopies/
 outputs, preserving shared0389tested arithmetic and priorassets. Verify shared
 tests and separatecleanupcommit before another route. Wholegoalunfinished.
+
+## Actual outcome: constraint works, optimizer not converged
+
+Registratione7d490d; implementation199c5cc. Intake7.094s/200945664B; exact
+originalvideo/1041RGB identities verified through unchanged intake. One fit
+worker46.094s/146403328B. SLSQP reached150iterations,7116objective evaluations,
+message"Iteration limit reached", optimizer_successfalse. No retry or extension.
+
+Final training constraintmax3.000000019660478px, minimumslack-1.179629e-7
+px_squared,0violations beyond predeclared1e-6squared tolerance. This is numerical
+constraint satisfaction, not exactly zero floating error or physical accuracy.
+Compared with0387tens-of-pixels drift, the new constraint prevents that particular
+failure mode on all56targettraining rows. Original observations unchanged.
+PhotoRMS0.109468892 ->0.051141289; finalsoftL1cost0.135523875.
+Focal1199.776568 ->893.861902px, inside bounds. This is a large estimate change,
+not independently measured focal error (true focal remains unknown).
+
+REJECT at nonconvergence, before held evaluation by the registered sequence.
+Held3px,medical2mm,fullhead/mesh/useracceptanceUNVERIFIED, not scored failures.
+Do not claim finalcandidate has passed camera quality because trainingslack is
+feasible. The data-consistency ball allows substantial focal variation, so it
+is insufficient by itself to certify calibration. No fixed-state intermediate
+candidate was selected, no failed point removed and no original gate changed.
+Iteration cap is the direct stopping condition, not a proven unique underlying
+cause; this does not establish that additional iterations would solve geometry.
+
+Retain0389pureanalytic constraint evaluator and its negative/bias/derivative
+tests: its software contract is independently verified. Do not retain the
+nonconverged0390application as a production reconstruction path. No formalhead
+or newmedicalerror exists. Future changes require evidence beyond "run longer".
+
+Private archive closed-experiments/0390-constrained-photo/evidence.zip,
+378870bytes,19members,SHA53be0c19fbfe1e47ed883925858d165a2cdc3328f95941f9fda51739e9dff710.
+Complete start/finalstates, observations, constraints, controlmetadata, logs,
+hashes, oneinputsheet and recovery source preserved. Nativegraycopies excluded;
+regeneration requires originalvideo decode. No weights/frameworkenvironment.
+ArchiveCRC/allmemberhash and11protectedfilehash checks passed before cleanup.
