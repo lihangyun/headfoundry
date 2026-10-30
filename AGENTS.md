@@ -1,5 +1,19 @@
 # HeadFoundry project rules
 
+## 2026-10-30 user-directed continuous R&D
+
+Maintain one evolving video reconstruction pipeline and a comparable baseline.
+A failed run rejects that result, not automatically its entire method. Separate
+implementation defects, nonconvergence, observation bias, representation limits
+and missing input before deciding what to change. Preserve demonstrated useful
+components; retire redundant failed artifacts. Evidence-backed solver or test
+repairs are allowed within a declared budget; do not tune acceptance thresholds.
+Report progress primarily through actual candidate geometry, fixed medical errors
+and multiview renders. Diagnostics must answer a specific next implementation
+decision. Existing privacy, licensing and final acceptance requirements remain.
+This clarification takes precedence over interpreting the cleanup rules below
+as requiring abandonment of a whole method after one unsuccessful trial.
+
 Only modify this repository. Never read/copy C:/workspace/peek implementation
 or use KeenTools private services/outputs. Use free commercially permitted
 assets and independent code;record rights and fail closed. Private human
