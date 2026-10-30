@@ -78,3 +78,10 @@ Complete start/finalstates, observations, constraints, controlmetadata, logs,
 hashes, oneinputsheet and recovery source preserved. Nativegraycopies excluded;
 regeneration requires originalvideo decode. No weights/frameworkenvironment.
 ArchiveCRC/allmemberhash and11protectedfilehash checks passed before cleanup.
+
+Verified closure:source recoveryc26caee. Allworkers terminal, exact resolved
+target/reparse/inventory checks preceded deletion of21loosefiles1240716logical
+bytes and oneexclusive runner. Shared0389constraint/tests remain. Aftercleanup
+all11protectedhashes,19archive members/CRC/SHA and0383/0385/0387archives match;
+no livecaller.170shared tests passed8.829s.0207untouched. Closed00:33UTC within
+00:47:46deadline. No complete/ACCEPT claim; fullgoal remains active.
